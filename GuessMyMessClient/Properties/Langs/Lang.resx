@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="configBtnEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="configBtnSpanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="configLbConfiguration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="configLbLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="configLbMusic" xml:space="preserve">
+    <value>Music</value>
+  </data>
+  <data name="configLbSound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="configLbSoundEffects" xml:space="preserve">
+    <value>Sound Effects</value>
+  </data>
+  <data name="configLbVolume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="configtBtnLogOut" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="editProfileLbMyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="globalLbName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="globalBtnChat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="globalBtnClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="globalBtnConfiguration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="globalBtnEditAvatar" xml:space="preserve">
+    <value>Change Avatar</value>
+  </data>
+  <data name="globalBtnEditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="globalBtnLogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="globalBtnSignUp" xml:space="preserve">
+    <value>Sing Up</value>
+  </data>
+  <data name="globalBtnSocial" xml:space="preserve">
+    <value>Social</value>
+  </data>
+  <data name="globalCmbGender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="globalLbGender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="globalPwdPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="globalTxtEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="globalTxtName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="globalTxtUsername" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="lobbyBtnCreateGame" xml:space="preserve">
+    <value>Create Game</value>
+  </data>
+  <data name="lobbyBtnPlay" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="logInLbLogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="signUpLbResgister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="socialBtnAddFriend" xml:space="preserve">
+    <value>Add Friend</value>
+  </data>
+  <data name="socialBtnEmailInivite" xml:space="preserve">
+    <value>Sent Invitation by Email</value>
+  </data>
+  <data name="socialBtnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="socialBtnSendInvite" xml:space="preserve">
+    <value>Send Invite</value>
+  </data>
+  <data name="socialLbEmailInvitation" xml:space="preserve">
+    <value>Invitation by Email</value>
+  </data>
+  <data name="socialLbFriends" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="socialTfEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="socialTfSearchPlayers" xml:space="preserve">
+    <value>Search Players</value>
+  </data>
+  <data name="welcomeBtnCotinueAsGuest" xml:space="preserve">
+    <value>Continue as guest</value>
+  </data>
+  <data name="welcomeBtnStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="welcomeLbDescription" xml:space="preserve">
+    <value>Sign up or log in to enjoy the full experience, or continue as a guest.</value>
+  </data>
+  <data name="globalLbLastName" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="globalLbEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="globalCmbMale" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="globalCmbFemale" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="globalCmbNonBinary" xml:space="preserve">
+    <value>Non-Binary</value>
+  </data>
+  <data name="editProfileBtnChangePsw" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="editProfileBtnChangeEmail" xml:space="preserve">
+    <value>Change Email</value>
+  </data>
+  <data name="changePswLbChangPsw" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="changePswLbWriteNewPsw" xml:space="preserve">
+    <value>Write your new password</value>
+  </data>
+  <data name="changePswLbConfirmPsw" xml:space="preserve">
+    <value>Confirm your password</value>
+  </data>
+  <data name="globalBtnConfirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="changePswVerifyingLbVerifying" xml:space="preserve">
+    <value>Verification by Code</value>
+  </data>
+  <data name="globalLbVerifyinText" xml:space="preserve">
+    <value>Write the verification code sent by email</value>
+  </data>
+  <data name="globalBtnVerify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="globalLbChangesConfirmation" xml:space="preserve">
+    <value>Changes Saved!</value>
+  </data>
+  <data name="changeEmailLbNewEmail" xml:space="preserve">
+    <value>Change Email</value>
+  </data>
+  <data name="changeEmailLbWriteNewEmail" xml:space="preserve">
+    <value>Write your new email</value>
+  </data>
+  <data name="lobbyChatLbFromMessage" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="globalTfPromtText" xml:space="preserve">
+    <value>Write a message</value>
+  </data>
+  <data name="globalBtnSend" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="lobbyChatLbSendTo" xml:space="preserve">
+    <value>Send to</value>
+  </data>
+  <data name="editAvatarLbSelect" xml:space="preserve">
+    <value>Select Avatar</value>
+  </data>
+  <data name="playMenuBtnPublicMatches" xml:space="preserve">
+    <value>Public Matches</value>
+  </data>
+  <data name="playMenuBtnPrivateMatches" xml:space="preserve">
+    <value>Private Matches</value>
+  </data>
+  <data name="playMenuLbAvailableMatches" xml:space="preserve">
+    <value>Available Matches</value>
+  </data>
+  <data name="globalLbHost" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="globalLbPlayers" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="globalLbDifficulty" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="globalLbEasy" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="globalLbIntermediate" xml:space="preserve">
+    <value>Intermediate</value>
+  </data>
+  <data name="globalLbHard" xml:space="preserve">
+    <value>Hard</value>
+  </data>
+  <data name="globalBtnJoin" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="globalLbMatchCode" xml:space="preserve">
+    <value>Match Code</value>
+  </data>
+  <data name="privateMatchesLbCodeMessage" xml:space="preserve">
+    <value>Enter the code of the match to join</value>
+  </data>
+  <data name="createGameLbSettings" xml:space="preserve">
+    <value>Match Settings</value>
+  </data>
+  <data name="createGameBtnPublicMatch" xml:space="preserve">
+    <value>Public Match</value>
+  </data>
+  <data name="createGameBtnPrivateMatch" xml:space="preserve">
+    <value>Private Match</value>
+  </data>
+  <data name="createGameLbMatchName" xml:space="preserve">
+    <value>Match Name</value>
+  </data>
+  <data name="createGameLbMaxPlayers" xml:space="preserve">
+    <value>Max. Players</value>
+  </data>
+  <data name="createGameLbRounds" xml:space="preserve">
+    <value>Rounds</value>
+  </data>
+  <data name="createGameCbDifficulty" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="createGameCbEasy" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="createGameCbIntermediate" xml:space="preserve">
+    <value>Intermediate</value>
+  </data>
+  <data name="createGameCbHard" xml:space="preserve">
+    <value>Hard</value>
+  </data>
+  <data name="createGameBtnCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="waitingRoomLbMatchTypePublic" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="waitingRoomLbMatchTypePrivate" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="waitingRoomBtnStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="waitingRoomLbCountDown" xml:space="preserve">
+    <value>The match starts in</value>
+  </data>
+  <data name="chooseWordLbTitle" xml:space="preserve">
+    <value>Select a word to draw</value>
+  </data>
+  <data name="drawingScreenLbTitleDraw" xml:space="preserve">
+    <value>Draw!</value>
+  </data>
+  <data name="drawingScreenLbWord" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="drawingScreenLbThickness" xml:space="preserve">
+    <value>Thickness</value>
+  </data>
+  <data name="drawingScreenBtnPencil" xml:space="preserve">
+    <value>Pencil</value>
+  </data>
+  <data name="drawingScreenBtnEraser" xml:space="preserve">
+    <value>Eraser</value>
+  </data>
+  <data name="drawingScreenBtnTriangle" xml:space="preserve">
+    <value>Triangle</value>
+  </data>
+  <data name="drawingScreenBtnSquare" xml:space="preserve">
+    <value>Square</value>
+  </data>
+  <data name="drawingScreenBtnCircle" xml:space="preserve">
+    <value>Circle</value>
+  </data>
+  <data name="guessScreenLbTitleGuessWord" xml:space="preserve">
+    <value>Guess the word</value>
+  </data>
+  <data name="guessScreenTfPromptText" xml:space="preserve">
+    <value>Write the answer</value>
+  </data>
+  <data name="answersPanelLbOwner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="winnersScreenLbTitleEndMatch" xml:space="preserve">
+    <value>The match ended</value>
+  </data>
+  <data name="winnersScreenLbCongrats" xml:space="preserve">
+    <value>Congratulations</value>
+  </data>
+  <data name="winnersScreenBtnExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+</root>
