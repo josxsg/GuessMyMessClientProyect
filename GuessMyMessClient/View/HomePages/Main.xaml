@@ -1,0 +1,33 @@
+﻿<Window x:Class="GuessMyMessClient.View.HomePages.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessMyMessClient.View.HomePages"
+        mc:Ignorable="d"
+        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+        Title="Guess My Mess!" Height="550" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <Grid Background="White">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <Border Background="#A0FFFFFF" 
+                    CornerRadius="10"
+                    Padding="30,10"
+                    Margin="0,0,0,20">
+                <TextBlock Text="GuessMyMess!"
+                           FontSize="72"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           FontFamily="Arial Black, Arial, sans-serif"/>
+            </Border>
+
+            <Button Content="{x:Static language:Lang.welcomeBtnStart}"
+                    Style="{StaticResource MainButton}"
+                    Command="{Binding StartGameCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Width="334" Height="45"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
