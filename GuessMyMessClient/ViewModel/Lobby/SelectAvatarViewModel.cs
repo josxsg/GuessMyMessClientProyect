@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 
-namespace GuessMyMessClient.ViewModel
+namespace GuessMyMessClient.ViewModel.Lobby
 {
-    public class EditAvatarViewModel : ViewModelBase
+    public class SelectAvatarViewModel : ViewModelBase
     {
         // Propiedad para el avatar seleccionado (si es necesario)
         // Por ahora es un placeholder, puedes adaptar el tipo de dato.
@@ -25,7 +25,7 @@ namespace GuessMyMessClient.ViewModel
         // Comando que se enlazará al botón "CONFIRMAR"
         public ICommand ConfirmSelectionCommand { get; }
 
-        public EditAvatarViewModel()
+        public SelectAvatarViewModel()
         {
             // Inicializamos el comando y le decimos qué método debe ejecutar
             ConfirmSelectionCommand = new RelayCommand(ConfirmSelection);

@@ -11,9 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GuessMyMessClient.ViewModel.Edit;
+using GuessMyMessClient.ViewModel.Lobby;    
 
-namespace GuessMyMessClient.View.Edit
+namespace GuessMyMessClient.View.Lobby
 {
     /// <summary>
     /// Lógica de interacción para SelectAvatar.xaml

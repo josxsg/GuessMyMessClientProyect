@@ -55,11 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\Edit\SelectAvatarViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\SelectAvatarViewModel.cs" />
     <Compile Include="ViewModel\HomePages\MainViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="View\Edit\SelectAvatar.xaml.cs">
+    <Compile Include="View\Lobby\SelectAvatar.xaml.cs">
       <DependentUpon>SelectAvatar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomePages\Main.xaml.cs">
@@ -73,7 +73,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Edit\SelectAvatar.xaml">
+    <Page Include="View\Lobby\SelectAvatar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images\" />
+    <Folder Include="ViewModel\Edit\" />
+    <Folder Include="View\Edit\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
