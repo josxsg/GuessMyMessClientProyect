@@ -55,10 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\HomePages\WelcomeViewModel.cs" />
     <Compile Include="ViewModel\Lobby\SelectAvatarViewModel.cs" />
     <Compile Include="ViewModel\HomePages\MainViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\HomePages\WelcomeView.xaml.cs">
+      <DependentUpon>WelcomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Lobby\SelectAvatar.xaml.cs">
       <DependentUpon>SelectAvatar.xaml</DependentUpon>
     </Compile>
@@ -70,6 +74,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Properties\Styles\GlobalStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomePages\WelcomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,9 +127,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
     <Folder Include="ViewModel\Edit\" />
     <Folder Include="View\Edit\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\background.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

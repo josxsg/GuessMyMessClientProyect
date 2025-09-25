@@ -1,0 +1,38 @@
+﻿<Window x:Class="GuessMyMessClient.View.HomePages.WelcomeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessMyMessClient.View.HomePages"
+        xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
+        xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.HomePages"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:WelcomeViewModel, IsDesignTimeCreatable=True}"
+        Title="Welcome" Height="550" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="{x:Static language:Lang.welcomeLbDescription}"
+                       FontSize="18"
+                       Foreground="Black"
+                       Margin="0,0,0,20"/>
+
+            <Button Content="{x:Static language:Lang.globalBtnSignUp}"
+                    Style="{StaticResource YellowButton}"
+                    Command="{Binding SignUpCommand}"/>
+
+            <Button Content="{x:Static language:Lang.globalBtnLogIn}"
+                    Style="{StaticResource GreenButton}"
+                    Command="{Binding LoginCommand}"/>
+
+            <Button Content="{x:Static language:Lang.welcomeBtnCotinueAsGuest}"
+                    Style="{StaticResource BlueButton}"
+                    Command="{Binding ContinueAsGuestCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
+using GuessMyMessClient.View.HomePages;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -21,24 +22,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void StartGame(object parameter)
         {
-            // --- LÓGICA DE INICIO ---
-            // Aquí es donde pondrás la lógica para lo que sucede al hacer clic.
-            // Por ejemplo, navegar a la siguiente ventana de inicio de sesión o al lobby.
+            // Crear y mostrar la nueva ventana de bienvenida
+            var welcomeView = new WelcomeView();
+            welcomeView.Show();
 
-            // Por ahora, solo mostraremos un mensaje para verificar que funciona.
-            MessageBox.Show("¡El juego ha comenzado! (Lógica del ViewModel)");
-
-            // Ejemplo de cómo podrías abrir otra ventana y cerrar la actual:
-            /*
-            var loginView = new LoginView();
-            loginView.Show();
-            
             // Cierra la ventana actual (Main.xaml)
-            if (parameter is Window window)
+            if (parameter is Window mainWindow)
             {
-                window.Close();
+                mainWindow.Close();
             }
-            */
         }
     }
 }

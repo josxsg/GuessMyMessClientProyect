@@ -4,30 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.HomePages"
+        xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.HomePages"
         mc:Ignorable="d"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
         Title="Guess My Mess!" Height="550" Width="900"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanMinimize">
-    <Grid Background="White">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        ResizeMode="CanResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
+        </Grid.Background>
 
-            <Border Background="#A0FFFFFF" 
-                    CornerRadius="10"
-                    Padding="30,10"
-                    Margin="0,0,0,20">
-                <TextBlock Text="GuessMyMess!"
-                           FontSize="72"
-                           FontWeight="Bold"
-                           Foreground="Black"
-                           FontFamily="Arial Black, Arial, sans-serif"/>
-            </Border>
+        <Viewbox Stretch="Uniform" MaxWidth="700">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <Button Content="{x:Static language:Lang.welcomeBtnStart}"
-                    Style="{StaticResource MainButton}"
-                    Command="{Binding StartGameCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Width="334" Height="45"/>
+                <Image Source="/Resources/Images/title.png" 
+                       Width="600"
+                       Margin="0,0,0,20"/>
 
-        </StackPanel>
+                <Button Content="{x:Static language:Lang.welcomeBtnStart}"
+                        Style="{StaticResource MainButton}"
+                        Command="{Binding StartGameCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" 
+                        Width="334" Height="45"/>
+
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Window>
