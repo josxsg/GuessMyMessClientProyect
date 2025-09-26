@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuessMyMessClient.ViewModel.MatchSettings
+namespace GuessMyMessClient.ViewModel.WaitingRoom
 {
-    internal class PublicMatchSettings
+    internal class WaitingRoomPrivateMatchViewModel
     {
     }
 }
