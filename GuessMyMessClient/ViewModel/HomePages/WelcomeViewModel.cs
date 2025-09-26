@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
+using GuessMyMessClient.View.HomePages;
+using GuessMyMessClient.View.Lobby;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -23,20 +25,35 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void SignUp(object parameter)
         {
-            // Lógica para abrir la ventana de registro
-            MessageBox.Show("Navegando a la página de Registro...");
+            var signUpView = new SignUpView();
+            signUpView.Show();
+
+            if (parameter is Window welcomeWindow)
+            {
+                welcomeWindow.Close();
+            }
         }
 
         private void Login(object parameter)
         {
-            // Lógica para abrir la ventana de inicio de sesión
-            MessageBox.Show("Navegando a la página de Inicio de Sesión...");
+            var loginView = new LoginView();
+            loginView.Show();
+
+            if (parameter is Window welcomeWindow)
+            {
+                welcomeWindow.Close();
+            }
         }
 
         private void ContinueAsGuest(object parameter)
         {
-            // Lógica para continuar al lobby como invitado
-            MessageBox.Show("Continuando como invitado...");
+            var lobbyView = new LobbyView();
+            lobbyView.Show();
+
+            if (parameter is Window welcomeWindow)
+            {
+                welcomeWindow.Close();
+            }
         }
     }
 }

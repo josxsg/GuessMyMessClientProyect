@@ -24,15 +24,18 @@
 
             <Button Content="{x:Static language:Lang.globalBtnSignUp}"
                     Style="{StaticResource YellowButton}"
-                    Command="{Binding SignUpCommand}"/>
+                    Command="{Binding SignUpCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
 
             <Button Content="{x:Static language:Lang.globalBtnLogIn}"
                     Style="{StaticResource GreenButton}"
-                    Command="{Binding LoginCommand}"/>
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
 
             <Button Content="{x:Static language:Lang.welcomeBtnCotinueAsGuest}"
                     Style="{StaticResource BlueButton}"
-                    Command="{Binding ContinueAsGuestCommand}"/>
+                    Command="{Binding ContinueAsGuestCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
         </StackPanel>
     </Grid>
 </Window>

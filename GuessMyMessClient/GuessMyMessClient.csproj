@@ -55,7 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\HomePages\LoginViewModel.cs" />
+    <Compile Include="ViewModel\HomePages\SignUpViewModel.cs" />
     <Compile Include="ViewModel\HomePages\WelcomeViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\FriendsViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\LobbyViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\ProfileViewModel.cs" />
     <Compile Include="ViewModel\Lobby\SelectAvatarViewModel.cs" />
     <Compile Include="ViewModel\HomePages\MainViewModel.cs" />
     <Compile Include="ViewModel\Matches\PrivateMatchesViewModel.cs" />
@@ -63,8 +73,38 @@
     <Compile Include="ViewModel\MatchSettings\PublicMatchSettings.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\HomePages\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePages\SignUpView.xaml.cs">
+      <DependentUpon>SignUpView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomePages\WelcomeView.xaml.cs">
       <DependentUpon>WelcomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\Dialogs\ChangeEmailView.xaml.cs">
+      <DependentUpon>ChangeEmailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\Dialogs\ChangePasswordView.xaml.cs">
+      <DependentUpon>ChangePasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\Dialogs\InviteByEmailView.xaml.cs">
+      <DependentUpon>InviteByEmailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\Dialogs\VerifyByCodeView.xaml.cs">
+      <DependentUpon>VerifyByCodeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\FriendsView.xaml.cs">
+      <DependentUpon>FriendsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\LobbyView.xaml.cs">
+      <DependentUpon>LobbyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Lobby\SelectAvatar.xaml.cs">
       <DependentUpon>SelectAvatar.xaml</DependentUpon>
@@ -89,7 +129,47 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\HomePages\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HomePages\SignUpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\HomePages\WelcomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\Dialogs\ChangeEmailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\Dialogs\ChangePasswordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\Dialogs\InviteByEmailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\Dialogs\VerifyByCodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\FriendsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\LobbyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\ProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +239,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\background.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\editProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\friends.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

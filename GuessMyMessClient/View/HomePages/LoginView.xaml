@@ -1,0 +1,44 @@
+﻿<Window x:Class="GuessMyMessClient.View.HomePages.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessMyMessClient.View.HomePages"
+        xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.HomePages"
+        mc:Ignorable="d"
+        xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
+        d:DataContext="{d:DesignInstance Type=vm:LoginViewModel, IsDesignTimeCreatable=True}"
+        Title="Login" Height="550" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Viewbox Stretch="Uniform" MaxWidth="500">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="364" Width="376">
+
+                <TextBlock Text="{x:Static language:Lang.logInLbLogIn}"
+                           HorizontalAlignment="Center"
+                           FontSize="28" FontWeight="Bold" Foreground="Black"
+                           Margin="0,0,0,30"/>
+
+                <TextBlock Text="{x:Static language:Lang.globalTxtEmail}"
+                           FontSize="14" FontWeight="SemiBold" Foreground="Black"
+                           HorizontalAlignment="Left" Margin="50,0,0,5"/>
+                <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Text="{x:Static language:Lang.globalPwdPassword}"
+                           FontSize="14" FontWeight="SemiBold" Foreground="Black"
+                           HorizontalAlignment="Left" Margin="50,15,0,5"/>
+                <PasswordBox x:Name="PasswordBox"/>
+
+                <Button Content="{x:Static language:Lang.globalBtnLogIn}"
+                        Style="{StaticResource GreenButton}"
+                        Command="{Binding LoginCommand}"
+                        Margin="0,30,0,0"/>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>
