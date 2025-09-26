@@ -11,19 +11,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GuessMyMessClient.ViewModel.Matches;
+using GuessMyMessClient.ViewModel.WaitingRoom;
 
-namespace GuessMyMessClient.View.Matches
+namespace GuessMyMessClient.View.WaitingRoom
 {
     /// <summary>
-    /// Lógica de interacción para PrivateMatches.xaml
+    /// Lógica de interacción para WaitingRoomPublicMatchView.xaml
     /// </summary>
-    public partial class PrivateMatches : Window
+    public partial class WaitingRoomPublicMatchView : Window
     {
-        public PrivateMatches()
+        public WaitingRoomPublicMatchView()
         {
             InitializeComponent();
-            this.DataContext = new PrivateMatchesViewModel();
+            this.DataContext = new WaitingRoomPublicMatchViewModel();
         }
     }
 }

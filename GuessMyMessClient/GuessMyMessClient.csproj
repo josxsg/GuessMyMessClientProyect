@@ -60,14 +60,21 @@
     <Compile Include="ViewModel\HomePages\MainViewModel.cs" />
     <Compile Include="ViewModel\Matches\PrivateMatchesViewModel.cs" />
     <Compile Include="ViewModel\Matches\PublicMatchesViewModel.cs" />
-    <Compile Include="ViewModel\MatchSettings\PublicMatchSettings.cs" />
+    <Compile Include="ViewModel\MatchSettings\PublicMatchSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
+    <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.cs" />
+    <Compile Include="ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs" />
+    <Compile Include="ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.cs" />
+    <Compile Include="ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs" />
+    <Compile Include="ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs" />
     <Compile Include="View\HomePages\WelcomeView.xaml.cs">
       <DependentUpon>WelcomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Lobby\SelectAvatar.xaml.cs">
-      <DependentUpon>SelectAvatar.xaml</DependentUpon>
+    <Compile Include="View\Lobby\SelectAvatarView.xaml.cs">
+      <DependentUpon>SelectAvatarView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomePages\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
@@ -76,14 +83,35 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\Matches\PrivateMatches.xaml.cs">
-      <DependentUpon>PrivateMatches.xaml</DependentUpon>
+    <Compile Include="View\Matches\PrivateMatchesView.xaml.cs">
+      <DependentUpon>PrivateMatchesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Matches\PublicMatches.xaml.cs">
-      <DependentUpon>PublicMatches.xaml</DependentUpon>
+    <Compile Include="View\Matches\PublicMatchesView.xaml.cs">
+      <DependentUpon>PublicMatchesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MatchSettings\PublicMatchSettings.xaml.cs">
-      <DependentUpon>PublicMatchSettings.xaml</DependentUpon>
+    <Compile Include="View\MatchSettings\PublicMatchSettingsView.xaml.cs">
+      <DependentUpon>PublicMatchSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Match\GuessTheWordView.xaml.cs">
+      <DependentUpon>GuessTheWordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Match\WordSelectionView.xaml.cs">
+      <DependentUpon>WordSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.cs">
+      <DependentUpon>WaitingRoomPrivateMatchHostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.cs">
+      <DependentUpon>WaitingRoomPrivateMatchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.cs">
+      <DependentUpon>WaitingRoomPublicMatchCountDownView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.cs">
+      <DependentUpon>WaitingRoomPublicMatchHostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitingRoom\WaitingRoomPublicMatchView.xaml.cs">
+      <DependentUpon>WaitingRoomPublicMatchView.xaml</DependentUpon>
     </Compile>
     <Page Include="Properties\Styles\GlobalStyles.xaml">
       <SubType>Designer</SubType>
@@ -93,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Lobby\SelectAvatar.xaml">
+    <Page Include="View\Lobby\SelectAvatarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,15 +129,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Matches\PrivateMatches.xaml">
+    <Page Include="View\Matches\PrivateMatchesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Matches\PublicMatches.xaml">
+    <Page Include="View\Matches\PublicMatchesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MatchSettings\PublicMatchSettings.xaml">
+    <Page Include="View\MatchSettings\PublicMatchSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Match\GuessTheWordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Match\WordSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaitingRoom\WaitingRoomPrivateMatchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaitingRoom\WaitingRoomPublicMatchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
