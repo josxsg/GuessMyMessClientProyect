@@ -71,6 +71,9 @@
     <Compile Include="ViewModel\Matches\PrivateMatchesViewModel.cs" />
     <Compile Include="ViewModel\Matches\PublicMatchesViewModel.cs" />
     <Compile Include="ViewModel\MatchSettings\PublicMatchSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Match\AnswersScreenViewModel.cs" />
+    <Compile Include="ViewModel\Match\DrawingScreenViewModel.cs" />
+    <Compile Include="ViewModel\Match\EndOfMatchViewModel.cs" />
     <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
@@ -132,6 +135,15 @@
     </Compile>
     <Compile Include="View\MatchSettings\PublicMatchSettingsView.xaml.cs">
       <DependentUpon>PublicMatchSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Match\AnswersScreenView.xaml.cs">
+      <DependentUpon>AnswersScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Match\DrawingScreenView.xaml.cs">
+      <DependentUpon>DrawingScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Match\EndOfMatchView.xaml.cs">
+      <DependentUpon>EndOfMatchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Match\GuessTheWordView.xaml.cs">
       <DependentUpon>GuessTheWordView.xaml</DependentUpon>
@@ -220,6 +232,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MatchSettings\PublicMatchSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Match\AnswersScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Match\DrawingScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Match\EndOfMatchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
