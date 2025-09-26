@@ -3,17 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
         xmlns:local="clr-namespace:GuessMyMessClient.View.Lobby"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
         mc:Ignorable="d"
-        Title="Select Avatar" Height="450" Width="600"
+        Title="Select Avatar" Height="550" Width="900"
+        d:DataContext="{d:DesignInstance Type=vm:SelectAvatarViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
-        WindowStyle="None"
-        AllowsTransparency="True"
+        ResizeMode="CanResize"
         Background="Transparent">
 
-    <Border CornerRadius="15" Background="#FFFFFF" BorderBrush="#000000" BorderThickness="2" Margin="50">
+    <Border CornerRadius="15" Background="#FFFFFF" BorderBrush="#000000" BorderThickness="2" Margin="0,0,50,50">
         <StackPanel Margin="20">
             <TextBlock Text="{x:Static language:Lang.editAvatarLbSelect}"
                        HorizontalAlignment="Center"
@@ -48,8 +48,8 @@
             </Grid>
 
             <Button Content="{x:Static language:Lang.globalBtnConfirm}" 
-                    Style="{StaticResource MainButton}" 
-                    Margin="0,20,0,0" Width="150" Height="40"/>
+                    Style="{StaticResource ConfirmButton}" 
+                    Margin="0,20,0,0" Width="150" Height="40" Click="Button_Click"/>
         </StackPanel>
     </Border>
 </Window>

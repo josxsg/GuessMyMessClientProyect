@@ -58,6 +58,9 @@
     <Compile Include="ViewModel\HomePages\WelcomeViewModel.cs" />
     <Compile Include="ViewModel\Lobby\SelectAvatarViewModel.cs" />
     <Compile Include="ViewModel\HomePages\MainViewModel.cs" />
+    <Compile Include="ViewModel\Matches\PrivateMatchesViewModel.cs" />
+    <Compile Include="ViewModel\Matches\PublicMatchesViewModel.cs" />
+    <Compile Include="ViewModel\MatchSettings\PublicMatchSettings.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\HomePages\WelcomeView.xaml.cs">
@@ -73,6 +76,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\Matches\PrivateMatches.xaml.cs">
+      <DependentUpon>PrivateMatches.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Matches\PublicMatches.xaml.cs">
+      <DependentUpon>PublicMatches.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MatchSettings\PublicMatchSettings.xaml.cs">
+      <DependentUpon>PublicMatchSettings.xaml</DependentUpon>
+    </Compile>
     <Page Include="Properties\Styles\GlobalStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +98,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HomePages\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Matches\PrivateMatches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Matches\PublicMatches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MatchSettings\PublicMatchSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

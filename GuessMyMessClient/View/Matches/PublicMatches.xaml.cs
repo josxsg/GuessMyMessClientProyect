@@ -11,24 +11,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GuessMyMessClient.ViewModel.Lobby;    
+using GuessMyMessClient.ViewModel.Matches;
 
-namespace GuessMyMessClient.View.Lobby
+namespace GuessMyMessClient.View.Matches
 {
     /// <summary>
-    /// Lógica de interacción para SelectAvatar.xaml
+    /// Lógica de interacción para PublicMatches.xaml
     /// </summary>
-    public partial class SelectAvatar : Window
+    public partial class PublicMatches : Window
     {
-        public SelectAvatar()
+        public PublicMatches()
         {
             InitializeComponent();
-            this.DataContext = new SelectAvatarViewModel();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
+            this.DataContext = new PublicMatchesViewModel();
         }
     }
 }
