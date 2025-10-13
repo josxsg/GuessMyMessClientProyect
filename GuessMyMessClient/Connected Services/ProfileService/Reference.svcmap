@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ec8da07e-ec94-44d7-8135-f39148797eed" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/GuessMyMessServer/Profile/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="6f628dda-8ecc-4716-8730-29e69d602dc9" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="3ea9888a-eb0d-4496-9658-966c8fb59335" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd1" />
+    <MetadataFile FileName="UserProfileService.wsdl" MetadataType="Wsdl" ID="d303d258-e035-4bab-9bd4-e006cfa89cf1" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="8a74f09b-3d5f-4572-9158-26d2c18b78a6" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="6f7dd663-f12a-4b66-b6df-6069df598473" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

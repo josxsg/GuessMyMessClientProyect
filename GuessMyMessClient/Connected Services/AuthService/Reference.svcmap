@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="da6a9770-9fc4-48f3-921a-5f37b2e4a960" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/GuessMyMessServer/Auth/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AuthenticationService.wsdl" MetadataType="Wsdl" ID="c4a6f6c9-3fb3-477f-9ea6-21d950261864" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Auth/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="da19bf90-c4f7-45a3-b4de-ca2551763a79" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Auth/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5852c837-46da-4053-a417-beab998c9f60" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Auth/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="71fb0237-8139-4135-83e8-1702e1eff951" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Auth/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="c69a24e7-ded7-4169-809e-457e9ef8f687" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Auth/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

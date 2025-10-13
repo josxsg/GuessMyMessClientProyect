@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="OperationResultDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResultDto" nillable="true" type="tns:OperationResultDto" />
+  <xs:complexType name="UserProfileDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="avatarPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="genderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="socialNetworks" nillable="true" type="tns:ArrayOfSocialNetworkDto" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProfileDto" nillable="true" type="tns:UserProfileDto" />
+  <xs:complexType name="ArrayOfSocialNetworkDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialNetworkDto" nillable="true" type="tns:SocialNetworkDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialNetworkDto" nillable="true" type="tns:ArrayOfSocialNetworkDto" />
+  <xs:complexType name="SocialNetworkDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="networkType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userLink" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocialNetworkDto" nillable="true" type="tns:SocialNetworkDto" />
+</xs:schema>

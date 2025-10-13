@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="769c991a-4c9b-42f1-b31b-421b589b0dc6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/GuessMyMessServer/Lobby/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="bc70e955-a928-40fe-9e16-f996417b84e0" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Lobby/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ccd945e2-ce33-4b85-9bc1-3e21a94a6f66" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Lobby/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="e8208760-7546-4bf2-99d3-5e7c90e87661" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Lobby/?xsd=xsd3" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="3c7a8b9e-f5c9-4fba-afb5-a707b5d1a51b" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Lobby/?xsd=xsd0" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="92119309-389a-4aff-8726-83d0b45c0689" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Lobby/?xsd=xsd1" />
+    <MetadataFile FileName="LobbyService.wsdl" MetadataType="Wsdl" ID="4a973b68-f148-4fd9-9c22-6939211a0a0d" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Lobby/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
