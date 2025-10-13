@@ -110,6 +110,7 @@
     <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Session\SessionManager.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\HomePages\LoginView.xaml.cs">
@@ -443,7 +444,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModel\Edit\" />
     <Folder Include="View\Edit\" />
   </ItemGroup>
   <ItemGroup>

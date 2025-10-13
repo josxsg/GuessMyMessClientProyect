@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.HomePages"
         mc:Ignorable="d"
+        xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support" 
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.HomePages"
         d:DataContext="{d:DesignInstance Type=vm:SignUpViewModel, IsDesignTimeCreatable=True}"
@@ -29,7 +30,7 @@
 
                     <StackPanel Grid.Column="0" Margin="10">
                         <TextBlock Text="{x:Static language:Lang.globalTxtName}" HorizontalAlignment="Left" Margin="160,0,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
 
                         <TextBlock Text="{x:Static language:Lang.globalTxtUsername}" HorizontalAlignment="Left" Margin="130,15,0,5" FontWeight="SemiBold"/>
                         <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
@@ -54,7 +55,9 @@
                         </StackPanel>
 
                         <TextBlock Text="{x:Static language:Lang.globalPwdPassword}" HorizontalAlignment="Left" Margin="150,15,0,5" FontWeight="SemiBold"/>
-                        <PasswordBox x:Name="PasswordBox"/>
+                        <PasswordBox helpers:PasswordBoxHelper.Attach="True"
+                                     helpers:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource InputField}"/>
                     </StackPanel>
 
                     <Grid Grid.Column="1" VerticalAlignment="Top" Margin="20,40" Width="150" Height="150">
@@ -65,7 +68,10 @@
                     </Grid>
                 </Grid>
 
-                <Button Content="{x:Static language:Lang.globalBtnSignUp}" Style="{StaticResource YellowButton}" Command="{Binding SignUpCommand}" Margin="0,20,0,0"/>
+                <Button Content="{x:Static language:Lang.globalBtnSignUp}" 
+                        Style="{StaticResource YellowButton}" 
+                        Command="{Binding SignUpCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
             </StackPanel>
         </Viewbox>
     </Grid>

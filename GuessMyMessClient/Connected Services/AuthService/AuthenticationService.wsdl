@@ -7,78 +7,78 @@
       <xsd:import schemaLocation="http://localhost:8733/GuessMyMessServer/Auth/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IAuthenticationService_login_InputMessage">
-    <wsdl:part name="parameters" element="tns:login" />
+  <wsdl:message name="IAuthenticationService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_login_OutputMessage">
-    <wsdl:part name="parameters" element="tns:loginResponse" />
+  <wsdl:message name="IAuthenticationService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_register_InputMessage">
-    <wsdl:part name="parameters" element="tns:register" />
+  <wsdl:message name="IAuthenticationService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_register_OutputMessage">
-    <wsdl:part name="parameters" element="tns:registerResponse" />
+  <wsdl:message name="IAuthenticationService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_verifyAccount_InputMessage">
-    <wsdl:part name="parameters" element="tns:verifyAccount" />
+  <wsdl:message name="IAuthenticationService_VerifyAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAccount" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_verifyAccount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:verifyAccountResponse" />
+  <wsdl:message name="IAuthenticationService_VerifyAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAccountResponse" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_loginAsGuest_InputMessage">
-    <wsdl:part name="parameters" element="tns:loginAsGuest" />
+  <wsdl:message name="IAuthenticationService_LoginAsGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAsGuest" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_loginAsGuest_OutputMessage">
-    <wsdl:part name="parameters" element="tns:loginAsGuestResponse" />
+  <wsdl:message name="IAuthenticationService_LoginAsGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAsGuestResponse" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_logOut_InputMessage">
-    <wsdl:part name="parameters" element="tns:logOut" />
+  <wsdl:message name="IAuthenticationService_LogOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOut" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_sendPasswordRecoveryCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:sendPasswordRecoveryCode" />
+  <wsdl:message name="IAuthenticationService_SendPasswordRecoveryCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPasswordRecoveryCode" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_sendPasswordRecoveryCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:sendPasswordRecoveryCodeResponse" />
+  <wsdl:message name="IAuthenticationService_SendPasswordRecoveryCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPasswordRecoveryCodeResponse" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_resetPasswordWithCode_InputMessage">
-    <wsdl:part name="parameters" element="tns:resetPasswordWithCode" />
+  <wsdl:message name="IAuthenticationService_ResetPasswordWithCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordWithCode" />
   </wsdl:message>
-  <wsdl:message name="IAuthenticationService_resetPasswordWithCode_OutputMessage">
-    <wsdl:part name="parameters" element="tns:resetPasswordWithCodeResponse" />
+  <wsdl:message name="IAuthenticationService_ResetPasswordWithCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordWithCodeResponse" />
   </wsdl:message>
   <wsdl:portType name="IAuthenticationService">
-    <wsdl:operation name="login">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/login" message="tns:IAuthenticationService_login_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/loginResponse" message="tns:IAuthenticationService_login_OutputMessage" />
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/Login" message="tns:IAuthenticationService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/LoginResponse" message="tns:IAuthenticationService_Login_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="register">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/register" message="tns:IAuthenticationService_register_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/registerResponse" message="tns:IAuthenticationService_register_OutputMessage" />
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/Register" message="tns:IAuthenticationService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/RegisterResponse" message="tns:IAuthenticationService_Register_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="verifyAccount">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/verifyAccount" message="tns:IAuthenticationService_verifyAccount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/verifyAccountResponse" message="tns:IAuthenticationService_verifyAccount_OutputMessage" />
+    <wsdl:operation name="VerifyAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/VerifyAccount" message="tns:IAuthenticationService_VerifyAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/VerifyAccountResponse" message="tns:IAuthenticationService_VerifyAccount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="loginAsGuest">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/loginAsGuest" message="tns:IAuthenticationService_loginAsGuest_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/loginAsGuestResponse" message="tns:IAuthenticationService_loginAsGuest_OutputMessage" />
+    <wsdl:operation name="LoginAsGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/LoginAsGuest" message="tns:IAuthenticationService_LoginAsGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/LoginAsGuestResponse" message="tns:IAuthenticationService_LoginAsGuest_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="logOut">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/logOut" message="tns:IAuthenticationService_logOut_InputMessage" />
+    <wsdl:operation name="LogOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/LogOut" message="tns:IAuthenticationService_LogOut_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="sendPasswordRecoveryCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCode" message="tns:IAuthenticationService_sendPasswordRecoveryCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCodeResponse" message="tns:IAuthenticationService_sendPasswordRecoveryCode_OutputMessage" />
+    <wsdl:operation name="SendPasswordRecoveryCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCode" message="tns:IAuthenticationService_SendPasswordRecoveryCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCodeResponse" message="tns:IAuthenticationService_SendPasswordRecoveryCode_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="resetPasswordWithCode">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/resetPasswordWithCode" message="tns:IAuthenticationService_resetPasswordWithCode_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/resetPasswordWithCodeResponse" message="tns:IAuthenticationService_resetPasswordWithCode_OutputMessage" />
+    <wsdl:operation name="ResetPasswordWithCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthenticationService/ResetPasswordWithCode" message="tns:IAuthenticationService_ResetPasswordWithCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthenticationService/ResetPasswordWithCodeResponse" message="tns:IAuthenticationService_ResetPasswordWithCode_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAuthenticationService" type="tns:IAuthenticationService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="login">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/login" style="document" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -86,8 +86,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="register">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/register" style="document" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/Register" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -95,8 +95,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="verifyAccount">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/verifyAccount" style="document" />
+    <wsdl:operation name="VerifyAccount">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/VerifyAccount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -104,8 +104,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="loginAsGuest">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/loginAsGuest" style="document" />
+    <wsdl:operation name="LoginAsGuest">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/LoginAsGuest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -113,14 +113,14 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="logOut">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/logOut" style="document" />
+    <wsdl:operation name="LogOut">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/LogOut" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="sendPasswordRecoveryCode">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCode" style="document" />
+    <wsdl:operation name="SendPasswordRecoveryCode">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -128,8 +128,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="resetPasswordWithCode">
-      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/resetPasswordWithCode" style="document" />
+    <wsdl:operation name="ResetPasswordWithCode">
+      <soap:operation soapAction="http://tempuri.org/IAuthenticationService/ResetPasswordWithCode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

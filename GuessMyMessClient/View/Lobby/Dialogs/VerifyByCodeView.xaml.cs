@@ -23,7 +23,7 @@ namespace GuessMyMessClient.View.Lobby.Dialogs
         public VerifyByCodeView()
         {
             InitializeComponent();
-            this.DataContext = new VerifyByCodeViewModel();
+            //this.DataContext = new VerifyByCodeViewModel();
         }
     }
 }

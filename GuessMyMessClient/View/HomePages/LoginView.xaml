@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GuessMyMessClient.View.HomePages"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.HomePages"
         mc:Ignorable="d"
+        xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
         d:DataContext="{d:DesignInstance Type=vm:LoginViewModel, IsDesignTimeCreatable=True}"
         Title="Login" Height="550" Width="900"
@@ -27,16 +28,20 @@
                 <TextBlock Text="{x:Static language:Lang.globalTxtEmail}"
                            FontSize="14" FontWeight="SemiBold" Foreground="Black"
                            HorizontalAlignment="Left" Margin="50,0,0,5"/>
-                <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Text="{Binding UsernameOrEmail, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="{x:Static language:Lang.globalPwdPassword}"
                            FontSize="14" FontWeight="SemiBold" Foreground="Black"
                            HorizontalAlignment="Left" Margin="50,15,0,5"/>
-                <PasswordBox x:Name="PasswordBox"/>
+                <PasswordBox 
+                    helpers:PasswordBoxHelper.Attach="True"
+                    helpers:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource InputField}"/>
 
                 <Button Content="{x:Static language:Lang.globalBtnLogIn}"
                         Style="{StaticResource GreenButton}"
                         Command="{Binding LoginCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                         Margin="0,30,0,0"/>
             </StackPanel>
         </Viewbox>

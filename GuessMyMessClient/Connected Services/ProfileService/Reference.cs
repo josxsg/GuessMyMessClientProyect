@@ -24,7 +24,10 @@ namespace GuessMyMessClient.ProfileService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string avatarPathField;
+        private int avatarIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> dateOfBirthField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
@@ -33,7 +36,7 @@ namespace GuessMyMessClient.ProfileService {
         private string firstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> genderIdField;
+        private int genderIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string lastNameField;
@@ -55,14 +58,27 @@ namespace GuessMyMessClient.ProfileService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string avatarPath {
+        public int avatarId {
             get {
-                return this.avatarPathField;
+                return this.avatarIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.avatarPathField, value) != true)) {
-                    this.avatarPathField = value;
-                    this.RaisePropertyChanged("avatarPath");
+                if ((this.avatarIdField.Equals(value) != true)) {
+                    this.avatarIdField = value;
+                    this.RaisePropertyChanged("avatarId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> dateOfBirth {
+            get {
+                return this.dateOfBirthField;
+            }
+            set {
+                if ((this.dateOfBirthField.Equals(value) != true)) {
+                    this.dateOfBirthField = value;
+                    this.RaisePropertyChanged("dateOfBirth");
                 }
             }
         }
@@ -94,7 +110,7 @@ namespace GuessMyMessClient.ProfileService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> genderId {
+        public int genderId {
             get {
                 return this.genderIdField;
             }
@@ -361,47 +377,47 @@ namespace GuessMyMessClient.ProfileService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProfileService.IUserProfileService")]
     public interface IUserProfileService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/getUserProfile", ReplyAction="http://tempuri.org/IUserProfileService/getUserProfileResponse")]
-        GuessMyMessClient.ProfileService.UserProfileDto getUserProfile(string username);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetUserProfile", ReplyAction="http://tempuri.org/IUserProfileService/GetUserProfileResponse")]
+        GuessMyMessClient.ProfileService.UserProfileDto GetUserProfile(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/getUserProfile", ReplyAction="http://tempuri.org/IUserProfileService/getUserProfileResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.UserProfileDto> getUserProfileAsync(string username);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetUserProfile", ReplyAction="http://tempuri.org/IUserProfileService/GetUserProfileResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.UserProfileDto> GetUserProfileAsync(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/updateProfile", ReplyAction="http://tempuri.org/IUserProfileService/updateProfileResponse")]
-        GuessMyMessClient.ProfileService.OperationResultDto updateProfile(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/UpdateProfile", ReplyAction="http://tempuri.org/IUserProfileService/UpdateProfileResponse")]
+        GuessMyMessClient.ProfileService.OperationResultDto UpdateProfile(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/updateProfile", ReplyAction="http://tempuri.org/IUserProfileService/updateProfileResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> updateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/UpdateProfile", ReplyAction="http://tempuri.org/IUserProfileService/UpdateProfileResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> UpdateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/requestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/requestChangeEmailResponse")]
-        GuessMyMessClient.ProfileService.OperationResultDto requestChangeEmail(string username, string newEmail);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse")]
+        GuessMyMessClient.ProfileService.OperationResultDto RequestChangeEmail(string username, string newEmail);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/requestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/requestChangeEmailResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> requestChangeEmailAsync(string username, string newEmail);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> RequestChangeEmailAsync(string username, string newEmail);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/confirmChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/confirmChangeEmailResponse")]
-        GuessMyMessClient.ProfileService.OperationResultDto confirmChangeEmail(string username, string verificationCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangeEmailResponse")]
+        GuessMyMessClient.ProfileService.OperationResultDto ConfirmChangeEmail(string username, string verificationCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/confirmChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/confirmChangeEmailResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> confirmChangeEmailAsync(string username, string verificationCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangeEmailResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> ConfirmChangeEmailAsync(string username, string verificationCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/requestChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/requestChangePasswordResponse")]
-        GuessMyMessClient.ProfileService.OperationResultDto requestChangePassword(string username);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangePasswordResponse")]
+        GuessMyMessClient.ProfileService.OperationResultDto RequestChangePassword(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/requestChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/requestChangePasswordResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> requestChangePasswordAsync(string username);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangePasswordResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> RequestChangePasswordAsync(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/confirmChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/confirmChangePasswordResponse")]
-        GuessMyMessClient.ProfileService.OperationResultDto confirmChangePassword(string username, string newPassword, string verificationCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangePasswordResponse")]
+        GuessMyMessClient.ProfileService.OperationResultDto ConfirmChangePassword(string username, string newPassword, string verificationCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/confirmChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/confirmChangePasswordResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> confirmChangePasswordAsync(string username, string newPassword, string verificationCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangePasswordResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> ConfirmChangePasswordAsync(string username, string newPassword, string verificationCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/getAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/getAvailableAvatarsResponse")]
-        GuessMyMessClient.ProfileService.AvatarDto[] getAvailableAvatars();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse")]
+        GuessMyMessClient.ProfileService.AvatarDto[] GetAvailableAvatars();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/getAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/getAvailableAvatarsResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.AvatarDto[]> getAvailableAvatarsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.AvatarDto[]> GetAvailableAvatarsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -431,60 +447,60 @@ namespace GuessMyMessClient.ProfileService {
                 base(binding, remoteAddress) {
         }
         
-        public GuessMyMessClient.ProfileService.UserProfileDto getUserProfile(string username) {
-            return base.Channel.getUserProfile(username);
+        public GuessMyMessClient.ProfileService.UserProfileDto GetUserProfile(string username) {
+            return base.Channel.GetUserProfile(username);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.UserProfileDto> getUserProfileAsync(string username) {
-            return base.Channel.getUserProfileAsync(username);
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.UserProfileDto> GetUserProfileAsync(string username) {
+            return base.Channel.GetUserProfileAsync(username);
         }
         
-        public GuessMyMessClient.ProfileService.OperationResultDto updateProfile(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData) {
-            return base.Channel.updateProfile(username, profileData);
+        public GuessMyMessClient.ProfileService.OperationResultDto UpdateProfile(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData) {
+            return base.Channel.UpdateProfile(username, profileData);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> updateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData) {
-            return base.Channel.updateProfileAsync(username, profileData);
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> UpdateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData) {
+            return base.Channel.UpdateProfileAsync(username, profileData);
         }
         
-        public GuessMyMessClient.ProfileService.OperationResultDto requestChangeEmail(string username, string newEmail) {
-            return base.Channel.requestChangeEmail(username, newEmail);
+        public GuessMyMessClient.ProfileService.OperationResultDto RequestChangeEmail(string username, string newEmail) {
+            return base.Channel.RequestChangeEmail(username, newEmail);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> requestChangeEmailAsync(string username, string newEmail) {
-            return base.Channel.requestChangeEmailAsync(username, newEmail);
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> RequestChangeEmailAsync(string username, string newEmail) {
+            return base.Channel.RequestChangeEmailAsync(username, newEmail);
         }
         
-        public GuessMyMessClient.ProfileService.OperationResultDto confirmChangeEmail(string username, string verificationCode) {
-            return base.Channel.confirmChangeEmail(username, verificationCode);
+        public GuessMyMessClient.ProfileService.OperationResultDto ConfirmChangeEmail(string username, string verificationCode) {
+            return base.Channel.ConfirmChangeEmail(username, verificationCode);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> confirmChangeEmailAsync(string username, string verificationCode) {
-            return base.Channel.confirmChangeEmailAsync(username, verificationCode);
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> ConfirmChangeEmailAsync(string username, string verificationCode) {
+            return base.Channel.ConfirmChangeEmailAsync(username, verificationCode);
         }
         
-        public GuessMyMessClient.ProfileService.OperationResultDto requestChangePassword(string username) {
-            return base.Channel.requestChangePassword(username);
+        public GuessMyMessClient.ProfileService.OperationResultDto RequestChangePassword(string username) {
+            return base.Channel.RequestChangePassword(username);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> requestChangePasswordAsync(string username) {
-            return base.Channel.requestChangePasswordAsync(username);
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> RequestChangePasswordAsync(string username) {
+            return base.Channel.RequestChangePasswordAsync(username);
         }
         
-        public GuessMyMessClient.ProfileService.OperationResultDto confirmChangePassword(string username, string newPassword, string verificationCode) {
-            return base.Channel.confirmChangePassword(username, newPassword, verificationCode);
+        public GuessMyMessClient.ProfileService.OperationResultDto ConfirmChangePassword(string username, string newPassword, string verificationCode) {
+            return base.Channel.ConfirmChangePassword(username, newPassword, verificationCode);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> confirmChangePasswordAsync(string username, string newPassword, string verificationCode) {
-            return base.Channel.confirmChangePasswordAsync(username, newPassword, verificationCode);
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> ConfirmChangePasswordAsync(string username, string newPassword, string verificationCode) {
+            return base.Channel.ConfirmChangePasswordAsync(username, newPassword, verificationCode);
         }
         
-        public GuessMyMessClient.ProfileService.AvatarDto[] getAvailableAvatars() {
-            return base.Channel.getAvailableAvatars();
+        public GuessMyMessClient.ProfileService.AvatarDto[] GetAvailableAvatars() {
+            return base.Channel.GetAvailableAvatars();
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.AvatarDto[]> getAvailableAvatarsAsync() {
-            return base.Channel.getAvailableAvatarsAsync();
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.AvatarDto[]> GetAvailableAvatarsAsync() {
+            return base.Channel.GetAvailableAvatarsAsync();
         }
     }
 }

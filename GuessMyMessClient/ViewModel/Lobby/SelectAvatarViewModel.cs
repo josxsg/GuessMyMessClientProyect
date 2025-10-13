@@ -11,12 +11,12 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.ComponentModel;
+using System.ServiceModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class SelectAvatarViewModel : ViewModelBase
     {
-        // Propiedad para comunicar el avatar seleccionado de vuelta al ViewModel padre
         public event Action<AvatarModel> AvatarSelected;
 
         private ObservableCollection<AvatarModel> _availableAvatars;
@@ -30,21 +30,38 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public AvatarModel SelectedAvatar
         {
             get => _selectedAvatar;
-            set { _selectedAvatar = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedAvatar = value;
+                OnPropertyChanged();
+                // Fuerza la re-evaluación del botón Confirmar.
+                CommandManager.InvalidateRequerySuggested();
+            }
         }
 
         public ICommand ConfirmSelectionCommand { get; }
         public ICommand CloseCommand { get; }
+        public ICommand SelectAvatarItemCommand { get; } // COMANDO PARA SELECCIONAR ÍTEM
 
         public SelectAvatarViewModel()
         {
             AvailableAvatars = new ObservableCollection<AvatarModel>();
             ConfirmSelectionCommand = new RelayCommand(ExecuteConfirmSelection, CanExecuteConfirmSelection);
             CloseCommand = new RelayCommand(CloseWindow);
-            // VERIFICACIÓN CLAVE: Solo llama a la carga si NO estamos en el diseñador
+            SelectAvatarItemCommand = new RelayCommand(ExecuteSelectAvatarItem); // Implementación
+
             if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
             {
                 LoadAvatarsAsync();
+            }
+        }
+
+        // LÓGICA DE SELECCIÓN DE ÍTEM
+        private void ExecuteSelectAvatarItem(object parameter)
+        {
+            if (parameter is AvatarModel avatar)
+            {
+                SelectedAvatar = avatar;
             }
         }
 
@@ -52,10 +69,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void ExecuteConfirmSelection(object parameter)
         {
-            // Notifica al ViewModel padre (SignUpViewModel) cuál fue el avatar elegido
             AvatarSelected?.Invoke(SelectedAvatar);
-
-            // Cierra el diálogo
             CloseWindow(parameter);
         }
 
@@ -67,48 +81,71 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        // **Nueva Lógica: Carga de Avatares del Servidor**
+        // CORRECCIÓN DEADLOCK Y CONGELAMIENTO
         private async void LoadAvatarsAsync()
         {
-            // Nota: Este método WCF (GetAvailableAvatarsAsync) debe existir en su IUserProfileService
-            IUserProfileService client = new UserProfileServiceClient();
-
             try
             {
-                // 1. LLAMADA ROBUSTA: Usamos Task.Run para llamar a la versión síncrona
-                // del proxy WCF y evitar el error de nombre del método asíncrono.
-                // El tipo de retorno es la lista o array de DTOs del SERVIDOR.
-                var serverAvatars = await Task.Run(() => client.getAvailableAvatars());
-
-                // 2. CREACIÓN DE LA COLECCIÓN LOCAL: 
-                // Esta colección es de nuestro tipo local, AvatarModel.
-                var loadedAvatars = new ObservableCollection<AvatarModel>();
-
-                // 3. MAPEANDO DE DTO (Servidor) A MODEL (Cliente)
-                // Recorremos el Array/List que viene del servidor y lo convertimos a nuestro tipo local.
-                foreach (var avatarDto in serverAvatars)
+                // 1. Ejecutar TODA la lógica pesada (WCF, ToList(), conversión) en el background.
+                var loadedAvatars = await Task.Run(() =>
                 {
-                    var avatarModel = new AvatarModel
+                    using (UserProfileServiceClient client = new UserProfileServiceClient())
                     {
-                        // Mapeo: DTO de WCF (avatarDto.idAvatar) -> Model Local (AvatarModel.Id)
-                        Id = avatarDto.idAvatar,
-                        Name = avatarDto.avatarName,
-                        ImageData = avatarDto.avatarData,
-                        // Conversión de byte[] a BitmapImage
-                        ImageSource = ConvertByteToImage(avatarDto.avatarData)
-                    };
-                    loadedAvatars.Add(avatarModel);
-                }
+                        // Obtener el Array/List del servidor
+                        List<ProfileService.AvatarDto> serverAvatars = client.GetAvailableAvatars().ToList();
 
-                AvailableAvatars = loadedAvatars;
+                        var tempAvatars = new ObservableCollection<AvatarModel>();
+
+                        foreach (var avatarDto in serverAvatars)
+                        {
+                            var avatarModel = new AvatarModel
+                            {
+                                Id = avatarDto.idAvatar,
+                                Name = avatarDto.avatarName,
+                                ImageData = avatarDto.avatarData,
+                                ImageSource = ConvertByteToImage(avatarDto.avatarData)
+                            };
+                            tempAvatars.Add(avatarModel);
+                        }
+                        return tempAvatars;
+                    }
+                }).ConfigureAwait(false); // Permite que la continuación se ejecute en el hilo de trabajo.
+
+                // 2. Actualizar la UI de forma segura con el Dispatcher.
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    AvailableAvatars = loadedAvatars;
+                    // Seleccionar el primer avatar por defecto
+                    if (AvailableAvatars.Any())
+                    {
+                        SelectedAvatar = AvailableAvatars.First();
+                    }
+                });
+            }
+            // ... (Se mantienen los catch blocks para manejo de excepciones) ...
+            catch (FaultException ex)
+            {
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    MessageBox.Show($"Error de Lógica del Servidor: {ex.Message}", "Error WCF");
+                });
+            }
+            catch (EndpointNotFoundException)
+            {
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    MessageBox.Show("Error de Conexión: El servidor no está ejecutándose.", "Error Crítico");
+                });
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar avatares: {ex.Message}", "Error de Conexión");
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    MessageBox.Show($"Error inesperado: {ex.Message}", "Error General");
+                });
             }
         }
 
-        // Método de Conversión: byte[] a BitmapImage para mostrar en XAML
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
         {
             if (imageBytes == null || imageBytes.Length == 0) return null;
@@ -123,7 +160,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 image.UriSource = null;
                 image.StreamSource = mem;
                 image.EndInit();
-                image.Freeze(); // Importante para la multihilo
+                image.Freeze();
             }
             return image;
         }

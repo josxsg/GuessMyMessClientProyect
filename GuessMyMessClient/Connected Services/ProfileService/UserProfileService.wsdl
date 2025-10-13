@@ -7,82 +7,82 @@
       <xsd:import schemaLocation="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IUserProfileService_getUserProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:getUserProfile" />
+  <wsdl:message name="IUserProfileService_GetUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfile" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_getUserProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getUserProfileResponse" />
+  <wsdl:message name="IUserProfileService_GetUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfileResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_updateProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:updateProfile" />
+  <wsdl:message name="IUserProfileService_UpdateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_updateProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:updateProfileResponse" />
+  <wsdl:message name="IUserProfileService_UpdateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_requestChangeEmail_InputMessage">
-    <wsdl:part name="parameters" element="tns:requestChangeEmail" />
+  <wsdl:message name="IUserProfileService_RequestChangeEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChangeEmail" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_requestChangeEmail_OutputMessage">
-    <wsdl:part name="parameters" element="tns:requestChangeEmailResponse" />
+  <wsdl:message name="IUserProfileService_RequestChangeEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChangeEmailResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_confirmChangeEmail_InputMessage">
-    <wsdl:part name="parameters" element="tns:confirmChangeEmail" />
+  <wsdl:message name="IUserProfileService_ConfirmChangeEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmChangeEmail" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_confirmChangeEmail_OutputMessage">
-    <wsdl:part name="parameters" element="tns:confirmChangeEmailResponse" />
+  <wsdl:message name="IUserProfileService_ConfirmChangeEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmChangeEmailResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_requestChangePassword_InputMessage">
-    <wsdl:part name="parameters" element="tns:requestChangePassword" />
+  <wsdl:message name="IUserProfileService_RequestChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChangePassword" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_requestChangePassword_OutputMessage">
-    <wsdl:part name="parameters" element="tns:requestChangePasswordResponse" />
+  <wsdl:message name="IUserProfileService_RequestChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChangePasswordResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_confirmChangePassword_InputMessage">
-    <wsdl:part name="parameters" element="tns:confirmChangePassword" />
+  <wsdl:message name="IUserProfileService_ConfirmChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmChangePassword" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_confirmChangePassword_OutputMessage">
-    <wsdl:part name="parameters" element="tns:confirmChangePasswordResponse" />
+  <wsdl:message name="IUserProfileService_ConfirmChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmChangePasswordResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_getAvailableAvatars_InputMessage">
-    <wsdl:part name="parameters" element="tns:getAvailableAvatars" />
+  <wsdl:message name="IUserProfileService_GetAvailableAvatars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableAvatars" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_getAvailableAvatars_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getAvailableAvatarsResponse" />
+  <wsdl:message name="IUserProfileService_GetAvailableAvatars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableAvatarsResponse" />
   </wsdl:message>
   <wsdl:portType name="IUserProfileService">
-    <wsdl:operation name="getUserProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/getUserProfile" message="tns:IUserProfileService_getUserProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/getUserProfileResponse" message="tns:IUserProfileService_getUserProfile_OutputMessage" />
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfile" message="tns:IUserProfileService_GetUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfileResponse" message="tns:IUserProfileService_GetUserProfile_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="updateProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/updateProfile" message="tns:IUserProfileService_updateProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/updateProfileResponse" message="tns:IUserProfileService_updateProfile_OutputMessage" />
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfile" message="tns:IUserProfileService_UpdateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfileResponse" message="tns:IUserProfileService_UpdateProfile_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="requestChangeEmail">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/requestChangeEmail" message="tns:IUserProfileService_requestChangeEmail_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/requestChangeEmailResponse" message="tns:IUserProfileService_requestChangeEmail_OutputMessage" />
+    <wsdl:operation name="RequestChangeEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmail" message="tns:IUserProfileService_RequestChangeEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse" message="tns:IUserProfileService_RequestChangeEmail_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="confirmChangeEmail">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/confirmChangeEmail" message="tns:IUserProfileService_confirmChangeEmail_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/confirmChangeEmailResponse" message="tns:IUserProfileService_confirmChangeEmail_OutputMessage" />
+    <wsdl:operation name="ConfirmChangeEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmail" message="tns:IUserProfileService_ConfirmChangeEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmailResponse" message="tns:IUserProfileService_ConfirmChangeEmail_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="requestChangePassword">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/requestChangePassword" message="tns:IUserProfileService_requestChangePassword_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/requestChangePasswordResponse" message="tns:IUserProfileService_requestChangePassword_OutputMessage" />
+    <wsdl:operation name="RequestChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangePassword" message="tns:IUserProfileService_RequestChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangePasswordResponse" message="tns:IUserProfileService_RequestChangePassword_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="confirmChangePassword">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/confirmChangePassword" message="tns:IUserProfileService_confirmChangePassword_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/confirmChangePasswordResponse" message="tns:IUserProfileService_confirmChangePassword_OutputMessage" />
+    <wsdl:operation name="ConfirmChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangePassword" message="tns:IUserProfileService_ConfirmChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangePasswordResponse" message="tns:IUserProfileService_ConfirmChangePassword_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getAvailableAvatars">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/getAvailableAvatars" message="tns:IUserProfileService_getAvailableAvatars_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/getAvailableAvatarsResponse" message="tns:IUserProfileService_getAvailableAvatars_OutputMessage" />
+    <wsdl:operation name="GetAvailableAvatars">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars" message="tns:IUserProfileService_GetAvailableAvatars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse" message="tns:IUserProfileService_GetAvailableAvatars_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserProfileService" type="tns:IUserProfileService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="getUserProfile">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/getUserProfile" style="document" />
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/GetUserProfile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,8 +90,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateProfile">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/updateProfile" style="document" />
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/UpdateProfile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -99,8 +99,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="requestChangeEmail">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/requestChangeEmail" style="document" />
+    <wsdl:operation name="RequestChangeEmail">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/RequestChangeEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -108,8 +108,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="confirmChangeEmail">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/confirmChangeEmail" style="document" />
+    <wsdl:operation name="ConfirmChangeEmail">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/ConfirmChangeEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -117,8 +117,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="requestChangePassword">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/requestChangePassword" style="document" />
+    <wsdl:operation name="RequestChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/RequestChangePassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -126,8 +126,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="confirmChangePassword">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/confirmChangePassword" style="document" />
+    <wsdl:operation name="ConfirmChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/ConfirmChangePassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -135,8 +135,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getAvailableAvatars">
-      <soap:operation soapAction="http://tempuri.org/IUserProfileService/getAvailableAvatars" style="document" />
+    <wsdl:operation name="GetAvailableAvatars">
+      <soap:operation soapAction="http://tempuri.org/IUserProfileService/GetAvailableAvatars" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

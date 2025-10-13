@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
-  <xs:element name="getUserProfile">
+  <xs:element name="GetUserProfile">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getUserProfileResponse">
+  <xs:element name="GetUserProfileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="getUserProfileResult" nillable="true" type="q1:UserProfileDto" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetUserProfileResult" nillable="true" type="q1:UserProfileDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="updateProfile">
+  <xs:element name="UpdateProfile">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
@@ -23,14 +23,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="updateProfileResponse">
+  <xs:element name="UpdateProfileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="updateProfileResult" nillable="true" type="q3:OperationResultDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="UpdateProfileResult" nillable="true" type="q3:OperationResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="requestChangeEmail">
+  <xs:element name="RequestChangeEmail">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
@@ -38,14 +38,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="requestChangeEmailResponse">
+  <xs:element name="RequestChangeEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="requestChangeEmailResult" nillable="true" type="q4:OperationResultDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="RequestChangeEmailResult" nillable="true" type="q4:OperationResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="confirmChangeEmail">
+  <xs:element name="ConfirmChangeEmail">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
@@ -53,28 +53,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="confirmChangeEmailResponse">
+  <xs:element name="ConfirmChangeEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="confirmChangeEmailResult" nillable="true" type="q5:OperationResultDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="ConfirmChangeEmailResult" nillable="true" type="q5:OperationResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="requestChangePassword">
+  <xs:element name="RequestChangePassword">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="requestChangePasswordResponse">
+  <xs:element name="RequestChangePasswordResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="requestChangePasswordResult" nillable="true" type="q6:OperationResultDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="RequestChangePasswordResult" nillable="true" type="q6:OperationResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="confirmChangePassword">
+  <xs:element name="ConfirmChangePassword">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
@@ -83,22 +83,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="confirmChangePasswordResponse">
+  <xs:element name="ConfirmChangePasswordResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="confirmChangePasswordResult" nillable="true" type="q7:OperationResultDto" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="ConfirmChangePasswordResult" nillable="true" type="q7:OperationResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAvailableAvatars">
+  <xs:element name="GetAvailableAvatars">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAvailableAvatarsResponse">
+  <xs:element name="GetAvailableAvatarsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="getAvailableAvatarsResult" nillable="true" type="q8:ArrayOfAvatarDto" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetAvailableAvatarsResult" nillable="true" type="q8:ArrayOfAvatarDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

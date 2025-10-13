@@ -16,10 +16,10 @@
     <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
         <StackPanel Margin="20">
             <TextBlock Text="{x:Static language:Lang.editAvatarLbSelect}"
-                       HorizontalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       Margin="0,0,0,20"/>
+                   HorizontalAlignment="Center"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
 
             <ItemsControl ItemsSource="{Binding AvailableAvatars}">
                 <ItemsControl.ItemsPanel>
@@ -31,7 +31,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Style="{StaticResource JoinButton}" 
-                                Command="{Binding DataContext.SelectionCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                Command="{Binding DataContext.SelectAvatarItemCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"
                                 CommandParameter="{Binding}"
                                 Margin="10" 
                                 Width="80" 
@@ -40,27 +40,27 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border x:Name="border"
-                                            CornerRadius="40" 
-                                            Background="LightGray"
-                                            BorderBrush="{Binding DataContext.SelectedAvatar, 
-                                                Converter={StaticResource AvatarBorderConverter}, 
-                                                ConverterParameter={Binding},
-                                                RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"
-                                            BorderThickness="3">
+                                        CornerRadius="40" 
+                                        Background="LightGray"
+                                        BorderBrush="Gray"
+                                        BorderThickness="3">
 
                                         <Image Source="{Binding ImageSource}" Stretch="Uniform" Margin="5"/>
                                     </Border>
-                                    <ControlTemplate.Triggers>
-                                        <DataTrigger Binding="{Binding DataContext.SelectedAvatar, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Value="{x:Null}">
-                                            <Setter TargetName="border" Property="BorderBrush" Value="Gray"/>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding}" Value="{Binding DataContext.SelectedAvatar, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
-                                            <Setter TargetName="border" Property="BorderBrush" Value="#FFD5A100"/>
-                                        </DataTrigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
+                                <ControlTemplate.Triggers>
+
+                                    <DataTrigger 
+                                        Binding="{Binding DataContext.SelectedAvatar, 
+                          RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
+                                        Value="{Binding}">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="#FFD5A100"/>
+                                        <Setter TargetName="border" Property="BorderThickness" Value="5"/>
+                                    </DataTrigger>
+
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
                             </Button.Template>
-                        </Button>
+                            </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

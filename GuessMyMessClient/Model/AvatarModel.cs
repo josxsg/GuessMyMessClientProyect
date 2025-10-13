@@ -12,8 +12,6 @@ namespace GuessMyMessClient.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public byte[] ImageData { get; set; }
-
-        // Propiedad de conveniencia para mostrar la imagen en XAML
         public BitmapImage ImageSource { get; set; }
     }
 }

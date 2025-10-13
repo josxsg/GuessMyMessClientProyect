@@ -86,7 +86,10 @@ namespace GuessMyMessClient.AuthService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string avatarPathField;
+        private int avatarIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> dateOfBirthField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
@@ -95,7 +98,7 @@ namespace GuessMyMessClient.AuthService {
         private string firstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> genderIdField;
+        private int genderIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string lastNameField;
@@ -117,14 +120,27 @@ namespace GuessMyMessClient.AuthService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string avatarPath {
+        public int avatarId {
             get {
-                return this.avatarPathField;
+                return this.avatarIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.avatarPathField, value) != true)) {
-                    this.avatarPathField = value;
-                    this.RaisePropertyChanged("avatarPath");
+                if ((this.avatarIdField.Equals(value) != true)) {
+                    this.avatarIdField = value;
+                    this.RaisePropertyChanged("avatarId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> dateOfBirth {
+            get {
+                return this.dateOfBirthField;
+            }
+            set {
+                if ((this.dateOfBirthField.Equals(value) != true)) {
+                    this.dateOfBirthField = value;
+                    this.RaisePropertyChanged("dateOfBirth");
                 }
             }
         }
@@ -156,7 +172,7 @@ namespace GuessMyMessClient.AuthService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> genderId {
+        public int genderId {
             get {
                 return this.genderIdField;
             }
@@ -283,47 +299,47 @@ namespace GuessMyMessClient.AuthService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AuthService.IAuthenticationService")]
     public interface IAuthenticationService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/login", ReplyAction="http://tempuri.org/IAuthenticationService/loginResponse")]
-        GuessMyMessClient.AuthService.OperationResultDto login(string email, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Login", ReplyAction="http://tempuri.org/IAuthenticationService/LoginResponse")]
+        GuessMyMessClient.AuthService.OperationResultDto Login(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/login", ReplyAction="http://tempuri.org/IAuthenticationService/loginResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> loginAsync(string email, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Login", ReplyAction="http://tempuri.org/IAuthenticationService/LoginResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> LoginAsync(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/register", ReplyAction="http://tempuri.org/IAuthenticationService/registerResponse")]
-        GuessMyMessClient.AuthService.OperationResultDto register(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Register", ReplyAction="http://tempuri.org/IAuthenticationService/RegisterResponse")]
+        GuessMyMessClient.AuthService.OperationResultDto Register(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/register", ReplyAction="http://tempuri.org/IAuthenticationService/registerResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> registerAsync(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Register", ReplyAction="http://tempuri.org/IAuthenticationService/RegisterResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> RegisterAsync(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/verifyAccount", ReplyAction="http://tempuri.org/IAuthenticationService/verifyAccountResponse")]
-        GuessMyMessClient.AuthService.OperationResultDto verifyAccount(string email, string verificationCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/VerifyAccount", ReplyAction="http://tempuri.org/IAuthenticationService/VerifyAccountResponse")]
+        GuessMyMessClient.AuthService.OperationResultDto VerifyAccount(string email, string verificationCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/verifyAccount", ReplyAction="http://tempuri.org/IAuthenticationService/verifyAccountResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> verifyAccountAsync(string email, string verificationCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/VerifyAccount", ReplyAction="http://tempuri.org/IAuthenticationService/VerifyAccountResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> VerifyAccountAsync(string email, string verificationCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/loginAsGuest", ReplyAction="http://tempuri.org/IAuthenticationService/loginAsGuestResponse")]
-        GuessMyMessClient.AuthService.OperationResultDto loginAsGuest(string username, string avatarPath);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/LoginAsGuest", ReplyAction="http://tempuri.org/IAuthenticationService/LoginAsGuestResponse")]
+        GuessMyMessClient.AuthService.OperationResultDto LoginAsGuest(string username, string avatarPath);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/loginAsGuest", ReplyAction="http://tempuri.org/IAuthenticationService/loginAsGuestResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> loginAsGuestAsync(string username, string avatarPath);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/LoginAsGuest", ReplyAction="http://tempuri.org/IAuthenticationService/LoginAsGuestResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> LoginAsGuestAsync(string username, string avatarPath);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAuthenticationService/logOut")]
-        void logOut(string username);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAuthenticationService/LogOut")]
+        void LogOut(string username);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAuthenticationService/logOut")]
-        System.Threading.Tasks.Task logOutAsync(string username);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAuthenticationService/LogOut")]
+        System.Threading.Tasks.Task LogOutAsync(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCode", ReplyAction="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCodeResponse")]
-        GuessMyMessClient.AuthService.OperationResultDto sendPasswordRecoveryCode(string email);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCode", ReplyAction="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCodeResponse")]
+        GuessMyMessClient.AuthService.OperationResultDto SendPasswordRecoveryCode(string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCode", ReplyAction="http://tempuri.org/IAuthenticationService/sendPasswordRecoveryCodeResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> sendPasswordRecoveryCodeAsync(string email);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCode", ReplyAction="http://tempuri.org/IAuthenticationService/SendPasswordRecoveryCodeResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> SendPasswordRecoveryCodeAsync(string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/resetPasswordWithCode", ReplyAction="http://tempuri.org/IAuthenticationService/resetPasswordWithCodeResponse")]
-        GuessMyMessClient.AuthService.OperationResultDto resetPasswordWithCode(string email, string code, string newPassword);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/ResetPasswordWithCode", ReplyAction="http://tempuri.org/IAuthenticationService/ResetPasswordWithCodeResponse")]
+        GuessMyMessClient.AuthService.OperationResultDto ResetPasswordWithCode(string email, string code, string newPassword);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/resetPasswordWithCode", ReplyAction="http://tempuri.org/IAuthenticationService/resetPasswordWithCodeResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> resetPasswordWithCodeAsync(string email, string code, string newPassword);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/ResetPasswordWithCode", ReplyAction="http://tempuri.org/IAuthenticationService/ResetPasswordWithCodeResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> ResetPasswordWithCodeAsync(string email, string code, string newPassword);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -353,60 +369,60 @@ namespace GuessMyMessClient.AuthService {
                 base(binding, remoteAddress) {
         }
         
-        public GuessMyMessClient.AuthService.OperationResultDto login(string email, string password) {
-            return base.Channel.login(email, password);
+        public GuessMyMessClient.AuthService.OperationResultDto Login(string email, string password) {
+            return base.Channel.Login(email, password);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> loginAsync(string email, string password) {
-            return base.Channel.loginAsync(email, password);
+        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> LoginAsync(string email, string password) {
+            return base.Channel.LoginAsync(email, password);
         }
         
-        public GuessMyMessClient.AuthService.OperationResultDto register(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password) {
-            return base.Channel.register(userProfile, password);
+        public GuessMyMessClient.AuthService.OperationResultDto Register(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password) {
+            return base.Channel.Register(userProfile, password);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> registerAsync(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password) {
-            return base.Channel.registerAsync(userProfile, password);
+        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> RegisterAsync(GuessMyMessClient.AuthService.UserProfileDto userProfile, string password) {
+            return base.Channel.RegisterAsync(userProfile, password);
         }
         
-        public GuessMyMessClient.AuthService.OperationResultDto verifyAccount(string email, string verificationCode) {
-            return base.Channel.verifyAccount(email, verificationCode);
+        public GuessMyMessClient.AuthService.OperationResultDto VerifyAccount(string email, string verificationCode) {
+            return base.Channel.VerifyAccount(email, verificationCode);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> verifyAccountAsync(string email, string verificationCode) {
-            return base.Channel.verifyAccountAsync(email, verificationCode);
+        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> VerifyAccountAsync(string email, string verificationCode) {
+            return base.Channel.VerifyAccountAsync(email, verificationCode);
         }
         
-        public GuessMyMessClient.AuthService.OperationResultDto loginAsGuest(string username, string avatarPath) {
-            return base.Channel.loginAsGuest(username, avatarPath);
+        public GuessMyMessClient.AuthService.OperationResultDto LoginAsGuest(string username, string avatarPath) {
+            return base.Channel.LoginAsGuest(username, avatarPath);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> loginAsGuestAsync(string username, string avatarPath) {
-            return base.Channel.loginAsGuestAsync(username, avatarPath);
+        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> LoginAsGuestAsync(string username, string avatarPath) {
+            return base.Channel.LoginAsGuestAsync(username, avatarPath);
         }
         
-        public void logOut(string username) {
-            base.Channel.logOut(username);
+        public void LogOut(string username) {
+            base.Channel.LogOut(username);
         }
         
-        public System.Threading.Tasks.Task logOutAsync(string username) {
-            return base.Channel.logOutAsync(username);
+        public System.Threading.Tasks.Task LogOutAsync(string username) {
+            return base.Channel.LogOutAsync(username);
         }
         
-        public GuessMyMessClient.AuthService.OperationResultDto sendPasswordRecoveryCode(string email) {
-            return base.Channel.sendPasswordRecoveryCode(email);
+        public GuessMyMessClient.AuthService.OperationResultDto SendPasswordRecoveryCode(string email) {
+            return base.Channel.SendPasswordRecoveryCode(email);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> sendPasswordRecoveryCodeAsync(string email) {
-            return base.Channel.sendPasswordRecoveryCodeAsync(email);
+        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> SendPasswordRecoveryCodeAsync(string email) {
+            return base.Channel.SendPasswordRecoveryCodeAsync(email);
         }
         
-        public GuessMyMessClient.AuthService.OperationResultDto resetPasswordWithCode(string email, string code, string newPassword) {
-            return base.Channel.resetPasswordWithCode(email, code, newPassword);
+        public GuessMyMessClient.AuthService.OperationResultDto ResetPasswordWithCode(string email, string code, string newPassword) {
+            return base.Channel.ResetPasswordWithCode(email, code, newPassword);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> resetPasswordWithCodeAsync(string email, string code, string newPassword) {
-            return base.Channel.resetPasswordWithCodeAsync(email, code, newPassword);
+        public System.Threading.Tasks.Task<GuessMyMessClient.AuthService.OperationResultDto> ResetPasswordWithCodeAsync(string email, string code, string newPassword) {
+            return base.Channel.ResetPasswordWithCodeAsync(email, code, newPassword);
         }
     }
 }
