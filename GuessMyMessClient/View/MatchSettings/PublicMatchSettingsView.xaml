@@ -92,14 +92,15 @@ VerticalAlignment="Top" Margin="108,298,676,0"/>
         <ComboBox Width="200"
           HorizontalAlignment="Left"
           VerticalAlignment="Top"
-          FontSize="15"
-          Margin="232,302,0,0">
+          Margin="232,290,0,0"
+          Height="40"
+          Style="{StaticResource ComboBoxStyle}">
+
             <ComboBoxItem Content="{x:Static language:Lang.createGameCbEasy}"/>
             <ComboBoxItem Content="{x:Static language:Lang.createGameCbIntermediate}"/>
             <ComboBoxItem Content="{x:Static language:Lang.createGameCbHard}"/>
 
         </ComboBox>
-
         <Button 
 Content="{x:Static language:Lang.createGameBtnCreate}" 
 Style="{StaticResource JoinButton}" 

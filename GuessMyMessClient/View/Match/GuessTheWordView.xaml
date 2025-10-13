@@ -20,18 +20,21 @@
 Text="{x:Static language:Lang.guessScreenLbTitleGuessWord}"
 FontSize="30" 
 FontWeight="Bold" 
-Margin="318,85,318,402"/>
+Margin="318,60,318,427"/>
+
+        <Label Content="" 
+Style="{StaticResource TextBlock}" Margin="156,112,104,133"/>
 
         <TextBox
           Height="39"
-          Margin="120,379,388,116"
+          Margin="120,416,388,79"
           Style="{StaticResource TextBox}"/>
 
         <Button 
 Content="{x:Static language:Lang.globalBtnConfirm}" 
 Style="{StaticResource ConfirmButton}" 
 FontSize="25"
-VerticalAlignment="Top" Margin="646,377,74,0" Height="41"/>
+VerticalAlignment="Top" Margin="639,406,81,0" Height="41"/>
 
     </Grid>
 </Window>
