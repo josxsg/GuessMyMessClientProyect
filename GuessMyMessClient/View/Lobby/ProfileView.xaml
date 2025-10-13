@@ -9,36 +9,40 @@
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
         d:DataContext="{d:DesignInstance Type=vm:ProfileViewModel, IsDesignTimeCreatable=True}"
         d:DesignHeight="450" d:DesignWidth="300">
-    <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
+    <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15" Margin="0,0,0,-45">
         <StackPanel>
             <TextBlock Text="{x:Static language:Lang.editProfileLbMyProfile}" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
 
             <TextBlock Text="{x:Static language:Lang.globalLbName}" FontWeight="SemiBold"/>
-            <TextBox Text="{Binding Name}" IsReadOnly="False" Margin="0,2,0,10" Width="250"/>
+            <TextBox Text="{Binding FirstName}" IsReadOnly="False" Margin="0,2,0,10" Width="250"/>
 
             <TextBlock Text="{x:Static language:Lang.globalLbLastName}" FontWeight="SemiBold"/>
             <TextBox Text="{Binding LastName}" IsReadOnly="False" Margin="0,2,0,10" Width="250"/>
 
             <TextBlock Text="{x:Static language:Lang.globalLbEmail}" FontWeight="SemiBold"/>
-            <TextBox Text="{Binding Email}" IsReadOnly="True" Margin="0,2,0,10" Width="250"/>
+
+            <TextBox Text="{Binding Email, Mode=OneWay}" IsReadOnly="True" Margin="0,2,0,10" Width="250"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,20">
-                <RadioButton GroupName="ProfileGender" IsChecked="{Binding IsMale}" Style="{StaticResource GenderRadioButtonStyle}" IsEnabled="False">
+                <RadioButton GroupName="ProfileGender" IsChecked="{Binding IsMale, Mode=OneWay}" Style="{StaticResource GenderRadioButtonStyle}" IsEnabled="False">
                     <Image Source="/Resources/Images/male.png" Height="25"/>
                 </RadioButton>
-                <RadioButton Content="{x:Static language:Lang.globalCmbNonBinary}" GroupName="ProfileGender" IsChecked="{Binding IsNonBinary}" Style="{StaticResource GenderRadioButtonStyle}" Margin="5,0" IsEnabled="False"/>
-                <RadioButton GroupName="ProfileGender" IsChecked="{Binding IsFemale}" Style="{StaticResource GenderRadioButtonStyle}" IsEnabled="False">
+                <RadioButton Content="{x:Static language:Lang.globalCmbNonBinary}" GroupName="ProfileGender" IsChecked="{Binding IsNonBinary, Mode=OneWay}" Style="{StaticResource GenderRadioButtonStyle}" Margin="5,0" IsEnabled="False"/>
+                <RadioButton GroupName="ProfileGender" IsChecked="{Binding IsFemale, Mode=OneWay}" Style="{StaticResource GenderRadioButtonStyle}" IsEnabled="False">
                     <Image Source="/Resources/Images/female.png" Height="25"/>
                 </RadioButton>
             </StackPanel>
 
             <Button Content="{x:Static language:Lang.editProfileBtnChangeEmail}" 
                     Style="{StaticResource YellowButton}" 
-                    Command="{Binding ChangeEmailCommand}" Height="28" Width="230"/>
+                    Command="{Binding ChangeEmailCommand}" Height="28" Width="230" Margin="0,0,0,8"/>
 
             <Button Content="{x:Static language:Lang.editProfileBtnChangePsw}" 
                     Style="{StaticResource BlueButton}" 
                     Command="{Binding ChangePasswordCommand}" Height="28" Width="230"/>
+            <Button Content="{x:Static language:Lang.editProfileBtnSaveChanges}"
+                    Style="{StaticResource GreenButton}"
+                    Command="{Binding SaveProfileCommand}" Width="230" Height="28"/>
 
         </StackPanel>
     </Border>

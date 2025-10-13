@@ -412,6 +412,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Save Changes.
+        /// </summary>
+        public static string editProfileBtnSaveChanges {
+            get {
+                return ResourceManager.GetString("editProfileBtnSaveChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a My Profile.
         /// </summary>
         public static string editProfileLbMyProfile {
@@ -903,15 +912,6 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string socialTfSearchPlayers {
             get {
                 return ResourceManager.GetString("socialTfSearchPlayers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

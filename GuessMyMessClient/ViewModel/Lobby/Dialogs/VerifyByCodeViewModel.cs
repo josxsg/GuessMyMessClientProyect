@@ -64,13 +64,15 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         private void OpenLoginWindow(object parameter)
         {
+            
+
+            var loginView = new LoginView();
+            loginView.Show();
+
             if (parameter is Window verifyWindow)
             {
                 verifyWindow.Close();
             }
-
-            var loginView = new LoginView();
-            loginView.Show();
         }
 
         private void CloseWindow(object parameter)

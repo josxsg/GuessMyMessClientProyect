@@ -24,28 +24,25 @@ namespace GuessMyMessClient.ProfileService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int avatarIdField;
+        private int AvatarIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> dateOfBirthField;
+        private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
+        private string FirstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string firstNameField;
+        private int GenderIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int genderIdField;
+        private string LastNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lastNameField;
+        private string UsernameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private GuessMyMessClient.ProfileService.SocialNetworkDto[] socialNetworksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string usernameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -58,79 +55,79 @@ namespace GuessMyMessClient.ProfileService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int avatarId {
+        public int AvatarId {
             get {
-                return this.avatarIdField;
+                return this.AvatarIdField;
             }
             set {
-                if ((this.avatarIdField.Equals(value) != true)) {
-                    this.avatarIdField = value;
-                    this.RaisePropertyChanged("avatarId");
+                if ((this.AvatarIdField.Equals(value) != true)) {
+                    this.AvatarIdField = value;
+                    this.RaisePropertyChanged("AvatarId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> dateOfBirth {
+        public string Email {
             get {
-                return this.dateOfBirthField;
+                return this.EmailField;
             }
             set {
-                if ((this.dateOfBirthField.Equals(value) != true)) {
-                    this.dateOfBirthField = value;
-                    this.RaisePropertyChanged("dateOfBirth");
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
+        public string FirstName {
             get {
-                return this.emailField;
+                return this.FirstNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string firstName {
+        public int GenderId {
             get {
-                return this.firstNameField;
+                return this.GenderIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.firstNameField, value) != true)) {
-                    this.firstNameField = value;
-                    this.RaisePropertyChanged("firstName");
+                if ((this.GenderIdField.Equals(value) != true)) {
+                    this.GenderIdField = value;
+                    this.RaisePropertyChanged("GenderId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int genderId {
+        public string LastName {
             get {
-                return this.genderIdField;
+                return this.LastNameField;
             }
             set {
-                if ((this.genderIdField.Equals(value) != true)) {
-                    this.genderIdField = value;
-                    this.RaisePropertyChanged("genderId");
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lastName {
+        public string Username {
             get {
-                return this.lastNameField;
+                return this.UsernameField;
             }
             set {
-                if ((object.ReferenceEquals(this.lastNameField, value) != true)) {
-                    this.lastNameField = value;
-                    this.RaisePropertyChanged("lastName");
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
                 }
             }
         }
@@ -144,19 +141,6 @@ namespace GuessMyMessClient.ProfileService {
                 if ((object.ReferenceEquals(this.socialNetworksField, value) != true)) {
                     this.socialNetworksField = value;
                     this.RaisePropertyChanged("socialNetworks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.usernameField, value) != true)) {
-                    this.usernameField = value;
-                    this.RaisePropertyChanged("username");
                 }
             }
         }
