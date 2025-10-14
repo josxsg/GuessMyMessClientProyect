@@ -17,6 +17,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class SelectAvatarViewModel : ViewModelBase
     {
+        private readonly int _currentAvatarId;
         public event Action<AvatarModel> AvatarSelected;
 
         private ObservableCollection<AvatarModel> _availableAvatars;
@@ -32,9 +33,20 @@ namespace GuessMyMessClient.ViewModel.Lobby
             get => _selectedAvatar;
             set
             {
+                // --- LÓGICA ACTUALIZADA AQUÍ ---
+                if (_selectedAvatar != null)
+                {
+                    _selectedAvatar.IsSelected = false; // Deselecciona el anterior
+                }
+
                 _selectedAvatar = value;
+
+                if (_selectedAvatar != null)
+                {
+                    _selectedAvatar.IsSelected = true; // Selecciona el nuevo
+                }
+
                 OnPropertyChanged();
-                // Fuerza la re-evaluación del botón Confirmar.
                 CommandManager.InvalidateRequerySuggested();
             }
         }
@@ -43,12 +55,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public ICommand CloseCommand { get; }
         public ICommand SelectAvatarItemCommand { get; } // COMANDO PARA SELECCIONAR ÍTEM
 
-        public SelectAvatarViewModel()
+        public SelectAvatarViewModel(int currentAvatarId = 1)
         {
+            _currentAvatarId = currentAvatarId; // Guardamos el ID
             AvailableAvatars = new ObservableCollection<AvatarModel>();
             ConfirmSelectionCommand = new RelayCommand(ExecuteConfirmSelection, CanExecuteConfirmSelection);
             CloseCommand = new RelayCommand(CloseWindow);
-            SelectAvatarItemCommand = new RelayCommand(ExecuteSelectAvatarItem); // Implementación
+            SelectAvatarItemCommand = new RelayCommand(ExecuteSelectAvatarItem);
 
             if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
             {
@@ -115,8 +128,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     AvailableAvatars = loadedAvatars;
-                    // Seleccionar el primer avatar por defecto
-                    if (AvailableAvatars.Any())
+                    SelectedAvatar = AvailableAvatars.FirstOrDefault(a => a.Id == _currentAvatarId);
+
+                    // Si por alguna razón no se encuentra, seleccionar el primero como fallback.
+                    if (SelectedAvatar == null && AvailableAvatars.Any())
                     {
                         SelectedAvatar = AvailableAvatars.First();
                     }

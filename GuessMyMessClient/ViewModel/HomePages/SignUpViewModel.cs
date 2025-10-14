@@ -19,7 +19,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
 {
     public class SignUpViewModel : ViewModelBase
     {
-        // Propiedades de la vista
+        // ... (tus otras propiedades como Username, Email, etc. se mantienen igual)
         private string _username;
         public string Username { get => _username; set { _username = value; OnPropertyChanged(); } }
         private string _firstName;
@@ -28,10 +28,8 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public string LastName { get => _lastName; set { _lastName = value; OnPropertyChanged(); } }
         private string _email;
         public string Email { get => _email; set { _email = value; OnPropertyChanged(); } }
-        private string _password; // Enlazada a través del PasswordBoxHelper
+        private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
-
-        // Propiedades de la UI para Género
         private bool _isMale;
         public bool IsMale { get => _isMale; set { _isMale = value; OnPropertyChanged(); } }
         private bool _isFemale;
@@ -40,13 +38,17 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public bool IsNonBinary { get => _isNonBinary; set { _isNonBinary = value; OnPropertyChanged(); } }
 
 
-        // Propiedades de Avatar Seleccionado
+        // --- Propiedades de Avatar ---
         private int _selectedAvatarId = 1; // ID 1 = Avatar por defecto
         public int SelectedAvatarId { get => _selectedAvatarId; set { _selectedAvatarId = value; OnPropertyChanged(); } }
-        private BitmapImage _selectedAvatarImage;
-        public BitmapImage SelectedAvatarImage { get => _selectedAvatarImage; set { _selectedAvatarImage = value; OnPropertyChanged(); } }
 
-        // Comandos
+        private BitmapImage _selectedAvatarImage;
+        public BitmapImage SelectedAvatarImage
+        {
+            get => _selectedAvatarImage;
+            set { _selectedAvatarImage = value; OnPropertyChanged(); }
+        }
+
         public ICommand SignUpCommand { get; }
         public ICommand SelectAvatarCommand { get; }
 
@@ -54,10 +56,62 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             SignUpCommand = new RelayCommand(ExecuteSignUp, CanExecuteSignUp);
             SelectAvatarCommand = new RelayCommand(OpenSelectAvatarDialog);
-            // Iniciar con selección de género por defecto (o ninguno)
-            IsMale = true;
+            IsMale = true; // Género por defecto
+
+            // Cargar un avatar por defecto al iniciar
+            LoadDefaultAvatar();
         }
 
+        private async void LoadDefaultAvatar()
+        {
+            // Carga el primer avatar de la lista como predeterminado
+            try
+            {
+                using (var client = new ProfileService.UserProfileServiceClient())
+                {
+                    var avatars = await client.GetAvailableAvatarsAsync();
+                    if (avatars.Any())
+                    {
+                        var defaultAvatar = avatars.First();
+                        SelectedAvatarId = defaultAvatar.idAvatar;
+                        SelectedAvatarImage = SelectAvatarViewModel.ConvertByteToImage(defaultAvatar.avatarData);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar error si el servicio no está disponible al inicio
+                Console.WriteLine("No se pudo cargar el avatar por defecto: " + ex.Message);
+            }
+        }
+
+        private void OpenSelectAvatarDialog(object parameter)
+        {
+            var selectAvatarView = new SelectAvatarView();
+
+            // --- CAMBIO AQUÍ: Pasa el ID del avatar actual al constructor ---
+            var selectAvatarViewModel = new SelectAvatarViewModel(this.SelectedAvatarId);
+
+            selectAvatarViewModel.AvatarSelected += OnAvatarSelected;
+            selectAvatarView.DataContext = selectAvatarViewModel;
+            selectAvatarView.ShowDialog();
+            selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
+        }
+
+        /// <summary>
+        /// Este método se ejecuta cuando el evento 'AvatarSelected' se dispara
+        /// desde el SelectAvatarViewModel.
+        /// </summary>
+        private void OnAvatarSelected(AvatarModel avatar)
+        {
+            if (avatar != null)
+            {
+                SelectedAvatarId = avatar.Id;
+                SelectedAvatarImage = avatar.ImageSource; // <- La magia sucede aquí
+            }
+        }
+
+        // ... (El resto de tus métodos como ExecuteSignUp, CanExecuteSignUp, etc., se mantienen igual) ...
         private bool CanExecuteSignUp(object parameter)
         {
             return !string.IsNullOrWhiteSpace(Username) &&
@@ -80,14 +134,14 @@ namespace GuessMyMessClient.ViewModel.HomePages
             else if (IsNonBinary) genderId = 3;
 
 
-            UserProfileDto newProfile = new UserProfileDto
+            AuthService.UserProfileDto newProfile = new AuthService.UserProfileDto
             {
-                username = Username,
-                firstName = FirstName,
-                lastName = LastName,
-                email = Email,
-                genderId = genderId,
-                avatarId = SelectedAvatarId
+                Username = Username,
+                FirstName = FirstName,
+                LastName = LastName,
+                Email = Email,
+                GenderId = genderId,
+                AvatarId = SelectedAvatarId
             };
 
             // Iniciar el cliente WCF en un bloque using
@@ -119,31 +173,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 }
             }
         }
-
-        private void OpenSelectAvatarDialog(object parameter)
-        {
-            var selectAvatarView = new SelectAvatarView();
-            var selectAvatarViewModel = new SelectAvatarViewModel();
-
-            // Suscribirse al evento para recibir el avatar seleccionado
-            selectAvatarViewModel.AvatarSelected += OnAvatarSelected;
-
-            selectAvatarView.DataContext = selectAvatarViewModel;
-            selectAvatarView.ShowDialog();
-
-            // Limpiar la suscripción
-            selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
-        }
-
-        private void OnAvatarSelected(AvatarModel avatar)
-        {
-            if (avatar != null)
-            {
-                SelectedAvatarId = avatar.Id;
-                SelectedAvatarImage = avatar.ImageSource;
-            }
-        }
-
         private void OpenVerificationDialog(object parameter)
         {
             /// El orden correcto es ABRIR la nueva ventana, y luego CERRAR la vieja.

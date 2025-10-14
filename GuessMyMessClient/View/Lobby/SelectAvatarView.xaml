@@ -27,7 +27,6 @@
                         <WrapPanel HorizontalAlignment="Center" MaxWidth="500"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Style="{StaticResource JoinButton}" 
@@ -44,23 +43,17 @@
                                         Background="LightGray"
                                         BorderBrush="Gray"
                                         BorderThickness="3">
-
                                         <Image Source="{Binding ImageSource}" Stretch="Uniform" Margin="5"/>
                                     </Border>
-                                <ControlTemplate.Triggers>
-
-                                    <DataTrigger 
-                                        Binding="{Binding DataContext.SelectedAvatar, 
-                          RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
-                                        Value="{Binding}">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#FFD5A100"/>
-                                        <Setter TargetName="border" Property="BorderThickness" Value="5"/>
-                                    </DataTrigger>
-
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter TargetName="border" Property="BorderBrush" Value="#FFD5A100"/>
+                                            <Setter TargetName="border" Property="BorderThickness" Value="5"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
                             </Button.Template>
-                            </Button>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

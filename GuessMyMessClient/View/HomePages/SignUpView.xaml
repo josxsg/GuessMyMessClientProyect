@@ -62,6 +62,9 @@
 
                     <Grid Grid.Column="1" VerticalAlignment="Top" Margin="20,40" Width="150" Height="150">
                         <Ellipse Fill="LightGray" Stroke="Black" StrokeThickness="2"/>
+
+                        <Image Source="{Binding SelectedAvatarImage}" Stretch="Uniform" Margin="10"/>
+
                         <Button Style="{StaticResource EditButtonStyle}" Width="40" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,-5,-5"
                                 Command="{Binding SelectAvatarCommand}"
                                 ToolTip="{x:Static language:Lang.editAvatarLbSelect}"/>

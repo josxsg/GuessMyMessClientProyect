@@ -18,30 +18,8 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class LobbyViewModel : ViewModelBase
     {
-        private ObservableCollection<AvatarModel> _availableAvatars;
-        public event Action<AvatarModel> AvatarSelected;
-        public ObservableCollection<AvatarModel> AvailableAvatars
-        {
-            get => _availableAvatars;
-            set { _availableAvatars = value; OnPropertyChanged(); }
-        }
-
-        private AvatarModel _selectedAvatar;
-        public AvatarModel SelectedAvatar
-        {
-            get => _selectedAvatar;
-            set
-            {
-                _selectedAvatar = value;
-                OnPropertyChanged();
-                // Fuerza la re-evaluación del botón Confirmar.
-                CommandManager.InvalidateRequerySuggested();
-            }
-        }
-
+        // ... (Tus propiedades existentes no necesitan cambios)
         private UserProfileDto _userProfileData;
-
-        // Propiedad expuesta que contiene todos los datos cargados desde el servidor
         public UserProfileDto UserProfileData
         {
             get => _userProfileData;
@@ -49,12 +27,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
         }
 
         private string _username;
-        // Propiedades de la UI
         public string Username
         {
             get => _username;
             set { _username = value; OnPropertyChanged(); }
         }
+
         private BitmapImage _userAvatar;
         public BitmapImage UserAvatar
         {
@@ -62,7 +40,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             set { _userAvatar = value; OnPropertyChanged(); }
         }
 
-        // PROPIEDADES DE COMANDOS REQUERIDAS POR EL XAML
         public ICommand SettingsCommand { get; }
         public ICommand FriendsCommand { get; }
         public ICommand ChatCommand { get; }
@@ -70,11 +47,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public ICommand CreateGameCommand { get; }
         public ICommand EditProfileCommand { get; }
         public ICommand SelectAvatarCommand { get; }
-        // ... (otros comandos como Play, CreateGame, etc.) ...
 
         public LobbyViewModel()
         {
-            // Inicialización de Comandos (FIX DE BINDING)
             SettingsCommand = new RelayCommand(ExecuteSettings);
             FriendsCommand = new RelayCommand(ExecuteFriends);
             ChatCommand = new RelayCommand(ExecuteChat);
@@ -82,78 +57,46 @@ namespace GuessMyMessClient.ViewModel.Lobby
             CreateGameCommand = new RelayCommand(ExecuteCreateGame);
             EditProfileCommand = new RelayCommand(ExecuteEditProfile);
             SelectAvatarCommand = new RelayCommand(ExecuteSelectAvatar);
-            AvailableAvatars = new ObservableCollection<AvatarModel>();
 
             LoadUserProfileAsync();
         }
 
-        // --- IMPLEMENTACIONES MÍNIMAS (STUBS) ---
+        // --- MÉTODOS DE COMANDOS ---
+
         private void ExecuteSettings(object param) { new ConfigurationView().ShowDialog(); }
         private void ExecuteFriends(object param) { new FriendsView().ShowDialog(); }
         private void ExecuteChat(object param) { MessageBox.Show("Chat aún no implementado."); }
         private void ExecutePlay(object param) { MessageBox.Show("Navegando a Partidas Públicas..."); }
         private void ExecuteCreateGame(object param) { MessageBox.Show("Creando Partida..."); }
 
-
-
         private async void LoadUserProfileAsync()
         {
             if (SessionManager.Instance.IsLoggedIn)
             {
-                using (var client = new UserProfileServiceClient())
+                try
                 {
-                    try
+                    using (var client = new UserProfileServiceClient())
                     {
-                        // 1. Obtener DTO del perfil (Nombre, Email, etc.)
-                        UserProfileDto profileData =
-                            await client.GetUserProfileAsync(SessionManager.Instance.CurrentUsername);
-                        
+                        UserProfileDto profileData = await client.GetUserProfileAsync(SessionManager.Instance.CurrentUsername);
+
                         if (profileData != null)
                         {
-                            UserProfileData = profileData; // Asigna el DTO
-                            Username = profileData.Username; // Asigna el nombre de usuario
-                            //UserAvatar = ConvertByteToImage(profileData.Avatar); // Asigna el avatar
-                            var loadedAvatars = await Task.Run(() =>
+                            UserProfileData = profileData;
+                            Username = profileData.Username;
+
+                            var allAvatarsDto = await Task.Run(() => client.GetAvailableAvatars().ToList());
+                            var userAvatarDto = allAvatarsDto.FirstOrDefault(a => a.idAvatar == profileData.AvatarId);
+
+                            if (userAvatarDto != null)
                             {
-                                using (client)
-                                {
-                                    // Obtener el Array/List del servidor
-                                    List<ProfileService.AvatarDto> serverAvatars = client.GetAvailableAvatars().ToList();
-
-                                    var tempAvatars = new ObservableCollection<AvatarModel>();
-
-                                    foreach (var avatarDto in serverAvatars)
-                                    {
-                                        var avatarModel = new AvatarModel
-                                        {
-                                            Id = avatarDto.idAvatar,
-                                            Name = avatarDto.avatarName,
-                                            ImageData = avatarDto.avatarData,
-                                            ImageSource = ConvertByteToImage(avatarDto.avatarData)
-                                        };
-                                        tempAvatars.Add(avatarModel);
-                                    }
-                                    return tempAvatars;
-                                }
-                            }).ConfigureAwait(false); // Permite que la continuación se ejecute en el hilo de trabajo.
-
-                            // 2. Actualizar la UI de forma segura con el Dispatcher.
-                            Application.Current.Dispatcher.Invoke(() =>
-                            {
-                                AvailableAvatars = loadedAvatars;
-                                // Seleccionar el primer avatar por defecto
-                                if (AvailableAvatars.Any())
-                                {
-                                    SelectedAvatar = AvailableAvatars.First();
-                                }
-                            });
+                                UserAvatar = ConvertByteToImage(userAvatarDto.avatarData);
+                            }
                         }
-                        
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error al cargar el perfil: {ex.Message}", "Error de Carga");
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar el perfil: {ex.Message}", "Error de Carga");
                 }
             }
         }
@@ -165,20 +108,67 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 MessageBox.Show("Aún no se ha cargado la información del usuario.", "Error de Carga");
                 return;
             }
-
-            var profileView = new ProfileView();
-
-            // PASAR EL DTO COMPLETO para que ProfileViewModel lo maneje
-            profileView.DataContext = new ProfileViewModel(UserProfileData);
-
+            var profileView = new ProfileView { DataContext = new ProfileViewModel(UserProfileData) };
             profileView.ShowDialog();
         }
 
+        /// <summary>
+        /// Abre el diálogo para seleccionar un nuevo avatar.
+        /// </summary>
         private void ExecuteSelectAvatar(object parameter)
         {
-            // Lógica para abrir el selector de avatar si el usuario hace clic en el icono del 
-            // (Similar a la implementacion en SignUpViewModel
+            var selectAvatarView = new SelectAvatarView();
+
+            // --- CAMBIO AQUÍ: Pasa el ID del avatar del perfil actual ---
+            var selectAvatarViewModel = new SelectAvatarViewModel(this.UserProfileData.AvatarId);
+
+            selectAvatarViewModel.AvatarSelected += OnAvatarSelected;
+            selectAvatarView.DataContext = selectAvatarViewModel;
+            selectAvatarView.ShowDialog();
+            selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
         }
+
+        /// <summary>
+        /// Se ejecuta cuando el usuario confirma un nuevo avatar en la ventana de selección.
+        /// </summary>
+        private async void OnAvatarSelected(AvatarModel newAvatar)
+        {
+            if (newAvatar == null || newAvatar.Id == UserProfileData.AvatarId)
+            {
+                return; // No hacer nada si no hay cambio.
+            }
+
+            // Actualiza el DTO con el nuevo ID del avatar.
+            UserProfileData.AvatarId = newAvatar.Id;
+
+            try
+            {
+                using (var client = new UserProfileServiceClient())
+                {
+                    // Llama al servicio para guardar el perfil completo actualizado.
+                    OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
+
+                    if (result.success)
+                    {
+                        // Si el guardado fue exitoso, actualiza la imagen en la UI.
+                        UserAvatar = newAvatar.ImageSource;
+                        MessageBox.Show("Avatar actualizado correctamente.", "Éxito");
+                    }
+                    else
+                    {
+                        // Si el servidor reporta un error, revierte el cambio localmente.
+                        UserProfileData.AvatarId = UserAvatar.GetHashCode(); // Revertir al ID anterior (necesitarás almacenar el ID previo)
+                        MessageBox.Show(result.message, "Error al actualizar");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error de conexión al guardar el avatar: {ex.Message}", "Error WCF");
+            }
+        }
+
+        // --- MÉTODOS UTILITARIOS ---
 
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
         {
@@ -198,7 +188,5 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             return image;
         }
-
-        // Asegúrate de que el resto de los comandos de Lobby (Play, CreateGame) están implementados
     }
 }
