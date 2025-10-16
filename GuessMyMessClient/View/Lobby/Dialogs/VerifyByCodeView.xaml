@@ -9,6 +9,7 @@
         WindowStartupLocation="CenterScreen" Height="280" Width="450">
     <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
         <Grid Margin="15">
+
             <Button Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Top"
                     Command="{Binding CloseCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
@@ -16,7 +17,7 @@
                 <TextBlock Text="{x:Static language:Lang.changePswVerifyingLbVerifying}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <TextBlock Text="{x:Static language:Lang.globalLbVerifyinText}" Margin="0,20,0,5" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"/>
                 <TextBox Style="{StaticResource InputField}" Text="{Binding VerificationCode, UpdateSourceTrigger=PropertyChanged}" 
-                         TextAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="Gray"/>
+                         TextAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="Gray" Height="60"/>
                 <Button Content="{x:Static language:Lang.globalBtnVerify}" Style="{StaticResource BlueButton}" Command="{Binding VerifyCommand}" Margin="0,20,0,0"/>
             </StackPanel>
         </Grid>

@@ -23,7 +23,16 @@ namespace GuessMyMessClient.View.Lobby.Dialogs
         public VerifyByCodeView()
         {
             InitializeComponent();
-            //this.DataContext = new VerifyByCodeViewModel();
+            
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            if (e.ButtonState == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

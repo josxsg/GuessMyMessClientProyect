@@ -11,11 +11,29 @@
         d:DataContext="{d:DesignInstance Type=vm:LoginViewModel, IsDesignTimeCreatable=True}"
         Title="Login" Height="550" Width="900"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResize">
+        ResizeMode="CanResize"
+        WindowState="Maximized"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+
+        </StackPanel>
 
         <Viewbox Stretch="Uniform" MaxWidth="500">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="364" Width="376">

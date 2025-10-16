@@ -502,6 +502,24 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Minimize.
+        /// </summary>
+        public static string globalBtnMinimize {
+            get {
+                return ResourceManager.GetString("globalBtnMinimize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resize.
+        /// </summary>
+        public static string globalBtnResize {
+            get {
+                return ResourceManager.GetString("globalBtnResize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Send.
         /// </summary>
         public static string globalBtnSend {

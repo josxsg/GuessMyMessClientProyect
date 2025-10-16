@@ -11,15 +11,21 @@
         d:DataContext="{d:DesignInstance Type=vm:SelectAvatarViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        Background="Transparent">
+        Background="Transparent"
+        WindowStyle="None">
 
     <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
+
         <StackPanel Margin="20">
+            <Button HorizontalAlignment="Right" Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+            
             <TextBlock Text="{x:Static language:Lang.editAvatarLbSelect}"
-                   HorizontalAlignment="Center"
-                   FontSize="24"
-                   FontWeight="Bold"
-                   Margin="0,0,0,20"/>
+                       HorizontalAlignment="Center"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20"/>
 
             <ItemsControl ItemsSource="{Binding AvailableAvatars}">
                 <ItemsControl.ItemsPanel>
@@ -64,5 +70,6 @@
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     Margin="0,20,0,0" Width="150" Height="40"/>
         </StackPanel>
+
     </Border>
 </Window>

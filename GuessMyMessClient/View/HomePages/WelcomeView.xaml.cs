@@ -24,6 +24,22 @@ namespace GuessMyMessClient.View.HomePages
         {
             InitializeComponent();
             this.DataContext = new WelcomeViewModel();
+
+            this.Loaded += (sender, e) => {
+                if (Application.Current.MainWindow != null && Application.Current.MainWindow != this)
+                {
+                    this.WindowState = Application.Current.MainWindow.WindowState;
+                }
+            };
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            if (e.ButtonState == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

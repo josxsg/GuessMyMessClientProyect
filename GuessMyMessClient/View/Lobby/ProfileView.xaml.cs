@@ -17,7 +17,7 @@ namespace GuessMyMessClient.View.Lobby
     /// <summary>
     /// Lógica de interacción para ProfileView.xaml
     /// </summary>
-    public partial class ProfileView : Window
+    public partial class ProfileView : UserControl
     {
         public ProfileView()
         {

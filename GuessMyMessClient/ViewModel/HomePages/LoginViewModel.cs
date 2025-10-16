@@ -23,10 +23,16 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); CommandManager.InvalidateRequerySuggested(); } }
 
         public ICommand LoginCommand { get; }
+        public ICommand CloseWindowCommand { get; }
+        public ICommand MaximizeWindowCommand { get; }
+        public ICommand MinimizeWindowCommand { get; }
 
         public LoginViewModel()
         {
             LoginCommand = new RelayCommand(ExecuteLogin, CanExecuteLogin);
+            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
+            MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
+            MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
         }
 
         private bool CanExecuteLogin(object parameter)
@@ -88,6 +94,30 @@ namespace GuessMyMessClient.ViewModel.HomePages
             // Abrir la ventana principal del Lobby
             var lobbyView = new LobbyView();
             lobbyView.Show();
+        }
+        private void ExecuteCloseWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                // Para la ventana principal, cerramos la aplicación
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void ExecuteMaximizeWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            }
+        }
+
+        private void ExecuteMinimizeWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                window.WindowState = WindowState.Minimized;
+            }
         }
     }
 }

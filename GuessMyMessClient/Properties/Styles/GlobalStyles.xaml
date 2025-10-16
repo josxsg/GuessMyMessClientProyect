@@ -88,6 +88,10 @@
         <Setter Property="Background" Value="#FF4A6E92"/>
     </Style>
 
+    <Style x:Key="RedButton" TargetType="Button" BasedOn="{StaticResource MenuButtonBase}">
+        <Setter Property="Background" Value="Red"/>
+    </Style>
+
     <Style x:Key="ConfirmButton" TargetType="Button">
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontFamily" Value="Arial Black"/>

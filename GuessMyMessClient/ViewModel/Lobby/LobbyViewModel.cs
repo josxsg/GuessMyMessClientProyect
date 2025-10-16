@@ -39,6 +39,19 @@ namespace GuessMyMessClient.ViewModel.Lobby
             get => _userAvatar;
             set { _userAvatar = value; OnPropertyChanged(); }
         }
+        private bool _isProfilePopupOpen;
+        public bool IsProfilePopupOpen
+        {
+            get => _isProfilePopupOpen;
+            set { _isProfilePopupOpen = value; OnPropertyChanged(); }
+        }
+
+        private ProfileViewModel _profileViewModel;
+        public ProfileViewModel ProfileViewModel
+        {
+            get => _profileViewModel;
+            set { _profileViewModel = value; OnPropertyChanged(); }
+        }
 
         public ICommand SettingsCommand { get; }
         public ICommand FriendsCommand { get; }
@@ -47,6 +60,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public ICommand CreateGameCommand { get; }
         public ICommand EditProfileCommand { get; }
         public ICommand SelectAvatarCommand { get; }
+        public ICommand CloseWindowCommand { get; }
+        public ICommand MaximizeWindowCommand { get; }
+        public ICommand MinimizeWindowCommand { get; }
 
         public LobbyViewModel()
         {
@@ -57,6 +73,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
             CreateGameCommand = new RelayCommand(ExecuteCreateGame);
             EditProfileCommand = new RelayCommand(ExecuteEditProfile);
             SelectAvatarCommand = new RelayCommand(ExecuteSelectAvatar);
+            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
+            MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
+            MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
 
             LoadUserProfileAsync();
         }
@@ -83,6 +102,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                         {
                             UserProfileData = profileData;
                             Username = profileData.Username;
+                            ProfileViewModel = new ProfileViewModel(UserProfileData);
 
                             var allAvatarsDto = await Task.Run(() => client.GetAvailableAvatars().ToList());
                             var userAvatarDto = allAvatarsDto.FirstOrDefault(a => a.idAvatar == profileData.AvatarId);
@@ -103,13 +123,14 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void ExecuteEditProfile(object parameter)
         {
-            if (UserProfileData == null)
+            if (ProfileViewModel != null)
             {
-                MessageBox.Show("Aún no se ha cargado la información del usuario.", "Error de Carga");
-                return;
+                IsProfilePopupOpen = !IsProfilePopupOpen;
             }
-            var profileView = new ProfileView { DataContext = new ProfileViewModel(UserProfileData) };
-            profileView.ShowDialog();
+            else
+            {
+                MessageBox.Show("La información del usuario aún no se ha cargado.", "Error");
+            }
         }
 
         /// <summary>
@@ -187,6 +208,30 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 image.Freeze();
             }
             return image;
+        }
+        private void ExecuteCloseWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                // Para la ventana principal, cerramos la aplicación
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void ExecuteMaximizeWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            }
+        }
+
+        private void ExecuteMinimizeWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                window.WindowState = WindowState.Minimized;
+            }
         }
     }
 }

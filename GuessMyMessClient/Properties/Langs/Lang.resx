@@ -432,4 +432,10 @@
   <data name="editProfileBtnSaveChanges" xml:space="preserve">
     <value>Save Changes</value>
   </data>
+  <data name="globalBtnMinimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="globalBtnResize" xml:space="preserve">
+    <value>Resize</value>
+  </data>
 </root>
