@@ -53,6 +53,34 @@ namespace GuessMyMessClient.ViewModel.Lobby
             set { _profileViewModel = value; OnPropertyChanged(); }
         }
 
+        private bool _isFriendsPopupOpen;
+        public bool IsFriendsPopupOpen
+        {
+            get => _isFriendsPopupOpen;
+            set { _isFriendsPopupOpen = value; OnPropertyChanged(); }
+        }
+
+        private FriendsViewModel _friendsViewModel;
+        public FriendsViewModel FriendsViewModel
+        {
+            get => _friendsViewModel;
+            set { _friendsViewModel = value; OnPropertyChanged(); }
+        }
+
+        private bool _isConfigurationPopupOpen;
+        public bool IsConfigurationPopupOpen
+        {
+            get => _isConfigurationPopupOpen;
+            set { _isConfigurationPopupOpen = value; OnPropertyChanged(); }
+        }
+
+        private ConfigurationViewModel _configurationViewModel;
+        public ConfigurationViewModel ConfigurationViewModel
+        {
+            get => _configurationViewModel;
+            set { _configurationViewModel = value; OnPropertyChanged(); }
+        }
+
         public ICommand SettingsCommand { get; }
         public ICommand FriendsCommand { get; }
         public ICommand ChatCommand { get; }
@@ -77,13 +105,37 @@ namespace GuessMyMessClient.ViewModel.Lobby
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
 
+            FriendsViewModel = new FriendsViewModel();
+            ConfigurationViewModel = new ConfigurationViewModel();
+
             LoadUserProfileAsync();
         }
 
         // --- MÉTODOS DE COMANDOS ---
 
-        private void ExecuteSettings(object param) { new ConfigurationView().ShowDialog(); }
-        private void ExecuteFriends(object param) { new FriendsView().ShowDialog(); }
+        private void ExecuteSettings(object parameter)
+        {
+            if (ConfigurationViewModel != null)
+            {
+                IsConfigurationPopupOpen = !IsConfigurationPopupOpen;
+            }
+            else
+            {
+                MessageBox.Show("La información del usuario aún no se ha cargado.", "Error");
+            }
+        }
+
+        private void ExecuteFriends(object param)
+        {
+            if (FriendsViewModel != null)
+            {
+                IsFriendsPopupOpen = !IsFriendsPopupOpen;
+            }
+            else
+            {
+                MessageBox.Show("La información del usuario aún no se ha cargado.", "Error");
+            }
+        }
         private void ExecuteChat(object param) { MessageBox.Show("Chat aún no implementado."); }
         private void ExecutePlay(object param) { MessageBox.Show("Navegando a Partidas Públicas..."); }
         private void ExecuteCreateGame(object param) { MessageBox.Show("Creando Partida..."); }

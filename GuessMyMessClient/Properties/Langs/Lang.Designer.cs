@@ -520,6 +520,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Return.
+        /// </summary>
+        public static string globalBtnReturn {
+            get {
+                return ResourceManager.GetString("globalBtnReturn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Send.
         /// </summary>
         public static string globalBtnSend {

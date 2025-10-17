@@ -17,7 +17,7 @@ namespace GuessMyMessClient.View.Lobby
     /// <summary>
     /// Lógica de interacción para FriendsView.xaml
     /// </summary>
-    public partial class FriendsView : Window
+    public partial class FriendsView : UserControl
     {
         public FriendsView()
         {

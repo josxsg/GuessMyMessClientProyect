@@ -19,6 +19,15 @@
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
+        <Button Content="←" 
+                Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="15,15,0,0"
+                Command="{Binding ReturnCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
 
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
@@ -46,7 +55,7 @@
                 <TextBlock Text="{x:Static language:Lang.globalTxtEmail}"
                            FontSize="14" FontWeight="SemiBold" Foreground="Black"
                            HorizontalAlignment="Left" Margin="50,0,0,5"/>
-                <TextBox Text="{Binding UsernameOrEmail, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Text="{Binding UsernameOrEmail, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
 
                 <TextBlock Text="{x:Static language:Lang.globalPwdPassword}"
                            FontSize="14" FontWeight="SemiBold" Foreground="Black"
@@ -54,7 +63,7 @@
                 <PasswordBox 
                     helpers:PasswordBoxHelper.Attach="True"
                     helpers:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    Style="{StaticResource InputField}"/>
+                    Style="{StaticResource InputField}" Height="45"/>
 
                 <Button Content="{x:Static language:Lang.globalBtnLogIn}"
                         Style="{StaticResource GreenButton}"

@@ -38,10 +38,32 @@
                VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,60,0,0"/>
 
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20">
-            <Button Style="{StaticResource SettingsButton}" Command="{Binding SettingsCommand}" ToolTip="{x:Static language:Lang.globalBtnConfiguration}">
+            <Button x:Name="ConfigurationButton" Command="{Binding SettingsCommand}" ToolTip="{x:Static language:Lang.globalBtnConfiguration}">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource SettingsButton}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsConfigurationPopupOpen}">
+                                <Setter Property="Background" Value="#D3D3D3"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="BorderThickness" Value="2"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <Image Source="/Resources/Images/settings.png" Width="30"/>
             </Button>
-            <Button Style="{StaticResource FriendsButton}" Command="{Binding FriendsCommand}" ToolTip="{x:Static language:Lang.socialLbFriends}">
+            <Button x:Name="FriendsButton" Command="{Binding FriendsCommand}" ToolTip="{x:Static language:Lang.socialLbFriends}">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource FriendsButton}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsFriendsPopupOpen}">
+                                <Setter Property="Background" Value="#87CEEB"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="BorderThickness" Value="2"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <Image Source="/Resources/Images/friends.png" Width="30"/>
             </Button>
             <Button x:Name="EditProfileButton" ToolTip="{x:Static language:Lang.globalBtnEditProfile}"
@@ -107,6 +129,28 @@
                IsOpen="{Binding IsProfilePopupOpen, Mode=TwoWay}">
 
             <local:ProfileView DataContext="{Binding ProfileViewModel}"/>
+
+        </Popup>
+
+        <Popup x:Name="FriendsPopup"
+               PlacementTarget="{Binding ElementName=FriendsButton}"
+               Placement="Right"
+               AllowsTransparency="True"
+               StaysOpen="False" 
+               IsOpen="{Binding IsFriendsPopupOpen, Mode=TwoWay}">
+
+            <local:FriendsView DataContext="{Binding FriendsViewModel}"/>
+
+        </Popup>
+
+        <Popup x:Name="ConfigurationPopup"
+               PlacementTarget="{Binding ElementName=ConfigurationButton}"
+               Placement="Right"
+               AllowsTransparency="True"
+               StaysOpen="False" 
+               IsOpen="{Binding IsConfigurationPopupOpen, Mode=TwoWay}">
+
+            <local:ConfigurationView DataContext="{Binding ConfigurationViewModel}"/>
 
         </Popup>
     </Grid>

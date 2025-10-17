@@ -438,4 +438,7 @@
   <data name="globalBtnResize" xml:space="preserve">
     <value>Cambiar tamaño</value>
   </data>
+  <data name="globalBtnReturn" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
 </root>

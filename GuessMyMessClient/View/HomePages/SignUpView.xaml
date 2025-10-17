@@ -19,6 +19,15 @@
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
+        <Button Content="←" 
+                Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="15,15,0,0"
+                Command="{Binding ReturnCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
 
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
@@ -48,26 +57,26 @@
 
                     <StackPanel Grid.Column="0" Margin="10">
                         <TextBlock Text="{x:Static language:Lang.globalTxtName}" HorizontalAlignment="Left" Margin="160,0,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
 
                         <TextBlock Text="{x:Static language:Lang.globalTxtUsername}" HorizontalAlignment="Left" Margin="130,15,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
 
                         <TextBlock Text="{x:Static language:Lang.globalTxtEmail}" HorizontalAlignment="Left" Margin="130,15,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="10">
                         <TextBlock Text="{x:Static language:Lang.globalLbLastName}" HorizontalAlignment="Left" Margin="160,0,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
 
                         <TextBlock Text="{x:Static language:Lang.globalLbGender}" HorizontalAlignment="Left" Margin="160,15,0,5" FontWeight="SemiBold" Cursor="Hand"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Cursor="">
-                            <RadioButton GroupName="Gender" IsChecked="{Binding IsMale}" Style="{StaticResource GenderRadioButtonStyle}" ToolTip="{x:Static language:Lang.globalCmbMale}">
+                            <RadioButton GroupName="Gender" IsChecked="{Binding IsMale}" Style="{StaticResource GenderRadioButtonStyle}" ToolTip="{x:Static language:Lang.globalCmbMale}" Height="45">
                                 <Image Source="/Resources/Images/male.png" Height="25"/>
                             </RadioButton>
                             <RadioButton Content="{x:Static language:Lang.globalCmbNonBinary}" GroupName="Gender" IsChecked="{Binding IsNonBinary}" Style="{StaticResource GenderRadioButtonStyle}" Margin="5,0"/>
-                            <RadioButton GroupName="Gender" IsChecked="{Binding IsFemale}" Style="{StaticResource GenderRadioButtonStyle}" ToolTip="{x:Static language:Lang.globalCmbFemale}">
+                            <RadioButton GroupName="Gender" IsChecked="{Binding IsFemale}" Style="{StaticResource GenderRadioButtonStyle}" ToolTip="{x:Static language:Lang.globalCmbFemale}" Height="45">
                                 <Image Source="/Resources/Images/female.png" Height="25"/>
                             </RadioButton>
                         </StackPanel>
@@ -75,7 +84,7 @@
                         <TextBlock Text="{x:Static language:Lang.globalPwdPassword}" HorizontalAlignment="Left" Margin="150,15,0,5" FontWeight="SemiBold"/>
                         <PasswordBox helpers:PasswordBoxHelper.Attach="True"
                                      helpers:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource InputField}"/>
+                                     Style="{StaticResource InputField}" Height="45"/>
                     </StackPanel>
 
                     <Grid Grid.Column="1" VerticalAlignment="Top" Margin="20,40" Width="150" Height="150">
@@ -93,6 +102,8 @@
                         Style="{StaticResource YellowButton}" 
                         Command="{Binding SignUpCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+                
             </StackPanel>
         </Viewbox>
     </Grid>

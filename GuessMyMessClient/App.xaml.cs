@@ -14,7 +14,7 @@ namespace GuessMyMessClient
             // --- CÓDIGO PARA FORZAR EL IDIOMA INGLÉS ---
 
             // Establece la cultura a "en-US" (Inglés de Estados Unidos)
-            CultureInfo cultureInfo = new CultureInfo("es-MX");
+            CultureInfo cultureInfo = new CultureInfo("en-US");
 
             // Aplica la cultura al hilo principal de la aplicación.
             // Esto asegura que todos los recursos (como los textos de Lang.resx) se carguen en inglés.

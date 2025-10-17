@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
-    internal class ConfigurationViewModel : ViewModelBase
+    public class ConfigurationViewModel : ViewModelBase
     {
     }
 }

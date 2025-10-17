@@ -17,7 +17,7 @@ namespace GuessMyMessClient.View.Lobby
     /// <summary>
     /// Lógica de interacción para ConfigurationView.xaml
     /// </summary>
-    public partial class ConfigurationView : Window
+    public partial class ConfigurationView : UserControl
     {
         public ConfigurationView()
         {

@@ -54,6 +54,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public ICommand CloseWindowCommand { get; }
         public ICommand MaximizeWindowCommand { get; }
         public ICommand MinimizeWindowCommand { get; }
+        public ICommand ReturnCommand { get; }
 
         public SignUpViewModel()
         {
@@ -62,6 +63,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
+            ReturnCommand = new RelayCommand(ExecuteReturn);
             IsMale = true; // Género por defecto
 
             // Cargar un avatar por defecto al iniciar
@@ -217,6 +219,17 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (parameter is Window window)
             {
                 window.WindowState = WindowState.Minimized;
+            }
+        }
+        private void ExecuteReturn(object parameter)
+        {
+            if (parameter is Window currentWindow)
+            {
+                var welcomeView = new WelcomeView();
+                welcomeView.WindowState = currentWindow.WindowState;
+
+                welcomeView.Show();
+                currentWindow.Close();
             }
         }
     }
