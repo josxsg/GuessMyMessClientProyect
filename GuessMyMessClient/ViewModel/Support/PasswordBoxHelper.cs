@@ -10,12 +10,10 @@ namespace GuessMyMessClient.ViewModel.Support
 {
     public static class PasswordBoxHelper
     {
-        // Propiedad adjunta para la contraseña real (la que se enlaza al ViewModel)
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.RegisterAttached("Password", typeof(string), typeof(PasswordBoxHelper),
                 new FrameworkPropertyMetadata(string.Empty, OnPasswordPropertyChanged));
 
-        // Propiedad adjunta para habilitar o deshabilitar el enlace
         public static readonly DependencyProperty AttachProperty =
             DependencyProperty.RegisterAttached("Attach", typeof(bool), typeof(PasswordBoxHelper),
                 new PropertyMetadata(false, Attach));

@@ -52,7 +52,7 @@
                            FontSize="28" FontWeight="Bold" Foreground="Black"
                            Margin="0,0,0,30"/>
 
-                <TextBlock Text="{x:Static language:Lang.globalTxtEmail}"
+                <TextBlock Text="{x:Static language:Lang.loginLbUsernameOrEmail}"
                            FontSize="14" FontWeight="SemiBold" Foreground="Black"
                            HorizontalAlignment="Left" Margin="50,0,0,5"/>
                 <TextBox Text="{Binding UsernameOrEmail, UpdateSourceTrigger=PropertyChanged}" Height="45"/>

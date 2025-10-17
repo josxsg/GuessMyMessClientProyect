@@ -15,11 +15,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
 {
     public class LoginViewModel : ViewModelBase
     {
-        // Propiedades enlazadas desde LoginView.xaml
         private string _usernameOrEmail;
         public string UsernameOrEmail { get => _usernameOrEmail; set { _usernameOrEmail = value; OnPropertyChanged(); } }
 
-        private string _password; // Enlazada vía PasswordBoxHelper
+        private string _password; 
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); CommandManager.InvalidateRequerySuggested(); } }
 
         public ICommand LoginCommand { get; }
@@ -46,7 +45,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private async void ExecuteLogin(object parameter)
         {
-            // Validaciones mínimas
             if (!CanExecuteLogin(parameter))
             {
                 MessageBox.Show("Por favor, ingresa usuario/correo y contraseña.", "Error de Validación");
@@ -57,16 +55,12 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 try
                 {
-                    // Llamar al servicio de Login
-                    // El servidor devuelve el Username en OperationResultDto.message si el login es exitoso.
                     OperationResultDto result = await client.LoginAsync(UsernameOrEmail, Password);
 
                     if (result.success)
                     {
-                        // 1. Iniciar Sesión en el cliente
-                        SessionManager.Instance.StartSession(result.message); // El mensaje es el Username
+                        SessionManager.Instance.StartSession(result.message);
 
-                        // 2. Navegar al Lobby
                         OpenLobby(parameter);
                     }
                     else
@@ -87,13 +81,11 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void OpenLobby(object parameter)
         {
-            // Cerrar la ventana actual (LoginView)
             if (parameter is Window loginWindow)
             {
                 loginWindow.Close();
             }
 
-            // Abrir la ventana principal del Lobby
             var lobbyView = new LobbyView();
             lobbyView.Show();
         }
@@ -101,7 +93,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (parameter is Window window)
             {
-                // Para la ventana principal, cerramos la aplicación
                 Application.Current.Shutdown();
             }
         }

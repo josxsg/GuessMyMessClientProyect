@@ -18,7 +18,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class LobbyViewModel : ViewModelBase
     {
-        // ... (Tus propiedades existentes no necesitan cambios)
         private UserProfileDto _userProfileData;
         public UserProfileDto UserProfileData
         {
@@ -111,7 +110,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             LoadUserProfileAsync();
         }
 
-        // --- MÉTODOS DE COMANDOS ---
 
         private void ExecuteSettings(object parameter)
         {
@@ -185,14 +183,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        /// <summary>
-        /// Abre el diálogo para seleccionar un nuevo avatar.
-        /// </summary>
         private void ExecuteSelectAvatar(object parameter)
         {
             var selectAvatarView = new SelectAvatarView();
 
-            // --- CAMBIO AQUÍ: Pasa el ID del avatar del perfil actual ---
             var selectAvatarViewModel = new SelectAvatarViewModel(this.UserProfileData.AvatarId);
 
             selectAvatarViewModel.AvatarSelected += OnAvatarSelected;
@@ -201,36 +195,29 @@ namespace GuessMyMessClient.ViewModel.Lobby
             selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
         }
 
-        /// <summary>
-        /// Se ejecuta cuando el usuario confirma un nuevo avatar en la ventana de selección.
-        /// </summary>
         private async void OnAvatarSelected(AvatarModel newAvatar)
         {
             if (newAvatar == null || newAvatar.Id == UserProfileData.AvatarId)
             {
-                return; // No hacer nada si no hay cambio.
+                return; 
             }
 
-            // Actualiza el DTO con el nuevo ID del avatar.
             UserProfileData.AvatarId = newAvatar.Id;
 
             try
             {
                 using (var client = new UserProfileServiceClient())
                 {
-                    // Llama al servicio para guardar el perfil completo actualizado.
                     OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
 
                     if (result.success)
                     {
-                        // Si el guardado fue exitoso, actualiza la imagen en la UI.
                         UserAvatar = newAvatar.ImageSource;
                         MessageBox.Show("Avatar actualizado correctamente.", "Éxito");
                     }
                     else
                     {
-                        // Si el servidor reporta un error, revierte el cambio localmente.
-                        UserProfileData.AvatarId = UserAvatar.GetHashCode(); // Revertir al ID anterior (necesitarás almacenar el ID previo)
+                        UserProfileData.AvatarId = UserAvatar.GetHashCode(); 
                         MessageBox.Show(result.message, "Error al actualizar");
                     }
                 }
@@ -241,7 +228,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        // --- MÉTODOS UTILITARIOS ---
 
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
         {
@@ -265,7 +251,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (parameter is Window window)
             {
-                // Para la ventana principal, cerramos la aplicación
+                
                 Application.Current.Shutdown();
             }
         }

@@ -47,7 +47,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     if (result.success)
                     {
                         MessageBox.Show("Cuenta verificada. Por favor, inicia sesión.", "Activación Completa");
-                        // Cerrar la ventana de verificación y abrir la ventana de Login
                         OpenLoginWindow(parameter);
                     }
                     else

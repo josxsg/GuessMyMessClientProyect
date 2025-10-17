@@ -17,7 +17,7 @@ namespace GuessMyMessClient.ViewModel.Support.Converters
             {
                 return isOnline ? new SolidColorBrush(Colors.Green) : new SolidColorBrush(Colors.Red);
             }
-            return new SolidColorBrush(Colors.Gray); // Color por defecto
+            return new SolidColorBrush(Colors.Gray); 
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

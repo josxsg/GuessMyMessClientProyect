@@ -15,7 +15,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
     {
         private UserProfileDto _profileData;
 
-        // Propiedades de Edición (Corregido: Binding a FirstName y LastName)
         public string FirstName
         {
             get => _profileData.FirstName;
@@ -27,7 +26,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             set { _profileData.LastName = value; OnPropertyChanged(); }
         }
 
-        // Propiedades de Solo Lectura (Corregido: Email y Username)
         public string Username => _profileData.Username;
         private string _email;
         public string Email
@@ -36,16 +34,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
             set { _profileData.Email = value; OnPropertyChanged(); }
         }
 
-        // LÓGICA DE GÉNERO: Booleana basada en GenderId (1=M, 2=F, 3=NB)
         public bool IsMale => _profileData.GenderId == 1;
         public bool IsFemale => _profileData.GenderId == 2;
         public bool IsNonBinary => _profileData.GenderId == 3;
 
         public ICommand ChangeEmailCommand { get; }
         public ICommand ChangePasswordCommand { get; }
-        public ICommand SaveProfileCommand { get; } // Asumo que el botón Save debe ser añadido a ProfileView.xaml
+        public ICommand SaveProfileCommand { get; } 
 
-        // Constructor
+        
         public ProfileViewModel(UserProfileDto initialProfileData)
         {
             _profileData = initialProfileData ?? throw new ArgumentNullException(nameof(initialProfileData));
@@ -57,14 +54,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private async void ExecuteSaveProfile(object parameter)
         {
-            // Las propiedades FirstName y LastName ya se actualizaron en _profileData gracias al TwoWay Binding.
-
-            // Simplemente llamamos al servicio para persistir _profileData
             using (var client = new UserProfileServiceClient())
             {
                 try
                 {
-                    // Usamos el DTO modificado (_profileData) para enviarlo al servidor
                     OperationResultDto result = await client.UpdateProfileAsync(_profileData.Username, _profileData);
 
                     if (result.success)

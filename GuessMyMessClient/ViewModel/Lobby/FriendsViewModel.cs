@@ -101,16 +101,26 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private async void SearchUsers(object obj)
         {
-            if (string.IsNullOrWhiteSpace(SearchText)) return;
+            if (string.IsNullOrWhiteSpace(SearchText))
+            {
+                Application.Current.Dispatcher.Invoke(() => SearchResults.Clear());
+                return;
+            }
 
             try
             {
-                var users = await _client.searchUsersAsync(SearchText);
-                SearchResults.Clear();
-                foreach (var user in users)
+                string currentUsername = SessionManager.Instance.CurrentUsername;
+
+                var users = await _client.searchUsersAsync(SearchText, currentUsername);
+
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    SearchResults.Add(user);
-                }
+                    SearchResults.Clear();
+                    foreach (var user in users)
+                    {
+                        SearchResults.Add(user);
+                    }
+                });
             }
             catch (CommunicationException ex)
             {
@@ -137,16 +147,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void InviteByEmail(object obj)
         {
-            // Lógica para abrir una ventana/diálogo para la invitación por correo electrónico
             MessageBox.Show("Invite by email functionality is not yet implemented.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         public void notifyFriendRequest(string fromUsername)
         {
-            // El servidor nos notifica de una nueva solicitud.
-            // Usamos el Dispatcher para actualizar la UI desde el hilo principal.
             Application.Current.Dispatcher.Invoke(() =>
             {
-                // Evita duplicados si la lista ya se actualizó
                 if (!FriendRequests.Any(fr => fr.RequesterUsername == fromUsername))
                 {
                     FriendRequests.Add(new FriendRequestViewModel(_client) { RequesterUsername = fromUsername });
@@ -156,7 +162,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
         }
         public void notifyFriendResponse(string fromUsername, bool accepted)
         {
-            // El servidor nos notifica que alguien respondió a nuestra solicitud.
             Application.Current.Dispatcher.Invoke(() =>
             {
                 string message = accepted
@@ -165,7 +170,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 MessageBox.Show(message, "Friend Request Response", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Si aceptaron, refrescamos la lista de amigos para que aparezca.
                 if (accepted)
                 {
                     LoadFriendsAndRequests();
@@ -174,7 +178,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
         }
         public void notifyFriendStatusChanged(string friendUsername, bool isOnline)
         {
-            // El servidor nos notifica que un amigo cambió su estado (online/offline).
             Application.Current.Dispatcher.Invoke(() =>
             {
                 var friend = Friends.FirstOrDefault(f => f.Username == friendUsername);
@@ -192,7 +195,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public bool _isOnline;
         public bool IsOnline
         {
-            // 3. ACTUALIZAMOS LA PROPIEDAD PARA NOTIFICAR CAMBIOS A LA UI
             get => _isOnline;
             set { _isOnline = value; OnPropertyChanged(); }
         }
@@ -218,7 +220,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             try
             {
                 await _client.respondToFriendRequestAsync(targetUsername, RequesterUsername, accepted);
-                // Aquí podrías agregar una notificación o refrescar la lista
             }
             catch (CommunicationException ex)
             {

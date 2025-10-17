@@ -444,4 +444,7 @@
   <data name="socialLbRequests" xml:space="preserve">
     <value>Solicitudes</value>
   </data>
+  <data name="loginLbUsernameOrEmail" xml:space="preserve">
+    <value>Usuario o Correo Electrónico</value>
+  </data>
 </root>

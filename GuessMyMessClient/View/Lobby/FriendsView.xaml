@@ -38,7 +38,7 @@
 
             <ListBox Grid.Row="1" ItemsSource="{Binding SearchResults}" Margin="0,10,0,0"
                      BorderThickness="1" BorderBrush="LightGray" MaxHeight="120"
-                     Visibility="{Binding SearchResults.Count, Converter={StaticResource CountToVisibilityConverter}}">
+                     HorizontalContentAlignment="Stretch" Visibility="{Binding SearchResults.Count, Converter={StaticResource CountToVisibilityConverter}}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="2">
@@ -46,11 +46,17 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
-                            <Button Grid.Column="1" Content="Add" 
+
+                            <TextBlock Grid.Column="0" Text="{Binding Username}" VerticalAlignment="Center"/>
+
+                            <Button Grid.Column="1" 
+                                    Content="{x:Static language:Lang.socialBtnAddFriend}" 
                                     Command="{Binding DataContext.SendFriendRequestCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
                                     CommandParameter="{Binding Username}"
-                                    Style="{StaticResource YellowButton}" Padding="10,2" Margin="5,0,0,0"/>
+                                    Style="{StaticResource YellowButton}"
+                                    HorizontalAlignment="Right" 
+                                    Width="125" 
+                                    Height="35"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -826,6 +826,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Username or Email.
+        /// </summary>
+        public static string loginLbUsernameOrEmail {
+            get {
+                return ResourceManager.GetString("loginLbUsernameOrEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Private Matches.
         /// </summary>
         public static string playMenuBtnPrivateMatches {

@@ -420,10 +420,10 @@ namespace GuessMyMessClient.SocialService {
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendRequestInfoDto[]> getFriendRequestsAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/searchUsers", ReplyAction="http://tempuri.org/ISocialService/searchUsersResponse")]
-        GuessMyMessClient.SocialService.UserProfileDto[] searchUsers(string searchUsername);
+        GuessMyMessClient.SocialService.UserProfileDto[] searchUsers(string searchUsername, string requesterUsername);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/searchUsers", ReplyAction="http://tempuri.org/ISocialService/searchUsersResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> searchUsersAsync(string searchUsername);
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> searchUsersAsync(string searchUsername, string requesterUsername);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/sendFriendRequest")]
         void sendFriendRequest(string requesterUsername, string targetUsername);
@@ -507,12 +507,12 @@ namespace GuessMyMessClient.SocialService {
             return base.Channel.getFriendRequestsAsync(username);
         }
         
-        public GuessMyMessClient.SocialService.UserProfileDto[] searchUsers(string searchUsername) {
-            return base.Channel.searchUsers(searchUsername);
+        public GuessMyMessClient.SocialService.UserProfileDto[] searchUsers(string searchUsername, string requesterUsername) {
+            return base.Channel.searchUsers(searchUsername, requesterUsername);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> searchUsersAsync(string searchUsername) {
-            return base.Channel.searchUsersAsync(searchUsername);
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> searchUsersAsync(string searchUsername, string requesterUsername) {
+            return base.Channel.searchUsersAsync(searchUsername, requesterUsername);
         }
         
         public void sendFriendRequest(string requesterUsername, string targetUsername) {

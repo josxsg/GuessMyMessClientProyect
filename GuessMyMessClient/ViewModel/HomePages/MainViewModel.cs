@@ -11,7 +11,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
 {
     public class MainViewModel : ViewModelBase
     {
-        // Comando que se enlazará al botón "COMENZAR"
         public ICommand StartGameCommand { get; }
         public ICommand CloseWindowCommand { get; }
         public ICommand MaximizeWindowCommand { get; }
@@ -19,7 +18,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         public MainViewModel()
         {
-            // Inicializamos el comando y le decimos qué método debe ejecutar
             StartGameCommand = new RelayCommand(StartGame);
             CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
@@ -28,11 +26,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void StartGame(object parameter)
         {
-            // Crear y mostrar la nueva ventana de bienvenida
             var welcomeView = new WelcomeView();
             welcomeView.Show();
 
-            // Cierra la ventana actual (Main.xaml)
             if (parameter is Window mainWindow)
             {
                 mainWindow.Close();
@@ -43,7 +39,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (parameter is Window window)
             {
-                // Para la ventana principal, cerramos la aplicación
                 Application.Current.Shutdown();
             }
         }

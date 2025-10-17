@@ -19,7 +19,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
 {
     public class SignUpViewModel : ViewModelBase
     {
-        // ... (tus otras propiedades como Username, Email, etc. se mantienen igual)
         private string _username;
         public string Username { get => _username; set { _username = value; OnPropertyChanged(); } }
         private string _firstName;
@@ -38,8 +37,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public bool IsNonBinary { get => _isNonBinary; set { _isNonBinary = value; OnPropertyChanged(); } }
 
 
-        // --- Propiedades de Avatar ---
-        private int _selectedAvatarId = 1; // ID 1 = Avatar por defecto
+        private int _selectedAvatarId = 1; 
         public int SelectedAvatarId { get => _selectedAvatarId; set { _selectedAvatarId = value; OnPropertyChanged(); } }
 
         private BitmapImage _selectedAvatarImage;
@@ -64,15 +62,13 @@ namespace GuessMyMessClient.ViewModel.HomePages
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
             ReturnCommand = new RelayCommand(ExecuteReturn);
-            IsMale = true; // Género por defecto
+            IsMale = true; 
 
-            // Cargar un avatar por defecto al iniciar
             LoadDefaultAvatar();
         }
 
         private async void LoadDefaultAvatar()
         {
-            // Carga el primer avatar de la lista como predeterminado
             try
             {
                 using (var client = new ProfileService.UserProfileServiceClient())
@@ -88,7 +84,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
             catch (Exception ex)
             {
-                // Manejar error si el servicio no está disponible al inicio
                 Console.WriteLine("No se pudo cargar el avatar por defecto: " + ex.Message);
             }
         }
@@ -97,7 +92,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             var selectAvatarView = new SelectAvatarView();
 
-            // --- CAMBIO AQUÍ: Pasa el ID del avatar actual al constructor ---
             var selectAvatarViewModel = new SelectAvatarViewModel(this.SelectedAvatarId);
 
             selectAvatarViewModel.AvatarSelected += OnAvatarSelected;
@@ -106,25 +100,21 @@ namespace GuessMyMessClient.ViewModel.HomePages
             selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
         }
 
-        /// <summary>
-        /// Este método se ejecuta cuando el evento 'AvatarSelected' se dispara
-        /// desde el SelectAvatarViewModel.
-        /// </summary>
+        
         private void OnAvatarSelected(AvatarModel avatar)
         {
             if (avatar != null)
             {
                 SelectedAvatarId = avatar.Id;
-                SelectedAvatarImage = avatar.ImageSource; // <- La magia sucede aquí
+                SelectedAvatarImage = avatar.ImageSource; 
             }
         }
 
-        // ... (El resto de tus métodos como ExecuteSignUp, CanExecuteSignUp, etc., se mantienen igual) ...
         private bool CanExecuteSignUp(object parameter)
         {
             return !string.IsNullOrWhiteSpace(Username) &&
                    !string.IsNullOrWhiteSpace(Email) &&
-                   !string.IsNullOrWhiteSpace(Password); // La contraseña se actualiza mediante el helper
+                   !string.IsNullOrWhiteSpace(Password); 
         }
 
         private async void ExecuteSignUp(object parameter)
@@ -135,7 +125,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 return;
             }
 
-            // Mapeo de género (asumiendo 1=Male, 2=Female, 3=NonBinary)
             int genderId = 0;
             if (IsMale) genderId = 1;
             else if (IsFemale) genderId = 2;
@@ -152,18 +141,16 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 AvatarId = SelectedAvatarId
             };
 
-            // Iniciar el cliente WCF en un bloque using
             using (AuthenticationServiceClient client = new AuthenticationServiceClient())
             {
                 try
                 {
-                    // Llamar al servicio de registro (Register)
                     OperationResultDto result = await client.RegisterAsync(newProfile, Password);
 
                     if (result.success)
                     {
                         MessageBox.Show("Registro exitoso. " + result.message, "Éxito");
-                        // Abrir la ventana de verificación al cerrar la ventana actual
+                        
                         OpenVerificationDialog(parameter);
                     }
                     else
@@ -183,14 +170,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
         }
         private void OpenVerificationDialog(object parameter)
         {
-            /// El orden correcto es ABRIR la nueva ventana, y luego CERRAR la vieja.
-
-            // 1. Abrir la ventana de verificación (ANTES de cerrar la actual)
             var verifyView = new VerifyByCodeView();
             verifyView.DataContext = new VerifyByCodeViewModel(Email);
             verifyView.Show();
 
-            // 2. Cerrar la ventana de registro
             if (parameter is Window signUpWindow)
             {
                 signUpWindow.Close();
@@ -201,7 +184,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (parameter is Window window)
             {
-                // Para la ventana principal, cerramos la aplicación
                 Application.Current.Shutdown();
             }
         }

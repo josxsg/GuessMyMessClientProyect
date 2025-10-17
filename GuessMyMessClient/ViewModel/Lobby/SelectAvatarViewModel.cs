@@ -33,17 +33,16 @@ namespace GuessMyMessClient.ViewModel.Lobby
             get => _selectedAvatar;
             set
             {
-                // --- LÓGICA ACTUALIZADA AQUÍ ---
                 if (_selectedAvatar != null)
                 {
-                    _selectedAvatar.IsSelected = false; // Deselecciona el anterior
+                    _selectedAvatar.IsSelected = false; 
                 }
 
                 _selectedAvatar = value;
 
                 if (_selectedAvatar != null)
                 {
-                    _selectedAvatar.IsSelected = true; // Selecciona el nuevo
+                    _selectedAvatar.IsSelected = true; 
                 }
 
                 OnPropertyChanged();
@@ -53,11 +52,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public ICommand ConfirmSelectionCommand { get; }
         public ICommand CloseCommand { get; }
-        public ICommand SelectAvatarItemCommand { get; } // COMANDO PARA SELECCIONAR ÍTEM
+        public ICommand SelectAvatarItemCommand { get; } 
 
         public SelectAvatarViewModel(int currentAvatarId = 1)
         {
-            _currentAvatarId = currentAvatarId; // Guardamos el ID
+            _currentAvatarId = currentAvatarId; 
             AvailableAvatars = new ObservableCollection<AvatarModel>();
             ConfirmSelectionCommand = new RelayCommand(ExecuteConfirmSelection, CanExecuteConfirmSelection);
             CloseCommand = new RelayCommand(CloseWindow);
@@ -69,7 +68,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        // LÓGICA DE SELECCIÓN DE ÍTEM
         private void ExecuteSelectAvatarItem(object parameter)
         {
             if (parameter is AvatarModel avatar)
@@ -94,17 +92,14 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        // CORRECCIÓN DEADLOCK Y CONGELAMIENTO
         private async void LoadAvatarsAsync()
         {
             try
             {
-                // 1. Ejecutar TODA la lógica pesada (WCF, ToList(), conversión) en el background.
                 var loadedAvatars = await Task.Run(() =>
                 {
                     using (UserProfileServiceClient client = new UserProfileServiceClient())
                     {
-                        // Obtener el Array/List del servidor
                         List<ProfileService.AvatarDto> serverAvatars = client.GetAvailableAvatars().ToList();
 
                         var tempAvatars = new ObservableCollection<AvatarModel>();
@@ -122,22 +117,19 @@ namespace GuessMyMessClient.ViewModel.Lobby
                         }
                         return tempAvatars;
                     }
-                }).ConfigureAwait(false); // Permite que la continuación se ejecute en el hilo de trabajo.
+                }).ConfigureAwait(false); 
 
-                // 2. Actualizar la UI de forma segura con el Dispatcher.
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     AvailableAvatars = loadedAvatars;
                     SelectedAvatar = AvailableAvatars.FirstOrDefault(a => a.Id == _currentAvatarId);
 
-                    // Si por alguna razón no se encuentra, seleccionar el primero como fallback.
                     if (SelectedAvatar == null && AvailableAvatars.Any())
                     {
                         SelectedAvatar = AvailableAvatars.First();
                     }
                 });
             }
-            // ... (Se mantienen los catch blocks para manejo de excepciones) ...
             catch (FaultException ex)
             {
                 Application.Current.Dispatcher.Invoke(() =>

@@ -35,7 +35,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 var signUpView = new SignUpView();
 
-                // 1. Hereda el estado de la ventana ANTES de mostrarla
                 signUpView.WindowState = welcomeWindow.WindowState;
 
                 signUpView.Show();
@@ -49,7 +48,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 var loginView = new LoginView();
 
-                // 1. Hereda el estado de la ventana ANTES de mostrarla
                 loginView.WindowState = welcomeWindow.WindowState;
 
                 loginView.Show();
@@ -71,7 +69,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (parameter is Window window)
             {
-                // Para la ventana principal, cerramos la aplicación
                 Application.Current.Shutdown();
             }
         }
