@@ -11,7 +11,14 @@
         d:DesignHeight="450" d:DesignWidth="300">
     <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
         <Grid>
-            <Grid VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
@@ -29,12 +36,65 @@
                 </Button>
             </Grid>
 
-            <TextBlock Text="{x:Static language:Lang.socialLbFriends}" FontSize="24" FontWeight="Bold" Margin="0,50,0,0"/>
+            <ListBox Grid.Row="1" ItemsSource="{Binding SearchResults}" Margin="0,10,0,0"
+                     BorderThickness="1" BorderBrush="LightGray" MaxHeight="120"
+                     Visibility="{Binding SearchResults.Count, Converter={StaticResource CountToVisibilityConverter}}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" Content="Add" 
+                                    Command="{Binding DataContext.SendFriendRequestCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                                    CommandParameter="{Binding Username}"
+                                    Style="{StaticResource YellowButton}" Padding="10,2" Margin="5,0,0,0"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
-            <Button Style="{StaticResource YellowButton}" Command="{Binding InviteByEmailCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+
+            <TabControl Grid.Row="2" Margin="0,10,0,0">
+                <TabItem Header="{x:Static language:Lang.socialLbFriends}">
+                    <ListBox ItemsSource="{Binding Friends}" BorderThickness="0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Ellipse Width="10" Height="10" Fill="{Binding IsOnline, Converter={StaticResource BoolToGreenRedConverter}}" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Username}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </TabItem>
+                <TabItem Header="{x:Static language:Lang.socialLbRequests}">
+                    <ListBox ItemsSource="{Binding FriendRequests}" BorderThickness="0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding RequesterUsername}" VerticalAlignment="Center"/>
+
+                                    <Button Grid.Column="1" Content="Accept" Margin="5,0" Command="{Binding AcceptCommand}"/>
+                                    <Button Grid.Column="2" Content="Decline" Command="{Binding DeclineCommand}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </TabItem>
+            </TabControl>
+
+            <Button Grid.Row="3" Style="{StaticResource YellowButton}" Command="{Binding InviteByEmailCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/Images/mail.png" Height="20" Margin="0,0,10,0"/>
-                    <TextBlock Text="{x:Static language:Lang.socialBtnEmailInivite}" VerticalAlignment="Center" Width="201" FontSize="10"/>
+                    <TextBlock Text="{x:Static language:Lang.socialBtnEmailInivite}" VerticalAlignment="Center" FontSize="10"/>
                 </StackPanel>
             </Button>
         </Grid>

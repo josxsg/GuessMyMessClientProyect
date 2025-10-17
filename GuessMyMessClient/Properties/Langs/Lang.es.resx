@@ -441,4 +441,7 @@
   <data name="globalBtnReturn" xml:space="preserve">
     <value>Regresar</value>
   </data>
+  <data name="socialLbRequests" xml:space="preserve">
+    <value>Solicitudes</value>
+  </data>
 </root>

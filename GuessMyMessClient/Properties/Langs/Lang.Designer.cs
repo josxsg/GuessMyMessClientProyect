@@ -925,6 +925,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Requests.
+        /// </summary>
+        public static string socialLbRequests {
+            get {
+                return ResourceManager.GetString("socialLbRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Email.
         /// </summary>
         public static string socialTfEmail {

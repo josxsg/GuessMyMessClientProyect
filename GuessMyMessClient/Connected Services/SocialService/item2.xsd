@@ -34,13 +34,13 @@
   <xs:element name="ArrayOfUserProfileDto" nillable="true" type="tns:ArrayOfUserProfileDto" />
   <xs:complexType name="UserProfileDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="avatarPath" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="genderId" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvatarId" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderId" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="socialNetworks" nillable="true" type="tns:ArrayOfSocialNetworkDto" />
-      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserProfileDto" nillable="true" type="tns:UserProfileDto" />

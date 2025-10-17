@@ -3,13 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:GuessMyMessClient"
              StartupUri="View/HomePages/Main.xaml"
-             ShutdownMode="OnExplicitShutdown">
+             ShutdownMode="OnExplicitShutdown"
+             xmlns:converters="clr-namespace:GuessMyMessClient.ViewModel.Support.Converters">
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Properties/Styles/GlobalStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
+            <converters:BoolToGreenRedConverter x:Key="BoolToGreenRedConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
