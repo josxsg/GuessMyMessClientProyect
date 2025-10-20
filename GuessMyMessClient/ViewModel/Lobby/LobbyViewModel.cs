@@ -13,6 +13,7 @@ using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.Model;
 using System.Collections.ObjectModel;
 using System.IO;
+using GuessMyMessClient.ViewModel.Lobby;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -80,6 +81,20 @@ namespace GuessMyMessClient.ViewModel.Lobby
             set { _configurationViewModel = value; OnPropertyChanged(); }
         }
 
+        private bool _isChatPopupOpen;
+        public bool IsChatPopupOpen
+        {
+            get => _isChatPopupOpen;
+            set { _isChatPopupOpen = value; OnPropertyChanged(); }
+        }
+
+        private DirectMessageViewModel _directMessageViewModel;
+        public DirectMessageViewModel DirectMessageViewModel
+        {
+            get => _directMessageViewModel;
+            set { _directMessageViewModel = value; OnPropertyChanged(); }
+        }
+
         public ICommand SettingsCommand { get; }
         public ICommand FriendsCommand { get; }
         public ICommand ChatCommand { get; }
@@ -106,6 +121,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
             FriendsViewModel = new FriendsViewModel();
             ConfigurationViewModel = new ConfigurationViewModel();
+            DirectMessageViewModel = new DirectMessageViewModel();
 
             LoadUserProfileAsync();
         }
@@ -134,7 +150,17 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 MessageBox.Show("La información del usuario aún no se ha cargado.", "Error");
             }
         }
-        private void ExecuteChat(object param) { MessageBox.Show("Chat aún no implementado."); }
+        private void ExecuteChat(object param)
+        {
+            if (DirectMessageViewModel != null)
+            {
+                IsChatPopupOpen = !IsChatPopupOpen;
+            }
+            else
+            {
+                MessageBox.Show("No se puede cargar el chat.", "Error");
+            }
+        }
         private void ExecutePlay(object param) { MessageBox.Show("Navegando a Partidas Públicas..."); }
         private void ExecuteCreateGame(object param) { MessageBox.Show("Creando Partida..."); }
 

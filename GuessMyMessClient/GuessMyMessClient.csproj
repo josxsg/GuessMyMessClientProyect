@@ -96,6 +96,7 @@
     <Compile Include="ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\DirectMessageViewModel.cs" />
     <Compile Include="ViewModel\Lobby\FriendsViewModel.cs" />
     <Compile Include="ViewModel\Lobby\LobbyViewModel.cs" />
     <Compile Include="ViewModel\Lobby\ProfileViewModel.cs" />
@@ -138,6 +139,9 @@
     </Compile>
     <Compile Include="View\Lobby\Dialogs\VerifyByCodeView.xaml.cs">
       <DependentUpon>VerifyByCodeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\DirectMessageView.xaml.cs">
+      <DependentUpon>DirectMessageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Lobby\FriendsView.xaml.cs">
       <DependentUpon>FriendsView.xaml</DependentUpon>
@@ -236,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Lobby\Dialogs\VerifyByCodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\DirectMessageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -415,6 +423,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProfileService\UserProfileService.wsdl" />
+    <None Include="Connected Services\SocialService\GuessMyMessClient.SocialService.DirectMessageDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SocialService\GuessMyMessClient.SocialService.FriendDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

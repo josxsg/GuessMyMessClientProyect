@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="GuessMyMessClient.View.Lobby.DirectMessageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GuessMyMessClient.View.Lobby"
+             mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
+             d:DataContext="{d:DesignInstance Type=vm:DirectMessageViewModel, IsDesignTimeCreatable=True}"
+             xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+             
+             Width="500" Height="650" d:DesignHeight="650" d:DesignWidth="500">
+    <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="35*" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" 
+                         Style="{StaticResource SearchTextBoxStyle}"
+                         Tag="{x:Static language:Lang.socialTfSearchPlayers}"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Column="1" 
+                        Style="{StaticResource BlueIconButton}" 
+                        Command="{Binding SearchCommand}" 
+                        ToolTip="{x:Static language:Lang.socialBtnSearch}"
+                        Margin="5,0,0,0">
+                    <Image Source="/Resources/Images/search.png" Height="20"/>
+                </Button>
+            </Grid>
+
+            <ListView Grid.Row="1"
+                      BorderThickness="1"
+                      BorderBrush="LightGray"
+                      Margin="0,0,0,5" 
+                      ItemsSource="{Binding SearchResults}"
+                      HorizontalContentAlignment="Stretch"
+                      SelectedItem="{Binding SelectedSearchResult, Mode=TwoWay}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock Text="{Binding Username}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView Grid.Row="2"
+                      BorderThickness="1"
+                      BorderBrush="LightGray"
+                      Margin="0,5,0,5" ItemsSource="{Binding Conversations}"
+                      HorizontalContentAlignment="Stretch"
+                      SelectedItem="{Binding SelectedConversation, Mode=TwoWay}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock Text="{Binding username}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView Grid.Row="3"
+                      BorderThickness="1"
+                      BorderBrush="LightGray"
+                      Margin="0,5,0,10"
+                      ItemsSource="{Binding ChatHistory}" HorizontalContentAlignment="Stretch"
+                      SelectedItem="{Binding SelectedMessage, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding senderUsername}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding content}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0"
+                         Height="39"
+                         Margin="0,0,5,0" 
+                         Style="{StaticResource TextBox}"
+                         Text="{Binding MessageText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button Grid.Column="1"
+                        Content="{x:Static language:Lang.globalBtnSend}" 
+                        Style="{StaticResource JoinButton}" 
+                        FontSize="20"
+                        VerticalAlignment="Center" 
+                        Width="75" 
+                        Height="39"
+                        Command="{Binding SendMessageCommand}"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

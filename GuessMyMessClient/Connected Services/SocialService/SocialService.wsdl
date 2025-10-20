@@ -356,6 +356,121 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_SendDirectMessage_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_GetConversations_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_GetConversations_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_GetConversationHistory_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_GetConversationHistory_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_notifyFriendRequest_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -425,6 +540,29 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_ISocialService_NotifyMessageReceived_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8733/GuessMyMessServer/Social/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -465,6 +603,21 @@
   <wsdl:message name="ISocialService_inviteFriendToGameByEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:inviteFriendToGameByEmailResponse" />
   </wsdl:message>
+  <wsdl:message name="ISocialService_SendDirectMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendDirectMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetConversations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConversations" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetConversations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConversationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetConversationHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConversationHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetConversationHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConversationHistoryResponse" />
+  </wsdl:message>
   <wsdl:message name="ISocialService_notifyFriendRequest_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:notifyFriendRequest" />
   </wsdl:message>
@@ -473,6 +626,9 @@
   </wsdl:message>
   <wsdl:message name="ISocialService_notifyFriendStatusChanged_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:notifyFriendStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_NotifyMessageReceived_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyMessageReceived" />
   </wsdl:message>
   <wsdl:portType name="ISocialService">
     <wsdl:operation name="getFriendsList">
@@ -500,6 +656,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmail" message="tns:ISocialService_inviteFriendToGameByEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmailResponse" message="tns:ISocialService_inviteFriendToGameByEmail_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SendDirectMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SendDirectMessage" message="tns:ISocialService_SendDirectMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConversations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversations" message="tns:ISocialService_GetConversations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetConversationsResponse" message="tns:ISocialService_GetConversations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConversationHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistory" message="tns:ISocialService_GetConversationHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistoryResponse" message="tns:ISocialService_GetConversationHistory_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="notifyFriendRequest">
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/notifyFriendRequest" message="tns:ISocialService_notifyFriendRequest_OutputCallbackMessage" />
     </wsdl:operation>
@@ -508,6 +675,9 @@
     </wsdl:operation>
     <wsdl:operation name="notifyFriendStatusChanged">
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/notifyFriendStatusChanged" message="tns:ISocialService_notifyFriendStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyMessageReceived">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyMessageReceived" message="tns:ISocialService_NotifyMessageReceived_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSDualHttpBinding_ISocialService" type="tns:ISocialService">
@@ -578,6 +748,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SendDirectMessage">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/SendDirectMessage" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_ISocialService_SendDirectMessage_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetConversations">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/GetConversations" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_ISocialService_GetConversations_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_ISocialService_GetConversations_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConversationHistory">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/GetConversationHistory" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_ISocialService_GetConversationHistory_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_ISocialService_GetConversationHistory_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="notifyFriendRequest">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/notifyFriendRequest" style="document" />
       <wsdl:output>
@@ -599,6 +798,13 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NotifyMessageReceived">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyMessageReceived" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_ISocialService_NotifyMessageReceived_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="SocialService">
     <wsdl:port name="WSDualHttpBinding_ISocialService" binding="tns:WSDualHttpBinding_ISocialService">
@@ -606,7 +812,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8733/GuessMyMessServer/Social/</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>DESKTOP-MBESJIN\zenbook i5</Upn>
+          <Upn>DESKTOP-DHFSDOH\Raul</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

@@ -313,6 +313,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a [YOU].
+        /// </summary>
+        public static string directMessageSenderTxtChat {
+            get {
+                return ResourceManager.GetString("directMessageSenderTxtChat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Circle.
         /// </summary>
         public static string drawingScreenBtnCircle {

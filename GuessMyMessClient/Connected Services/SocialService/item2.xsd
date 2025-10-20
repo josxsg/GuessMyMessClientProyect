@@ -64,4 +64,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OperationResultDto" nillable="true" type="tns:OperationResultDto" />
+  <xs:complexType name="DirectMessageDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="recipientUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senderUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectMessageDto" nillable="true" type="tns:DirectMessageDto" />
+  <xs:complexType name="ArrayOfDirectMessageDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DirectMessageDto" nillable="true" type="tns:DirectMessageDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirectMessageDto" nillable="true" type="tns:ArrayOfDirectMessageDto" />
 </xs:schema>

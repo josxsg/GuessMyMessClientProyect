@@ -85,6 +85,42 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SendDirectMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q5:DirectMessageDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConversations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConversationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationsResult" nillable="true" type="q6:ArrayOfFriendDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConversationHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConversationHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationHistoryResult" nillable="true" type="q7:ArrayOfDirectMessageDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="notifyFriendRequest">
     <xs:complexType>
       <xs:sequence>
@@ -105,6 +141,13 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="friendUsername" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="isOnline" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyMessageReceived">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q8:DirectMessageDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

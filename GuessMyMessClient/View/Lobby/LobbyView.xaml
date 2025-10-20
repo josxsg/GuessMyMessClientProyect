@@ -83,7 +83,8 @@
             </Button>
         </StackPanel>
 
-        <Button Style="{StaticResource ChatButton}" Command="{Binding ChatCommand}" ToolTip="{x:Static language:Lang.globalBtnChat}"
+        <Button x:Name="ChatButton" 
+                Style="{StaticResource ChatButton}" Command="{Binding ChatCommand}" ToolTip="{x:Static language:Lang.globalBtnChat}"
                 VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10">
             <Image Source="/Resources/Images/chat.png" Width="30"/>
         </Button>
@@ -154,5 +155,17 @@
             <local:ConfigurationView DataContext="{Binding ConfigurationViewModel}"/>
 
         </Popup>
+
+        <Popup x:Name="ChatPopup"
+               PlacementTarget="{Binding ElementName=ChatButton}"
+               Placement="Right"
+               AllowsTransparency="True"
+               StaysOpen="False" 
+               IsOpen="{Binding IsChatPopupOpen, Mode=TwoWay}">
+
+            <local:DirectMessageView DataContext="{Binding DirectMessageViewModel}"/>
+
+        </Popup>
+
     </Grid>
 </Window>

@@ -403,6 +403,100 @@ namespace GuessMyMessClient.SocialService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DirectMessageDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class DirectMessageDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string contentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string recipientUsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string senderUsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime timestampField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string content {
+            get {
+                return this.contentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.contentField, value) != true)) {
+                    this.contentField = value;
+                    this.RaisePropertyChanged("content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string recipientUsername {
+            get {
+                return this.recipientUsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.recipientUsernameField, value) != true)) {
+                    this.recipientUsernameField = value;
+                    this.RaisePropertyChanged("recipientUsername");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string senderUsername {
+            get {
+                return this.senderUsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.senderUsernameField, value) != true)) {
+                    this.senderUsernameField = value;
+                    this.RaisePropertyChanged("senderUsername");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                if ((this.timestampField.Equals(value) != true)) {
+                    this.timestampField = value;
+                    this.RaisePropertyChanged("timestamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SocialService.ISocialService", CallbackContract=typeof(GuessMyMessClient.SocialService.ISocialServiceCallback))]
     public interface ISocialService {
@@ -448,6 +542,24 @@ namespace GuessMyMessClient.SocialService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/inviteFriendToGameByEmailResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> inviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendDirectMessage")]
+        void SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendDirectMessage")]
+        System.Threading.Tasks.Task SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
+        GuessMyMessClient.SocialService.FriendDto[] GetConversations(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetConversationsAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversationHistory", ReplyAction="http://tempuri.org/ISocialService/GetConversationHistoryResponse")]
+        GuessMyMessClient.SocialService.DirectMessageDto[] GetConversationHistory(string user1, string user2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversationHistory", ReplyAction="http://tempuri.org/ISocialService/GetConversationHistoryResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.DirectMessageDto[]> GetConversationHistoryAsync(string user1, string user2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -461,6 +573,9 @@ namespace GuessMyMessClient.SocialService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/notifyFriendStatusChanged")]
         void notifyFriendStatusChanged(string friendUsername, bool isOnline);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyMessageReceived")]
+        void NotifyMessageReceived(GuessMyMessClient.SocialService.DirectMessageDto message);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -545,6 +660,30 @@ namespace GuessMyMessClient.SocialService {
         
         public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> inviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode) {
             return base.Channel.inviteFriendToGameByEmailAsync(fromUsername, friendEmail, matchCode);
+        }
+        
+        public void SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message) {
+            base.Channel.SendDirectMessage(message);
+        }
+        
+        public System.Threading.Tasks.Task SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message) {
+            return base.Channel.SendDirectMessageAsync(message);
+        }
+        
+        public GuessMyMessClient.SocialService.FriendDto[] GetConversations(string username) {
+            return base.Channel.GetConversations(username);
+        }
+        
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetConversationsAsync(string username) {
+            return base.Channel.GetConversationsAsync(username);
+        }
+        
+        public GuessMyMessClient.SocialService.DirectMessageDto[] GetConversationHistory(string user1, string user2) {
+            return base.Channel.GetConversationHistory(user1, user2);
+        }
+        
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.DirectMessageDto[]> GetConversationHistoryAsync(string user1, string user2) {
+            return base.Channel.GetConversationHistoryAsync(user1, user2);
         }
     }
 }

@@ -447,4 +447,7 @@
   <data name="loginLbUsernameOrEmail" xml:space="preserve">
     <value>Usuario o Correo Electrónico</value>
   </data>
+  <data name="directMessageSenderTxtChat" xml:space="preserve">
+    <value>[TÚ]</value>
+  </data>
 </root>

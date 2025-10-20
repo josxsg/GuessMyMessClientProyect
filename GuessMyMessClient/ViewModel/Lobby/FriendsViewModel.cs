@@ -187,6 +187,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
             });
         }
+
+        public void NotifyMessageReceived(DirectMessageDto message)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class FriendViewModel : ViewModelBase
