@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ec8da07e-ec94-44d7-8135-f39148797eed" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="4443f9cc-b599-48cc-ab63-f97548b5288e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/GuessMyMessServer/Profile/" Protocol="http" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="6f628dda-8ecc-4716-8730-29e69d602dc9" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd0" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="3ea9888a-eb0d-4496-9658-966c8fb59335" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd1" />
-    <MetadataFile FileName="UserProfileService.wsdl" MetadataType="Wsdl" ID="d303d258-e035-4bab-9bd4-e006cfa89cf1" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?wsdl" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="8a74f09b-3d5f-4572-9158-26d2c18b78a6" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?disco" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="6f7dd663-f12a-4b66-b6df-6069df598473" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Profile/?xsd=xsd2" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d436f613-d3ab-4de0-8046-e68dfc41f6ef" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="333e5bc8-e2b1-429f-96cf-ec79f4845137" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="f8da4b80-947e-4695-aadc-3d8fed7f1da7" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
+    <MetadataFile FileName="GuessMyMessServer.Contracts.DataContracts.xsd" MetadataType="Schema" ID="963cb68a-98eb-495a-9138-43d07ebd7ef4" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

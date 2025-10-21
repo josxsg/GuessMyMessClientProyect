@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
@@ -35,28 +34,24 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 if (_selectedAvatar != null)
                 {
-                    _selectedAvatar.IsSelected = false; 
+                    _selectedAvatar.IsSelected = false;
                 }
-
                 _selectedAvatar = value;
-
                 if (_selectedAvatar != null)
                 {
-                    _selectedAvatar.IsSelected = true; 
+                    _selectedAvatar.IsSelected = true;
                 }
-
                 OnPropertyChanged();
-                CommandManager.InvalidateRequerySuggested();
             }
         }
 
         public ICommand ConfirmSelectionCommand { get; }
         public ICommand CloseCommand { get; }
-        public ICommand SelectAvatarItemCommand { get; } 
+        public ICommand SelectAvatarItemCommand { get; }
 
         public SelectAvatarViewModel(int currentAvatarId = 1)
         {
-            _currentAvatarId = currentAvatarId; 
+            _currentAvatarId = currentAvatarId;
             AvailableAvatars = new ObservableCollection<AvatarModel>();
             ConfirmSelectionCommand = new RelayCommand(ExecuteConfirmSelection, CanExecuteConfirmSelection);
             CloseCommand = new RelayCommand(CloseWindow);
@@ -64,7 +59,48 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
             if (!DesignerProperties.GetIsInDesignMode(new DependencyObject()))
             {
-                LoadAvatarsAsync();
+                LoadAvatars();
+            }
+        }
+
+        private async void LoadAvatars()
+        {
+            await LoadAvatarsAsync();
+        }
+
+        private async Task LoadAvatarsAsync()
+        {
+            var client = new UserProfileServiceClient();
+            try
+            {
+                var serverAvatars = await client.GetAvailableAvatarsAsync();
+
+                var tempAvatars = new ObservableCollection<AvatarModel>();
+                foreach (var avatarDto in serverAvatars)
+                {
+                    tempAvatars.Add(new AvatarModel
+                    {
+                        Id = avatarDto.idAvatar,
+                        Name = avatarDto.avatarName,
+                        ImageData = avatarDto.avatarData,
+                        ImageSource = ConvertByteToImage(avatarDto.avatarData)
+                    });
+                }
+
+                AvailableAvatars = tempAvatars;
+                SelectedAvatar = AvailableAvatars.FirstOrDefault(a => a.Id == _currentAvatarId) ?? AvailableAvatars.FirstOrDefault();
+
+                client.Close();
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show($"Error del servidor al cargar avatares: {ex.Message}", "Error WCF");
+                client.Abort();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error de conexión al cargar avatares: {ex.Message}", "Error Crítico");
+                client.Abort();
             }
         }
 
@@ -92,71 +128,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private async void LoadAvatarsAsync()
-        {
-            try
-            {
-                var loadedAvatars = await Task.Run(() =>
-                {
-                    using (UserProfileServiceClient client = new UserProfileServiceClient())
-                    {
-                        List<ProfileService.AvatarDto> serverAvatars = client.GetAvailableAvatars().ToList();
-
-                        var tempAvatars = new ObservableCollection<AvatarModel>();
-
-                        foreach (var avatarDto in serverAvatars)
-                        {
-                            var avatarModel = new AvatarModel
-                            {
-                                Id = avatarDto.idAvatar,
-                                Name = avatarDto.avatarName,
-                                ImageData = avatarDto.avatarData,
-                                ImageSource = ConvertByteToImage(avatarDto.avatarData)
-                            };
-                            tempAvatars.Add(avatarModel);
-                        }
-                        return tempAvatars;
-                    }
-                }).ConfigureAwait(false); 
-
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    AvailableAvatars = loadedAvatars;
-                    SelectedAvatar = AvailableAvatars.FirstOrDefault(a => a.Id == _currentAvatarId);
-
-                    if (SelectedAvatar == null && AvailableAvatars.Any())
-                    {
-                        SelectedAvatar = AvailableAvatars.First();
-                    }
-                });
-            }
-            catch (FaultException ex)
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    MessageBox.Show($"Error de Lógica del Servidor: {ex.Message}", "Error WCF");
-                });
-            }
-            catch (EndpointNotFoundException)
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    MessageBox.Show("Error de Conexión: El servidor no está ejecutándose.", "Error Crítico");
-                });
-            }
-            catch (Exception ex)
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    MessageBox.Show($"Error inesperado: {ex.Message}", "Error General");
-                });
-            }
-        }
-
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
         {
             if (imageBytes == null || imageBytes.Length == 0) return null;
-
             var image = new BitmapImage();
             using (var mem = new MemoryStream(imageBytes))
             {

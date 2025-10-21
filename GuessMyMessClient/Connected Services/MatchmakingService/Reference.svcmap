@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="9b6d83c2-6079-4961-8c30-4a8395b23246" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a82f0348-7f5a-4d60-8fca-b69d2559ead7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/GuessMyMessServer/Matchmaking/" Protocol="http" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:8734/GuessMyMessServer/Matchmaking/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MatchmakingService.wsdl" MetadataType="Wsdl" ID="a40605eb-44f1-446d-8a9d-7daafdda5233" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Matchmaking/?wsdl" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="5c0d6eca-6b1e-483d-bdde-cac64de13859" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Matchmaking/?xsd=xsd2" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="4f0ea427-6fd3-4f55-9a67-2f234d287ff9" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Matchmaking/?disco" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="9d0c1c96-9978-46c8-84e3-ae90862175ab" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Matchmaking/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="65d4ee04-733b-430d-ad9f-434155a6b939" SourceId="1" SourceUrl="http://localhost:8733/GuessMyMessServer/Matchmaking/?xsd=xsd0" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="58c7ecea-cbc1-462a-aa00-54418970ff4f" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Matchmaking/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="032dc058-98ee-4dcf-b384-4bde0d7925e8" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Matchmaking/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="6e94065f-a035-41b5-8683-787665297929" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Matchmaking/mex" />
+    <MetadataFile FileName="GuessMyMessServer.Contracts.DataContracts.xsd" MetadataType="Schema" ID="6b16e679-9b23-47c4-9f92-5280d5bea362" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Matchmaking/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

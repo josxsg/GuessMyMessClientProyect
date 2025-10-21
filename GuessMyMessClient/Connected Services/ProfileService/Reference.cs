@@ -362,42 +362,49 @@ namespace GuessMyMessClient.ProfileService {
     public interface IUserProfileService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetUserProfile", ReplyAction="http://tempuri.org/IUserProfileService/GetUserProfileResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/GetUserProfileStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.UserProfileDto GetUserProfile(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetUserProfile", ReplyAction="http://tempuri.org/IUserProfileService/GetUserProfileResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.UserProfileDto> GetUserProfileAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/UpdateProfile", ReplyAction="http://tempuri.org/IUserProfileService/UpdateProfileResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/UpdateProfileStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.OperationResultDto UpdateProfile(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/UpdateProfile", ReplyAction="http://tempuri.org/IUserProfileService/UpdateProfileResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> UpdateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/RequestChangeEmailStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.OperationResultDto RequestChangeEmail(string username, string newEmail);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> RequestChangeEmailAsync(string username, string newEmail);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangeEmailResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmailStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.OperationResultDto ConfirmChangeEmail(string username, string verificationCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangeEmailResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> ConfirmChangeEmailAsync(string username, string verificationCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangePasswordResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/RequestChangePasswordStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.OperationResultDto RequestChangePassword(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangePasswordResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> RequestChangePasswordAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangePasswordResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/ConfirmChangePasswordStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.OperationResultDto ConfirmChangePassword(string username, string newPassword, string verificationCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/ConfirmChangePassword", ReplyAction="http://tempuri.org/IUserProfileService/ConfirmChangePasswordResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> ConfirmChangePasswordAsync(string username, string newPassword, string verificationCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.ProfileService.AvatarDto[] GetAvailableAvatars();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse")]

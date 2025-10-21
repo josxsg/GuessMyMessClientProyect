@@ -14,6 +14,7 @@ using GuessMyMessClient.Model;
 using System.Collections.ObjectModel;
 using System.IO;
 using GuessMyMessClient.ViewModel.Lobby;
+using System.ServiceModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -123,9 +124,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
             ConfigurationViewModel = new ConfigurationViewModel();
             DirectMessageViewModel = new DirectMessageViewModel();
 
-            LoadUserProfileAsync();
+            LoadDataOnEntry();
         }
 
+        private async void LoadDataOnEntry()
+        {
+            await LoadUserProfileAsync();
+        }
 
         private void ExecuteSettings(object parameter)
         {
@@ -164,36 +169,40 @@ namespace GuessMyMessClient.ViewModel.Lobby
         private void ExecutePlay(object param) { MessageBox.Show("Navegando a Partidas Públicas..."); }
         private void ExecuteCreateGame(object param) { MessageBox.Show("Creando Partida..."); }
 
-        private async void LoadUserProfileAsync()
+        private async Task LoadUserProfileAsync()
         {
-            if (SessionManager.Instance.IsLoggedIn)
+            if (!SessionManager.Instance.IsLoggedIn) return;
+
+            var client = new UserProfileServiceClient();
+            try
             {
-                try
+                UserProfileDto profileData = await client.GetUserProfileAsync(SessionManager.Instance.CurrentUsername);
+
+                if (profileData != null)
                 {
-                    using (var client = new UserProfileServiceClient())
+                    UserProfileData = profileData;
+                    Username = profileData.Username;
+                    ProfileViewModel = new ProfileViewModel(UserProfileData);
+
+                    var allAvatars = await client.GetAvailableAvatarsAsync();
+                    var userAvatarDto = allAvatars.FirstOrDefault(a => a.idAvatar == profileData.AvatarId);
+
+                    if (userAvatarDto?.avatarData != null)
                     {
-                        UserProfileDto profileData = await client.GetUserProfileAsync(SessionManager.Instance.CurrentUsername);
-
-                        if (profileData != null)
-                        {
-                            UserProfileData = profileData;
-                            Username = profileData.Username;
-                            ProfileViewModel = new ProfileViewModel(UserProfileData);
-
-                            var allAvatarsDto = await Task.Run(() => client.GetAvailableAvatars().ToList());
-                            var userAvatarDto = allAvatarsDto.FirstOrDefault(a => a.idAvatar == profileData.AvatarId);
-
-                            if (userAvatarDto != null)
-                            {
-                                UserAvatar = ConvertByteToImage(userAvatarDto.avatarData);
-                            }
-                        }
+                        UserAvatar = ConvertByteToImage(userAvatarDto.avatarData);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al cargar el perfil: {ex.Message}", "Error de Carga");
-                }
+                client.Close();
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show($"Error al cargar el perfil: {ex.Message}", "Error del Servidor");
+                client.Abort();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo conectar con el servidor para cargar el perfil.\nError: {ex.Message}", "Error de Conexión");
+                client.Abort();
             }
         }
 
@@ -225,32 +234,37 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (newAvatar == null || newAvatar.Id == UserProfileData.AvatarId)
             {
-                return; 
+                return;
             }
 
             UserProfileData.AvatarId = newAvatar.Id;
+            var client = new UserProfileServiceClient();
 
             try
             {
-                using (var client = new UserProfileServiceClient())
-                {
-                    OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
+                OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
 
-                    if (result.success)
-                    {
-                        UserAvatar = newAvatar.ImageSource;
-                        MessageBox.Show("Avatar actualizado correctamente.", "Éxito");
-                    }
-                    else
-                    {
-                        UserProfileData.AvatarId = UserAvatar.GetHashCode(); 
-                        MessageBox.Show(result.message, "Error al actualizar");
-                    }
+                if (result.success)
+                {
+                    UserAvatar = newAvatar.ImageSource;
+                    MessageBox.Show("Avatar actualizado correctamente.", "Éxito");
+                    client.Close();
                 }
+                else
+                {
+                    MessageBox.Show(result.message, "Error al actualizar");
+                    client.Abort();
+                }
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show($"Error al guardar el avatar: {ex.Message}", "Error del Servidor");
+                client.Abort();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error de conexión al guardar el avatar: {ex.Message}", "Error WCF");
+                MessageBox.Show($"Error de conexión al guardar el avatar: {ex.Message}", "Error de Conexión");
+                client.Abort();
             }
         }
 

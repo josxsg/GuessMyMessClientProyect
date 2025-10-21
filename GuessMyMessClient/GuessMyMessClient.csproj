@@ -349,61 +349,61 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\AuthService\AuthenticationService.wsdl" />
     <None Include="Connected Services\AuthService\GuessMyMessClient.AuthService.OperationResultDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\AuthService\item.xsd">
+    <None Include="Connected Services\AuthService\GuessMyMessServer.Contracts.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AuthService\item1.xsd">
+    <None Include="Connected Services\AuthService\service.wsdl" />
+    <None Include="Connected Services\AuthService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AuthService\item2.xsd">
+    <None Include="Connected Services\AuthService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GameService\GameService.wsdl" />
-    <None Include="Connected Services\GameService\item.xsd">
+    <None Include="Connected Services\GameService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GameService\item1.xsd">
+    <None Include="Connected Services\GameService\GuessMyMessServer.Contracts.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GameService\item2.xsd">
+    <None Include="Connected Services\GameService\service.wsdl" />
+    <None Include="Connected Services\GameService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GameService\item3.xsd">
+    <None Include="Connected Services\GameService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LobbyService\item.xsd">
+    <None Include="Connected Services\LobbyService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LobbyService\item1.xsd">
+    <None Include="Connected Services\LobbyService\GuessMyMessServer.Contracts.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LobbyService\item2.xsd">
+    <None Include="Connected Services\LobbyService\service.wsdl" />
+    <None Include="Connected Services\LobbyService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LobbyService\item3.xsd">
+    <None Include="Connected Services\LobbyService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LobbyService\LobbyService.wsdl" />
     <None Include="Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.MatchInfoDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.OperationResultDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MatchmakingService\item.xsd">
+    <None Include="Connected Services\MatchmakingService\GuessMyMessServer.Contracts.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MatchmakingService\item1.xsd">
+    <None Include="Connected Services\MatchmakingService\service.wsdl" />
+    <None Include="Connected Services\MatchmakingService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MatchmakingService\item2.xsd">
+    <None Include="Connected Services\MatchmakingService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MatchmakingService\MatchmakingService.wsdl" />
     <None Include="Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -413,16 +413,16 @@
     <None Include="Connected Services\ProfileService\GuessMyMessClient.ProfileService.UserProfileDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ProfileService\item.xsd">
+    <None Include="Connected Services\ProfileService\GuessMyMessServer.Contracts.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfileService\item1.xsd">
+    <None Include="Connected Services\ProfileService\service.wsdl" />
+    <None Include="Connected Services\ProfileService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfileService\item2.xsd">
+    <None Include="Connected Services\ProfileService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProfileService\UserProfileService.wsdl" />
     <None Include="Connected Services\SocialService\GuessMyMessClient.SocialService.DirectMessageDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -438,16 +438,16 @@
     <None Include="Connected Services\SocialService\GuessMyMessClient.SocialService.UserProfileDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\SocialService\item.xsd">
+    <None Include="Connected Services\SocialService\GuessMyMessServer.Contracts.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SocialService\item1.xsd">
+    <None Include="Connected Services\SocialService\service.wsdl" />
+    <None Include="Connected Services\SocialService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SocialService\item2.xsd">
+    <None Include="Connected Services\SocialService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\SocialService\SocialService.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -513,9 +513,6 @@
     <WCFMetadataStorage Include="Connected Services\SocialService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AuthService\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\AuthService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -526,9 +523,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ProfileService\item.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ProfileService\configuration91.svcinfo" />
@@ -543,9 +537,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\SocialService\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\SocialService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -556,9 +547,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MatchmakingService\item.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MatchmakingService\configuration91.svcinfo" />
@@ -573,9 +561,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\LobbyService\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\LobbyService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -586,9 +571,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameService\item.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\GameService\configuration91.svcinfo" />

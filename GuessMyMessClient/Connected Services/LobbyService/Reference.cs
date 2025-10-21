@@ -231,7 +231,7 @@ namespace GuessMyMessClient.LobbyService {
         private string contentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool isPredefinedField;
+        private string recipientUsernameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string senderUsernameField;
@@ -263,14 +263,14 @@ namespace GuessMyMessClient.LobbyService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool isPredefined {
+        public string recipientUsername {
             get {
-                return this.isPredefinedField;
+                return this.recipientUsernameField;
             }
             set {
-                if ((this.isPredefinedField.Equals(value) != true)) {
-                    this.isPredefinedField = value;
-                    this.RaisePropertyChanged("isPredefined");
+                if ((object.ReferenceEquals(this.recipientUsernameField, value) != true)) {
+                    this.recipientUsernameField = value;
+                    this.RaisePropertyChanged("recipientUsername");
                 }
             }
         }

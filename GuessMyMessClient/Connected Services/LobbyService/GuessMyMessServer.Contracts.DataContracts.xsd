@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8733/GuessMyMessServer/Lobby/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="LobbyStateDto">
     <xs:sequence>
       <xs:element minOccurs="0" name="currentSettings" nillable="true" type="tns:LobbySettingsDto" />
@@ -23,7 +23,7 @@
   <xs:complexType name="ChatMessageDto">
     <xs:sequence>
       <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="isPredefined" type="xs:boolean" />
+      <xs:element minOccurs="0" name="recipientUsername" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="senderUsername" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
     </xs:sequence>

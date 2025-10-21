@@ -51,31 +51,29 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 return;
             }
 
-            using (AuthenticationServiceClient client = new AuthenticationServiceClient())
+            var client = new AuthenticationServiceClient();
+
+            try
             {
-                try
-                {
-                    OperationResultDto result = await client.LoginAsync(UsernameOrEmail, Password);
+                OperationResultDto result = await client.LoginAsync(UsernameOrEmail, Password);
 
-                    if (result.success)
-                    {
-                        SessionManager.Instance.StartSession(result.message);
+                if (result.success)
+                {
+                    SessionManager.Instance.StartSession(result.message);
+                    OpenLobby(parameter);
 
-                        OpenLobby(parameter);
-                    }
-                    else
-                    {
-                        MessageBox.Show(result.message, "Error de Inicio de Sesión");
-                    }
+                    client.Close();
                 }
-                catch (EndpointNotFoundException)
+                else
                 {
-                    MessageBox.Show("Error de conexión: El servidor WCF no está disponible.", "Error Crítico");
+                    MessageBox.Show(result.message, "Error de Inicio de Sesión");
+                    client.Abort();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error inesperado durante el login: {ex.Message}", "Error WCF");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo conectar con el servidor. \nError: {ex.Message}", "Error de Conexión");
+                client.Abort();
             }
         }
 
