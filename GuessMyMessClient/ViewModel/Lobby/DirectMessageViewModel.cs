@@ -1,80 +1,39 @@
-﻿using GuessMyMessClient.SocialService;
+﻿using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.SocialService;
 using GuessMyMessClient.ViewModel.Session;
 using System;
 using System.Collections.ObjectModel;
-using GuessMyMessClient.Properties.Langs; 
+using System.Linq;
 using System.ServiceModel;
-using System.Linq; 
+using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input; // Necesario para CommandManager
+using System.Windows.Input;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
-    // --- CORRECCIÓN 1: Quitada la interfaz ISocialServiceCallback ---
-    public class DirectMessageViewModel : ViewModelBase, SocialService.ISocialServiceCallback
+    public class DirectMessageViewModel : ViewModelBase, ISocialServiceCallback
     {
-        private readonly SocialServiceClient _client;
-        private string _searchText;
-        private string _messageText;
-        private ObservableCollection<UserProfileDto> _searchResults;
-        private UserProfileDto _selectedSearchResult;
+        private SocialServiceClient _client;
+        public ObservableCollection<FriendDto> Conversations { get; }
+        public ObservableCollection<DirectMessageDto> ChatHistory { get; }
+        public ObservableCollection<UserProfileDto> SearchResults { get; }
+
+        public string SearchText { get; set; }
+        public string MessageText { get; set; }
         private string _currentChatPartnerUsername;
 
-        public string SearchText
-        {
-            get { return _searchText; }
-            set { _searchText = value; OnPropertyChanged(nameof(SearchText)); }
-        }
-
-        public string MessageText
-        {
-            get { return _messageText; }
-            set
-            {
-                _messageText = value;
-                OnPropertyChanged(nameof(MessageText));
-                CommandManager.InvalidateRequerySuggested();
-            }
-        }
-
-        public ObservableCollection<UserProfileDto> SearchResults
-        {
-            get { return _searchResults; }
-            set { _searchResults = value; OnPropertyChanged(nameof(SearchResults)); }
-        }
-
+        private UserProfileDto _selectedSearchResult;
         public UserProfileDto SelectedSearchResult
         {
             get => _selectedSearchResult;
             set
             {
-                if (_selectedSearchResult != value) // Evitar recargas innecesarias
-                {
-                    _selectedSearchResult = value;
-                    OnPropertyChanged();
-                    CommandManager.InvalidateRequerySuggested();
-                    if (_selectedSearchResult != null)
-                    {
-                        SelectedConversation = null; // Deseleccionar la otra lista
-                        SearchText = string.Empty;
-
-                        // --- MODIFICADO: Llamar a LoadChatHistory ---
-                        LoadChatHistory(_selectedSearchResult.Username);
-                    }
-                    else if (SelectedConversation == null) // Si ambas selecciones son null
-                    {
-                        // --- NUEVO: Limpiar historial si no hay selección ---
-                        ClearChatHistory();
-                    }
-                }
+                _selectedSearchResult = value;
+                OnPropertyChanged();
+                if (value != null) { SelectedConversation = null; LoadChatHistory(value.Username); }
+                else if (SelectedConversation == null) { ClearChatHistory(); } // Limpiar si ambas selecciones son null
+                CommandManager.InvalidateRequerySuggested(); // Notificar cambio para CanPerformSendMessage
             }
-        }
-
-        private ObservableCollection<FriendDto> _conversations;
-        public ObservableCollection<FriendDto> Conversations
-        {
-            get => _conversations;
-            set { _conversations = value; OnPropertyChanged(); }
         }
 
         private FriendDto _selectedConversation;
@@ -83,32 +42,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
             get => _selectedConversation;
             set
             {
-                if (_selectedConversation != value) // Evitar recargas innecesarias
-                {
-                    _selectedConversation = value;
-                    OnPropertyChanged();
-                    CommandManager.InvalidateRequerySuggested();
-                    if (_selectedConversation != null)
-                    {
-                        SelectedSearchResult = null; // Deseleccionar la otra lista
-
-                        // --- MODIFICADO: Llamar a LoadChatHistory ---
-                        LoadChatHistory(_selectedConversation.username);
-                    }
-                    else if (SelectedSearchResult == null) // Si ambas selecciones son null
-                    {
-                        // --- NUEVO: Limpiar historial si no hay selección ---
-                        ClearChatHistory();
-                    }
-                }
+                _selectedConversation = value;
+                OnPropertyChanged();
+                if (value != null) { SelectedSearchResult = null; LoadChatHistory(value.username); }
+                else if (SelectedSearchResult == null) { ClearChatHistory(); } // Limpiar si ambas selecciones son null
+                CommandManager.InvalidateRequerySuggested(); // Notificar cambio para CanPerformSendMessage
             }
-        }
-
-        private ObservableCollection<DirectMessageDto> _chatHistory;
-        public ObservableCollection<DirectMessageDto> ChatHistory
-        {
-            get => _chatHistory;
-            set { _chatHistory = value; OnPropertyChanged(); }
         }
 
         public ICommand SearchCommand { get; }
@@ -116,288 +55,183 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public DirectMessageViewModel()
         {
+            Conversations = new ObservableCollection<FriendDto>();
+            ChatHistory = new ObservableCollection<DirectMessageDto>();
+            SearchResults = new ObservableCollection<UserProfileDto>();
+
+            SearchCommand = new RelayCommand(async _ => await PerformSearchAsync());
+            // CORRECCIÓN: Se usa una expresión lambda para el CanExecute
+            SendMessageCommand = new RelayCommand(PerformSendMessage, _ => CanPerformSendMessage());
+
+            InitializeService();
+        }
+
+        private async void InitializeService()
+        {
             try
             {
-                _client = new SocialServiceClient(new InstanceContext(this)); 
-                _client.Open(); 
-                SearchCommand = new RelayCommand(PerformSearch);
-                SendMessageCommand = new RelayCommand(PerformSendMessage, CanPerformSendMessage);
-                Conversations = new ObservableCollection<FriendDto>(); // Inicializa la nueva colección
-                LoadConversations(); // Llama al método para cargar los chats
-                SearchResults = new ObservableCollection<UserProfileDto>();
-                ChatHistory = new ObservableCollection<DirectMessageDto>();
-
-
-            }
-            catch (EndpointNotFoundException epnfEx) // Usar variable epnfEx
-            {
-                MessageBox.Show($"Could not connect to the server: {epnfEx.Message}. Please make sure the server is running.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                CloseClientSafely(); // Intentar cerrar si falla
-            }
-            catch (CommunicationException commEx) // Añadido catch específico para errores de WCF al abrir/conectar
-            {
-                MessageBox.Show($"Communication error connecting to the server: {commEx.Message}", "WCF Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                CloseClientSafely();
+                _client = new SocialServiceClient(new InstanceContext(this));
+                _client.Open(); // CORRECCIÓN: Open() es síncrono
+                // Llamar a Connect para registrar el callback en el servidor
+                _client.Connect(SessionManager.Instance.CurrentUsername);
+                await LoadConversationsAsync();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An unexpected error occurred during initialization: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error connecting to chat service: {ex.Message}", "Connection Error");
                 CloseClientSafely();
             }
         }
 
-        private async void LoadConversations()
+        private async Task LoadConversationsAsync()
         {
+            if (_client?.State != CommunicationState.Opened) return; // Verificar cliente
             try
             {
-                string currentUsername = SessionManager.Instance.CurrentUsername;
-
-                if (string.IsNullOrEmpty(currentUsername))
-                {
-                    Console.WriteLine("No user in session, cannot load conversations.");
-                    return;
-                }
-
-                var usersWithChats = await _client.GetConversationsAsync(currentUsername);
-
-                // Es una buena práctica actualizar la colección en el Hilo de la UI (Dispatcher)
+                var users = await _client.GetConversationsAsync(SessionManager.Instance.CurrentUsername);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     Conversations.Clear();
-                    if (usersWithChats != null)
-                    {
-                        foreach (var user in usersWithChats)
-                        {
-                            Conversations.Add(user);
-                        }
-                    }
+                    foreach (var u in users) Conversations.Add(u);
                 });
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error loading conversations: {ex.Message}");
-            }
+            catch (FaultException ex) { MessageBox.Show(ex.Message, "Server Error"); CloseClientSafely(); } // Cerrar si hay error
+            catch (Exception ex) { Console.WriteLine($"Error loading conversations: {ex.Message}"); CloseClientSafely(); } // Cerrar si hay error
         }
 
         private async void LoadChatHistory(string otherUsername)
         {
             if (string.IsNullOrEmpty(otherUsername))
             {
-                ClearChatHistory(); // Limpia si no hay con quién chatear
+                ClearChatHistory();
                 return;
             }
 
-            _currentChatPartnerUsername = otherUsername; // Guardar con quién estamos hablando
+            // Solo cargar si el cliente está abierto
+            if (_client?.State != CommunicationState.Opened) return;
 
+            _currentChatPartnerUsername = otherUsername;
             try
             {
-                string currentUser = SessionManager.Instance.CurrentUsername;
-                if (string.IsNullOrEmpty(currentUser)) return; // Salir si no hay sesión
-
-                var history = await _client.GetConversationHistoryAsync(currentUser, otherUsername);
-
+                var history = await _client.GetConversationHistoryAsync(SessionManager.Instance.CurrentUsername, otherUsername);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     ChatHistory.Clear();
-                    if (history != null)
+                    foreach (var msg in history)
                     {
-                        foreach (var msg in history)
+                        if (msg.senderUsername == SessionManager.Instance.CurrentUsername)
                         {
-                            // --- Lógica para el prefijo "[You]" ---
-                            if (msg.senderUsername == currentUser)
-                            {
-                                // Usamos el recurso de idioma Lang.YouPrefix
-                                msg.senderUsername = Lang.directMessageSenderTxtChat;
-                            }
-                            ChatHistory.Add(msg);
+                            msg.senderUsername = Lang.directMessageSenderTxtChat; // "[You]"
                         }
+                        ChatHistory.Add(msg);
                     }
                 });
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error loading chat history with {otherUsername}: {ex.Message}");
-                // Opcional: Mostrar error al usuario
-            }
+            catch (FaultException ex) { MessageBox.Show(ex.Message, "Server Error"); CloseClientSafely(); } // Cerrar si hay error
+            catch (Exception ex) { Console.WriteLine($"Error loading chat history: {ex.Message}"); CloseClientSafely(); } // Cerrar si hay error
         }
 
-        // --- NUEVO: Método para limpiar el historial ---
         private void ClearChatHistory()
         {
-            _currentChatPartnerUsername = null; // Ya no hablamos con nadie
-            Application.Current.Dispatcher.Invoke(() => ChatHistory.Clear());
+            _currentChatPartnerUsername = null;
+            ChatHistory.Clear();
         }
-        private async void PerformSearch(object obj)
+
+        private async Task PerformSearchAsync()
         {
-            if (_client == null || _client.State != CommunicationState.Opened)
-            {
-                MessageBox.Show("Cannot connect to the social service.", "Service Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(SearchText))
-            {
-                Application.Current.Dispatcher.Invoke(() => SearchResults.Clear());
-                return;
-            }
-
+            if (string.IsNullOrWhiteSpace(SearchText) || _client?.State != CommunicationState.Opened) return;
             try
             {
-                string currentUsername = SessionManager.Instance.CurrentUsername;
-                if (string.IsNullOrEmpty(currentUsername))
-                {
-                    MessageBox.Show("User session not found. Please log in again.", "Session Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-
-                var users = await _client.searchUsersAsync(SearchText, currentUsername);
-
+                var users = await _client.SearchUsersAsync(SearchText, SessionManager.Instance.CurrentUsername);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     SearchResults.Clear();
-                    if (users != null)
-                    {
-                        foreach (var user in users)
-                        {
-                            SearchResults.Add(user);
-                        }
-                    }
+                    foreach (var u in users) SearchResults.Add(u);
                 });
             }
-            catch (CommunicationException ex)
-            {
-                MessageBox.Show($"An error occurred while searching for users: {ex.Message}", "Search Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                Application.Current.Dispatcher.Invoke(() => SearchResults.Clear());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An unexpected error occurred during search: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Application.Current.Dispatcher.Invoke(() => SearchResults.Clear());
-            }
+            catch (FaultException ex) { MessageBox.Show(ex.Message, "Server Error"); }
+            catch (Exception ex) { MessageBox.Show($"Search failed: {ex.Message}"); CloseClientSafely(); } // Cerrar si hay error
         }
 
-        // --- PerformSendMessage (con DirectMessageDto y llamada Async) ---
-        private async void PerformSendMessage(object obj)
+        private bool CanPerformSendMessage()
         {
-            if (_client == null || _client.State != CommunicationState.Opened)
+            // Simplificado para claridad
+            return !string.IsNullOrWhiteSpace(MessageText) && _currentChatPartnerUsername != null;
+        }
+
+        private void PerformSendMessage(object obj)
+        {
+            if (!CanPerformSendMessage() || _client?.State != CommunicationState.Opened) return;
+
+            var messageDto = new DirectMessageDto
             {
-                MessageBox.Show("Cannot connect to the chat service.", "Service Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                senderUsername = SessionManager.Instance.CurrentUsername,
+                recipientUsername = _currentChatPartnerUsername,
+                content = MessageText
+            };
+
+            try
+            {
+                // SendDirectMessage es OneWay, no tiene await y no necesita try-catch complicado
+                _client.SendDirectMessage(messageDto);
+
+                var localMsg = new DirectMessageDto { senderUsername = Lang.directMessageSenderTxtChat, content = MessageText, timestamp = DateTime.Now };
+                ChatHistory.Add(localMsg);
+                MessageText = string.Empty;
+                OnPropertyChanged(nameof(MessageText)); // Notificar UI para limpiar
+                CommandManager.InvalidateRequerySuggested(); // Re-evaluar CanPerformSendMessage
             }
+            // Solo capturamos excepciones si SendDirectMessage (OneWay) falla, lo cual es raro
+            catch (Exception ex) { MessageBox.Show($"Failed to send message: {ex.Message}"); CloseClientSafely(); }
+        }
 
-            // El destinatario es quien esté seleccionado en CUALQUIERA de las dos listas
-            string recipient = SelectedSearchResult?.Username ?? SelectedConversation?.username;
-            string messageContent = MessageText;
-            string sender = SessionManager.Instance.CurrentUsername;
-
-            if (!string.IsNullOrEmpty(recipient) && !string.IsNullOrEmpty(messageContent) && !string.IsNullOrEmpty(sender))
+        public void Cleanup()
+        {
+            if (_client?.State == CommunicationState.Opened)
             {
                 try
                 {
-                    var messageDto = new SocialService.DirectMessageDto
-                    {
-                        senderUsername = sender,
-                        recipientUsername = recipient,
-                        content = messageContent,
-                        // El servidor añadirá el timestamp
-                    };
-
-                    await _client.SendDirectMessageAsync(messageDto);
-
-                    // --- NUEVO: Añadir mensaje enviado localmente ---
-                    // Creamos una copia local para añadir el prefijo [You]
-                    var localMessageDto = new DirectMessageDto
-                    {
-                        senderUsername = Lang.directMessageSenderTxtChat, // Usar prefijo
-                        recipientUsername = recipient,
-                        content = messageContent,
-                        timestamp = DateTime.Now // Usar hora local aprox.
-                    };
-                    Application.Current.Dispatcher.Invoke(() => ChatHistory.Add(localMessageDto));
-
-                    MessageText = string.Empty; // Limpiar caja de texto
-
-                    // Si era una conversación nueva, recargar la lista de conversaciones
-                    if (Conversations.FirstOrDefault(c => c.username == recipient) == null)
-                    {
-                        LoadConversations();
-                    }
+                    _client.Disconnect(SessionManager.Instance.CurrentUsername);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Failed to send message: {ex.Message}", "Send Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Console.WriteLine($"Error disconnecting: {ex.Message}");
                 }
             }
-        }
-
-        // --- CanPerformSendMessage (sin cambios) ---
-        private bool CanPerformSendMessage(object obj)
-        {
-            bool aRecipientIsSelected = SelectedSearchResult != null || SelectedConversation != null;
-            bool messageHasText = !string.IsNullOrWhiteSpace(MessageText);
-
-            return aRecipientIsSelected && messageHasText;
-        }
-
-        // --- Método auxiliar CloseClientSafely (AÑADIDO para buen manejo) ---
-        private void CloseClientSafely()
-        {
-            if (_client != null)
-            {
-                try
-                {
-                    if (_client.State != CommunicationState.Faulted && _client.State != CommunicationState.Closed)
-                    {
-                        _client.Close();
-                    }
-                    else
-                    {
-                        _client.Abort(); // Si está fallido o ya cerrado, abortar
-                    }
-                }
-                catch (CommunicationObjectFaultedException ex)
-                {
-                    Console.WriteLine($"Client was already faulted during close: {ex.Message}");
-                    _client.Abort();
-                }
-                catch (CommunicationException ex)
-                {
-                    Console.WriteLine($"Communication error during client close: {ex.Message}");
-                    _client.Abort();
-                }
-                catch (Exception ex) // Otros errores al cerrar
-                {
-                    Console.WriteLine($"Unexpected error during client close: {ex.Message}");
-                    _client.Abort(); // Abortar si Close falla
-                }
-            }
-        }
-
-        // --- Método Cleanup (AÑADIDO para llamar al cerrar) ---
-        // Debes llamar a este método cuando el ViewModel ya no se use (ej. al cerrar el Popup/Ventana)
-        public void Cleanup()
-        {
             CloseClientSafely();
         }
 
-        public void notifyFriendRequest(string fromUsername)
+        private void CloseClientSafely()
         {
+            if (_client == null) return;
+            try
+            {
+                if (_client.State != CommunicationState.Faulted && _client.State != CommunicationState.Closed) _client.Close();
+                else _client.Abort();
+            }
+            catch { _client.Abort(); }
+            _client = null; // Liberar la referencia
         }
 
-        public void notifyFriendResponse(string fromUsername, bool accepted)
-        {
-        }
-
-        public void notifyFriendStatusChanged(string friendUsername, bool isOnline)
-        {
-        }
-
+        // --- Implementación de Callbacks ---
         public void NotifyMessageReceived(DirectMessageDto message)
         {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                if (message.senderUsername == _currentChatPartnerUsername)
+                {
+                    ChatHistory.Add(message);
+                }
+                else
+                {
+                    // Opcional: Lógica para mostrar notificación de nuevo mensaje de otro usuario
+                    MessageBox.Show($"Nuevo mensaje de {message.senderUsername}");
+                    LoadConversationsAsync(); // Actualizar lista si es un nuevo chat
+                }
+            });
         }
-
-        // --- TODO: Añadir métodos LoadConversations y LoadConversationHistory ---
-        // --- TODO: Añadir ObservableCollections para UI de conversaciones y mensajes ---
-
+        public void NotifyFriendRequest(string fromUsername) { /* No es relevante aquí */ }
+        public void NotifyFriendResponse(string fromUsername, bool accepted) { /* No es relevante aquí */ }
+        public void NotifyFriendStatusChanged(string friendUsername, string status) { /* No es relevante aquí */ }
     }
 }

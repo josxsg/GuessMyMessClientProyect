@@ -62,21 +62,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\GameService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\LobbyService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\MatchmakingService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\ProfileService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -362,48 +347,6 @@
     <None Include="Connected Services\AuthService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GameService\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GameService\GuessMyMessServer.Contracts.DataContracts.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GameService\service.wsdl" />
-    <None Include="Connected Services\GameService\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GameService\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\LobbyService\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\LobbyService\GuessMyMessServer.Contracts.DataContracts.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\LobbyService\service.wsdl" />
-    <None Include="Connected Services\LobbyService\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\LobbyService\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.MatchInfoDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.OperationResultDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\MatchmakingService\GuessMyMessServer.Contracts.DataContracts.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\MatchmakingService\service.wsdl" />
-    <None Include="Connected Services\MatchmakingService\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\MatchmakingService\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -506,9 +449,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthService\" />
-    <WCFMetadataStorage Include="Connected Services\GameService\" />
-    <WCFMetadataStorage Include="Connected Services\LobbyService\" />
-    <WCFMetadataStorage Include="Connected Services\MatchmakingService\" />
     <WCFMetadataStorage Include="Connected Services\ProfileService\" />
     <WCFMetadataStorage Include="Connected Services\SocialService\" />
   </ItemGroup>
@@ -544,42 +484,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SocialService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MatchmakingService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MatchmakingService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MatchmakingService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\LobbyService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\LobbyService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\LobbyService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

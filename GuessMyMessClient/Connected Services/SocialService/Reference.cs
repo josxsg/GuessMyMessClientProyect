@@ -501,47 +501,57 @@ namespace GuessMyMessClient.SocialService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SocialService.ISocialService", CallbackContract=typeof(GuessMyMessClient.SocialService.ISocialServiceCallback))]
     public interface ISocialService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/getFriendsList", ReplyAction="http://tempuri.org/ISocialService/getFriendsListResponse")]
-        GuessMyMessClient.SocialService.FriendDto[] getFriendsList(string username);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/Connect")]
+        void Connect(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/getFriendsList", ReplyAction="http://tempuri.org/ISocialService/getFriendsListResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> getFriendsListAsync(string username);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/Connect")]
+        System.Threading.Tasks.Task ConnectAsync(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/getFriendRequests", ReplyAction="http://tempuri.org/ISocialService/getFriendRequestsResponse")]
-        GuessMyMessClient.SocialService.FriendRequestInfoDto[] getFriendRequests(string username);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendsList", ReplyAction="http://tempuri.org/ISocialService/GetFriendsListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetFriendsListStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        GuessMyMessClient.SocialService.FriendDto[] GetFriendsList(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/getFriendRequests", ReplyAction="http://tempuri.org/ISocialService/getFriendRequestsResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendRequestInfoDto[]> getFriendRequestsAsync(string username);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendsList", ReplyAction="http://tempuri.org/ISocialService/GetFriendsListResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetFriendsListAsync(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/searchUsers", ReplyAction="http://tempuri.org/ISocialService/searchUsersResponse")]
-        GuessMyMessClient.SocialService.UserProfileDto[] searchUsers(string searchUsername, string requesterUsername);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendRequests", ReplyAction="http://tempuri.org/ISocialService/GetFriendRequestsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetFriendRequestsStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        GuessMyMessClient.SocialService.FriendRequestInfoDto[] GetFriendRequests(string username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/searchUsers", ReplyAction="http://tempuri.org/ISocialService/searchUsersResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> searchUsersAsync(string searchUsername, string requesterUsername);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendRequests", ReplyAction="http://tempuri.org/ISocialService/GetFriendRequestsResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendRequestInfoDto[]> GetFriendRequestsAsync(string username);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/sendFriendRequest")]
-        void sendFriendRequest(string requesterUsername, string targetUsername);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/SearchUsers", ReplyAction="http://tempuri.org/ISocialService/SearchUsersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/SearchUsersStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        GuessMyMessClient.SocialService.UserProfileDto[] SearchUsers(string searchUsername, string requesterUsername);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/sendFriendRequest")]
-        System.Threading.Tasks.Task sendFriendRequestAsync(string requesterUsername, string targetUsername);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/SearchUsers", ReplyAction="http://tempuri.org/ISocialService/SearchUsersResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> SearchUsersAsync(string searchUsername, string requesterUsername);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/respondToFriendRequest")]
-        void respondToFriendRequest(string targetUsername, string requesterUsername, bool accepted);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendFriendRequest")]
+        void SendFriendRequest(string requesterUsername, string targetUsername);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/respondToFriendRequest")]
-        System.Threading.Tasks.Task respondToFriendRequestAsync(string targetUsername, string requesterUsername, bool accepted);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendFriendRequest")]
+        System.Threading.Tasks.Task SendFriendRequestAsync(string requesterUsername, string targetUsername);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/removeFriend")]
-        void removeFriend(string username, string friendToRemove);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RespondToFriendRequest")]
+        void RespondToFriendRequest(string targetUsername, string requesterUsername, bool accepted);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/removeFriend")]
-        System.Threading.Tasks.Task removeFriendAsync(string username, string friendToRemove);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RespondToFriendRequest")]
+        System.Threading.Tasks.Task RespondToFriendRequestAsync(string targetUsername, string requesterUsername, bool accepted);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/inviteFriendToGameByEmailResponse")]
-        GuessMyMessClient.SocialService.OperationResultDto inviteFriendToGameByEmail(string fromUsername, string friendEmail, string matchCode);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RemoveFriend")]
+        void RemoveFriend(string username, string friendToRemove);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/inviteFriendToGameByEmailResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> inviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RemoveFriend")]
+        System.Threading.Tasks.Task RemoveFriendAsync(string username, string friendToRemove);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        GuessMyMessClient.SocialService.OperationResultDto InviteFriendToGameByEmail(string fromUsername, string friendEmail, string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> InviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendDirectMessage")]
         void SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message);
@@ -550,29 +560,37 @@ namespace GuessMyMessClient.SocialService {
         System.Threading.Tasks.Task SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetConversationsStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.SocialService.FriendDto[] GetConversations(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetConversationsAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversationHistory", ReplyAction="http://tempuri.org/ISocialService/GetConversationHistoryResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetConversationHistoryStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
         GuessMyMessClient.SocialService.DirectMessageDto[] GetConversationHistory(string user1, string user2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversationHistory", ReplyAction="http://tempuri.org/ISocialService/GetConversationHistoryResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.DirectMessageDto[]> GetConversationHistoryAsync(string user1, string user2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/Disconnect")]
+        void Disconnect(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/Disconnect")]
+        System.Threading.Tasks.Task DisconnectAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ISocialServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/notifyFriendRequest")]
-        void notifyFriendRequest(string fromUsername);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyFriendRequest")]
+        void NotifyFriendRequest(string fromUsername);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/notifyFriendResponse")]
-        void notifyFriendResponse(string fromUsername, bool accepted);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyFriendResponse")]
+        void NotifyFriendResponse(string fromUsername, bool accepted);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/notifyFriendStatusChanged")]
-        void notifyFriendStatusChanged(string friendUsername, bool isOnline);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyFriendStatusChanged")]
+        void NotifyFriendStatusChanged(string friendUsername, string status);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyMessageReceived")]
         void NotifyMessageReceived(GuessMyMessClient.SocialService.DirectMessageDto message);
@@ -606,60 +624,68 @@ namespace GuessMyMessClient.SocialService {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public GuessMyMessClient.SocialService.FriendDto[] getFriendsList(string username) {
-            return base.Channel.getFriendsList(username);
+        public void Connect(string username) {
+            base.Channel.Connect(username);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> getFriendsListAsync(string username) {
-            return base.Channel.getFriendsListAsync(username);
+        public System.Threading.Tasks.Task ConnectAsync(string username) {
+            return base.Channel.ConnectAsync(username);
         }
         
-        public GuessMyMessClient.SocialService.FriendRequestInfoDto[] getFriendRequests(string username) {
-            return base.Channel.getFriendRequests(username);
+        public GuessMyMessClient.SocialService.FriendDto[] GetFriendsList(string username) {
+            return base.Channel.GetFriendsList(username);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendRequestInfoDto[]> getFriendRequestsAsync(string username) {
-            return base.Channel.getFriendRequestsAsync(username);
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetFriendsListAsync(string username) {
+            return base.Channel.GetFriendsListAsync(username);
         }
         
-        public GuessMyMessClient.SocialService.UserProfileDto[] searchUsers(string searchUsername, string requesterUsername) {
-            return base.Channel.searchUsers(searchUsername, requesterUsername);
+        public GuessMyMessClient.SocialService.FriendRequestInfoDto[] GetFriendRequests(string username) {
+            return base.Channel.GetFriendRequests(username);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> searchUsersAsync(string searchUsername, string requesterUsername) {
-            return base.Channel.searchUsersAsync(searchUsername, requesterUsername);
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendRequestInfoDto[]> GetFriendRequestsAsync(string username) {
+            return base.Channel.GetFriendRequestsAsync(username);
         }
         
-        public void sendFriendRequest(string requesterUsername, string targetUsername) {
-            base.Channel.sendFriendRequest(requesterUsername, targetUsername);
+        public GuessMyMessClient.SocialService.UserProfileDto[] SearchUsers(string searchUsername, string requesterUsername) {
+            return base.Channel.SearchUsers(searchUsername, requesterUsername);
         }
         
-        public System.Threading.Tasks.Task sendFriendRequestAsync(string requesterUsername, string targetUsername) {
-            return base.Channel.sendFriendRequestAsync(requesterUsername, targetUsername);
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.UserProfileDto[]> SearchUsersAsync(string searchUsername, string requesterUsername) {
+            return base.Channel.SearchUsersAsync(searchUsername, requesterUsername);
         }
         
-        public void respondToFriendRequest(string targetUsername, string requesterUsername, bool accepted) {
-            base.Channel.respondToFriendRequest(targetUsername, requesterUsername, accepted);
+        public void SendFriendRequest(string requesterUsername, string targetUsername) {
+            base.Channel.SendFriendRequest(requesterUsername, targetUsername);
         }
         
-        public System.Threading.Tasks.Task respondToFriendRequestAsync(string targetUsername, string requesterUsername, bool accepted) {
-            return base.Channel.respondToFriendRequestAsync(targetUsername, requesterUsername, accepted);
+        public System.Threading.Tasks.Task SendFriendRequestAsync(string requesterUsername, string targetUsername) {
+            return base.Channel.SendFriendRequestAsync(requesterUsername, targetUsername);
         }
         
-        public void removeFriend(string username, string friendToRemove) {
-            base.Channel.removeFriend(username, friendToRemove);
+        public void RespondToFriendRequest(string targetUsername, string requesterUsername, bool accepted) {
+            base.Channel.RespondToFriendRequest(targetUsername, requesterUsername, accepted);
         }
         
-        public System.Threading.Tasks.Task removeFriendAsync(string username, string friendToRemove) {
-            return base.Channel.removeFriendAsync(username, friendToRemove);
+        public System.Threading.Tasks.Task RespondToFriendRequestAsync(string targetUsername, string requesterUsername, bool accepted) {
+            return base.Channel.RespondToFriendRequestAsync(targetUsername, requesterUsername, accepted);
         }
         
-        public GuessMyMessClient.SocialService.OperationResultDto inviteFriendToGameByEmail(string fromUsername, string friendEmail, string matchCode) {
-            return base.Channel.inviteFriendToGameByEmail(fromUsername, friendEmail, matchCode);
+        public void RemoveFriend(string username, string friendToRemove) {
+            base.Channel.RemoveFriend(username, friendToRemove);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> inviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode) {
-            return base.Channel.inviteFriendToGameByEmailAsync(fromUsername, friendEmail, matchCode);
+        public System.Threading.Tasks.Task RemoveFriendAsync(string username, string friendToRemove) {
+            return base.Channel.RemoveFriendAsync(username, friendToRemove);
+        }
+        
+        public GuessMyMessClient.SocialService.OperationResultDto InviteFriendToGameByEmail(string fromUsername, string friendEmail, string matchCode) {
+            return base.Channel.InviteFriendToGameByEmail(fromUsername, friendEmail, matchCode);
+        }
+        
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> InviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode) {
+            return base.Channel.InviteFriendToGameByEmailAsync(fromUsername, friendEmail, matchCode);
         }
         
         public void SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message) {
@@ -684,6 +710,14 @@ namespace GuessMyMessClient.SocialService {
         
         public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.DirectMessageDto[]> GetConversationHistoryAsync(string user1, string user2) {
             return base.Channel.GetConversationHistoryAsync(user1, user2);
+        }
+        
+        public void Disconnect(string username) {
+            base.Channel.Disconnect(username);
+        }
+        
+        public System.Threading.Tasks.Task DisconnectAsync(string username) {
+            return base.Channel.DisconnectAsync(username);
         }
     }
 }

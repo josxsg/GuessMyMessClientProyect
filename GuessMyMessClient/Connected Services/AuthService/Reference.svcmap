@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ea2fdcc4-9532-45a9-be50-d60f574fb36c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="8596790b-1640-4b2d-9158-933880e6246e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="55d0acee-7227-4881-bc57-88d5c0de3306" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c95f1987-8d40-4b52-878b-68968714661c" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a94dbac8-2885-48e2-b6dc-c8945b562ec3" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
-    <MetadataFile FileName="GuessMyMessServer.Contracts.DataContracts.xsd" MetadataType="Schema" ID="eb182b90-b4e1-4f34-953b-c843dc1a3cd8" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="056f3bc8-f956-4a8b-acb2-ef158b498844" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a07c5a72-1e59-4b37-a6ce-8109aae9742b" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ecafc572-7d38-4d1b-bc35-1b72e6b8bb53" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
+    <MetadataFile FileName="GuessMyMessServer.Contracts.DataContracts.xsd" MetadataType="Schema" ID="c4c94ac0-cecf-49d4-ad87-11787968145b" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Auth/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

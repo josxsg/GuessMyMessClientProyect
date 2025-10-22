@@ -40,38 +40,53 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ISocialService_getFriendsList_InputMessage">
-    <wsdl:part name="parameters" element="tns:getFriendsList" />
+  <wsdl:message name="ISocialService_Connect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Connect" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_getFriendsList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getFriendsListResponse" />
+  <wsdl:message name="ISocialService_GetFriendsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendsList" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_getFriendRequests_InputMessage">
-    <wsdl:part name="parameters" element="tns:getFriendRequests" />
+  <wsdl:message name="ISocialService_GetFriendsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendsListResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_getFriendRequests_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getFriendRequestsResponse" />
+  <wsdl:message name="ISocialService_GetFriendsList_StringFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q1:string" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_searchUsers_InputMessage">
-    <wsdl:part name="parameters" element="tns:searchUsers" />
+  <wsdl:message name="ISocialService_GetFriendRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendRequests" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_searchUsers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:searchUsersResponse" />
+  <wsdl:message name="ISocialService_GetFriendRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendRequestsResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_sendFriendRequest_InputMessage">
-    <wsdl:part name="parameters" element="tns:sendFriendRequest" />
+  <wsdl:message name="ISocialService_GetFriendRequests_StringFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q2:string" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_respondToFriendRequest_InputMessage">
-    <wsdl:part name="parameters" element="tns:respondToFriendRequest" />
+  <wsdl:message name="ISocialService_SearchUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsers" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_removeFriend_InputMessage">
-    <wsdl:part name="parameters" element="tns:removeFriend" />
+  <wsdl:message name="ISocialService_SearchUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsersResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_inviteFriendToGameByEmail_InputMessage">
-    <wsdl:part name="parameters" element="tns:inviteFriendToGameByEmail" />
+  <wsdl:message name="ISocialService_SearchUsers_StringFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q3:string" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_inviteFriendToGameByEmail_OutputMessage">
-    <wsdl:part name="parameters" element="tns:inviteFriendToGameByEmailResponse" />
+  <wsdl:message name="ISocialService_SendFriendRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_RespondToFriendRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:RespondToFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_RemoveFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFriend" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_InviteFriendToGameByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:InviteFriendToGameByEmail" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_InviteFriendToGameByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InviteFriendToGameByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_InviteFriendToGameByEmail_StringFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q4:string" />
   </wsdl:message>
   <wsdl:message name="ISocialService_SendDirectMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendDirectMessage" />
@@ -82,49 +97,65 @@
   <wsdl:message name="ISocialService_GetConversations_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationsResponse" />
   </wsdl:message>
+  <wsdl:message name="ISocialService_GetConversations_StringFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q5:string" />
+  </wsdl:message>
   <wsdl:message name="ISocialService_GetConversationHistory_InputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationHistory" />
   </wsdl:message>
   <wsdl:message name="ISocialService_GetConversationHistory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationHistoryResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_notifyFriendRequest_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:notifyFriendRequest" />
+  <wsdl:message name="ISocialService_GetConversationHistory_StringFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q6:string" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_notifyFriendResponse_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:notifyFriendResponse" />
+  <wsdl:message name="ISocialService_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_notifyFriendStatusChanged_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:notifyFriendStatusChanged" />
+  <wsdl:message name="ISocialService_NotifyFriendRequest_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_NotifyFriendResponse_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_NotifyFriendStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyFriendStatusChanged" />
   </wsdl:message>
   <wsdl:message name="ISocialService_NotifyMessageReceived_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotifyMessageReceived" />
   </wsdl:message>
   <wsdl:portType name="ISocialService">
-    <wsdl:operation name="getFriendsList">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/getFriendsList" message="tns:ISocialService_getFriendsList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/getFriendsListResponse" message="tns:ISocialService_getFriendsList_OutputMessage" />
+    <wsdl:operation name="Connect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/Connect" message="tns:ISocialService_Connect_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getFriendRequests">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/getFriendRequests" message="tns:ISocialService_getFriendRequests_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/getFriendRequestsResponse" message="tns:ISocialService_getFriendRequests_OutputMessage" />
+    <wsdl:operation name="GetFriendsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetFriendsList" message="tns:ISocialService_GetFriendsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetFriendsListResponse" message="tns:ISocialService_GetFriendsList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendsListStringFault" name="StringFault" message="tns:ISocialService_GetFriendsList_StringFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="searchUsers">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/searchUsers" message="tns:ISocialService_searchUsers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/searchUsersResponse" message="tns:ISocialService_searchUsers_OutputMessage" />
+    <wsdl:operation name="GetFriendRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequests" message="tns:ISocialService_GetFriendRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequestsResponse" message="tns:ISocialService_GetFriendRequests_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequestsStringFault" name="StringFault" message="tns:ISocialService_GetFriendRequests_StringFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="sendFriendRequest">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/sendFriendRequest" message="tns:ISocialService_sendFriendRequest_InputMessage" />
+    <wsdl:operation name="SearchUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SearchUsers" message="tns:ISocialService_SearchUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/SearchUsersResponse" message="tns:ISocialService_SearchUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/SearchUsersStringFault" name="StringFault" message="tns:ISocialService_SearchUsers_StringFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="respondToFriendRequest">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/respondToFriendRequest" message="tns:ISocialService_respondToFriendRequest_InputMessage" />
+    <wsdl:operation name="SendFriendRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SendFriendRequest" message="tns:ISocialService_SendFriendRequest_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="removeFriend">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/removeFriend" message="tns:ISocialService_removeFriend_InputMessage" />
+    <wsdl:operation name="RespondToFriendRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/RespondToFriendRequest" message="tns:ISocialService_RespondToFriendRequest_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="inviteFriendToGameByEmail">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmail" message="tns:ISocialService_inviteFriendToGameByEmail_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/inviteFriendToGameByEmailResponse" message="tns:ISocialService_inviteFriendToGameByEmail_OutputMessage" />
+    <wsdl:operation name="RemoveFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/RemoveFriend" message="tns:ISocialService_RemoveFriend_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InviteFriendToGameByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail" message="tns:ISocialService_InviteFriendToGameByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse" message="tns:ISocialService_InviteFriendToGameByEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailStringFault" name="StringFault" message="tns:ISocialService_InviteFriendToGameByEmail_StringFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendDirectMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SendDirectMessage" message="tns:ISocialService_SendDirectMessage_InputMessage" />
@@ -132,19 +163,24 @@
     <wsdl:operation name="GetConversations">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversations" message="tns:ISocialService_GetConversations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetConversationsResponse" message="tns:ISocialService_GetConversations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetConversationsStringFault" name="StringFault" message="tns:ISocialService_GetConversations_StringFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetConversationHistory">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistory" message="tns:ISocialService_GetConversationHistory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistoryResponse" message="tns:ISocialService_GetConversationHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistoryStringFault" name="StringFault" message="tns:ISocialService_GetConversationHistory_StringFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="notifyFriendRequest">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/notifyFriendRequest" message="tns:ISocialService_notifyFriendRequest_OutputCallbackMessage" />
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/Disconnect" message="tns:ISocialService_Disconnect_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="notifyFriendResponse">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/notifyFriendResponse" message="tns:ISocialService_notifyFriendResponse_OutputCallbackMessage" />
+    <wsdl:operation name="NotifyFriendRequest">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyFriendRequest" message="tns:ISocialService_NotifyFriendRequest_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="notifyFriendStatusChanged">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/notifyFriendStatusChanged" message="tns:ISocialService_notifyFriendStatusChanged_OutputCallbackMessage" />
+    <wsdl:operation name="NotifyFriendResponse">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyFriendResponse" message="tns:ISocialService_NotifyFriendResponse_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyFriendStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyFriendStatusChanged" message="tns:ISocialService_NotifyFriendStatusChanged_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotifyMessageReceived">
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyMessageReceived" message="tns:ISocialService_NotifyMessageReceived_OutputCallbackMessage" />
@@ -154,59 +190,77 @@
     <wsp:PolicyReference URI="#NetTcpBinding_ISocialService_policy">
     </wsp:PolicyReference>
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="getFriendsList">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/getFriendsList" style="document" />
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/Connect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendsList">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/GetFriendsList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="getFriendRequests">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/getFriendRequests" style="document" />
+    <wsdl:operation name="GetFriendRequests">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/GetFriendRequests" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="searchUsers">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/searchUsers" style="document" />
+    <wsdl:operation name="SearchUsers">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/SearchUsers" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="sendFriendRequest">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/sendFriendRequest" style="document" />
+    <wsdl:operation name="SendFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/SendFriendRequest" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="respondToFriendRequest">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/respondToFriendRequest" style="document" />
+    <wsdl:operation name="RespondToFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/RespondToFriendRequest" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="removeFriend">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/removeFriend" style="document" />
+    <wsdl:operation name="RemoveFriend">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/RemoveFriend" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="inviteFriendToGameByEmail">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/inviteFriendToGameByEmail" style="document" />
+    <wsdl:operation name="InviteFriendToGameByEmail">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SendDirectMessage">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/SendDirectMessage" style="document" />
@@ -222,6 +276,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetConversationHistory">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/GetConversationHistory" style="document" />
@@ -231,21 +288,30 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="notifyFriendRequest">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/notifyFriendRequest" style="document" />
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyFriendRequest" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="notifyFriendResponse">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/notifyFriendResponse" style="document" />
+    <wsdl:operation name="NotifyFriendResponse">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyFriendResponse" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="notifyFriendStatusChanged">
-      <soap12:operation soapAction="http://tempuri.org/ISocialService/notifyFriendStatusChanged" style="document" />
+    <wsdl:operation name="NotifyFriendStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyFriendStatusChanged" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
