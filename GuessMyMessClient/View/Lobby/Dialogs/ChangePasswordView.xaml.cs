@@ -23,7 +23,7 @@ namespace GuessMyMessClient.View.Lobby.Dialogs
         public ChangePasswordView()
         {
             InitializeComponent();
-            this.DataContext = new ChangePasswordViewModel();
+            
         }
     }
 }

@@ -11,19 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GuessMyMessClient.ViewModel.Lobby.Dialogs;
 
 namespace GuessMyMessClient.View.Lobby.Dialogs
 {
     /// <summary>
-    /// Lógica de interacción para ChangeEmailView.xaml
+    /// Lógica de interacción para VerifyChangesByCodeView.xaml
     /// </summary>
-    public partial class ChangeEmailView : Window
+    public partial class VerifyChangesByCodeView : Window
     {
-        public ChangeEmailView()
+        public VerifyChangesByCodeView()
         {
             InitializeComponent();
-            
         }
     }
 }

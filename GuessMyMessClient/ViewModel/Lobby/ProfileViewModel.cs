@@ -27,7 +27,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
         }
 
         public string Username => _profileData.Username;
-        private string _email;
         public string Email
         {
             get => _profileData.Email;
@@ -47,8 +46,8 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             _profileData = initialProfileData ?? throw new ArgumentNullException(nameof(initialProfileData));
 
-            //ChangeEmailCommand = new RelayCommand(ExecuteChangeEmail);
-            //ChangePasswordCommand = new RelayCommand(ExecuteChangePassword);
+            ChangeEmailCommand = new RelayCommand(ExecuteChangeEmail);
+            ChangePasswordCommand = new RelayCommand(ExecuteChangePassword);
             SaveProfileCommand = new RelayCommand(ExecuteSaveProfile);
         }
 
@@ -75,22 +74,51 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
             }
         }
-        /*
+
         private void ExecuteChangeEmail(object parameter)
         {
-            // Lógica de navegación a ChangeEmailView
-            var changeEmailView = new ChangeEmailView();
-            changeEmailView.DataContext = new ChangeEmailViewModel(_profileData.username, _profileData.email);
+            var changeEmailVM = new ChangeEmailViewModel(_profileData.Username, (newEmail) =>
+            {
+                Email = newEmail;
+            });
+
+            var changeEmailView = new ChangeEmailView
+            {
+                DataContext = changeEmailVM
+            };
             changeEmailView.ShowDialog();
         }
 
-        private void ExecuteChangePassword(object parameter)
+        private async void ExecuteChangePassword(object parameter)
         {
-            // Lógica de navegación a ChangePasswordView
-            var changePasswordView = new ChangePasswordView();
-            changePasswordView.DataContext = new ChangePasswordViewModel(_profileData.username);
-            changePasswordView.ShowDialog();
+            MessageBox.Show("Se solicitará un código de verificación a tu correo registrado.", "Cambio de Contraseña", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            try
+            {
+                using (var client = new UserProfileServiceClient())
+                {
+                    var result = await client.RequestChangePasswordAsync(_profileData.Username);
+
+                    if (result.success)
+                    {
+                        var changePasswordVM = new ChangePasswordViewModel(_profileData.Username);
+                        var changePasswordView = new ChangePasswordView
+                        {
+                            DataContext = changePasswordVM
+                        };
+                        changePasswordView.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error de comunicación: {ex.Message}", "Error WCF");
+            }
         }
-        */
+
     }
 }

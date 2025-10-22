@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Linq; 
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
-using GuessMyMessClient.AuthService;
-using GuessMyMessClient.Model;
+using System.Threading.Tasks; 
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using System.Windows;
+using GuessMyMessClient.AuthService; 
+using GuessMyMessClient.ProfileService; 
+using GuessMyMessClient.Model; 
 using GuessMyMessClient.View.HomePages;
-using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.View.Lobby;
-using GuessMyMessClient.ViewModel.Lobby.Dialogs;
+using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.ViewModel.Lobby;
+using GuessMyMessClient.ViewModel.Lobby.Dialogs; 
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -29,23 +28,18 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public string Email { get => _email; set { _email = value; OnPropertyChanged(); } }
         private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
-        private bool _isMale;
-        public bool IsMale { get => _isMale; set { _isMale = value; OnPropertyChanged(); } }
+
+        private bool _isMale = true; 
+        public bool IsMale { get => _isMale; set { _isMale = value; if (value) ResetGender(1); OnPropertyChanged(); } }
         private bool _isFemale;
-        public bool IsFemale { get => _isFemale; set { _isFemale = value; OnPropertyChanged(); } }
+        public bool IsFemale { get => _isFemale; set { _isFemale = value; if (value) ResetGender(2); OnPropertyChanged(); } }
         private bool _isNonBinary;
-        public bool IsNonBinary { get => _isNonBinary; set { _isNonBinary = value; OnPropertyChanged(); } }
+        public bool IsNonBinary { get => _isNonBinary; set { _isNonBinary = value; if (value) ResetGender(3); OnPropertyChanged(); } }
 
-
-        private int _selectedAvatarId = 1; 
+        private int _selectedAvatarId = 1;
         public int SelectedAvatarId { get => _selectedAvatarId; set { _selectedAvatarId = value; OnPropertyChanged(); } }
-
         private BitmapImage _selectedAvatarImage;
-        public BitmapImage SelectedAvatarImage
-        {
-            get => _selectedAvatarImage;
-            set { _selectedAvatarImage = value; OnPropertyChanged(); }
-        }
+        public BitmapImage SelectedAvatarImage { get => _selectedAvatarImage; set { _selectedAvatarImage = value; OnPropertyChanged(); } }
 
         public ICommand SignUpCommand { get; }
         public ICommand SelectAvatarCommand { get; }
@@ -62,46 +56,57 @@ namespace GuessMyMessClient.ViewModel.HomePages
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
             ReturnCommand = new RelayCommand(ExecuteReturn);
-            IsMale = true; 
 
             LoadDefaultAvatar();
         }
 
+        private void ResetGender(int selectedGenderId)
+        {
+            IsMale = (selectedGenderId == 1);
+            IsFemale = (selectedGenderId == 2);
+            IsNonBinary = (selectedGenderId == 3);
+            OnPropertyChanged(nameof(IsMale));
+            OnPropertyChanged(nameof(IsFemale));
+            OnPropertyChanged(nameof(IsNonBinary));
+        }
+
         private async void LoadDefaultAvatar()
         {
+            var client = new UserProfileServiceClient(); 
             try
             {
-                using (var client = new ProfileService.UserProfileServiceClient())
+                var avatars = await client.GetAvailableAvatarsAsync();
+                if (avatars != null && avatars.Any())
                 {
-                    var avatars = await client.GetAvailableAvatarsAsync();
-                    if (avatars.Any())
-                    {
-                        var defaultAvatar = avatars.First();
-                        SelectedAvatarId = defaultAvatar.idAvatar;
-                        SelectedAvatarImage = SelectAvatarViewModel.ConvertByteToImage(defaultAvatar.avatarData);
-                    }
+                    var defaultAvatar = avatars.FirstOrDefault(a => a.idAvatar == 1) ?? avatars.First();
+                    SelectedAvatarId = defaultAvatar.idAvatar;
+                    SelectedAvatarImage = ConvertByteToImage(defaultAvatar.avatarData);
                 }
+                client.Close();
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show($"Error WCF al cargar avatar: {ex.Message}", "Error Servidor");
+                client.Abort();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("No se pudo cargar el avatar por defecto: " + ex.Message);
+                MessageBox.Show($"No se pudo cargar el avatar por defecto: {ex.Message}", "Error Conexión");
+                client.Abort();
             }
         }
 
         private void OpenSelectAvatarDialog(object parameter)
         {
             var selectAvatarView = new SelectAvatarView();
-
             var selectAvatarViewModel = new SelectAvatarViewModel(this.SelectedAvatarId);
-
-            selectAvatarViewModel.AvatarSelected += OnAvatarSelected;
+            selectAvatarViewModel.AvatarSelected += OnAvatarSelected; 
             selectAvatarView.DataContext = selectAvatarViewModel;
-            selectAvatarView.ShowDialog();
-            selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
+            selectAvatarView.ShowDialog(); 
+            selectAvatarViewModel.AvatarSelected -= OnAvatarSelected; 
         }
 
-        
-        private void OnAvatarSelected(AvatarModel avatar)
+        private void OnAvatarSelected(AvatarModel avatar) 
         {
             if (avatar != null)
             {
@@ -114,7 +119,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             return !string.IsNullOrWhiteSpace(Username) &&
                    !string.IsNullOrWhiteSpace(Email) &&
-                   !string.IsNullOrWhiteSpace(Password); 
+                   !string.IsNullOrWhiteSpace(Password) &&
+                   Password.Length >= 6 && 
+                   (IsMale || IsFemale || IsNonBinary); 
         }
 
         private async void ExecuteSignUp(object parameter)
@@ -128,10 +135,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
             int genderId = 0;
             if (IsMale) genderId = 1;
             else if (IsFemale) genderId = 2;
-            else if (IsNonBinary) genderId = 3;
+            else if (IsNonBinary) genderId = 3; 
 
-
-            AuthService.UserProfileDto newProfile = new AuthService.UserProfileDto
+            AuthService.UserProfileDto newUserProfile = new AuthService.UserProfileDto
             {
                 Username = Username,
                 FirstName = FirstName,
@@ -141,33 +147,39 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 AvatarId = SelectedAvatarId
             };
 
-            using (AuthenticationServiceClient client = new AuthenticationServiceClient())
+            var client = new AuthenticationServiceClient();
+            try
             {
-                try
-                {
-                    OperationResultDto result = await client.RegisterAsync(newProfile, Password);
+                AuthService.OperationResultDto result = await client.RegisterAsync(newUserProfile, Password);
 
-                    if (result.success)
-                    {
-                        MessageBox.Show("Registro exitoso. " + result.message, "Éxito");
-                        
-                        OpenVerificationDialog(parameter);
-                    }
-                    else
-                    {
-                        MessageBox.Show(result.message, "Error de Registro");
-                    }
-                }
-                catch (FaultException<string> ex)
+                if (result.success)
                 {
-                    MessageBox.Show(ex.Message, "Error WCF (Lógica)");
+                    MessageBox.Show("Registro exitoso. " + result.message, "Éxito");
+                    OpenVerificationDialog(parameter);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error de conexión: {ex.Message}", "Error WCF");
+                    MessageBox.Show(result.message, "Error de Registro");
                 }
+                client.Close(); 
+            }
+            catch (FaultException<string> fex) 
+            {
+                MessageBox.Show($"Error del servidor: {fex.Detail}", "Error WCF (Lógica)");
+                client.Abort();
+            }
+            catch (FaultException fexGeneral) 
+            {
+                MessageBox.Show($"Error WCF: {fexGeneral.Message}", "Error WCF");
+                client.Abort();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"Error de conexión o inesperado: {ex.Message}", "Error Crítico");
+                client.Abort(); 
             }
         }
+
         private void OpenVerificationDialog(object parameter)
         {
             var verifyView = new VerifyByCodeView();
@@ -177,12 +189,12 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (parameter is Window signUpWindow)
             {
                 signUpWindow.Close();
-
             }
         }
+
         private void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window window)
+            if (parameter is Window) 
             {
                 Application.Current.Shutdown();
             }
@@ -203,16 +215,33 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 window.WindowState = WindowState.Minimized;
             }
         }
+
         private void ExecuteReturn(object parameter)
         {
             if (parameter is Window currentWindow)
             {
                 var welcomeView = new WelcomeView();
-                welcomeView.WindowState = currentWindow.WindowState;
-
                 welcomeView.Show();
                 currentWindow.Close();
             }
+        }
+
+        public static BitmapImage ConvertByteToImage(byte[] imageBytes)
+        {
+            if (imageBytes == null || imageBytes.Length == 0) return null;
+            var image = new BitmapImage();
+            using (var mem = new System.IO.MemoryStream(imageBytes)) 
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+                image.Freeze(); 
+            }
+            return image;
         }
     }
 }

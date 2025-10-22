@@ -81,6 +81,7 @@
     <Compile Include="ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.cs" />
     <Compile Include="ViewModel\Lobby\DirectMessageViewModel.cs" />
     <Compile Include="ViewModel\Lobby\FriendsViewModel.cs" />
     <Compile Include="ViewModel\Lobby\LobbyViewModel.cs" />
@@ -124,6 +125,9 @@
     </Compile>
     <Compile Include="View\Lobby\Dialogs\VerifyByCodeView.xaml.cs">
       <DependentUpon>VerifyByCodeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.cs">
+      <DependentUpon>VerifyChangesByCodeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Lobby\DirectMessageView.xaml.cs">
       <DependentUpon>DirectMessageView.xaml</DependentUpon>
@@ -225,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Lobby\Dialogs\VerifyByCodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\Dialogs\VerifyChangesByCodeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
