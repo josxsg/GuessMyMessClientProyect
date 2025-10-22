@@ -15,69 +15,30 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="35*" />
-                <RowDefinition Height="65*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Margin="0,0,0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" 
-                         Style="{StaticResource SearchTextBoxStyle}"
-                         Tag="{x:Static language:Lang.socialTfSearchPlayers}"
-                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Grid.Column="1" 
-                        Style="{StaticResource BlueIconButton}" 
-                        Command="{Binding SearchCommand}" 
-                        ToolTip="{x:Static language:Lang.socialBtnSearch}"
-                        Margin="5,0,0,0">
-                    <Image Source="/Resources/Images/search.png" Height="20"/>
-                </Button>
-            </Grid>
+            <ComboBox Grid.Row="0"
+          Margin="0,0,0,543"
+          ItemsSource="{Binding Conversations}"
+          SelectedItem="{Binding SelectedConversation, Mode=TwoWay}"
+          Style="{StaticResource ComboBoxStyle}"
+          Tag="{x:Static language:Lang.socialTfSearchPlayers}" Grid.RowSpan="2">
 
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding username}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+            </ComboBox>
             <ListView Grid.Row="1"
                       BorderThickness="1"
                       BorderBrush="LightGray"
-                      Margin="0,0,0,5" 
-                      ItemsSource="{Binding SearchResults}"
-                      HorizontalContentAlignment="Stretch"
-                      SelectedItem="{Binding SelectedSearchResult, Mode=TwoWay}">
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="5">
-                            <TextBlock Text="{Binding Username}" Margin="10,0,0,0" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Grid.Row="2"
-                      BorderThickness="1"
-                      BorderBrush="LightGray"
-                      Margin="0,5,0,5" ItemsSource="{Binding Conversations}"
-                      HorizontalContentAlignment="Stretch"
-                      SelectedItem="{Binding SelectedConversation, Mode=TwoWay}">
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="5">
-                            <TextBlock Text="{Binding username}" Margin="10,0,0,0" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView Grid.Row="3"
-                      BorderThickness="1"
-                      BorderBrush="LightGray"
-                      Margin="0,5,0,10"
+                      Margin="0,56,0,0"
                       ItemsSource="{Binding ChatHistory}" HorizontalContentAlignment="Stretch"
-                      SelectedItem="{Binding SelectedMessage, Mode=TwoWay}">
+                      SelectedItem="{Binding SelectedMessage, Mode=TwoWay}" Height="511" VerticalAlignment="Top">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="5">
@@ -88,8 +49,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-
-            <Grid Grid.Row="4">
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
