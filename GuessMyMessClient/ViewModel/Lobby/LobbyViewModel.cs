@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GuessMyMessClient.Model;
 using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.View.Lobby;
-using GuessMyMessClient.ViewModel.Session;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using System.Windows;
 using GuessMyMessClient.View.Lobby.Dialogs;
-using GuessMyMessClient.Model;
+using GuessMyMessClient.View.Matches;
+using GuessMyMessClient.View.MatchSettings;
+using GuessMyMessClient.ViewModel.Lobby;
+using GuessMyMessClient.ViewModel.Matches;
+using GuessMyMessClient.ViewModel.MatchSettings;
+using GuessMyMessClient.ViewModel.Session;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using GuessMyMessClient.ViewModel.Lobby;
+using System.Linq;
 using System.ServiceModel;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -175,9 +179,42 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 MessageBox.Show("No se puede cargar el chat.", "Error");
             }
         }
-        private void ExecutePlay(object param) { MessageBox.Show("Navegando a Partidas Públicas..."); }
-        private void ExecuteCreateGame(object param) { MessageBox.Show("Creando Partida..."); }
+        private void ExecutePlay(object param)
+        {
+            PublicMatchesViewModel publicMatchesViewModel = new PublicMatchesViewModel();
+            PublicMatchesView publicMatchesView = new PublicMatchesView();
 
+            publicMatchesView.DataContext = publicMatchesViewModel;
+            publicMatchesView.Show();
+
+            Window lobbyWindow = Application.Current.Windows.OfType<LobbyView>().FirstOrDefault();
+            if (lobbyWindow != null)
+            {
+                lobbyWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: No se pudo encontrar la ventana del Lobby para cerrarla.", "Error");
+            }
+        }
+        private void ExecuteCreateGame(object param) 
+        {
+            PublicMatchSettingsViewModel matchSettingsViewModel = new PublicMatchSettingsViewModel();
+            PublicMatchSettingsView matchSettingsView = new PublicMatchSettingsView();
+            matchSettingsView.DataContext = matchSettingsViewModel;
+            matchSettingsView.Show();
+
+            Window lobbyWindow = Application.Current.Windows.OfType<LobbyView>().FirstOrDefault();
+
+            if (lobbyWindow != null)
+            {
+                lobbyWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: No se pudo encontrar la ventana del Lobby para cerrarla.", "Error");
+            }
+        }
         private async Task LoadUserProfileAsync()
         {
             if (!SessionManager.Instance.IsLoggedIn) return;

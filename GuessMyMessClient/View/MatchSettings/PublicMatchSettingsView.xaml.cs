@@ -25,5 +25,10 @@ namespace GuessMyMessClient.View.MatchSettings
             InitializeComponent();
             this.DataContext = new PublicMatchSettingsViewModel();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

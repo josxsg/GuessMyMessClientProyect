@@ -5,107 +5,149 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.MatchSettings"
         mc:Ignorable="d"
-        Title="PublicMatchSettings" Height="550" Width="900"
+        Title="PublicMatchSettings"
+        Height="600" Width="950"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.MatchSettings"
-        d:DataContext="{d:DesignInstance Type=vm:PublicMatchSettingsViewModel, IsDesignTimeCreatable=True}"
+        WindowState="Maximized"
+        WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResize"
+        ResizeMode="NoResize" d:DataContext="{d:DesignInstance Type=vm:PublicMatchSettingsViewModel, IsDesignTimeCreatable=True}"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TextBlock 
-            Text="{x:Static language:Lang.createGameLbSettings}"
-            FontSize="30" 
-            FontWeight="Bold"
-            HorizontalAlignment="Center"
-            Margin="0,41,0,0"
-            VerticalAlignment="Top"/>
+        <Button Content="←" 
+                Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="15,15,0,0"
+                Command="{Binding ReturnCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
+        <TextBlock
+                Text="{x:Static language:Lang.createGameLbSettings}"
+                FontSize="30"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,66,0,0"/>
 
-        <Border Background="#F0F0F0" CornerRadius="12" Padding="5" Margin="89,92,89,0" Height="52" VerticalAlignment="Top">
+        <Border Background="#F0F0F0"
+                CornerRadius="12"
+                Padding="5"
+                Height="52"
+                Width="400"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,136,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" 
-                        Content="{x:Static language:Lang.playMenuBtnPublicMatches}" 
-                        Style="{StaticResource SelectedTabButton}" 
+                <Button Grid.Column="0"
+                        Content="{x:Static language:Lang.playMenuBtnPublicMatches}"
+                        Style="{StaticResource SelectedTabButton}"
                         Margin="0,0,2,0"/>
-
-                <Button Grid.Column="1" 
-                        Content="{x:Static language:Lang.playMenuBtnPrivateMatches}" 
-                        Style="{StaticResource TabButton}" 
+                <Button Grid.Column="1"
+                        Content="{x:Static language:Lang.playMenuBtnPrivateMatches}"
+                        Style="{StaticResource TabButton}"
                         Margin="2,0,0,0"/>
             </Grid>
         </Border>
 
-        <Grid Margin="108,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Grid.Column="0"
-                       Text="{x:Static language:Lang.globalLbName}"
-                       FontSize="24" 
-                       FontWeight="Bold"
-                       VerticalAlignment="Center"/>
-
-            <TextBox Grid.Column="1"
-                     Width="476"
-                     Height="39"
-                     Margin="20,0,0,0"
-                     Style="{StaticResource TextBox}"/>
-        </Grid>
-
         <TextBlock
-Text="{x:Static language:Lang.createGameLbMaxPlayers}"
-FontSize="24" 
-FontWeight="Bold"
-VerticalAlignment="Top" Margin="108,235,598,0"/>
-
+                Text="{x:Static language:Lang.globalLbName}"
+                FontSize="24"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="185,231,0,0"/>
         <TextBox
-         Height="39"
-         Margin="307,231,544,264"
-         Style="{StaticResource TextBox}"/>
+                Text="{Binding MatchName}"
+                Height="39"
+                Width="450"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="299,227,0,0" Style="{StaticResource TextBox}"/>
 
         <TextBlock
-Text="{x:Static language:Lang.createGameLbRounds}"
-FontSize="24" 
-FontWeight="Bold"
-VerticalAlignment="Top" Margin="402,235,414,0"/>
-
+                Text="{x:Static language:Lang.createGameLbMaxPlayers}"
+                FontSize="24"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="185,310,0,0"/>
         <TextBox
-         Height="39"
-         Margin="491,231,360,264"
-         Style="{StaticResource TextBox}"/>
+                Text="{Binding MaxPlayers}"
+                Height="39"
+                Width="150"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="375,310,0,0" Style="{StaticResource TextBox}"/>
 
         <TextBlock
-Text="{x:Static language:Lang.globalLbDifficulty}"
-FontSize="24" 
-FontWeight="Bold"
-VerticalAlignment="Top" Margin="108,298,676,0"/>
+                Text="{x:Static language:Lang.createGameLbRounds}"
+                FontSize="24"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="549,314,0,0"/>
+        <TextBox
+                Text="{Binding Rounds}"
+                Height="39"
+                Width="150"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="637,310,0,0" Style="{StaticResource TextBox}"/>
 
-        <ComboBox Width="200"
-          HorizontalAlignment="Left"
-          VerticalAlignment="Top"
-          Margin="232,290,0,0"
-          Height="40"
-          Style="{StaticResource ComboBoxStyle}">
-
+        <TextBlock
+                Text="{x:Static language:Lang.globalLbDifficulty}"
+                FontSize="24"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="185,399,0,0"/>
+        <ComboBox
+                Width="200"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="325,394,0,0" Height="40"
+                Style="{StaticResource ComboBoxStyle}">
             <ComboBoxItem Content="{x:Static language:Lang.createGameCbEasy}"/>
             <ComboBoxItem Content="{x:Static language:Lang.createGameCbIntermediate}"/>
             <ComboBoxItem Content="{x:Static language:Lang.createGameCbHard}"/>
-
         </ComboBox>
-        <Button 
-Content="{x:Static language:Lang.createGameBtnCreate}" 
-Style="{StaticResource JoinButton}" 
-FontSize="30"
-VerticalAlignment="Top" Margin="360,403,360,0" Height="41"/>
+
+        <Button Content="{x:Static language:Lang.createGameBtnCreate}"
+                Command="{Binding CreateMatchCommand}"
+                Style="{StaticResource JoinButton}"
+                FontSize="30"
+                Height="41"
+                Width="200"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,466,0,0"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+        </StackPanel>
 
     </Grid>
 </Window>
