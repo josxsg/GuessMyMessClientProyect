@@ -52,7 +52,7 @@
                             <Button Grid.Column="1" 
                                     Content="{x:Static language:Lang.socialBtnAddFriend}" 
                                     Command="{Binding DataContext.SendFriendRequestCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
-                                    CommandParameter="{Binding Username}"
+                                    CommandParameter="{Binding}"
                                     Style="{StaticResource YellowButton}"
                                     HorizontalAlignment="Right" 
                                     Width="125" 

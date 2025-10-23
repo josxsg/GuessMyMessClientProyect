@@ -11,13 +11,25 @@ using System.Windows.Input;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
-    public class DirectMessageViewModel : ViewModelBase, ISocialServiceCallback
+    public class DirectMessageViewModel : ViewModelBase, IDisposable
     {
-        private SocialServiceClient _client;
-        // La colección 'Conversations' ahora contendrá solo Amigos.
+        private SocialServiceClient Client => SocialClientManager.Instance.Client;
+
         public ObservableCollection<FriendDto> Conversations { get; }
         public ObservableCollection<DirectMessageDto> ChatHistory { get; }
-        public string MessageText { get; set; }
+
+        private string _messageText;
+        public string MessageText
+        {
+            get => _messageText;
+            set
+            {
+                _messageText = value;
+                OnPropertyChanged();
+                CommandManager.InvalidateRequerySuggested();
+            }
+        }
+
         private string _currentChatPartnerUsername;
         private FriendDto _selectedConversation;
         public FriendDto SelectedConversation
@@ -36,7 +48,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 {
                     ClearChatHistory();
                 }
-
                 CommandManager.InvalidateRequerySuggested();
             }
         }
@@ -46,62 +57,60 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             Conversations = new ObservableCollection<FriendDto>();
             ChatHistory = new ObservableCollection<DirectMessageDto>();
-            SendMessageCommand = new RelayCommand(PerformSendMessage, _ => CanPerformSendMessage());
+            SendMessageCommand = new RelayCommand(PerformSendMessage, _ => CanPerformSendMessage()); 
 
-            InitializeService();
+            SubscribeToEvents();
+
+            if (CanExecuteNetworkActions())
+            {
+                LoadFriendsListAsync(); 
+            }
+            else
+            {
+                Console.WriteLine("DirectMessageViewModel: El cliente social no está listo al iniciar.");
+            }
         }
 
-        private async void InitializeService()
+        private bool CanExecuteNetworkActions()
         {
-            try
-            {
-                _client = new SocialServiceClient(new InstanceContext(this));
-                _client.Open();
-                _client.Connect(SessionManager.Instance.CurrentUsername);
-                // await LoadConversationsAsync(); // MODIFICADO
-                await LoadFriendsListAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error connecting to chat service: {ex.Message}", "Connection Error");
-                CloseClientSafely();
-            }
+            return Client != null && Client.State == CommunicationState.Opened;
         }
 
-        // MODIFICADO: Nombre y lógica del método
+
         private async Task LoadFriendsListAsync()
         {
-            if (_client?.State != CommunicationState.Opened) return;
+            if (!CanExecuteNetworkActions()) return;
             try
             {
-                // MODIFICADO: Se llama a GetFriendsListAsync en lugar de GetConversationsAsync
-                var users = await _client.GetFriendsListAsync(SessionManager.Instance.CurrentUsername);
-
+                var users = await Client.GetFriendsListAsync(SessionManager.Instance.CurrentUsername);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     Conversations.Clear();
                     foreach (var u in users) Conversations.Add(u);
                 });
             }
-            catch (FaultException ex) { MessageBox.Show(ex.Message, "Server Error"); CloseClientSafely(); }
-            catch (Exception ex) { Console.WriteLine($"Error loading friends list: {ex.Message}"); CloseClientSafely(); } // Mensaje de error actualizado
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading friends list in DVM: {ex.Message}");
+                MessageBox.Show($"Error al cargar la lista de amigos para el chat: {ex.Message}", "Error");
+            }
         }
 
         private async void LoadChatHistory(string otherUsername)
         {
             if (string.IsNullOrEmpty(otherUsername))
             {
-                ClearChatHistory();
+                ClearChatHistory(); 
                 return;
             }
 
-            if (_client?.State != CommunicationState.Opened) return;
+            if (!CanExecuteNetworkActions()) return;
 
             _currentChatPartnerUsername = otherUsername;
             try
             {
                 string currentUsername = SessionManager.Instance.CurrentUsername;
-                var history = await _client.GetConversationHistoryAsync(currentUsername, otherUsername);
+                var history = await Client.GetConversationHistoryAsync(currentUsername, otherUsername);
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
@@ -114,7 +123,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                             {
                                 var localMessageDto = new DirectMessageDto
                                 {
-                                    senderUsername = Lang.directMessageSenderTxtChat, // [You]
+                                    senderUsername = Lang.directMessageSenderTxtChat, 
                                     recipientUsername = msg.recipientUsername,
                                     content = msg.content,
                                     timestamp = msg.timestamp
@@ -129,24 +138,31 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     }
                 });
             }
-            catch (FaultException ex) { MessageBox.Show(ex.Message, "Server Error"); CloseClientSafely(); }
-            catch (Exception ex) { Console.WriteLine($"Error loading chat history: {ex.Message}"); CloseClientSafely(); }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading chat history: {ex.Message}");
+                MessageBox.Show($"Error al cargar el historial del chat: {ex.Message}", "Error");
+            }
         }
 
         private void ClearChatHistory()
         {
             _currentChatPartnerUsername = null;
-            ChatHistory.Clear();
+            Application.Current.Dispatcher.Invoke(() => ChatHistory.Clear());
+            OnPropertyChanged(nameof(ChatHistory)); 
+            CommandManager.InvalidateRequerySuggested(); 
         }
 
         private bool CanPerformSendMessage()
         {
-            return !string.IsNullOrWhiteSpace(MessageText) && _currentChatPartnerUsername != null;
+            return !string.IsNullOrWhiteSpace(MessageText) &&
+                   _currentChatPartnerUsername != null &&
+                   CanExecuteNetworkActions(); 
         }
 
-        private void PerformSendMessage(object obj)
+        private void PerformSendMessage(object obj) 
         {
-            if (!CanPerformSendMessage() || _client?.State != CommunicationState.Opened) return;
+            if (!CanPerformSendMessage()) return; 
 
             var messageDto = new DirectMessageDto
             {
@@ -157,47 +173,50 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
             try
             {
-                _client.SendDirectMessage(messageDto);
+                Client.SendDirectMessage(messageDto);
 
                 var localMsg = new DirectMessageDto { senderUsername = Lang.directMessageSenderTxtChat, content = MessageText, timestamp = DateTime.Now };
-                ChatHistory.Add(localMsg);
-                MessageText = string.Empty;
-                OnPropertyChanged(nameof(MessageText));
-                CommandManager.InvalidateRequerySuggested();
+                ChatHistory.Add(localMsg); 
+                MessageText = string.Empty; 
             }
-            catch (Exception ex) { MessageBox.Show($"Failed to send message: {ex.Message}"); CloseClientSafely(); }
+            catch (Exception ex) { MessageBox.Show($"Failed to send message: {ex.Message}"); }
+        }
+
+
+        private void SubscribeToEvents()
+        {
+            SocialClientManager.Instance.OnMessageReceived += HandleMessageReceived;
+            SocialClientManager.Instance.OnFriendResponse += HandleFriendResponse; 
+            Console.WriteLine("DirectMessageViewModel suscrito a eventos del Manager.");
+        }
+
+        private void UnsubscribeFromEvents()
+        {
+            SocialClientManager.Instance.OnMessageReceived -= HandleMessageReceived;
+            SocialClientManager.Instance.OnFriendResponse -= HandleFriendResponse;
+            Console.WriteLine("DirectMessageViewModel desuscrito de eventos del Manager.");
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                UnsubscribeFromEvents();
+            }
         }
 
         public void Cleanup()
         {
-            if (_client?.State == CommunicationState.Opened)
-            {
-                try
-                {
-                    _client.Disconnect(SessionManager.Instance.CurrentUsername);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error disconnecting: {ex.Message}");
-                }
-            }
-            CloseClientSafely();
+            Dispose();
         }
 
-        private void CloseClientSafely()
-        {
-            if (_client == null) return;
-            try
-            {
-                if (_client.State != CommunicationState.Faulted && _client.State != CommunicationState.Closed) _client.Close();
-                else _client.Abort();
-            }
-            catch { _client.Abort(); }
-            _client = null;
-        }
-
-        // --- Implementación de Callbacks ---
-        public void NotifyMessageReceived(DirectMessageDto message)
+        private void HandleMessageReceived(DirectMessageDto message)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -207,34 +226,18 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
                 else
                 {
-                    // Si recibes un mensaje de alguien que no es tu chat actual
                     MessageBox.Show($"Nuevo mensaje de {message.senderUsername}");
-
-                    // MODIFICADO: Llama al nuevo método.
-                    // Esto recargará la lista de amigos. Si el remitente es un amigo,
-                    // aparecerá en la lista (si no estaba ya). Si no es amigo, no aparecerá.
-                    LoadFriendsListAsync();
                 }
             });
         }
 
-        // NUEVO: Lógica añadida para mantener actualizada la lista de amigos del ComboBox
-        public void NotifyFriendRequest(string fromUsername) { /* No es relevante aquí */ }
-
-        public void NotifyFriendResponse(string fromUsername, bool accepted)
+        private void HandleFriendResponse(string fromUsername, bool accepted)
         {
-            // Si aceptas o alguien acepta tu solicitud, recarga la lista de amigos
             if (accepted)
             {
                 Application.Current.Dispatcher.Invoke(() => LoadFriendsListAsync());
             }
         }
 
-        public void NotifyFriendStatusChanged(string friendUsername, string status)
-        {
-            // Si el "status" puede significar que te eliminaron (ej. "Removed" o "Unfriended")
-            // es buena idea recargar la lista de amigos para que desaparezca del ComboBox.
-            Application.Current.Dispatcher.Invoke(() => LoadFriendsListAsync());
-        }
     }
 }

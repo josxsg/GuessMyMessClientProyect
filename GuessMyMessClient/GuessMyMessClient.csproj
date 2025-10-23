@@ -98,6 +98,7 @@
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Session\SessionManager.cs" />
+    <Compile Include="ViewModel\Session\SocialClientManager.cs" />
     <Compile Include="ViewModel\Support\Converters\BoolToGreenRedConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />

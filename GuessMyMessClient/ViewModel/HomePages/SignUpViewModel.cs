@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq; 
 using System.ServiceModel;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks; 
 using System.Windows;
 using System.Windows.Input;
@@ -29,12 +30,42 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
 
-        private bool _isMale = true; 
-        public bool IsMale { get => _isMale; set { _isMale = value; if (value) ResetGender(1); OnPropertyChanged(); } }
+        private bool _isMale = true;
+        public bool IsMale
+        {
+            get => _isMale;
+            set
+            {
+                if (value && !_isMale)
+                {
+                    ResetGender(1);
+                }
+            }
+        }
         private bool _isFemale;
-        public bool IsFemale { get => _isFemale; set { _isFemale = value; if (value) ResetGender(2); OnPropertyChanged(); } }
+        public bool IsFemale
+        {
+            get => _isFemale;
+            set
+            {
+                if (value && !_isFemale)
+                {
+                    ResetGender(2);
+                }
+            }
+        }
         private bool _isNonBinary;
-        public bool IsNonBinary { get => _isNonBinary; set { _isNonBinary = value; if (value) ResetGender(3); OnPropertyChanged(); } }
+        public bool IsNonBinary
+        {
+            get => _isNonBinary;
+            set
+            {
+                if (value && !_isNonBinary)
+                {
+                    ResetGender(3);
+                }
+            }
+        }
 
         private int _selectedAvatarId = 1;
         public int SelectedAvatarId { get => _selectedAvatarId; set { _selectedAvatarId = value; OnPropertyChanged(); } }
@@ -62,9 +93,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void ResetGender(int selectedGenderId)
         {
-            IsMale = (selectedGenderId == 1);
-            IsFemale = (selectedGenderId == 2);
-            IsNonBinary = (selectedGenderId == 3);
+            _isMale = (selectedGenderId == 1);
+            _isFemale = (selectedGenderId == 2);
+            _isNonBinary = (selectedGenderId == 3);
             OnPropertyChanged(nameof(IsMale));
             OnPropertyChanged(nameof(IsFemale));
             OnPropertyChanged(nameof(IsNonBinary));
@@ -114,28 +145,87 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 SelectedAvatarImage = avatar.ImageSource; 
             }
         }
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return false;
+            try
+            {
+                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                return regex.IsMatch(email);
+            }
+            catch (RegexMatchTimeoutException) { return false; }
+        }
+        private bool IsPasswordSecure(string password, out string validationMessage)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                validationMessage = "La contraseña no puede estar vacía.";
+                return false;
+            }
+            if (password.Length < 8)
+            {
+                validationMessage = "La contraseña debe tener al menos 8 caracteres.";
+                return false;
+            }
+            if (!password.Any(char.IsUpper))
+            {
+                validationMessage = "La contraseña debe tener al menos una mayúscula (A-Z).";
+                return false;
+            }
+            if (!password.Any(char.IsLower))
+            {
+                validationMessage = "La contraseña debe tener al menos una minúscula (a-z).";
+                return false;
+            }
+            if (!password.Any(char.IsDigit))
+            {
+                validationMessage = "La contraseña debe tener al menos un número (0-9).";
+                return false;
+            }
+            if (password.All(char.IsLetterOrDigit))
+            {
+                validationMessage = "La contraseña debe tener al menos un caracter especial (ej: @, $, !, %).";
+                return false;
+            }
+
+            validationMessage = "OK";
+            return true;
+        }
 
         private bool CanExecuteSignUp(object parameter)
         {
             return !string.IsNullOrWhiteSpace(Username) &&
+                   !string.IsNullOrWhiteSpace(FirstName) && 
+                   !string.IsNullOrWhiteSpace(LastName) &&  
                    !string.IsNullOrWhiteSpace(Email) &&
                    !string.IsNullOrWhiteSpace(Password) &&
-                   Password.Length >= 6 && 
-                   (IsMale || IsFemale || IsNonBinary); 
+                   (IsMale || IsFemale || IsNonBinary);
         }
 
         private async void ExecuteSignUp(object parameter)
         {
-            if (string.IsNullOrWhiteSpace(Password) || Password.Length < 6)
+            if (!CanExecuteSignUp(parameter)) 
             {
-                MessageBox.Show("La contraseña debe tener al menos 6 caracteres.", "Error de Validación");
+                MessageBox.Show("Todos los campos (Usuario, Nombre, Apellido, Email, Contraseña y Género) son obligatorios.", "Campos Vacíos");
+                return;
+            }
+
+            if (!IsValidEmail(Email))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.\nDebe incluir '@' y un dominio (ej: usuario@dominio.com) sin espacios.", "Correo Inválido");
+                return;
+            }
+
+            if (!IsPasswordSecure(Password, out string passwordError))
+            {
+                MessageBox.Show(passwordError, "Contraseña No Segura");
                 return;
             }
 
             int genderId = 0;
             if (IsMale) genderId = 1;
             else if (IsFemale) genderId = 2;
-            else if (IsNonBinary) genderId = 3; 
+            else if (IsNonBinary) genderId = 3;
 
             AuthService.UserProfileDto newUserProfile = new AuthService.UserProfileDto
             {
@@ -161,22 +251,22 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 {
                     MessageBox.Show(result.message, "Error de Registro");
                 }
-                client.Close(); 
+                client.Close();
             }
-            catch (FaultException<string> fex) 
+            catch (FaultException<string> fex)
             {
-                MessageBox.Show($"Error del servidor: {fex.Detail}", "Error WCF (Lógica)");
+                MessageBox.Show($"Error del servidor: {fex.Detail}", "Error de Validación");
                 client.Abort();
             }
-            catch (FaultException fexGeneral) 
+            catch (FaultException fexGeneral)
             {
                 MessageBox.Show($"Error WCF: {fexGeneral.Message}", "Error WCF");
                 client.Abort();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error de conexión o inesperado: {ex.Message}", "Error Crítico");
-                client.Abort(); 
+                client.Abort();
             }
         }
 

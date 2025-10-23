@@ -120,9 +120,18 @@ namespace GuessMyMessClient.ViewModel.Lobby
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
 
-            FriendsViewModel = new FriendsViewModel();
-            ConfigurationViewModel = new ConfigurationViewModel();
-            DirectMessageViewModel = new DirectMessageViewModel();
+            try
+            {
+                SocialClientManager.Instance.Initialize();
+
+                FriendsViewModel = new FriendsViewModel();
+                DirectMessageViewModel = new DirectMessageViewModel();
+                ConfigurationViewModel = new ConfigurationViewModel(); 
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"No se pudo inicializar el servicio social. Funcionalidades limitadas.\nError: {ex.Message}", "Error Crítico", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
             LoadDataOnEntry();
         }
@@ -188,7 +197,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 Username = profileData.Username;
                 ProfileViewModel = new ProfileViewModel(UserProfileData);
 
-                // Carga la lista completa de avatares (más eficiente que 1 por 1)
                 var allAvatars = await client.GetAvailableAvatarsAsync();
                 var userAvatarDto = allAvatars.FirstOrDefault(a => a.idAvatar == profileData.AvatarId);
 
@@ -279,11 +287,19 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             return image;
         }
+        public void CleanupSocialConnection()
+        {
+            FriendsViewModel?.Cleanup(); 
+            DirectMessageViewModel?.Cleanup(); 
+
+            SocialClientManager.Instance.Cleanup();
+        }
+
         private void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window window)
             {
-                
+                CleanupSocialConnection();
                 Application.Current.Shutdown();
             }
         }

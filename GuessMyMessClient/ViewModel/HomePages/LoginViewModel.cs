@@ -39,15 +39,14 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private bool CanExecuteLogin(object parameter)
         {
             return !string.IsNullOrWhiteSpace(UsernameOrEmail) &&
-                   !string.IsNullOrWhiteSpace(Password) &&
-                   Password.Length >= 6;
+                   !string.IsNullOrWhiteSpace(Password);
         }
 
         private async void ExecuteLogin(object parameter)
         {
             if (!CanExecuteLogin(parameter))
             {
-                MessageBox.Show("Por favor, ingresa usuario/correo y contraseña.", "Error de Validación");
+                MessageBox.Show("Por favor, ingresa tu usuario/correo y tu contraseña.", "Campos Vacíos");
                 return;
             }
 
@@ -61,7 +60,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 {
                     SessionManager.Instance.StartSession(result.message);
                     OpenLobby(parameter);
-
                     client.Close();
                 }
                 else
@@ -70,7 +68,17 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     client.Abort();
                 }
             }
-            catch (Exception ex)
+            catch (FaultException<string> fex)
+            {
+                MessageBox.Show($"{fex.Detail}", "Error de Inicio de Sesión");
+                client.Abort();
+            }
+            catch (FaultException fexGeneral)
+            {
+                MessageBox.Show($"Error WCF: {fexGeneral.Message}", "Error WCF");
+                client.Abort();
+            }
+            catch (Exception ex) 
             {
                 MessageBox.Show($"No se pudo conectar con el servidor. \nError: {ex.Message}", "Error de Conexión");
                 client.Abort();

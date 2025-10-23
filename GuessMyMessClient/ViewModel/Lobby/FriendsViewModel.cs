@@ -10,10 +10,9 @@ using GuessMyMessClient.ViewModel.Session;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
-    // CORRECCIÓN: Se implementa la interfaz de callback completamente
-    public class FriendsViewModel : ViewModelBase, ISocialServiceCallback
+    public class FriendsViewModel : ViewModelBase, IDisposable
     {
-        private SocialServiceClient _client;
+        private SocialServiceClient Client => SocialClientManager.Instance.Client;
         public ObservableCollection<FriendViewModel> Friends { get; }
         public ObservableCollection<FriendRequestViewModel> FriendRequests { get; }
         public ObservableCollection<UserProfileDto> SearchResults { get; set; }
@@ -29,138 +28,214 @@ namespace GuessMyMessClient.ViewModel.Lobby
             FriendRequests = new ObservableCollection<FriendRequestViewModel>();
             SearchResults = new ObservableCollection<UserProfileDto>();
 
-            SearchCommand = new RelayCommand(async _ => await SearchUsersAsync());
-            InviteByEmailCommand = new RelayCommand(InviteByEmail);
-            SendFriendRequestCommand = new RelayCommand(SendFriendRequest);
+            SearchCommand = new RelayCommand(async _ => await SearchUsersAsync(), _ => CanExecuteNetworkActions());
+            InviteByEmailCommand = new RelayCommand(InviteByEmail, _ => CanExecuteNetworkActions());
+            SendFriendRequestCommand = new RelayCommand(SendFriendRequest, _ => CanExecuteNetworkActions());
 
-            InitializeService();
+            SubscribeToEvents();
+
+            if (CanExecuteNetworkActions())
+            {
+                LoadFriendsAndRequestsAsync();
+            }
+            else
+            {
+                Console.WriteLine("FriendsViewModel: El cliente social no está listo al iniciar. No se cargan datos iniciales.");
+            }
         }
 
-        private async void InitializeService()
+        private bool CanExecuteNetworkActions()
         {
-            try
-            {
-                _client = new SocialServiceClient(new InstanceContext(this));
-                _client.Open(); // CORRECCIÓN: Open() es síncrono
-                await LoadFriendsAndRequestsAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error connecting to social service: {ex.Message}", "Connection Error");
-                CloseClientSafely();
-            }
+            return Client != null && Client.State == CommunicationState.Opened;
         }
+
 
         private async Task LoadFriendsAndRequestsAsync()
         {
             string username = SessionManager.Instance.CurrentUsername;
-            if (string.IsNullOrEmpty(username) || _client.State != CommunicationState.Opened) return;
+
+            if (string.IsNullOrEmpty(username) || !CanExecuteNetworkActions())
+            {
+                Console.WriteLine($"LoadFriendsAndRequestsAsync: No se puede ejecutar. Username: {username}, CanExecute: {CanExecuteNetworkActions()}");
+                return;
+            }
+
 
             try
             {
-                // CORRECCIÓN: Usa el nombre de método ...Async de la nueva interfaz
-                var friends = await _client.GetFriendsListAsync(username);
+                var friends = await Client.GetFriendsListAsync(username);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     Friends.Clear();
                     foreach (var f in friends) Friends.Add(new FriendViewModel { Username = f.username, IsOnline = f.isOnline });
                 });
 
-                var requests = await _client.GetFriendRequestsAsync(username);
+                var requests = await Client.GetFriendRequestsAsync(username);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     FriendRequests.Clear();
                     foreach (var r in requests) FriendRequests.Add(new FriendRequestViewModel(this) { RequesterUsername = r.requesterUsername });
                 });
             }
-            catch (FaultException ex) { MessageBox.Show(ex.Message, "Server Error"); }
-            catch (Exception ex) { MessageBox.Show(ex.Message, "Communication Error"); CloseClientSafely(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar amigos/solicitudes: {ex.Message}", "Error");
+            }
         }
 
         private async Task SearchUsersAsync()
         {
-            if (string.IsNullOrWhiteSpace(SearchText) || _client.State != CommunicationState.Opened) return;
+            if (string.IsNullOrWhiteSpace(SearchText))
+            {
+                Application.Current.Dispatcher.Invoke(() => SearchResults.Clear());
+                return;
+            }
+
+            if (!CanExecuteNetworkActions()) return;
+
             try
             {
-                var users = await _client.SearchUsersAsync(SearchText, SessionManager.Instance.CurrentUsername);
+                var users = await Client.SearchUsersAsync(SearchText, SessionManager.Instance.CurrentUsername);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     SearchResults.Clear();
                     foreach (var u in users) SearchResults.Add(u);
                 });
             }
-            catch (Exception ex) { MessageBox.Show($"Search failed: {ex.Message}"); }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Search failed: {ex.Message}");
+            }
         }
 
-        private void SendFriendRequest(object targetUsername)
+        private void SendFriendRequest(object parameter)
         {
-            if (targetUsername is string username && _client.State == CommunicationState.Opened)
+            if (parameter is UserProfileDto userProfile && CanExecuteNetworkActions())
             {
                 try
                 {
-                    // Es OneWay, no necesita await
-                    _client.SendFriendRequest(SessionManager.Instance.CurrentUsername, username);
-                    MessageBox.Show($"Friend request sent to {username}.", "Success");
+                    Client.SendFriendRequest(SessionManager.Instance.CurrentUsername, userProfile.Username);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        SearchResults.Remove(userProfile);
+                    });
+                    MessageBox.Show($"Friend request sent to {userProfile.Username}.", "Success");
                 }
                 catch (Exception ex) { MessageBox.Show($"Failed to send request: {ex.Message}"); }
             }
         }
 
-        public async Task RespondToRequestAsync(string requesterUsername, bool accepted)
+        public void RespondToRequest(string requesterUsername, bool accepted)
         {
-            if (_client.State != CommunicationState.Opened) return;
+            if (!CanExecuteNetworkActions()) return;
             try
             {
-                // Es OneWay, no necesita await
-                _client.RespondToFriendRequest(SessionManager.Instance.CurrentUsername, requesterUsername, accepted);
-                await LoadFriendsAndRequestsAsync(); // Recargar listas
+                Client.RespondToFriendRequest(SessionManager.Instance.CurrentUsername, requesterUsername, accepted);
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    var requestVM = FriendRequests.FirstOrDefault(r => r.RequesterUsername == requesterUsername);
+                    if (requestVM != null)
+                    {
+                        FriendRequests.Remove(requestVM);
+                    }
+
+                    if (accepted)
+                    {
+                        if (!Friends.Any(f => f.Username == requesterUsername))
+                        {
+                            Friends.Add(new FriendViewModel { Username = requesterUsername, IsOnline = false });
+                        }
+                    }
+                });
             }
             catch (Exception ex) { MessageBox.Show($"Failed to respond: {ex.Message}"); }
         }
 
-        private void InviteByEmail(object obj) { /* Lógica de invitación */ }
-        public void Cleanup() => CloseClientSafely();
-        private void CloseClientSafely()
+        private void InviteByEmail(object obj) { }
+
+        private void SubscribeToEvents()
         {
-            if (_client == null) return;
-            try
-            {
-                if (_client.State != CommunicationState.Faulted) _client.Close();
-                else _client.Abort();
-            }
-            catch { _client.Abort(); }
+            SocialClientManager.Instance.OnFriendRequest += HandleFriendRequest;
+            SocialClientManager.Instance.OnFriendResponse += HandleFriendResponse;
+            SocialClientManager.Instance.OnFriendStatusChanged += HandleFriendStatusChanged;
+            Console.WriteLine("FriendsViewModel suscrito a eventos del Manager.");
         }
 
-        // --- Implementación COMPLETA de Callbacks ---
-        public void NotifyFriendRequest(string fromUsername)
+        private void UnsubscribeFromEvents()
         {
-            Application.Current.Dispatcher.Invoke(async () =>
+            SocialClientManager.Instance.OnFriendRequest -= HandleFriendRequest;
+            SocialClientManager.Instance.OnFriendResponse -= HandleFriendResponse;
+            SocialClientManager.Instance.OnFriendStatusChanged -= HandleFriendStatusChanged;
+            Console.WriteLine("FriendsViewModel desuscrito de eventos del Manager.");
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                UnsubscribeFromEvents();
+            }
+        }
+
+        public void Cleanup()
+        {
+            Dispose(); 
+        }
+
+        private void HandleFriendRequest(string fromUsername)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 MessageBox.Show($"New friend request from {fromUsername}");
-                await LoadFriendsAndRequestsAsync();
+                if (!FriendRequests.Any(r => r.RequesterUsername == fromUsername))
+                {
+                    FriendRequests.Add(new FriendRequestViewModel(this) { RequesterUsername = fromUsername });
+                }
             });
         }
-        public void NotifyFriendResponse(string fromUsername, bool accepted)
+
+        private void HandleFriendResponse(string fromUsername, bool accepted)
         {
-            Application.Current.Dispatcher.Invoke(async () =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 string message = accepted ? $"{fromUsername} accepted your request." : $"{fromUsername} declined your request.";
                 MessageBox.Show(message);
-                await LoadFriendsAndRequestsAsync();
+
+                if (accepted)
+                {
+                    if (!Friends.Any(f => f.Username == fromUsername))
+                    {
+                        Friends.Add(new FriendViewModel { Username = fromUsername, IsOnline = false }); 
+                    }
+                }
             });
         }
-        public void NotifyFriendStatusChanged(string friendUsername, string status)
+
+        private void HandleFriendStatusChanged(string friendUsername, string status)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
                 var friend = Friends.FirstOrDefault(f => f.Username == friendUsername);
-                if (friend != null) friend.IsOnline = (status == "Online");
+                if (friend != null)
+                {
+                    friend.IsOnline = (status == "Online");
+                    Console.WriteLine($"Estado de {friendUsername} actualizado a {status} en FriendsViewModel.");
+                }
+                else
+                {
+                    Console.WriteLine($"Se recibió cambio de estado para {friendUsername}, pero no está en la lista de amigos local.");
+                }
             });
         }
-        public void NotifyMessageReceived(DirectMessageDto message) { /* Lógica para notificar mensaje */ }
+
     }
 
-    // CORRECCIÓN: Se añaden las propiedades que faltaban
     public class FriendViewModel : ViewModelBase
     {
         public string Username { get; set; }
@@ -174,7 +249,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
     public class FriendRequestViewModel : ViewModelBase
     {
-        // CORRECCIÓN: Pasa el FriendsViewModel (parent) en lugar del client
         private readonly FriendsViewModel _parent;
         public string RequesterUsername { get; set; }
         public ICommand AcceptCommand { get; }
@@ -183,8 +257,8 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public FriendRequestViewModel(FriendsViewModel parent)
         {
             _parent = parent;
-            AcceptCommand = new RelayCommand(async _ => await _parent.RespondToRequestAsync(RequesterUsername, true));
-            DeclineCommand = new RelayCommand(async _ => await _parent.RespondToRequestAsync(RequesterUsername, false));
+            AcceptCommand = new RelayCommand(_ => _parent.RespondToRequest(RequesterUsername, true));
+            DeclineCommand = new RelayCommand(_ => _parent.RespondToRequest(RequesterUsername, false));
         }
     }
 }
