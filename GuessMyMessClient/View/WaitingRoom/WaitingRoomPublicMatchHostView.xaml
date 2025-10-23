@@ -9,7 +9,8 @@
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.WaitingRoom"
         d:DataContext="{d:DesignInstance Type=vm:WaitingRoomPublicMatchHostViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResize"
+        WindowState="Maximized"
+        WindowStyle="None"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
     <Grid>
         <Grid.Background>
@@ -69,6 +70,24 @@ Content="{x:Static language:Lang.waitingRoomBtnStart}"
 Style="{StaticResource JoinButton}" 
 FontSize="30"
 VerticalAlignment="Top" Margin="360,414,360,0" Height="41"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+             Command="{Binding MinimizeWindowCommand}"
+             CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+             ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+             Command="{Binding MaximizeWindowCommand}"
+             CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+             ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+             Command="{Binding CloseWindowCommand}"
+             CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+             ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+        </StackPanel>
+
 
 
     </Grid>

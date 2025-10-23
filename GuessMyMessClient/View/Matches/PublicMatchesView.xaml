@@ -8,6 +8,8 @@
         d:DataContext="{d:DesignInstance Type=vm:PublicMatchesViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
+        WindowState="Maximized"
+        WindowStyle="None"
         mc:Ignorable="d"
         Title="PublicMatches" Height="550" Width="900"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
@@ -17,70 +19,114 @@
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <Border Grid.Row="0" Background="#F0F0F0" CornerRadius="12" Padding="5" Margin="89,70,89,417">
+        <Button Content="←" 
+                Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="15,15,0,0"
+                Command="{Binding ReturnCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+        </StackPanel>
+
+
+        <Border Background="#F0F0F0" CornerRadius="12" Padding="15" Margin="89,70,89,70">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" 
-                Content="{x:Static language:Lang.playMenuBtnPublicMatches}" 
-                Style="{StaticResource SelectedTabButton}" 
-                Margin="0,0,2,0"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                <Button Grid.Column="1" 
-                Content="{x:Static language:Lang.playMenuBtnPrivateMatches}" 
-                Style="{StaticResource TabButton}" 
-                Margin="2,0,0,0"/>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock 
-                Text="{x:Static language:Lang.playMenuLbAvailableMatches}"
-                FontSize="18" 
-                FontWeight="Bold" 
-                Margin="0,67,143,-61"/>
+                    <Button Grid.Column="0" 
+                            Content="{x:Static language:Lang.playMenuBtnPublicMatches}" 
+                            Style="{StaticResource SelectedTabButton}" 
+                            Margin="0,0,2,0"/>
 
-                <Border BorderBrush="#CCCCCC" 
-                BorderThickness="1.5" 
-                CornerRadius="8" 
-                Padding="15" 
-                Margin="-2,98,0,-167" Grid.ColumnSpan="2">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
+                    <Button Grid.Column="1" 
+                            Content="{x:Static language:Lang.playMenuBtnPrivateMatches}" 
+                            Style="{StaticResource TabButton}" 
+                            Margin="2,0,0,0"
+                            Command="{Binding PrivateMatchesCommand}"/>
+                </Grid>
 
-                        <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,185,0">
-                            <TextBlock Text="PARTIDA 1" FontSize="20" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1"
+                           Text="{x:Static language:Lang.playMenuLbAvailableMatches}"
+                           FontSize="18" 
+                           FontWeight="Bold" 
+                           Margin="0,20,0,10"/>
 
-                            <Grid Margin="0,5,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
 
-                                <TextBlock Grid.Column="0" HorizontalAlignment="Left">
-                                    <Run Text="{x:Static language:Lang.globalLbHost}" FontWeight="SemiBold"/>:
-                                </TextBlock>
+                    <Border BorderBrush="#CCCCCC" 
+                            BorderThickness="1.5" 
+                            CornerRadius="8" 
+                            Padding="15"
+                            Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="1" HorizontalAlignment="Center">
-                                    <Run Text="{x:Static language:Lang.globalLbPlayers}" FontWeight="SemiBold"/>:
-                                </TextBlock>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0">
+                                <TextBlock Text="PARTIDA 1" FontSize="20" FontWeight="Bold"/>
 
-                                <TextBlock Grid.Column="2" HorizontalAlignment="Right">
-                                    <Run Text="{x:Static language:Lang.globalLbDifficulty}" FontWeight="SemiBold"/>:
-                                </TextBlock>
-                            </Grid>
-                        </StackPanel>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
 
-                        <Button 
-                            Content="{x:Static language:Lang.globalBtnJoin}" 
-                            Style="{StaticResource JoinButton}" 
-                            VerticalAlignment="Center" Margin="623,0,0,0" Grid.ColumnSpan="2"/>
-                    </Grid>
-                </Border>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Left">
+                                        <Run Text="{x:Static language:Lang.globalLbHost}" FontWeight="SemiBold"/>:
+                                    </TextBlock>
+
+                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center">
+                                        <Run Text="{x:Static language:Lang.globalLbPlayers}" FontWeight="SemiBold"/>:
+                                    </TextBlock>
+
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Right">
+                                        <Run Text="{x:Static language:Lang.globalLbDifficulty}" FontWeight="SemiBold"/>:
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+
+                            <Button 
+                                Grid.Column="1" 
+                                Content="{x:Static language:Lang.globalBtnJoin}" 
+                                Style="{StaticResource JoinButton}" 
+                                VerticalAlignment="Center" 
+                                Margin="0"/>
+                        </Grid>
+                    </Border>
+
+                </ScrollViewer>
+
             </Grid>
         </Border>
+
     </Grid>
 </Window>
