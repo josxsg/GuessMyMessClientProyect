@@ -7,16 +7,45 @@ using System.Windows;
 using System.Windows.Input;
 using GuessMyMessClient.SocialService;
 using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.ViewModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class FriendsViewModel : ViewModelBase, IDisposable
     {
         private SocialServiceClient Client => SocialClientManager.Instance.Client;
+
         public ObservableCollection<FriendViewModel> Friends { get; }
         public ObservableCollection<FriendRequestViewModel> FriendRequests { get; }
-        public ObservableCollection<UserProfileDto> SearchResults { get; set; }
-        public string SearchText { get; set; }
+
+        private ObservableCollection<UserProfileDto> _searchResults;
+        public ObservableCollection<UserProfileDto> SearchResults
+        {
+            get { return _searchResults; }
+            set
+            {
+                if (_searchResults != value)
+                {
+                    _searchResults = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                if (_searchText != value)
+                {
+                    _searchText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         public ICommand SearchCommand { get; }
         public ICommand InviteByEmailCommand { get; }
@@ -28,9 +57,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
             FriendRequests = new ObservableCollection<FriendRequestViewModel>();
             SearchResults = new ObservableCollection<UserProfileDto>();
 
-            SearchCommand = new RelayCommand(async _ => await SearchUsersAsync(), _ => CanExecuteNetworkActions());
-            InviteByEmailCommand = new RelayCommand(InviteByEmail, _ => CanExecuteNetworkActions());
-            SendFriendRequestCommand = new RelayCommand(SendFriendRequest, _ => CanExecuteNetworkActions());
+            SearchCommand = new RelayCommand(async parameter => await SearchUsersAsync(), parameter => CanExecuteNetworkActions());
+            InviteByEmailCommand = new RelayCommand(InviteByEmail, parameter => CanExecuteNetworkActions());
+            SendFriendRequestCommand = new RelayCommand(SendFriendRequest, parameter => CanExecuteNetworkActions());
 
             SubscribeToEvents();
 
@@ -40,7 +69,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             else
             {
-                Console.WriteLine("FriendsViewModel: El cliente social no está listo al iniciar. No se cargan datos iniciales.");
+                Console.WriteLine("FriendsViewModel: Cliente social no listo. No se cargan datos iniciales.");
             }
         }
 
@@ -49,17 +78,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
             return Client != null && Client.State == CommunicationState.Opened;
         }
 
-
         private async Task LoadFriendsAndRequestsAsync()
         {
             string username = SessionManager.Instance.CurrentUsername;
 
             if (string.IsNullOrEmpty(username) || !CanExecuteNetworkActions())
             {
-                Console.WriteLine($"LoadFriendsAndRequestsAsync: No se puede ejecutar. Username: {username}, CanExecute: {CanExecuteNetworkActions()}");
+                Console.WriteLine($"LoadFriendsAndRequestsAsync: No se puede ejecutar. Username: '{username}', CanExecute: {CanExecuteNetworkActions()}");
                 return;
             }
-
 
             try
             {
@@ -67,19 +94,54 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     Friends.Clear();
-                    foreach (var f in friends) Friends.Add(new FriendViewModel { Username = f.username, IsOnline = f.isOnline });
+                    if (friends != null)
+                    {
+                        foreach (var f in friends)
+                        {
+                            Friends.Add(new FriendViewModel { Username = f.Username, IsOnline = f.IsOnline });
+                        }
+                    }
                 });
 
                 var requests = await Client.GetFriendRequestsAsync(username);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     FriendRequests.Clear();
-                    foreach (var r in requests) FriendRequests.Add(new FriendRequestViewModel(this) { RequesterUsername = r.requesterUsername });
+                    if (requests != null)
+                    {
+                        foreach (var r in requests)
+                        {
+                            FriendRequests.Add(new FriendRequestViewModel(this) { RequesterUsername = r.RequesterUsername });
+                        }
+                    }
                 });
+            }
+            catch (FaultException fexGeneral)
+            {
+                MessageBox.Show(
+                    Lang.alertFriendLoadError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"WCF Error loading friends/requests: {fexGeneral.Message}");
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Connection Error loading friends/requests: {ex.Message}");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar amigos/solicitudes: {ex.Message}", "Error");
+                MessageBox.Show(
+                    Lang.alertFriendLoadError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Error al cargar amigos/solicitudes: {ex.Message}");
             }
         }
 
@@ -91,7 +153,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 return;
             }
 
-            if (!CanExecuteNetworkActions()) return;
+            if (!CanExecuteNetworkActions())
+            {
+                Console.WriteLine("SearchUsersAsync: No se puede ejecutar, cliente no listo.");
+                return;
+            }
 
             try
             {
@@ -99,12 +165,41 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     SearchResults.Clear();
-                    foreach (var u in users) SearchResults.Add(u);
+                    if (users != null)
+                    {
+                        foreach (var u in users)
+                        {
+                            SearchResults.Add(u);
+                        }
+                    }
                 });
+            }
+            catch (FaultException fexGeneral)
+            {
+                MessageBox.Show(
+                    Lang.alertFriendSearchError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"WCF Error searching users: {fexGeneral.Message}");
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Connection Error searching users: {ex.Message}");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Search failed: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertFriendSearchError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Search failed: {ex.Message}");
             }
         }
 
@@ -119,15 +214,57 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     {
                         SearchResults.Remove(userProfile);
                     });
-                    MessageBox.Show($"Friend request sent to {userProfile.Username}.", "Success");
+                    MessageBox.Show(
+                        string.Format(Lang.alertFriendRequestSent, userProfile.Username),
+                        Lang.alertSuccessTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
                 }
-                catch (Exception ex) { MessageBox.Show($"Failed to send request: {ex.Message}"); }
+                catch (FaultException<string> fex)
+                {
+                    MessageBox.Show(
+                        fex.Detail,
+                        Lang.alertFriendRequestErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    Console.WriteLine($"Fault sending request: {fex.Detail}");
+                }
+                catch (CommunicationException commEx)
+                {
+                    MessageBox.Show(
+                        Lang.alertFriendRequestSendError,
+                        Lang.alertFriendRequestErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    Console.WriteLine($"Communication Error sending request: {commEx.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        Lang.alertFriendRequestSendError,
+                        Lang.alertFriendRequestErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    Console.WriteLine($"Failed to send request: {ex.Message}");
+                }
+            }
+            else if (!(parameter is UserProfileDto))
+            {
+                Console.WriteLine("SendFriendRequest: Parámetro inválido.");
+            }
+            else if (!CanExecuteNetworkActions())
+            {
+                Console.WriteLine("SendFriendRequest: No se puede ejecutar, cliente no listo.");
             }
         }
 
         public void RespondToRequest(string requesterUsername, bool accepted)
         {
-            if (!CanExecuteNetworkActions()) return;
+            if (!CanExecuteNetworkActions())
+            {
+                Console.WriteLine("RespondToRequest: No se puede ejecutar, cliente no listo.");
+                return;
+            }
             try
             {
                 Client.RespondToFriendRequest(SessionManager.Instance.CurrentUsername, requesterUsername, accepted);
@@ -138,7 +275,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     {
                         FriendRequests.Remove(requestVM);
                     }
-
                     if (accepted)
                     {
                         if (!Friends.Any(f => f.Username == requesterUsername))
@@ -148,10 +284,30 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     }
                 });
             }
-            catch (Exception ex) { MessageBox.Show($"Failed to respond: {ex.Message}"); }
+            catch (CommunicationException commEx)
+            {
+                MessageBox.Show(
+                    Lang.alertFriendResponseError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Communication Error responding to request: {commEx.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    Lang.alertFriendResponseError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Failed to respond: {ex.Message}");
+            }
         }
 
-        private void InviteByEmail(object obj) { }
+        private void InviteByEmail(object obj)
+        {
+            //MessageBox.Show("No se ha implementado la funcion","Info");
+        }
 
         private void SubscribeToEvents()
         {
@@ -185,14 +341,19 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public void Cleanup()
         {
-            Dispose(); 
+            Dispose();
         }
 
         private void HandleFriendRequest(string fromUsername)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show($"New friend request from {fromUsername}");
+                MessageBox.Show(
+                    string.Format(Lang.alertFriendNewRequestFrom, fromUsername),
+                    Lang.alertFriendNewRequestTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+
                 if (!FriendRequests.Any(r => r.RequesterUsername == fromUsername))
                 {
                     FriendRequests.Add(new FriendRequestViewModel(this) { RequesterUsername = fromUsername });
@@ -200,18 +361,25 @@ namespace GuessMyMessClient.ViewModel.Lobby
             });
         }
 
-        private void HandleFriendResponse(string fromUsername, bool accepted)
+        private void HandleFriendResponse(string respondingUsername, bool accepted)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                string message = accepted ? $"{fromUsername} accepted your request." : $"{fromUsername} declined your request.";
-                MessageBox.Show(message);
+                string message = accepted
+                    ? string.Format(Lang.alertFriendRequestAccepted, respondingUsername)
+                    : string.Format(Lang.alertFriendRequestDeclined, respondingUsername);
+
+                MessageBox.Show(
+                    message,
+                    Lang.alertFriendRequestResponseTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
 
                 if (accepted)
                 {
-                    if (!Friends.Any(f => f.Username == fromUsername))
+                    if (!Friends.Any(f => f.Username == respondingUsername))
                     {
-                        Friends.Add(new FriendViewModel { Username = fromUsername, IsOnline = false }); 
+                        Friends.Add(new FriendViewModel { Username = respondingUsername, IsOnline = false });
                     }
                 }
             });
@@ -224,26 +392,42 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 var friend = Friends.FirstOrDefault(f => f.Username == friendUsername);
                 if (friend != null)
                 {
-                    friend.IsOnline = (status == "Online");
-                    Console.WriteLine($"Estado de {friendUsername} actualizado a {status} en FriendsViewModel.");
+                    bool isOnline = (status == "Online");
+                    if (friend.IsOnline != isOnline)
+                    {
+                        friend.IsOnline = isOnline;
+                        Console.WriteLine($"Estado de {friendUsername} actualizado a {status} en FriendsViewModel.");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine($"Se recibió cambio de estado para {friendUsername}, pero no está en la lista de amigos local.");
+                    Console.WriteLine($"Cambio de estado para {friendUsername} recibido, pero no está en la lista local.");
                 }
             });
         }
 
+        ~FriendsViewModel()
+        {
+            Dispose(false);
+        }
     }
 
     public class FriendViewModel : ViewModelBase
     {
         public string Username { get; set; }
+
         private bool _isOnline;
         public bool IsOnline
         {
-            get => _isOnline;
-            set { _isOnline = value; OnPropertyChanged(); }
+            get { return _isOnline; }
+            set
+            {
+                if (_isOnline != value)
+                {
+                    _isOnline = value;
+                    OnPropertyChanged();
+                }
+            }
         }
     }
 
@@ -251,14 +435,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
     {
         private readonly FriendsViewModel _parent;
         public string RequesterUsername { get; set; }
+
         public ICommand AcceptCommand { get; }
         public ICommand DeclineCommand { get; }
 
         public FriendRequestViewModel(FriendsViewModel parent)
         {
-            _parent = parent;
-            AcceptCommand = new RelayCommand(_ => _parent.RespondToRequest(RequesterUsername, true));
-            DeclineCommand = new RelayCommand(_ => _parent.RespondToRequest(RequesterUsername, false));
+            _parent = parent ?? throw new ArgumentNullException(nameof(parent));
+            AcceptCommand = new RelayCommand(parameter => _parent.RespondToRequest(RequesterUsername, true));
+            DeclineCommand = new RelayCommand(parameter => _parent.RespondToRequest(RequesterUsername, false));
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 
@@ -20,7 +16,6 @@ namespace GuessMyMessClient.ViewModel.Support
 
         private static readonly DependencyProperty IsUpdatingProperty =
             DependencyProperty.RegisterAttached("IsUpdating", typeof(bool), typeof(PasswordBoxHelper));
-
 
         public static void SetAttach(DependencyObject dp, bool value)
         {
@@ -42,7 +37,7 @@ namespace GuessMyMessClient.ViewModel.Support
             dp.SetValue(PasswordProperty, value);
         }
 
-        private static Boolean GetIsUpdating(DependencyObject dp)
+        private static bool GetIsUpdating(DependencyObject dp)
         {
             return (bool)dp.GetValue(IsUpdatingProperty);
         }
@@ -54,7 +49,11 @@ namespace GuessMyMessClient.ViewModel.Support
 
         private static void OnPasswordPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            PasswordBox passwordBox = sender as PasswordBox;
+            if (!(sender is PasswordBox passwordBox))
+            {
+                return;
+            }
+
             passwordBox.PasswordChanged -= PasswordChanged;
 
             if (!GetIsUpdating(passwordBox))
@@ -66,10 +65,10 @@ namespace GuessMyMessClient.ViewModel.Support
 
         private static void Attach(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            PasswordBox passwordBox = sender as PasswordBox;
-
-            if (passwordBox == null)
+            if (!(sender is PasswordBox passwordBox))
+            {
                 return;
+            }
 
             if ((bool)e.OldValue)
             {
@@ -84,7 +83,11 @@ namespace GuessMyMessClient.ViewModel.Support
 
         private static void PasswordChanged(object sender, RoutedEventArgs e)
         {
-            PasswordBox passwordBox = sender as PasswordBox;
+            if (!(sender is PasswordBox passwordBox))
+            {
+                return;
+            }
+
             SetIsUpdating(passwordBox, true);
             SetPassword(passwordBox, passwordBox.Password);
             SetIsUpdating(passwordBox, false);

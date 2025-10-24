@@ -37,7 +37,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window window)
+            if (parameter is Window)
             {
                 Application.Current.Shutdown();
             }

@@ -24,10 +24,10 @@ namespace GuessMyMessClient.AuthService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string messageField;
+        private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool successField;
+        private bool SuccessField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -40,27 +40,27 @@ namespace GuessMyMessClient.AuthService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string message {
+        public string Message {
             get {
-                return this.messageField;
+                return this.MessageField;
             }
             set {
-                if ((object.ReferenceEquals(this.messageField, value) != true)) {
-                    this.messageField = value;
-                    this.RaisePropertyChanged("message");
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool success {
+        public bool Success {
             get {
-                return this.successField;
+                return this.SuccessField;
             }
             set {
-                if ((this.successField.Equals(value) != true)) {
-                    this.successField = value;
-                    this.RaisePropertyChanged("success");
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
                 }
             }
         }
@@ -228,10 +228,10 @@ namespace GuessMyMessClient.AuthService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string networkTypeField;
+        private string NetworkTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string userLinkField;
+        private string UserLinkField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -244,27 +244,27 @@ namespace GuessMyMessClient.AuthService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string networkType {
+        public string NetworkType {
             get {
-                return this.networkTypeField;
+                return this.NetworkTypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.networkTypeField, value) != true)) {
-                    this.networkTypeField = value;
-                    this.RaisePropertyChanged("networkType");
+                if ((object.ReferenceEquals(this.NetworkTypeField, value) != true)) {
+                    this.NetworkTypeField = value;
+                    this.RaisePropertyChanged("NetworkType");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string userLink {
+        public string UserLink {
             get {
-                return this.userLinkField;
+                return this.UserLinkField;
             }
             set {
-                if ((object.ReferenceEquals(this.userLinkField, value) != true)) {
-                    this.userLinkField = value;
-                    this.RaisePropertyChanged("userLink");
+                if ((object.ReferenceEquals(this.UserLinkField, value) != true)) {
+                    this.UserLinkField = value;
+                    this.RaisePropertyChanged("UserLink");
                 }
             }
         }

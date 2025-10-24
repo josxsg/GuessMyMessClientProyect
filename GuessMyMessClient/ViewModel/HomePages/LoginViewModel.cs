@@ -10,16 +10,34 @@ using System.Windows;
 using GuessMyMessClient.View.HomePages;
 using GuessMyMessClient.View.Lobby;
 using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.Properties.Langs;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
     public class LoginViewModel : ViewModelBase
     {
         private string _usernameOrEmail;
-        public string UsernameOrEmail { get => _usernameOrEmail; set { _usernameOrEmail = value; OnPropertyChanged(); } }
+        public string UsernameOrEmail
+        {
+            get => _usernameOrEmail;
+            set
+            {
+                _usernameOrEmail = value;
+                OnPropertyChanged();
+            }
+        }
 
-        private string _password; 
-        public string Password { get => _password; set { _password = value; OnPropertyChanged(); CommandManager.InvalidateRequerySuggested(); } }
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+                CommandManager.InvalidateRequerySuggested();
+            }
+        }
 
         public ICommand LoginCommand { get; }
         public ICommand CloseWindowCommand { get; }
@@ -46,42 +64,78 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (!CanExecuteLogin(parameter))
             {
-                MessageBox.Show("Por favor, ingresa tu usuario/correo y tu contraseña.", "Campos Vacíos");
+                MessageBox.Show(
+                    Lang.alertRequiredFields,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
             var client = new AuthenticationServiceClient();
+            bool success = false;
 
             try
             {
                 OperationResultDto result = await client.LoginAsync(UsernameOrEmail, Password);
 
-                if (result.success)
+                if (result.Success)
                 {
-                    SessionManager.Instance.StartSession(result.message);
+                    SessionManager.Instance.StartSession(result.Message);
                     OpenLobby(parameter);
                     client.Close();
+                    success = true;
                 }
                 else
                 {
-                    MessageBox.Show(result.message, "Error de Inicio de Sesión");
-                    client.Abort();
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertLoginErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
             catch (FaultException<string> fex)
             {
-                MessageBox.Show($"{fex.Detail}", "Error de Inicio de Sesión");
-                client.Abort();
+                MessageBox.Show(
+                    fex.Detail,
+                    Lang.alertLoginErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             catch (FaultException fexGeneral)
             {
-                MessageBox.Show($"Error WCF: {fexGeneral.Message}", "Error WCF");
-                client.Abort();
+                MessageBox.Show(
+                    Lang.alertServerErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
             }
-            catch (Exception ex) 
+            catch (EndpointNotFoundException ex)
             {
-                MessageBox.Show($"No se pudo conectar con el servidor. \nError: {ex.Message}", "Error de Conexión");
-                client.Abort();
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Connection Error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Unknown Error: {ex.Message}");
+            }
+            finally
+            {
+                if (!success && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
             }
         }
 
@@ -95,9 +149,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
             var lobbyView = new LobbyView();
             lobbyView.Show();
         }
+
         private void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window window)
+            if (parameter is Window)
             {
                 Application.Current.Shutdown();
             }
@@ -118,13 +173,12 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 window.WindowState = WindowState.Minimized;
             }
         }
+
         private void ExecuteReturn(object parameter)
         {
             if (parameter is Window currentWindow)
             {
                 var welcomeView = new WelcomeView();
-                welcomeView.WindowState = currentWindow.WindowState;
-
                 welcomeView.Show();
                 currentWindow.Close();
             }

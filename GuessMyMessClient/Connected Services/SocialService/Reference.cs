@@ -24,10 +24,10 @@ namespace GuessMyMessClient.SocialService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool isOnlineField;
+        private bool IsOnlineField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string usernameField;
+        private string UsernameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -40,27 +40,27 @@ namespace GuessMyMessClient.SocialService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool isOnline {
+        public bool IsOnline {
             get {
-                return this.isOnlineField;
+                return this.IsOnlineField;
             }
             set {
-                if ((this.isOnlineField.Equals(value) != true)) {
-                    this.isOnlineField = value;
-                    this.RaisePropertyChanged("isOnline");
+                if ((this.IsOnlineField.Equals(value) != true)) {
+                    this.IsOnlineField = value;
+                    this.RaisePropertyChanged("IsOnline");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string username {
+        public string Username {
             get {
-                return this.usernameField;
+                return this.UsernameField;
             }
             set {
-                if ((object.ReferenceEquals(this.usernameField, value) != true)) {
-                    this.usernameField = value;
-                    this.RaisePropertyChanged("username");
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
                 }
             }
         }
@@ -86,10 +86,10 @@ namespace GuessMyMessClient.SocialService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime requestDateField;
+        private System.DateTime RequestDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string requesterUsernameField;
+        private string RequesterUsernameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -102,27 +102,27 @@ namespace GuessMyMessClient.SocialService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime requestDate {
+        public System.DateTime RequestDate {
             get {
-                return this.requestDateField;
+                return this.RequestDateField;
             }
             set {
-                if ((this.requestDateField.Equals(value) != true)) {
-                    this.requestDateField = value;
-                    this.RaisePropertyChanged("requestDate");
+                if ((this.RequestDateField.Equals(value) != true)) {
+                    this.RequestDateField = value;
+                    this.RaisePropertyChanged("RequestDate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string requesterUsername {
+        public string RequesterUsername {
             get {
-                return this.requesterUsernameField;
+                return this.RequesterUsernameField;
             }
             set {
-                if ((object.ReferenceEquals(this.requesterUsernameField, value) != true)) {
-                    this.requesterUsernameField = value;
-                    this.RaisePropertyChanged("requesterUsername");
+                if ((object.ReferenceEquals(this.RequesterUsernameField, value) != true)) {
+                    this.RequesterUsernameField = value;
+                    this.RaisePropertyChanged("RequesterUsername");
                 }
             }
         }
@@ -290,10 +290,10 @@ namespace GuessMyMessClient.SocialService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string networkTypeField;
+        private string NetworkTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string userLinkField;
+        private string UserLinkField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -306,27 +306,27 @@ namespace GuessMyMessClient.SocialService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string networkType {
+        public string NetworkType {
             get {
-                return this.networkTypeField;
+                return this.NetworkTypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.networkTypeField, value) != true)) {
-                    this.networkTypeField = value;
-                    this.RaisePropertyChanged("networkType");
+                if ((object.ReferenceEquals(this.NetworkTypeField, value) != true)) {
+                    this.NetworkTypeField = value;
+                    this.RaisePropertyChanged("NetworkType");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string userLink {
+        public string UserLink {
             get {
-                return this.userLinkField;
+                return this.UserLinkField;
             }
             set {
-                if ((object.ReferenceEquals(this.userLinkField, value) != true)) {
-                    this.userLinkField = value;
-                    this.RaisePropertyChanged("userLink");
+                if ((object.ReferenceEquals(this.UserLinkField, value) != true)) {
+                    this.UserLinkField = value;
+                    this.RaisePropertyChanged("UserLink");
                 }
             }
         }
@@ -352,10 +352,10 @@ namespace GuessMyMessClient.SocialService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string messageField;
+        private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool successField;
+        private bool SuccessField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -368,27 +368,27 @@ namespace GuessMyMessClient.SocialService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string message {
+        public string Message {
             get {
-                return this.messageField;
+                return this.MessageField;
             }
             set {
-                if ((object.ReferenceEquals(this.messageField, value) != true)) {
-                    this.messageField = value;
-                    this.RaisePropertyChanged("message");
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool success {
+        public bool Success {
             get {
-                return this.successField;
+                return this.SuccessField;
             }
             set {
-                if ((this.successField.Equals(value) != true)) {
-                    this.successField = value;
-                    this.RaisePropertyChanged("success");
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
                 }
             }
         }
@@ -414,16 +414,16 @@ namespace GuessMyMessClient.SocialService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string contentField;
+        private string ContentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string recipientUsernameField;
+        private string RecipientUsernameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string senderUsernameField;
+        private string SenderUsernameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime timestampField;
+        private System.DateTime TimestampField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -436,53 +436,53 @@ namespace GuessMyMessClient.SocialService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string content {
+        public string Content {
             get {
-                return this.contentField;
+                return this.ContentField;
             }
             set {
-                if ((object.ReferenceEquals(this.contentField, value) != true)) {
-                    this.contentField = value;
-                    this.RaisePropertyChanged("content");
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string recipientUsername {
+        public string RecipientUsername {
             get {
-                return this.recipientUsernameField;
+                return this.RecipientUsernameField;
             }
             set {
-                if ((object.ReferenceEquals(this.recipientUsernameField, value) != true)) {
-                    this.recipientUsernameField = value;
-                    this.RaisePropertyChanged("recipientUsername");
+                if ((object.ReferenceEquals(this.RecipientUsernameField, value) != true)) {
+                    this.RecipientUsernameField = value;
+                    this.RaisePropertyChanged("RecipientUsername");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string senderUsername {
+        public string SenderUsername {
             get {
-                return this.senderUsernameField;
+                return this.SenderUsernameField;
             }
             set {
-                if ((object.ReferenceEquals(this.senderUsernameField, value) != true)) {
-                    this.senderUsernameField = value;
-                    this.RaisePropertyChanged("senderUsername");
+                if ((object.ReferenceEquals(this.SenderUsernameField, value) != true)) {
+                    this.SenderUsernameField = value;
+                    this.RaisePropertyChanged("SenderUsername");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime timestamp {
+        public System.DateTime Timestamp {
             get {
-                return this.timestampField;
+                return this.TimestampField;
             }
             set {
-                if ((this.timestampField.Equals(value) != true)) {
-                    this.timestampField = value;
-                    this.RaisePropertyChanged("timestamp");
+                if ((this.TimestampField.Equals(value) != true)) {
+                    this.TimestampField = value;
+                    this.RaisePropertyChanged("Timestamp");
                 }
             }
         }

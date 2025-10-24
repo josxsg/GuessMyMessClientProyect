@@ -450,4 +450,220 @@
   <data name="directMessageSenderTxtChat" xml:space="preserve">
     <value>[TÚ]</value>
   </data>
+  <data name="alertRequiredFields" xml:space="preserve">
+    <value>Por favor, ingresa tu usuario/correo y tu contraseña.</value>
+  </data>
+  <data name="alertInputErrorTitle" xml:space="preserve">
+    <value>Campos Incompletos</value>
+  </data>
+  <data name="alertLoginErrorTitle" xml:space="preserve">
+    <value>Error de Inicio de Sesión</value>
+  </data>
+  <data name="alertErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="alertServerErrorMessage" xml:space="preserve">
+    <value>Ocurrió un error en el servidor. Por favor, inténtalo más tarde.</value>
+  </data>
+  <data name="alertConnectionErrorMessage" xml:space="preserve">
+    <value>No se pudo conectar con el servidor. Verifica tu conexión a internet e inténtalo de nuevo.</value>
+  </data>
+  <data name="alertConnectionErrorTitle" xml:space="preserve">
+    <value>Error de Conexión</value>
+  </data>
+  <data name="alertUnknownErrorMessage" xml:space="preserve">
+    <value>Ocurrió un error inesperado. Por favor, inténtalo de nuevo.</value>
+  </data>
+  <data name="alertConfirmExit" xml:space="preserve">
+    <value>¿Estás seguro de que quieres salir del juego?</value>
+  </data>
+  <data name="alertConfirmExitTitle" xml:space="preserve">
+    <value>Confirmar Salida</value>
+  </data>
+  <data name="alertAvatarLoadError" xml:space="preserve">
+    <value>No se pudo cargar la información del avatar por defecto.</value>
+  </data>
+  <data name="alertAllFieldsRequired" xml:space="preserve">
+    <value>Todos los campos (Usuario, Nombre, Apellido, Email, Contraseña y Género) son obligatorios.</value>
+  </data>
+  <data name="alertInvalidEmailFormat" xml:space="preserve">
+    <value>El formato del correo electrónico no es válido. Debe ser similar a 'usuario@dominio.com'.</value>
+  </data>
+  <data name="alertInvalidEmailTitle" xml:space="preserve">
+    <value>Correo Inválido</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>La contraseña no puede estar vacía.</value>
+  </data>
+  <data name="alertPasswordTooShort" xml:space="preserve">
+    <value>La contraseña debe tener al menos 8 caracteres.</value>
+  </data>
+  <data name="alertPasswordNeedsUpper" xml:space="preserve">
+    <value>La contraseña debe contener al menos una letra mayúscula (A-Z).</value>
+  </data>
+  <data name="alertPasswordNeedsLower" xml:space="preserve">
+    <value>La contraseña debe contener al menos una letra minúscula (a-z).</value>
+  </data>
+  <data name="alertPasswordNeedsDigit" xml:space="preserve">
+    <value>La contraseña debe contener al menos un número (0-9).</value>
+  </data>
+  <data name="alertPasswordNeedsSpecial" xml:space="preserve">
+    <value>La contraseña debe contener al menos un caracter especial (ej: @, $, !, %, *).</value>
+  </data>
+  <data name="alertPasswordGenericError" xml:space="preserve">
+    <value>La contraseña no cumple con los requisitos de seguridad.</value>
+  </data>
+  <data name="alertPasswordNotSecureTitle" xml:space="preserve">
+    <value>Contraseña No Segura</value>
+  </data>
+  <data name="alertRegistrationSuccess" xml:space="preserve">
+    <value>¡Registro exitoso!</value>
+  </data>
+  <data name="alertSuccessTitle" xml:space="preserve">
+    <value>Éxito</value>
+  </data>
+  <data name="alertRegistrationErrorTitle" xml:space="preserve">
+    <value>Error de Registro</value>
+  </data>
+  <data name="alertCodeSentTitle" xml:space="preserve">
+    <value>Código Enviado</value>
+  </data>
+  <data name="alertPasswordControlsNotFound" xml:space="preserve">
+    <value>Error al obtener los campos de contraseña. Inténtalo de nuevo.</value>
+  </data>
+  <data name="alertPasswordsDoNotMatch" xml:space="preserve">
+    <value>Las contraseñas no coinciden. Por favor, verifica.</value>
+  </data>
+  <data name="alertVerificationSuccess" xml:space="preserve">
+    <value>¡Cuenta verificada exitosamente! Por favor, inicia sesión para continuar.</value>
+  </data>
+  <data name="alertActivationCompleteTitle" xml:space="preserve">
+    <value>Activación Completa</value>
+  </data>
+  <data name="alertVerificationErrorTitle" xml:space="preserve">
+    <value>Error de Verificación</value>
+  </data>
+  <data name="alertInvalidCodeFormat" xml:space="preserve">
+    <value>El código de verificación debe contener exactamente 6 dígitos numéricos.</value>
+  </data>
+  <data name="alertInvalidCodeTitle" xml:space="preserve">
+    <value>Código Inválido</value>
+  </data>
+  <data name="alertChatLoadFriendsError" xml:space="preserve">
+    <value>No se pudo cargar la lista de amigos para el chat. Inténtalo de nuevo.</value>
+  </data>
+  <data name="alertChatSenderYou" xml:space="preserve">
+    <value>Tú</value>
+  </data>
+  <data name="alertChatLoadHistoryError" xml:space="preserve">
+    <value>No se pudo cargar el historial de esta conversación.</value>
+  </data>
+  <data name="alertChatMessageSendError" xml:space="preserve">
+    <value>Error al enviar el mensaje. Inténtalo de nuevo.</value>
+  </data>
+  <data name="alertChatNewMessageFrom" xml:space="preserve">
+    <value>Tienes un nuevo mensaje de: {0}</value>
+  </data>
+  <data name="alertChatNewMessageTitle" xml:space="preserve">
+    <value>Nuevo Mensaje</value>
+  </data>
+  <data name="alertFriendLoadError" xml:space="preserve">
+    <value>No se pudo cargar la lista de amigos o las solicitudes pendientes.</value>
+  </data>
+  <data name="alertFriendSearchError" xml:space="preserve">
+    <value>Error al buscar usuarios. Inténtalo de nuevo.</value>
+  </data>
+  <data name="alertFriendRequestSent" xml:space="preserve">
+    <value>Solicitud de amistad enviada a {0}.</value>
+  </data>
+  <data name="alertFriendRequestErrorTitle" xml:space="preserve">
+    <value>Error al Enviar Solicitud</value>
+  </data>
+  <data name="alertFriendRequestSendError" xml:space="preserve">
+    <value>No se pudo enviar la solicitud de amistad. Inténtalo de nuevo.</value>
+  </data>
+  <data name="alertFriendResponseError" xml:space="preserve">
+    <value>Error al responder a la solicitud de amistad.</value>
+  </data>
+  <data name="alertFriendNewRequestFrom" xml:space="preserve">
+    <value>¡Nueva solicitud de amistad de {0}!</value>
+  </data>
+  <data name="alertFriendNewRequestTitle" xml:space="preserve">
+    <value>Nueva Solicitud de Amistad</value>
+  </data>
+  <data name="alertFriendRequestAccepted" xml:space="preserve">
+    <value>{0} ha aceptado tu solicitud de amistad.</value>
+  </data>
+  <data name="alertFriendRequestDeclined" xml:space="preserve">
+    <value>{0} ha rechazado tu solicitud de amistad.</value>
+  </data>
+  <data name="alertFriendRequestResponseTitle" xml:space="preserve">
+    <value>Respuesta a Solicitud</value>
+  </data>
+  <data name="alertSocialServiceInitError" xml:space="preserve">
+    <value>No se pudo inicializar la conexión con el servidor social. Las funciones de amigos y chat estarán desactivadas.\nError: {0}</value>
+  </data>
+  <data name="alertCriticalErrorTitle" xml:space="preserve">
+    <value>Error Crítico</value>
+  </data>
+  <data name="alertFeatureUnavailableError" xml:space="preserve">
+    <value>Esta función no está disponible en este momento (posiblemente debido a un error de conexión inicial).</value>
+  </data>
+  <data name="alertChatLoadError" xml:space="preserve">
+    <value>No se pudo cargar el módulo de chat.</value>
+  </data>
+  <data name="alertProfileLoadError" xml:space="preserve">
+    <value>No se pudo cargar la información del perfil de usuario.</value>
+  </data>
+  <data name="alertProfileLoadServerError" xml:space="preserve">
+    <value>Error del servidor al intentar cargar el perfil.</value>
+  </data>
+  <data name="alertProfileNotLoaded" xml:space="preserve">
+    <value>La información del perfil aún no se ha cargado. Espera un momento o revisa tu conexión.</value>
+  </data>
+  <data name="alertInfoTitle" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="alertAvatarUpdateSuccess" xml:space="preserve">
+    <value>¡Avatar actualizado correctamente!</value>
+  </data>
+  <data name="alertAvatarUpdateErrorTitle" xml:space="preserve">
+    <value>Error al Actualizar Avatar</value>
+  </data>
+  <data name="alertAvatarUpdateUnknownError" xml:space="preserve">
+    <value>Ocurrió un error inesperado al intentar guardar el nuevo avatar.</value>
+  </data>
+  <data name="alertLobbyWindowNotFoundError" xml:space="preserve">
+    <value>Error interno: No se pudo encontrar la ventana principal del lobby para cerrarla.</value>
+  </data>
+  <data name="alertProfileMandatoryFields" xml:space="preserve">
+    <value>El nombre y el apellido no pueden estar vacíos.</value>
+  </data>
+  <data name="alertProfileUpdateSuccess" xml:space="preserve">
+    <value>Cambios guardados correctamente.</value>
+  </data>
+  <data name="alertProfileUpdateErrorTitle" xml:space="preserve">
+    <value>Error al Guardar Perfil</value>
+  </data>
+  <data name="alertProfileUpdateUnknownError" xml:space="preserve">
+    <value>Ocurrió un error inesperado al intentar guardar los cambios del perfil.</value>
+  </data>
+  <data name="alertPasswordChangeCodeInfo" xml:space="preserve">
+    <value>Se enviará un código de verificación a tu correo electrónico registrado para continuar con el cambio de contraseña.</value>
+  </data>
+  <data name="alertPasswordChangeTitle" xml:space="preserve">
+    <value>Cambio de Contraseña</value>
+  </data>
+  <data name="alertPasswordRequestErrorTitle" xml:space="preserve">
+    <value>Error al Solicitar Código</value>
+  </data>
+  <data name="alertPasswordRequestUnknownError" xml:space="preserve">
+    <value>Ocurrió un error inesperado al solicitar el código para el cambio de contraseña.</value>
+  </data>
+  <data name="alertAvatarLoadServerError" xml:space="preserve">
+    <value>No se pudieron cargar los avatares disponibles desde el servidor.</value>
+  </data>
+  <data name="alertAvatarLoadUnknownError" xml:space="preserve">
+    <value>Ocurrió un error inesperado al intentar cargar los avatares.</value>
+  </data>
 </root>

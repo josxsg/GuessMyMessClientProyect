@@ -8,8 +8,8 @@
   <xs:element name="ArrayOfFriendDto" nillable="true" type="tns:ArrayOfFriendDto" />
   <xs:complexType name="FriendDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="isOnline" type="xs:boolean" />
-      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsOnline" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FriendDto" nillable="true" type="tns:FriendDto" />
@@ -21,8 +21,8 @@
   <xs:element name="ArrayOfFriendRequestInfoDto" nillable="true" type="tns:ArrayOfFriendRequestInfoDto" />
   <xs:complexType name="FriendRequestInfoDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="requestDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="requesterUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequesterUsername" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FriendRequestInfoDto" nillable="true" type="tns:FriendRequestInfoDto" />
@@ -52,24 +52,24 @@
   <xs:element name="ArrayOfSocialNetworkDto" nillable="true" type="tns:ArrayOfSocialNetworkDto" />
   <xs:complexType name="SocialNetworkDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="networkType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="userLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetworkType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLink" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SocialNetworkDto" nillable="true" type="tns:SocialNetworkDto" />
   <xs:complexType name="OperationResultDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OperationResultDto" nillable="true" type="tns:OperationResultDto" />
   <xs:complexType name="DirectMessageDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="recipientUsername" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="senderUsername" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecipientUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DirectMessageDto" nillable="true" type="tns:DirectMessageDto" />

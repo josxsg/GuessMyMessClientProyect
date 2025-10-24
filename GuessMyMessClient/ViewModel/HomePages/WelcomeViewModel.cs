@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 using GuessMyMessClient.View.HomePages;
@@ -34,9 +30,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (parameter is Window welcomeWindow)
             {
                 var signUpView = new SignUpView();
-
                 signUpView.WindowState = welcomeWindow.WindowState;
-
                 signUpView.Show();
                 welcomeWindow.Close();
             }
@@ -47,9 +41,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (parameter is Window welcomeWindow)
             {
                 var loginView = new LoginView();
-
                 loginView.WindowState = welcomeWindow.WindowState;
-
                 loginView.Show();
                 welcomeWindow.Close();
             }
@@ -65,9 +57,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 welcomeWindow.Close();
             }
         }
+
         private void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window window)
+            if (parameter is Window)
             {
                 Application.Current.Shutdown();
             }

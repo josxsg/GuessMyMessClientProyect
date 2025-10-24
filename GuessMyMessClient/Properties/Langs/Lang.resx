@@ -450,4 +450,220 @@
   <data name="directMessageSenderTxtChat" xml:space="preserve">
     <value>[YOU]</value>
   </data>
+  <data name="alertRequiredFields" xml:space="preserve">
+    <value>Please enter your username/email and password.</value>
+  </data>
+  <data name="alertInputErrorTitle" xml:space="preserve">
+    <value>Incomplete Fields</value>
+  </data>
+  <data name="alertLoginErrorTitle" xml:space="preserve">
+    <value>Login Error</value>
+  </data>
+  <data name="alertErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="alertServerErrorMessage" xml:space="preserve">
+    <value>A server error occurred. Please try again later.</value>
+  </data>
+  <data name="alertConnectionErrorMessage" xml:space="preserve">
+    <value>Could not connect to the server. Please check your internet connection and try again.</value>
+  </data>
+  <data name="alertConnectionErrorTitle" xml:space="preserve">
+    <value>Connection Error</value>
+  </data>
+  <data name="alertUnknownErrorMessage" xml:space="preserve">
+    <value>An unexpected error occurred. Please try again.</value>
+  </data>
+  <data name="alertConfirmExit" xml:space="preserve">
+    <value>Are you sure you want to exit the game?</value>
+  </data>
+  <data name="alertConfirmExitTitle" xml:space="preserve">
+    <value>Confirm Exit</value>
+  </data>
+  <data name="alertAvatarLoadError" xml:space="preserve">
+    <value>The default avatar information could not be loaded.</value>
+  </data>
+  <data name="alertAllFieldsRequired" xml:space="preserve">
+    <value>All fields (Username, First Name, Last Name, Email, Password, and Gender) are required.</value>
+  </data>
+  <data name="alertInvalidEmailFormat" xml:space="preserve">
+    <value>The email format is invalid. It should be similar to 'user@domain.com'.</value>
+  </data>
+  <data name="alertInvalidEmailTitle" xml:space="preserve">
+    <value>Invalid Email</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>The password cannot be empty.</value>
+  </data>
+  <data name="alertPasswordTooShort" xml:space="preserve">
+    <value>The password must be at least 8 characters.</value>
+  </data>
+  <data name="alertPasswordNeedsUpper" xml:space="preserve">
+    <value>The password must contain at least one capital letter (A-Z).</value>
+  </data>
+  <data name="alertPasswordNeedsLower" xml:space="preserve">
+    <value>The password must contain at least one lowercase letter (a-z).</value>
+  </data>
+  <data name="alertPasswordNeedsDigit" xml:space="preserve">
+    <value>The password must contain at least one number (0-9).</value>
+  </data>
+  <data name="alertPasswordNeedsSpecial" xml:space="preserve">
+    <value>The password must contain at least one special character (e.g.: @, $, !, %, *).</value>
+  </data>
+  <data name="alertPasswordGenericError" xml:space="preserve">
+    <value>The password does not meet the security requirements.</value>
+  </data>
+  <data name="alertPasswordNotSecureTitle" xml:space="preserve">
+    <value>Insecure Password</value>
+  </data>
+  <data name="alertRegistrationSuccess" xml:space="preserve">
+    <value>Registration successful!</value>
+  </data>
+  <data name="alertSuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="alertRegistrationErrorTitle" xml:space="preserve">
+    <value>Sign Up Error</value>
+  </data>
+  <data name="alertCodeSentTitle" xml:space="preserve">
+    <value>Sent Code</value>
+  </data>
+  <data name="alertPasswordControlsNotFound" xml:space="preserve">
+    <value>Error retrieving password fields. Please try again.</value>
+  </data>
+  <data name="alertPasswordsDoNotMatch" xml:space="preserve">
+    <value>The passwords don't match. Please check.</value>
+  </data>
+  <data name="alertVerificationSuccess" xml:space="preserve">
+    <value>Account verified successfully! Please log in to continue.</value>
+  </data>
+  <data name="alertActivationCompleteTitle" xml:space="preserve">
+    <value>Activation Complete</value>
+  </data>
+  <data name="alertVerificationErrorTitle" xml:space="preserve">
+    <value>Verification Error</value>
+  </data>
+  <data name="alertInvalidCodeFormat" xml:space="preserve">
+    <value>The verification code must contain exactly 6 numeric digits.</value>
+  </data>
+  <data name="alertInvalidCodeTitle" xml:space="preserve">
+    <value>Invalid Code</value>
+  </data>
+  <data name="alertChatLoadFriendsError" xml:space="preserve">
+    <value>The friends list for the chat could not be loaded. Please try again.</value>
+  </data>
+  <data name="alertChatSenderYou" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="alertChatLoadHistoryError" xml:space="preserve">
+    <value>The history for this conversation could not be loaded.</value>
+  </data>
+  <data name="alertChatMessageSendError" xml:space="preserve">
+    <value>Error sending message. Please try again.</value>
+  </data>
+  <data name="alertChatNewMessageFrom" xml:space="preserve">
+    <value>You have a new message from: {0}</value>
+  </data>
+  <data name="alertChatNewMessageTitle" xml:space="preserve">
+    <value>New Message</value>
+  </data>
+  <data name="alertFriendLoadError" xml:space="preserve">
+    <value>Could not load friends list or pending requests.</value>
+  </data>
+  <data name="alertFriendSearchError" xml:space="preserve">
+    <value>Error searching for users. Please try again.</value>
+  </data>
+  <data name="alertFriendRequestSent" xml:space="preserve">
+    <value>Friend request sent to {0}.</value>
+  </data>
+  <data name="alertFriendRequestErrorTitle" xml:space="preserve">
+    <value>Error Sending Request</value>
+  </data>
+  <data name="alertFriendRequestSendError" xml:space="preserve">
+    <value>The friend request could not be sent. Please try again.</value>
+  </data>
+  <data name="alertFriendResponseError" xml:space="preserve">
+    <value>Error responding to friend request.</value>
+  </data>
+  <data name="alertFriendNewRequestFrom" xml:space="preserve">
+    <value>New friend request from {0}!</value>
+  </data>
+  <data name="alertFriendNewRequestTitle" xml:space="preserve">
+    <value>New Friend Request</value>
+  </data>
+  <data name="alertFriendRequestAccepted" xml:space="preserve">
+    <value>{0} has accepted your friend request.</value>
+  </data>
+  <data name="alertFriendRequestDeclined" xml:space="preserve">
+    <value>{0} has rejected your friend request.</value>
+  </data>
+  <data name="alertFriendRequestResponseTitle" xml:space="preserve">
+    <value>Response to Request</value>
+  </data>
+  <data name="alertSocialServiceInitError" xml:space="preserve">
+    <value>The connection to the social server could not be initialized. Friend and chat features will be disabled.\nError: {0}</value>
+  </data>
+  <data name="alertCriticalErrorTitle" xml:space="preserve">
+    <value>Critical Error</value>
+  </data>
+  <data name="alertFeatureUnavailableError" xml:space="preserve">
+    <value>This feature is currently unavailable (possibly due to an initial connection error).</value>
+  </data>
+  <data name="alertChatLoadError" xml:space="preserve">
+    <value>The chat module could not be loaded.</value>
+  </data>
+  <data name="alertProfileLoadError" xml:space="preserve">
+    <value>The user profile information could not be loaded.</value>
+  </data>
+  <data name="alertProfileLoadServerError" xml:space="preserve">
+    <value>Server error while trying to load profile.</value>
+  </data>
+  <data name="alertProfileNotLoaded" xml:space="preserve">
+    <value>Your profile information hasn't loaded yet. Please wait a moment or check your connection.</value>
+  </data>
+  <data name="alertInfoTitle" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="alertAvatarUpdateSuccess" xml:space="preserve">
+    <value>Avatar updated successfully!</value>
+  </data>
+  <data name="alertAvatarUpdateErrorTitle" xml:space="preserve">
+    <value>Error updating avatar</value>
+  </data>
+  <data name="alertAvatarUpdateUnknownError" xml:space="preserve">
+    <value>An unexpected error occurred while trying to save the new avatar.</value>
+  </data>
+  <data name="alertLobbyWindowNotFoundError" xml:space="preserve">
+    <value>Internal Error: The main lobby window could not be found to close.</value>
+  </data>
+  <data name="alertProfileMandatoryFields" xml:space="preserve">
+    <value>First and last name cannot be empty.</value>
+  </data>
+  <data name="alertProfileUpdateSuccess" xml:space="preserve">
+    <value>Changes saved successfully.</value>
+  </data>
+  <data name="alertProfileUpdateErrorTitle" xml:space="preserve">
+    <value>Error saving profile</value>
+  </data>
+  <data name="alertProfileUpdateUnknownError" xml:space="preserve">
+    <value>An unexpected error occurred while trying to save profile changes.</value>
+  </data>
+  <data name="alertPasswordChangeCodeInfo" xml:space="preserve">
+    <value>A verification code will be sent to your registered email address to continue with the password change.</value>
+  </data>
+  <data name="alertPasswordChangeTitle" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="alertPasswordRequestErrorTitle" xml:space="preserve">
+    <value>Error Requesting Code</value>
+  </data>
+  <data name="alertPasswordRequestUnknownError" xml:space="preserve">
+    <value>An unexpected error occurred while requesting the password change code.</value>
+  </data>
+  <data name="alertAvatarLoadServerError" xml:space="preserve">
+    <value>The available avatars could not be loaded from the server.</value>
+  </data>
+  <data name="alertAvatarLoadUnknownError" xml:space="preserve">
+    <value>An unexpected error occurred while trying to load avatars.</value>
+  </data>
 </root>

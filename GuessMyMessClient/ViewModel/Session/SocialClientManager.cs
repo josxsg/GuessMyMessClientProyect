@@ -146,7 +146,7 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void NotifyMessageReceived(DirectMessageDto message)
         {
-            Console.WriteLine($"Callback recibido: NotifyMessageReceived de {message?.senderUsername}");
+            Console.WriteLine($"Callback recibido: NotifyMessageReceived de {message?.SenderUsername}");
             if (message != null) 
             {
                 OnMessageReceived?.Invoke(message);

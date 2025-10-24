@@ -20,15 +20,15 @@
   <xs:element name="ArrayOfSocialNetworkDto" nillable="true" type="tns:ArrayOfSocialNetworkDto" />
   <xs:complexType name="SocialNetworkDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="networkType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="userLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetworkType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLink" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SocialNetworkDto" nillable="true" type="tns:SocialNetworkDto" />
   <xs:complexType name="OperationResultDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OperationResultDto" nillable="true" type="tns:OperationResultDto" />
@@ -40,9 +40,9 @@
   <xs:element name="ArrayOfAvatarDto" nillable="true" type="tns:ArrayOfAvatarDto" />
   <xs:complexType name="AvatarDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="avatarData" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="avatarName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="idAvatar" type="xs:int" />
+      <xs:element minOccurs="0" name="AvatarData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="AvatarName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAvatar" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AvatarDto" nillable="true" type="tns:AvatarDto" />

@@ -1,8 +1,11 @@
 ﻿using GuessMyMessClient.ProfileService;
-using GuessMyMessClient.View.Lobby.Dialogs; 
+using GuessMyMessClient.View.Lobby.Dialogs;
 using System;
 using System.Windows;
 using System.Windows.Input;
+using GuessMyMessClient.Properties.Langs;
+using System.ServiceModel;
+using GuessMyMessClient.ViewModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -14,13 +17,22 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         public string NewEmail
         {
-            get => _newEmail;
-            set { _newEmail = value; OnPropertyChanged(); }
+            get
+            {
+                return _newEmail;
+            }
+            set
+            {
+                if (_newEmail != value)
+                {
+                    _newEmail = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public ICommand ConfirmCommand { get; }
         public ICommand CloseCommand { get; }
-
 
         public ChangeEmailViewModel(string username, Action<string> emailUpdateCallback)
         {
@@ -35,7 +47,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             return !string.IsNullOrWhiteSpace(NewEmail) && NewEmail.Contains("@");
         }
 
-
         private async void ExecuteConfirm(object parameter)
         {
             try
@@ -43,31 +54,62 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 using (var client = new UserProfileServiceClient())
                 {
                     var result = await client.RequestChangeEmailAsync(_username, NewEmail);
-                    if (result.success)
+                    if (result.Success )
                     {
-                        MessageBox.Show(result.message, "Código Enviado");
+                        MessageBox.Show(
+                            result.Message,
+                            Lang.alertCodeSentTitle,
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information);
 
-                        var verifyVM = new VerifyChangesByCodeViewModel( 
+                        var verifyVM = new VerifyChangesByCodeViewModel(
                             VerifyChangesByCodeViewModel.VerificationMode.Email,
                             _username,
                             NewEmail,
                             _emailUpdateCallback
                         );
 
-                        var verifyView = new VerifyChangesByCodeView { DataContext = verifyVM }; 
+                        var verifyView = new VerifyChangesByCodeView { DataContext = verifyVM };
 
                         ExecuteClose(parameter);
                         verifyView.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show(result.message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        MessageBox.Show(
+                            result.Message,
+                            Lang.alertErrorTitle,
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
                     }
                 }
             }
+            catch (FaultException fexGeneral)
+            {
+                MessageBox.Show(
+                    Lang.alertServerErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"WCF Error requesting email change: {fexGeneral.Message}");
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Connection Error requesting email change: {ex.Message}");
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error de comunicación: {ex.Message}", "Error WCF");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Unknown Error requesting email change: {ex.Message}");
             }
         }
 

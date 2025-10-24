@@ -61,6 +61,654 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Activation Complete.
+        /// </summary>
+        public static string alertActivationCompleteTitle {
+            get {
+                return ResourceManager.GetString("alertActivationCompleteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a All fields (Username, First Name, Last Name, Email, Password, and Gender) are required..
+        /// </summary>
+        public static string alertAllFieldsRequired {
+            get {
+                return ResourceManager.GetString("alertAllFieldsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The default avatar information could not be loaded..
+        /// </summary>
+        public static string alertAvatarLoadError {
+            get {
+                return ResourceManager.GetString("alertAvatarLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The available avatars could not be loaded from the server..
+        /// </summary>
+        public static string alertAvatarLoadServerError {
+            get {
+                return ResourceManager.GetString("alertAvatarLoadServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An unexpected error occurred while trying to load avatars..
+        /// </summary>
+        public static string alertAvatarLoadUnknownError {
+            get {
+                return ResourceManager.GetString("alertAvatarLoadUnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error updating avatar.
+        /// </summary>
+        public static string alertAvatarUpdateErrorTitle {
+            get {
+                return ResourceManager.GetString("alertAvatarUpdateErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Avatar updated successfully!.
+        /// </summary>
+        public static string alertAvatarUpdateSuccess {
+            get {
+                return ResourceManager.GetString("alertAvatarUpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An unexpected error occurred while trying to save the new avatar..
+        /// </summary>
+        public static string alertAvatarUpdateUnknownError {
+            get {
+                return ResourceManager.GetString("alertAvatarUpdateUnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The chat module could not be loaded..
+        /// </summary>
+        public static string alertChatLoadError {
+            get {
+                return ResourceManager.GetString("alertChatLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The friends list for the chat could not be loaded. Please try again..
+        /// </summary>
+        public static string alertChatLoadFriendsError {
+            get {
+                return ResourceManager.GetString("alertChatLoadFriendsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The history for this conversation could not be loaded..
+        /// </summary>
+        public static string alertChatLoadHistoryError {
+            get {
+                return ResourceManager.GetString("alertChatLoadHistoryError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error sending message. Please try again..
+        /// </summary>
+        public static string alertChatMessageSendError {
+            get {
+                return ResourceManager.GetString("alertChatMessageSendError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have a new message from: {0}.
+        /// </summary>
+        public static string alertChatNewMessageFrom {
+            get {
+                return ResourceManager.GetString("alertChatNewMessageFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New Message.
+        /// </summary>
+        public static string alertChatNewMessageTitle {
+            get {
+                return ResourceManager.GetString("alertChatNewMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You.
+        /// </summary>
+        public static string alertChatSenderYou {
+            get {
+                return ResourceManager.GetString("alertChatSenderYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sent Code.
+        /// </summary>
+        public static string alertCodeSentTitle {
+            get {
+                return ResourceManager.GetString("alertCodeSentTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to exit the game?.
+        /// </summary>
+        public static string alertConfirmExit {
+            get {
+                return ResourceManager.GetString("alertConfirmExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirm Exit.
+        /// </summary>
+        public static string alertConfirmExitTitle {
+            get {
+                return ResourceManager.GetString("alertConfirmExitTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not connect to the server. Please check your internet connection and try again..
+        /// </summary>
+        public static string alertConnectionErrorMessage {
+            get {
+                return ResourceManager.GetString("alertConnectionErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Connection Error.
+        /// </summary>
+        public static string alertConnectionErrorTitle {
+            get {
+                return ResourceManager.GetString("alertConnectionErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Critical Error.
+        /// </summary>
+        public static string alertCriticalErrorTitle {
+            get {
+                return ResourceManager.GetString("alertCriticalErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        public static string alertErrorTitle {
+            get {
+                return ResourceManager.GetString("alertErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This feature is currently unavailable (possibly due to an initial connection error)..
+        /// </summary>
+        public static string alertFeatureUnavailableError {
+            get {
+                return ResourceManager.GetString("alertFeatureUnavailableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not load friends list or pending requests..
+        /// </summary>
+        public static string alertFriendLoadError {
+            get {
+                return ResourceManager.GetString("alertFriendLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New friend request from {0}!.
+        /// </summary>
+        public static string alertFriendNewRequestFrom {
+            get {
+                return ResourceManager.GetString("alertFriendNewRequestFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New Friend Request.
+        /// </summary>
+        public static string alertFriendNewRequestTitle {
+            get {
+                return ResourceManager.GetString("alertFriendNewRequestTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} has accepted your friend request..
+        /// </summary>
+        public static string alertFriendRequestAccepted {
+            get {
+                return ResourceManager.GetString("alertFriendRequestAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} has rejected your friend request..
+        /// </summary>
+        public static string alertFriendRequestDeclined {
+            get {
+                return ResourceManager.GetString("alertFriendRequestDeclined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error Sending Request.
+        /// </summary>
+        public static string alertFriendRequestErrorTitle {
+            get {
+                return ResourceManager.GetString("alertFriendRequestErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Response to Request.
+        /// </summary>
+        public static string alertFriendRequestResponseTitle {
+            get {
+                return ResourceManager.GetString("alertFriendRequestResponseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The friend request could not be sent. Please try again..
+        /// </summary>
+        public static string alertFriendRequestSendError {
+            get {
+                return ResourceManager.GetString("alertFriendRequestSendError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Friend request sent to {0}..
+        /// </summary>
+        public static string alertFriendRequestSent {
+            get {
+                return ResourceManager.GetString("alertFriendRequestSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error responding to friend request..
+        /// </summary>
+        public static string alertFriendResponseError {
+            get {
+                return ResourceManager.GetString("alertFriendResponseError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error searching for users. Please try again..
+        /// </summary>
+        public static string alertFriendSearchError {
+            get {
+                return ResourceManager.GetString("alertFriendSearchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Information.
+        /// </summary>
+        public static string alertInfoTitle {
+            get {
+                return ResourceManager.GetString("alertInfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incomplete Fields.
+        /// </summary>
+        public static string alertInputErrorTitle {
+            get {
+                return ResourceManager.GetString("alertInputErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The verification code must contain exactly 6 numeric digits..
+        /// </summary>
+        public static string alertInvalidCodeFormat {
+            get {
+                return ResourceManager.GetString("alertInvalidCodeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid Code.
+        /// </summary>
+        public static string alertInvalidCodeTitle {
+            get {
+                return ResourceManager.GetString("alertInvalidCodeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The email format is invalid. It should be similar to &apos;user@domain.com&apos;..
+        /// </summary>
+        public static string alertInvalidEmailFormat {
+            get {
+                return ResourceManager.GetString("alertInvalidEmailFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid Email.
+        /// </summary>
+        public static string alertInvalidEmailTitle {
+            get {
+                return ResourceManager.GetString("alertInvalidEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Internal Error: The main lobby window could not be found to close..
+        /// </summary>
+        public static string alertLobbyWindowNotFoundError {
+            get {
+                return ResourceManager.GetString("alertLobbyWindowNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Login Error.
+        /// </summary>
+        public static string alertLoginErrorTitle {
+            get {
+                return ResourceManager.GetString("alertLoginErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A verification code will be sent to your registered email address to continue with the password change..
+        /// </summary>
+        public static string alertPasswordChangeCodeInfo {
+            get {
+                return ResourceManager.GetString("alertPasswordChangeCodeInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change Password.
+        /// </summary>
+        public static string alertPasswordChangeTitle {
+            get {
+                return ResourceManager.GetString("alertPasswordChangeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error retrieving password fields. Please try again..
+        /// </summary>
+        public static string alertPasswordControlsNotFound {
+            get {
+                return ResourceManager.GetString("alertPasswordControlsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password cannot be empty..
+        /// </summary>
+        public static string alertPasswordEmpty {
+            get {
+                return ResourceManager.GetString("alertPasswordEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password does not meet the security requirements..
+        /// </summary>
+        public static string alertPasswordGenericError {
+            get {
+                return ResourceManager.GetString("alertPasswordGenericError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password must contain at least one number (0-9)..
+        /// </summary>
+        public static string alertPasswordNeedsDigit {
+            get {
+                return ResourceManager.GetString("alertPasswordNeedsDigit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password must contain at least one lowercase letter (a-z)..
+        /// </summary>
+        public static string alertPasswordNeedsLower {
+            get {
+                return ResourceManager.GetString("alertPasswordNeedsLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password must contain at least one special character (e.g.: @, $, !, %, *)..
+        /// </summary>
+        public static string alertPasswordNeedsSpecial {
+            get {
+                return ResourceManager.GetString("alertPasswordNeedsSpecial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password must contain at least one capital letter (A-Z)..
+        /// </summary>
+        public static string alertPasswordNeedsUpper {
+            get {
+                return ResourceManager.GetString("alertPasswordNeedsUpper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Insecure Password.
+        /// </summary>
+        public static string alertPasswordNotSecureTitle {
+            get {
+                return ResourceManager.GetString("alertPasswordNotSecureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error Requesting Code.
+        /// </summary>
+        public static string alertPasswordRequestErrorTitle {
+            get {
+                return ResourceManager.GetString("alertPasswordRequestErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An unexpected error occurred while requesting the password change code..
+        /// </summary>
+        public static string alertPasswordRequestUnknownError {
+            get {
+                return ResourceManager.GetString("alertPasswordRequestUnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The passwords don&apos;t match. Please check..
+        /// </summary>
+        public static string alertPasswordsDoNotMatch {
+            get {
+                return ResourceManager.GetString("alertPasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The password must be at least 8 characters..
+        /// </summary>
+        public static string alertPasswordTooShort {
+            get {
+                return ResourceManager.GetString("alertPasswordTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The user profile information could not be loaded..
+        /// </summary>
+        public static string alertProfileLoadError {
+            get {
+                return ResourceManager.GetString("alertProfileLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Server error while trying to load profile..
+        /// </summary>
+        public static string alertProfileLoadServerError {
+            get {
+                return ResourceManager.GetString("alertProfileLoadServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a First and last name cannot be empty..
+        /// </summary>
+        public static string alertProfileMandatoryFields {
+            get {
+                return ResourceManager.GetString("alertProfileMandatoryFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your profile information hasn&apos;t loaded yet. Please wait a moment or check your connection..
+        /// </summary>
+        public static string alertProfileNotLoaded {
+            get {
+                return ResourceManager.GetString("alertProfileNotLoaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error saving profile.
+        /// </summary>
+        public static string alertProfileUpdateErrorTitle {
+            get {
+                return ResourceManager.GetString("alertProfileUpdateErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Changes saved successfully..
+        /// </summary>
+        public static string alertProfileUpdateSuccess {
+            get {
+                return ResourceManager.GetString("alertProfileUpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An unexpected error occurred while trying to save profile changes..
+        /// </summary>
+        public static string alertProfileUpdateUnknownError {
+            get {
+                return ResourceManager.GetString("alertProfileUpdateUnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sign Up Error.
+        /// </summary>
+        public static string alertRegistrationErrorTitle {
+            get {
+                return ResourceManager.GetString("alertRegistrationErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registration successful!.
+        /// </summary>
+        public static string alertRegistrationSuccess {
+            get {
+                return ResourceManager.GetString("alertRegistrationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please enter your username/email and password..
+        /// </summary>
+        public static string alertRequiredFields {
+            get {
+                return ResourceManager.GetString("alertRequiredFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A server error occurred. Please try again later..
+        /// </summary>
+        public static string alertServerErrorMessage {
+            get {
+                return ResourceManager.GetString("alertServerErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The connection to the social server could not be initialized. Friend and chat features will be disabled.\nError: {0}.
+        /// </summary>
+        public static string alertSocialServiceInitError {
+            get {
+                return ResourceManager.GetString("alertSocialServiceInitError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Success.
+        /// </summary>
+        public static string alertSuccessTitle {
+            get {
+                return ResourceManager.GetString("alertSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An unexpected error occurred. Please try again..
+        /// </summary>
+        public static string alertUnknownErrorMessage {
+            get {
+                return ResourceManager.GetString("alertUnknownErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Verification Error.
+        /// </summary>
+        public static string alertVerificationErrorTitle {
+            get {
+                return ResourceManager.GetString("alertVerificationErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account verified successfully! Please log in to continue..
+        /// </summary>
+        public static string alertVerificationSuccess {
+            get {
+                return ResourceManager.GetString("alertVerificationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Owner.
         /// </summary>
         public static string answersPanelLbOwner {

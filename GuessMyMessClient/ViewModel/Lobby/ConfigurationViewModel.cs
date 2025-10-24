@@ -9,6 +9,8 @@ using GuessMyMessClient.AuthService;
 using GuessMyMessClient.View.HomePages;
 using GuessMyMessClient.View.Lobby;
 using System.Windows;
+using GuessMyMessClient.ViewModel;
+using System.ServiceModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -23,24 +25,36 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void ExecuteLogout(object parameter)
         {
+            bool sessionClosedLocally = false;
             try
             {
                 string currentUsername = SessionManager.Instance.CurrentUsername;
 
                 if (!string.IsNullOrEmpty(currentUsername))
                 {
-
-                    var authClient = new AuthenticationServiceClient();
-                    authClient.LogOut(currentUsername);
-                    authClient.Close();
+                    using (var authClient = new AuthenticationServiceClient())
+                    {
+                        try
+                        {
+                            authClient.LogOut(currentUsername);
+                        }
+                        catch (CommunicationException commEx)
+                        {
+                            Console.WriteLine($"Error de comunicación al cerrar sesión en servidor: {commEx.Message}");
+                        }
+                    }
                 }
 
                 SessionManager.Instance.CloseSession();
+                sessionClosedLocally = true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al cerrar sesión en el servidor: " + ex.Message);
-                SessionManager.Instance.CloseSession();
+                Console.WriteLine($"Error inesperado durante el cierre de sesión: {ex.Message}");
+                if (!sessionClosedLocally)
+                {
+                    SessionManager.Instance.CloseSession();
+                }
             }
 
             var mainView = new Main();

@@ -7,6 +7,9 @@ using GuessMyMessClient.AuthService;
 using GuessMyMessClient.View.HomePages;
 using System.Windows.Input;
 using System.Windows;
+using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.ViewModel;
+using System.ServiceModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -17,8 +20,18 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         private string _verificationCode;
         public string VerificationCode
         {
-            get => _verificationCode;
-            set { _verificationCode = value; OnPropertyChanged(); }
+            get
+            {
+                return _verificationCode;
+            }
+            set
+            {
+                if (_verificationCode != value)
+                {
+                    _verificationCode = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public ICommand VerifyCommand { get; }
@@ -26,7 +39,12 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         public VerifyByCodeViewModel(string userEmail)
         {
+            if (string.IsNullOrWhiteSpace(userEmail))
+            {
+                throw new ArgumentNullException(nameof(userEmail), "User email cannot be empty for verification.");
+            }
             _userEmail = userEmail;
+
             VerifyCommand = new RelayCommand(ExecuteVerify, CanExecuteVerify);
             CloseCommand = new RelayCommand(CloseWindow);
         }
@@ -44,27 +62,56 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 {
                     OperationResultDto result = await client.VerifyAccountAsync(_userEmail, VerificationCode);
 
-                    if (result.success)
+                    if (result.Success)
                     {
-                        MessageBox.Show("Cuenta verificada. Por favor, inicia sesión.", "Activación Completa");
+                        MessageBox.Show(
+                            Lang.alertVerificationSuccess,
+                            Lang.alertActivationCompleteTitle,
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information);
                         OpenLoginWindow(parameter);
                     }
                     else
                     {
-                        MessageBox.Show(result.message, "Error de Verificación");
+                        MessageBox.Show(
+                            result.Message,
+                            Lang.alertVerificationErrorTitle,
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
                     }
+                }
+                catch (FaultException fexGeneral)
+                {
+                    MessageBox.Show(
+                        Lang.alertServerErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    Console.WriteLine($"WCF Error during verification: {fexGeneral.Message}");
+                }
+                catch (EndpointNotFoundException ex)
+                {
+                    MessageBox.Show(
+                        Lang.alertConnectionErrorMessage,
+                        Lang.alertConnectionErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    Console.WriteLine($"Connection Error during verification: {ex.Message}");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error de conexión: {ex.Message}", "Error WCF");
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    Console.WriteLine($"Unknown Error during verification: {ex.Message}");
                 }
             }
         }
 
         private void OpenLoginWindow(object parameter)
         {
-            
-
             var loginView = new LoginView();
             loginView.Show();
 
