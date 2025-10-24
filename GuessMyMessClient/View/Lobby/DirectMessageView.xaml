@@ -28,7 +28,7 @@
 
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding username}" />
+                        <TextBlock Text="{Binding Username}" />
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
 
@@ -42,8 +42,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="5">
-                            <TextBlock Text="{Binding senderUsername}" FontWeight="Bold" />
-                            <TextBlock Text="{Binding content}" TextWrapping="Wrap" />
+                            <TextBlock Text="{Binding SenderUsername}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
