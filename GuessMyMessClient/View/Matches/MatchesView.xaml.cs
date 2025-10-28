@@ -11,24 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GuessMyMessClient.ViewModel.MatchSettings;
 
-namespace GuessMyMessClient.View.MatchSettings
+namespace GuessMyMessClient.View.Matches
 {
     /// <summary>
-    /// Lógica de interacción para PublicMatchSettings.xaml
+    /// Lógica de interacción para MatchesView.xaml
     /// </summary>
-    public partial class PublicMatchSettingsView : Window
+    public partial class MatchesView : Window
     {
-        public PublicMatchSettingsView()
+        public MatchesView()
         {
             InitializeComponent();
-            this.DataContext = new PublicMatchSettingsViewModel();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -1,0 +1,2224 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "4.13.0.0",
+        "fileVersion": "4.13.0-3.25167.3 (73eff2b5)",
+        "semanticVersion": "4.13.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 17,
+                  "endLine": 78,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 17,
+                  "endLine": 68,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0219",
+          "level": "warning",
+          "message": "La variable 'success' está asignada pero su valor nunca se usa",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 427,
+                  "startColumn": 22,
+                  "endLine": 427,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 309,
+                  "startColumn": 13,
+                  "endLine": 309,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1135",
+          "level": "warning",
+          "message": "Complete the task associated to this 'TODO' comment.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 16,
+                  "endLine": 36,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Match/EndOfMatchViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Match/AnswersScreenViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Match/GuessTheWordViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPublicMatchCountDownViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Client' a static property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 37,
+                  "endLine": 17,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPrivateMatchHostViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPrivateMatchViewModel.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2094",
+          "level": "warning",
+          "message": "Remove this empty class, write its code or make it an \"interface\".",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPublicMatchViewModel.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 20,
+                  "endLine": 10,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_profileData' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/ProfileViewModel.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 32,
+                  "endLine": 18,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Client' a static property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 37,
+                  "endLine": 17,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1116",
+          "level": "warning",
+          "message": "Remove this empty statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/View/WaitingRoom/WaitingRoomPublicMatchHostView.xaml.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 75,
+                  "endLine": 26,
+                  "endColumn": 76
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPublicMatchHostViewModel.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 22,
+                  "endLine": 41,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPublicMatchHostViewModel.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 22,
+                  "endLine": 24,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPublicMatchHostViewModel.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 22,
+                  "endLine": 33,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'window'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomPublicMatchHostViewModel.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 37,
+                  "endLine": 26,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'StartGame' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 22,
+                  "endLine": 27,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 22,
+                  "endLine": 38,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 46,
+                  "startColumn": 22,
+                  "endLine": 46,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 22,
+                  "endLine": 54,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'SignUp' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/WelcomeViewModel.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 22,
+                  "endLine": 28,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Login' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/WelcomeViewModel.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 22,
+                  "endLine": 39,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ContinueAsGuest' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/WelcomeViewModel.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 22,
+                  "endLine": 50,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/WelcomeViewModel.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 22,
+                  "endLine": 61,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PublicMatchesViewModel.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 22,
+                  "endLine": 50,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'IsValidEmail' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/VerifyChangesByCodeViewModel.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 22,
+                  "endLine": 43,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecutePrivateMatches' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PublicMatchesViewModel.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 22,
+                  "endLine": 31,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'window'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PublicMatchesViewModel.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 37,
+                  "endLine": 52,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/WelcomeViewModel.cs",
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 22,
+                  "endLine": 69,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecutePublicMatches' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PrivateMatchesViewModel.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 22,
+                  "endLine": 30,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/WelcomeViewModel.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 22,
+                  "endLine": 77,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PrivateMatchesViewModel.cs",
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 22,
+                  "endLine": 48,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'window'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PrivateMatchesViewModel.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 37,
+                  "endLine": 50,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PublicMatchesViewModel.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 22,
+                  "endLine": 58,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3168",
+          "level": "warning",
+          "message": "Return 'Task' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/SelectAvatarViewModel.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 23,
+                  "endLine": 87,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PublicMatchesViewModel.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 22,
+                  "endLine": 66,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/View/MatchSettings/PublicMatchSettingsView.xaml.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 22,
+                  "endLine": 29,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PrivateMatchesViewModel.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 22,
+                  "endLine": 56,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PrivateMatchesViewModel.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 22,
+                  "endLine": 64,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteLogout' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/ConfigurationViewModel.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 22,
+                  "endLine": 26,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteReturn' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PublicMatchesViewModel.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 22,
+                  "endLine": 73,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteReturn' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Matches/PrivateMatchesViewModel.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 22,
+                  "endLine": 71,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Session/SocialClientManager.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 27,
+                  "endLine": 51,
+                  "endColumn": 99
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 22,
+                  "endLine": 56,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCreateMatch' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 22,
+                  "endLine": 34,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'window'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 37,
+                  "endLine": 58,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 22,
+                  "endLine": 65,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 22,
+                  "endLine": 73,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteReturn' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/MatchSettings/PublicMatchSettingsViewModel.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 22,
+                  "endLine": 80,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteClose' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/ChangeEmailViewModel.cs",
+                "region": {
+                  "startLine": 116,
+                  "startColumn": 22,
+                  "endLine": 116,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteClose' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/VerifyChangesByCodeViewModel.cs",
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 22,
+                  "endLine": 174,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3168",
+          "level": "warning",
+          "message": "Return 'Task' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 203,
+                  "startColumn": 23,
+                  "endLine": 203,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3168",
+          "level": "warning",
+          "message": "Return 'Task' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 225,
+                  "startColumn": 23,
+                  "endLine": 225,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'OpenLoginWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/VerifyByCodeViewModel.cs",
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 22,
+                  "endLine": 113,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'CloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/VerifyByCodeViewModel.cs",
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 22,
+                  "endLine": 124,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'IsPasswordSecure' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/ChangePasswordViewModel.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 22,
+                  "endLine": 29,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing at 0 should be used instead of the \"Enumerable\" extension method \"First\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 212,
+                  "startColumn": 97,
+                  "endLine": 212,
+                  "endColumn": 102
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'IsValidEmail' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 257,
+                  "startColumn": 22,
+                  "endLine": 257,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3168",
+          "level": "warning",
+          "message": "Return 'Task' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 143,
+                  "startColumn": 23,
+                  "endLine": 143,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'IsPasswordSecure' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 273,
+                  "startColumn": 22,
+                  "endLine": 273,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 152,
+                  "startColumn": 17,
+                  "endLine": 152,
+                  "endColumn": 83
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 17,
+                  "endLine": 112,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 17,
+                  "endLine": 104,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 165,
+                  "startColumn": 17,
+                  "endLine": 175,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 17,
+                  "endLine": 117,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteClose' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/Dialogs/ChangePasswordViewModel.cs",
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 22,
+                  "endLine": 172,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 404,
+                  "startColumn": 22,
+                  "endLine": 404,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'OpenLobby' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/LoginViewModel.cs",
+                "region": {
+                  "startLine": 142,
+                  "startColumn": 22,
+                  "endLine": 142,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 410,
+                  "startColumn": 22,
+                  "endLine": 410,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/LoginViewModel.cs",
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 22,
+                  "endLine": 153,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 416,
+                  "startColumn": 22,
+                  "endLine": 416,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'success'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 439,
+                  "startColumn": 25,
+                  "endLine": 439,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteReturn' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 422,
+                  "startColumn": 22,
+                  "endLine": 422,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/LoginViewModel.cs",
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 22,
+                  "endLine": 161,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 17,
+                  "endLine": 188,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3358",
+          "level": "warning",
+          "message": "Extract this nested ternary operation into an independent statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 341,
+                  "startColumn": 41,
+                  "endLine": 341,
+                  "endColumn": 57
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/LoginViewModel.cs",
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 22,
+                  "endLine": 169,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'CloseCurrentLobbyWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 510,
+                  "startColumn": 22,
+                  "endLine": 510,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'window'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 530,
+                  "startColumn": 37,
+                  "endLine": 530,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 280,
+                  "startColumn": 25,
+                  "endLine": 280,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 278,
+                  "startColumn": 21,
+                  "endLine": 278,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Merge this if statement with its nested one."
+            }
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteReturn' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/HomePages/LoginViewModel.cs",
+                "region": {
+                  "startLine": 177,
+                  "startColumn": 22,
+                  "endLine": 177,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 545,
+                  "startColumn": 22,
+                  "endLine": 545,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 537,
+                  "startColumn": 22,
+                  "endLine": 537,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 380,
+                  "startColumn": 21,
+                  "endLine": 380,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/zenbook%20i5/Tecnologias_para_la_construccion_de_sw/Proyecto&Artefactos/GuessMyMessClient/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 378,
+                  "startColumn": 17,
+                  "endLine": 378,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Merge this if statement with its nested one."
+            }
+          }
+        }
+      ],
+      "rules": {
+        "CS0219": {
+          "id": "CS0219",
+          "shortDescription": "La variable está asignada pero nunca se usa su valor",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0219)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS4014": {
+          "id": "CS4014",
+          "shortDescription": "Dado que no se esperaba esta llamada, la ejecución del método actual continuará antes de que se complete la llamada",
+          "fullDescription": "El método actual llama a un método asincrónico que devuelve una tarea o un Task<TResult>, y no aplica el operador Await al resultado. La llamada al método asincrónico inicia una tarea asincrónica. Sin embargo, debido a que no se aplica ningún operador Await, el programa continúa sin esperar a que finalice la tarea. En la mayoría de los casos, este comportamiento no es el esperado. Generalmente, otros aspectos del método de llamada dependen de los resultados de la llamada. O bien, se espera como mínimo que el método al que se llama se complete antes de volver al método que contiene la llamada.\u000d\u000a\u000d\u000aUn problema de igual importancia es el que se genera con las excepciones que se producen en el método asincrónico al que se llama. Las excepciones que se producen en un método que devuelve una tarea o un Task<TResult> se almacenan en la tarea devuelta. Si no espera por la tarea o no realiza una comprobación explícita de excepciones, la excepción se pierde. Si espera por la tarea, su excepción se vuelve a producir.\u000d\u000a\u000d\u000aComo procedimiento recomendado, siempre debe esperar por la llamada.\u000d\u000a\u000d\u000aConsidere la posibilidad de suprimir la advertencia solo si tiene la seguridad de que no desea esperar a que la llamada asincrónica se complete y que el método al que se llama no producirá excepciones. En ese caso, puede suprimir la advertencia asignando el resultado de la tarea de la llamada a una variable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS4014)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1066": {
+          "id": "S1066",
+          "shortDescription": "Mergeable \"if\" statements should be combined",
+          "fullDescription": "Nested code - blocks of code inside blocks of code - is eventually necessary, but increases complexity. This is why keeping the code as flat as possible, by avoiding unnecessary nesting, is considered a good practice.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1066",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1116": {
+          "id": "S1116",
+          "shortDescription": "Empty statements should be removed",
+          "fullDescription": "Empty statements represented by a semicolon ; are statements that do not perform any operation. They are often the result of a typo or a misunderstanding of the language syntax. It is a good practice to remove empty statements since they don’t add value and lead to confusion and errors.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1116",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S112": {
+          "id": "S112",
+          "shortDescription": "General or reserved exceptions should never be thrown",
+          "fullDescription": "This rule raises an issue when a general or reserved exception is thrown.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-112",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1135": {
+          "id": "S1135",
+          "shortDescription": "Track uses of \"TODO\" tags",
+          "fullDescription": "Developers often use TODO tags to mark areas in the code where additional work or improvements are needed but are not implemented immediately. However, these TODO tags sometimes get overlooked or forgotten, leading to incomplete or unfinished code. This rule aims to identify and address unattended TODO tags to ensure a clean and maintainable codebase. This description explores why this is a problem and how it can be fixed to improve the overall code quality.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1135",
+          "properties": {
+            "category": "Info Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1186": {
+          "id": "S1186",
+          "shortDescription": "Methods should not be empty",
+          "fullDescription": "An empty method is generally considered bad practice and can lead to confusion, readability, and maintenance issues. Empty methods bring no functionality and are misleading to others as they might think the method implementation fulfills a specific and identified requirement.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1186",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Commented-out code distracts the focus from the actual executed code. It creates a noise that increases maintenance code. And because it is never executed, it quickly becomes out of date and invalid.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "An unused local variable is a variable that has been declared but is not used anywhere in the block of code where it is defined. It is dead code, contributing to unnecessary complexity and leading to confusion when reading the code. Therefore, it should be removed from your code to maintain clarity and efficiency.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1854": {
+          "id": "S1854",
+          "shortDescription": "Unused assignments should be removed",
+          "fullDescription": "Dead stores refer to assignments made to local variables that are subsequently never used or immediately overwritten. Such assignments are unnecessary and don’t contribute to the functionality or clarity of the code. They may even negatively impact performance. Removing them enhances code cleanliness and readability. Even if the unnecessary operations do not do any harm in terms of the program’s correctness, they are - at best - a waste of computing resources.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1854",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2094": {
+          "id": "S2094",
+          "shortDescription": "Classes should not be empty",
+          "fullDescription": "There is no good excuse for an empty class. If it’s being used simply as a common extension point, it should be replaced with an interface. If it was stubbed in as a placeholder for future development it should be fleshed-out. In any other case, it should be eliminated.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2094",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2325": {
+          "id": "S2325",
+          "shortDescription": "Methods and properties that don't access instance data should be static",
+          "fullDescription": "Methods and properties that don’t access instance data should be marked as static for the following reasons:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2325",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2933": {
+          "id": "S2933",
+          "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
+          "fullDescription": "readonly fields can only be assigned in a class constructor. If a class has a field that’s not marked readonly but is only set in the constructor, it could cause confusion about the field’s intended use. To avoid confusion, such fields should be marked readonly to make their intended use explicit, and to prevent future maintainers from inadvertently changing their use.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2933",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3168": {
+          "id": "S3168",
+          "shortDescription": "\"async\" methods should not return \"void\"",
+          "fullDescription": "An async method with a void return type does not follow the task asynchronous programming (TAP) model since the return type should be Task or Task<TResult>",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3168",
+          "properties": {
+            "category": "Major Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3358": {
+          "id": "S3358",
+          "shortDescription": "Ternary operators should not be nested",
+          "fullDescription": "Nested ternaries are hard to read and can make the order of operations complex to understand.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3358",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6608": {
+          "id": "S6608",
+          "shortDescription": "Prefer indexing instead of \"Enumerable\" methods on types implementing \"IList\"",
+          "fullDescription": "Indexes in C# provide direct access to an element at a specific position within an array or collection. When compared to Enumerable methods, indexing can be more efficient for certain scenarios, such as iterating over a large collection, due to avoiding the overhead of checking the underlying collection type before accessing it.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6608",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6966": {
+          "id": "S6966",
+          "shortDescription": "Awaitable method should be used",
+          "fullDescription": "In an async method, any blocking operations should be avoided.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6966",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -666,4 +666,10 @@
   <data name="alertAvatarLoadUnknownError" xml:space="preserve">
     <value>An unexpected error occurred while trying to load avatars.</value>
   </data>
+  <data name="alertCreateGameErrorName" xml:space="preserve">
+    <value>You must enter a name for the game.</value>
+  </data>
+  <data name="alertPrivateMatchesErrorNoCode" xml:space="preserve">
+    <value>Please enter a match code.</value>
+  </data>
 </root>

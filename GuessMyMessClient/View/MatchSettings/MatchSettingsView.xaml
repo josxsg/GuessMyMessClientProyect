@@ -1,17 +1,17 @@
-﻿<Window x:Class="GuessMyMessClient.View.MatchSettings.PublicMatchSettingsView"
+﻿<Window x:Class="GuessMyMessClient.View.MatchSettings.MatchSettingsView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.MatchSettings"
         mc:Ignorable="d"
-        Title="PublicMatchSettings"
+        Title="MatchSettings"
         Height="600" Width="950"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.MatchSettings"
         WindowState="Maximized"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize" d:DataContext="{d:DesignInstance Type=vm:PublicMatchSettingsViewModel, IsDesignTimeCreatable=True}"
+        ResizeMode="NoResize" d:DataContext="{d:DesignInstance Type=vm:MatchSettingsViewModel, IsDesignTimeCreatable=True}"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
 
     <Grid>
@@ -48,14 +48,38 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+
                 <Button Grid.Column="0"
                         Content="{x:Static language:Lang.playMenuBtnPublicMatches}"
-                        Style="{StaticResource SelectedTabButton}"
-                        Margin="0,0,2,0"/>
+                        Command="{Binding SetMatchTypeCommand}" CommandParameter="Public"
+                        Margin="0,0,2,0">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource TabButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsPublicMatch}" Value="True">
+                                    <Setter Property="Background" Value="Black"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
                 <Button Grid.Column="1"
                         Content="{x:Static language:Lang.playMenuBtnPrivateMatches}"
-                        Style="{StaticResource TabButton}"
-                        Margin="2,0,0,0"/>
+                        Command="{Binding SetMatchTypeCommand}" CommandParameter="Private"
+                        Margin="2,0,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource TabButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsPublicMatch}" Value="False">
+                                    <Setter Property="Background" Value="Black"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
         </Border>
 
@@ -65,14 +89,16 @@
                 FontWeight="Bold"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="185,231,0,0"/>
+                Margin="185,231,0,0"
+                Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <TextBox
                 Text="{Binding MatchName}"
                 Height="39"
                 Width="450"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="299,227,0,0" Style="{StaticResource TextBox}"/>
+                Margin="299,227,0,0" Style="{StaticResource TextBox}"
+                Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
         <TextBlock
                 Text="{x:Static language:Lang.createGameLbMaxPlayers}"
@@ -81,13 +107,15 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 Margin="185,310,0,0"/>
-        <TextBox
-                Text="{Binding MaxPlayers}"
+        <ComboBox
+                ItemsSource="{Binding AvailablePlayerCounts}"
+                SelectedItem="{Binding MaxPlayers}"
                 Height="39"
                 Width="150"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="375,310,0,0" Style="{StaticResource TextBox}"/>
+                Margin="375,310,0,0" 
+                Style="{StaticResource ComboBoxStyle}"/>
 
         <TextBlock
                 Text="{x:Static language:Lang.createGameLbRounds}"
@@ -96,13 +124,15 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 Margin="549,314,0,0"/>
-        <TextBox
-                Text="{Binding Rounds}"
+        <ComboBox
+                ItemsSource="{Binding AvailableRoundCounts}"
+                SelectedItem="{Binding Rounds}"
                 Height="39"
                 Width="150"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="637,310,0,0" Style="{StaticResource TextBox}"/>
+                Margin="637,310,0,0" 
+                Style="{StaticResource ComboBoxStyle}"/>
 
         <TextBlock
                 Text="{x:Static language:Lang.globalLbDifficulty}"
@@ -112,41 +142,27 @@
                 HorizontalAlignment="Left"
                 Margin="185,399,0,0"/>
         <ComboBox
+                ItemsSource="{Binding AvailableDifficulties}"
+                SelectedItem="{Binding SelectedDifficulty}"
+                DisplayMemberPath="Name" 
                 Width="200"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="325,394,0,0" Height="40"
-                Style="{StaticResource ComboBoxStyle}">
-            <ComboBoxItem Content="{x:Static language:Lang.createGameCbEasy}"/>
-            <ComboBoxItem Content="{x:Static language:Lang.createGameCbIntermediate}"/>
-            <ComboBoxItem Content="{x:Static language:Lang.createGameCbHard}"/>
-        </ComboBox>
+                Style="{StaticResource ComboBoxStyle}"/>
 
         <Button Content="{x:Static language:Lang.createGameBtnCreate}"
                 Command="{Binding CreateMatchCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                 Style="{StaticResource JoinButton}"
                 FontSize="30"
                 Height="41"
                 Width="200"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Margin="0,466,0,0"/>
+                Margin="0,480,0,0"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
-            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
-                    Command="{Binding MinimizeWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                    ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
-
-            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
-                    Command="{Binding MaximizeWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                    ToolTip="{x:Static language:Lang.globalBtnResize}"/>
-
-            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
-                    Command="{Binding CloseWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                    ToolTip="{x:Static language:Lang.globalBtnClose}"/>
         </StackPanel>
 
     </Grid>

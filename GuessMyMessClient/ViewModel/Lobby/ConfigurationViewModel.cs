@@ -47,6 +47,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 SessionManager.Instance.CloseSession();
                 sessionClosedLocally = true;
+                MatchmakingClientManager.Instance.Disconnect();
             }
             catch (Exception ex)
             {

@@ -286,17 +286,17 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void ExecutePlay(object param)
         {
-            PublicMatchesViewModel publicMatchesViewModel = new PublicMatchesViewModel();
-            PublicMatchesView publicMatchesView = new PublicMatchesView();
-            publicMatchesView.DataContext = publicMatchesViewModel;
-            publicMatchesView.Show();
+            MatchesViewModel matchesViewModel = new MatchesViewModel();
+            MatchesView matchesView = new MatchesView();
+            matchesView.DataContext = matchesViewModel;
+            matchesView.Show();
             CloseCurrentLobbyWindow();
         }
 
         private void ExecuteCreateGame(object param)
         {
-            PublicMatchSettingsViewModel matchSettingsViewModel = new PublicMatchSettingsViewModel();
-            PublicMatchSettingsView matchSettingsView = new PublicMatchSettingsView();
+            MatchSettingsViewModel matchSettingsViewModel = new MatchSettingsViewModel();
+            MatchSettingsView matchSettingsView = new MatchSettingsView();
             matchSettingsView.DataContext = matchSettingsViewModel;
             matchSettingsView.Show();
             CloseCurrentLobbyWindow();

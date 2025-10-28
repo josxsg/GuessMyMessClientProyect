@@ -241,6 +241,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You must enter a name for the game..
+        /// </summary>
+        public static string alertCreateGameErrorName {
+            get {
+                return ResourceManager.GetString("alertCreateGameErrorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Critical Error.
         /// </summary>
         public static string alertCriticalErrorTitle {
@@ -561,6 +570,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertPasswordTooShort {
             get {
                 return ResourceManager.GetString("alertPasswordTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please enter a match code..
+        /// </summary>
+        public static string alertPrivateMatchesErrorNoCode {
+            get {
+                return ResourceManager.GetString("alertPrivateMatchesErrorNoCode", resourceCulture);
             }
         }
         

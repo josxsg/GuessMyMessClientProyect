@@ -82,6 +82,8 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 if (result.Success)
                 {
                     SessionManager.Instance.StartSession(result.Message);
+                    MatchmakingClientManager.Initialize();
+                    MatchmakingClientManager.Instance.Connect(SessionManager.Instance.CurrentUsername);
                     OpenLobby(parameter);
                     client.Close();
                     success = true;

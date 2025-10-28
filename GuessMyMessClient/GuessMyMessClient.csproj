@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\MatchmakingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProfileService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,17 +93,18 @@
     <Compile Include="ViewModel\Lobby\ProfileViewModel.cs" />
     <Compile Include="ViewModel\Lobby\SelectAvatarViewModel.cs" />
     <Compile Include="ViewModel\HomePages\MainViewModel.cs" />
-    <Compile Include="ViewModel\Matches\PrivateMatchesViewModel.cs" />
-    <Compile Include="ViewModel\Matches\PublicMatchesViewModel.cs" />
-    <Compile Include="ViewModel\MatchSettings\PublicMatchSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Matches\MatchesViewModel.cs" />
+    <Compile Include="ViewModel\MatchSettings\MatchSettingsViewModel.cs" />
     <Compile Include="ViewModel\Match\AnswersScreenViewModel.cs" />
     <Compile Include="ViewModel\Match\DrawingScreenViewModel.cs" />
     <Compile Include="ViewModel\Match\EndOfMatchViewModel.cs" />
     <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Session\MatchmakingClientManager.cs" />
     <Compile Include="ViewModel\Session\SessionManager.cs" />
     <Compile Include="ViewModel\Session\SocialClientManager.cs" />
+    <Compile Include="ViewModel\Support\Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\BoolToGreenRedConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />
@@ -158,14 +164,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\Matches\PrivateMatchesView.xaml.cs">
-      <DependentUpon>PrivateMatchesView.xaml</DependentUpon>
+    <Compile Include="View\Matches\MatchesView.xaml.cs">
+      <DependentUpon>MatchesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Matches\PublicMatchesView.xaml.cs">
-      <DependentUpon>PublicMatchesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MatchSettings\PublicMatchSettingsView.xaml.cs">
-      <DependentUpon>PublicMatchSettingsView.xaml</DependentUpon>
+    <Compile Include="View\MatchSettings\MatchSettingsView.xaml.cs">
+      <DependentUpon>MatchSettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Match\AnswersScreenView.xaml.cs">
       <DependentUpon>AnswersScreenView.xaml</DependentUpon>
@@ -262,15 +265,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Matches\PrivateMatchesView.xaml">
+    <Page Include="View\Matches\MatchesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Matches\PublicMatchesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MatchSettings\PublicMatchSettingsView.xaml">
+    <Page Include="View\MatchSettings\MatchSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -354,6 +353,25 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AuthService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MatchmakingService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.MatchInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.OperationResultDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MatchmakingService\GuessMyMessServer.Contracts.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MatchmakingService\service.wsdl" />
+    <None Include="Connected Services\MatchmakingService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MatchmakingService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource">
@@ -458,6 +476,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthService\" />
+    <WCFMetadataStorage Include="Connected Services\MatchmakingService\" />
     <WCFMetadataStorage Include="Connected Services\ProfileService\" />
     <WCFMetadataStorage Include="Connected Services\SocialService\" />
   </ItemGroup>
@@ -493,6 +512,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SocialService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MatchmakingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MatchmakingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MatchmakingService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
