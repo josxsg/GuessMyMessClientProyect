@@ -27,6 +27,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private void StartGame(object parameter)
         {
             var welcomeView = new WelcomeView();
+            welcomeView.WindowState = WindowState.Maximized;
+            welcomeView.WindowStyle = WindowStyle.None;
+            welcomeView.ResizeMode = ResizeMode.NoResize;
             welcomeView.Show();
 
             if (parameter is Window mainWindow)

@@ -24,8 +24,15 @@ namespace GuessMyMessClient.View.HomePages
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();
+            this.Loaded += Main_Loaded;
         }
 
+        private void Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None;
+            this.ResizeMode = ResizeMode.NoResize;
+        }
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);

@@ -31,6 +31,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 var signUpView = new SignUpView();
                 signUpView.WindowState = welcomeWindow.WindowState;
+                signUpView.WindowState = WindowState.Maximized;
+                signUpView.WindowStyle = WindowStyle.None;
+                signUpView.ResizeMode = ResizeMode.NoResize;
                 signUpView.Show();
                 welcomeWindow.Close();
             }
@@ -42,6 +45,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 var loginView = new LoginView();
                 loginView.WindowState = welcomeWindow.WindowState;
+                loginView.WindowState = WindowState.Maximized;
+                loginView.WindowStyle = WindowStyle.None;
+                loginView.ResizeMode = ResizeMode.NoResize;
                 loginView.Show();
                 welcomeWindow.Close();
             }

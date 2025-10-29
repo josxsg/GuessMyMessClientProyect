@@ -10,6 +10,7 @@ namespace GuessMyMessClient.Model
 {
     public class AvatarModel : ViewModelBase
     {
+
         public int Id { get; set; }
         public string Name { get; set; }
         public byte[] ImageData { get; set; }
