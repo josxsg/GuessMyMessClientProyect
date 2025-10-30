@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GuessMyMessClient.LobbyService;
+using GuessMyMessClient.ViewModel.Session;
 
 namespace GuessMyMessClient.ViewModel.WaitingRoom
 {
-    internal class WaitingRoomPrivateMatchViewModel
+    public class WaitingRoomPrivateMatchViewModel : WaitingRoomViewModelBase
     {
+        public WaitingRoomPrivateMatchViewModel(LobbyClientManager lobbyManager, SessionManager sessionManager)
+            : base(lobbyManager, sessionManager)
+        {
+        }
     }
 }

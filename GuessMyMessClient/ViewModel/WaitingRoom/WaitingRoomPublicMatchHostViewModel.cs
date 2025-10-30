@@ -1,48 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using GuessMyMessClient.LobbyService;
+using GuessMyMessClient.ViewModel.Session;
 using System.Windows.Input;
+using System.Windows;
 
 namespace GuessMyMessClient.ViewModel.WaitingRoom
 {
-    internal class WaitingRoomPublicMatchHostViewModel : ViewModelBase
+    public class WaitingRoomPublicMatchHostViewModel : WaitingRoomViewModelBase
     {
-        public ICommand CloseWindowCommand { get; }
-        public ICommand MaximizeWindowCommand { get; }
-        public ICommand MinimizeWindowCommand { get; }
+        public ICommand StartGameCommand { get; private set; }
 
-        public WaitingRoomPublicMatchHostViewModel()
+        public WaitingRoomPublicMatchHostViewModel(LobbyClientManager lobbyManager, SessionManager sessionManager)
+            : base(lobbyManager, sessionManager)
         {
-            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
-            MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
-            MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
         }
 
-        private void ExecuteCloseWindow(object parameter)
+        protected override void InitializeCommands()
         {
-            if (parameter is Window window)
-            {
-
-                Application.Current.Shutdown();
-            }
+            base.InitializeCommands();
+            StartGameCommand = new RelayCommand(StartGame, CanStartGame);
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private bool CanStartGame(object parameter)
         {
-            if (parameter is Window window)
-            {
-                window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-            }
+            return IsHost;
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private void StartGame(object parameter)
         {
-            if (parameter is Window window)
+            _lobbyManager.RequestStartGame();
+        }
+
+        protected override void OnLobbyStateUpdated(LobbyStateDto state)
+        {
+            bool wasHostBeforeUpdate = this.IsHost;
+
+            base.OnLobbyStateUpdated(state); 
+
+            if (wasHostBeforeUpdate != this.IsHost)
             {
-                window.WindowState = WindowState.Minimized;
+                Application.Current?.Dispatcher.Invoke(() =>
+                {
+                    CommandManager.InvalidateRequerySuggested();
+                });
             }
         }
     }

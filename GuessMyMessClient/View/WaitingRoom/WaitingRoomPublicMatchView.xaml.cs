@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.ViewModel.WaitingRoom;
 
 namespace GuessMyMessClient.View.WaitingRoom
@@ -23,7 +24,10 @@ namespace GuessMyMessClient.View.WaitingRoom
         public WaitingRoomPublicMatchView()
         {
             InitializeComponent();
-            this.DataContext = new WaitingRoomPublicMatchViewModel();
+            this.DataContext = new WaitingRoomPublicMatchViewModel(
+                LobbyClientManager.Instance,
+                SessionManager.Instance
+                );
         }
     }
 }

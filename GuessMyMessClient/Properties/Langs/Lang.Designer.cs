@@ -205,6 +205,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Confirmation.
+        /// </summary>
+        public static string alertConfirmationTitle {
+            get {
+                return ResourceManager.GetString("alertConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Are you sure you want to exit the game?.
         /// </summary>
         public static string alertConfirmExit {
@@ -790,6 +799,42 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a I am excited!.
+        /// </summary>
+        public static string chatMsgExcited {
+            get {
+                return ResourceManager.GetString("chatMsgExcited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Let&apos;s go!.
+        /// </summary>
+        public static string chatMsgLetsGo {
+            get {
+                return ResourceManager.GetString("chatMsgLetsGo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a I&apos;m ready!.
+        /// </summary>
+        public static string chatMsgReady {
+            get {
+                return ResourceManager.GetString("chatMsgReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Let the game begin!.
+        /// </summary>
+        public static string chatMsgStartGame {
+            get {
+                return ResourceManager.GetString("chatMsgStartGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Select a word to draw.
         /// </summary>
         public static string chooseWordLbTitle {
@@ -1164,6 +1209,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string globalBtnJoin {
             get {
                 return ResourceManager.GetString("globalBtnJoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Leave.
+        /// </summary>
+        public static string globalBtnLeave {
+            get {
+                return ResourceManager.GetString("globalBtnLeave", resourceCulture);
             }
         }
         
@@ -1636,6 +1690,24 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Kick.
+        /// </summary>
+        public static string waitingRoomBtnKick {
+            get {
+                return ResourceManager.GetString("waitingRoomBtnKick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Kick this player (host only).
+        /// </summary>
+        public static string waitingRoomBtnKickTooltip {
+            get {
+                return ResourceManager.GetString("waitingRoomBtnKickTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Start.
         /// </summary>
         public static string waitingRoomBtnStart {
@@ -1668,6 +1740,33 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string waitingRoomLbMatchTypePublic {
             get {
                 return ResourceManager.GetString("waitingRoomLbMatchTypePublic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to kick {0}?.
+        /// </summary>
+        public static string waitingRoomMsgConfirmKick {
+            get {
+                return ResourceManager.GetString("waitingRoomMsgConfirmKick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The game is about to begin!.
+        /// </summary>
+        public static string waitingRoomMsgGameStarting {
+            get {
+                return ResourceManager.GetString("waitingRoomMsgGameStarting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have been kicked.
+        /// </summary>
+        public static string waitingRoomMsgKicked {
+            get {
+                return ResourceManager.GetString("waitingRoomMsgKicked", resourceCulture);
             }
         }
         

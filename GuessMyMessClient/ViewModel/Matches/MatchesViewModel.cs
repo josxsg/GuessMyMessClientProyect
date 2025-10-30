@@ -1,5 +1,7 @@
 ﻿using GuessMyMessClient.MatchmakingService;
+using GuessMyMessClient.View.WaitingRoom;
 using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.WaitingRoom;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +17,9 @@ namespace GuessMyMessClient.ViewModel.Matches
         private bool _isPublicViewSelected = true;
         private string _matchCode;
         private ObservableCollection<MatchInfoModel> _publicMatches;
+        private string _joiningMatchId = null;
+        private bool _joiningPrivateMatch = false;
+        private Window _currentWindow = null;
 
         // --- Propiedades de Binding ---
         public bool IsPublicViewSelected
@@ -73,49 +78,69 @@ namespace GuessMyMessClient.ViewModel.Matches
             OnPublicMatchesListUpdated(matchesDto); // Reutiliza el handler del evento
         }
 
-        private void ExecuteJoinPublicMatch(object matchId)
+        private void ExecuteJoinPublicMatch(object parameter) // Cambiado para recibir el objeto completo o su VM
         {
-            if (matchId is string id)
+            if (parameter is MatchInfoModel matchInfo && matchInfo.CanJoin) // Asume que pasas el MatchInfoModel
             {
-                MatchmakingClientManager.Instance.JoinPublicMatch(id);
-                // La respuesta se maneja en el evento OnMatchJoined
-            }
+                // Guarda la información antes de llamar al servicio
+                _joiningMatchId = matchInfo.MatchId;
+                _joiningPrivateMatch = false; // Sabemos que es pública
+                _currentWindow = FindParentWindow(); // Intenta obtener la ventana actual
+
+                MatchmakingClientManager.Instance.JoinPublicMatch(matchInfo.MatchId);
+                // La respuesta y navegación se manejan en OnMatchJoined
+            }
+            else if (parameter is string matchId) // Fallback si solo pasas el ID
+            {
+                _joiningMatchId = matchId;
+                _joiningPrivateMatch = false;
+                _currentWindow = FindParentWindow();
+                MatchmakingClientManager.Instance.JoinPublicMatch(matchId);
+            }
+            else
+            {
+                MessageBox.Show("No se puede unir a la partida seleccionada.", "Error");
+            }
         }
 
         private async Task ExecuteJoinPrivateMatchAsync(object parameter)
         {
             if (string.IsNullOrWhiteSpace(MatchCode))
             {
-                MessageBox.Show(Properties.Langs.Lang.alertPrivateMatchesErrorNoCode); // Necesitarás este Lang
-                return;
+                MessageBox.Show(Properties.Langs.Lang.alertPrivateMatchesErrorNoCode);
+                return;
             }
 
-            var result = await MatchmakingClientManager.Instance.JoinPrivateMatchAsync(MatchCode.ToUpper());
+            string codeToJoin = MatchCode.ToUpper(); // Guarda el código antes de la llamada async
 
-            if (result.Success)
+            // Muestra indicador de carga si es necesario
+            // IsBusy = true;
+
+            var result = await MatchmakingClientManager.Instance.JoinPrivateMatchAsync(codeToJoin);
+
+            // IsBusy = false;
+
+            if (result.Success && result.Data != null && result.Data.ContainsKey("MatchId"))
             {
-                // El evento OnMatchJoined se disparará por el callback
-            }
+                // Guarda la información ANTES de que el callback OnMatchJoined se dispare
+                _joiningMatchId = result.Data["MatchId"]; // El ID real de la partida
+                _joiningPrivateMatch = true; // Sabemos que es privada
+                _currentWindow = FindParentWindow(parameter); // Intenta obtener la ventana actual
+                // NO navegues aquí, espera al callback OnMatchJoined que confirma la unión en el servidor
+                MessageBox.Show($"Solicitud para unirse a partida {codeToJoin} enviada..."); // Feedback temporal
+            }
             else
             {
-                MessageBox.Show(result.Message);
+                MessageBox.Show(result.Message ?? "Error al intentar unirse a la partida privada.", "Error");
             }
         }
 
         private void ExecuteReturn(object parameter)
         {
+            CleanupEvents(); // Llama a la limpieza de eventos
             if (parameter is Window window)
             {
-                // Desuscribirse de eventos
-                // CORREGIDO: Se agregó "On" al nombre del evento
-                MatchmakingClientManager.Instance.OnPublicMatchesListUpdated -= OnPublicMatchesListUpdated;
-                // CORREGIDO: Se agregó "On" al nombre del evento
-                MatchmakingClientManager.Instance.OnMatchJoinedSuccessfully -= OnMatchJoined;
-                // CORREGIDO: Se agregó "On" al nombre del evento
-                MatchmakingClientManager.Instance.OnMatchmakingFailed -= OnMatchmakingFailed;
-
-                // Volver al Lobby (menú principal)
-                var lobbyView = new View.Lobby.LobbyView();
+                var lobbyView = new View.Lobby.LobbyView();
                 lobbyView.Show();
                 window.Close();
             }
@@ -141,21 +166,87 @@ namespace GuessMyMessClient.ViewModel.Matches
 
         private void OnMatchJoined(string matchId, OperationResultDto result)
         {
-            // Asegurarse de que esto se ejecute en el hilo de la UI
-            Application.Current?.Dispatcher?.Invoke(() =>
+            // Solo proceder si este callback corresponde a la partida que intentamos unir
+            if (matchId != _joiningMatchId) return;
+
+            Application.Current?.Dispatcher?.Invoke(() =>
             {
                 if (result.Success)
                 {
-                    MessageBox.Show($"¡Unido a la partida {matchId} con éxito!");
-                    // TODO: Navegar a la vista de WaitingRoom (no-host)
-                    // var waitingRoom = new WaitingRoomView(matchId);
-                    // ... (cerrar ventana actual y mostrar la nueva) ...
-                }
+                    // --- NAVEGACIÓN Y CONEXIÓN ---
+                    // 1. Obtener instancias
+                    var lobbyManager = LobbyClientManager.Instance; // O por DI
+                    var sessionManager = SessionManager.Instance; // O por DI
+                    string currentUsername = sessionManager.CurrentUsername;
+
+                    // 2. Conectar al servicio de Lobby
+                    lobbyManager.Connect(currentUsername, matchId); // Usa el ID único siempre
+
+                    // 3. Crear ViewModel y Vista correspondientes (JUGADOR)
+                    Window waitingRoomView = null;
+                    ViewModelBase waitingRoomViewModel = null;
+
+                    if (_joiningPrivateMatch) // Usa el flag guardado
+                    {
+                        waitingRoomViewModel = new WaitingRoomPrivateMatchViewModel(lobbyManager, sessionManager);
+                        waitingRoomView = new WaitingRoomPrivateMatchView
+                        {
+                            DataContext = waitingRoomViewModel
+                        };
+                    }
+                    else // Es pública
+                    {
+                        waitingRoomViewModel = new WaitingRoomPublicMatchViewModel(lobbyManager, sessionManager);
+                        waitingRoomView = new WaitingRoomPublicMatchView
+                        {
+                            DataContext = waitingRoomViewModel
+                        };
+                    }
+
+                    // 4. Mostrar nueva ventana y cerrar la actual
+                    if (_currentWindow != null && waitingRoomView != null)
+                    {
+                        // Desuscribirse ANTES de cerrar la ventana
+                        CleanupEvents();
+                        waitingRoomView.Show();
+                        _currentWindow.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"¡Unido a la partida {matchId} con éxito! No se pudo navegar.", "Info");
+                        lobbyManager.Disconnect(); // Desconectar si no navegamos
+                    }
+
+                    // Limpiar flags
+                    _joiningMatchId = null;
+                    _joiningPrivateMatch = false;
+                    _currentWindow = null;
+                    // --- FIN NAVEGACIÓN Y CONEXIÓN ---
+                }
                 else
                 {
-                    MessageBox.Show($"Error al unirse: {result.Message}");
+                    MessageBox.Show($"Error al unirse a la partida {matchId}: {result.Message}", "Error");
+                    // Limpiar flags si falla
+                    _joiningMatchId = null;
+                    _joiningPrivateMatch = false;
+                    _currentWindow = null;
                 }
             });
+        }
+
+        private void CleanupEvents()
+        {
+            MatchmakingClientManager.Instance.OnPublicMatchesListUpdated -= OnPublicMatchesListUpdated;
+            MatchmakingClientManager.Instance.OnMatchJoinedSuccessfully -= OnMatchJoined;
+            MatchmakingClientManager.Instance.OnMatchmakingFailed -= OnMatchmakingFailed;
+        }
+
+        private Window FindParentWindow(object commandParameter = null)
+        {
+            if (commandParameter is Window win) return win;
+
+            // Intenta encontrar la ventana activa asociada a este ViewModel
+            return Application.Current?.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this || w.IsActive);
         }
 
         private void OnMatchmakingFailed(string reason)

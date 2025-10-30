@@ -672,4 +672,37 @@
   <data name="alertPrivateMatchesErrorNoCode" xml:space="preserve">
     <value>Please enter a match code.</value>
   </data>
+  <data name="globalBtnLeave" xml:space="preserve">
+    <value>Leave</value>
+  </data>
+  <data name="alertConfirmationTitle" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="waitingRoomBtnKick" xml:space="preserve">
+    <value>Kick</value>
+  </data>
+  <data name="waitingRoomBtnKickTooltip" xml:space="preserve">
+    <value>Kick this player (host only)</value>
+  </data>
+  <data name="waitingRoomMsgKicked" xml:space="preserve">
+    <value>You have been kicked</value>
+  </data>
+  <data name="waitingRoomMsgGameStarting" xml:space="preserve">
+    <value>The game is about to begin!</value>
+  </data>
+  <data name="waitingRoomMsgConfirmKick" xml:space="preserve">
+    <value>Are you sure you want to kick {0}?</value>
+  </data>
+  <data name="chatMsgExcited" xml:space="preserve">
+    <value>I am excited!</value>
+  </data>
+  <data name="chatMsgLetsGo" xml:space="preserve">
+    <value>Let's go!</value>
+  </data>
+  <data name="chatMsgStartGame" xml:space="preserve">
+    <value>Let the game begin!</value>
+  </data>
+  <data name="chatMsgReady" xml:space="preserve">
+    <value>I'm ready!</value>
+  </data>
 </root>

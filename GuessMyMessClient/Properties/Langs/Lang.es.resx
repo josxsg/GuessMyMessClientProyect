@@ -672,4 +672,37 @@
   <data name="alertPrivateMatchesErrorNoCode" xml:space="preserve">
     <value>Por favor, ingresa un código de partida.</value>
   </data>
+  <data name="globalBtnLeave" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="alertConfirmationTitle" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="waitingRoomBtnKick" xml:space="preserve">
+    <value>Expulsar</value>
+  </data>
+  <data name="waitingRoomBtnKickTooltip" xml:space="preserve">
+    <value>Expulsar a este jugador (solo anfitrión)</value>
+  </data>
+  <data name="waitingRoomMsgKicked" xml:space="preserve">
+    <value>Has sido expulsado</value>
+  </data>
+  <data name="waitingRoomMsgGameStarting" xml:space="preserve">
+    <value>¡El juego está a punto de comenzar!</value>
+  </data>
+  <data name="waitingRoomMsgConfirmKick" xml:space="preserve">
+    <value>¿Seguro que quieres expulsar a {0}?</value>
+  </data>
+  <data name="chatMsgExcited" xml:space="preserve">
+    <value>¡Estoy emocionado!</value>
+  </data>
+  <data name="chatMsgLetsGo" xml:space="preserve">
+    <value>¡Vamos!</value>
+  </data>
+  <data name="chatMsgStartGame" xml:space="preserve">
+    <value>¡Que comience el juego!</value>
+  </data>
+  <data name="chatMsgReady" xml:space="preserve">
+    <value>¡Estoy listo!</value>
+  </data>
 </root>

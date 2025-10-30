@@ -5,82 +5,150 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.WaitingRoom"
         mc:Ignorable="d"
-        Title="WaitingRoomPrivateMatchHostView" Height="550" Width="900"
+        Title="Waiting Room - Private Host" Height="650" Width="950"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.WaitingRoom"
+        xmlns:lang="clr-namespace:GuessMyMessClient.Properties.Langs"
+        xmlns:session="clr-namespace:GuessMyMessClient.ViewModel.Session" 
         d:DataContext="{d:DesignInstance Type=vm:WaitingRoomPrivateMatchHostViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResize"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        WindowStyle="None"
+        xmlns:converters="clr-namespace:GuessMyMessClient.ViewModel.Support.Converters">
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+        <Style x:Key="KickButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="IndianRed"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Padding" Value="3,1"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Visibility" Value="{Binding KickButtonVisibility}"/>
+            <Setter Property="Command" Value="{Binding KickCommand}"/>
+            <Setter Property="CommandParameter" Value="{Binding Username}"/>
+            <Setter Property="ToolTip" Value="{x:Static lang:Lang.waitingRoomBtnKickTooltip}"/>
+        </Style>
+
+        <Style x:Key="PredefinedMessageButtonStyle" TargetType="Button" BasedOn="{StaticResource MenuButtonBase}">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Margin" Value="0,2"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="#FF4A6E92"/>
+
+        </Style>
+
+        <Style x:Key="LeaveButtonStyle" TargetType="Button" BasedOn="{StaticResource MenuButtonBase}">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TextBlock
-Text="*NOMBRE DE PARTIDA*"
-FontSize="24" 
-FontWeight="Bold"
-VerticalAlignment="Top" Margin="113,99,518,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock
-Text="{x:Static language:Lang.globalLbMatchCode}"
-FontSize="24" 
-FontWeight="Bold"
-VerticalAlignment="Top" Margin="599,99,83,0"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="30,20">
+            <TextBlock Text="{Binding MatchName}" FontSize="28" FontWeight="Bold" Foreground="Black" TextWrapping="Wrap"/>
 
-        <TextBlock
-Text="****-****-****"
-FontSize="20" 
-VerticalAlignment="Top" Margin="599,132,83,0"/>
+            <StackPanel Orientation="Horizontal" Margin="0,15,0,0" Visibility="{Binding MatchCodeVisibility}">
+                <TextBlock Text="{x:Static lang:Lang.globalLbMatchCode}" FontSize="20" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding MatchCode}" FontSize="18" Margin="10,0,0,0" IsReadOnly="True" Background="#55FFFFFF" BorderThickness="0" Padding="5" VerticalContentAlignment="Center"/>
+            </StackPanel>
 
-        <TextBlock
-Text="{x:Static language:Lang.waitingRoomLbMatchTypePrivate}"
-FontSize="15" 
-FontWeight="Bold"
-VerticalAlignment="Top" Margin="113,148,718,0"/>
+            <TextBlock Text="{x:Static lang:Lang.waitingRoomLbMatchTypePrivate}" FontSize="14" FontWeight="SemiBold" Foreground="Black" Margin="0,5,0,0"
+                       Visibility="{Binding MatchCodeVisibility}"/>
 
-        <TextBlock
-    FontSize="20" 
-    FontWeight="Bold"
-    VerticalAlignment="Top" 
-    Margin="113,188,683,0">
-    
-    <Run Text="{x:Static language:Lang.globalLbHost}"/>
-    
-    <Run Text=": "/>
+            <TextBlock Margin="0,15,0,0" FontSize="18" Foreground="Black">
+                <Run Text="{x:Static lang:Lang.globalLbHost}" FontWeight="Bold"/>: <Run Text="{Binding HostUsername}"/>
+            </TextBlock>
+            <TextBlock Margin="0,5,0,0" FontSize="18" Foreground="Black">
+                <Run Text="{x:Static lang:Lang.globalLbDifficulty}" FontWeight="Bold"/>: <Run Text="{Binding Difficulty}"/>
+            </TextBlock>
+            <TextBlock Text="{Binding PlayerCountDisplay}" FontSize="18" FontWeight="Bold" Foreground="LawnGreen" Margin="0,10,0,0"/>
+        </StackPanel>
 
-        </TextBlock>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="30,0,30,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <TextBlock
-    FontSize="20" 
-    FontWeight="Bold"
-    VerticalAlignment="Top" 
-    Margin="113,220,671,0">
-    
-    <Run Text="{x:Static language:Lang.globalLbDifficulty}"/>
-    
-    <Run Text=": "/>
+            <Border Grid.Row="0" Background="#AA000000" CornerRadius="5" Padding="5" Margin="0,0,0,10">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Name="ChatScrollViewer">
+                    <ItemsControl ItemsSource="{Binding ChatMessages}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type session:ChatMessageDisplay}">
+                                <TextBlock Text="{Binding FormattedMessage}" Foreground="White" FontSize="14" TextWrapping="Wrap" Margin="0,2"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
 
-        </TextBlock>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Button Content="{x:Static lang:Lang.chatMsgExcited}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                         Command="{Binding SendMessageCommand}" CommandParameter="chatMsgExcited" Height="20"/>
+                <Button Content="{x:Static lang:Lang.chatMsgLetsGo}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                         Command="{Binding SendMessageCommand}" CommandParameter="chatMsgLetsGo" Height="20"/>
+                <Button Content="{x:Static lang:Lang.chatMsgStartGame}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                         Command="{Binding SendMessageCommand}" CommandParameter="chatMsgStartGame" Height="20"/>
+                <Button Content="{x:Static lang:Lang.chatMsgReady}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                         Command="{Binding SendMessageCommand}" CommandParameter="chatMsgReady" Height="21"/>
+            </StackPanel>
+        </Grid>
 
-        <TextBlock
-FontSize="20" 
-FontWeight="Bold"
-VerticalAlignment="Top" 
-Margin="450,369,334,0">
+        <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="#AA000000" CornerRadius="5" Padding="10" Margin="10,20,20,10">
+            <StackPanel>
+                <TextBlock Text="{x:Static lang:Lang.globalLbPlayers}" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Players}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type vm:PlayerViewModel}">
+                                <Grid Margin="0,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Username}" Foreground="White" FontSize="16" VerticalAlignment="Center"/>
+                                    <Button Grid.Column="1" Content="{x:Static lang:Lang.waitingRoomBtnKick}" Style="{StaticResource KickButtonStyle}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
 
-<Run Text="-"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,20">
+            <Button Content="{x:Static lang:Lang.waitingRoomBtnStart}"
+                    Style="{StaticResource JoinButton}" FontSize="24" Width="180" Height="45" Margin="10"
+                    Command="{Binding StartGameCommand}"
+                    Visibility="{Binding IsHost, Converter={StaticResource BoolToVisibilityConverter}}"/>
+            <Button Content="{x:Static lang:Lang.globalBtnLeave}"
+                    Style="{StaticResource LeaveButtonStyle}" FontSize="24" Width="180" Height="45" Margin="10"
+                    Command="{Binding LeaveCommand}"/>
 
-<Run Text="{x:Static language:Lang.globalLbPlayers}"/>
-
-        </TextBlock>
-
-        <Button 
-Content="{x:Static language:Lang.waitingRoomBtnStart}" 
-Style="{StaticResource JoinButton}" 
-FontSize="30"
-VerticalAlignment="Top" Margin="360,414,360,0" Height="41"/>
-
-
+            <TextBlock Text="{Binding CountdownValue}" FontSize="48" FontWeight="Bold" Foreground="Yellow"
+                       VerticalAlignment="Center" Margin="20,0,0,0"
+                       Visibility="{Binding CountdownVisibility}"/>
+        </StackPanel>
     </Grid>
 </Window>

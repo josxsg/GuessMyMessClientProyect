@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\LobbyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\MatchmakingService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +106,7 @@
     <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Session\LobbyClientManager.cs" />
     <Compile Include="ViewModel\Session\MatchmakingClientManager.cs" />
     <Compile Include="ViewModel\Session\SessionManager.cs" />
     <Compile Include="ViewModel\Session\SocialClientManager.cs" />
@@ -109,6 +115,7 @@
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs" />
     <Compile Include="View\HomePages\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -355,6 +362,19 @@
     <None Include="Connected Services\AuthService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\LobbyService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LobbyService\GuessMyMessServer.Contracts.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LobbyService\service.wsdl" />
+    <None Include="Connected Services\LobbyService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LobbyService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\MatchmakingService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -476,6 +496,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthService\" />
+    <WCFMetadataStorage Include="Connected Services\LobbyService\" />
     <WCFMetadataStorage Include="Connected Services\MatchmakingService\" />
     <WCFMetadataStorage Include="Connected Services\ProfileService\" />
     <WCFMetadataStorage Include="Connected Services\SocialService\" />
@@ -524,6 +545,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MatchmakingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LobbyService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LobbyService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LobbyService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
