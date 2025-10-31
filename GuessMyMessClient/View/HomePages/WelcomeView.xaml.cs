@@ -24,14 +24,16 @@ namespace GuessMyMessClient.View.HomePages
         {
             InitializeComponent();
             this.DataContext = new WelcomeViewModel();
-
-            this.Loaded += (sender, e) => {
-                if (Application.Current.MainWindow != null && Application.Current.MainWindow != this)
-                {
-                    this.WindowState = Application.Current.MainWindow.WindowState;
-                }
-            };
+            this.Loaded += WelcomeView_Loaded;
         }
+
+        private void WelcomeView_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None;
+            this.ResizeMode = ResizeMode.NoResize;
+        }
+
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {

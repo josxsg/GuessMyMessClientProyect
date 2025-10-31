@@ -181,6 +181,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (parameter is Window currentWindow)
             {
                 var welcomeView = new WelcomeView();
+                welcomeView.WindowState = welcomeView.WindowState;
+                welcomeView.WindowState = WindowState.Maximized;
+                welcomeView.WindowStyle = WindowStyle.None;
+                welcomeView.ResizeMode = ResizeMode.NoResize;
                 welcomeView.Show();
                 currentWindow.Close();
             }
