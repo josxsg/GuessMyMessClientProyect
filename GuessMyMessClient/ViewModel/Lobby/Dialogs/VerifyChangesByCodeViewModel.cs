@@ -14,12 +14,10 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
     internal class VerifyChangesByCodeViewModel : ViewModelBase
     {
         public enum VerificationMode { Email, Password }
-
         private readonly VerificationMode _mode;
         private readonly string _username;
         private readonly string _payload;
         private readonly Action<string> _emailUpdateCallback;
-
         private string _verificationCode;
         public string VerificationCode
         {

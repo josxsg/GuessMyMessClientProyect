@@ -99,32 +99,22 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                 MatchName = this.MatchName,
                 IsPrivate = this._isPrivateMatch,
                 MaxPlayers = this.MaxPlayers,
-                TotalRounds = this.Rounds, // Asegúrate que el servidor maneje esto si es necesario
+                TotalRounds = this.Rounds, 
                 DifficultyId = this.SelectedDifficulty.Id
             };
 
-            // Muestra un indicador de carga si es necesario
-            // IsBusy = true;
-
             var result = await MatchmakingClientManager.Instance.CreateMatchAsync(settings);
-
-            // IsBusy = false;
 
             if (result.Success && result.Data != null && result.Data.ContainsKey("MatchId"))
             {
-                string matchId = result.Data["MatchId"]; // El ID único de la partida
-                                                         // string matchCode = result.Data.ContainsKey("MatchCode") ? result.Data["MatchCode"] : null; // Código si es privada
+                string matchId = result.Data["MatchId"]; 
 
-                // --- NAVEGACIÓN Y CONEXIÓN ---
-                // 1. Obtener instancias necesarias
-                var lobbyManager = LobbyClientManager.Instance; // O obténlo por DI
-                var sessionManager = SessionManager.Instance; // O obténlo por DI
+                var lobbyManager = LobbyClientManager.Instance; 
+                var sessionManager = SessionManager.Instance; 
                 string currentUsername = sessionManager.CurrentUsername;
 
-                // 2. Conectar al servicio de Lobby ANTES de mostrar la ventana
-                lobbyManager.Connect(currentUsername, matchId); // Usa el ID único siempre para conectar
+                lobbyManager.Connect(currentUsername, matchId);
 
-                // 3. Crear ViewModel y Vista correspondientes
                 Window waitingRoomView = null;
                 ViewModelBase waitingRoomViewModel = null;
 
@@ -136,7 +126,7 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                         DataContext = waitingRoomViewModel
                     };
                 }
-                else // Es pública
+                else 
                 {
                     waitingRoomViewModel = new WaitingRoomPublicMatchHostViewModel(lobbyManager, sessionManager);
                     waitingRoomView = new WaitingRoomPublicMatchHostView
@@ -145,7 +135,6 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                     };
                 }
 
-                // 4. Mostrar nueva ventana y cerrar la actual
                 if (parameter is Window currentWindow && waitingRoomView != null)
                 {
                     waitingRoomView.Show();
@@ -153,11 +142,9 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                 }
                 else
                 {
-                    // Fallback si no se pasó la ventana actual o algo falló
                     MessageBox.Show($"Partida creada (ID: {matchId}). No se pudo navegar automáticamente.", "Info");
-                    lobbyManager.Disconnect(); // Desconectar si no pudimos navegar
+                    lobbyManager.Disconnect(); 
                 }
-                // --- FIN NAVEGACIÓN Y CONEXIÓN ---
             }
             else
             {

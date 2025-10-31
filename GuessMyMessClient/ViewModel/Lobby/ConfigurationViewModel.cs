@@ -20,7 +20,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private bool _isSpanish;
         private bool _isEnglish;
-
         private string _configTitle;
         private string _soundTitle;
         private string _soundEffectsLabel;

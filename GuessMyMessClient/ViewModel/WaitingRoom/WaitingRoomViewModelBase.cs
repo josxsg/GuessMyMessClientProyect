@@ -93,8 +93,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void InitializeCommands()
         {
             LeaveCommand = new RelayCommand(LeaveLobby);
-            //SendMessageCommand = new RelayCommand<string>(SendChatMessage);
-            //KickPlayerCommand = new RelayCommand<string>(KickPlayer);
         }
 
         protected virtual void SubscribeToLobbyEvents()

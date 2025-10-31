@@ -18,7 +18,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public ObservableCollection<FriendDto> Conversations { get; }
         public ObservableCollection<DirectMessageDto> ChatHistory { get; }
-
         private string _messageText;
         public string MessageText
         {
@@ -95,7 +94,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 Console.WriteLine("LoadFriendsListAsync: No se puede ejecutar, cliente no listo.");
                 return;
             }
-
             try
             {
                 var users = await Client.GetFriendsListAsync(SessionManager.Instance.CurrentUsername);

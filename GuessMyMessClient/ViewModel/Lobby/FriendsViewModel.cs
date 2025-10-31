@@ -306,7 +306,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void InviteByEmail(object obj)
         {
-            //MessageBox.Show("No se ha implementado la funcion","Info");
         }
 
         private void SubscribeToEvents()

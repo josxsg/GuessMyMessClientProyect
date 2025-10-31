@@ -235,7 +235,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 }
             });
         }
-
     }
     public class ChatMessageDisplay
     {

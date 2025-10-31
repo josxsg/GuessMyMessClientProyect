@@ -16,7 +16,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
     public class VerifyByCodeViewModel : ViewModelBase
     {
         private readonly string _userEmail;
-
         private string _verificationCode;
         public string VerificationCode
         {

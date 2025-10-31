@@ -16,7 +16,6 @@ namespace GuessMyMessClient.Model
         public byte[] ImageData { get; set; }
         public BitmapImage ImageSource { get; set; }
 
-        // --- NUEVA PROPIEDAD ---
         private bool _isSelected;
         public bool IsSelected
         {
