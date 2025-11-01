@@ -141,7 +141,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void OpenLobby(object parameter)
+        private static void OpenLobby(object parameter)
         {
             if (parameter is Window loginWindow)
             {
@@ -152,7 +152,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             lobbyView.Show();
         }
 
-        private void ExecuteCloseWindow(object parameter)
+        private static void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window)
             {
@@ -160,7 +160,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
             {
@@ -168,7 +168,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
             {
@@ -176,12 +176,11 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteReturn(object parameter)
+        private static void ExecuteReturn(object parameter)
         {
             if (parameter is Window currentWindow)
             {
                 var welcomeView = new WelcomeView();
-                welcomeView.WindowState = welcomeView.WindowState;
                 welcomeView.WindowState = WindowState.Maximized;
                 welcomeView.WindowStyle = WindowStyle.None;
                 welcomeView.ResizeMode = ResizeMode.NoResize;

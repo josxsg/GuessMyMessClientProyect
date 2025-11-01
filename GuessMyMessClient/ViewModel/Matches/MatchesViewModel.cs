@@ -42,7 +42,7 @@ namespace GuessMyMessClient.ViewModel.Matches
         public RelayCommand ShowPrivateMatchesCommand { get; private set; }
         public RelayCommand JoinPublicMatchCommand { get; private set; }
         public RelayCommand JoinPrivateMatchCommand { get; private set; }
-        public RelayCommand RefreshCommand { get; private set; }
+        public RelayCommand RefreshCommand { get;  set; }
         public RelayCommand ReturnCommand { get; private set; }
 
         public MatchesViewModel()
@@ -62,7 +62,7 @@ namespace GuessMyMessClient.ViewModel.Matches
             LoadPublicMatches();
         }
 
-        private async void LoadPublicMatches()
+        private async Task LoadPublicMatches()
         {
             var matchesDto = await MatchmakingClientManager.Instance.GetPublicMatchesAsync();
             OnPublicMatchesListUpdated(matchesDto); 
@@ -215,7 +215,7 @@ namespace GuessMyMessClient.ViewModel.Matches
             return Application.Current?.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this || w.IsActive);
         }
 
-        private void OnMatchmakingFailed(string reason)
+        private static void OnMatchmakingFailed(string reason)
         {
             Application.Current?.Dispatcher?.Invoke(() =>
             {

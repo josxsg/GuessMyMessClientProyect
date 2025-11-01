@@ -4,15 +4,15 @@
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
   <ProjectGuid>a8016998-263f-4f7e-aa54-8fdc13bc5c7a</ProjectGuid>
-  <FullPath>C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&amp;Artefactos\GuessMyMessClient\GuessMyMessClient\GuessMyMessClient.csproj</FullPath>
+  <FullPath>C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\GuessMyMessClient.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResultFiles>
-    <AnalysisResultFile Id="FilesToAnalyze" Location="C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&amp;Artefactos\GuessMyMessClient\.sonarqube\conf\1\FilesToAnalyze.txt" />
+    <AnalysisResultFile Id="FilesToAnalyze" Location="C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\conf\1\FilesToAnalyze.txt" />
   </AnalysisResultFiles>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&amp;Artefactos\GuessMyMessClient\.sonarqube\out\1\Issues.json</Property>
-    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&amp;Artefactos\GuessMyMessClient\.sonarqube\out\1</Property>
-    <Property Name="sonar.cs.scanner.telemetry">C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&amp;Artefactos\GuessMyMessClient\.sonarqube\out\1\Telemetry.json</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\out\1\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\out\1</Property>
+    <Property Name="sonar.cs.scanner.telemetry">C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\out\1\Telemetry.json</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>

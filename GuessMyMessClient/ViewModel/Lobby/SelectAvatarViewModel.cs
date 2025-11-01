@@ -84,7 +84,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private async void LoadAvatars()
+        private async Task LoadAvatars()
         {
             await LoadAvatarsAsync();
         }

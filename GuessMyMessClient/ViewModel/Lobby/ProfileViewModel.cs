@@ -15,7 +15,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class ProfileViewModel : ViewModelBase
     {
-        private UserProfileDto _profileData;
+        private readonly UserProfileDto _profileData;
 
         public string FirstName
         {

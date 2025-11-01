@@ -65,8 +65,9 @@ namespace GuessMyMessClient.ViewModel.Session
                     {
                         _client.Disconnect(_connectedUsername);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+                        Console.WriteLine($"Error sending Disconnect signal: {ex.Message}");
                     }
                 }
 
@@ -76,8 +77,9 @@ namespace GuessMyMessClient.ViewModel.Session
                     {
                         _client.Close();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+                        Console.WriteLine($"Error closing client, aborting: {ex.Message}");
                         _client.Abort();
                     }
                 }
@@ -119,7 +121,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
         }
 
-        public async void JoinPublicMatch(string matchId)
+        public async Task JoinPublicMatch(string matchId)
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {

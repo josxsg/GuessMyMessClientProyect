@@ -200,7 +200,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 OnPropertyChanged(nameof(IsNonBinary));
         }
 
-        private async void LoadDefaultAvatar()
+        private async Task LoadDefaultAvatar()
         {
             var client = new UserProfileServiceClient();
             bool success = false;
@@ -209,7 +209,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 var avatars = await client.GetAvailableAvatarsAsync();
                 if (avatars != null && avatars.Any())
                 {
-                    var defaultAvatar = avatars.FirstOrDefault(a => a.IdAvatar == 1) ?? avatars.First();
+                    var defaultAvatar = avatars.FirstOrDefault(a => a.IdAvatar == 1) ?? avatars[0];
                     SelectedAvatarId = defaultAvatar.IdAvatar;
                     SelectedAvatarImage = ConvertByteToImage(defaultAvatar.AvatarData);
                 }
@@ -254,7 +254,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private bool IsValidEmail(string email)
+        private static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
                 return false;
@@ -270,7 +270,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private bool IsPasswordSecure(string password, out string errorLangKey)
+        private static bool IsPasswordSecure(string password, out string errorLangKey)
         {
             if (string.IsNullOrWhiteSpace(password))
             {
@@ -338,8 +338,19 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 return;
             }
 
-            int genderId = IsMale ? 1 : IsFemale ? 2 : 3;
-
+            int genderId;
+            if (IsMale)
+            {
+                genderId = 1;
+            }
+            else if (IsFemale)
+            {
+                genderId = 2;
+            }
+            else 
+            {
+                genderId = 3;
+            }
             var newUserProfile = new AuthService.UserProfileDto
             {
                 Username = Username,
@@ -401,25 +412,25 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 signUpWindow.Close();
         }
 
-        private void ExecuteCloseWindow(object parameter)
+        private static void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window)
                 Application.Current.Shutdown();
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
                 window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
                 window.WindowState = WindowState.Minimized;
         }
 
-        private void ExecuteReturn(object parameter)
+        private static void ExecuteReturn(object parameter)
         {
             if (parameter is Window currentWindow)
             {

@@ -109,7 +109,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             }
         }
 
-        private void OpenLoginWindow(object parameter)
+        private static void OpenLoginWindow(object parameter)
         {
             var loginView = new LoginView();
             loginView.Show();
@@ -120,7 +120,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             }
         }
 
-        private void CloseWindow(object parameter)
+        private static void CloseWindow(object parameter)
         {
             if (parameter is Window window)
             {

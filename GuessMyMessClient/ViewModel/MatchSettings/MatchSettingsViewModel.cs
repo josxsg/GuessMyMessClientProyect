@@ -72,9 +72,9 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                 new DifficultyModel { Id = 3, Name = Properties.Langs.Lang.createGameCbHard }
             };
 
-            MaxPlayers = AvailablePlayerCounts.First();
-            Rounds = AvailableRoundCounts.First();
-            SelectedDifficulty = AvailableDifficulties.First();
+            MaxPlayers = AvailablePlayerCounts[0];
+            Rounds = AvailableRoundCounts[0];
+            SelectedDifficulty = AvailableDifficulties[0];
 
             SetMatchTypeCommand = new RelayCommand(ExecuteSetMatchType);
             CreateMatchCommand = new RelayCommand(async (param) => await ExecuteCreateMatchAsync(param));
@@ -152,7 +152,7 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
             }
         }
 
-        private void ExecuteReturn(object parameter)
+        private static void ExecuteReturn(object parameter)
         {
             if (parameter is Window window)
             {

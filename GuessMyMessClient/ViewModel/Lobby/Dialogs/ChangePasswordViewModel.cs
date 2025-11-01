@@ -26,7 +26,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             CloseCommand = new RelayCommand(ExecuteClose);
         }
 
-        private bool IsPasswordSecure(string password, out string errorLangKey)
+        private static bool IsPasswordSecure(string password, out string errorLangKey)
         {
             if (string.IsNullOrWhiteSpace(password))
             {
@@ -169,7 +169,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             }
         }
 
-        private void ExecuteClose(object parameter)
+        private static void ExecuteClose(object parameter)
         {
             if (parameter is Window window)
             {

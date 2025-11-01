@@ -48,7 +48,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 else
                 {
                     Console.WriteLine($"SocialClientManager falló al abrir el canal. Estado: {_client.State}");
-                    throw new Exception($"No se pudo abrir el canal WCF. Estado: {_client.State}");
+                    throw new InvalidOperationException($"No se pudo abrir el canal WCF. Estado: {_client.State}");
                 }
 
             }

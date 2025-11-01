@@ -25,7 +25,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
         }
 
-        private void SignUp(object parameter)
+        private static void SignUp(object parameter)
         {
             if (parameter is Window welcomeWindow)
             {
@@ -39,7 +39,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void Login(object parameter)
+        private static void Login(object parameter)
         {
             if (parameter is Window welcomeWindow)
             {
@@ -53,7 +53,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ContinueAsGuest(object parameter)
+        private static void ContinueAsGuest(object parameter)
         {
             var lobbyView = new LobbyView();
             lobbyView.Show();
@@ -64,7 +64,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteCloseWindow(object parameter)
+        private static void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window)
             {
@@ -72,7 +72,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
             {
@@ -80,7 +80,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
             {

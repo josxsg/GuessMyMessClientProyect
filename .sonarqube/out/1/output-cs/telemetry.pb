@@ -1,1 +1,1 @@
-šR‹C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\GuessMyMessClient.csprojò	CSharp7_3
+œRC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\GuessMyMessClient.csprojò	CSharp7_3

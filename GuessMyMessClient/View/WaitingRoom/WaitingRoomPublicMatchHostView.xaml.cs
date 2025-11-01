@@ -27,7 +27,7 @@ namespace GuessMyMessClient.View.WaitingRoom
             this.DataContext = new WaitingRoomPublicMatchHostViewModel(
                 LobbyClientManager.Instance,
                 SessionManager.Instance
-                ); ;
+                ); 
         }
     }
 }

@@ -1,145 +1,165 @@
-﻿C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\App.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Model\AvatarModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\MainViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Matches\PrivateMatchesViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Matches\PublicMatchesViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\MatchSettings\PublicMatchSettingsViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\RelayCommand.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Session\SessionManager.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Session\SocialClientManager.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\ViewModelBase.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\LoginView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\SignUpView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\WelcomeView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\FriendsView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\LobbyView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\ProfileView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\Main.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\App.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Matches\PrivateMatchesView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Matches\PublicMatchesView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\MatchSettings\PublicMatchSettingsView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\AnswersScreenView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\DrawingScreenView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\EndOfMatchView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\GuessTheWordView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\WordSelectionView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\AssemblyInfo.cs
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Langs\Lang.resx
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Resources.resx
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Langs\Lang.es.resx
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\GuessMyMessClient.AuthService.OperationResultDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\GuessMyMessServer.Contracts.DataContracts.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\service.wsdl
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\service.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\service1.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.OperationResultDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.UserProfileDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessServer.Contracts.DataContracts.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\service.wsdl
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\service.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\service1.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.DirectMessageDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendRequestInfoDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.OperationResultDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.UserProfileDto.datasource
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\GuessMyMessServer.Contracts.DataContracts.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\service.wsdl
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\service.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\service1.xsd
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Settings.settings
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\App.config
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\configuration91.svcinfo
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\configuration.svcinfo
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\Reference.svcmap
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\configuration91.svcinfo
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\configuration.svcinfo
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\Reference.svcmap
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\configuration91.svcinfo
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\configuration.svcinfo
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\Reference.svcmap
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Styles\GlobalStyles.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\LoginView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\SignUpView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\WelcomeView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\ConfigurationView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\DirectMessageView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\FriendsView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\LobbyView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\ProfileView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\Main.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Matches\PrivateMatchesView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Matches\PublicMatchesView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\MatchSettings\PublicMatchSettingsView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\AnswersScreenView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\DrawingScreenView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\EndOfMatchView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\GuessTheWordView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\WordSelectionView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\title.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\background.jpeg
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\edit.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\female.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\male.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\chat.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\create.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\editProfile.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\friends.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\settings.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\play.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\logout.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\mail.png
-C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Resources\Images\search.png
+﻿C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\App.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\MatchSettings\MatchSettingsViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\RelayCommand.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\LobbyClientManager.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\MatchmakingClientManager.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SessionManager.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SocialClientManager.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanToVisibilityConverter.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\Main.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Properties\AssemblyInfo.cs
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.resx
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Properties\Resources.resx
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.es.resx
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\GuessMyMessClient.AuthService.OperationResultDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\GuessMyMessServer.Contracts.DataContracts.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\service.wsdl
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\service.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\service1.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\Arrays.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\GuessMyMessServer.Contracts.DataContracts.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\service.wsdl
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\service.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\service1.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\Arrays.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.MatchInfoDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\GuessMyMessClient.MatchmakingService.OperationResultDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\GuessMyMessServer.Contracts.DataContracts.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\service.wsdl
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\service.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\service1.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.OperationResultDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.UserProfileDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessServer.Contracts.DataContracts.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\service.wsdl
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\service.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\service1.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.DirectMessageDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendRequestInfoDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.OperationResultDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.UserProfileDto.datasource
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessServer.Contracts.DataContracts.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\service.wsdl
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\service.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\service1.xsd
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\packages.config
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Properties\Settings.settings
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\App.config
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\configuration91.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\configuration.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\Reference.svcmap
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\configuration91.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\configuration.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\Reference.svcmap
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\configuration91.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\configuration.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\Reference.svcmap
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\configuration91.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\configuration.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\Reference.svcmap
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\configuration91.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\configuration.svcinfo
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\Reference.svcmap
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Properties\Styles\GlobalStyles.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\Main.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\title.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\background.jpeg
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\edit.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\female.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\male.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\chat.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\create.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\editProfile.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\friends.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\settings.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\play.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\logout.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\mail.png
+C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\Resources\Images\search.png

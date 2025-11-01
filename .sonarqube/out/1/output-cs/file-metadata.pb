@@ -1,104 +1,107 @@
-ª
-ØC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8ë
-ÖC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\App.g.csutf-8©
-ùC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\GeneratedInternalTypeHelper.g.csutf-8Ω
-±C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchHostView.g.csutf-8¬
-∂C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.g.csutf-8π
-≠C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchView.g.csutf-8∫
-ÆC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchView.g.csutf-8æ
-≤C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchHostView.g.csutf-8™
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Match\WordSelectionView.g.csutf-8™
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Match\AnswersScreenView.g.csutf-8©
-ùC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Match\GuessTheWordView.g.csutf-8ß
-õC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Match\EndOfMatchView.g.csutf-8™
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Match\DrawingScreenView.g.csutf-8¨
-†C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Matches\PublicMatchesView.g.csutf-8∏
-¨C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\MatchSettings\PublicMatchSettingsView.g.csutf-8≠
-°C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Matches\PrivateMatchesView.g.csutf-8¢
-ñC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\LobbyView.g.csutf-8§
-òC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\ProfileView.g.csutf-8™
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\DirectMessageView.g.csutf-8≤
-¶C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\InviteByEmailView.g.csutf-8∞
-§C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangeEmailView.g.csutf-8©
-ùC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\SelectAvatarView.g.csutf-8§
-òC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\FriendsView.g.csutf-8∏
-¨C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyChangesByCodeView.g.csutf-8±
-•C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyByCodeView.g.csutf-8ß
-õC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\HomePages\SignUpView.g.csutf-8°
-ïC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\HomePages\Main.g.csutf-8™
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\ConfigurationView.g.csutf-8≥
-ßC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangePasswordView.g.csutf-8®
-úC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\HomePages\WelcomeView.g.csutf-8¶
-öC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\obj\Debug\View\HomePages\LoginView.g.csutf-8û
-íC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Settings.Designer.csutf-8ü
-ìC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Resources.Designer.csutf-8†
-îC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\Langs\Lang.Designer.csutf-8ó
-çC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Properties\AssemblyInfo.csutf-8∞
-¶C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.csutf-8¥
-™C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.csutf-8π
-ØC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.csutf-8±
-ßC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.csutf-8µ
-´C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.csutf-8°
-óC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\WordSelectionView.xaml.csutf-8†
-ñC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\GuessTheWordView.xaml.csutf-8û
-îC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\EndOfMatchView.xaml.csutf-8°
-óC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\DrawingScreenView.xaml.csutf-8°
-óC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Match\AnswersScreenView.xaml.csutf-8Ø
-•C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\MatchSettings\PublicMatchSettingsView.xaml.csutf-8£
-ôC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Matches\PublicMatchesView.xaml.csutf-8§
-öC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Matches\PrivateMatchesView.xaml.csutf-8á
-~C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\App.xaml.csutf-8ò
-éC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\Main.xaml.csutf-8†
-ñC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.csutf-8µ
-´C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.csutf-8π
-ØC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.csutf-8æ
-¥C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.csutf-8∂
-¨C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.csutf-8∫
-∞C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.csutf-8õ
-ëC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\ProfileView.xaml.csutf-8ô
-èC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\LobbyView.xaml.csutf-8õ
-ëC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\FriendsView.xaml.csutf-8°
-óC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.csutf-8Ø
-•C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.csutf-8®
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.csutf-8©
-üC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.csutf-8™
-†C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.csutf-8ß
-ùC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.csutf-8°
-óC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.csutf-8ü
-ïC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\WelcomeView.xaml.csutf-8û
-îC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\SignUpView.xaml.csutf-8ù
-ìC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\View\HomePages\LoginView.xaml.csutf-8ó
-çC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\ViewModelBase.csutf-8£
-ôC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.csutf-8∑
-≠C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.csutf-8¥
-™C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.csutf-8•
-õC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Session\SocialClientManager.csutf-8†
-ñC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Session\SessionManager.csutf-8ñ
-åC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\RelayCommand.csutf-8¶
-úC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.csutf-8•
-õC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.csutf-8£
-ôC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.csutf-8¶
-úC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.csutf-8¶
-úC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.csutf-8¥
-™C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\MatchSettings\PublicMatchSettingsViewModel.csutf-8®
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Matches\PublicMatchesViewModel.csutf-8©
-üC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Matches\PrivateMatchesViewModel.csutf-8°
-óC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\MainViewModel.csutf-8†
-ñC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.csutf-8†
-ñC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.csutf-8¶
-úC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.csutf-8û
-îC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.csutf-8•
-õC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.csutf-8¶
-úC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.csutf-8¨
-¢C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.csutf-8≠
-£C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.csutf-8ë
-áC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Model\AvatarModel.csutf-8Ø
-•C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.csutf-8¥
-™C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.csutf-8£
-ôC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.csutf-8Æ
-§C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.csutf-8§
-öC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.csutf-8¢
-òC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.csutf-8≠
-°C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\ProfileService\Reference.csutf-8¨
-†C:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\SocialService\Reference.csutf-8™
-ûC:\Users\zenbook i5\Tecnologias_para_la_construccion_de_sw\Proyecto&Artefactos\GuessMyMessClient\GuessMyMessClient\Connected Services\AuthService\Reference.csutf-8
+ì
+áC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\App.g.csutf-8Ω
+±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8´
+üC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\GeneratedInternalTypeHelper.g.csutf-8ª
+ØC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchView.g.csutf-8ø
+≥C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchHostView.g.csutf-8ƒ
+∏C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.g.csutf-8º
+∞C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchView.g.csutf-8¿
+¥C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchHostView.g.csutf-8¨
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\WordSelectionView.g.csutf-8´
+üC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\GuessTheWordView.g.csutf-8©
+ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\EndOfMatchView.g.csutf-8¨
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\DrawingScreenView.g.csutf-8¨
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\AnswersScreenView.g.csutf-8¥
+®C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\MatchSettings\MatchSettingsView.g.csutf-8®
+úC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Matches\MatchesView.g.csutf-8£
+óC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\Main.g.csutf-8´
+üC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\SelectAvatarView.g.csutf-8§
+òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\LobbyView.g.csutf-8¶
+öC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\ProfileView.g.csutf-8¶
+öC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\FriendsView.g.csutf-8¨
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\DirectMessageView.g.csutf-8∫
+ÆC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyChangesByCodeView.g.csutf-8¥
+®C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\InviteByEmailView.g.csutf-8≤
+¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangeEmailView.g.csutf-8µ
+©C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangePasswordView.g.csutf-8¨
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\ConfigurationView.g.csutf-8™
+ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\WelcomeView.g.csutf-8©
+ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\SignUpView.g.csutf-8≥
+ßC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyByCodeView.g.csutf-8®
+úC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\LoginView.g.csutf-8†
+îC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Properties\Settings.Designer.csutf-8°
+ïC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Properties\Resources.Designer.csutf-8¢
+ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.Designer.csutf-8ô
+èC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Properties\AssemblyInfo.csutf-8≤
+®C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.csutf-8∂
+¨C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.csutf-8ª
+±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.csutf-8≥
+©C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.csutf-8∑
+≠C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.csutf-8£
+ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml.csutf-8¢
+òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml.csutf-8†
+ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml.csutf-8£
+ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml.csutf-8£
+ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml.csutf-8´
+°C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml.csutf-8ü
+ïC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml.csutf-8ä
+ÄC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.csutf-8ö
+êC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\Main.xaml.csutf-8¢
+òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.csutf-8∑
+≠C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.csutf-8ª
+±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.csutf-8¿
+∂C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.csutf-8∏
+ÆC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.csutf-8º
+≤C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.csutf-8ù
+ìC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.csutf-8õ
+ëC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.csutf-8ù
+ìC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.csutf-8£
+ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.csutf-8±
+ßC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.csutf-8™
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.csutf-8´
+°C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.csutf-8¨
+¢C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.csutf-8©
+üC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.csutf-8£
+ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.csutf-8°
+óC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.csutf-8†
+ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.csutf-8ü
+ïC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.csutf-8∞
+¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.csutf-8ô
+èC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.csutf-8∂
+¨C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.csutf-8•
+õC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.csutf-8π
+ØC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.csutf-8ª
+±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanToVisibilityConverter.csutf-8ß
+ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SocialClientManager.csutf-8¢
+òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SessionManager.csutf-8¨
+¢C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\MatchmakingClientManager.csutf-8¶
+úC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\LobbyClientManager.csutf-8ò
+éC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\RelayCommand.csutf-8®
+ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.csutf-8ß
+ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.csutf-8•
+õC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.csutf-8®
+ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.csutf-8®
+ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.csutf-8∞
+¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\MatchSettings\MatchSettingsViewModel.csutf-8§
+öC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.csutf-8¢
+òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.csutf-8£
+ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.csutf-8ß
+ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.csutf-8†
+ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.csutf-8¢
+òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.csutf-8®
+ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.csutf-8∂
+¨C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.csutf-8Ø
+•C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.csutf-8±
+ßC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.csutf-8∞
+¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.csutf-8Æ
+§C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.csutf-8®
+ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.csutf-8•
+õC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.csutf-8§
+öC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.csutf-8¶
+úC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.csutf-8ì
+âC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.csutf-8≠
+°C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\Reference.csutf-8Ø
+£C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\Reference.csutf-8≥
+ßC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\Reference.csutf-8Æ
+¢C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\Reference.csutf-8¨
+†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\Reference.csutf-8

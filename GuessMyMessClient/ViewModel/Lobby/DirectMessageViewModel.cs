@@ -14,7 +14,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class DirectMessageViewModel : ViewModelBase, IDisposable
     {
-        private SocialServiceClient Client => SocialClientManager.Instance.Client;
+        private static SocialServiceClient Client => SocialClientManager.Instance.Client;
 
         public ObservableCollection<FriendDto> Conversations { get; }
         public ObservableCollection<DirectMessageDto> ChatHistory { get; }
@@ -138,7 +138,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private async void LoadChatHistory(string otherUsername)
+        private async Task LoadChatHistory(string otherUsername)
         {
             if (string.IsNullOrEmpty(otherUsername))
             {

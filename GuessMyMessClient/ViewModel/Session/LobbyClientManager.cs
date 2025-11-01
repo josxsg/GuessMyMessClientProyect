@@ -15,7 +15,6 @@ namespace GuessMyMessClient.ViewModel.Session
         private LobbyClientManager() { }
 
         private LobbyServiceClient _client;
-        private InstanceContext _instanceContext;
         private string _currentMatchId;
         private string _currentUsername;
 
@@ -35,8 +34,8 @@ namespace GuessMyMessClient.ViewModel.Session
                 if (IsConnected) Disconnect();
                 _currentUsername = username;
                 _currentMatchId = matchId;
-                _instanceContext = new InstanceContext(this);
-                _client = new LobbyServiceClient(_instanceContext);
+                var instanceContext = new InstanceContext(this);
+                _client = new LobbyServiceClient(instanceContext);
                 _client.Open();
                 _client.InnerChannel.Faulted += Channel_Faulted;
                 _client.InnerChannel.Closed += Channel_Closed;
@@ -83,7 +82,10 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client.InnerChannel.Faulted -= Channel_Faulted;
                     _client.InnerChannel.Closed -= Channel_Closed;
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error unsubscribing from channel events: {ex.Message}");
+                }
                 try
                 {
                     if (_client.State != CommunicationState.Faulted)
@@ -103,7 +105,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 finally
                 {
                     _client = null;
-                    _instanceContext = null;
                     _currentMatchId = null;
                     _currentUsername = null;
                 }

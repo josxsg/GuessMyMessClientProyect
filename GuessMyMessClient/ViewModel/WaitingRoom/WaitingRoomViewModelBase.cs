@@ -82,7 +82,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         public ICommand SendMessageCommand { get; protected set; }
         public ICommand KickPlayerCommand { get; protected set; }
 
-        public WaitingRoomViewModelBase(LobbyClientManager lobbyManager, SessionManager sessionManager)
+        protected WaitingRoomViewModelBase(LobbyClientManager lobbyManager, SessionManager sessionManager)
         {
             _lobbyManager = lobbyManager;
             _sessionManager = sessionManager;
@@ -205,7 +205,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             }
         }
 
-        protected string TranslateMessageKey(string key)
+        protected static string TranslateMessageKey(string key)
         {
             var resource = Lang.ResourceManager.GetString(key);
             return string.IsNullOrEmpty(resource) ? key : resource;

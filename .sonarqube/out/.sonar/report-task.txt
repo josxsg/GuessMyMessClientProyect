@@ -1,6 +1,6 @@
-projectKey=guessmymess-cliente
+projectKey=guessmymess-client
 serverUrl=http://localhost:9000
 serverVersion=25.10.0.114319
-dashboardUrl=http://localhost:9000/dashboard?id=guessmymess-cliente
-ceTaskId=650747e6-84a2-472d-b410-8c666d98b7dc
-ceTaskUrl=http://localhost:9000/api/ce/task?id=650747e6-84a2-472d-b410-8c666d98b7dc
+dashboardUrl=http://localhost:9000/dashboard?id=guessmymess-client
+ceTaskId=e82ac750-72f8-4dbb-a25f-7f572eb99f6e
+ceTaskUrl=http://localhost:9000/api/ce/task?id=e82ac750-72f8-4dbb-a25f-7f572eb99f6e

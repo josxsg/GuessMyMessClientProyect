@@ -38,7 +38,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         public ICommand VerifyCommand { get; }
         public ICommand CloseCommand { get; }
 
-        private bool IsValidEmail(string email)
+        private static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
             {
@@ -169,7 +169,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             }
         }
 
-        private void ExecuteClose(object parameter)
+        private static void ExecuteClose(object parameter)
         {
             if (parameter is Window window)
             {

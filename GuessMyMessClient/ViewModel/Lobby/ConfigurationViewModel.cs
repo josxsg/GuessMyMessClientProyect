@@ -126,7 +126,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ChangeLanguage(string cultureName)
+        private static void ChangeLanguage(string cultureName)
         {
             try
             {
@@ -165,7 +165,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             LogoutButtonText = Lang.configtBtnLogOut;
         }
 
-        private void ExecuteLogout(object parameter)
+        private static void ExecuteLogout(object parameter)
         {
             bool sessionClosedLocally = false;
             try

@@ -222,7 +222,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             LoadDataOnEntry();
         }
 
-        private async void LoadDataOnEntry()
+        private async Task LoadDataOnEntry()
         {
             await LoadUserProfileAsync();
         }
@@ -424,7 +424,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
             using (var client = new UserProfileServiceClient())
             {
-                bool success = false;
                 try
                 {
                     OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
@@ -436,7 +435,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                             Lang.alertSuccessTitle,
                             MessageBoxButton.OK,
                             MessageBoxImage.Information);
-                        success = true;
                     }
                     else
                     {
@@ -507,7 +505,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             Console.WriteLine("Conexión social limpiada.");
         }
 
-        private void CloseCurrentLobbyWindow()
+        private static void CloseCurrentLobbyWindow()
         {
             Window lobbyWindow = Application.Current.Windows.OfType<LobbyView>().FirstOrDefault();
             if (lobbyWindow != null)
@@ -527,14 +525,14 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window window)
+            if (parameter is Window)
             {
                 CleanupSocialConnection();
                 Application.Current.Shutdown();
             }
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
             {
@@ -542,7 +540,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
             {

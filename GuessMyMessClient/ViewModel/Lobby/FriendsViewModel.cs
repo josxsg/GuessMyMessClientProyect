@@ -14,7 +14,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class FriendsViewModel : ViewModelBase, IDisposable
     {
-        private SocialServiceClient Client => SocialClientManager.Instance.Client;
+        private static SocialServiceClient Client => SocialClientManager.Instance.Client;
 
         public ObservableCollection<FriendViewModel> Friends { get; }
         public ObservableCollection<FriendRequestViewModel> FriendRequests { get; }
@@ -275,12 +275,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     {
                         FriendRequests.Remove(requestVM);
                     }
-                    if (accepted)
+                    if (accepted && !Friends.Any(f => f.Username == requesterUsername))
                     {
-                        if (!Friends.Any(f => f.Username == requesterUsername))
-                        {
-                            Friends.Add(new FriendViewModel { Username = requesterUsername, IsOnline = false });
-                        }
+                        Friends.Add(new FriendViewModel { Username = requesterUsername, IsOnline = false });
                     }
                 });
             }
@@ -306,6 +303,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void InviteByEmail(object obj)
         {
+            //TODO
         }
 
         private void SubscribeToEvents()
@@ -374,12 +372,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                if (accepted)
+                if (accepted && !Friends.Any(f => f.Username == respondingUsername))
                 {
-                    if (!Friends.Any(f => f.Username == respondingUsername))
-                    {
-                        Friends.Add(new FriendViewModel { Username = respondingUsername, IsOnline = false });
-                    }
+                    Friends.Add(new FriendViewModel { Username = respondingUsername, IsOnline = false });
                 }
             });
         }
