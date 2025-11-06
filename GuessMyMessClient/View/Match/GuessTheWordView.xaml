@@ -33,6 +33,7 @@
                 Strokes="{Binding DrawingToGuess}"
                 IsEnabled="False"/>
         </Border>
+        
         <TextBox
            Height="39"
            Margin="156,452,352,59"
