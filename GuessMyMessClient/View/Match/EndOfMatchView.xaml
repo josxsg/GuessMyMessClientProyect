@@ -11,59 +11,88 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TextBlock 
-    Text="{x:Static language:Lang.winnersScreenLbTitleEndMatch}"
-    FontSize="30" 
-    FontWeight="Bold"
-    HorizontalAlignment="Center"
-    Margin="0,41,0,0"
-    VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-        <TextBlock 
-    FontSize="20" 
-    HorizontalAlignment="Left"
-    Margin="286,86,0,0"
-    VerticalAlignment="Top">
-        <Run Text="{x:Static language:Lang.winnersScreenLbCongrats}"/>
-        <Run Text=":"/>
-        </TextBlock>
+        <TextBlock Grid.Row="0"
+                   Text="{x:Static language:Lang.winnersScreenLbTitleEndMatch}"
+                   FontSize="30" FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,0" />
 
-        <TextBlock 
-Text=""
-FontSize="20" 
-FontWeight="SemiBold"
-HorizontalAlignment="Center"
-Margin="0,41,0,0"
-VerticalAlignment="Top"/>
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="185,230,455,72"/>
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="454,257,186,72"/>
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="326,176,314,72"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <TextBlock FontSize="20" >
+                <Run Text="{x:Static language:Lang.winnersScreenLbCongrats}"/>
+                <Run Text=":"/>
+            </TextBlock>
 
-        <Label Content="1" 
-       Style="{StaticResource PodiumNumberStyle}" 
-       Margin="326,112,314,135"/>
-        <Label Content="2" 
-       Style="{StaticResource PodiumNumberStyle}" 
-       Margin="185,197,455,105"/>
-        <Label Content="3" 
-       Style="{StaticResource PodiumNumberStyle}" 
-       Margin="454,235,186,94"/>
+            <TextBlock Text="{Binding WinnerName}"
+                       FontSize="20" FontWeight="Bold"
+                       Foreground="DarkGoldenrod"
+                       Margin="5,0,0,0"/>
+        </StackPanel>
 
-        <Button 
-Content="{x:Static language:Lang.winnersScreenBtnExit}" 
-Style="{StaticResource JoinButton}" 
-FontSize="20"
-VerticalAlignment="Top" Margin="353,381,353,0" Height="30"/>
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,10">
 
+            <StackPanel VerticalAlignment="Bottom" >
+                <TextBlock Text="{Binding SecondPlacePlayerName}"
+                           FontSize="18" FontWeight="SemiBold"
+                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
 
+                <Border Background="#AAFFFFFF" CornerRadius="5,5,0,0"
+                        Height="150" Width="150"
+                        BorderBrush="Silver" BorderThickness="2">
+                    <Image Source="/Resources/Images/2nd.png" Stretch="Uniform" Margin="10"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Bottom" >
+                <TextBlock Text="{Binding FirstPlacePlayerName}"
+                           FontSize="22" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                <Border Background="#AAFFFFFF" CornerRadius="5,5,0,0"
+                        Height="200" Width="150"
+                        BorderBrush="Goldenrod" BorderThickness="3">
+                    <Image Source="/Resources/Images/1st.png" Stretch="Uniform" Margin="10"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Bottom" >
+                <TextBlock Text="{Binding ThirdPlacePlayerName}"
+                           FontSize="16" FontWeight="SemiBold"
+                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                <Border Background="#AAFFFFFF" CornerRadius="5,5,0,0"
+                        Height="100" Width="150"
+                        BorderBrush="#CD7F32" BorderThickness="2">
+                    <Image Source="/Resources/Images/3rd.png" Stretch="Uniform" Margin="10"/>
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+        <Button Grid.Row="3"
+                Content="{x:Static language:Lang.winnersScreenBtnExit}" 
+                Command="{Binding ExitCommand}"
+                Style="{StaticResource JoinButton}" 
+                FontSize="20" Height="30"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,20"
+                MinWidth="100"/>
 
     </Grid>
 </Window>

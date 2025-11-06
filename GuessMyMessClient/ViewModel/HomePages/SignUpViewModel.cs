@@ -282,6 +282,11 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 errorLangKey = "alertPasswordTooShort";
                 return false;
             }
+            if (password.Length > 25)
+            {
+                errorLangKey = "alertPasswordTooLong";
+                return false;
+            }
             if (!password.Any(char.IsUpper))
             {
                 errorLangKey = "alertPasswordNeedsUpper";
@@ -300,6 +305,11 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (password.All(char.IsLetterOrDigit))
             {
                 errorLangKey = "alertPasswordNeedsSpecial";
+                return false;
+            }
+            if (!password.Contains(","))
+            {
+                errorLangKey = "alertPasswordNeedsComma";
                 return false;
             }
 

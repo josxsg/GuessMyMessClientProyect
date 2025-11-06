@@ -10,48 +10,129 @@
         d:DataContext="{d:DesignInstance Type=vm:AnswersScreenViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs">
+
+    <Window.Resources>
+        <DataTemplate x:Key="PlayerListItemTemplate">
+            <TextBlock Text="{Binding Username}" FontSize="14" Foreground="Black" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="ChatMessageItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Sender}" FontWeight="Bold" Foreground="DarkBlue" />
+                <TextBlock Text=": " />
+                <TextBlock Text="{Binding Message}" Foreground="Black" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TextBlock 
-    Text="{x:Static language:Lang.answersPanelLbOwner}"
-    FontSize="30" 
-    FontWeight="Bold" 
-    Margin="73,53,698,425"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Label Content="" 
-       Style="{StaticResource TextBlock}" Margin="73,109,669,380"/>
+        <Grid Grid.Column="0" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <TextBlock 
-Text="{x:Static language:Lang.globalLbPlayers}"
-FontSize="30" 
-FontWeight="Bold" 
-Margin="73,159,666,318"/>
+            <TextBlock Grid.Row="0"
+                       Text="{x:Static language:Lang.answersPanelLbOwner}"
+                       FontSize="24" 
+                       FontWeight="Bold" />
 
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="74,216,567,251"/>
+            <TextBlock Grid.Row="1"
+                       Text="{Binding DrawingArtistName}" 
+                       FontSize="20"
+                       Foreground="DarkGoldenrod"
+                       Margin="0,0,0,15"/>
 
-        <TextBlock 
-Text=""
-FontSize="15" 
-Margin="88,216,651,261"/>
+            <TextBlock Grid.Row="2"
+                       Text="{x:Static language:Lang.globalLbPlayers}"
+                       FontSize="24" 
+                       FontWeight="Bold" />
 
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="73,304,567,32"/>
-        <TextBox
-         Margin="74,450,566,35"
-         Style="{StaticResource TextBox}"/>
-        <Button 
-Content="{x:Static language:Lang.globalBtnSend}" 
-Style="{StaticResource JoinButton}" 
-FontSize="20"
-VerticalAlignment="Top" Margin="254,460,574,0" Height="30"/>
+            <ListBox Grid.Row="3"
+                     ItemsSource="{Binding PlayerList}"
+                     ItemTemplate="{StaticResource PlayerListItemTemplate}"
+                     Background="#AAFFFFFF"
+                     Margin="0,5,0,15"/>
 
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="357,57,23,32"/>
+            <TextBlock Grid.Row="4"
+                       Text="Chat"
+                       FontSize="24" 
+                       FontWeight="Bold" />
+
+            <ListBox Grid.Row="5"
+                     ItemsSource="{Binding ChatMessages}"
+                     ItemTemplate="{StaticResource ChatMessageItemTemplate}"
+                     Background="#AAFFFFFF"
+                     Margin="0,5,0,0"/>
+
+            <Grid Grid.Row="6" Margin="0,10,0,0" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox
+                    Grid.Column="0"
+                    Text="{Binding NewChatMessage, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource TextBox}"
+                    MinHeight="30"
+                    VerticalAlignment="Center"/>
+                <Button 
+                    Grid.Column="1"
+                    Content="{x:Static language:Lang.globalBtnSend}" 
+                    Command="{Binding SendMessageCommand}"
+                    Style="{StaticResource JoinButton}" 
+                    FontSize="18"
+                    Height="30"
+                    MinWidth="60"
+                    Margin="5,0,0,0"
+                    VerticalAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="10,20,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="5">
+                <Image Source="{Binding CurrentDrawing}" Stretch="Uniform" />
+            </Border>
+
+            <TextBlock Grid.Row="1"
+                       Text="Respuestas"
+                       FontSize="24" 
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,0" />
+
+            <Border Grid.Row="2" Background="#AAFFFFFF" Margin="0,5,0,0" CornerRadius="5">
+                <TextBlock Text="{Binding CurrentDisplayedGuess}"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"/>
+            </Border>
+        </Grid>
 
     </Grid>
 </Window>

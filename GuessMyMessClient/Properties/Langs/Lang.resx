@@ -705,4 +705,10 @@
   <data name="chatMsgReady" xml:space="preserve">
     <value>I'm ready!</value>
   </data>
+  <data name="alertPasswordTooLong" xml:space="preserve">
+    <value>Password cannot be longer than 25 characters.</value>
+  </data>
+  <data name="alertPasswordNeedsComma" xml:space="preserve">
+    <value>Password must contain a comma (',').</value>
+  </data>
 </root>

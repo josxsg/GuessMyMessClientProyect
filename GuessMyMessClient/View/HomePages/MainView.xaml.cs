@@ -16,11 +16,11 @@ using GuessMyMessClient.ViewModel.HomePages;
 namespace GuessMyMessClient.View.HomePages
 {
     /// <summary>
-    /// Lógica de interacción para Main.xaml
+    /// Lógica de interacción para MainView.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class MainView : Window
     {
-        public Main()
+        public MainView()
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();

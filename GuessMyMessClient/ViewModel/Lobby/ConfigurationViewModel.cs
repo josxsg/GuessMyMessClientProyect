@@ -200,7 +200,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
             }
 
-            var mainView = new Main();
+            var mainView = new MainView();
             mainView.WindowState = WindowState.Maximized;
             mainView.WindowStyle = WindowStyle.None;
             mainView.ResizeMode = ResizeMode.NoResize;

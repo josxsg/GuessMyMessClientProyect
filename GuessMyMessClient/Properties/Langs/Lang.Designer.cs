@@ -502,6 +502,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Password must contain a comma (&apos;,&apos;)..
+        /// </summary>
+        public static string alertPasswordNeedsComma {
+            get {
+                return ResourceManager.GetString("alertPasswordNeedsComma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The password must contain at least one number (0-9)..
         /// </summary>
         public static string alertPasswordNeedsDigit {
@@ -570,6 +579,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertPasswordsDoNotMatch {
             get {
                 return ResourceManager.GetString("alertPasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password cannot be longer than 25 characters..
+        /// </summary>
+        public static string alertPasswordTooLong {
+            get {
+                return ResourceManager.GetString("alertPasswordTooLong", resourceCulture);
             }
         }
         
