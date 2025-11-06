@@ -8,36 +8,61 @@
         Title="WordSelectionView" Height="550" Width="900"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Match"
         d:DataContext="{d:DesignInstance Type=vm:WordSelectionViewModel, IsDesignTimeCreatable=True}"
+        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        WindowState="Maximized"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <TextBlock 
-    Text="{x:Static language:Lang.chooseWordLbTitle}"
-    FontSize="30" 
-    FontWeight="Bold" 
-    Margin="110,103,110,349"/>
+            Text="{x:Static language:Lang.chooseWordLbTitle}"
+            FontSize="30" 
+            FontWeight="Bold" 
+            Margin="110,103,110,349"/>
 
         <Button 
-Content="" 
-Style="{StaticResource JoinButton}" 
-FontSize="30"
-VerticalAlignment="Top" Margin="138,226,582,0" Height="41"/>
+            Content="{Binding Word1}" 
+            Command="{Binding SelectWordCommand}"
+            CommandParameter="{Binding Word1}"
+            Style="{StaticResource JoinButton}" 
+            FontSize="30"
+            VerticalAlignment="Top" Margin="138,226,582,0" Height="41"/>
 
         <Button 
-Content="" 
-Style="{StaticResource JoinButton}" 
-FontSize="30"
-VerticalAlignment="Top" Margin="584,226,136,0" Height="41"/>
+            Content="{Binding Word2}" 
+            Command="{Binding SelectWordCommand}"
+            CommandParameter="{Binding Word2}"
+            Style="{StaticResource JoinButton}" 
+            FontSize="30"
+            VerticalAlignment="Top" Margin="584,226,136,0" Height="41"/>
 
         <Button 
-Content="" 
-Style="{StaticResource JoinButton}" 
-FontSize="30"
-VerticalAlignment="Top" Margin="360,356,360,0" Height="41"/>
+            Content="{Binding Word3}" 
+            Command="{Binding SelectWordCommand}"
+            CommandParameter="{Binding Word3}"
+            Style="{StaticResource JoinButton}" 
+            FontSize="30"
+            VerticalAlignment="Top" Margin="360,356,360,0" Height="41"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+
+        </StackPanel>
+
     </Grid>
 </Window>

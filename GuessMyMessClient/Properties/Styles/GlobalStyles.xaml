@@ -548,34 +548,40 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ColorButton" TargetType="Button">
+    <Style x:Key="ColorButton" TargetType="RadioButton">
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="1.5"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="RadioButton">
                     <Border x:Name="border"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentPresenter HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"/>
+                                        VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="Gold"/>
+                            <Setter TargetName="border" Property="BorderThickness" Value="3"/>
+                        </Trigger>
+
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#DDDDDD"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="BorderThickness" Value="5"/>
                         </Trigger>
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="ReturnButtonStyle" TargetType="Button" BasedOn="{StaticResource SidebarButtonBase}">
         <Setter Property="Background" Value="#A9A9A9"/>
         <Setter Property="Foreground" Value="White"/>
@@ -599,4 +605,96 @@
         </Setter>
     </Style>
 
+    <Style x:Key="ThicknessSlider" TargetType="{x:Type Slider}">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Slider}">
+                    <Grid VerticalAlignment="Center">
+
+                        <Border x:Name="TrackBackground"
+                            Background="#E0E0E0" 
+                            BorderBrush="Black"
+                            BorderThickness="1.5"
+                            Height="14"
+                            CornerRadius="7"/>
+                        <Track x:Name="PART_Track">
+
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="{x:Static Slider.DecreaseLarge}">
+                                    <RepeatButton.Template>
+                                        <ControlTemplate TargetType="RepeatButton">
+                                            <Border Height="14"
+                                                CornerRadius="7,0,0,7"
+                                                Background="Black"/>
+                                        </ControlTemplate>
+                                    </RepeatButton.Template>
+                                </RepeatButton>
+                            </Track.DecreaseRepeatButton>
+
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Background="Transparent">
+                                    <RepeatButton.Template>
+                                        <ControlTemplate TargetType="RepeatButton">
+                                            <Border Background="Transparent"/>
+                                        </ControlTemplate>
+                                    </RepeatButton.Template>
+                                </RepeatButton>
+                            </Track.IncreaseRepeatButton>
+
+                            <Track.Thumb>
+                                <Thumb x:Name="Thumb" Width="22" Height="22">
+                                    <Thumb.Template>
+                                        <ControlTemplate TargetType="Thumb">
+                                            <Ellipse x:Name="thumbCircle"
+                                                 Fill="White"
+                                                 Stroke="Black"
+                                                 StrokeThickness="1.5"/>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="thumbCircle" Property="Fill" Value="#F0F0F0"/>
+                                                </Trigger>
+                                                <Trigger Property="IsDragging" Value="True">
+                                                    <Setter TargetName="thumbCircle" Property="Fill" Value="#DDDDDD"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Track.Thumb>
+
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBlockInkCanvas" TargetType="Label">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Border CornerRadius="8"
+                        BorderBrush="Black"
+                        BorderThickness="3"
+                        Background="White"
+                        Padding="{TemplateBinding Padding}">
+                        <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DrawingDisplayBorder" TargetType="Border">
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
 </ResourceDictionary>

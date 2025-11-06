@@ -10,136 +10,167 @@
         d:DataContext="{d:DesignInstance Type=vm:DrawingScreenViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+        WindowState="Maximized"
+        WindowStyle="None">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <TextBlock 
-Text="{x:Static language:Lang.drawingScreenLbTitleDraw}"
-FontSize="30" 
-FontWeight="Bold"
-HorizontalAlignment="Center"
-Margin="0,41,0,0"
-VerticalAlignment="Top"/>
-
-        <TextBlock 
-FontSize="20" 
-HorizontalAlignment="Left"
-Margin="362,86,0,0"
-VerticalAlignment="Top">
-    <Run Text="{x:Static language:Lang.drawingScreenLbWord}"/>
-    <Run Text=":"/>
-        </TextBlock>
-
-        <TextBlock 
-Text=""
-FontSize="20" 
-FontWeight="SemiBold"
-HorizontalAlignment="Left"
-Margin="450,86,0,0"
-VerticalAlignment="Top"/>
-
-        <Label Content="" 
-Style="{StaticResource TextBlock}" Margin="223,118,69,93"/>
-
-        <Label Content="" 
-Style="{StaticResource DrawingBoardBlack}" Margin="200,118,69,93"/>
-
-        <Button 
-            Background="Black"
-            Style="{StaticResource ColorButton}" 
-            VerticalAlignment="Top" Margin="93,125,769,0" Height="34"/>
-        <Button 
-     Background="White"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="142,125,720,0" Height="34"/>
-        <Button 
-     Background="ForestGreen"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="93,167,769,0" Height="35"/>
-        <Button 
-     Background="Blue"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="142,167,720,0" Height="35"/>
-        <Button 
-     Background="Red"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="93,207,769,0" Height="34"/>
-        <Button 
-     Background="Yellow"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="142,207,720,0" Height="34"/>
-        <Button 
-     Background="Orange"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="93,247,769,0" Height="34"/>
-        <Button 
-     Background="Maroon"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="142,247,720,0" Height="34"/>
-        <Button 
-     Background="Purple"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="93,287,769,0" Height="34"/>
-        <Button 
-     Background="Pink"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="142,287,720,0" Height="34"/>
-        <Button 
-     Background="Gray"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="93,327,769,0" Height="34"/>
-        <Button 
-     Background="Aqua"
-     Style="{StaticResource ColorButton}" 
-     VerticalAlignment="Top" Margin="142,327,720,0" Height="34"/>
-        <Button Background="White"
-Style="{StaticResource ColorButton}" 
-VerticalAlignment="Top" 
-Margin="142,382,720,0" 
-Height="34">
-            <Image Source="/Resources/Images/eraser.png" Height="36" Width="38" />
-        </Button>
-        <Button Background="White"
-        Style="{StaticResource ColorButton}" 
-        VerticalAlignment="Top" 
-        Margin="93,382,769,0" 
-        Height="34">
-            <Image Source="/Resources/Images/pencil.png" />
-        </Button>
-
-        <TextBlock 
-FontSize="30" 
-HorizontalAlignment="Left"
-Margin="339,446,0,0"
+            Text="{x:Static language:Lang.drawingScreenLbTitleDraw}"
+            FontSize="30" 
             FontWeight="Bold"
-VerticalAlignment="Top">
-    <Run Text="{x:Static language:Lang.drawingScreenLbThickness}"/>
-    <Run Text=":"/>
+            HorizontalAlignment="Center"
+            Margin="0,41,0,0"
+            VerticalAlignment="Top"/>
+
+        <TextBlock 
+            FontSize="20" 
+            HorizontalAlignment="Left"
+            Margin="362,86,0,0"
+            VerticalAlignment="Top">
+            <Run Text="{x:Static language:Lang.drawingScreenLbWord}"/>
+            <Run Text=":"/>
         </TextBlock>
 
-        <Button Background="White"
-Style="{StaticResource ColorButton}" 
-VerticalAlignment="Top" 
-Margin="661,446,201,0" 
-Height="34">
-            <Image Source="/Resources/Images/triangle.png" />
-        </Button>
-        <Button Background="White"
-Style="{StaticResource ColorButton}" 
-VerticalAlignment="Top" 
-Margin="704,446,158,0" 
-Height="34">
-            <Image Source="/Resources/Images/circle.png" />
-        </Button>
-        <Button Background="White"
-Style="{StaticResource ColorButton}" 
-VerticalAlignment="Top" 
-Margin="747,446,115,0" 
-Height="34">
-            <Image Source="/Resources/Images/square.png" />
-        </Button>
+        <TextBlock 
+            Text="{Binding WordToDraw}"
+            FontSize="20" 
+            FontWeight="SemiBold"
+            HorizontalAlignment="Left"
+            Margin="450,86,0,0"
+            VerticalAlignment="Top"/>
+
+        <Label Content="" 
+               Style="{StaticResource DrawingBoardBlack}" Margin="200,118,69,93"/>
+
+        <InkCanvas 
+            Background="Transparent"
+            Margin="200,118,69,93"
+            Strokes="{Binding Strokes}"
+            DefaultDrawingAttributes="{Binding InkAttributes}"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,125,0,0">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton 
+                    GroupName="Color" Background="Black"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
+                <RadioButton 
+                    GroupName="Color" Background="White"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton 
+                    GroupName="Color" Background="ForestGreen"
+                    Style="{StaticResource ColorButton}" Height="35" Width="34" Margin="0,0,5,5"/>
+                <RadioButton 
+                    GroupName="Color" Background="Blue"
+                    Style="{StaticResource ColorButton}" Height="35" Width="34" Margin="0,0,0,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton 
+                    GroupName="Color" Background="Red"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
+                <RadioButton 
+                    GroupName="Color" Background="Yellow"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton 
+                    GroupName="Color" Background="Orange"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
+                <RadioButton 
+                    GroupName="Color" Background="Maroon"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton 
+                    GroupName="Color" Background="Purple"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
+                <RadioButton 
+                    GroupName="Color" Background="Pink"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton 
+                    GroupName="Color" Background="Gray"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
+                <RadioButton 
+                    GroupName="Color" Background="Aqua"
+                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,382,0,0">
+            <RadioButton 
+                GroupName="ToolPalette" Background="White"
+                Style="{StaticResource ColorButton}" 
+                Height="34" Width="34" Margin="0,0,5,0"
+                IsChecked="True">
+                <Image Source="/Resources/Images/pencil.png" />
+            </RadioButton>
+            <RadioButton 
+                GroupName="ToolPalette" Background="White"
+                Style="{StaticResource ColorButton}" 
+                Height="34" Width="34">
+                <Image Source="/Resources/Images/eraser.png" Height="36" Width="38" />
+            </RadioButton>
+        </StackPanel>
+        <TextBlock 
+            FontSize="30" 
+            HorizontalAlignment="Left"
+            Margin="362,463,0,0"
+            FontWeight="Bold"
+            VerticalAlignment="Top">
+            <Run Text="{x:Static language:Lang.drawingScreenLbThickness}"/>
+            <Run Text=":"/>
+        </TextBlock>
+
+        <Slider 
+            Style="{StaticResource ThicknessSlider}"
+            Minimum="1" 
+            Maximum="50"
+            Value="{Binding BrushThickness, Mode=TwoWay}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Width="150"
+            Margin="493,477,0,0"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="697,466,0,0">
+            <RadioButton Background="White"
+                GroupName="ToolPalette"
+                Style="{StaticResource ColorButton}" 
+                Height="34" Width="34" Margin="0,0,5,0">
+                <Image Source="/Resources/Images/triangle.png" />
+            </RadioButton>
+            <RadioButton Background="White"
+                GroupName="ToolPalette"
+                Style="{StaticResource ColorButton}" 
+                Height="34" Width="34" Margin="0,0,5,0">
+                <Image Source="/Resources/Images/circle.png" />
+            </RadioButton>
+            <RadioButton Background="White"
+                GroupName="ToolPalette"
+                Style="{StaticResource ColorButton}" 
+                Height="34" Width="34">
+                <Image Source="/Resources/Images/square.png" />
+            </RadioButton>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+
+        </StackPanel>
+
     </Grid>
 </Window>
