@@ -12,6 +12,8 @@
       <xs:element minOccurs="0" name="CurrentPlayers" type="xs:int" />
       <xs:element minOccurs="0" name="DifficultyName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HostUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPrivate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MatchCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MatchId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MatchName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaxPlayers" type="xs:int" />

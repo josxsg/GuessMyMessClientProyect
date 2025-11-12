@@ -33,6 +33,12 @@ namespace GuessMyMessClient.MatchmakingService {
         private string HostUsernameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsPrivateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MatchCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MatchIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -86,6 +92,32 @@ namespace GuessMyMessClient.MatchmakingService {
                 if ((object.ReferenceEquals(this.HostUsernameField, value) != true)) {
                     this.HostUsernameField = value;
                     this.RaisePropertyChanged("HostUsername");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsPrivate {
+            get {
+                return this.IsPrivateField;
+            }
+            set {
+                if ((this.IsPrivateField.Equals(value) != true)) {
+                    this.IsPrivateField = value;
+                    this.RaisePropertyChanged("IsPrivate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MatchCode {
+            get {
+                return this.MatchCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MatchCodeField, value) != true)) {
+                    this.MatchCodeField = value;
+                    this.RaisePropertyChanged("MatchCode");
                 }
             }
         }

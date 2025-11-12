@@ -1,5 +1,7 @@
 ﻿using GuessMyMessClient.LobbyService;
 using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.View.Lobby;
+using GuessMyMessClient.View.Match;
 using GuessMyMessClient.ViewModel.Session;
 using System;
 using System.Collections.ObjectModel;
@@ -16,6 +18,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected readonly LobbyClientManager _lobbyManager;
         protected readonly SessionManager _sessionManager;
         protected DispatcherTimer _countdownTimer;
+        private bool _isNavigatingBack = false;
 
         private string _matchName;
         public string MatchName
@@ -93,6 +96,8 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void InitializeCommands()
         {
             LeaveCommand = new RelayCommand(LeaveLobby);
+            SendMessageCommand = new RelayCommand((param) => SendChatMessage(param as string));
+            KickPlayerCommand = new RelayCommand((param) => KickPlayer(param as string));
         }
 
         protected virtual void SubscribeToLobbyEvents()
@@ -153,6 +158,8 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         protected virtual void OnKicked(string reason)
         {
+            if (_isNavigatingBack) return; 
+            _isNavigatingBack = true;
             MessageBox.Show($"{Lang.waitingRoomMsgKicked}: {reason}", Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
             NavigateBackToLobbyView();
             CleanUp();
@@ -167,18 +174,26 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void OnGameStarted()
         {
             CountdownVisibility = Visibility.Collapsed;
-            MessageBox.Show(Lang.waitingRoomMsgGameStarting, Lang.alertInfoTitle);
-            CleanUp();
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var wordSelectionView = new WordSelectionView();
+                wordSelectionView.Show();
+
+                NavigateBackToLobbyView();
+            }); CleanUp();
         }
 
         protected virtual void OnConnectionLost()
         {
+            if (_isNavigatingBack) return; 
+            _isNavigatingBack = true;
             NavigateBackToLobbyView();
             CleanUp();
         }
 
         protected virtual void LeaveLobby(object parameter = null)
         {
+            _isNavigatingBack = true;
             _lobbyManager.Disconnect();
             NavigateBackToLobbyView();
             CleanUp();
@@ -216,8 +231,12 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
+
+                var lobbyView = new LobbyView();
+                lobbyView.Show();
+                Console.WriteLine("Navegación a LobbyView completada.");
+
                 currentWindow?.Close();
-                Console.WriteLine("Navigating back to Lobby (Implement actual navigation)");
             });
         }
 

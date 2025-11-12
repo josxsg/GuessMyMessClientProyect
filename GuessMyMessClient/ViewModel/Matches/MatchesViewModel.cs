@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace GuessMyMessClient.ViewModel.Matches
 {
@@ -32,6 +33,22 @@ namespace GuessMyMessClient.ViewModel.Matches
             set => SetProperty(ref _matchCode, value);
         }
 
+        private bool _isJoining;
+        public bool IsJoining
+        {
+            get => _isJoining;
+            set
+            {
+                if (SetProperty(ref _isJoining, value))
+                {
+                    Application.Current?.Dispatcher.Invoke(() =>
+                    {
+                        CommandManager.InvalidateRequerySuggested();
+                    });
+                }
+            }
+        }
+
         public ObservableCollection<MatchInfoModel> PublicMatches
         {
             get => _publicMatches;
@@ -51,8 +68,8 @@ namespace GuessMyMessClient.ViewModel.Matches
 
             ShowPublicMatchesCommand = new RelayCommand((p) => IsPublicViewSelected = true);
             ShowPrivateMatchesCommand = new RelayCommand((p) => IsPublicViewSelected = false);
-            JoinPublicMatchCommand = new RelayCommand(ExecuteJoinPublicMatch);
-            JoinPrivateMatchCommand = new RelayCommand(async (p) => await ExecuteJoinPrivateMatchAsync(p));
+            JoinPublicMatchCommand = new RelayCommand(ExecuteJoinPublicMatch, CanExecuteJoin);
+            JoinPrivateMatchCommand = new RelayCommand(async (p) => await ExecuteJoinPrivateMatchAsync(p), CanExecuteJoin);
             ReturnCommand = new RelayCommand(ExecuteReturn);
 
             MatchmakingClientManager.Instance.OnPublicMatchesListUpdated += OnPublicMatchesListUpdated;
@@ -60,6 +77,11 @@ namespace GuessMyMessClient.ViewModel.Matches
             MatchmakingClientManager.Instance.OnMatchmakingFailed += OnMatchmakingFailed;
 
             LoadPublicMatches();
+        }
+
+        private bool CanExecuteJoin(object parameter)
+        {
+            return !IsJoining;
         }
 
         private async Task LoadPublicMatches()
@@ -70,6 +92,9 @@ namespace GuessMyMessClient.ViewModel.Matches
 
         private void ExecuteJoinPublicMatch(object parameter) 
         {
+            if (IsJoining) return;
+            IsJoining = true;
+
             if (parameter is MatchInfoModel matchInfo && matchInfo.CanJoin) 
             {
                 _joiningMatchId = matchInfo.MatchId;
@@ -98,6 +123,9 @@ namespace GuessMyMessClient.ViewModel.Matches
                 MessageBox.Show(Properties.Langs.Lang.alertPrivateMatchesErrorNoCode);
                 return;
             }
+
+            if (IsJoining) return; 
+            IsJoining = true;
 
             string codeToJoin = MatchCode.ToUpper();
             var result = await MatchmakingClientManager.Instance.JoinPrivateMatchAsync(codeToJoin);
@@ -148,6 +176,7 @@ namespace GuessMyMessClient.ViewModel.Matches
 
             Application.Current?.Dispatcher?.Invoke(() =>
             {
+                IsJoining = false;
                 if (result.Success)
                 {
                     var lobbyManager = LobbyClientManager.Instance; 
@@ -215,11 +244,12 @@ namespace GuessMyMessClient.ViewModel.Matches
             return Application.Current?.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this || w.IsActive);
         }
 
-        private static void OnMatchmakingFailed(string reason)
+        private void OnMatchmakingFailed(string reason)
         {
             Application.Current?.Dispatcher?.Invoke(() =>
             {
                 MessageBox.Show($"Error de Matchmaking: {reason}");
+                IsJoining = false;
             });
         }
     }

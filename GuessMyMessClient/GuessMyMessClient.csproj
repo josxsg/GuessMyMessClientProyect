@@ -143,6 +143,7 @@
     <Compile Include="ViewModel\Session\MatchmakingClientManager.cs" />
     <Compile Include="ViewModel\Session\SessionManager.cs" />
     <Compile Include="ViewModel\Session\SocialClientManager.cs" />
+    <Compile Include="ViewModel\Support\Converters\BooleanNegationConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\BoolToGreenRedConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />

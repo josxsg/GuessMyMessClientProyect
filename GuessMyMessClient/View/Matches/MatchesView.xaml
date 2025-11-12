@@ -12,7 +12,13 @@
         WindowStyle="None"
         mc:Ignorable="d"
         Title="Unirse a Partida" Height="550" Width="900"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+        xmlns:converters="clr-namespace:GuessMyMessClient.ViewModel.Support.Converters">
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
+    </Window.Resources>
 
     <Grid>
         <Grid.Background>
@@ -134,12 +140,23 @@
 
                                             <Button Grid.Column="1" 
                                                     Content="{x:Static language:Lang.globalBtnJoin}" 
-                                                    Style="{StaticResource JoinButton}" 
                                                     VerticalAlignment="Center" 
                                                     Margin="0"
                                                     Command="{Binding DataContext.JoinPublicMatchCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                                    CommandParameter="{Binding MatchId}"
-                                                    IsEnabled="{Binding CanJoin}"/>
+                                                    CommandParameter="{Binding MatchId}">
+
+                                                <Button.Style>
+                                                    <Style TargetType="Button" BasedOn="{StaticResource JoinButton}">
+                                                        <Setter Property="IsEnabled" Value="{Binding CanJoin}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding DataContext.IsJoining, RelativeSource={RelativeSource AncestorType=vm:MatchesViewModel}}" Value="True">
+                                                                <Setter Property="IsEnabled" Value="False"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
+
                                         </Grid>
                                     </Border>
                                 </DataTemplate>
@@ -155,36 +172,37 @@
                             Visibility="{Binding IsPublicViewSelected, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}">
 
                     <TextBlock 
-                            Text="{x:Static language:Lang.globalLbMatchCode}"
-                            FontSize="30" 
-                            FontWeight="Bold" 
-                            HorizontalAlignment="Center"/>
+                        Text="{x:Static language:Lang.globalLbMatchCode}"
+                        FontSize="30" 
+                        FontWeight="Bold" 
+                        HorizontalAlignment="Center"/>
 
                     <TextBlock 
-                            Text="{x:Static language:Lang.privateMatchesLbCodeMessage}"
-                            FontSize="20" 
-                            HorizontalAlignment="Center"
-                            TextWrapping="Wrap"
-                            TextAlignment="Center"
-                            Margin="0,15,0,0"/>
+                        Text="{x:Static language:Lang.privateMatchesLbCodeMessage}"
+                        FontSize="20" 
+                        HorizontalAlignment="Center"
+                        TextWrapping="Wrap"
+                        TextAlignment="Center"
+                        Margin="0,15,0,0"/>
 
                     <TextBox
-                            Text="{Binding MatchCode, UpdateSourceTrigger=PropertyChanged}"
-                            Height="60"
-                            Width="476"
-                            FontSize="40"
-                            TextAlignment="Center"
-                            VerticalAlignment="Center"
-                            Margin="0,30,0,0" Style="{StaticResource TextBox}"/>
+                        Text="{Binding MatchCode, UpdateSourceTrigger=PropertyChanged}"
+                        Height="60"
+                        Width="476"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="0,30,0,0" Style="{StaticResource TextBox}"/>
 
                     <Button 
-                            Content="{x:Static language:Lang.globalBtnJoin}" 
-                            Style="{StaticResource JoinButton}" 
-                            FontSize="30"
-                            Height="41"
-                            Margin="0,50,0,0"
-                            Command="{Binding JoinPrivateMatchCommand}"
-                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                        Content="{x:Static language:Lang.globalBtnJoin}" 
+                        Style="{StaticResource JoinButton}" 
+                        FontSize="30"
+                        Height="41"
+                        Margin="0,50,0,0"
+                        Command="{Binding JoinPrivateMatchCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                        IsEnabled="{Binding IsJoining, Converter={StaticResource BooleanNegationConverter}}"/>
                 </StackPanel>
 
             </Grid>
