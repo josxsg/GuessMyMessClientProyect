@@ -15,7 +15,7 @@ namespace GuessMyMessClient.ViewModel.Session
         private LobbyClientManager() { }
 
         private LobbyServiceClient _client;
-        private string _currentMatchId;
+        public string CurrentMatchId { get; private set; }
         private string _currentUsername;
 
         public event Action<LobbyStateDto> LobbyStateUpdated;
@@ -33,7 +33,7 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 if (IsConnected) Disconnect();
                 _currentUsername = username;
-                _currentMatchId = matchId;
+                CurrentMatchId = matchId;
                 var instanceContext = new InstanceContext(this);
                 _client = new LobbyServiceClient(instanceContext);
                 _client.Open();
@@ -56,8 +56,8 @@ namespace GuessMyMessClient.ViewModel.Session
             if (!IsConnected) return;
             try
             {
-                _client.LeaveLobby(_currentUsername, _currentMatchId);
-                Console.WriteLine($"Sent LeaveLobby request for {_currentUsername} from {_currentMatchId}");
+                _client.LeaveLobby(_currentUsername, CurrentMatchId);
+                Console.WriteLine($"Sent LeaveLobby request for {_currentUsername} from {CurrentMatchId}");
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
@@ -105,7 +105,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 finally
                 {
                     _client = null;
-                    _currentMatchId = null;
+                    CurrentMatchId = null;
                     _currentUsername = null;
                 }
             }
@@ -114,10 +114,10 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void SendChatMessage(string messageKey)
         {
-            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(_currentMatchId)) return;
+            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(CurrentMatchId)) return;
             try
             {
-                _client.SendLobbyMessage(_currentUsername, _currentMatchId, messageKey);
+                _client.SendLobbyMessage(_currentUsername, CurrentMatchId, messageKey);
             }
             catch (Exception ex)
             {
@@ -128,10 +128,10 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void RequestStartGame()
         {
-            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(_currentMatchId)) return;
+            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(CurrentMatchId)) return;
             try
             {
-                _client.StartGame(_currentUsername, _currentMatchId);
+                _client.StartGame(_currentUsername, CurrentMatchId);
             }
             catch (Exception ex)
             {
@@ -142,10 +142,10 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void RequestKickPlayer(string playerToKick)
         {
-            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(_currentMatchId) || string.IsNullOrEmpty(playerToKick)) return;
+            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(CurrentMatchId) || string.IsNullOrEmpty(playerToKick)) return;
             try
             {
-                _client.KickPlayer(_currentUsername, playerToKick, _currentMatchId);
+                _client.KickPlayer(_currentUsername, playerToKick, CurrentMatchId);
             }
             catch (Exception ex)
             {

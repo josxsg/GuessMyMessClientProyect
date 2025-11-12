@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\GameService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\LobbyService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +144,7 @@
     <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Session\GameClientManager.cs" />
     <Compile Include="ViewModel\Session\LobbyClientManager.cs" />
     <Compile Include="ViewModel\Session\MatchmakingClientManager.cs" />
     <Compile Include="ViewModel\Session\SessionManager.cs" />
@@ -192,7 +198,6 @@
     <!-- CORRECCIÓN: Faltaba cerrar la etiqueta Compile para SelectAvatar.xaml.cs -->
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.cs" />
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs" />
-    <Compile Include="ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.cs" />
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs" />
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs" />
     <Compile Include="View\Lobby\SelectAvatarView.xaml.cs">
@@ -231,9 +236,6 @@
     </Compile>
     <Compile Include="View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.cs">
       <DependentUpon>WaitingRoomPrivateMatchView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.cs">
-      <DependentUpon>WaitingRoomPublicMatchCountDownView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.cs">
       <DependentUpon>WaitingRoomPublicMatchHostView.xaml</DependentUpon>
@@ -342,10 +344,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -394,6 +392,22 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AuthService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameService\GuessMyMessClient.GameService.WordDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GameService\GuessMyMessServer.Contracts.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameService\service.wsdl" />
+    <None Include="Connected Services\GameService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GameService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\LobbyService\Arrays.xsd">
@@ -531,6 +545,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthService\" />
+    <WCFMetadataStorage Include="Connected Services\GameService\" />
     <WCFMetadataStorage Include="Connected Services\LobbyService\" />
     <WCFMetadataStorage Include="Connected Services\MatchmakingService\" />
     <WCFMetadataStorage Include="Connected Services\ProfileService\" />
@@ -619,6 +634,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GameService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Serilog.4.3.0\build\Serilog.targets" Condition="Exists('..\packages\Serilog.4.3.0\build\Serilog.targets')" />

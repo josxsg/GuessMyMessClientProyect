@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="GameService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IGameService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGameService_Connect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Connect" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_SelectWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectWord" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_GetRandomWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRandomWords" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_GetRandomWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRandomWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_SubmitDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDrawing" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_SubmitGuess_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitGuess" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_SendInGameChatMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendInGameChatMessage" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnRoundStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnRoundStart" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnDrawingPhaseStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnDrawingPhaseStart" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnGuessingPhaseStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGuessingPhaseStart" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnPlayerGuessedCorrectly_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlayerGuessedCorrectly" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnTimeUpdate_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTimeUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnRoundEnd_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnRoundEnd" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_OnGameEnd_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGameEnd" />
+  </wsdl:message>
+  <wsdl:portType name="IGameService">
+    <wsdl:operation name="Connect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/Connect" message="tns:IGameService_Connect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/Disconnect" message="tns:IGameService_Disconnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SelectWord" message="tns:IGameService_SelectWord_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRandomWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/GetRandomWords" message="tns:IGameService_GetRandomWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/GetRandomWordsResponse" message="tns:IGameService_GetRandomWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SubmitDrawing" message="tns:IGameService_SubmitDrawing_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitGuess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SubmitGuess" message="tns:IGameService_SubmitGuess_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInGameChatMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SendInGameChatMessage" message="tns:IGameService_SendInGameChatMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnRoundStart">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnRoundStart" message="tns:IGameService_OnRoundStart_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnDrawingPhaseStart">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnDrawingPhaseStart" message="tns:IGameService_OnDrawingPhaseStart_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnGuessingPhaseStart">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnGuessingPhaseStart" message="tns:IGameService_OnGuessingPhaseStart_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayerGuessedCorrectly">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnPlayerGuessedCorrectly" message="tns:IGameService_OnPlayerGuessedCorrectly_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTimeUpdate">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnTimeUpdate" message="tns:IGameService_OnTimeUpdate_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnRoundEnd">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnRoundEnd" message="tns:IGameService_OnRoundEnd_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnGameEnd">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnGameEnd" message="tns:IGameService_OnGameEnd_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IGameService" type="tns:IGameService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IGameService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/Connect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SelectWord">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/SelectWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetRandomWords">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/GetRandomWords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDrawing">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/SubmitDrawing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitGuess">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/SubmitGuess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SendInGameChatMessage">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/SendInGameChatMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="OnRoundStart">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnRoundStart" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnDrawingPhaseStart">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnDrawingPhaseStart" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnGuessingPhaseStart">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnGuessingPhaseStart" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayerGuessedCorrectly">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnPlayerGuessedCorrectly" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnTimeUpdate">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnTimeUpdate" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnRoundEnd">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnRoundEnd" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnGameEnd">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnGameEnd" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GameService">
+    <wsdl:port name="NetTcpBinding_IGameService" binding="tns:NetTcpBinding_IGameService">
+      <soap12:address location="net.tcp://localhost:8734/GuessMyMessServer/Game/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8734/GuessMyMessServer/Game/</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

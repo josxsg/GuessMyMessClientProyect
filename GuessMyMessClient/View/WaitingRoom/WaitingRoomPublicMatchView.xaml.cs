@@ -29,5 +29,10 @@ namespace GuessMyMessClient.View.WaitingRoom
                 SessionManager.Instance
                 );
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

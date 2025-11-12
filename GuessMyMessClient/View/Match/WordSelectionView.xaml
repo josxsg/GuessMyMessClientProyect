@@ -13,56 +13,93 @@
         ResizeMode="CanResize"
         WindowState="Maximized"
         WindowStyle="None">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TextBlock 
-            Text="{x:Static language:Lang.chooseWordLbTitle}"
-            FontSize="30" 
-            FontWeight="Bold" 
-            Margin="110,103,110,349"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Button 
-            Content="{Binding Word1}" 
-            Command="{Binding SelectWordCommand}"
-            CommandParameter="{Binding Word1}"
-            Style="{StaticResource JoinButton}" 
-            FontSize="30"
-            VerticalAlignment="Top" Margin="138,226,582,0" Height="41"/>
-
-        <Button 
-            Content="{Binding Word2}" 
-            Command="{Binding SelectWordCommand}"
-            CommandParameter="{Binding Word2}"
-            Style="{StaticResource JoinButton}" 
-            FontSize="30"
-            VerticalAlignment="Top" Margin="584,226,136,0" Height="41"/>
-
-        <Button 
-            Content="{Binding Word3}" 
-            Command="{Binding SelectWordCommand}"
-            CommandParameter="{Binding Word3}"
-            Style="{StaticResource JoinButton}" 
-            FontSize="30"
-            VerticalAlignment="Top" Margin="360,356,360,0" Height="41"/>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
-
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
                     Command="{Binding MinimizeWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
-
             <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
                     Command="{Binding MaximizeWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
-
             <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
                     Command="{Binding CloseWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
-
         </StackPanel>
+
+        <Viewbox Grid.Row="1" Stretch="Uniform" Margin="50,20,50,50">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+                <TextBlock Text="{x:Static language:Lang.chooseWordLbTitle}"
+                           FontSize="30" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center"
+                           Margin="20"
+                           Foreground="White">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="3" 
+                                          Direction="315" 
+                                          Color="Black" 
+                                          Opacity="0.8" 
+                                          BlurRadius="5"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <TextBlock Text="{Binding CountdownTime}"
+                           FontSize="28" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center"
+                           Margin="0,-10,0,10"
+                           Foreground="Yellow">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="1" BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            Content="{Binding Word1}" 
+                            Command="{Binding SelectWordCommand}"
+                            CommandParameter="{Binding Word1}"
+                            Style="{StaticResource JoinButton}" 
+                            FontSize="30"
+                            MinWidth="250" Height="41"
+                            Margin="10,10,20,10"/>
+                    <Button Grid.Column="1"
+                            Content="{Binding Word2}" 
+                            Command="{Binding SelectWordCommand}"
+                            CommandParameter="{Binding Word2}"
+                            Style="{StaticResource JoinButton}" 
+                            FontSize="30"
+                            MinWidth="250" Height="41"
+                            Margin="20,10,10,10"/>
+                </Grid>
+
+                <Button Content="{Binding Word3}" 
+                        Command="{Binding SelectWordCommand}"
+                        CommandParameter="{Binding Word3}"
+                        Style="{StaticResource JoinButton}" 
+                        FontSize="30"
+                        MinWidth="250" Height="41"
+                        Margin="10,30,10,10"
+                        HorizontalAlignment="Center"/>
+
+            </StackPanel>
+        </Viewbox>
 
     </Grid>
 </Window>

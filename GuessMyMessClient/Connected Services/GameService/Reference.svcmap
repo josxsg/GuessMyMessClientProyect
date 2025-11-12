@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="d7ceb44b-c15e-497b-8fa5-76b7eda773d9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8734/GuessMyMessServer/Game/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3708b703-2a38-482f-a9e6-4056c4ce57e6" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Game/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="cc74dd07-7553-4965-a2c0-8523b5f6c513" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Game/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0e2fc59c-1a92-4914-83ac-3ad37f90e03e" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Game/mex" />
+    <MetadataFile FileName="GuessMyMessServer.Contracts.DataContracts.xsd" MetadataType="Schema" ID="313bc8fe-5637-430f-8c3a-9b36475a2495" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Game/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="11e2b675-38c0-4bcf-8c27-896a232fe16d" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Game/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
