@@ -153,6 +153,7 @@
     <Compile Include="ViewModel\Support\Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\BoolToGreenRedConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\Support\InkCanvasBinder.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs" />

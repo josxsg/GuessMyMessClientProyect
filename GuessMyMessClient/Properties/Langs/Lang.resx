@@ -711,4 +711,40 @@
   <data name="alertPasswordNeedsComma" xml:space="preserve">
     <value>Password must contain a comma (',').</value>
   </data>
+  <data name="drawingScreenBtnColorBlack" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="drawingScreenBtnColorWhite" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="drawingScreenBtnColorGreen" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="drawingScreenBtnColorBlue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="drawingScreenBtnColorRed" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="drawingScreenBtnColorYellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="drawingScreenBtnColorOrange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="drawingScreenBtnColorMaroon" xml:space="preserve">
+    <value>Maroon</value>
+  </data>
+  <data name="drawingScreenBtnColorPurple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="drawingScreenBtnColorPink" xml:space="preserve">
+    <value>Pink</value>
+  </data>
+  <data name="drawingScreenBtnColorGrey" xml:space="preserve">
+    <value>Grey</value>
+  </data>
+  <data name="drawingScreenBtnColorAqua" xml:space="preserve">
+    <value>Aqua</value>
+  </data>
 </root>

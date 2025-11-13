@@ -1060,6 +1060,114 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aqua.
+        /// </summary>
+        public static string drawingScreenBtnColorAqua {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorAqua", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Black.
+        /// </summary>
+        public static string drawingScreenBtnColorBlack {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorBlack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Blue.
+        /// </summary>
+        public static string drawingScreenBtnColorBlue {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorBlue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Green.
+        /// </summary>
+        public static string drawingScreenBtnColorGreen {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorGreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Grey.
+        /// </summary>
+        public static string drawingScreenBtnColorGrey {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorGrey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Maroon.
+        /// </summary>
+        public static string drawingScreenBtnColorMaroon {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorMaroon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Orange.
+        /// </summary>
+        public static string drawingScreenBtnColorOrange {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorOrange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pink.
+        /// </summary>
+        public static string drawingScreenBtnColorPink {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorPink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Purple.
+        /// </summary>
+        public static string drawingScreenBtnColorPurple {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorPurple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Red.
+        /// </summary>
+        public static string drawingScreenBtnColorRed {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorRed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a White.
+        /// </summary>
+        public static string drawingScreenBtnColorWhite {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorWhite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Yellow.
+        /// </summary>
+        public static string drawingScreenBtnColorYellow {
+            get {
+                return ResourceManager.GetString("drawingScreenBtnColorYellow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Eraser.
         /// </summary>
         public static string drawingScreenBtnEraser {

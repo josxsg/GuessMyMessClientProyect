@@ -7,170 +7,203 @@
         mc:Ignorable="d"
         Title="DrawingScreenView" Height="550" Width="900"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Match"
+        
+        xmlns:support="clr-namespace:GuessMyMessClient.ViewModel.Support"
+        
         d:DataContext="{d:DesignInstance Type=vm:DrawingScreenViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
         xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
         WindowState="Maximized"
         WindowStyle="None">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TextBlock 
-            Text="{x:Static language:Lang.drawingScreenLbTitleDraw}"
-            FontSize="30" 
-            FontWeight="Bold"
-            HorizontalAlignment="Center"
-            Margin="0,41,0,0"
-            VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <TextBlock 
-            FontSize="20" 
-            HorizontalAlignment="Left"
-            Margin="362,86,0,0"
-            VerticalAlignment="Top">
-            <Run Text="{x:Static language:Lang.drawingScreenLbWord}"/>
-            <Run Text=":"/>
-        </TextBlock>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,10">
+            <TextBlock Text="{x:Static language:Lang.drawingScreenLbTitleDraw}" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-        <TextBlock 
-            Text="{Binding WordToDraw}"
-            FontSize="20" 
-            FontWeight="SemiBold"
-            HorizontalAlignment="Left"
-            Margin="450,86,0,0"
-            VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding RemainingTime}"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,5,0,5">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" ShadowDepth="2" BlurRadius="5"/>
+                </TextBlock.Effect>
+            </TextBlock>
 
-        <Label Content="" 
-               Style="{StaticResource DrawingBoardBlack}" Margin="200,118,69,93"/>
-
-        <InkCanvas 
-            Background="Transparent"
-            Margin="200,118,69,93"
-            Strokes="{Binding Strokes}"
-            DefaultDrawingAttributes="{Binding InkAttributes}"/>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,125,0,0">
-            <StackPanel Orientation="Horizontal">
-                <RadioButton 
-                    GroupName="Color" Background="Black"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
-                <RadioButton 
-                    GroupName="Color" Background="White"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <RadioButton 
-                    GroupName="Color" Background="ForestGreen"
-                    Style="{StaticResource ColorButton}" Height="35" Width="34" Margin="0,0,5,5"/>
-                <RadioButton 
-                    GroupName="Color" Background="Blue"
-                    Style="{StaticResource ColorButton}" Height="35" Width="34" Margin="0,0,0,5"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <RadioButton 
-                    GroupName="Color" Background="Red"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
-                <RadioButton 
-                    GroupName="Color" Background="Yellow"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <RadioButton 
-                    GroupName="Color" Background="Orange"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
-                <RadioButton 
-                    GroupName="Color" Background="Maroon"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <RadioButton 
-                    GroupName="Color" Background="Purple"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
-                <RadioButton 
-                    GroupName="Color" Background="Pink"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <RadioButton 
-                    GroupName="Color" Background="Gray"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,5,5"/>
-                <RadioButton 
-                    GroupName="Color" Background="Aqua"
-                    Style="{StaticResource ColorButton}" Height="34" Width="34" Margin="0,0,0,5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                <TextBlock FontSize="20">
+                    <Run Text="{x:Static language:Lang.drawingScreenLbWord}"/>
+                    <Run Text=":"/>
+                </TextBlock>
+                <TextBlock Text="{Binding WordToDraw}" FontSize="20" FontWeight="SemiBold" Margin="10,0,0,0"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,382,0,0">
-            <RadioButton 
-                GroupName="ToolPalette" Background="White"
-                Style="{StaticResource ColorButton}" 
-                Height="34" Width="34" Margin="0,0,5,0"
-                IsChecked="True">
-                <Image Source="/Resources/Images/pencil.png" />
-            </RadioButton>
-            <RadioButton 
-                GroupName="ToolPalette" Background="White"
-                Style="{StaticResource ColorButton}" 
-                Height="34" Width="34">
-                <Image Source="/Resources/Images/eraser.png" Height="36" Width="38" />
-            </RadioButton>
-        </StackPanel>
-        <TextBlock 
-            FontSize="30" 
-            HorizontalAlignment="Left"
-            Margin="362,463,0,0"
-            FontWeight="Bold"
-            VerticalAlignment="Top">
-            <Run Text="{x:Static language:Lang.drawingScreenLbThickness}"/>
-            <Run Text=":"/>
-        </TextBlock>
 
-        <Slider 
-            Style="{StaticResource ThicknessSlider}"
-            Minimum="1" 
-            Maximum="50"
-            Value="{Binding BrushThickness, Mode=TwoWay}"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Left"
-            Width="150"
-            Margin="493,477,0,0"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="697,466,0,0">
-            <RadioButton Background="White"
-                GroupName="ToolPalette"
-                Style="{StaticResource ColorButton}" 
-                Height="34" Width="34" Margin="0,0,5,0">
-                <Image Source="/Resources/Images/triangle.png" />
-            </RadioButton>
-            <RadioButton Background="White"
-                GroupName="ToolPalette"
-                Style="{StaticResource ColorButton}" 
-                Height="34" Width="34" Margin="0,0,5,0">
-                <Image Source="/Resources/Images/circle.png" />
-            </RadioButton>
-            <RadioButton Background="White"
-                GroupName="ToolPalette"
-                Style="{StaticResource ColorButton}" 
-                Height="34" Width="34">
-                <Image Source="/Resources/Images/square.png" />
-            </RadioButton>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
-
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
                     Command="{Binding MinimizeWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
-
             <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
                     Command="{Binding MaximizeWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
-
             <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
                     Command="{Binding CloseWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
-
         </StackPanel>
+
+        <Grid Grid.Row="1" Margin="20,0,20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Padding="10" Background="#4C000000" CornerRadius="10">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+
+                    <WrapPanel Orientation="Horizontal" Width="73">
+                        <RadioButton GroupName="Color" Background="Black" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,5,5" IsChecked="True"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorBlack}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Black"/>
+
+                        <RadioButton GroupName="Color" Background="White" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,0,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorWhite}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="White"/>
+
+                        <RadioButton GroupName="Color" Background="ForestGreen" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="35" Width="34" Margin="0,0,5,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorGreen}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="ForestGreen"/>
+
+                        <RadioButton GroupName="Color" Background="Blue" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="35" Width="34" Margin="0,0,0,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorBlue}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Blue"/>
+
+                        <RadioButton GroupName="Color" Background="Red" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,5,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorRed}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Red"/>
+
+                        <RadioButton GroupName="Color" Background="Yellow" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,0,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorYellow}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Yellow"/>
+
+                        <RadioButton GroupName="Color" Background="Orange" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,5,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorOrange}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Orange"/>
+
+                        <RadioButton GroupName="Color" Background="Maroon" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,0,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorMaroon}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Maroon"/>
+
+                        <RadioButton GroupName="Color" Background="Purple" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,5,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorPurple}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Purple"/>
+
+                        <RadioButton GroupName="Color" Background="Pink" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,0,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorPink}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Pink"/>
+
+                        <RadioButton GroupName="Color" Background="Gray" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,5,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorGrey}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Gray"/>
+
+                        <RadioButton GroupName="Color" Background="Aqua" Style="{StaticResource ColorPaletteStyle}" 
+                                     Height="34" Width="34" Margin="0,0,0,5"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnColorAqua}"
+                                     Command="{Binding SelectColorCommand}" CommandParameter="Aqua"/>
+                    </WrapPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+                        <RadioButton GroupName="ToolPalette" Background="White" Style="{StaticResource ToolButton}" 
+                                     Height="34" Width="34" Margin="0,0,5,0" IsChecked="True"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnPencil}"
+                                     Command="{Binding SelectToolCommand}" CommandParameter="Pencil">
+                            <Image Source="/Resources/Images/pencil.png" />
+                        </RadioButton>
+
+                        <RadioButton GroupName="ToolPalette" Background="White" Style="{StaticResource ToolButton}" 
+                                     Height="34" Width="34"
+                                     ToolTip="{x:Static language:Lang.drawingScreenBtnEraser}"
+                                     Command="{Binding SelectToolCommand}" CommandParameter="Eraser">
+                            <Image Source="/Resources/Images/eraser.png" Height="36" Width="38" />
+                        </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Grid Grid.Column="1">
+                <Label Content="" Margin="0"/>
+
+                <InkCanvas Background="Transparent" Margin="0" 
+                           Strokes="{Binding Strokes}"
+                           DefaultDrawingAttributes="{Binding InkAttributes}"
+                           EditingMode="{Binding EditingMode}"
+                           
+                           support:InkCanvasBinder.EraserSize="{Binding BrushThickness}"
+                           support:InkCanvasBinder.MouseStartCommand="{Binding StartShapeCommand}"
+                           support:InkCanvasBinder.MouseMoveCommand="{Binding UpdateShapeCommand}"
+                           support:InkCanvasBinder.MouseEndCommand="{Binding EndShapeCommand}"/>
+            </Grid>
+        </Grid>
+
+        <Border Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,20,10" Padding="10" Background="#4C000000" CornerRadius="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Foreground="White">
+                    <Run Text="{x:Static language:Lang.drawingScreenLbThickness}"/>
+                    <Run Text=":"/>
+                </TextBlock>
+                <Slider Style="{StaticResource ThicknessSlider}"
+                        Minimum="1" Maximum="50"
+                        Value="{Binding BrushThickness, Mode=TwoWay}"
+                        VerticalAlignment="Center"
+                        Width="150" Margin="10,0"/>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="30,0,0,0">
+
+                    <RadioButton Background="White" GroupName="ToolPalette" Style="{StaticResource ToolButton}" 
+                                 Height="34" Width="34" Margin="0,0,5,0"
+                                 ToolTip="{x:Static language:Lang.drawingScreenBtnTriangle}"
+                                 Command="{Binding SelectToolCommand}" CommandParameter="Triangle">
+                        <Image Source="/Resources/Images/triangle.png" />
+                    </RadioButton>
+
+                    <RadioButton Background="White" GroupName="ToolPalette" Style="{StaticResource ToolButton}" 
+                                 Height="34" Width="34" Margin="0,0,5,0"
+                                 ToolTip="{x:Static language:Lang.drawingScreenBtnCircle}"
+                                 Command="{Binding SelectToolCommand}" CommandParameter="Circle">
+                        <Image Source="/Resources/Images/circle.png" />
+                    </RadioButton>
+
+                    <RadioButton Background="White" GroupName="ToolPalette" Style="{StaticResource ToolButton}" 
+                                 Height="34" Width="34"
+                                 ToolTip="{x:Static language:Lang.drawingScreenBtnSquare}"
+                                 Command="{Binding SelectToolCommand}" CommandParameter="Square">
+                        <Image Source="/Resources/Images/square.png" />
+                    </RadioButton>
+                </StackPanel>
+            </StackPanel>
+        </Border>
 
     </Grid>
 </Window>
