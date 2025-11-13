@@ -5,6 +5,7 @@ using GuessMyMessClient.View.Match;
 using GuessMyMessClient.ViewModel.Session;
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -86,6 +87,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         protected WaitingRoomViewModelBase(LobbyClientManager lobbyManager, SessionManager sessionManager)
         {
+            Debug.WriteLine(">>> INSTANCIA WaitingRoomViewModel creada: " + GetHashCode());
             _lobbyManager = lobbyManager;
             _sessionManager = sessionManager;
             InitializeCommands();
@@ -107,16 +109,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             _lobbyManager.CountdownTick += OnCountdownTick;
             _lobbyManager.GameStarted += OnGameStarted;
             _lobbyManager.ConnectionLost += OnConnectionLost;
-        }
-
-        protected virtual void UnsubscribeFromLobbyEvents()
-        {
-            _lobbyManager.LobbyStateUpdated -= OnLobbyStateUpdated;
-            _lobbyManager.LobbyMessageReceived -= OnLobbyMessageReceived;
-            _lobbyManager.Kicked -= OnKicked;
-            _lobbyManager.CountdownTick -= OnCountdownTick;
-            _lobbyManager.GameStarted -= OnGameStarted;
-            _lobbyManager.ConnectionLost -= OnConnectionLost;
         }
 
         protected virtual void OnLobbyStateUpdated(LobbyStateDto state)
@@ -220,9 +212,9 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
                 Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
                 currentWindow?.Close();
             });
-
             CleanUp();
         }
+
         protected virtual void OnConnectionLost()
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
@@ -293,6 +285,17 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             _countdownTimer?.Stop();
             _countdownTimer = null;
             Console.WriteLine("WaitingRoom ViewModel cleaned up.");
+        }
+
+        protected virtual void UnsubscribeFromLobbyEvents()
+        {
+            _lobbyManager.LobbyStateUpdated -= OnLobbyStateUpdated;
+            _lobbyManager.LobbyMessageReceived -= OnLobbyMessageReceived;
+            _lobbyManager.Kicked -= OnKicked;
+            _lobbyManager.CountdownTick -= OnCountdownTick;
+            _lobbyManager.GameStarted -= OnGameStarted;
+            _lobbyManager.ConnectionLost -= OnConnectionLost;
+            Console.WriteLine("WaitingRoomViewModel desuscrito de GameStarted");
         }
     }
     public class PlayerViewModel : ViewModelBase

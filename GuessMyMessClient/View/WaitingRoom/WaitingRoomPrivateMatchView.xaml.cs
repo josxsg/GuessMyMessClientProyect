@@ -24,10 +24,16 @@ namespace GuessMyMessClient.View.WaitingRoom
         public WaitingRoomPrivateMatchView()
         {
             InitializeComponent();
-            this.DataContext = new WaitingRoomPrivateMatchViewModel(
-                LobbyClientManager.Instance,
-                SessionManager.Instance
-                ); 
+            this.Closed += WaitingRoom_Closed;
+        }
+
+        private void WaitingRoom_Closed(object sender, EventArgs e)
+        {
+            if (this.DataContext is WaitingRoomViewModelBase vm)
+            {
+                vm.CleanUp();
+            }
+            this.Closed -= WaitingRoom_Closed;
         }
     }
 }
