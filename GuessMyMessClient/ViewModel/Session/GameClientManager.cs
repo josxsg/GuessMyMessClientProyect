@@ -55,7 +55,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 _client.InnerChannel.Closed += Channel_Closed;
 
                 // Llamamos al "Connect" del servidor
-                _client.Connect(_currentUsername);
+                _client.Connect(_currentUsername, _currentMatchId);
                 Console.WriteLine($"GameClientManager: Conectado como {username} a la partida {matchId}");
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace GuessMyMessClient.ViewModel.Session
             try
             {
                 // Llamamos al "Disconnect" del servidor
-                _client.Disconnect(_currentUsername);
+                _client.Disconnect(_currentUsername, _currentMatchId);
                 Console.WriteLine($"GameClientManager: Enviada solicitud de desconexión para {_currentUsername}");
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)

@@ -158,16 +158,16 @@ namespace GuessMyMessClient.GameService {
     public interface IGameService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/Connect")]
-        void Connect(string username);
+        void Connect(string username, string matchId);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/Connect")]
-        System.Threading.Tasks.Task ConnectAsync(string username);
+        System.Threading.Tasks.Task ConnectAsync(string username, string matchId);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/Disconnect")]
-        void Disconnect(string username);
+        void Disconnect(string username, string matchId);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/Disconnect")]
-        System.Threading.Tasks.Task DisconnectAsync(string username);
+        System.Threading.Tasks.Task DisconnectAsync(string username, string matchId);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/SelectWord")]
         void SelectWord(string username, string matchId, string selectedWord);
@@ -253,20 +253,20 @@ namespace GuessMyMessClient.GameService {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void Connect(string username) {
-            base.Channel.Connect(username);
+        public void Connect(string username, string matchId) {
+            base.Channel.Connect(username, matchId);
         }
         
-        public System.Threading.Tasks.Task ConnectAsync(string username) {
-            return base.Channel.ConnectAsync(username);
+        public System.Threading.Tasks.Task ConnectAsync(string username, string matchId) {
+            return base.Channel.ConnectAsync(username, matchId);
         }
         
-        public void Disconnect(string username) {
-            base.Channel.Disconnect(username);
+        public void Disconnect(string username, string matchId) {
+            base.Channel.Disconnect(username, matchId);
         }
         
-        public System.Threading.Tasks.Task DisconnectAsync(string username) {
-            return base.Channel.DisconnectAsync(username);
+        public System.Threading.Tasks.Task DisconnectAsync(string username, string matchId) {
+            return base.Channel.DisconnectAsync(username, matchId);
         }
         
         public void SelectWord(string username, string matchId, string selectedWord) {

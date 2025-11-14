@@ -1,6 +1,7 @@
 ﻿using System;
+using System.IO; // <-- ¡Asegúrate de tener este using!
 using System.Windows;
-using System.Windows.Ink;
+using System.Windows.Ink; // <-- ¡Asegúrate de tener este using!
 using System.Windows.Input;
 using GuessMyMessClient.ViewModel.Support;
 
@@ -27,6 +28,7 @@ namespace GuessMyMessClient.ViewModel.Match
         public ICommand MaximizeWindowCommand { get; }
         public ICommand MinimizeWindowCommand { get; }
 
+        // Constructor base
         public GuessTheWordViewModel()
         {
             ConfirmGuessCommand = new RelayCommand(ExecuteConfirmGuess);
@@ -37,9 +39,39 @@ namespace GuessMyMessClient.ViewModel.Match
             UserGuess = string.Empty;
         }
 
-        public GuessTheWordViewModel(StrokeCollection drawing) : this()
+        // --- NUEVO CONSTRUCTOR ---
+        // Este constructor recibirá los datos del evento OnGuessingPhaseStart
+        public GuessTheWordViewModel(byte[] drawingData) : this()
         {
-            DrawingToGuess = drawing;
+            LoadDrawingFromBytes(drawingData);
+        }
+
+        // El constructor obsoleto que recibía StrokeCollection ya no es necesario
+        // public GuessTheWordViewModel(StrokeCollection drawing) : this() { ... }
+
+        // --- NUEVO MÉTODO AUXILIAR ---
+        private void LoadDrawingFromBytes(byte[] drawingData)
+        {
+            if (drawingData == null || drawingData.Length == 0)
+            {
+                DrawingToGuess = new StrokeCollection(); // Dibuja un lienzo vacío
+                return;
+            }
+
+            try
+            {
+                // Esta es la conversión "inversa"
+                using (var ms = new MemoryStream(drawingData))
+                {
+                    // El constructor de StrokeCollection puede leer el Stream
+                    DrawingToGuess = new StrokeCollection(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error crítico al cargar el dibujo: {ex.Message}");
+                DrawingToGuess = new StrokeCollection(); // Dibuja lienzo vacío si hay error
+            }
         }
 
         private void ExecuteConfirmGuess(object parameter)
@@ -50,30 +82,24 @@ namespace GuessMyMessClient.ViewModel.Match
             }
 
             MessageBox.Show($"Respuesta enviada: {UserGuess}");
+            // Aquí llamarías a GameClientManager.Instance.SubmitGuess(UserGuess);
         }
 
+        // ... (El resto de tus métodos ExecuteCloseWindow, etc., no cambian) ...
         private static void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window)
-            {
-                Application.Current.Shutdown();
-            }
+            if (parameter is Window) Application.Current.Shutdown();
         }
 
         private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
-            {
                 window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-            }
         }
 
         private static void ExecuteMinimizeWindow(object parameter)
         {
-            if (parameter is Window window)
-            {
-                window.WindowState = WindowState.Minimized;
-            }
+            if (parameter is Window window) window.WindowState = WindowState.Minimized;
         }
     }
 }

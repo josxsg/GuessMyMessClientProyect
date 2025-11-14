@@ -7,6 +7,10 @@ using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.IO; // Para MemoryStream (convertir dibujo a bytes)
+using GuessMyMessClient.ViewModel.Session; // Para acceder a GameClientManager
+using System.Linq; // Para buscar la ventana
+using GuessMyMessClient.View.Match; // Para poder crear GuessTheWordView
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -134,6 +138,7 @@ namespace GuessMyMessClient.ViewModel.Match
             BrushThickness = 5;
 
             InitializeTimer();
+            SubscribeToGameEvents();
         }
 
         public DrawingScreenViewModel(string word) : this()
@@ -165,12 +170,32 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             EditingMode = InkCanvasEditingMode.None;
             SaveDrawing();
-            MessageBox.Show("¡Tiempo terminado!");
+            Console.WriteLine("Tiempo terminado. Esperando a otros jugadores...");
         }
 
         private void SaveDrawing()
         {
-            Console.WriteLine("Guardando dibujo...");
+            try
+            {
+                Console.WriteLine("Procesando dibujo para enviar...");
+
+                // 1. Convertir el Canvas a Bytes
+                byte[] drawingBytes = ConvertStrokesToByteArray();
+
+                // 2. Usar el GameClientManager para enviar
+                // No hace falta pasar ID ni Usuario, el Manager ya los tiene en memoria
+                GameClientManager.Instance.SubmitDrawing(drawingBytes);
+
+                Console.WriteLine("¡Dibujo enviado exitosamente al servidor!");
+
+                // Opcional: Aquí podrías mostrar un mensaje de "Esperando a otros jugadores..."
+                // o deshabilitar la edición para que no siga dibujando.
+                EditingMode = InkCanvasEditingMode.None;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al enviar tu dibujo: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         // --- Lógica de Selección ---
@@ -316,6 +341,77 @@ namespace GuessMyMessClient.ViewModel.Match
                 points.Add(new StylusPoint(x, y));
             }
             return points;
+        }
+
+        // Método auxiliar para convertir los trazos a un array de bytes
+        private byte[] ConvertStrokesToByteArray()
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                if (Strokes != null && Strokes.Count > 0)
+                {
+                    // Save guarda los trazos en formato ISF (Ink Serialized Format) nativo de WPF
+                    Strokes.Save(ms);
+                    return ms.ToArray();
+                }
+                // Si no dibujó nada, enviamos un array vacío (o podrías impedir guardar)
+                return new byte[0];
+            }
+        }
+
+        private void SubscribeToGameEvents()
+        {
+            // Escuchamos la señal del servidor para la siguiente fase
+            GameClientManager.Instance.GuessingPhaseStart += OnGuessingPhaseStart_FromServer;
+            GameClientManager.Instance.ConnectionLost += OnConnectionLost;
+        }
+
+        private void OnGuessingPhaseStart_FromServer(byte[] drawingData, string artistUsername)
+        {
+            // ¡El servidor nos ordena cambiar de pantalla!
+            // Usamos el Dispatcher para asegurar que se ejecute en el hilo de la UI
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                // 1. Abrir la nueva vista
+                var guessView = new GuessTheWordView();
+
+                // TODO: Aquí necesitarás pasar los datos al ViewModel de la nueva vista
+                guessView.DataContext = new GuessTheWordViewModel(drawingData);
+                guessView.Show();
+
+                // 2. Cerrar esta ventana (DrawingScreenView)
+                CloseCurrentWindow();
+            });
+        }
+
+        private void OnConnectionLost()
+        {
+            // Si perdemos conexión, cerramos esta ventana. 
+            // GameClientManager se encargará de mostrar el error.
+            Application.Current.Dispatcher.Invoke(CloseCurrentWindow);
+        }
+
+        private void UnsubscribeFromGameEvents()
+        {
+            // Limpiamos los eventos para evitar fugas de memoria
+            GameClientManager.Instance.GuessingPhaseStart -= OnGuessingPhaseStart_FromServer;
+            GameClientManager.Instance.ConnectionLost -= OnConnectionLost;
+        }
+
+        private void CloseCurrentWindow()
+        {
+            // 1. Desuscribirnos de todo
+            UnsubscribeFromGameEvents();
+
+            // 2. Detener el timer si sigue activo (por si acaso)
+            _countdownTimer?.Stop();
+
+            // 3. Buscar y cerrar la ventana actual
+            Window currentWindow = Application.Current.Windows
+                .OfType<Window>()
+                .FirstOrDefault(w => w.DataContext == this);
+
+            currentWindow?.Close();
         }
 
         // --- Comandos de Ventana ---
