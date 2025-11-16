@@ -71,7 +71,8 @@ namespace GuessMyMessClient.ViewModel.Match
             LoadDrawingFromBytes(drawing.DrawingData);
 
             // 3. Nos suscribimos a los eventos del manager
-            GameClientManager.Instance.ShowAnswersPhase += OnShowAnswers_Handler;
+            GameClientManager.Instance.ShowNextDrawing += OnShowNextDrawing_Handler;
+            GameClientManager.Instance.AnswersPhaseStart += OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost_Handler;
         }
 
@@ -131,10 +132,26 @@ namespace GuessMyMessClient.ViewModel.Match
 
         // --- Lógica de Navegación y Limpieza ---
 
-        private void OnShowAnswers_Handler(object sender, ShowAnswersEventArgs e)
+        private void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
         {
+            // Esta lógica se repite, lo cual es correcto
+            string myUsername = GameClientManager.Instance.GetCurrentUsername();
+            if (e.NextDrawing.OwnerUsername == myUsername)
+            {
+                ServiceLocator.Navigation.NavigateToWaitingForGuesses(e.NextDrawing.WordKey);
+            }
+            else
+            {
+                ServiceLocator.Navigation.NavigateToNextGuess(e.NextDrawing);
+            }
+        }
+
+        private void OnAnswersPhaseStart_Handler(object sender, AnswersPhaseStartEventArgs e)
+        {
+            // ¡Se acabaron las adivinanzas! Es hora de ver todas las respuestas.
             Cleanup();
-            ServiceLocator.Navigation.NavigateToAnswers(e.Drawing, e.Guesses, e.Scores);
+            // Navegamos a la pantalla de respuestas final
+            ServiceLocator.Navigation.NavigateToAnswers(e.AllDrawings, e.AllGuesses, e.AllScores);
         }
 
         private void OnConnectionLost_Handler()
@@ -145,7 +162,8 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void Cleanup()
         {
-            GameClientManager.Instance.ShowAnswersPhase -= OnShowAnswers_Handler;
+            GameClientManager.Instance.ShowNextDrawing -= OnShowNextDrawing_Handler;
+            GameClientManager.Instance.AnswersPhaseStart -= OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost -= OnConnectionLost_Handler;
         }
 

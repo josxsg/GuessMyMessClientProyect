@@ -23,6 +23,10 @@ namespace GuessMyMessClient.ViewModel.Session
         private string _currentUsername;
         private string _currentMatchId;
         private const string ENDPOINT_NAME = "NetTcpBinding_IGameService"; // De tu App.config
+        public string GetCurrentUsername()
+        {
+            return _currentUsername;
+        }
 
         public bool IsConnected => _client != null && _client.State == CommunicationState.Opened;
 
@@ -37,7 +41,7 @@ namespace GuessMyMessClient.ViewModel.Session
         public event EventHandler<GameEndEventArgs> GameEnd; // Corregido (solo una definición)
         public event Action ConnectionLost;
         public event EventHandler<InGameMessageEventArgs> InGameMessageReceived;
-        public event EventHandler<ShowAnswersEventArgs> ShowAnswersPhase;
+        public event EventHandler<AnswersPhaseStartEventArgs> AnswersPhaseStart;
         public event EventHandler<ShowNextDrawingEventArgs> ShowNextDrawing;
 
 
@@ -286,13 +290,17 @@ namespace GuessMyMessClient.ViewModel.Session
             });
         }
 
-        public void OnShowAnswers(DrawingDto drawing, GuessDto[] guesses, PlayerScoreDto[] scores)
+        public void OnAnswersPhaseStart(DrawingDto[] allDrawings, GuessDto[] allGuesses, PlayerScoreDto[] currentScores)
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Callback: OnShowAnswers - Mostrando respuestas para {drawing.OwnerUsername}");
-                // CORREGIDO: WCF usa arrays (T[]) no Listas (List<T>)
-                ShowAnswersPhase?.Invoke(this, new ShowAnswersEventArgs { Drawing = drawing, Guesses = guesses, Scores = scores });
+                Console.WriteLine("Callback: OnAnswersPhaseStart - Mostrando todas las respuestas");
+                AnswersPhaseStart?.Invoke(this, new AnswersPhaseStartEventArgs
+                {
+                    AllDrawings = allDrawings,
+                    AllGuesses = allGuesses,
+                    AllScores = currentScores
+                });
             });
         }
 
@@ -372,12 +380,11 @@ namespace GuessMyMessClient.ViewModel.Session
         public string Message { get; set; }
     }
 
-    public class ShowAnswersEventArgs : EventArgs
+    public class AnswersPhaseStartEventArgs : EventArgs
     {
-        public DrawingDto Drawing { get; set; }
-        // CORREGIDO: Debe ser array para coincidir con el callback
-        public GuessDto[] Guesses { get; set; }
-        public PlayerScoreDto[] Scores { get; set; }
+        public DrawingDto[] AllDrawings { get; set; }
+        public GuessDto[] AllGuesses { get; set; }
+        public PlayerScoreDto[] AllScores { get; set; }
     }
 
     public class ShowNextDrawingEventArgs : EventArgs

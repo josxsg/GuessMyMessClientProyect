@@ -19,13 +19,15 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         void NavigateToGuess(DrawingDto drawing);
 
         // Navega de Guess a Answers
-        void NavigateToAnswers(DrawingDto drawing, GuessDto[] guesses, PlayerScoreDto[] scores);
+        void NavigateToAnswers(DrawingDto[] drawings, GuessDto[] guesses, PlayerScoreDto[] scores);
 
         // Navega de Answers de vuelta a Guess
         void NavigateToNextGuess(DrawingDto nextDrawing);
 
         // Navega de Answers a EndOfMatch
         void NavigateToEndOfMatch(PlayerScoreDto[] finalScores);
+
+        void NavigateToWaitingForGuesses(string word);
 
         // Cierra la ventana actual (ej. por desconexión)
         void CloseCurrentGameWindow();

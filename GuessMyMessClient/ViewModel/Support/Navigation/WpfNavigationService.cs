@@ -62,17 +62,19 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             });
         }
 
-        public void NavigateToAnswers(DrawingDto drawing, GuessDto[] guesses, PlayerScoreDto[] scores)
+        public void NavigateToAnswers(DrawingDto[] drawings, GuessDto[] guesses, PlayerScoreDto[] scores)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                CloseCurrentGameWindow(); // Cierra GuessTheWordView
+                CloseCurrentGameWindow();
 
-                // El VM espera Listas, pero WCF nos da Arrays. Los convertimos.
+                // --- ¡ESTA ES LA CONVERSIÓN CLAVE! ---
+                var drawingsList = drawings?.ToList() ?? new List<DrawingDto>();
                 var guessesList = guesses?.ToList() ?? new List<GuessDto>();
                 var scoresList = scores?.ToList() ?? new List<PlayerScoreDto>();
 
-                var vm = new AnswersScreenViewModel(drawing, guessesList, scoresList);
+                // Pasamos las Listas (List<T>) al ViewModel
+                var vm = new AnswersScreenViewModel(drawingsList, guessesList, scoresList);
                 var view = new AnswersScreenView { DataContext = vm };
 
                 view.Show();
@@ -90,14 +92,31 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                CloseCurrentGameWindow(); // Cierra AnswersScreenView
+                CloseCurrentGameWindow();
 
+                // --- ¡ESTA ES LA CONVERSIÓN CLAVE! ---
                 var scoresList = finalScores?.ToList() ?? new List<PlayerScoreDto>();
-                //var vm = new EndOfMatchViewModel(scoresList); // Asumiendo que tienes este ViewModel
+
+                // Pasamos la Lista (List<T>) al ViewModel
+                //var vm = new EndOfMatchViewModel(scoresList); // Asumiendo que EndOfMatchViewModel espera List<T>
                 //var view = new EndOfMatchView { DataContext = vm };
 
                 //view.Show();
-                //_currentMatchWindow = view; // Esta es la última ventana de la partida
+                //_currentMatchWindow = view;
+            });
+        }
+
+        public void NavigateToWaitingForGuesses(string word)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CloseCurrentGameWindow(); // Cierra DrawingScreenView o AnswersScreenView
+
+                var vm = new WaitingForGuessesViewModel(word);
+                var view = new WaitingForGuessesView { DataContext = vm };
+
+                view.Show();
+                _currentMatchWindow = view;
             });
         }
     }

@@ -368,14 +368,31 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnGuessingPhaseStart_FromServer(object sender, GuessingPhaseStartEventArgs e)
         {
-            // ¡El servidor nos ordena cambiar de pantalla!
-            Application.Current.Dispatcher.Invoke(() =>
+            // Obtenemos el DTO del dibujo
+            var drawing = e.Drawing;
+
+            // Comprobamos si el dueño del dibujo soy YO
+            // (Necesitas una forma de obtener tu propio username. 
+            // Asumiré que lo tienes en 'SessionManager.Instance.Username' o algo similar.
+            // Usaré GameClientManager.Instance.GetCurrentUsername() como ejemplo)
+
+            // --- MODIFICACIÓN REQUERIDA EN GameClientManager ---
+            // Necesitas una forma de exponer el _currentUsername.
+            // Añade esto a GameClientManager.cs:
+            // public string GetCurrentUsername() => _currentUsername;
+
+            string myUsername = GameClientManager.Instance.GetCurrentUsername();
+
+            if (drawing.OwnerUsername == myUsername)
             {
-                // --- ¡AQUÍ LA CORRECCIÓN! ---
-                // 1. Ya no creamos la Vista
-                // 2. Ya no cerramos la ventana actual (el servicio lo hará)
-                ServiceLocator.Navigation.NavigateToGuess(e.Drawing);
-            });
+                // 1. SOY EL ARTISTA: Voy a la pantalla de espera
+                ServiceLocator.Navigation.NavigateToWaitingForGuesses(drawing.WordKey);
+            }
+            else
+            {
+                // 2. SOY ADIVINADOR: Voy a la pantalla de adivinar
+                ServiceLocator.Navigation.NavigateToGuess(drawing);
+            }
         }
 
         private void OnConnectionLost()

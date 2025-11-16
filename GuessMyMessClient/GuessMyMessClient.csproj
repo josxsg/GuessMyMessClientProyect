@@ -142,6 +142,7 @@
     <Compile Include="ViewModel\Match\DrawingScreenViewModel.cs" />
     <Compile Include="ViewModel\Match\EndOfMatchViewModel.cs" />
     <Compile Include="ViewModel\Match\GuessTheWordViewModel.cs" />
+    <Compile Include="ViewModel\Match\WaitingForGuessesViewModel.cs" />
     <Compile Include="ViewModel\Match\WordSelectionViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Session\GameClientManager.cs" />
@@ -231,6 +232,9 @@
     </Compile>
     <Compile Include="View\Match\GuessTheWordView.xaml.cs">
       <DependentUpon>GuessTheWordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Match\WaitingForGuessesView.xaml.cs">
+      <DependentUpon>WaitingForGuessesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Match\WordSelectionView.xaml.cs">
       <DependentUpon>WordSelectionView.xaml</DependentUpon>
@@ -333,6 +337,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Match\GuessTheWordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Match\WaitingForGuessesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

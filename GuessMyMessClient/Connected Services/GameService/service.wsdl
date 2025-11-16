@@ -54,8 +54,8 @@
   <wsdl:message name="IGameService_OnInGameMessageReceived_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnInGameMessageReceived" />
   </wsdl:message>
-  <wsdl:message name="IGameService_OnShowAnswers_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OnShowAnswers" />
+  <wsdl:message name="IGameService_OnAnswersPhaseStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAnswersPhaseStart" />
   </wsdl:message>
   <wsdl:message name="IGameService_OnShowNextDrawing_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnShowNextDrawing" />
@@ -98,8 +98,8 @@
     <wsdl:operation name="OnInGameMessageReceived">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnInGameMessageReceived" message="tns:IGameService_OnInGameMessageReceived_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OnShowAnswers">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnShowAnswers" message="tns:IGameService_OnShowAnswers_OutputCallbackMessage" />
+    <wsdl:operation name="OnAnswersPhaseStart">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnAnswersPhaseStart" message="tns:IGameService_OnAnswersPhaseStart_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="OnShowNextDrawing">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnShowNextDrawing" message="tns:IGameService_OnShowNextDrawing_OutputCallbackMessage" />
@@ -181,8 +181,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OnShowAnswers">
-      <soap12:operation soapAction="http://tempuri.org/IGameService/OnShowAnswers" style="document" />
+    <wsdl:operation name="OnAnswersPhaseStart">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnAnswersPhaseStart" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

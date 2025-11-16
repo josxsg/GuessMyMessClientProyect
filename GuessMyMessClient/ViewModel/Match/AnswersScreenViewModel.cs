@@ -48,9 +48,12 @@ namespace GuessMyMessClient.ViewModel.Match
         private const int SECONDS_PER_GUESS = 3;
 
         // --- Datos de la Ronda ---
+        private readonly List<DrawingDto> _allDrawings;
         private readonly List<GuessDto> _allGuesses;
+        private List<GuessDto> _guessesForCurrentDrawing;
         private DispatcherTimer _timer;
-        private int _guessIndex;
+        private int _drawingIndex = -1; // Índice del loop externo (dibujos)
+        private int _guessIndex = -1;
 
         // --- Propiedades de UI ---
 
@@ -101,44 +104,37 @@ namespace GuessMyMessClient.ViewModel.Match
         /// <summary>
         /// Constructor principal que recibe los datos de la ronda.
         /// </summary>
-        public AnswersScreenViewModel(DrawingDto drawing, List<GuessDto> guesses, List<PlayerScoreDto> scores)
+        public AnswersScreenViewModel(List<DrawingDto> allDrawings, List<GuessDto> allGuesses, List<PlayerScoreDto> allScores)
         {
-            _allGuesses = guesses ?? new List<GuessDto>();
+            _allDrawings = allDrawings ?? new List<DrawingDto>();
+            _allGuesses = allGuesses ?? new List<GuessDto>();
+            _drawingIndex = -1;
             _guessIndex = -1;
+
             CurrentGuessColor = Brushes.Black;
-
-            // 1. Cargar Datos del Dibujo
-            DrawingArtistName = drawing.OwnerUsername;
-            CurrentDrawingStrokes = LoadStrokesFromBytes(drawing.DrawingData);
-
-            // 2. Cargar Lista de Jugadores y Puntajes
             PlayerList = new ObservableCollection<PlayerViewModel>();
-            if (scores != null)
+            if (allScores != null)
             {
-                foreach (var score in scores.OrderByDescending(s => s.Score))
+                foreach (var score in allScores.OrderByDescending(s => s.Score))
                 {
                     PlayerList.Add(new PlayerViewModel { Username = score.Username, Score = score.Score });
                 }
             }
 
-            // 3. Configurar Chat
+            // Configurar Chat
             ChatMessages = new ObservableCollection<ChatMessageViewModel>();
             SendMessageCommand = new RelayCommand(OnSendChatMessage, CanSendChatMessage);
             GameClientManager.Instance.InGameMessageReceived += OnInGameMessageReceived_Handler;
 
-            // 4. Suscribirse a eventos de fin de fase (para aut-cerrarse)
-            GameClientManager.Instance.ShowNextDrawing += CloseOnNextPhase;
-            GameClientManager.Instance.GameEnd += CloseOnNextPhase;
-            GameClientManager.Instance.ConnectionLost += CloseOnDisconnect;
+            // Suscribirse a eventos (Solo para CERRARSE)
+            GameClientManager.Instance.GameEnd -= CloseOnNextPhase;
+            GameClientManager.Instance.ConnectionLost -= CloseOnDisconnect;
 
-            // 5. Iniciar el temporizador de respuestas
-            _timer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromSeconds(SECONDS_PER_GUESS)
-            };
+            // Iniciar el temporizador
+            _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SECONDS_PER_GUESS) };
             _timer.Tick += OnTimerTick;
 
-            ShowNextGuess(); // Mostrar la palabra correcta primero
+            ShowNextItem(); // Mostrar el primer dibujo/palabra
             _timer.Start();
         }
 
@@ -177,7 +173,63 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnTimerTick(object sender, EventArgs e)
         {
-            ShowNextGuess();
+            ShowNextItem();
+        }
+
+        private void ShowNextItem()
+        {
+            // Estado 1: Mostrar la palabra correcta de un dibujo
+            if (_guessIndex == -1)
+            {
+                _drawingIndex++; // Pasamos al siguiente dibujo
+
+                // Si ya no hay más dibujos, detenemos el timer.
+                if (_drawingIndex >= _allDrawings.Count)
+                {
+                    _timer.Stop();
+                    CurrentDisplayedGuess = "Fin de las respuestas. Esperando puntajes...";
+                    CurrentGuessColor = Brushes.Black;
+                    // El servidor enviará OnGameEnd pronto
+                    return;
+                }
+
+                // Cargamos el nuevo dibujo
+                var currentDrawing = _allDrawings[_drawingIndex];
+                DrawingArtistName = currentDrawing.OwnerUsername;
+                CurrentDrawingStrokes = LoadStrokesFromBytes(currentDrawing.DrawingData);
+
+                // Obtenemos la sub-lista de respuestas para ESTE dibujo
+                _guessesForCurrentDrawing = _allGuesses
+                    .Where(g => g.DrawingId == currentDrawing.DrawingId)
+                    .ToList();
+
+                // Mostramos la palabra correcta
+                CurrentDisplayedGuess = $"La palabra era: {currentDrawing.WordKey}";
+                CurrentGuessColor = Brushes.DarkBlue;
+
+                _guessIndex = 0; // Pasamos al estado 2 (mostrar respuestas)
+            }
+            // Estado 2: Mostrar las respuestas una por una
+            else
+            {
+                // Verificamos si hay respuestas para mostrar
+                if (_guessIndex < _guessesForCurrentDrawing.Count)
+                {
+                    var guess = _guessesForCurrentDrawing[_guessIndex];
+                    CurrentDisplayedGuess = $"{guess.GuesserUsername}: {guess.GuessText}";
+                    CurrentGuessColor = guess.IsCorrect ? Brushes.Green : Brushes.Red;
+
+                    _guessIndex++; // Avanzamos al siguiente índice de respuesta
+                }
+                // Si ya no hay más respuestas para este dibujo...
+                else
+                {
+                    CurrentDisplayedGuess = "Siguiente dibujo...";
+                    CurrentGuessColor = Brushes.Black;
+
+                    _guessIndex = -1; // Volvemos al estado 1 (para el próximo tick)
+                }
+            }
         }
 
         private void ShowNextGuess()
@@ -242,7 +294,6 @@ namespace GuessMyMessClient.ViewModel.Match
             });
         }
 
-
         // --- Lógica de Limpieza y Cierre ---
 
         private void CloseOnNextPhase(object sender, EventArgs e)
@@ -267,7 +318,6 @@ namespace GuessMyMessClient.ViewModel.Match
 
             // Desuscribirse de eventos
             GameClientManager.Instance.InGameMessageReceived -= OnInGameMessageReceived_Handler;
-            GameClientManager.Instance.ShowNextDrawing -= CloseOnNextPhase;
             GameClientManager.Instance.GameEnd -= CloseOnNextPhase;
             GameClientManager.Instance.ConnectionLost -= CloseOnDisconnect;
         }

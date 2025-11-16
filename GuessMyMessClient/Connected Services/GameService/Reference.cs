@@ -435,8 +435,8 @@ namespace GuessMyMessClient.GameService {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnInGameMessageReceived")]
         void OnInGameMessageReceived(string sender, string message);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnShowAnswers")]
-        void OnShowAnswers(GuessMyMessClient.GameService.DrawingDto drawing, GuessMyMessClient.GameService.GuessDto[] guesses, GuessMyMessClient.GameService.PlayerScoreDto[] scores);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnAnswersPhaseStart")]
+        void OnAnswersPhaseStart(GuessMyMessClient.GameService.DrawingDto[] allDrawings, GuessMyMessClient.GameService.GuessDto[] allGuesses, GuessMyMessClient.GameService.PlayerScoreDto[] currentScores);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnShowNextDrawing")]
         void OnShowNextDrawing(GuessMyMessClient.GameService.DrawingDto nextDrawing);

@@ -23,6 +23,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DrawingDto" nillable="true" type="tns:DrawingDto" />
+  <xs:complexType name="ArrayOfDrawingDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DrawingDto" nillable="true" type="tns:DrawingDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDrawingDto" nillable="true" type="tns:ArrayOfDrawingDto" />
   <xs:complexType name="ArrayOfGuessDto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="GuessDto" nillable="true" type="tns:GuessDto" />
