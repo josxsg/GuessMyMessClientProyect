@@ -13,6 +13,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WordDto" nillable="true" type="tns:WordDto" />
+  <xs:complexType name="DrawingDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DrawingData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DrawingId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsGuessed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OwnerUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WordKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DrawingDto" nillable="true" type="tns:DrawingDto" />
+  <xs:complexType name="ArrayOfGuessDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuessDto" nillable="true" type="tns:GuessDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuessDto" nillable="true" type="tns:ArrayOfGuessDto" />
+  <xs:complexType name="GuessDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DrawingId" type="xs:int" />
+      <xs:element minOccurs="0" name="GuessText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuesserUsername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCorrect" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WordKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuessDto" nillable="true" type="tns:GuessDto" />
   <xs:complexType name="ArrayOfPlayerScoreDto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerScoreDto" nillable="true" type="tns:PlayerScoreDto" />

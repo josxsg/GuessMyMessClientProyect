@@ -158,31 +158,17 @@ namespace GuessMyMessClient.ViewModel.Match
 
                 // 4. Buscar la ventana actual para cerrarla
                 Window currentWindow = Application.Current.Windows
-                    .OfType<WordSelectionView>()
+                    .OfType<WordSelectionView>() // <-- Necesita saber su propia Vista
                     .FirstOrDefault();
 
                 if (currentWindow != null)
                 {
-                    // 5. --- ¡ESTA ES LA PARTE IMPORTANTE! ---
-                    // Revisa tu código: SÓLO debe existir este bloque.
-                    // Borra cualquier otro 'new DrawingScreenView()' o '.Show()'
+                    // 5. --- ¡ESTA ES LA CORRECCIÓN! ---
+                    // Le decimos al servicio de navegación que abra la siguiente pantalla
+                    ServiceLocator.Navigation.NavigateToDrawingScreen(selectedWord);
 
-                    // 5a. Creamos el ViewModel de la siguiente pantalla
-                    //     y le pasamos la palabra seleccionada.
-                    var drawingViewModel = new DrawingScreenViewModel(selectedWord);
-
-                    // 5b. Creamos la Vista
-                    var drawingView = new DrawingScreenView();
-
-                    // 5c. Asignamos el ViewModel a la Vista
-                    drawingView.DataContext = drawingViewModel;
-
-                    // 5d. Mostramos la nueva Vista (UNA SOLA VEZ)
-                    drawingView.Show();
-
-                    // --- FIN DE LA CORRECCIÓN ---
-
-                    // 6. Cerramos la ventana actual
+                    // 6. Esta ventana (WordSelection) se cierra a sí misma
+                    // porque la navegación la inicia ella.
                     currentWindow.Close();
                 }
             }

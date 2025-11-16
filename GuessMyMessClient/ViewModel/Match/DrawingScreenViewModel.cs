@@ -366,21 +366,15 @@ namespace GuessMyMessClient.ViewModel.Match
             GameClientManager.Instance.ConnectionLost += OnConnectionLost;
         }
 
-        private void OnGuessingPhaseStart_FromServer(byte[] drawingData, string artistUsername)
+        private void OnGuessingPhaseStart_FromServer(object sender, GuessingPhaseStartEventArgs e)
         {
             // ¡El servidor nos ordena cambiar de pantalla!
-            // Usamos el Dispatcher para asegurar que se ejecute en el hilo de la UI
             Application.Current.Dispatcher.Invoke(() =>
             {
-                // 1. Abrir la nueva vista
-                var guessView = new GuessTheWordView();
-
-                // TODO: Aquí necesitarás pasar los datos al ViewModel de la nueva vista
-                guessView.DataContext = new GuessTheWordViewModel(drawingData);
-                guessView.Show();
-
-                // 2. Cerrar esta ventana (DrawingScreenView)
-                CloseCurrentWindow();
+                // --- ¡AQUÍ LA CORRECCIÓN! ---
+                // 1. Ya no creamos la Vista
+                // 2. Ya no cerramos la ventana actual (el servicio lo hará)
+                ServiceLocator.Navigation.NavigateToGuess(e.Drawing);
             });
         }
 

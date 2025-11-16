@@ -53,6 +53,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="matchId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drawingId" type="xs:int" />
         <xs:element minOccurs="0" name="guess" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -84,37 +85,38 @@
   <xs:element name="OnGuessingPhaseStart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="drawingData" nillable="true" type="xs:base64Binary" />
-        <xs:element minOccurs="0" name="artistUsername" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="drawing" nillable="true" type="q3:DrawingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnPlayerGuessedCorrectly">
+  <xs:element name="OnInGameMessageReceived">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnTimeUpdate">
+  <xs:element name="OnShowAnswers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="remainingSeconds" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="drawing" nillable="true" type="q4:DrawingDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="guesses" nillable="true" type="q5:ArrayOfGuessDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="scores" nillable="true" type="q6:ArrayOfPlayerScoreDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OnRoundEnd">
+  <xs:element name="OnShowNextDrawing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="roundScores" nillable="true" type="q3:ArrayOfPlayerScoreDto" />
-        <xs:element minOccurs="0" name="correctWord" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="nextDrawing" nillable="true" type="q7:DrawingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnGameEnd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="finalScores" nillable="true" type="q4:ArrayOfPlayerScoreDto" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="finalScores" nillable="true" type="q8:ArrayOfPlayerScoreDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

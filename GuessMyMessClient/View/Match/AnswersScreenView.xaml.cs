@@ -23,7 +23,6 @@ namespace GuessMyMessClient.View.Match
         public AnswersScreenView()
         {
             InitializeComponent();
-            this.DataContext = new AnswersScreenViewModel(); 
         }
     }
 }

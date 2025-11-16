@@ -51,14 +51,14 @@
   <wsdl:message name="IGameService_OnGuessingPhaseStart_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnGuessingPhaseStart" />
   </wsdl:message>
-  <wsdl:message name="IGameService_OnPlayerGuessedCorrectly_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OnPlayerGuessedCorrectly" />
+  <wsdl:message name="IGameService_OnInGameMessageReceived_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnInGameMessageReceived" />
   </wsdl:message>
-  <wsdl:message name="IGameService_OnTimeUpdate_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OnTimeUpdate" />
+  <wsdl:message name="IGameService_OnShowAnswers_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShowAnswers" />
   </wsdl:message>
-  <wsdl:message name="IGameService_OnRoundEnd_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OnRoundEnd" />
+  <wsdl:message name="IGameService_OnShowNextDrawing_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShowNextDrawing" />
   </wsdl:message>
   <wsdl:message name="IGameService_OnGameEnd_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnGameEnd" />
@@ -95,14 +95,14 @@
     <wsdl:operation name="OnGuessingPhaseStart">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnGuessingPhaseStart" message="tns:IGameService_OnGuessingPhaseStart_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OnPlayerGuessedCorrectly">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnPlayerGuessedCorrectly" message="tns:IGameService_OnPlayerGuessedCorrectly_OutputCallbackMessage" />
+    <wsdl:operation name="OnInGameMessageReceived">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnInGameMessageReceived" message="tns:IGameService_OnInGameMessageReceived_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OnTimeUpdate">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnTimeUpdate" message="tns:IGameService_OnTimeUpdate_OutputCallbackMessage" />
+    <wsdl:operation name="OnShowAnswers">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnShowAnswers" message="tns:IGameService_OnShowAnswers_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OnRoundEnd">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnRoundEnd" message="tns:IGameService_OnRoundEnd_OutputCallbackMessage" />
+    <wsdl:operation name="OnShowNextDrawing">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnShowNextDrawing" message="tns:IGameService_OnShowNextDrawing_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="OnGameEnd">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnGameEnd" message="tns:IGameService_OnGameEnd_OutputCallbackMessage" />
@@ -175,20 +175,20 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OnPlayerGuessedCorrectly">
-      <soap12:operation soapAction="http://tempuri.org/IGameService/OnPlayerGuessedCorrectly" style="document" />
+    <wsdl:operation name="OnInGameMessageReceived">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnInGameMessageReceived" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OnTimeUpdate">
-      <soap12:operation soapAction="http://tempuri.org/IGameService/OnTimeUpdate" style="document" />
+    <wsdl:operation name="OnShowAnswers">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnShowAnswers" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OnRoundEnd">
-      <soap12:operation soapAction="http://tempuri.org/IGameService/OnRoundEnd" style="document" />
+    <wsdl:operation name="OnShowNextDrawing">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/OnShowNextDrawing" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

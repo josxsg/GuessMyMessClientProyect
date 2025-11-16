@@ -77,6 +77,226 @@ namespace GuessMyMessClient.GameService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DrawingDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class DrawingDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] DrawingDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DrawingIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsGuessedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OwnerUsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WordKeyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] DrawingData {
+            get {
+                return this.DrawingDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DrawingDataField, value) != true)) {
+                    this.DrawingDataField = value;
+                    this.RaisePropertyChanged("DrawingData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DrawingId {
+            get {
+                return this.DrawingIdField;
+            }
+            set {
+                if ((this.DrawingIdField.Equals(value) != true)) {
+                    this.DrawingIdField = value;
+                    this.RaisePropertyChanged("DrawingId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsGuessed {
+            get {
+                return this.IsGuessedField;
+            }
+            set {
+                if ((this.IsGuessedField.Equals(value) != true)) {
+                    this.IsGuessedField = value;
+                    this.RaisePropertyChanged("IsGuessed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OwnerUsername {
+            get {
+                return this.OwnerUsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OwnerUsernameField, value) != true)) {
+                    this.OwnerUsernameField = value;
+                    this.RaisePropertyChanged("OwnerUsername");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WordKey {
+            get {
+                return this.WordKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WordKeyField, value) != true)) {
+                    this.WordKeyField = value;
+                    this.RaisePropertyChanged("WordKey");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GuessDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class GuessDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DrawingIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GuessTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GuesserUsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsCorrectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WordKeyField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DrawingId {
+            get {
+                return this.DrawingIdField;
+            }
+            set {
+                if ((this.DrawingIdField.Equals(value) != true)) {
+                    this.DrawingIdField = value;
+                    this.RaisePropertyChanged("DrawingId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GuessText {
+            get {
+                return this.GuessTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GuessTextField, value) != true)) {
+                    this.GuessTextField = value;
+                    this.RaisePropertyChanged("GuessText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GuesserUsername {
+            get {
+                return this.GuesserUsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GuesserUsernameField, value) != true)) {
+                    this.GuesserUsernameField = value;
+                    this.RaisePropertyChanged("GuesserUsername");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCorrect {
+            get {
+                return this.IsCorrectField;
+            }
+            set {
+                if ((this.IsCorrectField.Equals(value) != true)) {
+                    this.IsCorrectField = value;
+                    this.RaisePropertyChanged("IsCorrect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WordKey {
+            get {
+                return this.WordKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WordKeyField, value) != true)) {
+                    this.WordKeyField = value;
+                    this.RaisePropertyChanged("WordKey");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PlayerScoreDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
         "")]
     [System.SerializableAttribute()]
@@ -188,10 +408,10 @@ namespace GuessMyMessClient.GameService {
         System.Threading.Tasks.Task SubmitDrawingAsync(string username, string matchId, byte[] drawingData);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/SubmitGuess")]
-        void SubmitGuess(string username, string matchId, string guess);
+        void SubmitGuess(string username, string matchId, int drawingId, string guess);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/SubmitGuess")]
-        System.Threading.Tasks.Task SubmitGuessAsync(string username, string matchId, string guess);
+        System.Threading.Tasks.Task SubmitGuessAsync(string username, string matchId, int drawingId, string guess);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/SendInGameChatMessage")]
         void SendInGameChatMessage(string username, string matchId, string message);
@@ -210,16 +430,16 @@ namespace GuessMyMessClient.GameService {
         void OnDrawingPhaseStart(int durationSeconds);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnGuessingPhaseStart")]
-        void OnGuessingPhaseStart(byte[] drawingData, string artistUsername);
+        void OnGuessingPhaseStart(GuessMyMessClient.GameService.DrawingDto drawing);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnPlayerGuessedCorrectly")]
-        void OnPlayerGuessedCorrectly(string username);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnInGameMessageReceived")]
+        void OnInGameMessageReceived(string sender, string message);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnTimeUpdate")]
-        void OnTimeUpdate(int remainingSeconds);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnShowAnswers")]
+        void OnShowAnswers(GuessMyMessClient.GameService.DrawingDto drawing, GuessMyMessClient.GameService.GuessDto[] guesses, GuessMyMessClient.GameService.PlayerScoreDto[] scores);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnRoundEnd")]
-        void OnRoundEnd(GuessMyMessClient.GameService.PlayerScoreDto[] roundScores, string correctWord);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnShowNextDrawing")]
+        void OnShowNextDrawing(GuessMyMessClient.GameService.DrawingDto nextDrawing);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/OnGameEnd")]
         void OnGameEnd(GuessMyMessClient.GameService.PlayerScoreDto[] finalScores);
@@ -293,12 +513,12 @@ namespace GuessMyMessClient.GameService {
             return base.Channel.SubmitDrawingAsync(username, matchId, drawingData);
         }
         
-        public void SubmitGuess(string username, string matchId, string guess) {
-            base.Channel.SubmitGuess(username, matchId, guess);
+        public void SubmitGuess(string username, string matchId, int drawingId, string guess) {
+            base.Channel.SubmitGuess(username, matchId, drawingId, guess);
         }
         
-        public System.Threading.Tasks.Task SubmitGuessAsync(string username, string matchId, string guess) {
-            return base.Channel.SubmitGuessAsync(username, matchId, guess);
+        public System.Threading.Tasks.Task SubmitGuessAsync(string username, string matchId, int drawingId, string guess) {
+            return base.Channel.SubmitGuessAsync(username, matchId, drawingId, guess);
         }
         
         public void SendInGameChatMessage(string username, string matchId, string message) {

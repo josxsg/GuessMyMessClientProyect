@@ -1,4 +1,6 @@
-﻿using Serilog; 
+﻿using GuessMyMessClient.ViewModel.Support.Navigation;
+using GuessMyMessClient.ViewModel.Support;
+using Serilog; 
 using System.Globalization;
 using System.Threading;
 using System.Windows;
@@ -28,6 +30,7 @@ namespace GuessMyMessClient
             Thread.CurrentThread.CurrentCulture = cultureInfo;
 
             base.OnStartup(e);
+            ServiceLocator.Navigation = new WpfNavigationService();
         }
 
         private void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
