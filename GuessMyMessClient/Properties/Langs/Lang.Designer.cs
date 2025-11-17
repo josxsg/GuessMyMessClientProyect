@@ -133,6 +133,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Chat Error.
+        /// </summary>
+        public static string alertChatError {
+            get {
+                return ResourceManager.GetString("alertChatError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The chat module could not be loaded..
         /// </summary>
         public static string alertChatLoadError {
@@ -264,6 +273,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertCriticalErrorTitle {
             get {
                 return ResourceManager.GetString("alertCriticalErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error sending message:.
+        /// </summary>
+        public static string alertErrorSendingMessage {
+            get {
+                return ResourceManager.GetString("alertErrorSendingMessage", resourceCulture);
             }
         }
         
@@ -759,6 +777,33 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string answersPanelLbOwner {
             get {
                 return ResourceManager.GetString("answersPanelLbOwner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a End of responses. Awaiting scores....
+        /// </summary>
+        public static string answersScreenLbEndOfAnswers {
+            get {
+                return ResourceManager.GetString("answersScreenLbEndOfAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Next drawing....
+        /// </summary>
+        public static string answersScreenMsgNextDrawing {
+            get {
+                return ResourceManager.GetString("answersScreenMsgNextDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The word was:.
+        /// </summary>
+        public static string answersScreenMsgTheWordWas {
+            get {
+                return ResourceManager.GetString("answersScreenMsgTheWordWas", resourceCulture);
             }
         }
         
@@ -1573,6 +1618,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Waiting for the other players....
+        /// </summary>
+        public static string globalLbWaitingForOtherPlayers {
+            get {
+                return ResourceManager.GetString("globalLbWaitingForOtherPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password.
         /// </summary>
         public static string globalPwdPassword {
@@ -1812,6 +1866,24 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string socialTfSearchPlayers {
             get {
                 return ResourceManager.GetString("socialTfSearchPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your drawing is being guessed!.
+        /// </summary>
+        public static string waitingForGuessesTitle {
+            get {
+                return ResourceManager.GetString("waitingForGuessesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You drew the word:.
+        /// </summary>
+        public static string waitingForGuessesYouDrewTheWord {
+            get {
+                return ResourceManager.GetString("waitingForGuessesYouDrewTheWord", resourceCulture);
             }
         }
         

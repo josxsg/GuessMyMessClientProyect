@@ -1,16 +1,14 @@
-﻿using GuessMyMessClient.GameService; // Namespace de tu referencia de servicio
+﻿using GuessMyMessClient.GameService;
 using System;
-using System.Collections.Generic; // Sigue siendo necesario para los EventArgs
+using System.Collections.Generic;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace GuessMyMessClient.ViewModel.Session
 {
-    // 1. Implementamos la interfaz de Callback
     public class GameClientManager : IGameServiceCallback
     {
-        // 2. Patrón Singleton
         private static readonly Lazy<GameClientManager> _lazyInstance =
             new Lazy<GameClientManager>(() => new GameClientManager());
 
@@ -18,11 +16,11 @@ namespace GuessMyMessClient.ViewModel.Session
 
         private GameClientManager() { }
 
-        // 3. Cliente WCF y estado
         private GameServiceClient _client;
         private string _currentUsername;
         private string _currentMatchId;
-        private const string ENDPOINT_NAME = "NetTcpBinding_IGameService"; // De tu App.config
+        private const string EndpointName = "NetTcpBinding_IGameService";
+
         public string GetCurrentUsername()
         {
             return _currentUsername;
@@ -30,22 +28,18 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public bool IsConnected => _client != null && _client.State == CommunicationState.Opened;
 
-        // 4. Eventos para los Callbacks (CORREGIDOS)
-        // Eliminadas las definiciones antiguas y duplicadas.
         public event EventHandler<RoundStartEventArgs> RoundStart;
         public event EventHandler<DrawingPhaseStartEventArgs> DrawingPhaseStart;
-        public event EventHandler<GuessingPhaseStartEventArgs> GuessingPhaseStart; // Corregido
+        public event EventHandler<GuessingPhaseStartEventArgs> GuessingPhaseStart;
         public event EventHandler<PlayerGuessedEventArgs> PlayerGuessedCorrectly;
         public event EventHandler<TimeUpdateEventArgs> TimeUpdate;
         public event EventHandler<RoundEndEventArgs> RoundEnd;
-        public event EventHandler<GameEndEventArgs> GameEnd; // Corregido (solo una definición)
+        public event EventHandler<GameEndEventArgs> GameEnd;
         public event Action ConnectionLost;
         public event EventHandler<InGameMessageEventArgs> InGameMessageReceived;
         public event EventHandler<AnswersPhaseStartEventArgs> AnswersPhaseStart;
         public event EventHandler<ShowNextDrawingEventArgs> ShowNextDrawing;
 
-
-        // 5. Métodos de Ciclo de Vida (Conexión / Desconexión)
         public void Connect(string username, string matchId)
         {
             try
@@ -56,19 +50,19 @@ namespace GuessMyMessClient.ViewModel.Session
                 _currentMatchId = matchId;
 
                 var instanceContext = new InstanceContext(this);
-                _client = new GameServiceClient(instanceContext, ENDPOINT_NAME);
+                _client = new GameServiceClient(instanceContext, EndpointName);
                 _client.Open();
 
                 _client.InnerChannel.Faulted += Channel_Faulted;
                 _client.InnerChannel.Closed += Channel_Closed;
 
                 _client.Connect(_currentUsername, _currentMatchId);
-                Console.WriteLine($"GameClientManager: Conectado como {username} a la partida {matchId}");
+                Console.WriteLine($"GameClientManager: Connected as {username} to match {matchId}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error conectando a GameService: {ex.Message}");
-                MessageBox.Show($"Error al conectar con el servicio de juego: {ex.Message}", "Error de Conexión", MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine($"Error connecting to GameService: {ex.Message}");
+                MessageBox.Show($"Error connecting to the game service: {ex.Message}", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 CleanupConnection();
                 ConnectionLost?.Invoke();
             }
@@ -80,11 +74,11 @@ namespace GuessMyMessClient.ViewModel.Session
             try
             {
                 _client.Disconnect(_currentUsername, _currentMatchId);
-                Console.WriteLine($"GameClientManager: Enviada solicitud de desconexión para {_currentUsername}");
+                Console.WriteLine($"GameClientManager: Disconnect request sent for {_currentUsername}");
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
-                Console.WriteLine($"GameClientManager: Error al desconectar limpiamente: {ex.Message}. Abortando.");
+                Console.WriteLine($"GameClientManager: Error during disconnect: {ex.Message}. Aborting connection.");
             }
             finally
             {
@@ -103,7 +97,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"GameClientManager: Error al desuscribir eventos: {ex.Message}");
+                    Console.WriteLine($"GameClientManager: Error unsubscribing events: {ex.Message}");
                 }
 
                 try
@@ -113,7 +107,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"GameClientManager: Excepción al limpiar conexión: {ex.Message}");
+                    Console.WriteLine($"GameClientManager: Error cleaning connection: {ex.Message}");
                     _client.Abort();
                 }
                 finally
@@ -123,11 +117,8 @@ namespace GuessMyMessClient.ViewModel.Session
                     _currentUsername = null;
                 }
             }
-            Console.WriteLine("GameClientManager: Conexión limpiada.");
+            Console.WriteLine("GameClientManager: Connection cleaned.");
         }
-
-
-        // 6. Métodos públicos (Wrappers para llamar al servidor)
 
         public async Task<WordDto[]> GetRandomWordsAsync()
         {
@@ -138,8 +129,8 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error en GetRandomWordsAsync: {ex.Message}");
-                HandleCommunicationError(true); // Manejo de error unificado
+                Console.WriteLine($"Error in GetRandomWordsAsync: {ex.Message}");
+                HandleCommunicationError(true);
                 return null;
             }
         }
@@ -153,7 +144,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error en SelectWord: {ex.Message}");
+                Console.WriteLine($"Error in SelectWord: {ex.Message}");
                 HandleCommunicationError(true);
             }
         }
@@ -167,7 +158,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error en SubmitDrawing: {ex.Message}");
+                Console.WriteLine($"Error in SubmitDrawing: {ex.Message}");
                 HandleCommunicationError(true);
             }
         }
@@ -178,15 +169,11 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 try
                 {
-                    // CORREGIDO: Usando _currentUsername y _currentMatchId
-                    // CORREGIDO: Llamada Async (asumiendo que actualizaste tu referencia de servicio)
-                    // Si no es Async, quita el "Async" al final.
                     _client.SendInGameChatMessageAsync(_currentUsername, _currentMatchId, message);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error al enviar mensaje: {ex.Message}");
-                    // CORREGIDO: Usando HandleCommunicationError
+                    Console.WriteLine($"Error sending message: {ex.Message}");
                     HandleCommunicationError(true);
                 }
             }
@@ -198,27 +185,21 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 try
                 {
-                    // CORREGIDO: Usando _currentUsername y _currentMatchId
-                    // CORREGIDO: Llamada Async
                     _client.SubmitGuessAsync(_currentUsername, _currentMatchId, drawingId, guess);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error al enviar guess: {ex.Message}");
-                    // CORREGIDO: Usando HandleCommunicationError
+                    Console.WriteLine($"Error sending guess: {ex.Message}");
                     HandleCommunicationError(true);
                 }
             }
         }
 
-
-        // 7. Implementación de Callbacks (TODOS LOS MÉTODOS DE LA INTERFAZ)
-
         public void OnRoundStart(int roundNumber, string[] wordOptions)
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Callback: OnRoundStart - Ronda {roundNumber}");
+                Console.WriteLine($"Callback: OnRoundStart - Round {roundNumber}");
                 RoundStart?.Invoke(this, new RoundStartEventArgs { RoundNumber = roundNumber, WordOptions = wordOptions });
             });
         }
@@ -236,13 +217,10 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Callback: OnGuessingPhaseStart - Dibujo de {drawing.OwnerUsername}");
-                // CORREGIDO: Esto ahora coincide con el evento y el EventArgs
+                Console.WriteLine($"Callback: OnGuessingPhaseStart - Drawing by {drawing.OwnerUsername}");
                 GuessingPhaseStart?.Invoke(this, new GuessingPhaseStartEventArgs { Drawing = drawing });
             });
         }
-
-        // --- AÑADIDOS LOS MÉTODOS FALTANTES ---
 
         public void OnPlayerGuessedCorrectly(string username)
         {
@@ -265,7 +243,7 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Callback: OnRoundEnd - La palabra era {correctWord}");
+                Console.WriteLine($"Callback: OnRoundEnd - The word was {correctWord}");
                 RoundEnd?.Invoke(this, new RoundEndEventArgs { RoundScores = roundScores, CorrectWord = correctWord });
             });
         }
@@ -275,12 +253,9 @@ namespace GuessMyMessClient.ViewModel.Session
             Application.Current?.Dispatcher.Invoke(() =>
             {
                 Console.WriteLine("Callback: OnGameEnd");
-                // CORREGIDO: WCF usa arrays (T[]) no Listas (List<T>)
                 GameEnd?.Invoke(this, new GameEndEventArgs { FinalScores = finalScores });
             });
         }
-
-        // --- MÉTODOS DE LOS NUEVOS CALLBACKS ---
 
         public void OnInGameMessageReceived(string sender, string message)
         {
@@ -294,7 +269,7 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine("Callback: OnAnswersPhaseStart - Mostrando todas las respuestas");
+                Console.WriteLine("Callback: OnAnswersPhaseStart - Showing all answers");
                 AnswersPhaseStart?.Invoke(this, new AnswersPhaseStartEventArgs
                 {
                     AllDrawings = allDrawings,
@@ -308,22 +283,20 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Callback: OnShowNextDrawing - Siguiente dibujo {nextDrawing.DrawingId}");
+                Console.WriteLine($"Callback: OnShowNextDrawing - Next drawing {nextDrawing.DrawingId}");
                 ShowNextDrawing?.Invoke(this, new ShowNextDrawingEventArgs { NextDrawing = nextDrawing });
             });
         }
 
-
-        // 8. Manejadores de Errores de Canal
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("GameClientManager: Canal WCF ha entrado en estado Faulted.");
+            Console.WriteLine("GameClientManager: WCF channel entered Faulted state.");
             HandleCommunicationError(true);
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("GameClientManager: Canal WCF fue cerrado.");
+            Console.WriteLine("GameClientManager: WCF channel was closed.");
             if (_client != null)
             {
                 HandleCommunicationError(true);
@@ -334,18 +307,16 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine("GameClientManager: Manejando error de comunicación.");
+                Console.WriteLine("GameClientManager: Handling communication error.");
                 CleanupConnection();
                 ConnectionLost?.Invoke();
                 if (unexpected)
                 {
-                    MessageBox.Show("Se perdió la conexión con el servicio de juego.", "Error de Conexión", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("The connection to the game service was lost.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             });
         }
     }
-
-    // --- DEFINICIÓN DE TODOS LOS EVENT ARGS ---
 
     public class RoundStartEventArgs : EventArgs
     {
@@ -399,7 +370,6 @@ namespace GuessMyMessClient.ViewModel.Session
 
     public class GameEndEventArgs : EventArgs
     {
-        // CORREGIDO: Debe ser array para coincidir con el callback
         public PlayerScoreDto[] FinalScores { get; set; }
     }
 }

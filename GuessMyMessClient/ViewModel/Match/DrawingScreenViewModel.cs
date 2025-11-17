@@ -7,14 +7,13 @@ using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using System.IO; // Para MemoryStream (convertir dibujo a bytes)
-using GuessMyMessClient.ViewModel.Session; // Para acceder a GameClientManager
-using System.Linq; // Para buscar la ventana
-using GuessMyMessClient.View.Match; // Para poder crear GuessTheWordView
+using System.IO;
+using GuessMyMessClient.ViewModel.Session;
+using System.Linq;
+using GuessMyMessClient.View.Match;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
-    // Enum para identificar la herramienta activa
     public enum DrawingTool
     {
         Pencil,
@@ -26,7 +25,6 @@ namespace GuessMyMessClient.ViewModel.Match
 
     internal class DrawingScreenViewModel : ViewModelBase
     {
-        // --- Propiedades de Texto e Interfaz ---
         private string _wordToDraw;
         public string WordToDraw
         {
@@ -34,7 +32,6 @@ namespace GuessMyMessClient.ViewModel.Match
             set { _wordToDraw = value; OnPropertyChanged(); }
         }
 
-        // --- Propiedades de Dibujo ---
         private StrokeCollection _strokes;
         public StrokeCollection Strokes
         {
@@ -57,15 +54,11 @@ namespace GuessMyMessClient.ViewModel.Match
             {
                 _brushThickness = value;
                 OnPropertyChanged();
-
-                // Actualiza el grosor del Lápiz y las Figuras
                 if (InkAttributes != null)
                 {
                     InkAttributes.Width = value;
                     InkAttributes.Height = value;
                 }
-                // Nota: El grosor del borrador se actualiza automáticamente en la Vista 
-                // gracias al binding con InkCanvasBinder.EraserSize
             }
         }
 
@@ -77,8 +70,6 @@ namespace GuessMyMessClient.ViewModel.Match
         }
 
         private Color _currentColor;
-
-        // --- Herramienta Actual ---
         private DrawingTool _currentTool;
         public DrawingTool CurrentTool
         {
@@ -86,11 +77,9 @@ namespace GuessMyMessClient.ViewModel.Match
             set { _currentTool = value; OnPropertyChanged(); }
         }
 
-        // --- Variables para el cálculo de figuras ---
         private Point _startPoint;
         private Stroke _currentShapeStroke;
 
-        // --- Propiedades del Temporizador ---
         private DispatcherTimer _countdownTimer;
         private int _remainingTime;
         public int RemainingTime
@@ -99,34 +88,28 @@ namespace GuessMyMessClient.ViewModel.Match
             set { _remainingTime = value; OnPropertyChanged(); }
         }
 
-        // --- Comandos ---
         public ICommand SelectColorCommand { get; }
         public ICommand SelectToolCommand { get; }
         public ICommand CloseWindowCommand { get; }
         public ICommand MaximizeWindowCommand { get; }
         public ICommand MinimizeWindowCommand { get; }
 
-        // Comandos para eventos del Mouse (Usados por InkCanvasBinder)
         public ICommand StartShapeCommand { get; }
         public ICommand UpdateShapeCommand { get; }
         public ICommand EndShapeCommand { get; }
 
-        // --- Constructor ---
         public DrawingScreenViewModel()
         {
-            // Comandos de la interfaz
             CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
             SelectColorCommand = new RelayCommand(ExecuteSelectColor);
             SelectToolCommand = new RelayCommand(ExecuteSelectTool);
 
-            // Comandos de dibujo de figuras (reciben un Point desde la Vista)
             StartShapeCommand = new RelayCommand(param => StartShape((Point)param));
             UpdateShapeCommand = new RelayCommand(param => UpdateShape((Point)param));
             EndShapeCommand = new RelayCommand(param => EndShape());
 
-            // Inicialización
             Strokes = new StrokeCollection();
             InkAttributes = new DrawingAttributes();
             _currentColor = Colors.Black;
@@ -146,10 +129,9 @@ namespace GuessMyMessClient.ViewModel.Match
             WordToDraw = word;
         }
 
-        // --- Lógica del Temporizador ---
         private void InitializeTimer()
         {
-            RemainingTime = 30; // 30 segundos
+            RemainingTime = 30;
             _countdownTimer = new DispatcherTimer();
             _countdownTimer.Interval = TimeSpan.FromSeconds(1);
             _countdownTimer.Tick += CountdownTimer_Tick;
@@ -170,35 +152,25 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             EditingMode = InkCanvasEditingMode.None;
             SaveDrawing();
-            Console.WriteLine("Tiempo terminado. Esperando a otros jugadores...");
+            Console.WriteLine("Time is up. Waiting for other players...");
         }
 
         private void SaveDrawing()
         {
             try
             {
-                Console.WriteLine("Procesando dibujo para enviar...");
-
-                // 1. Convertir el Canvas a Bytes
+                Console.WriteLine("Processing drawing before sending...");
                 byte[] drawingBytes = ConvertStrokesToByteArray();
-
-                // 2. Usar el GameClientManager para enviar
-                // No hace falta pasar ID ni Usuario, el Manager ya los tiene en memoria
                 GameClientManager.Instance.SubmitDrawing(drawingBytes);
-
-                Console.WriteLine("¡Dibujo enviado exitosamente al servidor!");
-
-                // Opcional: Aquí podrías mostrar un mensaje de "Esperando a otros jugadores..."
-                // o deshabilitar la edición para que no siga dibujando.
+                Console.WriteLine("Drawing successfully sent to the server!");
                 EditingMode = InkCanvasEditingMode.None;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error al enviar tu dibujo: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"An error occurred while sending your drawing: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // --- Lógica de Selección ---
         private void ExecuteSelectColor(object parameter)
         {
             string colorString = parameter as string;
@@ -207,7 +179,6 @@ namespace GuessMyMessClient.ViewModel.Match
                 _currentColor = (Color)ColorConverter.ConvertFromString(colorString);
                 InkAttributes.Color = _currentColor;
 
-                // Si estaba borrando, vuelve al lápiz al seleccionar color
                 if (CurrentTool == DrawingTool.Eraser)
                 {
                     ExecuteSelectTool("Pencil");
@@ -233,7 +204,7 @@ namespace GuessMyMessClient.ViewModel.Match
 
                 case "Triangle":
                     CurrentTool = DrawingTool.Triangle;
-                    EditingMode = InkCanvasEditingMode.None; // Desactivamos dibujo libre
+                    EditingMode = InkCanvasEditingMode.None;
                     break;
 
                 case "Circle":
@@ -248,20 +219,15 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
-        // --- Lógica Matemática de Figuras (Zero Code-Behind) ---
-
         private void StartShape(Point position)
         {
-            // Solo actuamos si estamos en modo figuras
             if (CurrentTool == DrawingTool.Pencil || CurrentTool == DrawingTool.Eraser) return;
 
             _startPoint = position;
-
-            // Creamos el trazo inicial
             StylusPointCollection points = new StylusPointCollection(new Point[] { position });
             _currentShapeStroke = new Stroke(points)
             {
-                DrawingAttributes = InkAttributes.Clone() // Usa color y grosor actuales
+                DrawingAttributes = InkAttributes.Clone()
             };
 
             Strokes.Add(_currentShapeStroke);
@@ -296,8 +262,6 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             _currentShapeStroke = null;
         }
-
-        // --- Cálculos Geométricos ---
 
         private StylusPointCollection CalculateSquarePoints(Point start, Point end)
         {
@@ -343,81 +307,56 @@ namespace GuessMyMessClient.ViewModel.Match
             return points;
         }
 
-        // Método auxiliar para convertir los trazos a un array de bytes
         private byte[] ConvertStrokesToByteArray()
         {
             using (MemoryStream ms = new MemoryStream())
             {
                 if (Strokes != null && Strokes.Count > 0)
                 {
-                    // Save guarda los trazos en formato ISF (Ink Serialized Format) nativo de WPF
                     Strokes.Save(ms);
                     return ms.ToArray();
                 }
-                // Si no dibujó nada, enviamos un array vacío (o podrías impedir guardar)
                 return new byte[0];
             }
         }
 
         private void SubscribeToGameEvents()
         {
-            // Escuchamos la señal del servidor para la siguiente fase
             GameClientManager.Instance.GuessingPhaseStart += OnGuessingPhaseStart_FromServer;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost;
         }
 
         private void OnGuessingPhaseStart_FromServer(object sender, GuessingPhaseStartEventArgs e)
         {
-            // Obtenemos el DTO del dibujo
             var drawing = e.Drawing;
-
-            // Comprobamos si el dueño del dibujo soy YO
-            // (Necesitas una forma de obtener tu propio username. 
-            // Asumiré que lo tienes en 'SessionManager.Instance.Username' o algo similar.
-            // Usaré GameClientManager.Instance.GetCurrentUsername() como ejemplo)
-
-            // --- MODIFICACIÓN REQUERIDA EN GameClientManager ---
-            // Necesitas una forma de exponer el _currentUsername.
-            // Añade esto a GameClientManager.cs:
-            // public string GetCurrentUsername() => _currentUsername;
-
             string myUsername = GameClientManager.Instance.GetCurrentUsername();
 
             if (drawing.OwnerUsername == myUsername)
             {
-                // 1. SOY EL ARTISTA: Voy a la pantalla de espera
                 ServiceLocator.Navigation.NavigateToWaitingForGuesses(drawing.WordKey);
             }
             else
             {
-                // 2. SOY ADIVINADOR: Voy a la pantalla de adivinar
                 ServiceLocator.Navigation.NavigateToGuess(drawing);
             }
         }
 
         private void OnConnectionLost()
         {
-            // Si perdemos conexión, cerramos esta ventana. 
-            // GameClientManager se encargará de mostrar el error.
             Application.Current.Dispatcher.Invoke(CloseCurrentWindow);
         }
 
         private void UnsubscribeFromGameEvents()
         {
-            // Limpiamos los eventos para evitar fugas de memoria
             GameClientManager.Instance.GuessingPhaseStart -= OnGuessingPhaseStart_FromServer;
             GameClientManager.Instance.ConnectionLost -= OnConnectionLost;
         }
 
         private void CloseCurrentWindow()
         {
-            // 1. Desuscribirnos de todo
             UnsubscribeFromGameEvents();
-
-            // 2. Detener el timer si sigue activo (por si acaso)
             _countdownTimer?.Stop();
 
-            // 3. Buscar y cerrar la ventana actual
             Window currentWindow = Application.Current.Windows
                 .OfType<Window>()
                 .FirstOrDefault(w => w.DataContext == this);
@@ -425,7 +364,6 @@ namespace GuessMyMessClient.ViewModel.Match
             currentWindow?.Close();
         }
 
-        // --- Comandos de Ventana ---
         private static void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window) Application.Current.Shutdown();

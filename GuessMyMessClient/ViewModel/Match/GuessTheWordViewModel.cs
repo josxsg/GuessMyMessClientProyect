@@ -3,9 +3,9 @@ using System.IO;
 using System.Windows;
 using System.Windows.Ink;
 using System.Windows.Input;
-using GuessMyMessClient.GameService;     // Para DTOs
-using GuessMyMessClient.ViewModel.Session; // Para GameClientManager
-using GuessMyMessClient.ViewModel.Support; // Para ServiceLocator y ViewModelBase
+using GuessMyMessClient.GameService;
+using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -26,15 +26,10 @@ namespace GuessMyMessClient.ViewModel.Match
             {
                 _userGuess = value;
                 OnPropertyChanged();
-                // No llamamos a RaiseCanExecuteChanged(). 
-                // CommandManager.RequerySuggested lo detectará.
             }
         }
 
-        // --- Propiedad para deshabilitar el botón al enviar ---
         private bool _guessSent;
-
-        // --- Campos de la partida ---
         private readonly int _drawingId;
 
         public ICommand ConfirmGuessCommand { get; }
@@ -42,11 +37,9 @@ namespace GuessMyMessClient.ViewModel.Match
         public ICommand MaximizeWindowCommand { get; }
         public ICommand MinimizeWindowCommand { get; }
 
-        // Constructor base
         public GuessTheWordViewModel()
         {
             _guessSent = false;
-            // Se enlaza el comando con el método CanExecute
             ConfirmGuessCommand = new RelayCommand(ExecuteConfirmGuess, CanExecuteConfirmGuess);
             CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
@@ -55,22 +48,17 @@ namespace GuessMyMessClient.ViewModel.Match
             UserGuess = string.Empty;
         }
 
-        // --- Constructor Principal (Modificado) ---
         public GuessTheWordViewModel(DrawingDto drawing) : this()
         {
             if (drawing == null)
             {
-                MessageBox.Show("Error: No se recibió ningún dibujo para adivinar.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error: No drawing received to guess.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            // 1. Guardamos el ID del dibujo
             _drawingId = drawing.DrawingId;
-
-            // 2. Cargamos los trazos desde los bytes
             LoadDrawingFromBytes(drawing.DrawingData);
 
-            // 3. Nos suscribimos a los eventos del manager
             GameClientManager.Instance.ShowNextDrawing += OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart += OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost_Handler;
@@ -93,48 +81,35 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error crítico al cargar el dibujo: {ex.Message}");
+                MessageBox.Show($"Critical error loading drawing: {ex.Message}");
                 DrawingToGuess = new StrokeCollection();
             }
         }
 
-        // --- Lógica de Envío de Respuesta ---
-
         private bool CanExecuteConfirmGuess(object parameter)
         {
-            // El CommandManager ejecutará esto.
-            // Devuelve true si NO se ha enviado Y el texto NO está vacío.
             return !_guessSent && !string.IsNullOrWhiteSpace(UserGuess);
         }
 
         private void ExecuteConfirmGuess(object parameter)
         {
-            // 1. Marcar como enviado
             _guessSent = true;
-            // Ocultamos el botón deshabilitándolo (CommandManager lo hará)
 
             try
             {
-                // 2. Enviar la respuesta al servidor
                 GameClientManager.Instance.SubmitGuess(UserGuess, _drawingId);
-
-                // 3. Actualizar la UI
-                // Cambiamos el texto (esto NO afectará al CanExecute porque _guessSent es false)
-                UserGuess = "¡Respuesta enviada! Esperando a los demás...";
+                UserGuess = "Answer sent! Waiting for other players...";
                 OnPropertyChanged(nameof(UserGuess));
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al enviar respuesta: {ex.Message}");
-                _guessSent = false; // Habilitar de nuevo si falló
+                MessageBox.Show($"Error sending answer: {ex.Message}");
+                _guessSent = false;
             }
         }
 
-        // --- Lógica de Navegación y Limpieza ---
-
         private void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
         {
-            // Esta lógica se repite, lo cual es correcto
             string myUsername = GameClientManager.Instance.GetCurrentUsername();
             if (e.NextDrawing.OwnerUsername == myUsername)
             {
@@ -148,9 +123,7 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnAnswersPhaseStart_Handler(object sender, AnswersPhaseStartEventArgs e)
         {
-            // ¡Se acabaron las adivinanzas! Es hora de ver todas las respuestas.
             Cleanup();
-            // Navegamos a la pantalla de respuestas final
             ServiceLocator.Navigation.NavigateToAnswers(e.AllDrawings, e.AllGuesses, e.AllScores);
         }
 
@@ -167,7 +140,6 @@ namespace GuessMyMessClient.ViewModel.Match
             GameClientManager.Instance.ConnectionLost -= OnConnectionLost_Handler;
         }
 
-        // --- Comandos de Ventana ---
         private void ExecuteCloseWindow(object parameter)
         {
             Cleanup();

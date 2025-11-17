@@ -747,4 +747,28 @@
   <data name="drawingScreenBtnColorAqua" xml:space="preserve">
     <value>Aqua</value>
   </data>
+  <data name="waitingForGuessesTitle" xml:space="preserve">
+    <value>¡Tu dibujo está siendo adivinado!</value>
+  </data>
+  <data name="waitingForGuessesYouDrewTheWord" xml:space="preserve">
+    <value>Dibujaste la palabra:</value>
+  </data>
+  <data name="globalLbWaitingForOtherPlayers" xml:space="preserve">
+    <value>Esperando a los demás jugadores...</value>
+  </data>
+  <data name="answersScreenLbEndOfAnswers" xml:space="preserve">
+    <value>Fin de las respuestas. Esperando puntajes...</value>
+  </data>
+  <data name="answersScreenMsgTheWordWas" xml:space="preserve">
+    <value>La palabra era:</value>
+  </data>
+  <data name="answersScreenMsgNextDrawing" xml:space="preserve">
+    <value>Siguiente dibujo...</value>
+  </data>
+  <data name="alertErrorSendingMessage" xml:space="preserve">
+    <value>Error al enviar mensaje: </value>
+  </data>
+  <data name="alertChatError" xml:space="preserve">
+    <value>Error de Chat</value>
+  </data>
 </root>

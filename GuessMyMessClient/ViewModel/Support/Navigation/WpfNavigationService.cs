@@ -23,7 +23,6 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         {
             if (_currentMatchWindow != null)
             {
-                // Asegurarnos de que se ejecute en el hilo de la UI
                 Application.Current?.Dispatcher.Invoke(() =>
                 {
                     _currentMatchWindow.Close();
@@ -32,19 +31,17 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             }
         }
 
-        // --- Implementaciones de Navegación ---
-
         public void NavigateToDrawingScreen(string word)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                CloseCurrentGameWindow(); // Cierra la ventana anterior (WordSelection)
+                CloseCurrentGameWindow();
 
                 var vm = new DrawingScreenViewModel(word);
                 var view = new DrawingScreenView { DataContext = vm };
 
                 view.Show();
-                _currentMatchWindow = view; // Almacena la nueva ventana
+                _currentMatchWindow = view;
             });
         }
 
@@ -52,7 +49,7 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                CloseCurrentGameWindow(); // Cierra DrawingScreenView
+                CloseCurrentGameWindow();
 
                 var vm = new GuessTheWordViewModel(drawing);
                 var view = new GuessTheWordView { DataContext = vm };
@@ -68,12 +65,10 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             {
                 CloseCurrentGameWindow();
 
-                // --- ¡ESTA ES LA CONVERSIÓN CLAVE! ---
                 var drawingsList = drawings?.ToList() ?? new List<DrawingDto>();
                 var guessesList = guesses?.ToList() ?? new List<GuessDto>();
                 var scoresList = scores?.ToList() ?? new List<PlayerScoreDto>();
 
-                // Pasamos las Listas (List<T>) al ViewModel
                 var vm = new AnswersScreenViewModel(drawingsList, guessesList, scoresList);
                 var view = new AnswersScreenView { DataContext = vm };
 
@@ -84,7 +79,6 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
 
         public void NavigateToNextGuess(DrawingDto nextDrawing)
         {
-            // Esto es idéntico a NavigateToGuess
             NavigateToGuess(nextDrawing);
         }
 
@@ -94,11 +88,9 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             {
                 CloseCurrentGameWindow();
 
-                // --- ¡ESTA ES LA CONVERSIÓN CLAVE! ---
                 var scoresList = finalScores?.ToList() ?? new List<PlayerScoreDto>();
 
-                // Pasamos la Lista (List<T>) al ViewModel
-                //var vm = new EndOfMatchViewModel(scoresList); // Asumiendo que EndOfMatchViewModel espera List<T>
+                //var vm = new EndOfMatchViewModel(scoresList);
                 //var view = new EndOfMatchView { DataContext = vm };
 
                 //view.Show();
@@ -110,7 +102,7 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                CloseCurrentGameWindow(); // Cierra DrawingScreenView o AnswersScreenView
+                CloseCurrentGameWindow();
 
                 var vm = new WaitingForGuessesViewModel(word);
                 var view = new WaitingForGuessesView { DataContext = vm };

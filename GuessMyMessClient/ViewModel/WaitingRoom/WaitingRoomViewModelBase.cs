@@ -11,7 +11,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-
 namespace GuessMyMessClient.ViewModel.WaitingRoom
 {
     public abstract class WaitingRoomViewModelBase : ViewModelBase
@@ -20,6 +19,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected readonly SessionManager _sessionManager;
         protected DispatcherTimer _countdownTimer;
         private int _isNavigatingBack = 0;
+
         private string _matchName;
         public string MatchName
         {
@@ -149,11 +149,8 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         protected virtual void OnKicked(string reason)
         {
-            // Si no logramos poner la bandera en 1 (porque ya era 1), salimos.
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
-            {
                 return;
-            }
 
             MessageBox.Show($"{Lang.waitingRoomMsgKicked}: {reason}", Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
             NavigateBackToLobbyView();
@@ -166,30 +163,13 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             CountdownVisibility = Visibility.Visible;
         }
 
-        // Dentro de tu WaitingRoomViewModelBase.cs
-
         protected virtual void OnGameStarted()
         {
-            // --- INICIO DE LA CORRECCIÓN ---
-
-            // 1. LA GUARDIA:
-            // Si el evento se dispara una 2da vez, esta línea lo detiene.
             int originalValue = System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0);
-
-            // 2. LA COMPROBACIÓN:
-            // Si el valor original NO ERA 0, significa que otro hilo ya ganó
-            // (o ya estaba en 1) y debemos salir inmediatamente.
             if (originalValue != 0)
-            {
-                return; // Ya estamos navegando/limpiando.
-            }
-
-            // --- FIN DE LA CORRECCIÓN ---
-
+                return;
 
             CountdownVisibility = Visibility.Collapsed;
-
-            // (El resto de tu código original va aquí...)
 
             string username = _sessionManager.CurrentUsername;
             string matchId = _lobbyManager.CurrentMatchId;
@@ -197,7 +177,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(matchId))
             {
                 MessageBox.Show(Lang.alertActivationCompleteTitle, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                NavigateBackToLobbyView(); // Este método ya usa _isNavigatingBack, pero es bueno tener la guardia arriba
+                NavigateBackToLobbyView();
                 CleanUp();
                 return;
             }
@@ -218,9 +198,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void OnConnectionLost()
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
-            {
                 return;
-            }
 
             NavigateBackToLobbyView();
             CleanUp();
@@ -229,9 +207,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void LeaveLobby(object parameter = null)
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
-            {
-                return; // Ya estamos saliendo
-            }
+                return;
 
             _lobbyManager.Disconnect();
             NavigateBackToLobbyView();
@@ -298,6 +274,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             Console.WriteLine("WaitingRoomViewModel desuscrito de GameStarted");
         }
     }
+
     public class PlayerViewModel : ViewModelBase
     {
         private string _username;

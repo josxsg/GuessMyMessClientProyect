@@ -35,11 +35,11 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="¡Tu dibujo está siendo adivinado!"
-                       FontSize="36" FontWeight="Bold" Foreground="White"
+            <TextBlock Text="{x:Static language:Lang.waitingForGuessesTitle}"
+                       FontSize="36" FontWeight="Bold" Foreground="Black"
                        HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Dibujaste la palabra:"
+            <TextBlock Text="{x:Static language:Lang.waitingForGuessesYouDrewTheWord}"
                        FontSize="24" Foreground="Black"
                        HorizontalAlignment="Center" Margin="0,30,0,0"/>
 
@@ -49,7 +49,7 @@
                            HorizontalAlignment="Center"/>
             </Border>
 
-            <TextBlock Text="Esperando a los demás jugadores..."
+            <TextBlock Text="{x:Static language:Lang.globalLbWaitingForOtherPlayers}"
                        FontSize="24" Foreground="Black"
                        HorizontalAlignment="Center" Margin="0,30,0,0"/>
         </StackPanel>

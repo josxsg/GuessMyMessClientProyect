@@ -18,8 +18,6 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             Word = word;
 
-            // Esta vista se cierra cuando el servidor envía la señal de "Mostrar Respuestas"
-            // o si se pierde la conexión.
             GameClientManager.Instance.ShowNextDrawing += OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart += OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost_Handler;
@@ -27,8 +25,8 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
         {
-            // Esta lógica se repite, lo cual es correcto
             string myUsername = GameClientManager.Instance.GetCurrentUsername();
+
             if (e.NextDrawing.OwnerUsername == myUsername)
             {
                 ServiceLocator.Navigation.NavigateToWaitingForGuesses(e.NextDrawing.WordKey);
@@ -41,9 +39,7 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnAnswersPhaseStart_Handler(object sender, AnswersPhaseStartEventArgs e)
         {
-            // ¡Se acabaron las adivinanzas! Es hora de ver todas las respuestas.
             Cleanup();
-            // Navegamos a la pantalla de respuestas final
             ServiceLocator.Navigation.NavigateToAnswers(e.AllDrawings, e.AllGuesses, e.AllScores);
         }
 
