@@ -31,9 +31,6 @@ namespace GuessMyMessClient.ViewModel.Session
         public event EventHandler<RoundStartEventArgs> RoundStart;
         public event EventHandler<DrawingPhaseStartEventArgs> DrawingPhaseStart;
         public event EventHandler<GuessingPhaseStartEventArgs> GuessingPhaseStart;
-        public event EventHandler<PlayerGuessedEventArgs> PlayerGuessedCorrectly;
-        public event EventHandler<TimeUpdateEventArgs> TimeUpdate;
-        public event EventHandler<RoundEndEventArgs> RoundEnd;
         public event EventHandler<GameEndEventArgs> GameEnd;
         public event Action ConnectionLost;
         public event EventHandler<InGameMessageEventArgs> InGameMessageReceived;
@@ -301,22 +298,6 @@ namespace GuessMyMessClient.ViewModel.Session
     public class DrawingPhaseStartEventArgs : EventArgs
     {
         public int DurationSeconds { get; set; }
-    }
-
-    public class PlayerGuessedEventArgs : EventArgs
-    {
-        public string Username { get; set; }
-    }
-
-    public class TimeUpdateEventArgs : EventArgs
-    {
-        public int RemainingSeconds { get; set; }
-    }
-
-    public class RoundEndEventArgs : EventArgs
-    {
-        public PlayerScoreDto[] RoundScores { get; set; }
-        public string CorrectWord { get; set; }
     }
 
     public class InGameMessageEventArgs : EventArgs
