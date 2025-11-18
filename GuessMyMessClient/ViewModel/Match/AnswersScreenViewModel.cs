@@ -22,14 +22,14 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _username;
         public string Username
         {
-            get => _username;
+            get { return _username; }
             set { _username = value; OnPropertyChanged(nameof(Username)); }
         }
 
         private int _score;
         public int Score
         {
-            get => _score;
+            get { return _score; }
             set { _score = value; OnPropertyChanged(nameof(Score)); }
         }
     }
