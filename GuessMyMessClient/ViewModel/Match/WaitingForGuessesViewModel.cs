@@ -10,8 +10,12 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _word;
         public string Word
         {
-            get => _word;
-            set { _word = value; OnPropertyChanged(); }
+            get { return _word; }
+            set
+            {
+                _word = value; 
+                OnPropertyChanged();
+            }
         }
 
         public WaitingForGuessesViewModel(string word)
