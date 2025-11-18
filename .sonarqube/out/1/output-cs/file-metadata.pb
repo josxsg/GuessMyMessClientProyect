@@ -1,107 +1,114 @@
-“
-‡C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\App.g.csutf-8½
-±C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8«
-ŸC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\GeneratedInternalTypeHelper.g.csutf-8»
-¯C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchView.g.csutf-8¿
-³C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchHostView.g.csutf-8Ä
-¸C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.g.csutf-8¼
-°C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchView.g.csutf-8À
-´C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchHostView.g.csutf-8¬
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\WordSelectionView.g.csutf-8«
-ŸC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\GuessTheWordView.g.csutf-8©
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\EndOfMatchView.g.csutf-8¬
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\DrawingScreenView.g.csutf-8¬
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\AnswersScreenView.g.csutf-8´
-¨C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\MatchSettings\MatchSettingsView.g.csutf-8¨
-œC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Matches\MatchesView.g.csutf-8£
-—C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\Main.g.csutf-8«
-ŸC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\SelectAvatarView.g.csutf-8¤
-˜C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\LobbyView.g.csutf-8¦
-šC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\ProfileView.g.csutf-8¦
-šC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\FriendsView.g.csutf-8¬
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\DirectMessageView.g.csutf-8º
-®C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyChangesByCodeView.g.csutf-8´
-¨C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\InviteByEmailView.g.csutf-8²
-¦C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangeEmailView.g.csutf-8µ
-©C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangePasswordView.g.csutf-8¬
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\ConfigurationView.g.csutf-8ª
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\WelcomeView.g.csutf-8©
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\SignUpView.g.csutf-8³
-§C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyByCodeView.g.csutf-8¨
-œC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\LoginView.g.csutf-8 
-”C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Properties\Settings.Designer.csutf-8¡
-•C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Properties\Resources.Designer.csutf-8¢
-–C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.Designer.csutf-8™
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Properties\AssemblyInfo.csutf-8²
-¨C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.csutf-8¶
-¬C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.csutf-8»
-±C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.csutf-8³
-©C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.csutf-8·
-­C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.csutf-8£
-™C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml.csutf-8¢
-˜C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml.csutf-8 
-–C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml.csutf-8£
-™C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml.csutf-8£
-™C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml.csutf-8«
-¡C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml.csutf-8Ÿ
-•C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml.csutf-8Š
-€C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.csutf-8š
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\Main.xaml.csutf-8¢
-˜C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.csutf-8·
-­C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.csutf-8»
-±C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.csutf-8À
-¶C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.csutf-8¸
-®C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.csutf-8¼
-²C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.csutf-8
-“C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.csutf-8›
-‘C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.csutf-8
-“C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.csutf-8£
-™C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.csutf-8±
-§C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.csutf-8ª
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.csutf-8«
-¡C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.csutf-8¬
-¢C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.csutf-8©
-ŸC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.csutf-8£
-™C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.csutf-8¡
-—C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.csutf-8 
-–C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.csutf-8Ÿ
-•C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.csutf-8°
-¦C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.csutf-8™
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.csutf-8¶
-¬C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.csutf-8¥
-›C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.csutf-8¹
-¯C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.csutf-8»
-±C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanToVisibilityConverter.csutf-8§
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SocialClientManager.csutf-8¢
-˜C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SessionManager.csutf-8¬
-¢C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\MatchmakingClientManager.csutf-8¦
-œC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\LobbyClientManager.csutf-8˜
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\RelayCommand.csutf-8¨
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.csutf-8§
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.csutf-8¥
-›C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.csutf-8¨
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.csutf-8¨
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.csutf-8°
-¦C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\MatchSettings\MatchSettingsViewModel.csutf-8¤
-šC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.csutf-8¢
-˜C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.csutf-8£
-™C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.csutf-8§
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.csutf-8 
-–C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.csutf-8¢
-˜C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.csutf-8¨
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.csutf-8¶
-¬C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.csutf-8¯
-¥C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.csutf-8±
-§C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.csutf-8°
-¦C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.csutf-8®
-¤C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.csutf-8¨
-C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.csutf-8¥
-›C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.csutf-8¤
-šC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.csutf-8¦
-œC:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.csutf-8“
-‰C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.csutf-8­
-¡C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\Reference.csutf-8¯
-£C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\Reference.csutf-8³
-§C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\Reference.csutf-8®
-¢C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\Reference.csutf-8¬
- C:\Users\Raul\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstrucciÃ³n\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\Reference.csutf-8
+–
+ŠC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\App.g.csutf-8À
+´C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8®
+¢C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\GeneratedInternalTypeHelper.g.csutf-8¿
+³C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchView.g.csutf-8Â
+¶C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchHostView.g.csutf-8¾
+²C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPublicMatchView.g.csutf-8¬
+ C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\EndOfMatchView.g.csutf-8®
+¢C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\GuessTheWordView.g.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\AnswersScreenView.g.csutf-8Ã
+·C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\WaitingRoom\WaitingRoomPrivateMatchHostView.g.csutf-8«
+ŸC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Matches\MatchesView.g.csutf-8§
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\LobbyView.g.csutf-8©
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\ProfileView.g.csutf-8¸
+¬C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangePasswordView.g.csutf-8½
+±C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyChangesByCodeView.g.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\ConfigurationView.g.csutf-8µ
+©C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\ChangeEmailView.g.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\WordSelectionView.g.csutf-8­
+¡C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\WelcomeView.g.csutf-8³
+§C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\WaitingForGuessesView.g.csutf-8®
+¢C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\SelectAvatarView.g.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Match\DrawingScreenView.g.csutf-8¶
+ªC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\VerifyByCodeView.g.csutf-8©
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\FriendsView.g.csutf-8ª
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\MainView.g.csutf-8·
+«C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\MatchSettings\MatchSettingsView.g.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\DirectMessageView.g.csutf-8¬
+ C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\SignUpView.g.csutf-8·
+«C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\Lobby\Dialogs\InviteByEmailView.g.csutf-8«
+ŸC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\obj\Debug\View\HomePages\LoginView.g.csutf-8£
+—C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\Settings.Designer.csutf-8¤
+˜C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\Resources.Designer.csutf-8¥
+™C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.Designer.csutf-8œ
+’C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\AssemblyInfo.csutf-8µ
+«C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.csutf-8¹
+¯C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.csutf-8¶
+¬C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.csutf-8º
+°C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml.csutf-8ª
+ C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WaitingForGuessesView.xaml.csutf-8¥
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml.csutf-8£
+™C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml.csutf-8®
+¤C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml.csutf-8¢
+˜C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml.csutf-8
+ƒC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.csutf-8¡
+—C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\MainView.xaml.csutf-8¥
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.csutf-8º
+°C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.csutf-8¾
+´C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.csutf-8»
+±C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.csutf-8¿
+µC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.csutf-8 
+–C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.csutf-8
+”C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.csutf-8 
+–C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.csutf-8´
+ªC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.csutf-8­
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.csutf-8®
+¤C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.csutf-8¯
+¥C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.csutf-8¬
+¢C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.csutf-8¤
+šC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.csutf-8¢
+˜C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.csutf-8£
+™C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.csutf-8³
+©C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.csutf-8œ
+’C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.csutf-8¥
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\ServiceLocator.csutf-8¨
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.csutf-8¶
+¬C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Navigation\WpfNavigationService.csutf-8´
+ªC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Navigation\INavigationService.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\InkCanvasBinder.csutf-8¼
+²C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.csutf-8¹
+¯C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.csutf-8¾
+´C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanToVisibilityConverter.csutf-8º
+°C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanNegationConverter.csutf-8ª
+ C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SocialClientManager.csutf-8¥
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SessionManager.csutf-8©
+ŸC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\LobbyClientManager.csutf-8¯
+¥C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\MatchmakingClientManager.csutf-8¨
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\GameClientManager.csutf-8«
+¡C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.csutf-8¯
+¥C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WaitingForGuessesViewModel.csutf-8›
+‘C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\RelayCommand.csutf-8ª
+ C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.csutf-8¨
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.csutf-8«
+¡C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.csutf-8«
+¡C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.csutf-8³
+©C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\MatchSettings\MatchSettingsViewModel.csutf-8«
+¡C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.csutf-8¨
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.csutf-8¶
+ªC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\Reference.csutf-8§
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.csutf-8¦
+œC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.csutf-8´
+ªC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.csutf-8¥
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.csutf-8£
+™C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.csutf-8¥
+›C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.csutf-8¹
+¯C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.csutf-8§
+C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.csutf-8³
+©C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.csutf-8«
+¡C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.csutf-8²
+¨C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\Reference.csutf-8©
+ŸC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.csutf-8±
+§C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.csutf-8ª
+ C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.csutf-8²
+¦C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\Reference.csutf-8–
+ŒC:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.csutf-8¯
+£C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\GameService\Reference.csutf-8°
+¤C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\LobbyService\Reference.csutf-8±
+¥C:\Users\Gabriela\Desktop\Rodrigo\5Â°Semestre\TecnologÃ­asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\Reference.csutf-8

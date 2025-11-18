@@ -1,5 +1,5 @@
-◊
-èC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Properties\AssemblyInfo.cs
+⁄
+íC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\AssemblyInfo.cs
 [
 
  
@@ -130,8 +130,8 @@ ComVisible 
 (44 
 $str44 (
 )44( )
-]44) *ˆ
-®C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.cs
+]44) *Ö
+´C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -158,25 +158,62 @@ ComVisible 
 )  !
 ;! "
 this 
-. 
-DataContext 
-= 
-new "+
-WaitingRoomPublicMatchViewModel# B
-(B C
-LobbyClientManager "
-." #
-Instance# +
-,+ ,
-SessionManager 
-. 
-Instance '
-) 
-; 
-} 	
-}   
-}!! Ü
-¨C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.cs
+. 
+Closed 
++= 
+WaitingRoom_Closed -
+;- .
+} 	
+private 
+void 
+WaitingRoom_Closed '
+(' (
+object( .
+sender/ 5
+,5 6
+	EventArgs7 @
+eA B
+)B C
+{ 	
+if   
+(   
+this   
+.   
+DataContext    
+is  ! #$
+WaitingRoomViewModelBase  $ <
+vm  = ?
+)  ? @
+{!! 
+vm"" 
+."" 
+CleanUp"" 
+("" 
+)"" 
+;"" 
+}## 
+this$$ 
+.$$ 
+Closed$$ 
+-=$$ 
+WaitingRoom_Closed$$ -
+;$$- .
+}%% 	
+private'' 
+void'' 
+Button_Click'' !
+(''! "
+object''" (
+sender'') /
+,''/ 0
+RoutedEventArgs''1 @
+e''A B
+)''B C
+{(( 	
+}** 	
+}++ 
+},, ±
+ØC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchHostView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -203,63 +240,50 @@ ComVisible 
 )  !
 ;! "
 this 
-. 
-DataContext 
-= 
-new "/
-#WaitingRoomPublicMatchHostViewModel# F
-(F G
-LobbyClientManager "
-." #
-Instance# +
-,+ ,
-SessionManager 
-. 
-Instance '
-) 
-; 
-} 	
-}   
-}!! Ö
-±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPublicMatchCountDownView.xaml.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-View  
-.  !
-WaitingRoom! ,
-{ 
-public 
-
-partial 
-class /
-#WaitingRoomPublicMatchCountDownView <
-:= >
-Window? E
-{ 
-public /
-#WaitingRoomPublicMatchCountDownView 2
-(2 3
-)3 4
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-this 
-. 
-DataContext 
-= 
-new "4
-(WaitingRoomPublicMatchCountDownViewModel# K
-(K L
-)L M
-;M N
-} 	
-} 
-} ˙
-©C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.cs
+. 
+Closed 
++= 
+WaitingRoom_Closed -
+;- .
+} 	
+private 
+void 
+WaitingRoom_Closed '
+(' (
+object( .
+sender/ 5
+,5 6
+	EventArgs7 @
+eA B
+)B C
+{ 	
+if   
+(   
+this   
+.   
+DataContext    
+is  ! #$
+WaitingRoomViewModelBase  $ <
+vm  = ?
+)  ? @
+{!! 
+vm"" 
+."" 
+CleanUp"" 
+("" 
+)"" 
+;"" 
+}## 
+this$$ 
+.$$ 
+Closed$$ 
+-=$$ 
+WaitingRoom_Closed$$ -
+;$$- .
+}%% 	
+}&& 
+}'' ®
+¨C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -286,25 +310,50 @@ ComVisible 
 )  !
 ;! "
 this 
-. 
-DataContext 
-= 
-new ",
- WaitingRoomPrivateMatchViewModel# C
-(C D
-LobbyClientManager "
-." #
-Instance# +
-,+ ,
-SessionManager 
-. 
-Instance '
-) 
-; 
-} 	
-}   
-}!! ä
-≠C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.cs
+. 
+Closed 
++= 
+WaitingRoom_Closed -
+;- .
+} 	
+private 
+void 
+WaitingRoom_Closed '
+(' (
+object( .
+sender/ 5
+,5 6
+	EventArgs7 @
+eA B
+)B C
+{ 	
+if   
+(   
+this   
+.   
+DataContext    
+is  ! #$
+WaitingRoomViewModelBase  $ <
+vm  = ?
+)  ? @
+{!! 
+vm"" 
+."" 
+CleanUp"" 
+("" 
+)"" 
+;"" 
+}## 
+this$$ 
+.$$ 
+Closed$$ 
+-=$$ 
+WaitingRoom_Closed$$ -
+;$$- .
+}%% 	
+}&& 
+}'' ¥
+∞C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\WaitingRoom\WaitingRoomPrivateMatchHostView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -331,25 +380,50 @@ ComVisible 
 )  !
 ;! "
 this 
-. 
-DataContext 
-= 
-new "0
-$WaitingRoomPrivateMatchHostViewModel# G
-(G H
-LobbyClientManager "
-." #
-Instance# +
-,+ ,
-SessionManager 
-. 
-Instance '
-) 
-; 
-} 	
-}   
-}!! ±
-ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml.cs
+. 
+Closed 
++= 
+WaitingRoom_Closed -
+;- .
+} 	
+private 
+void 
+WaitingRoom_Closed '
+(' (
+object( .
+sender/ 5
+,5 6
+	EventArgs7 @
+eA B
+)B C
+{ 	
+if   
+(   
+this   
+.   
+DataContext    
+is  ! #$
+WaitingRoomViewModelBase  $ <
+vm  = ?
+)  ? @
+{!! 
+vm"" 
+."" 
+CleanUp"" 
+("" 
+)"" 
+;"" 
+}## 
+this$$ 
+.$$ 
+Closed$$ 
+-=$$ 
+WaitingRoom_Closed$$ -
+;$$- .
+}%% 	
+}&& 
+}'' ¥
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WordSelectionView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -386,8 +460,37 @@ $WaitingRoomPrivateMatchHostViewModel# G
 ;; <
 } 	
 } 
-} ≠
-òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml.cs
+} ï
+†C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\WaitingForGuessesView.xaml.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+View  
+.  !
+Match! &
+{ 
+public 
+
+partial 
+class !
+WaitingForGuessesView .
+:/ 0
+Window1 7
+{ 
+public !
+WaitingForGuessesView $
+($ %
+)% &
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+} 	
+} 
+} Ú
+õC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\GuessTheWordView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -412,20 +515,23 @@ $WaitingRoomPrivateMatchHostViewModel# G
 InitializeComponent 
 (  
 )  !
-;! "
-this 
-. 
-DataContext 
-= 
-new "!
-GuessTheWordViewModel# 8
-(8 9
-)9 :
-;: ;
-} 	
-} 
-} •
-ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml.cs
+;! "
+} 	
+private 
+void 
+TextBox_TextChanged (
+(( )
+object) /
+sender0 6
+,6 7 
+TextChangedEventArgs8 L
+eM N
+)N O
+{ 	
+} 	
+}   
+}!! ®
+ôC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\EndOfMatchView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -462,8 +568,8 @@ $WaitingRoomPrivateMatchHostViewModel# G
 ;8 9
 } 	
 } 
-} ±
-ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml.cs
+} â
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\DrawingScreenView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -488,20 +594,11 @@ $WaitingRoomPrivateMatchHostViewModel# G
 InitializeComponent 
 (  
 )  !
-;! "
-this 
-. 
-DataContext 
-= 
-new ""
-DrawingScreenViewModel# 9
-(9 :
-): ;
-;; <
-} 	
-} 
-} ±
-ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml.cs
+;! "
+} 	
+} 
+} â
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Match\AnswersScreenView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -526,20 +623,11 @@ $WaitingRoomPrivateMatchHostViewModel# G
 InitializeComponent 
 (  
 )  !
-;! "
-this 
-. 
-DataContext 
-= 
-new ""
-AnswersScreenViewModel# 9
-(9 :
-): ;
-;; <
-} 	
-} 
-} ¡
-°C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml.cs
+;! "
+} 	
+} 
+} ƒ
+§C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\MatchSettings\MatchSettingsView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -576,8 +664,8 @@ $WaitingRoomPrivateMatchHostViewModel# G
 ;; <
 } 	
 } 
-} ¯
-ïC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml.cs
+} ˚
+òC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Matches\MatchesView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -605,207 +693,221 @@ $WaitingRoomPrivateMatchHostViewModel# G
 ;! "
 } 	
 } 
-} Ì
-ÄC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.cs
-	namespace 	
-GuessMyMessClient
+} ¢
+ÉC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.cs
+	namespace 	
+GuessMyMessClient
  
-{ 
-public 
-
-partial 
-class 
-App 
-: 
-Application *
-{		 
+{		 
 public
 
- 
+ 
+
+partial
+
+ 
+class
+
+ 
 App
 
- 
-(
+ 
+:
 
- 
-)
+ 
+Application
 
- 
-{ 	
-Log 
-. 
-Logger 
-= 
-new 
-LoggerConfiguration 0
-(0 1
-)1 2
-. 
-MinimumLevel 
-. 
-Debug #
-(# $
-)$ %
-. 
-WriteTo 
-. 
-File 
-( 
-$str 4
-,4 5
-rollingInterval #
-:# $
-RollingInterval% 4
-.4 5
-Day5 8
-,8 9
-outputTemplate "
-:" #
-$str$ w
-)w x
-. 
-CreateLogger 
-( 
-) 
-;  
-Log 
-. 
-Information 
-( 
-$str A
-)A B
-;B C
-this 
-. (
-DispatcherUnhandledException -
-+=. 0,
- App_DispatcherUnhandledException1 Q
-;Q R
-} 	
-	protected 
-override 
-void 
-	OnStartup  )
-() *
-StartupEventArgs* :
-e; <
-)< =
-{ 	
-CultureInfo 
-cultureInfo #
-=$ %
-new& )
-CultureInfo* 5
-(5 6
-$str6 =
-)= >
-;> ?
-Thread 
-. 
-CurrentThread  
-.  !
-CurrentUICulture! 1
-=2 3
-cultureInfo4 ?
-;? @
-Thread 
-. 
-CurrentThread  
-.  !
-CurrentCulture! /
-=0 1
-cultureInfo2 =
-;= >
-base 
-. 
-	OnStartup 
-( 
-e 
-) 
-; 
-} 	
-private!! 
-void!! ,
- App_DispatcherUnhandledException!! 5
-(!!5 6
-object!!6 <
-sender!!= C
-,!!C D
-System!!E K
-.!!K L
-Windows!!L S
-.!!S T
-	Threading!!T ]
-.!!] ^2
-%DispatcherUnhandledExceptionEventArgs	!!^ É
+ *
+{ 
+public 
+App 
+( 
+) 
+{ 	
+Log 
+. 
+Logger 
+= 
+new 
+LoggerConfiguration 0
+(0 1
+)1 2
+. 
+MinimumLevel 
+. 
+Debug #
+(# $
+)$ %
+. 
+WriteTo 
+. 
+File 
+( 
+$str 4
+,4 5
+rollingInterval #
+:# $
+RollingInterval% 4
+.4 5
+Day5 8
+,8 9
+outputTemplate "
+:" #
+$str$ w
+)w x
+. 
+CreateLogger 
+( 
+) 
+;  
+Log 
+. 
+Information 
+( 
+$str A
+)A B
+;B C
+this 
+. (
+DispatcherUnhandledException -
++=. 0,
+ App_DispatcherUnhandledException1 Q
+;Q R
+} 	
+	protected 
+override 
+void 
+	OnStartup  )
+() *
+StartupEventArgs* :
+e; <
+)< =
+{ 	
+CultureInfo 
+cultureInfo #
+=$ %
+new& )
+CultureInfo* 5
+(5 6
+$str6 =
+)= >
+;> ?
+Thread 
+. 
+CurrentThread  
+.  !
+CurrentUICulture! 1
+=2 3
+cultureInfo4 ?
+;? @
+Thread 
+. 
+CurrentThread  
+.  !
+CurrentCulture! /
+=0 1
+cultureInfo2 =
+;= >
+base   
+.   
+	OnStartup   
+(   
+e   
+)   
+;   
+ServiceLocator!! 
+.!! 
+
+Navigation!! %
+=!!& '
+new!!( + 
+WpfNavigationService!!, @
+(!!@ A
+)!!A B
+;!!B C
+}"" 	
+private$$ 
+void$$ ,
+ App_DispatcherUnhandledException$$ 5
+($$5 6
+object$$6 <
+sender$$= C
+,$$C D
+System$$E K
+.$$K L
+Windows$$L S
+.$$S T
+	Threading$$T ]
+.$$] ^2
+%DispatcherUnhandledExceptionEventArgs	$$^ É
 e
-!!Ñ Ö
+$$Ñ Ö
 )
-!!Ö Ü
-{"" 	
-Log## 
-.## 
-Fatal## 
-(## 
-e## 
-.## 
-	Exception## !
-,##! "
-$str### R
-)##R S
-;##S T
-e$$ 
-.$$ 
-Handled$$ 
-=$$ 
-true$$ 
-;$$ 
+$$Ö Ü
+{%% 	
 Log&& 
-.&& 
-CloseAndFlush&& 
-(&& 
-)&& 
-;&&  
-Current'' 
-.'' 
-Shutdown'' 
-('' 
-)'' 
-;'' 
-}(( 	
-	protected** 
-override** 
-void** 
-OnExit**  &
-(**& '
-ExitEventArgs**' 4
-e**5 6
-)**6 7
-{++ 	
-Log,, 
-.,, 
-Information,, 
-(,, 
-$str,, :
-),,: ;
-;,,; <
-Log-- 
-.-- 
-CloseAndFlush-- 
-(-- 
-)-- 
-;--  
-base.. 
-... 
-OnExit.. 
-(.. 
-e.. 
-).. 
-;.. 
-}// 	
-}00 
-}11 ˘
-êC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\Main.xaml.cs
+.&& 
+Fatal&& 
+(&& 
+e&& 
+.&& 
+	Exception&& !
+,&&! "
+$str&&# R
+)&&R S
+;&&S T
+e'' 
+.'' 
+Handled'' 
+='' 
+true'' 
+;'' 
+Log)) 
+.)) 
+CloseAndFlush)) 
+()) 
+))) 
+;))  
+Current** 
+.** 
+Shutdown** 
+(** 
+)** 
+;** 
+}++ 	
+	protected-- 
+override-- 
+void-- 
+OnExit--  &
+(--& '
+ExitEventArgs--' 4
+e--5 6
+)--6 7
+{.. 	
+Log// 
+.// 
+Information// 
+(// 
+$str// :
+)//: ;
+;//; <
+Log00 
+.00 
+CloseAndFlush00 
+(00 
+)00 
+;00  
+base11 
+.11 
+OnExit11 
+(11 
+e11 
+)11 
+;11 
+}22 	
+}33 
+}44 à
+óC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\MainView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -817,15 +919,15 @@ $WaitingRoomPrivateMatchHostViewModel# G
 public 
 
 partial 
-class 
-Main 
-: 
-Window  &
+class 
+MainView !
+:" #
+Window$ *
 { 
-public 
-Main 
-( 
-) 
+public 
+MainView 
+( 
+) 
 { 	
 InitializeComponent 
 (  
@@ -919,8 +1021,8 @@ ResizeMode"" (
 }** 
 }++ 	
 },, 
-}-- ≠
-òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.cs
+}-- ∞
+õC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -957,8 +1059,8 @@ ResizeMode"" (
 ;: ;
 } 	
 } 
-} ı
-≠C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs
+} ¯
+∞C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -995,8 +1097,8 @@ ResizeMode"" (
  	
 } 	
 } 
-} ñ
-±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs
+} ô
+¥C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1169,25 +1271,8 @@ Dispatcher))% /
 }-- 
 }.. 	
 }// 
-}00 “
-∂C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchCountDownViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-WaitingRoom& 1
-{ 
-internal		 
-class		 4
-(WaitingRoomPublicMatchCountDownViewModel		 ;
-{
-
- 
-} 
-} ¯
-ÆC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs
+}00 ˚
+±C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1224,8 +1309,8 @@ Dispatcher))% /
  	
 } 	
 } 
-} ô
-≤C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.cs
+} ú
+µC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchHostViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1398,8 +1483,8 @@ Dispatcher))% /
 }-- 
 }.. 	
 }// 
-}00 ˘
-ìC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.cs
+}00 ¸
+ñC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1427,9 +1512,9 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ¯
+} ˚
 
-ëC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.cs
+îC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1499,8 +1584,8 @@ Dispatcher))% /
 }## 
 }$$ 	
 }%% 
-}&& ˘
-ìC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.cs
+}&& ¸
+ñC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1528,8 +1613,8 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ã
-ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.cs
+} é
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1557,8 +1642,8 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ƒ
-ßC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.cs
+} «
+™C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1588,9 +1673,9 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ñ
+} ô
 
-†C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.cs
+£C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1653,8 +1738,8 @@ Dispatcher))% /
 }## 
 }$$ 	
 }%% 
-}&& ›
-°C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.cs
+}&& ‡
+§C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1693,8 +1778,8 @@ Dispatcher))% /
 ;; <
 } 	
 } 
-} µ
-¢C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.cs
+} ∏
+•C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1724,8 +1809,8 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ¨
-üC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.cs
+} Ø
+¢C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1755,8 +1840,8 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ã
-ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.cs
+} é
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1784,8 +1869,8 @@ Dispatcher))% /
 ;! "
 } 	
 } 
-} ü
-óC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.cs
+} ¢
+öC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1899,8 +1984,79 @@ ResizeMode"" (
 },, 
 }-- 	
 }.. 
-}// Ñ
-ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.cs
+}// É
+òC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+View  
+.  !
+	HomePages! *
+{ 
+public 
+
+partial 
+class 
+	LoginView "
+:# $
+Window% +
+{ 
+public 
+	LoginView 
+( 
+) 
+{ 	
+InitializeComponent 
+(  
+)  !
+;! "
+this 
+. 
+DataContext 
+= 
+new "
+LoginViewModel# 1
+(1 2
+)2 3
+;3 4
+} 	
+	protected 
+override 
+void !
+OnMouseLeftButtonDown  5
+(5 6 
+MouseButtonEventArgs6 J
+eK L
+)L M
+{ 	
+base 
+. !
+OnMouseLeftButtonDown &
+(& '
+e' (
+)( )
+;) *
+if   
+(   
+e   
+.   
+ButtonState   
+==    
+MouseButtonState  ! 1
+.  1 2
+Pressed  2 9
+)  9 :
+{!! 
+DragMove"" 
+("" 
+)"" 
+;"" 
+}## 
+}$$ 	
+}%% 
+}&& á
+ôC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.cs
 	namespace 	
 GuessMyMessClient
  
@@ -1972,642 +2128,628 @@ SignUpView 
 }## 
 }$$ 	
 }%% 
-}&& Ä
-ïC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.cs
-	namespace 	
-GuessMyMessClient
+}&& Ë‡
+©C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-View  
-.  !
-	HomePages! *
-{ 
-public 
-
-partial 
-class 
-	LoginView "
-:# $
-Window% +
-{ 
-public 
-	LoginView 
-( 
-) 
-{ 	
-InitializeComponent 
-(  
-)  !
-;! "
-this 
-. 
-DataContext 
-= 
-new "
-LoginViewModel# 1
-(1 2
-)2 3
-;3 4
-} 	
-	protected 
-override 
-void !
-OnMouseLeftButtonDown  5
-(5 6 
-MouseButtonEventArgs6 J
-eK L
-)L M
-{ 	
-base 
-. !
-OnMouseLeftButtonDown &
-(& '
-e' (
-)( )
-;) *
-if   
-(   
-e   
-.   
-ButtonState   
-==    
-MouseButtonState  ! 1
-.  1 2
-Pressed  2 9
-)  9 :
-{!! 
-DragMove"" 
-("" 
-)"" 
-;"" 
-}## 
-}$$ 	
-}%% 
-}&& Ô≥
-¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-WaitingRoom& 1
-{ 
-public 
+. 
+	ViewModel %
+.% &
+WaitingRoom& 1
+{ 
+public 
 
-abstract 
-class $
-WaitingRoomViewModelBase 2
-:3 4
-ViewModelBase5 B
-{ 
-	protected 
-readonly 
-LobbyClientManager -
-_lobbyManager. ;
-;; <
-	protected 
-readonly 
-SessionManager )
-_sessionManager* 9
-;9 :
-	protected 
-DispatcherTimer !
-_countdownTimer" 1
-;1 2
-private 
-string 
+abstract 
+class $
+WaitingRoomViewModelBase 2
+:3 4
+ViewModelBase5 B
+{ 
+	protected 
+readonly 
+LobbyClientManager -
+_lobbyManager. ;
+;; <
+	protected 
+readonly 
+SessionManager )
+_sessionManager* 9
+;9 :
+	protected 
+DispatcherTimer !
+_countdownTimer" 1
+;1 2
+private 
+int 
+_isNavigatingBack %
+=& '
+$num( )
+;) *
+private 
+string 
 
-_matchName !
-;! "
-public 
-string 
-	MatchName 
-{ 	
-get 
-=> 
+_matchName !
+;! "
+public 
+string 
+	MatchName 
+{ 	
+get 
+=> 
 
-_matchName 
-; 
-set 
-=> 
-SetProperty 
-( 
-ref "
+_matchName 
+; 
+set 
+=> 
+SetProperty 
+( 
+ref "
 
-_matchName# -
-,- .
-value/ 4
-)4 5
-;5 6
-} 	
-private 
-string 
-_hostUsername $
-;$ %
-public 
-string 
-HostUsername "
-{ 	
-get 
-=> 
-_hostUsername  
-;  !
-set 
-=> 
-SetProperty 
-( 
-ref "
-_hostUsername# 0
-,0 1
-value2 7
-)7 8
-;8 9
-}   	
-private"" 
-string"" 
-_difficulty"" "
-;""" #
-public## 
-string## 
+_matchName# -
+,- .
+value/ 4
+)4 5
+;5 6
+} 	
+private 
+string 
+_hostUsername $
+;$ %
+public 
+string 
+HostUsername "
+{   	
+get!! 
+=>!! 
+_hostUsername!!  
+;!!  !
+set"" 
+=>"" 
+SetProperty"" 
+("" 
+ref"" "
+_hostUsername""# 0
+,""0 1
+value""2 7
+)""7 8
+;""8 9
+}## 	
+private%% 
+string%% 
+_difficulty%% "
+;%%" #
+public&& 
+string&& 
 
-Difficulty##  
-{$$ 	
-get%% 
-=>%% 
-_difficulty%% 
-;%% 
-set&& 
-=>&& 
-SetProperty&& 
-(&& 
-ref&& "
-_difficulty&&# .
-,&&. /
-value&&0 5
-)&&5 6
-;&&6 7
-}'' 	
-private)) 
-string)) 
-_playerCountDisplay)) *
-;))* +
-public** 
-string** 
-PlayerCountDisplay** (
-{++ 	
-get,, 
-=>,, 
-_playerCountDisplay,, &
-;,,& '
-set-- 
-=>-- 
-SetProperty-- 
-(-- 
-ref-- "
-_playerCountDisplay--# 6
-,--6 7
-value--8 =
-)--= >
-;--> ?
-}.. 	
-private00 
-string00 
+Difficulty&&  
+{'' 	
+get(( 
+=>(( 
+_difficulty(( 
+;(( 
+set)) 
+=>)) 
+SetProperty)) 
+()) 
+ref)) "
+_difficulty))# .
+,)). /
+value))0 5
+)))5 6
+;))6 7
+}** 	
+private,, 
+string,, 
+_playerCountDisplay,, *
+;,,* +
+public-- 
+string-- 
+PlayerCountDisplay-- (
+{.. 	
+get// 
+=>// 
+_playerCountDisplay// &
+;//& '
+set00 
+=>00 
+SetProperty00 
+(00 
+ref00 "
+_playerCountDisplay00# 6
+,006 7
+value008 =
+)00= >
+;00> ?
+}11 	
+private33 
+string33 
 
-_matchCode00 !
-;00! "
-public11 
-string11 
-	MatchCode11 
-{22 	
-get33 
-=>33 
+_matchCode33 !
+;33! "
+public44 
+string44 
+	MatchCode44 
+{55 	
+get66 
+=>66 
 
-_matchCode33 
-;33 
-set44 
-=>44 
-SetProperty44 
-(44 
-ref44 "
+_matchCode66 
+;66 
+set77 
+=>77 
+SetProperty77 
+(77 
+ref77 "
 
-_matchCode44# -
-,44- .
-value44/ 4
-)444 5
-;445 6
-}55 	
-private77 
+_matchCode77# -
+,77- .
+value77/ 4
+)774 5
+;775 6
+}88 	
+private:: 
 
-Visibility77  
-_matchCodeVisibility77 /
-=770 1
+Visibility::  
+_matchCodeVisibility:: /
+=::0 1
 
-Visibility772 <
-.77< =
-	Collapsed77= F
-;77F G
-public88 
+Visibility::2 <
+.::< =
+	Collapsed::= F
+;::F G
+public;; 
 
-Visibility88 
-MatchCodeVisibility88 -
-{99 	
-get:: 
-=>::  
-_matchCodeVisibility:: '
-;::' (
-set;; 
-=>;; 
-SetProperty;; 
-(;; 
-ref;; " 
-_matchCodeVisibility;;# 7
-,;;7 8
-value;;9 >
-);;> ?
-;;;? @
-}<< 	
-public>>  
-ObservableCollection>> #
-<>># $
-PlayerViewModel>>$ 3
->>>3 4
-Players>>5 <
-{>>= >
-get>>? B
-;>>B C
-}>>D E
-=>>F G
-new>>H K 
-ObservableCollection>>L `
-<>>` a
-PlayerViewModel>>a p
->>>p q
-(>>q r
-)>>r s
-;>>s t
-public??  
-ObservableCollection?? #
-<??# $
-ChatMessageDisplay??$ 6
->??6 7
-ChatMessages??8 D
-{??E F
-get??G J
-;??J K
-}??L M
-=??N O
-new??P S 
-ObservableCollection??T h
-<??h i
-ChatMessageDisplay??i {
->??{ |
-(??| }
-)??} ~
-;??~ 
-privateAA 
-intAA 
-_countdownValueAA #
-;AA# $
-publicBB 
-intBB 
-CountdownValueBB !
-{CC 	
-getDD 
-=>DD 
-_countdownValueDD "
-;DD" #
-setEE 
-=>EE 
-SetPropertyEE 
-(EE 
-refEE "
-_countdownValueEE# 2
-,EE2 3
-valueEE4 9
-)EE9 :
-;EE: ;
-}FF 	
-privateHH 
+Visibility;; 
+MatchCodeVisibility;; -
+{<< 	
+get== 
+=>==  
+_matchCodeVisibility== '
+;==' (
+set>> 
+=>>> 
+SetProperty>> 
+(>> 
+ref>> " 
+_matchCodeVisibility>># 7
+,>>7 8
+value>>9 >
+)>>> ?
+;>>? @
+}?? 	
+publicAA  
+ObservableCollectionAA #
+<AA# $
+PlayerViewModelAA$ 3
+>AA3 4
+PlayersAA5 <
+{AA= >
+getAA? B
+;AAB C
+}AAD E
+=AAF G
+newAAH K 
+ObservableCollectionAAL `
+<AA` a
+PlayerViewModelAAa p
+>AAp q
+(AAq r
+)AAr s
+;AAs t
+publicBB  
+ObservableCollectionBB #
+<BB# $
+ChatMessageDisplayBB$ 6
+>BB6 7
+ChatMessagesBB8 D
+{BBE F
+getBBG J
+;BBJ K
+}BBL M
+=BBN O
+newBBP S 
+ObservableCollectionBBT h
+<BBh i
+ChatMessageDisplayBBi {
+>BB{ |
+(BB| }
+)BB} ~
+;BB~ 
+privateDD 
+intDD 
+_countdownValueDD #
+;DD# $
+publicEE 
+intEE 
+CountdownValueEE !
+{FF 	
+getGG 
+=>GG 
+_countdownValueGG "
+;GG" #
+setHH 
+=>HH 
+SetPropertyHH 
+(HH 
+refHH "
+_countdownValueHH# 2
+,HH2 3
+valueHH4 9
+)HH9 :
+;HH: ;
+}II 	
+privateKK 
 
-VisibilityHH  
-_countdownVisibilityHH /
-=HH0 1
+VisibilityKK  
+_countdownVisibilityKK /
+=KK0 1
 
-VisibilityHH2 <
-.HH< =
-	CollapsedHH= F
-;HHF G
-publicII 
+VisibilityKK2 <
+.KK< =
+	CollapsedKK= F
+;KKF G
+publicLL 
 
-VisibilityII 
-CountdownVisibilityII -
-{JJ 	
-getKK 
-=>KK  
-_countdownVisibilityKK '
-;KK' (
-setLL 
-=>LL 
-SetPropertyLL 
-(LL 
-refLL " 
-_countdownVisibilityLL# 7
-,LL7 8
-valueLL9 >
-)LL> ?
-;LL? @
-}MM 	
-publicOO 
-boolOO 
-IsHostOO 
-=>OO 
-_sessionManagerOO -
-.OO- .
-CurrentUsernameOO. =
-!=OO> @
-nullOOA E
-&&OOF H
-_sessionManagerOOI X
-.OOX Y
-CurrentUsernameOOY h
-.OOh i
-EqualsOOi o
-(OOo p
-HostUsernameOOp |
-,OO| }
-StringComparison	OO~ é
+VisibilityLL 
+CountdownVisibilityLL -
+{MM 	
+getNN 
+=>NN  
+_countdownVisibilityNN '
+;NN' (
+setOO 
+=>OO 
+SetPropertyOO 
+(OO 
+refOO " 
+_countdownVisibilityOO# 7
+,OO7 8
+valueOO9 >
+)OO> ?
+;OO? @
+}PP 	
+publicRR 
+boolRR 
+IsHostRR 
+=>RR 
+_sessionManagerRR -
+.RR- .
+CurrentUsernameRR. =
+!=RR> @
+nullRRA E
+&&RRF H
+_sessionManagerRRI X
+.RRX Y
+CurrentUsernameRRY h
+.RRh i
+EqualsRRi o
+(RRo p
+HostUsernameRRp |
+,RR| }
+StringComparison	RR~ é
 .
-OOé è
+RRé è
 OrdinalIgnoreCase
-OOè †
+RRè †
 )
-OO† °
+RR† °
 ;
-OO° ¢
-publicQQ 
-ICommandQQ 
-LeaveCommandQQ $
-{QQ% &
-getQQ' *
-;QQ* +
-	protectedQQ, 5
-setQQ6 9
-;QQ9 :
-}QQ; <
-publicRR 
-ICommandRR 
-SendMessageCommandRR *
-{RR+ ,
-getRR- 0
-;RR0 1
-	protectedRR2 ;
-setRR< ?
-;RR? @
-}RRA B
-publicSS 
-ICommandSS 
-KickPlayerCommandSS )
-{SS* +
-getSS, /
-;SS/ 0
-	protectedSS1 :
-setSS; >
-;SS> ?
-}SS@ A
-	protectedUU $
-WaitingRoomViewModelBaseUU *
-(UU* +
-LobbyClientManagerUU+ =
-lobbyManagerUU> J
-,UUJ K
-SessionManagerUUL Z
-sessionManagerUU[ i
-)UUi j
-{VV 	
-_lobbyManagerWW 
-=WW 
-lobbyManagerWW (
-;WW( )
-_sessionManagerXX 
-=XX 
-sessionManagerXX ,
-;XX, -
-InitializeCommandsYY 
-(YY 
-)YY  
-;YY  !"
-SubscribeToLobbyEventsZZ "
-(ZZ" #
-)ZZ# $
-;ZZ$ %
-}[[ 	
-	protected]] 
-virtual]] 
-void]] 
-InitializeCommands]] 1
-(]]1 2
-)]]2 3
-{^^ 	
-LeaveCommand__ 
-=__ 
-new__ 
-RelayCommand__ +
-(__+ ,
+RR° ¢
+publicTT 
+ICommandTT 
+LeaveCommandTT $
+{TT% &
+getTT' *
+;TT* +
+	protectedTT, 5
+setTT6 9
+;TT9 :
+}TT; <
+publicUU 
+ICommandUU 
+SendMessageCommandUU *
+{UU+ ,
+getUU- 0
+;UU0 1
+	protectedUU2 ;
+setUU< ?
+;UU? @
+}UUA B
+publicVV 
+ICommandVV 
+KickPlayerCommandVV )
+{VV* +
+getVV, /
+;VV/ 0
+	protectedVV1 :
+setVV; >
+;VV> ?
+}VV@ A
+	protectedXX $
+WaitingRoomViewModelBaseXX *
+(XX* +
+LobbyClientManagerXX+ =
+lobbyManagerXX> J
+,XXJ K
+SessionManagerXXL Z
+sessionManagerXX[ i
+)XXi j
+{YY 	
+DebugZZ 
+.ZZ 
+	WriteLineZZ 
+(ZZ 
+$strZZ I
++ZZJ K
+GetHashCodeZZL W
+(ZZW X
+)ZZX Y
+)ZZY Z
+;ZZZ [
+_lobbyManager[[ 
+=[[ 
+lobbyManager[[ (
+;[[( )
+_sessionManager\\ 
+=\\ 
+sessionManager\\ ,
+;\\, -
+InitializeCommands]] 
+(]] 
+)]]  
+;]]  !"
+SubscribeToLobbyEvents^^ "
+(^^" #
+)^^# $
+;^^$ %
+}__ 	
+	protectedaa 
+virtualaa 
+voidaa 
+InitializeCommandsaa 1
+(aa1 2
+)aa2 3
+{bb 	
+LeaveCommandcc 
+=cc 
+newcc 
+RelayCommandcc +
+(cc+ ,
 
-LeaveLobby__, 6
-)__6 7
-;__7 8
-}`` 	
-	protectedbb 
-virtualbb 
-voidbb "
-SubscribeToLobbyEventsbb 5
-(bb5 6
-)bb6 7
-{cc 	
-_lobbyManagerdd 
-.dd 
-LobbyStateUpdateddd +
-+=dd, .
-OnLobbyStateUpdateddd/ B
-;ddB C
-_lobbyManageree 
-.ee  
-LobbyMessageReceivedee .
-+=ee/ 1"
-OnLobbyMessageReceivedee2 H
-;eeH I
-_lobbyManagerff 
-.ff 
-Kickedff  
-+=ff! #
-OnKickedff$ ,
-;ff, -
-_lobbyManagergg 
-.gg 
-CountdownTickgg '
-+=gg( *
-OnCountdownTickgg+ :
-;gg: ;
-_lobbyManagerhh 
-.hh 
-GameStartedhh %
-+=hh& (
-OnGameStartedhh) 6
-;hh6 7
-_lobbyManagerii 
-.ii 
-ConnectionLostii (
-+=ii) +
-OnConnectionLostii, <
-;ii< =
-}jj 	
-	protectedll 
-virtualll 
-voidll &
-UnsubscribeFromLobbyEventsll 9
-(ll9 :
-)ll: ;
-{mm 	
+LeaveLobbycc, 6
+)cc6 7
+;cc7 8
+SendMessageCommanddd 
+=dd  
+newdd! $
+RelayCommanddd% 1
+(dd1 2
+(dd2 3
+paramdd3 8
+)dd8 9
+=>dd: <
+SendChatMessagedd= L
+(ddL M
+paramddM R
+asddS U
+stringddV \
+)dd\ ]
+)dd] ^
+;dd^ _
+KickPlayerCommandee 
+=ee 
+newee  #
+RelayCommandee$ 0
+(ee0 1
+(ee1 2
+paramee2 7
+)ee7 8
+=>ee9 ;
+
+KickPlayeree< F
+(eeF G
+parameeG L
+aseeM O
+stringeeP V
+)eeV W
+)eeW X
+;eeX Y
+}ff 	
+	protectedhh 
+virtualhh 
+voidhh "
+SubscribeToLobbyEventshh 5
+(hh5 6
+)hh6 7
+{ii 	
+_lobbyManagerjj 
+.jj 
+LobbyStateUpdatedjj +
++=jj, .
+OnLobbyStateUpdatedjj/ B
+;jjB C
+_lobbyManagerkk 
+.kk  
+LobbyMessageReceivedkk .
++=kk/ 1"
+OnLobbyMessageReceivedkk2 H
+;kkH I
+_lobbyManagerll 
+.ll 
+Kickedll  
++=ll! #
+OnKickedll$ ,
+;ll, -
+_lobbyManagermm 
+.mm 
+CountdownTickmm '
++=mm( *
+OnCountdownTickmm+ :
+;mm: ;
 _lobbyManagernn 
-.nn 
-LobbyStateUpdatednn +
--=nn, .
-OnLobbyStateUpdatednn/ B
-;nnB C
+.nn 
+GameStartednn %
++=nn& (
+OnGameStartednn) 6
+;nn6 7
 _lobbyManageroo 
-.oo  
-LobbyMessageReceivedoo .
--=oo/ 1"
-OnLobbyMessageReceivedoo2 H
-;ooH I
-_lobbyManagerpp 
-.pp 
-Kickedpp  
--=pp! #
-OnKickedpp$ ,
-;pp, -
-_lobbyManagerqq 
-.qq 
-CountdownTickqq '
--=qq( *
-OnCountdownTickqq+ :
-;qq: ;
-_lobbyManagerrr 
-.rr 
-GameStartedrr %
--=rr& (
-OnGameStartedrr) 6
-;rr6 7
-_lobbyManagerss 
-.ss 
-ConnectionLostss (
--=ss) +
-OnConnectionLostss, <
-;ss< =
-}tt 	
-	protectedvv 
-virtualvv 
-voidvv 
-OnLobbyStateUpdatedvv 2
-(vv2 3
-LobbyStateDtovv3 @
-statevvA F
-)vvF G
-{ww 	
-	MatchNamexx 
+.oo 
+ConnectionLostoo (
++=oo) +
+OnConnectionLostoo, <
+;oo< =
+}pp 	
+	protectedrr 
+virtualrr 
+voidrr 
+OnLobbyStateUpdatedrr 2
+(rr2 3
+LobbyStateDtorr3 @
+staterrA F
+)rrF G
+{ss 	
+	MatchNamett 
+=tt 
+statett 
+.tt 
+	MatchNamett '
+;tt' (
+HostUsernameuu 
+=uu 
+stateuu  
+.uu  !
+HostUsernameuu! -
+;uu- .
+
+Difficultyvv 
+=vv 
+statevv 
+.vv 
+
+Difficultyvv )
+;vv) *
+PlayerCountDisplayww 
+=ww  
+$"ww! #
+{ww# $
+stateww$ )
+.ww) *
+CurrentPlayersww* 8
+}ww8 9
+$strww9 :
+{ww: ;
+stateww; @
+.ww@ A
+
+MaxPlayerswwA K
+}wwK L
+"wwL M
+;wwM N
+	MatchCodexx 
 =xx 
 statexx 
 .xx 
-	MatchNamexx '
-;xx' (
-HostUsernameyy 
-=yy 
-stateyy  
-.yy  !
-HostUsernameyy! -
-;yy- .
+	MatchCodexx '
+;xx' (
+MatchCodeVisibilityyy 
+=yy  !
+stringyy" (
+.yy( )
+IsNullOrEmptyyy) 6
+(yy6 7
+stateyy7 <
+.yy< =
+	MatchCodeyy= F
+)yyF G
+?yyH I
 
-Difficultyzz 
-=zz 
-statezz 
-.zz 
+VisibilityyyJ T
+.yyT U
+	CollapsedyyU ^
+:yy_ `
 
-Difficultyzz )
-;zz) *
-PlayerCountDisplay{{ 
-={{  
-$"{{! #
-{{{# $
-state{{$ )
-.{{) *
-CurrentPlayers{{* 8
-}{{8 9
-$str{{9 :
-{{{: ;
-state{{; @
-.{{@ A
-
-MaxPlayers{{A K
-}{{K L
-"{{L M
-;{{M N
-	MatchCode|| 
-=|| 
-state|| 
-.|| 
-	MatchCode|| '
-;||' (
-MatchCodeVisibility}} 
-=}}  !
-string}}" (
-.}}( )
-IsNullOrEmpty}}) 6
-(}}6 7
-state}}7 <
-.}}< =
-	MatchCode}}= F
-)}}F G
-?}}H I
-
-Visibility}}J T
-.}}T U
-	Collapsed}}U ^
-:}}_ `
-
-Visibility}}a k
-.}}k l
-Visible}}l s
-;}}s t
-Players 
-. 
-Clear 
-( 
-) 
-; 
-bool
-ÄÄ 
-amIHost
-ÄÄ 
-=
-ÄÄ 
-_sessionManager
-ÄÄ *
-.
-ÄÄ* +
-CurrentUsername
-ÄÄ+ :
-?
-ÄÄ: ;
-.
-ÄÄ; <
-Equals
-ÄÄ< B
+Visibilityyya k
+.yyk l
+Visibleyyl s
+;yys t
+Players{{ 
+.{{ 
+Clear{{ 
+({{ 
+){{ 
+;{{ 
+bool|| 
+amIHost|| 
+=|| 
+_sessionManager|| *
+.||* +
+CurrentUsername||+ :
+?||: ;
+.||; <
+Equals||< B
+(||B C
+HostUsername||C O
+,||O P
+StringComparison||Q a
+.||a b
+OrdinalIgnoreCase||b s
+)||s t
+??||u w
+false||x }
+;||} ~
+foreach}} 
+(}} 
+var}} 
+username}} !
+in}}" $
+state}}% *
+.}}* +
+PlayerUsernames}}+ :
+.}}: ;
+OrderBy}}; B
+(}}B C
+u}}C D
+=>}}E G
+u}}H I
+)}}I J
+)}}J K
+{~~ 
+var 
+playerVM 
+= 
+new "
+PlayerViewModel# 2
+{3 4
+Username5 =
+=> ?
+username@ H
+}I J
+;J K
+if
+ÄÄ 
 (
-ÄÄB C
-HostUsername
-ÄÄC O
+ÄÄ 
+amIHost
+ÄÄ 
+&&
+ÄÄ 
+!
+ÄÄ  
+username
+ÄÄ  (
+.
+ÄÄ( )
+Equals
+ÄÄ) /
+(
+ÄÄ/ 0
+_sessionManager
+ÄÄ0 ?
+.
+ÄÄ? @
+CurrentUsername
+ÄÄ@ O
 ,
 ÄÄO P
 StringComparison
@@ -2617,1201 +2759,1666 @@ Visibility}}a k
 OrdinalIgnoreCase
 ÄÄb s
 )
-ÄÄs t
-??
-ÄÄu w
-false
-ÄÄx }
-;
-ÄÄ} ~
-foreach
-ÅÅ 
-(
-ÅÅ 
-var
-ÅÅ 
-username
-ÅÅ !
-in
-ÅÅ" $
-state
-ÅÅ% *
-.
-ÅÅ* +
-PlayerUsernames
-ÅÅ+ :
-.
-ÅÅ: ;
-OrderBy
-ÅÅ; B
-(
-ÅÅB C
-u
-ÅÅC D
-=>
-ÅÅE G
-u
-ÅÅH I
+ÄÄs t
 )
-ÅÅI J
-)
-ÅÅJ K
+ÄÄt u
 {
-ÇÇ 
-var
-ÉÉ 
+ÅÅ 
+playerVM
+ÇÇ 
+.
+ÇÇ "
+KickButtonVisibility
+ÇÇ 1
+=
+ÇÇ2 3
+
+Visibility
+ÇÇ4 >
+.
+ÇÇ> ?
+Visible
+ÇÇ? F
+;
+ÇÇF G
 playerVM
 ÉÉ 
-=
-ÉÉ 
-new
-ÉÉ "
-PlayerViewModel
-ÉÉ# 2
-{
-ÉÉ3 4
-Username
-ÉÉ5 =
-=
-ÉÉ> ?
-username
-ÉÉ@ H
-}
-ÉÉI J
-;
-ÉÉJ K
-if
-ÑÑ 
-(
-ÑÑ 
-amIHost
-ÑÑ 
-&&
-ÑÑ 
-!
-ÑÑ  
-username
-ÑÑ  (
 .
-ÑÑ( )
-Equals
-ÑÑ) /
-(
-ÑÑ/ 0
-_sessionManager
-ÑÑ0 ?
-.
-ÑÑ? @
-CurrentUsername
-ÑÑ@ O
-,
-ÑÑO P
-StringComparison
-ÑÑQ a
-.
-ÑÑa b
-OrdinalIgnoreCase
-ÑÑb s
-)
-ÑÑs t
-)
-ÑÑt u
-{
-ÖÖ 
-playerVM
-ÜÜ 
-.
-ÜÜ "
-KickButtonVisibility
-ÜÜ 1
-=
-ÜÜ2 3
-
-Visibility
-ÜÜ4 >
-.
-ÜÜ> ?
-Visible
-ÜÜ? F
-;
-ÜÜF G
-playerVM
-áá 
-.
-áá 
+ÉÉ 
 KickCommand
-áá (
+ÉÉ (
 =
-áá) *
+ÉÉ) *
 KickPlayerCommand
-áá+ <
+ÉÉ+ <
 ;
-áá< =
+ÉÉ< =
 }
-àà 
+ÑÑ 
 Players
-ââ 
+ÖÖ 
 .
-ââ 
+ÖÖ 
 Add
-ââ 
+ÖÖ 
 (
-ââ 
+ÖÖ 
 playerVM
-ââ $
+ÖÖ $
 )
-ââ$ %
+ÖÖ$ %
 ;
-ââ% &
+ÖÖ% &
 }
-ää 
+ÜÜ 
 OnPropertyChanged
-ãã 
+áá 
 (
-ãã 
+áá 
 nameof
-ãã $
+áá $
 (
-ãã$ %
+áá$ %
 IsHost
-ãã% +
+áá% +
 )
-ãã+ ,
+áá+ ,
 )
-ãã, -
+áá, -
 ;
-ãã- .
+áá- .
 }
-åå 	
+àà 	
 	protected
-éé 
+ää 
 virtual
-éé 
+ää 
 void
-éé $
+ää $
 OnLobbyMessageReceived
-éé 5
+ää 5
 (
-éé5 6
+ää5 6
 ChatMessageDto
-éé6 D
+ää6 D
 message
-ééE L
+ääE L
 )
-ééL M
+ääL M
 {
-èè 	
+ãã 	
 string
-êê 
+åå 
 translatedMessage
-êê $
+åå $
 =
-êê% &!
+åå% &!
 TranslateMessageKey
-êê' :
+åå' :
 (
-êê: ;
+åå: ;
 message
-êê; B
+åå; B
 .
-êêB C
+ååB C
 MessageContent
-êêC Q
+ååC Q
 )
-êêQ R
+ååQ R
 ;
-êêR S
+ååR S
 string
-ëë 
+çç 
 	formatted
-ëë 
+çç 
 =
-ëë 
+çç 
 $"
-ëë !
+çç !
 $str
-ëë! "
+çç! "
 {
-ëë" #
+çç" #
 message
-ëë# *
+çç# *
 .
-ëë* +
+çç* +
 SenderUsername
-ëë+ 9
+çç+ 9
 }
-ëë9 :
+çç9 :
 $str
-ëë: =
+çç: =
 {
-ëë= >
+çç= >
 translatedMessage
-ëë> O
+çç> O
 }
-ëëO P
+ççO P
 "
-ëëP Q
+ççP Q
 ;
-ëëQ R
+ççQ R
 ChatMessages
-íí 
+éé 
 .
-íí 
+éé 
 Add
-íí 
+éé 
 (
-íí 
+éé 
 new
-íí   
+éé   
 ChatMessageDisplay
-íí! 3
+éé! 3
 {
-íí4 5
+éé4 5
 FormattedMessage
-íí6 F
+éé6 F
 =
-ííG H
+ééG H
 	formatted
-ííI R
+ééI R
 }
-ííS T
+ééS T
 )
-ííT U
+ééT U
 ;
-ííU V
+ééU V
 const
-ìì 
+èè 
 int
-ìì 
+èè 
 maxMessages
-ìì !
+èè !
 =
-ìì" #
+èè" #
 $num
-ìì$ '
+èè$ '
 ;
-ìì' (
+èè' (
 if
-îî 
+êê 
 (
-îî 
+êê 
 ChatMessages
-îî 
+êê 
 .
-îî 
+êê 
 Count
-îî "
+êê "
 >
-îî# $
+êê# $
 maxMessages
-îî% 0
+êê% 0
 )
-îî0 1
+êê0 1
 {
-ïï 
+ëë 
 ChatMessages
-ññ 
+íí 
 .
-ññ 
+íí 
 RemoveAt
-ññ %
+íí %
 (
-ññ% &
+íí% &
 $num
-ññ& '
+íí& '
 )
-ññ' (
+íí' (
 ;
-ññ( )
+íí( )
 }
-óó 
+ìì 
 }
-òò 	
+îî 	
 	protected
-öö 
+ññ 
 virtual
-öö 
+ññ 
 void
-öö 
+ññ 
 OnKicked
-öö '
+ññ '
 (
-öö' (
+ññ' (
 string
-öö( .
+ññ( .
 reason
-öö/ 5
+ññ/ 5
 )
-öö5 6
+ññ5 6
 {
-õõ 	
-
-MessageBox
-úú 
-.
-úú 
-Show
-úú 
-(
-úú 
-$"
-úú 
-{
-úú 
-Lang
-úú #
-.
-úú# $"
-waitingRoomMsgKicked
-úú$ 8
-}
-úú8 9
-$str
-úú9 ;
-{
-úú; <
-reason
-úú< B
-}
-úúB C
-"
-úúC D
-,
-úúD E
-Lang
-úúF J
-.
-úúJ K
-alertInfoTitle
-úúK Y
-,
-úúY Z
-MessageBoxButton
-úú[ k
-.
-úúk l
-OK
-úúl n
-,
-úún o
-MessageBoxImage
-úúp 
-.úú Ä
-WarningúúÄ á
-)úúá à
-;úúà â%
-NavigateBackToLobbyView
-ùù #
-(
-ùù# $
-)
-ùù$ %
-;
-ùù% &
-CleanUp
-ûû 
-(
-ûû 
-)
-ûû 
-;
-ûû 
-}
-üü 	
-	protected
-°° 
-virtual
-°° 
-void
-°° 
-OnCountdownTick
-°° .
-(
-°°. /
-int
-°°/ 2
-secondsRemaining
-°°3 C
-)
-°°C D
-{
-¢¢ 	
-CountdownValue
-££ 
-=
-££ 
-secondsRemaining
-££ -
-;
-££- .!
-CountdownVisibility
-§§ 
-=
-§§  !
-
-Visibility
-§§" ,
-.
-§§, -
-Visible
-§§- 4
-;
-§§4 5
-}
-•• 	
-	protected
-ßß 
-virtual
-ßß 
-void
-ßß 
-OnGameStarted
-ßß ,
-(
-ßß, -
-)
-ßß- .
-{
-®® 	!
-CountdownVisibility
-©© 
-=
-©©  !
-
-Visibility
-©©" ,
-.
-©©, -
-	Collapsed
-©©- 6
-;
-©©6 7
-
-MessageBox
-™™ 
-.
-™™ 
-Show
-™™ 
-(
-™™ 
-Lang
-™™  
-.
-™™  !(
-waitingRoomMsgGameStarting
-™™! ;
-,
-™™; <
-Lang
-™™= A
-.
-™™A B
-alertInfoTitle
-™™B P
-)
-™™P Q
-;
-™™Q R
-CleanUp
-´´ 
-(
-´´ 
-)
-´´ 
-;
-´´ 
-}
-¨¨ 	
-	protected
-ÆÆ 
-virtual
-ÆÆ 
-void
-ÆÆ 
-OnConnectionLost
-ÆÆ /
-(
-ÆÆ/ 0
-)
-ÆÆ0 1
-{
-ØØ 	%
-NavigateBackToLobbyView
-∞∞ #
-(
-∞∞# $
-)
-∞∞$ %
-;
-∞∞% &
-CleanUp
-±± 
-(
-±± 
-)
-±± 
-;
-±± 
-}
-≤≤ 	
-	protected
-¥¥ 
-virtual
-¥¥ 
-void
-¥¥ 
-
-LeaveLobby
-¥¥ )
-(
-¥¥) *
-object
-¥¥* 0
-	parameter
-¥¥1 :
-=
-¥¥; <
-null
-¥¥= A
-)
-¥¥A B
-{
-µµ 	
-_lobbyManager
-∂∂ 
-.
-∂∂ 
-
-Disconnect
-∂∂ $
-(
-∂∂$ %
-)
-∂∂% &
-;
-∂∂& '%
-NavigateBackToLobbyView
-∑∑ #
-(
-∑∑# $
-)
-∑∑$ %
-;
-∑∑% &
-CleanUp
-∏∏ 
-(
-∏∏ 
-)
-∏∏ 
-;
-∏∏ 
-}
-ππ 	
-	protected
-ªª 
-virtual
-ªª 
-void
-ªª 
-SendChatMessage
-ªª .
-(
-ªª. /
-string
-ªª/ 5
-
-messageKey
-ªª6 @
-)
-ªª@ A
-{
-ºº 	
+óó 	
 if
-ΩΩ 
+òò 
 (
-ΩΩ 
-!
-ΩΩ 
-string
-ΩΩ 
+òò 
+System
+òò 
 .
-ΩΩ 
-IsNullOrEmpty
-ΩΩ %
-(
-ΩΩ% &
-
-messageKey
-ΩΩ& 0
-)
-ΩΩ0 1
-)
-ΩΩ1 2
-{
-ææ 
-_lobbyManager
-øø 
+òò 
+	Threading
+òò  
 .
-øø 
-SendChatMessage
-øø -
-(
-øø- .
-
-messageKey
-øø. 8
-)
-øø8 9
-;
-øø9 :
-}
-¿¿ 
-}
-¡¡ 	
-	protected
-√√ 
-virtual
-√√ 
-void
-√√ 
-
-KickPlayer
-√√ )
-(
-√√) *
-string
-√√* 0
-usernameToKick
-√√1 ?
-)
-√√? @
-{
-ƒƒ 	
-if
-≈≈ 
-(
-≈≈ 
-!
-≈≈ 
-string
-≈≈ 
+òò  !
+Interlocked
+òò! ,
 .
-≈≈ 
-IsNullOrEmpty
-≈≈ %
+òò, -
+CompareExchange
+òò- <
 (
-≈≈% &
-usernameToKick
-≈≈& 4
-)
-≈≈4 5
-&&
-≈≈6 8
-IsHost
-≈≈9 ?
-)
-≈≈? @
-{
-∆∆ 
-var
-«« 
-result
-«« 
-=
-«« 
-
-MessageBox
-«« '
-.
-««' (
-Show
-««( ,
-(
-««, -
-string
-««- 3
-.
-««3 4
-Format
-««4 :
-(
-««: ;
-Lang
-««; ?
-.
-««? @'
-waitingRoomMsgConfirmKick
-««@ Y
+òò< =
+ref
+òò= @
+_isNavigatingBack
+òòA R
 ,
-««Y Z
-usernameToKick
-««[ i
-)
-««i j
+òòR S
+$num
+òòT U
 ,
-««j k
-Lang
-»»- 1
-.
-»»1 2$
-alertConfirmationTitle
-»»2 H
-,
-»»H I
-MessageBoxButton
-»»J Z
-.
-»»Z [
-YesNo
-»»[ `
-,
-»»` a
-MessageBoxImage
-»»b q
-.
-»»q r
-Question
-»»r z
+òòU V
+$num
+òòW X
 )
-»»z {
-;
-»»{ |
-if
-…… 
-(
-…… 
-result
-…… 
-==
-…… 
-MessageBoxResult
-…… .
-.
-……. /
-Yes
-……/ 2
+òòX Y
+!=
+òòZ \
+$num
+òò] ^
 )
-……2 3
-{
-   
-_lobbyManager
-ÀÀ !
-.
-ÀÀ! "
-RequestKickPlayer
-ÀÀ" 3
-(
-ÀÀ3 4
-usernameToKick
-ÀÀ4 B
-)
-ÀÀB C
-;
-ÀÀC D
-}
-ÃÃ 
-}
-ÕÕ 
-}
-ŒŒ 	
-	protected
-–– 
-static
-–– 
-string
-–– !
-TranslateMessageKey
-––  3
-(
-––3 4
-string
-––4 :
-key
-––; >
-)
-––> ?
-{
-—— 	
-var
-““ 
-resource
-““ 
-=
-““ 
-Lang
-““ 
-.
-““  
-ResourceManager
-““  /
-.
-““/ 0
-	GetString
-““0 9
-(
-““9 :
-key
-““: =
-)
-““= >
-;
-““> ?
+òò^ _
 return
-”” 
-string
-”” 
-.
-”” 
-IsNullOrEmpty
-”” '
-(
-””' (
-resource
-””( 0
-)
-””0 1
-?
-””2 3
-key
-””4 7
-:
-””8 9
-resource
-””: B
+ôô 
 ;
-””B C
-}
-‘‘ 	
-	protected
-÷÷ 
-virtual
-÷÷ 
-void
-÷÷ %
-NavigateBackToLobbyView
-÷÷ 6
+ôô 
+
+MessageBox
+õõ 
+.
+õõ 
+Show
+õõ 
 (
-÷÷6 7
-)
-÷÷7 8
+õõ 
+$"
+õõ 
 {
-◊◊ 	
+õõ 
+Lang
+õõ #
+.
+õõ# $"
+waitingRoomMsgKicked
+õõ$ 8
+}
+õõ8 9
+$str
+õõ9 ;
+{
+õõ; <
+reason
+õõ< B
+}
+õõB C
+"
+õõC D
+,
+õõD E
+Lang
+õõF J
+.
+õõJ K
+alertInfoTitle
+õõK Y
+,
+õõY Z
+MessageBoxButton
+õõ[ k
+.
+õõk l
+OK
+õõl n
+,
+õõn o
+MessageBoxImage
+õõp 
+.õõ Ä
+WarningõõÄ á
+)õõá à
+;õõà â%
+NavigateBackToLobbyView
+úú #
+(
+úú# $
+)
+úú$ %
+;
+úú% &
+CleanUp
+ùù 
+(
+ùù 
+)
+ùù 
+;
+ùù 
+}
+ûû 	
+	protected
+†† 
+virtual
+†† 
+void
+†† 
+OnCountdownTick
+†† .
+(
+††. /
+int
+††/ 2
+secondsRemaining
+††3 C
+)
+††C D
+{
+°° 	
+CountdownValue
+¢¢ 
+=
+¢¢ 
+secondsRemaining
+¢¢ -
+;
+¢¢- .!
+CountdownVisibility
+££ 
+=
+££  !
+
+Visibility
+££" ,
+.
+££, -
+Visible
+££- 4
+;
+££4 5
+}
+§§ 	
+	protected
+¶¶ 
+virtual
+¶¶ 
+void
+¶¶ 
+OnGameStarted
+¶¶ ,
+(
+¶¶, -
+)
+¶¶- .
+{
+ßß 	
+int
+®® 
+originalValue
+®® 
+=
+®® 
+System
+®®  &
+.
+®®& '
+	Threading
+®®' 0
+.
+®®0 1
+Interlocked
+®®1 <
+.
+®®< =
+CompareExchange
+®®= L
+(
+®®L M
+ref
+®®M P
+_isNavigatingBack
+®®Q b
+,
+®®b c
+$num
+®®d e
+,
+®®e f
+$num
+®®g h
+)
+®®h i
+;
+®®i j
+if
+©© 
+(
+©© 
+originalValue
+©© 
+!=
+©©  
+$num
+©©! "
+)
+©©" #
+return
+™™ 
+;
+™™ !
+CountdownVisibility
+¨¨ 
+=
+¨¨  !
+
+Visibility
+¨¨" ,
+.
+¨¨, -
+	Collapsed
+¨¨- 6
+;
+¨¨6 7
+string
+ÆÆ 
+username
+ÆÆ 
+=
+ÆÆ 
+_sessionManager
+ÆÆ -
+.
+ÆÆ- .
+CurrentUsername
+ÆÆ. =
+;
+ÆÆ= >
+string
+ØØ 
+matchId
+ØØ 
+=
+ØØ 
+_lobbyManager
+ØØ *
+.
+ØØ* +
+CurrentMatchId
+ØØ+ 9
+;
+ØØ9 :
+if
+±± 
+(
+±± 
+string
+±± 
+.
+±± 
+IsNullOrEmpty
+±± $
+(
+±±$ %
+username
+±±% -
+)
+±±- .
+||
+±±/ 1
+string
+±±2 8
+.
+±±8 9
+IsNullOrEmpty
+±±9 F
+(
+±±F G
+matchId
+±±G N
+)
+±±N O
+)
+±±O P
+{
+≤≤ 
+
+MessageBox
+≥≥ 
+.
+≥≥ 
+Show
+≥≥ 
+(
+≥≥  
+Lang
+≥≥  $
+.
+≥≥$ %*
+alertActivationCompleteTitle
+≥≥% A
+,
+≥≥A B
+Lang
+≥≥C G
+.
+≥≥G H
+alertErrorTitle
+≥≥H W
+,
+≥≥W X
+MessageBoxButton
+≥≥Y i
+.
+≥≥i j
+OK
+≥≥j l
+,
+≥≥l m
+MessageBoxImage
+≥≥n }
+.
+≥≥} ~
+Error≥≥~ É
+)≥≥É Ñ
+;≥≥Ñ Ö%
+NavigateBackToLobbyView
+¥¥ '
+(
+¥¥' (
+)
+¥¥( )
+;
+¥¥) *
+CleanUp
+µµ 
+(
+µµ 
+)
+µµ 
+;
+µµ 
+return
+∂∂ 
+;
+∂∂ 
+}
+∑∑ 
+GameClientManager
+ππ 
+.
+ππ 
+Instance
+ππ &
+.
+ππ& '
+Connect
+ππ' .
+(
+ππ. /
+username
+ππ/ 7
+,
+ππ7 8
+matchId
+ππ9 @
+)
+ππ@ A
+;
+ππA B
 Application
-ÿÿ 
+ªª 
 .
-ÿÿ 
+ªª 
 Current
-ÿÿ 
+ªª 
 .
-ÿÿ  
+ªª  
 
 Dispatcher
-ÿÿ  *
+ªª  *
 .
-ÿÿ* +
+ªª* +
 Invoke
-ÿÿ+ 1
+ªª+ 1
 (
-ÿÿ1 2
+ªª1 2
 (
-ÿÿ2 3
+ªª2 3
 )
-ÿÿ3 4
+ªª3 4
 =>
-ÿÿ5 7
+ªª5 7
 {
-ŸŸ 
-Window
-⁄⁄ 
-currentWindow
-⁄⁄ $
+ºº 
+var
+ΩΩ 
+wordSelectionView
+ΩΩ %
 =
-⁄⁄% &
+ΩΩ& '
+new
+ΩΩ( +
+WordSelectionView
+ΩΩ, =
+(
+ΩΩ= >
+)
+ΩΩ> ?
+;
+ΩΩ? @
+wordSelectionView
+ææ !
+.
+ææ! "
+Show
+ææ" &
+(
+ææ& '
+)
+ææ' (
+;
+ææ( )
+Window
+¿¿ 
+currentWindow
+¿¿ $
+=
+¿¿% &
 Application
-⁄⁄' 2
+¿¿' 2
 .
-⁄⁄2 3
+¿¿2 3
 Current
-⁄⁄3 :
+¿¿3 :
 .
-⁄⁄: ;
+¿¿: ;
 Windows
-⁄⁄; B
+¿¿; B
 .
-⁄⁄B C
+¿¿B C
 OfType
-⁄⁄C I
+¿¿C I
 <
-⁄⁄I J
+¿¿I J
 Window
-⁄⁄J P
+¿¿J P
 >
-⁄⁄P Q
+¿¿P Q
 (
-⁄⁄Q R
+¿¿Q R
 )
-⁄⁄R S
+¿¿R S
 .
-⁄⁄S T
+¿¿S T
 SingleOrDefault
-⁄⁄T c
+¿¿T c
 (
-⁄⁄c d
+¿¿c d
 w
-⁄⁄d e
+¿¿d e
 =>
-⁄⁄f h
+¿¿f h
 w
-⁄⁄i j
+¿¿i j
 .
-⁄⁄j k
+¿¿j k
 DataContext
-⁄⁄k v
+¿¿k v
 ==
-⁄⁄w y
+¿¿w y
 this
-⁄⁄z ~
+¿¿z ~
 )
-⁄⁄~ 
-;⁄⁄ Ä
+¿¿~ 
+;¿¿ Ä
 currentWindow
-€€ 
+¡¡ 
 ?
-€€ 
+¡¡ 
 .
-€€ 
+¡¡ 
 Close
-€€ $
+¡¡ $
 (
-€€$ %
+¡¡$ %
 )
-€€% &
+¡¡% &
 ;
-€€& '
-Console
-‹‹ 
-.
-‹‹ 
-	WriteLine
-‹‹ !
-(
-‹‹! "
-$str
-‹‹" Z
-)
-‹‹Z [
-;
-‹‹[ \
+¡¡& '
 }
-›› 
+¬¬ 
 )
-›› 
+¬¬ 
 ;
-›› 
-}
-ﬁﬁ 	
-public
-‡‡ 
-virtual
-‡‡ 
-void
-‡‡ 
+¬¬ 
 CleanUp
-‡‡ #
+√√ 
 (
-‡‡# $
+√√ 
 )
-‡‡$ %
+√√ 
+;
+√√ 
+}
+ƒƒ 	
+	protected
+∆∆ 
+virtual
+∆∆ 
+void
+∆∆ 
+OnConnectionLost
+∆∆ /
+(
+∆∆/ 0
+)
+∆∆0 1
 {
-·· 	(
-UnsubscribeFromLobbyEvents
-‚‚ &
+«« 	
+if
+»» 
 (
-‚‚& '
-)
-‚‚' (
-;
-‚‚( )
-_countdownTimer
-„„ 
-?
-„„ 
+»» 
+System
+»» 
 .
-„„ 
-Stop
-„„ !
+»» 
+	Threading
+»»  
+.
+»»  !
+Interlocked
+»»! ,
+.
+»», -
+CompareExchange
+»»- <
 (
-„„! "
+»»< =
+ref
+»»= @
+_isNavigatingBack
+»»A R
+,
+»»R S
+$num
+»»T U
+,
+»»U V
+$num
+»»W X
 )
-„„" #
+»»X Y
+!=
+»»Z \
+$num
+»»] ^
+)
+»»^ _
+return
+…… 
 ;
-„„# $
-_countdownTimer
-‰‰ 
+…… %
+NavigateBackToLobbyView
+ÀÀ #
+(
+ÀÀ# $
+)
+ÀÀ$ %
+;
+ÀÀ% &
+CleanUp
+ÃÃ 
+(
+ÃÃ 
+)
+ÃÃ 
+;
+ÃÃ 
+}
+ÕÕ 	
+	protected
+œœ 
+virtual
+œœ 
+void
+œœ 
+
+LeaveLobby
+œœ )
+(
+œœ) *
+object
+œœ* 0
+	parameter
+œœ1 :
 =
-‰‰ 
+œœ; <
 null
-‰‰ "
-;
-‰‰" #
-Console
-ÂÂ 
-.
-ÂÂ 
-	WriteLine
-ÂÂ 
-(
-ÂÂ 
-$str
-ÂÂ A
+œœ= A
 )
-ÂÂA B
+œœA B
+{
+–– 	
+if
+—— 
+(
+—— 
+System
+—— 
+.
+—— 
+	Threading
+——  
+.
+——  !
+Interlocked
+——! ,
+.
+——, -
+CompareExchange
+——- <
+(
+——< =
+ref
+——= @
+_isNavigatingBack
+——A R
+,
+——R S
+$num
+——T U
+,
+——U V
+$num
+——W X
+)
+——X Y
+!=
+——Z \
+$num
+——] ^
+)
+——^ _
+return
+““ 
 ;
-ÂÂB C
+““ 
+_lobbyManager
+‘‘ 
+.
+‘‘ 
+
+Disconnect
+‘‘ $
+(
+‘‘$ %
+)
+‘‘% &
+;
+‘‘& '%
+NavigateBackToLobbyView
+’’ #
+(
+’’# $
+)
+’’$ %
+;
+’’% &
+CleanUp
+÷÷ 
+(
+÷÷ 
+)
+÷÷ 
+;
+÷÷ 
 }
-ÊÊ 	
+◊◊ 	
+	protected
+ŸŸ 
+virtual
+ŸŸ 
+void
+ŸŸ 
+SendChatMessage
+ŸŸ .
+(
+ŸŸ. /
+string
+ŸŸ/ 5
+
+messageKey
+ŸŸ6 @
+)
+ŸŸ@ A
+{
+⁄⁄ 	
+if
+€€ 
+(
+€€ 
+!
+€€ 
+string
+€€ 
+.
+€€ 
+IsNullOrEmpty
+€€ %
+(
+€€% &
+
+messageKey
+€€& 0
+)
+€€0 1
+)
+€€1 2
+{
+‹‹ 
+_lobbyManager
+›› 
+.
+›› 
+SendChatMessage
+›› -
+(
+››- .
+
+messageKey
+››. 8
+)
+››8 9
+;
+››9 :
 }
-ÁÁ 
+ﬁﬁ 
+}
+ﬂﬂ 	
+	protected
+·· 
+virtual
+·· 
+void
+·· 
+
+KickPlayer
+·· )
+(
+··) *
+string
+··* 0
+usernameToKick
+··1 ?
+)
+··? @
+{
+‚‚ 	
+if
+„„ 
+(
+„„ 
+!
+„„ 
+string
+„„ 
+.
+„„ 
+IsNullOrEmpty
+„„ %
+(
+„„% &
+usernameToKick
+„„& 4
+)
+„„4 5
+&&
+„„6 8
+IsHost
+„„9 ?
+)
+„„? @
+{
+‰‰ 
+var
+ÂÂ 
+result
+ÂÂ 
+=
+ÂÂ 
+
+MessageBox
+ÂÂ '
+.
+ÂÂ' (
+Show
+ÂÂ( ,
+(
+ÂÂ, -
+string
+ÂÂ- 3
+.
+ÂÂ3 4
+Format
+ÂÂ4 :
+(
+ÂÂ: ;
+Lang
+ÂÂ; ?
+.
+ÂÂ? @'
+waitingRoomMsgConfirmKick
+ÂÂ@ Y
+,
+ÂÂY Z
+usernameToKick
+ÂÂ[ i
+)
+ÂÂi j
+,
+ÂÂj k
+Lang
+ÊÊ- 1
+.
+ÊÊ1 2$
+alertConfirmationTitle
+ÊÊ2 H
+,
+ÊÊH I
+MessageBoxButton
+ÊÊJ Z
+.
+ÊÊZ [
+YesNo
+ÊÊ[ `
+,
+ÊÊ` a
+MessageBoxImage
+ÊÊb q
+.
+ÊÊq r
+Question
+ÊÊr z
+)
+ÊÊz {
+;
+ÊÊ{ |
+if
+ÁÁ 
+(
+ÁÁ 
+result
+ÁÁ 
+==
+ÁÁ 
+MessageBoxResult
+ÁÁ .
+.
+ÁÁ. /
+Yes
+ÁÁ/ 2
+)
+ÁÁ2 3
+{
+ËË 
+_lobbyManager
+ÈÈ !
+.
+ÈÈ! "
+RequestKickPlayer
+ÈÈ" 3
+(
+ÈÈ3 4
+usernameToKick
+ÈÈ4 B
+)
+ÈÈB C
+;
+ÈÈC D
+}
+ÍÍ 
+}
+ÎÎ 
+}
+ÏÏ 	
+	protected
+ÓÓ 
+static
+ÓÓ 
+string
+ÓÓ !
+TranslateMessageKey
+ÓÓ  3
+(
+ÓÓ3 4
+string
+ÓÓ4 :
+key
+ÓÓ; >
+)
+ÓÓ> ?
+{
+ÔÔ 	
+var
+ 
+resource
+ 
+=
+ 
+Lang
+ 
+.
+  
+ResourceManager
+  /
+.
+/ 0
+	GetString
+0 9
+(
+9 :
+key
+: =
+)
+= >
+;
+> ?
+return
+ÒÒ 
+string
+ÒÒ 
+.
+ÒÒ 
+IsNullOrEmpty
+ÒÒ '
+(
+ÒÒ' (
+resource
+ÒÒ( 0
+)
+ÒÒ0 1
+?
+ÒÒ2 3
+key
+ÒÒ4 7
+:
+ÒÒ8 9
+resource
+ÒÒ: B
+;
+ÒÒB C
+}
+ÚÚ 	
+	protected
+ÙÙ 
+virtual
+ÙÙ 
+void
+ÙÙ %
+NavigateBackToLobbyView
+ÙÙ 6
+(
+ÙÙ6 7
+)
+ÙÙ7 8
+{
+ıı 	
+Application
+ˆˆ 
+.
+ˆˆ 
+Current
+ˆˆ 
+.
+ˆˆ  
+
+Dispatcher
+ˆˆ  *
+.
+ˆˆ* +
+Invoke
+ˆˆ+ 1
+(
+ˆˆ1 2
+(
+ˆˆ2 3
+)
+ˆˆ3 4
+=>
+ˆˆ5 7
+{
+˜˜ 
+Window
+¯¯ 
+currentWindow
+¯¯ $
+=
+¯¯% &
+Application
+¯¯' 2
+.
+¯¯2 3
+Current
+¯¯3 :
+.
+¯¯: ;
+Windows
+¯¯; B
+.
+¯¯B C
+OfType
+¯¯C I
+<
+¯¯I J
+Window
+¯¯J P
+>
+¯¯P Q
+(
+¯¯Q R
+)
+¯¯R S
+.
+¯¯S T
+SingleOrDefault
+¯¯T c
+(
+¯¯c d
+w
+¯¯d e
+=>
+¯¯f h
+w
+¯¯i j
+.
+¯¯j k
+DataContext
+¯¯k v
+==
+¯¯w y
+this
+¯¯z ~
+)
+¯¯~ 
+;¯¯ Ä
+var
+˙˙ 
+	lobbyView
+˙˙ 
+=
+˙˙ 
+new
+˙˙  #
+	LobbyView
+˙˙$ -
+(
+˙˙- .
+)
+˙˙. /
+;
+˙˙/ 0
+	lobbyView
+˚˚ 
+.
+˚˚ 
+Show
+˚˚ 
+(
+˚˚ 
+)
+˚˚  
+;
+˚˚  !
+Console
+¸¸ 
+.
+¸¸ 
+	WriteLine
+¸¸ !
+(
+¸¸! "
+$str
+¸¸" F
+)
+¸¸F G
+;
+¸¸G H
+currentWindow
+˛˛ 
+?
+˛˛ 
+.
+˛˛ 
+Close
+˛˛ $
+(
+˛˛$ %
+)
+˛˛% &
+;
+˛˛& '
+}
+ˇˇ 
+)
+ˇˇ 
+;
+ˇˇ 
+}
+ÄÄ 	
 public
-ËË 
+ÇÇ 
+virtual
+ÇÇ 
+void
+ÇÇ 
+CleanUp
+ÇÇ #
+(
+ÇÇ# $
+)
+ÇÇ$ %
+{
+ÉÉ 	(
+UnsubscribeFromLobbyEvents
+ÑÑ &
+(
+ÑÑ& '
+)
+ÑÑ' (
+;
+ÑÑ( )
+_countdownTimer
+ÖÖ 
+?
+ÖÖ 
+.
+ÖÖ 
+Stop
+ÖÖ !
+(
+ÖÖ! "
+)
+ÖÖ" #
+;
+ÖÖ# $
+_countdownTimer
+ÜÜ 
+=
+ÜÜ 
+null
+ÜÜ "
+;
+ÜÜ" #
+Console
+áá 
+.
+áá 
+	WriteLine
+áá 
+(
+áá 
+$str
+áá A
+)
+ááA B
+;
+ááB C
+}
+àà 	
+	protected
+ää 
+virtual
+ää 
+void
+ää (
+UnsubscribeFromLobbyEvents
+ää 9
+(
+ää9 :
+)
+ää: ;
+{
+ãã 	
+_lobbyManager
+åå 
+.
+åå 
+LobbyStateUpdated
+åå +
+-=
+åå, .!
+OnLobbyStateUpdated
+åå/ B
+;
+ååB C
+_lobbyManager
+çç 
+.
+çç "
+LobbyMessageReceived
+çç .
+-=
+çç/ 1$
+OnLobbyMessageReceived
+çç2 H
+;
+ççH I
+_lobbyManager
+éé 
+.
+éé 
+Kicked
+éé  
+-=
+éé! #
+OnKicked
+éé$ ,
+;
+éé, -
+_lobbyManager
+èè 
+.
+èè 
+CountdownTick
+èè '
+-=
+èè( *
+OnCountdownTick
+èè+ :
+;
+èè: ;
+_lobbyManager
+êê 
+.
+êê 
+GameStarted
+êê %
+-=
+êê& (
+OnGameStarted
+êê) 6
+;
+êê6 7
+_lobbyManager
+ëë 
+.
+ëë 
+ConnectionLost
+ëë (
+-=
+ëë) +
+OnConnectionLost
+ëë, <
+;
+ëë< =
+Console
+íí 
+.
+íí 
+	WriteLine
+íí 
+(
+íí 
+$str
+íí N
+)
+ííN O
+;
+ííO P
+}
+ìì 	
+}
+îî 
+public
+ññ 
 
 class
-ËË 
+ññ 
 PlayerViewModel
-ËË  
+ññ  
 :
-ËË! "
+ññ! "
 ViewModelBase
-ËË# 0
+ññ# 0
 {
-ÈÈ 
+óó 
 private
-ÍÍ 
+òò 
 string
-ÍÍ 
+òò 
 	_username
-ÍÍ  
+òò  
 ;
-ÍÍ  !
+òò  !
 public
-ÎÎ 
+ôô 
 string
-ÎÎ 
+ôô 
 Username
-ÎÎ 
+ôô 
 {
-ÏÏ 	
+öö 	
 get
-ÌÌ 
+õõ 
 =>
-ÌÌ 
+õõ 
 	_username
-ÌÌ 
+õõ 
 ;
-ÌÌ 
+õõ 
 set
-ÓÓ 
+úú 
 =>
-ÓÓ 
+úú 
 SetProperty
-ÓÓ 
+úú 
 (
-ÓÓ 
+úú 
 ref
-ÓÓ "
+úú "
 	_username
-ÓÓ# ,
+úú# ,
 ,
-ÓÓ, -
+úú, -
 value
-ÓÓ. 3
+úú. 3
 )
-ÓÓ3 4
+úú3 4
 ;
-ÓÓ4 5
+úú4 5
 }
-ÔÔ 	
+ùù 	
 private
-ÒÒ 
+üü 
 
 Visibility
-ÒÒ #
+üü #
 _kickButtonVisibility
-ÒÒ 0
+üü 0
 =
-ÒÒ1 2
+üü1 2
 
 Visibility
-ÒÒ3 =
+üü3 =
 .
-ÒÒ= >
+üü= >
 	Collapsed
-ÒÒ> G
+üü> G
 ;
-ÒÒG H
+üüG H
 public
-ÚÚ 
+†† 
 
 Visibility
-ÚÚ "
+†† "
 KickButtonVisibility
-ÚÚ .
+†† .
 {
-ÛÛ 	
+°° 	
 get
-ÙÙ 
+¢¢ 
 =>
-ÙÙ #
+¢¢ #
 _kickButtonVisibility
-ÙÙ (
+¢¢ (
 ;
-ÙÙ( )
+¢¢( )
 set
-ıı 
+££ 
 =>
-ıı 
+££ 
 SetProperty
-ıı 
+££ 
 (
-ıı 
+££ 
 ref
-ıı "#
+££ "#
 _kickButtonVisibility
-ıı# 8
+££# 8
 ,
-ıı8 9
+££8 9
 value
-ıı: ?
+££: ?
 )
-ıı? @
+££? @
 ;
-ıı@ A
+££@ A
 }
-ˆˆ 	
+§§ 	
 public
-¯¯ 
+¶¶ 
 ICommand
-¯¯ 
+¶¶ 
 KickCommand
-¯¯ #
+¶¶ #
 {
-¯¯$ %
+¶¶$ %
 get
-¯¯& )
+¶¶& )
 ;
-¯¯) *
+¶¶) *
 set
-¯¯+ .
+¶¶+ .
 ;
-¯¯. /
+¶¶. /
 }
-¯¯0 1
+¶¶0 1
 }
-˘˘ 
-}˙˙ µ
-èC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.cs
+ßß 
+}®® ∏
+íC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.cs
 	namespace		 	
 GuessMyMessClient		
  
@@ -3919,126 +4526,38 @@ Visibility
 ; 
 } 	
 } 
-}   ≤
-¨C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.cs
-	namespace
-
- 	
-GuessMyMessClient
-
-
+}   È
+õC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\ServiceLocator.cs
+	namespace		 	
+GuessMyMessClient		
  
-.
+.		 
+	ViewModel		 %
+.		% &
+Support		& -
+{
 
- 
-	ViewModel
-
- %
-.
-
-% &
-Support
-
-& -
-.
-
-- .
+ 
+public 
+
+static 
+class 
+ServiceLocator &
+{ 
+public 
+static 
+INavigationService (
 
-Converters
-
-. 8
-{ 
-public 
-
-class #
-BoolToGreenRedConverter (
-:) *
-IValueConverter+ :
-{ 
-public 
-object 
-Convert 
-( 
-object $
-value% *
-,* +
-Type, 0
-
-targetType1 ;
-,; <
-object= C
-	parameterD M
-,M N
-CultureInfoO Z
-culture[ b
-)b c
-{ 	
-if 
-( 
-value 
-is 
-bool 
-isOnline &
-)& '
-{ 
-return 
-isOnline 
-?  !
-new" %
-SolidColorBrush& 5
-(5 6
-Colors6 <
-.< =
-Green= B
-)B C
-:D E
-newF I
-SolidColorBrushJ Y
-(Y Z
-ColorsZ `
-.` a
-Reda d
-)d e
-;e f
-} 
-return 
-new 
-SolidColorBrush &
-(& '
-Colors' -
-.- .
-Gray. 2
-)2 3
-;3 4
-} 	
-public 
-object 
-ConvertBack !
-(! "
-object" (
-value) .
-,. /
-Type0 4
-
-targetType5 ?
-,? @
-objectA G
-	parameterH Q
-,Q R
-CultureInfoS ^
-culture_ f
-)f g
-{ 	
-throw 
-new #
-NotImplementedException -
-(- .
-). /
-;/ 0
-} 	
-} 
-} ∞<
-õC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.cs
+Navigation) 3
+{4 5
+get6 9
+;9 :
+set; >
+;> ?
+}@ A
+} 
+} ≥<
+ûC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.cs
 	namespace 	
 GuessMyMessClient
  
@@ -4473,8 +4992,1176 @@ targetType5 ?
 ;]]- .
 }^^ 	
 }__ 
-}`` á
-ØC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.cs
+}`` ˙?
+¨C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Navigation\WpfNavigationService.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Support& -
+.- .
+
+Navigation. 8
+{ 
+public 
+
+class  
+WpfNavigationService %
+:& '
+INavigationService( :
+{ 
+private 
+Window 
+_currentMatchWindow *
+;* +
+public 
+void !
+RegisterCurrentWindow )
+() *
+Window* 0
+window1 7
+)7 8
+{ 	
+_currentMatchWindow 
+=  !
+window" (
+;( )
+} 	
+public 
+void "
+CloseCurrentGameWindow *
+(* +
+)+ ,
+{ 	
+if 
+( 
+_currentMatchWindow #
+!=$ &
+null' +
+)+ ,
+{ 
+Application 
+. 
+Current #
+?# $
+.$ %
+
+Dispatcher% /
+./ 0
+Invoke0 6
+(6 7
+(7 8
+)8 9
+=>: <
+{ 
+_currentMatchWindow '
+.' (
+Close( -
+(- .
+). /
+;/ 0
+_currentMatchWindow '
+=( )
+null* .
+;. /
+} 
+) 
+; 
+} 
+}   	
+public"" 
+void"" #
+NavigateToDrawingScreen"" +
+(""+ ,
+string"", 2
+word""3 7
+)""7 8
+{## 	
+Application$$ 
+.$$ 
+Current$$ 
+.$$  
+
+Dispatcher$$  *
+.$$* +
+Invoke$$+ 1
+($$1 2
+($$2 3
+)$$3 4
+=>$$5 7
+{%% "
+CloseCurrentGameWindow&& &
+(&&& '
+)&&' (
+;&&( )
+var(( 
+vm(( 
+=(( 
+new(( "
+DrawingScreenViewModel(( 3
+(((3 4
+word((4 8
+)((8 9
+;((9 :
+var)) 
+view)) 
+=)) 
+new)) 
+DrawingScreenView)) 0
+{))1 2
+DataContext))3 >
+=))? @
+vm))A C
+}))D E
+;))E F
+view++ 
+.++ 
+Show++ 
+(++ 
+)++ 
+;++ 
+_currentMatchWindow,, #
+=,,$ %
+view,,& *
+;,,* +
+}-- 
+)-- 
+;-- 
+}.. 	
+public00 
+void00 
+NavigateToGuess00 #
+(00# $
+
+DrawingDto00$ .
+drawing00/ 6
+)006 7
+{11 	
+Application22 
+.22 
+Current22 
+.22  
+
+Dispatcher22  *
+.22* +
+Invoke22+ 1
+(221 2
+(222 3
+)223 4
+=>225 7
+{33 "
+CloseCurrentGameWindow44 &
+(44& '
+)44' (
+;44( )
+var66 
+vm66 
+=66 
+new66 !
+GuessTheWordViewModel66 2
+(662 3
+drawing663 :
+)66: ;
+;66; <
+var77 
+view77 
+=77 
+new77 
+GuessTheWordView77 /
+{770 1
+DataContext772 =
+=77> ?
+vm77@ B
+}77C D
+;77D E
+view99 
+.99 
+Show99 
+(99 
+)99 
+;99 
+_currentMatchWindow:: #
+=::$ %
+view::& *
+;::* +
+};; 
+);; 
+;;; 
+}<< 	
+public>> 
+void>> 
+NavigateToAnswers>> %
+(>>% &
+
+DrawingDto>>& 0
+[>>0 1
+]>>1 2
+drawings>>3 ;
+,>>; <
+GuessDto>>= E
+[>>E F
+]>>F G
+guesses>>H O
+,>>O P
+PlayerScoreDto>>Q _
+[>>_ `
+]>>` a
+scores>>b h
+)>>h i
+{?? 	
+Application@@ 
+.@@ 
+Current@@ 
+.@@  
+
+Dispatcher@@  *
+.@@* +
+Invoke@@+ 1
+(@@1 2
+(@@2 3
+)@@3 4
+=>@@5 7
+{AA "
+CloseCurrentGameWindowBB &
+(BB& '
+)BB' (
+;BB( )
+varDD 
+drawingsListDD  
+=DD! "
+drawingsDD# +
+?DD+ ,
+.DD, -
+ToListDD- 3
+(DD3 4
+)DD4 5
+??DD6 8
+newDD9 <
+ListDD= A
+<DDA B
+
+DrawingDtoDDB L
+>DDL M
+(DDM N
+)DDN O
+;DDO P
+varEE 
+guessesListEE 
+=EE  !
+guessesEE" )
+?EE) *
+.EE* +
+ToListEE+ 1
+(EE1 2
+)EE2 3
+??EE4 6
+newEE7 :
+ListEE; ?
+<EE? @
+GuessDtoEE@ H
+>EEH I
+(EEI J
+)EEJ K
+;EEK L
+varFF 
+
+scoresListFF 
+=FF  
+scoresFF! '
+?FF' (
+.FF( )
+ToListFF) /
+(FF/ 0
+)FF0 1
+??FF2 4
+newFF5 8
+ListFF9 =
+<FF= >
+PlayerScoreDtoFF> L
+>FFL M
+(FFM N
+)FFN O
+;FFO P
+varHH 
+vmHH 
+=HH 
+newHH "
+AnswersScreenViewModelHH 3
+(HH3 4
+drawingsListHH4 @
+,HH@ A
+guessesListHHB M
+,HHM N
+
+scoresListHHO Y
+)HHY Z
+;HHZ [
+varII 
+viewII 
+=II 
+newII 
+AnswersScreenViewII 0
+{II1 2
+DataContextII3 >
+=II? @
+vmIIA C
+}IID E
+;IIE F
+viewKK 
+.KK 
+ShowKK 
+(KK 
+)KK 
+;KK 
+_currentMatchWindowLL #
+=LL$ %
+viewLL& *
+;LL* +
+}MM 
+)MM 
+;MM 
+}NN 	
+publicPP 
+voidPP 
+NavigateToNextGuessPP '
+(PP' (
+
+DrawingDtoPP( 2
+nextDrawingPP3 >
+)PP> ?
+{QQ 	
+NavigateToGuessRR 
+(RR 
+nextDrawingRR '
+)RR' (
+;RR( )
+}SS 	
+publicUU 
+voidUU  
+NavigateToEndOfMatchUU (
+(UU( )
+PlayerScoreDtoUU) 7
+[UU7 8
+]UU8 9
+finalScoresUU: E
+)UUE F
+{VV 	
+ApplicationWW 
+.WW 
+CurrentWW 
+.WW  
+
+DispatcherWW  *
+.WW* +
+InvokeWW+ 1
+(WW1 2
+(WW2 3
+)WW3 4
+=>WW5 7
+{XX "
+CloseCurrentGameWindowYY &
+(YY& '
+)YY' (
+;YY( )
+var[[ 
+
+scoresList[[ 
+=[[  
+finalScores[[! ,
+?[[, -
+.[[- .
+ToList[[. 4
+([[4 5
+)[[5 6
+??[[7 9
+new[[: =
+List[[> B
+<[[B C
+PlayerScoreDto[[C Q
+>[[Q R
+([[R S
+)[[S T
+;[[T U
+}bb 
+)bb 
+;bb 
+}cc 	
+publicee 
+voidee '
+NavigateToWaitingForGuessesee /
+(ee/ 0
+stringee0 6
+wordee7 ;
+)ee; <
+{ff 	
+Applicationgg 
+.gg 
+Currentgg 
+.gg  
+
+Dispatchergg  *
+.gg* +
+Invokegg+ 1
+(gg1 2
+(gg2 3
+)gg3 4
+=>gg5 7
+{hh "
+CloseCurrentGameWindowii &
+(ii& '
+)ii' (
+;ii( )
+varkk 
+vmkk 
+=kk 
+newkk &
+WaitingForGuessesViewModelkk 7
+(kk7 8
+wordkk8 <
+)kk< =
+;kk= >
+varll 
+viewll 
+=ll 
+newll !
+WaitingForGuessesViewll 4
+{ll5 6
+DataContextll7 B
+=llC D
+vmllE G
+}llH I
+;llI J
+viewnn 
+.nn 
+Shownn 
+(nn 
+)nn 
+;nn 
+_currentMatchWindowoo #
+=oo$ %
+viewoo& *
+;oo* +
+}pp 
+)pp 
+;pp 
+}qq 	
+}rr 
+}ss Œ
+™C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Navigation\INavigationService.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Support& -
+.- .
+
+Navigation. 8
+{		 
+public
+
+ 
+
+	interface
+
+ 
+INavigationService
+
+ '
+{ 
+void !
+RegisterCurrentWindow "
+(" #
+System# )
+.) *
+Windows* 1
+.1 2
+Window2 8
+window9 ?
+)? @
+;@ A
+void #
+NavigateToDrawingScreen $
+($ %
+string% +
+word, 0
+)0 1
+;1 2
+void 
+NavigateToGuess 
+( 
+
+DrawingDto '
+drawing( /
+)/ 0
+;0 1
+void 
+NavigateToAnswers 
+( 
+
+DrawingDto )
+[) *
+]* +
+drawings, 4
+,4 5
+GuessDto6 >
+[> ?
+]? @
+guessesA H
+,H I
+PlayerScoreDtoJ X
+[X Y
+]Y Z
+scores[ a
+)a b
+;b c
+void 
+NavigateToNextGuess  
+(  !
+
+DrawingDto! +
+nextDrawing, 7
+)7 8
+;8 9
+void  
+NavigateToEndOfMatch !
+(! "
+PlayerScoreDto" 0
+[0 1
+]1 2
+finalScores3 >
+)> ?
+;? @
+void '
+NavigateToWaitingForGuesses (
+(( )
+string) /
+word0 4
+)4 5
+;5 6
+void "
+CloseCurrentGameWindow #
+(# $
+)$ %
+;% &
+} 
+} ÚY
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\InkCanvasBinder.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Support& -
+{ 
+public 
+
+static 
+class 
+InkCanvasBinder '
+{		 
+public
+
+ 
+static
+
+ 
+readonly
+
+ 
+DependencyProperty
+
+ 1
+EraserSizeProperty
+
+2 D
+=
+
+E F
+DependencyProperty 
+. 
+RegisterAttached /
+(/ 0
+$str 
+, 
+typeof 
+( 
+double 
+) 
+, 
+typeof 
+( 
+InkCanvasBinder &
+)& '
+,' (
+new 
+PropertyMetadata $
+($ %
+$num% (
+,( )
+OnEraserSizeChanged* =
+)= >
+)> ?
+;? @
+public 
+static 
+double 
+GetEraserSize *
+(* +
+DependencyObject+ ;
+obj< ?
+)? @
+{ 	
+return 
+( 
+double 
+) 
+obj 
+. 
+GetValue '
+(' (
+EraserSizeProperty( :
+): ;
+;; <
+} 	
+public 
+static 
+void 
+SetEraserSize (
+(( )
+DependencyObject) 9
+obj: =
+,= >
+double? E
+valueF K
+)K L
+{ 	
+obj 
+. 
+SetValue 
+( 
+EraserSizeProperty +
+,+ ,
+value- 2
+)2 3
+;3 4
+} 	
+private 
+static 
+void 
+OnEraserSizeChanged /
+(/ 0
+DependencyObject0 @
+dA B
+,B C.
+"DependencyPropertyChangedEventArgsD f
+eg h
+)h i
+{ 	
+if 
+( 
+d 
+is 
+	InkCanvas 
+	inkCanvas (
+&&) +
+(, -
+double- 3
+)3 4
+e4 5
+.5 6
+NewValue6 >
+>? @
+$numA B
+)B C
+{ 
+double 
+newSize 
+=  
+(! "
+double" (
+)( )
+e) *
+.* +
+NewValue+ 3
+;3 4
+	inkCanvas   
+.   
+EraserShape   %
+=  & '
+new  ( +
+EllipseStylusShape  , >
+(  > ?
+newSize  ? F
+,  F G
+newSize  H O
+)  O P
+;  P Q
+}!! 
+}"" 	
+public$$ 
+static$$ 
+readonly$$ 
+DependencyProperty$$ 1%
+MouseStartCommandProperty$$2 K
+=$$L M
+DependencyProperty%% 
+.%% 
+RegisterAttached%% /
+(%%/ 0
+$str&& #
+,&&# $
+typeof'' 
+('' 
+ICommand'' 
+)''  
+,''  !
+typeof(( 
+((( 
+InkCanvasBinder(( &
+)((& '
+,((' (
+new)) 
+PropertyMetadata)) $
+())$ %
+null))% )
+,))) *!
+OnMouseCommandChanged))+ @
+)))@ A
+)))A B
+;))B C
+public++ 
+static++ 
+ICommand++  
+GetMouseStartCommand++ 3
+(++3 4
+DependencyObject++4 D
+obj++E H
+)++H I
+=>++J L
+(++M N
+ICommand++N V
+)++V W
+obj++W Z
+.++Z [
+GetValue++[ c
+(++c d%
+MouseStartCommandProperty++d }
+)++} ~
+;++~ 
+public,, 
+static,, 
+void,,  
+SetMouseStartCommand,, /
+(,,/ 0
+DependencyObject,,0 @
+obj,,A D
+,,,D E
+ICommand,,F N
+value,,O T
+),,T U
+=>,,V X
+obj,,Y \
+.,,\ ]
+SetValue,,] e
+(,,e f%
+MouseStartCommandProperty,,f 
+,	,, Ä
+value
+,,Å Ü
+)
+,,Ü á
+;
+,,á à
+public.. 
+static.. 
+readonly.. 
+DependencyProperty.. 1$
+MouseMoveCommandProperty..2 J
+=..K L
+DependencyProperty// 
+.// 
+RegisterAttached// /
+(/// 0
+$str00 "
+,00" #
+typeof11 
+(11 
+ICommand11 
+)11  
+,11  !
+typeof22 
+(22 
+InkCanvasBinder22 &
+)22& '
+,22' (
+new33 
+PropertyMetadata33 $
+(33$ %
+null33% )
+,33) *!
+OnMouseCommandChanged33+ @
+)33@ A
+)33A B
+;33B C
+public55 
+static55 
+ICommand55 
+GetMouseMoveCommand55 2
+(552 3
+DependencyObject553 C
+obj55D G
+)55G H
+=>55I K
+(55L M
+ICommand55M U
+)55U V
+obj55V Y
+.55Y Z
+GetValue55Z b
+(55b c$
+MouseMoveCommandProperty55c {
+)55{ |
+;55| }
+public66 
+static66 
+void66 
+SetMouseMoveCommand66 .
+(66. /
+DependencyObject66/ ?
+obj66@ C
+,66C D
+ICommand66E M
+value66N S
+)66S T
+=>66U W
+obj66X [
+.66[ \
+SetValue66\ d
+(66d e$
+MouseMoveCommandProperty66e }
+,66} ~
+value	66 Ñ
+)
+66Ñ Ö
+;
+66Ö Ü
+public88 
+static88 
+readonly88 
+DependencyProperty88 1#
+MouseEndCommandProperty882 I
+=88J K
+DependencyProperty99 
+.99 
+RegisterAttached99 /
+(99/ 0
+$str:: !
+,::! "
+typeof;; 
+(;; 
+ICommand;; 
+);;  
+,;;  !
+typeof<< 
+(<< 
+InkCanvasBinder<< &
+)<<& '
+,<<' (
+new== 
+PropertyMetadata== $
+(==$ %
+null==% )
+,==) *!
+OnMouseCommandChanged==+ @
+)==@ A
+)==A B
+;==B C
+public?? 
+static?? 
+ICommand?? 
+GetMouseEndCommand?? 1
+(??1 2
+DependencyObject??2 B
+obj??C F
+)??F G
+=>??H J
+(??K L
+ICommand??L T
+)??T U
+obj??U X
+.??X Y
+GetValue??Y a
+(??a b#
+MouseEndCommandProperty??b y
+)??y z
+;??z {
+public@@ 
+static@@ 
+void@@ 
+SetMouseEndCommand@@ -
+(@@- .
+DependencyObject@@. >
+obj@@? B
+,@@B C
+ICommand@@D L
+value@@M R
+)@@R S
+=>@@T V
+obj@@W Z
+.@@Z [
+SetValue@@[ c
+(@@c d#
+MouseEndCommandProperty@@d {
+,@@{ |
+value	@@} Ç
+)
+@@Ç É
+;
+@@É Ñ
+privateBB 
+staticBB 
+voidBB !
+OnMouseCommandChangedBB 1
+(BB1 2
+DependencyObjectBB2 B
+dBBC D
+,BBD E.
+"DependencyPropertyChangedEventArgsBBF h
+eBBi j
+)BBj k
+{CC 	
+ifDD 
+(DD 
+dDD 
+isDD 
+	InkCanvasDD 
+	inkCanvasDD (
+)DD( )
+{EE 
+	inkCanvasFF 
+.FF &
+PreviewMouseLeftButtonDownFF 4
+-=FF5 7
+InkCanvas_MouseDownFF8 K
+;FFK L
+	inkCanvasGG 
+.GG 
+PreviewMouseMoveGG *
+-=GG+ -
+InkCanvas_MouseMoveGG. A
+;GGA B
+	inkCanvasHH 
+.HH $
+PreviewMouseLeftButtonUpHH 2
+-=HH3 5
+InkCanvas_MouseUpHH6 G
+;HHG H
+	inkCanvasJJ 
+.JJ &
+PreviewMouseLeftButtonDownJJ 4
++=JJ5 7
+InkCanvas_MouseDownJJ8 K
+;JJK L
+	inkCanvasKK 
+.KK 
+PreviewMouseMoveKK *
++=KK+ -
+InkCanvas_MouseMoveKK. A
+;KKA B
+	inkCanvasLL 
+.LL $
+PreviewMouseLeftButtonUpLL 2
++=LL3 5
+InkCanvas_MouseUpLL6 G
+;LLG H
+}MM 
+}NN 	
+privatePP 
+staticPP 
+voidPP 
+InkCanvas_MouseDownPP /
+(PP/ 0
+objectPP0 6
+senderPP7 =
+,PP= > 
+MouseButtonEventArgsPP? S
+ePPT U
+)PPU V
+{QQ 	
+ifRR 
+(RR 
+senderRR 
+isRR 
+	InkCanvasRR #
+	inkCanvasRR$ -
+)RR- .
+{SS 
+varTT 
+commandTT 
+=TT  
+GetMouseStartCommandTT 2
+(TT2 3
+	inkCanvasTT3 <
+)TT< =
+;TT= >
+ifUU 
+(UU 
+commandUU 
+!=UU 
+nullUU #
+&&UU$ &
+commandUU' .
+.UU. /
+
+CanExecuteUU/ 9
+(UU9 :
+nullUU: >
+)UU> ?
+)UU? @
+{VV 
+commandWW 
+.WW 
+ExecuteWW #
+(WW# $
+eWW$ %
+.WW% &
+GetPositionWW& 1
+(WW1 2
+	inkCanvasWW2 ;
+)WW; <
+)WW< =
+;WW= >
+}XX 
+}YY 
+}ZZ 	
+private\\ 
+static\\ 
+void\\ 
+InkCanvas_MouseMove\\ /
+(\\/ 0
+object\\0 6
+sender\\7 =
+,\\= >
+MouseEventArgs\\? M
+e\\N O
+)\\O P
+{]] 	
+if^^ 
+(^^ 
+sender^^ 
+is^^ 
+	InkCanvas^^ #
+	inkCanvas^^$ -
+)^^- .
+{__ 
+var`` 
+command`` 
+=`` 
+GetMouseMoveCommand`` 1
+(``1 2
+	inkCanvas``2 ;
+)``; <
+;``< =
+ifaa 
+(aa 
+commandaa 
+!=aa 
+nullaa #
+&&aa$ &
+eaa' (
+.aa( )
+
+LeftButtonaa) 3
+==aa4 6
+MouseButtonStateaa7 G
+.aaG H
+PressedaaH O
+&&aaP R
+commandaaS Z
+.aaZ [
+
+CanExecuteaa[ e
+(aae f
+nullaaf j
+)aaj k
+)aak l
+{bb 
+commandcc 
+.cc 
+Executecc #
+(cc# $
+ecc$ %
+.cc% &
+GetPositioncc& 1
+(cc1 2
+	inkCanvascc2 ;
+)cc; <
+)cc< =
+;cc= >
+}dd 
+}ee 
+}ff 	
+privatehh 
+statichh 
+voidhh 
+InkCanvas_MouseUphh -
+(hh- .
+objecthh. 4
+senderhh5 ;
+,hh; < 
+MouseButtonEventArgshh= Q
+ehhR S
+)hhS T
+{ii 	
+ifjj 
+(jj 
+senderjj 
+isjj 
+	InkCanvasjj #
+	inkCanvasjj$ -
+)jj- .
+{kk 
+varll 
+commandll 
+=ll 
+GetMouseEndCommandll 0
+(ll0 1
+	inkCanvasll1 :
+)ll: ;
+;ll; <
+ifmm 
+(mm 
+commandmm 
+!=mm 
+nullmm #
+&&mm$ &
+commandmm' .
+.mm. /
+
+CanExecutemm/ 9
+(mm9 :
+nullmm: >
+)mm> ?
+)mm? @
+{nn 
+commandoo 
+.oo 
+Executeoo #
+(oo# $
+nulloo$ (
+)oo( )
+;oo) *
+}pp 
+}qq 
+}rr 	
+}ss 
+}tt ä
+≤C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.cs
 	namespace
 
  	
@@ -4584,8 +6271,126 @@ targetType5 ?
 ;/ 0
 } 	
 } 
-} ì
-±C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanToVisibilityConverter.cs
+} µ
+ØC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.cs
+	namespace
+
+ 	
+GuessMyMessClient
+
+
+ 
+.
+
+ 
+	ViewModel
+
+ %
+.
+
+% &
+Support
+
+& -
+.
+
+- .
+
+Converters
+
+. 8
+{ 
+public 
+
+class #
+BoolToGreenRedConverter (
+:) *
+IValueConverter+ :
+{ 
+public 
+object 
+Convert 
+( 
+object $
+value% *
+,* +
+Type, 0
+
+targetType1 ;
+,; <
+object= C
+	parameterD M
+,M N
+CultureInfoO Z
+culture[ b
+)b c
+{ 	
+if 
+( 
+value 
+is 
+bool 
+isOnline &
+)& '
+{ 
+return 
+isOnline 
+?  !
+new" %
+SolidColorBrush& 5
+(5 6
+Colors6 <
+.< =
+Green= B
+)B C
+:D E
+newF I
+SolidColorBrushJ Y
+(Y Z
+ColorsZ `
+.` a
+Reda d
+)d e
+;e f
+} 
+return 
+new 
+SolidColorBrush &
+(& '
+Colors' -
+.- .
+Gray. 2
+)2 3
+;3 4
+} 	
+public 
+object 
+ConvertBack !
+(! "
+object" (
+value) .
+,. /
+Type0 4
+
+targetType5 ?
+,? @
+objectA G
+	parameterH Q
+,Q R
+CultureInfoS ^
+culture_ f
+)f g
+{ 	
+throw 
+new #
+NotImplementedException -
+(- .
+). /
+;/ 0
+} 	
+} 
+} ñ
+¥C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanToVisibilityConverter.cs
 	namespace
 
  	
@@ -4732,8 +6537,101 @@ targetType5 ?
 ;/ 0
 } 	
 } 
-}   ‹m
-ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SocialClientManager.cs
+}   ª
+∞C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BooleanNegationConverter.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Support& -
+.- .
+
+Converters. 8
+{ 
+public 
+
+class $
+BooleanNegationConverter )
+:* +
+IValueConverter, ;
+{ 
+public		 
+object		 
+Convert		 
+(		 
+object		 $
+value		% *
+,		* +
+Type		, 0
+
+targetType		1 ;
+,		; <
+object		= C
+	parameter		D M
+,		M N
+CultureInfo		O Z
+culture		[ b
+)		b c
+{
+
+ 	
+if 
+( 
+value 
+is 
+bool 
+b 
+)  
+{ 
+return 
+! 
+b 
+; 
+} 
+return 
+false 
+; 
+} 	
+public 
+object 
+ConvertBack !
+(! "
+object" (
+value) .
+,. /
+Type0 4
+
+targetType5 ?
+,? @
+objectA G
+	parameterH Q
+,Q R
+CultureInfoS ^
+culture_ f
+)f g
+{ 	
+if 
+( 
+value 
+is 
+bool 
+b 
+)  
+{ 
+return 
+! 
+b 
+; 
+} 
+return 
+false 
+; 
+} 	
+} 
+} ﬂm
+†C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SocialClientManager.cs
 	namespace
 
  	
@@ -5688,8 +7586,8 @@ DisconnectMM  *
 ûû 	
 }
 üü 
-}†† ª
-òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SessionManager.cs
+}†† æ
+õC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\SessionManager.cs
 	namespace 	
 GuessMyMessClient
  
@@ -5796,8 +7694,1773 @@ IsLoggedIn 
 ;  " #
 }!! 	
 }"" 
-}## t
-¢C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\MatchmakingClientManager.cs
+}## ‰Æ
+üC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\LobbyClientManager.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Session& -
+{ 
+public 
+
+class 
+LobbyClientManager #
+:$ %!
+ILobbyServiceCallback& ;
+{		 
+private
+
+ 
+static
+
+ 
+readonly
+
+ 
+Lazy
+
+  $
+<
+
+$ %
+LobbyClientManager
+
+% 7
+>
+
+7 8
+_lazyInstance
+
+9 F
+=
+
+G H
+new 
+Lazy 
+< 
+LobbyClientManager '
+>' (
+(( )
+() *
+)* +
+=>, .
+new/ 2
+LobbyClientManager3 E
+(E F
+)F G
+)G H
+;H I
+public 
+static 
+LobbyClientManager (
+Instance) 1
+=>2 4
+_lazyInstance5 B
+.B C
+ValueC H
+;H I
+private 
+LobbyClientManager "
+(" #
+)# $
+{% &
+}' (
+private 
+LobbyServiceClient "
+_client# *
+;* +
+public 
+string 
+CurrentMatchId $
+{% &
+get' *
+;* +
+private, 3
+set4 7
+;7 8
+}9 :
+private 
+string 
+_currentUsername '
+;' (
+public 
+event 
+Action 
+< 
+LobbyStateDto )
+>) *
+LobbyStateUpdated+ <
+;< =
+public 
+event 
+Action 
+< 
+ChatMessageDto *
+>* + 
+LobbyMessageReceived, @
+;@ A
+public 
+event 
+Action 
+< 
+string "
+>" #
+Kicked$ *
+;* +
+public 
+event 
+Action 
+< 
+int 
+>  
+CountdownTick! .
+;. /
+public 
+event 
+Action 
+GameStarted '
+;' (
+public 
+event 
+Action 
+ConnectionLost *
+;* +
+public 
+bool 
+IsConnected 
+=>  "
+_client# *
+!=+ -
+null. 2
+&&3 5
+_client6 =
+.= >
+State> C
+==D F
+CommunicationStateG Y
+.Y Z
+OpenedZ `
+;` a
+public 
+void 
+Connect 
+( 
+string "
+username# +
+,+ ,
+string- 3
+matchId4 ;
+); <
+{ 	
+try   
+{!! 
+if"" 
+("" 
+IsConnected"" 
+)""  
+
+Disconnect""! +
+(""+ ,
+)"", -
+;""- .
+_currentUsername##  
+=##! "
+username### +
+;##+ ,
+CurrentMatchId$$ 
+=$$  
+matchId$$! (
+;$$( )
+var%% 
+instanceContext%% #
+=%%$ %
+new%%& )
+InstanceContext%%* 9
+(%%9 :
+this%%: >
+)%%> ?
+;%%? @
+_client&& 
+=&& 
+new&& 
+LobbyServiceClient&& 0
+(&&0 1
+instanceContext&&1 @
+)&&@ A
+;&&A B
+_client'' 
+.'' 
+Open'' 
+('' 
+)'' 
+;'' 
+_client(( 
+.(( 
+InnerChannel(( $
+.(($ %
+Faulted((% ,
++=((- /
+Channel_Faulted((0 ?
+;((? @
+_client)) 
+.)) 
+InnerChannel)) $
+.))$ %
+Closed))% +
++=)), .
+Channel_Closed))/ =
+;))= >
+_client** 
+.** 
+ConnectToLobby** &
+(**& '
+username**' /
+,**/ 0
+matchId**1 8
+)**8 9
+;**9 :
+Console++ 
+.++ 
+	WriteLine++ !
+(++! "
+$"++" $
+$str++$ C
+{++C D
+matchId++D K
+}++K L
+$str++L P
+{++P Q
+username++Q Y
+}++Y Z
+"++Z [
+)++[ \
+;++\ ]
+},, 
+catch-- 
+(-- 
+	Exception-- 
+ex-- 
+)--  
+{.. 
+Console// 
+.// 
+	WriteLine// !
+(//! "
+$"//" $
+$str//$ G
+{//G H
+ex//H J
+.//J K
+Message//K R
+}//R S
+"//S T
+)//T U
+;//U V
+
+MessageBox00 
+.00 
+Show00 
+(00  
+$"00  "
+$str00" =
+{00= >
+ex00> @
+.00@ A
+Message00A H
+}00H I
+"00I J
+,00J K
+$str00L ^
+,00^ _
+MessageBoxButton00` p
+.00p q
+OK00q s
+,00s t
+MessageBoxImage	00u Ñ
+.
+00Ñ Ö
+Error
+00Ö ä
+)
+00ä ã
+;
+00ã å
+CleanupConnection11 !
+(11! "
+)11" #
+;11# $
+ConnectionLost22 
+?22 
+.22  
+Invoke22  &
+(22& '
+)22' (
+;22( )
+}33 
+}44 	
+public66 
+void66 
+
+Disconnect66 
+(66 
+)66  
+{77 	
+if88 
+(88 
+!88 
+IsConnected88 
+)88 
+return88 $
+;88$ %
+try99 
+{:: 
+_client;; 
+.;; 
+
+LeaveLobby;; "
+(;;" #
+_currentUsername;;# 3
+,;;3 4
+CurrentMatchId;;5 C
+);;C D
+;;;D E
+Console<< 
+.<< 
+	WriteLine<< !
+(<<! "
+$"<<" $
+$str<<$ @
+{<<@ A
+_currentUsername<<A Q
+}<<Q R
+$str<<R X
+{<<X Y
+CurrentMatchId<<Y g
+}<<g h
+"<<h i
+)<<i j
+;<<j k
+}== 
+catch>> 
+(>> 
+	Exception>> 
+ex>> 
+)>>  
+when>>! %
+(>>& '
+ex>>' )
+is>>* ,"
+CommunicationException>>- C
+||>>D F
+ex>>G I
+is>>J L
+TimeoutException>>M ]
+)>>] ^
+{?? 
+Console@@ 
+.@@ 
+	WriteLine@@ !
+(@@! "
+$"@@" $
+$str@@$ J
+{@@J K
+ex@@K M
+.@@M N
+Message@@N U
+}@@U V
+$str@@V k
+"@@k l
+)@@l m
+;@@m n
+}AA 
+catchBB 
+(BB 
+	ExceptionBB 
+exBB 
+)BB  
+{CC 
+ConsoleDD 
+.DD 
+	WriteLineDD !
+(DD! "
+$"DD" $
+$strDD$ H
+{DDH I
+exDDI K
+.DDK L
+MessageDDL S
+}DDS T
+"DDT U
+)DDU V
+;DDV W
+}EE 
+finallyFF 
+{GG 
+CleanupConnectionHH !
+(HH! "
+)HH" #
+;HH# $
+}II 
+}JJ 	
+privateLL 
+voidLL 
+CleanupConnectionLL &
+(LL& '
+)LL' (
+{MM 	
+ifNN 
+(NN 
+_clientNN 
+!=NN 
+nullNN 
+)NN  
+{OO 
+tryPP 
+{QQ 
+_clientRR 
+.RR 
+InnerChannelRR (
+.RR( )
+FaultedRR) 0
+-=RR1 3
+Channel_FaultedRR4 C
+;RRC D
+_clientSS 
+.SS 
+InnerChannelSS (
+.SS( )
+ClosedSS) /
+-=SS0 2
+Channel_ClosedSS3 A
+;SSA B
+}TT 
+catchUU 
+(UU 
+	ExceptionUU  
+exUU! #
+)UU# $
+{VV 
+ConsoleWW 
+.WW 
+	WriteLineWW %
+(WW% &
+$"WW& (
+$strWW( Q
+{WWQ R
+exWWR T
+.WWT U
+MessageWWU \
+}WW\ ]
+"WW] ^
+)WW^ _
+;WW_ `
+}XX 
+tryYY 
+{ZZ 
+if[[ 
+([[ 
+_client[[ 
+.[[  
+State[[  %
+!=[[& (
+CommunicationState[[) ;
+.[[; <
+Faulted[[< C
+)[[C D
+{\\ 
+_client]] 
+.]]  
+Close]]  %
+(]]% &
+)]]& '
+;]]' (
+}^^ 
+else__ 
+{`` 
+_clientaa 
+.aa  
+Abortaa  %
+(aa% &
+)aa& '
+;aa' (
+}bb 
+}cc 
+catchdd 
+(dd 
+	Exceptiondd  
+exdd! #
+)dd# $
+{ee 
+Consoleff 
+.ff 
+	WriteLineff %
+(ff% &
+$"ff& (
+$strff( L
+{ffL M
+exffM O
+.ffO P
+MessageffP W
+}ffW X
+"ffX Y
+)ffY Z
+;ffZ [
+_clientgg 
+.gg 
+Abortgg !
+(gg! "
+)gg" #
+;gg# $
+}hh 
+finallyii 
+{jj 
+_clientkk 
+=kk 
+nullkk "
+;kk" #
+CurrentMatchIdll "
+=ll# $
+nullll% )
+;ll) *
+_currentUsernamemm $
+=mm% &
+nullmm' +
+;mm+ ,
+}nn 
+}oo 
+Consolepp 
+.pp 
+	WriteLinepp 
+(pp 
+$strpp :
+)pp: ;
+;pp; <
+}qq 	
+publicss 
+voidss 
+SendChatMessagess #
+(ss# $
+stringss$ *
+
+messageKeyss+ 5
+)ss5 6
+{tt 	
+ifuu 
+(uu 
+!uu 
+IsConnecteduu 
+||uu 
+stringuu  &
+.uu& '
+IsNullOrEmptyuu' 4
+(uu4 5
+_currentUsernameuu5 E
+)uuE F
+||uuG I
+stringuuJ P
+.uuP Q
+IsNullOrEmptyuuQ ^
+(uu^ _
+CurrentMatchIduu_ m
+)uum n
+)uun o
+returnuup v
+;uuv w
+tryvv 
+{ww 
+_clientxx 
+.xx 
+SendLobbyMessagexx (
+(xx( )
+_currentUsernamexx) 9
+,xx9 :
+CurrentMatchIdxx; I
+,xxI J
+
+messageKeyxxK U
+)xxU V
+;xxV W
+}yy 
+catchzz 
+(zz 
+	Exceptionzz 
+exzz 
+)zz  
+{{{ 
+Console|| 
+.|| 
+	WriteLine|| !
+(||! "
+$"||" $
+$str||$ @
+{||@ A
+ex||A C
+.||C D
+Message||D K
+}||K L
+"||L M
+)||M N
+;||N O$
+HandleCommunicationError}} (
+(}}( )
+)}}) *
+;}}* +
+}~~ 
+} 	
+public
+ÅÅ 
+void
+ÅÅ 
+RequestStartGame
+ÅÅ $
+(
+ÅÅ$ %
+)
+ÅÅ% &
+{
+ÇÇ 	
+if
+ÉÉ 
+(
+ÉÉ 
+!
+ÉÉ 
+IsConnected
+ÉÉ 
+||
+ÉÉ 
+string
+ÉÉ  &
+.
+ÉÉ& '
+IsNullOrEmpty
+ÉÉ' 4
+(
+ÉÉ4 5
+_currentUsername
+ÉÉ5 E
+)
+ÉÉE F
+||
+ÉÉG I
+string
+ÉÉJ P
+.
+ÉÉP Q
+IsNullOrEmpty
+ÉÉQ ^
+(
+ÉÉ^ _
+CurrentMatchId
+ÉÉ_ m
+)
+ÉÉm n
+)
+ÉÉn o
+return
+ÉÉp v
+;
+ÉÉv w
+try
+ÑÑ 
+{
+ÖÖ 
+_client
+ÜÜ 
+.
+ÜÜ 
+	StartGame
+ÜÜ !
+(
+ÜÜ! "
+_currentUsername
+ÜÜ" 2
+,
+ÜÜ2 3
+CurrentMatchId
+ÜÜ4 B
+)
+ÜÜB C
+;
+ÜÜC D
+}
+áá 
+catch
+àà 
+(
+àà 
+	Exception
+àà 
+ex
+àà 
+)
+àà  
+{
+ââ 
+Console
+ää 
+.
+ää 
+	WriteLine
+ää !
+(
+ää! "
+$"
+ää" $
+$str
+ää$ A
+{
+ääA B
+ex
+ääB D
+.
+ääD E
+Message
+ääE L
+}
+ääL M
+"
+ääM N
+)
+ääN O
+;
+ääO P&
+HandleCommunicationError
+ãã (
+(
+ãã( )
+)
+ãã) *
+;
+ãã* +
+}
+åå 
+}
+çç 	
+public
+èè 
+void
+èè 
+RequestKickPlayer
+èè %
+(
+èè% &
+string
+èè& ,
+playerToKick
+èè- 9
+)
+èè9 :
+{
+êê 	
+if
+ëë 
+(
+ëë 
+!
+ëë 
+IsConnected
+ëë 
+||
+ëë 
+string
+ëë  &
+.
+ëë& '
+IsNullOrEmpty
+ëë' 4
+(
+ëë4 5
+_currentUsername
+ëë5 E
+)
+ëëE F
+||
+ëëG I
+string
+ëëJ P
+.
+ëëP Q
+IsNullOrEmpty
+ëëQ ^
+(
+ëë^ _
+CurrentMatchId
+ëë_ m
+)
+ëëm n
+||
+ëëo q
+string
+ëër x
+.
+ëëx y
+IsNullOrEmptyëëy Ü
+(ëëÜ á
+playerToKickëëá ì
+)ëëì î
+)ëëî ï
+returnëëñ ú
+;ëëú ù
+try
+íí 
+{
+ìì 
+_client
+îî 
+.
+îî 
+
+KickPlayer
+îî "
+(
+îî" #
+_currentUsername
+îî# 3
+,
+îî3 4
+playerToKick
+îî5 A
+,
+îîA B
+CurrentMatchId
+îîC Q
+)
+îîQ R
+;
+îîR S
+}
+ïï 
+catch
+ññ 
+(
+ññ 
+	Exception
+ññ 
+ex
+ññ 
+)
+ññ  
+{
+óó 
+Console
+òò 
+.
+òò 
+	WriteLine
+òò !
+(
+òò! "
+$"
+òò" $
+$str
+òò$ 9
+{
+òò9 :
+playerToKick
+òò: F
+}
+òòF G
+$str
+òòG I
+{
+òòI J
+ex
+òòJ L
+.
+òòL M
+Message
+òòM T
+}
+òòT U
+"
+òòU V
+)
+òòV W
+;
+òòW X&
+HandleCommunicationError
+ôô (
+(
+ôô( )
+)
+ôô) *
+;
+ôô* +
+}
+öö 
+}
+õõ 	
+public
+ùù 
+void
+ùù 
+UpdateLobbyState
+ùù $
+(
+ùù$ %
+LobbyStateDto
+ùù% 2
+lobbyStateDto
+ùù3 @
+)
+ùù@ A
+{
+ûû 	
+Application
+üü 
+.
+üü 
+Current
+üü 
+?
+üü  
+.
+üü  !
+
+Dispatcher
+üü! +
+.
+üü+ ,
+Invoke
+üü, 2
+(
+üü2 3
+(
+üü3 4
+)
+üü4 5
+=>
+üü6 8
+{
+†† 
+Console
+°° 
+.
+°° 
+	WriteLine
+°° !
+(
+°°! "
+$"
+°°" $
+$str
+°°$ A
+{
+°°A B
+lobbyStateDto
+°°B O
+.
+°°O P
+CurrentPlayers
+°°P ^
+}
+°°^ _
+$str
+°°_ `
+{
+°°` a
+lobbyStateDto
+°°a n
+.
+°°n o
+
+MaxPlayers
+°°o y
+}
+°°y z
+$str°°z É
+"°°É Ñ
+)°°Ñ Ö
+;°°Ö Ü
+LobbyStateUpdated
+¢¢ !
+?
+¢¢! "
+.
+¢¢" #
+Invoke
+¢¢# )
+(
+¢¢) *
+lobbyStateDto
+¢¢* 7
+)
+¢¢7 8
+;
+¢¢8 9
+}
+££ 
+)
+££ 
+;
+££ 
+}
+§§ 	
+public
+¶¶ 
+void
+¶¶ !
+ReceiveLobbyMessage
+¶¶ '
+(
+¶¶' (
+ChatMessageDto
+¶¶( 6
+
+messageDto
+¶¶7 A
+)
+¶¶A B
+{
+ßß 	
+Application
+®® 
+.
+®® 
+Current
+®® 
+?
+®®  
+.
+®®  !
+
+Dispatcher
+®®! +
+.
+®®+ ,
+Invoke
+®®, 2
+(
+®®2 3
+(
+®®3 4
+)
+®®4 5
+=>
+®®6 8
+{
+©© 
+Console
+™™ 
+.
+™™ 
+	WriteLine
+™™ !
+(
+™™! "
+$"
+™™" $
+$str
+™™$ 4
+{
+™™4 5
+
+messageDto
+™™5 ?
+.
+™™? @
+SenderUsername
+™™@ N
+}
+™™N O
+$str
+™™O R
+{
+™™R S
+
+messageDto
+™™S ]
+.
+™™] ^
+MessageContent
+™™^ l
+}
+™™l m
+"
+™™m n
+)
+™™n o
+;
+™™o p"
+LobbyMessageReceived
+´´ $
+?
+´´$ %
+.
+´´% &
+Invoke
+´´& ,
+(
+´´, -
+
+messageDto
+´´- 7
+)
+´´7 8
+;
+´´8 9
+}
+¨¨ 
+)
+¨¨ 
+;
+¨¨ 
+}
+≠≠ 	
+public
+ØØ 
+void
+ØØ 
+KickedFromLobby
+ØØ #
+(
+ØØ# $
+string
+ØØ$ *
+reason
+ØØ+ 1
+)
+ØØ1 2
+{
+∞∞ 	
+Application
+±± 
+.
+±± 
+Current
+±± 
+?
+±±  
+.
+±±  !
+
+Dispatcher
+±±! +
+.
+±±+ ,
+Invoke
+±±, 2
+(
+±±2 3
+(
+±±3 4
+)
+±±4 5
+=>
+±±6 8
+{
+≤≤ 
+Console
+≥≥ 
+.
+≥≥ 
+	WriteLine
+≥≥ !
+(
+≥≥! "
+$"
+≥≥" $
+$str
+≥≥$ 7
+{
+≥≥7 8
+reason
+≥≥8 >
+}
+≥≥> ?
+"
+≥≥? @
+)
+≥≥@ A
+;
+≥≥A B
+Kicked
+¥¥ 
+?
+¥¥ 
+.
+¥¥ 
+Invoke
+¥¥ 
+(
+¥¥ 
+reason
+¥¥ %
+)
+¥¥% &
+;
+¥¥& '
+CleanupConnection
+µµ !
+(
+µµ! "
+)
+µµ" #
+;
+µµ# $
+}
+∂∂ 
+)
+∂∂ 
+;
+∂∂ 
+}
+∑∑ 	
+public
+ππ 
+void
+ππ 
+OnGameStarting
+ππ "
+(
+ππ" #
+int
+ππ# &
+countdownSeconds
+ππ' 7
+)
+ππ7 8
+{
+∫∫ 	
+Application
+ªª 
+.
+ªª 
+Current
+ªª 
+?
+ªª  
+.
+ªª  !
+
+Dispatcher
+ªª! +
+.
+ªª+ ,
+Invoke
+ªª, 2
+(
+ªª2 3
+(
+ªª3 4
+)
+ªª4 5
+=>
+ªª6 8
+{
+ºº 
+Console
+ΩΩ 
+.
+ΩΩ 
+	WriteLine
+ΩΩ !
+(
+ΩΩ! "
+$"
+ΩΩ" $
+$str
+ΩΩ$ 5
+{
+ΩΩ5 6
+countdownSeconds
+ΩΩ6 F
+}
+ΩΩF G
+$str
+ΩΩG J
+"
+ΩΩJ K
+)
+ΩΩK L
+;
+ΩΩL M
+CountdownTick
+ææ 
+?
+ææ 
+.
+ææ 
+Invoke
+ææ %
+(
+ææ% &
+countdownSeconds
+ææ& 6
+)
+ææ6 7
+;
+ææ7 8
+}
+øø 
+)
+øø 
+;
+øø 
+}
+¿¿ 	
+public
+¬¬ 
+void
+¬¬ 
+OnGameStarted
+¬¬ !
+(
+¬¬! "
+)
+¬¬" #
+{
+√√ 	
+Application
+ƒƒ 
+.
+ƒƒ 
+Current
+ƒƒ 
+?
+ƒƒ  
+.
+ƒƒ  !
+
+Dispatcher
+ƒƒ! +
+.
+ƒƒ+ ,
+Invoke
+ƒƒ, 2
+(
+ƒƒ2 3
+(
+ƒƒ3 4
+)
+ƒƒ4 5
+=>
+ƒƒ6 8
+{
+≈≈ 
+Console
+∆∆ 
+.
+∆∆ 
+	WriteLine
+∆∆ !
+(
+∆∆! "
+$str
+∆∆" 1
+)
+∆∆1 2
+;
+∆∆2 3
+GameStarted
+«« 
+?
+«« 
+.
+«« 
+Invoke
+«« #
+(
+««# $
+)
+««$ %
+;
+««% &
+}
+»» 
+)
+»» 
+;
+»» 
+}
+…… 	
+public
+ÀÀ 
+void
+ÀÀ 
+UpdateKickVote
+ÀÀ "
+(
+ÀÀ" #
+string
+ÀÀ# )
+targetUsername
+ÀÀ* 8
+,
+ÀÀ8 9
+int
+ÀÀ: =
+currentVotes
+ÀÀ> J
+,
+ÀÀJ K
+int
+ÀÀL O
+votesNeeded
+ÀÀP [
+)
+ÀÀ[ \
+{
+ÃÃ 	
+Application
+ÕÕ 
+.
+ÕÕ 
+Current
+ÕÕ 
+?
+ÕÕ  
+.
+ÕÕ  !
+
+Dispatcher
+ÕÕ! +
+.
+ÕÕ+ ,
+Invoke
+ÕÕ, 2
+(
+ÕÕ2 3
+(
+ÕÕ3 4
+)
+ÕÕ4 5
+=>
+ÕÕ6 8
+{
+ŒŒ 
+Console
+œœ 
+.
+œœ 
+	WriteLine
+œœ !
+(
+œœ! "
+$"
+œœ" $
+$str
+œœ$ 9
+{
+œœ9 :
+targetUsername
+œœ: H
+}
+œœH I
+$str
+œœI K
+{
+œœK L
+currentVotes
+œœL X
+}
+œœX Y
+$str
+œœY Z
+{
+œœZ [
+votesNeeded
+œœ[ f
+}
+œœf g
+"
+œœg h
+)
+œœh i
+;
+œœi j
+}
+–– 
+)
+–– 
+;
+–– 
+}
+—— 	
+private
+”” 
+void
+”” 
+Channel_Faulted
+”” $
+(
+””$ %
+object
+””% +
+sender
+””, 2
+,
+””2 3
+	EventArgs
+””4 =
+e
+””> ?
+)
+””? @
+{
+‘‘ 	
+Console
+’’ 
+.
+’’ 
+	WriteLine
+’’ 
+(
+’’ 
+$str
+’’ 8
+)
+’’8 9
+;
+’’9 :&
+HandleCommunicationError
+÷÷ $
+(
+÷÷$ %
+true
+÷÷% )
+)
+÷÷) *
+;
+÷÷* +
+}
+◊◊ 	
+private
+ŸŸ 
+void
+ŸŸ 
+Channel_Closed
+ŸŸ #
+(
+ŸŸ# $
+object
+ŸŸ$ *
+sender
+ŸŸ+ 1
+,
+ŸŸ1 2
+	EventArgs
+ŸŸ3 <
+e
+ŸŸ= >
+)
+ŸŸ> ?
+{
+⁄⁄ 	
+Console
+€€ 
+.
+€€ 
+	WriteLine
+€€ 
+(
+€€ 
+$str
+€€ 7
+)
+€€7 8
+;
+€€8 9
+if
+‹‹ 
+(
+‹‹ 
+_client
+‹‹ 
+!=
+‹‹ 
+null
+‹‹ 
+)
+‹‹  
+{
+›› &
+HandleCommunicationError
+ﬁﬁ (
+(
+ﬁﬁ( )
+true
+ﬁﬁ) -
+)
+ﬁﬁ- .
+;
+ﬁﬁ. /
+}
+ﬂﬂ 
+}
+‡‡ 	
+private
+‚‚ 
+void
+‚‚ &
+HandleCommunicationError
+‚‚ -
+(
+‚‚- .
+bool
+‚‚. 2
+
+unexpected
+‚‚3 =
+=
+‚‚> ?
+false
+‚‚@ E
+)
+‚‚E F
+{
+„„ 	
+Application
+‰‰ 
+.
+‰‰ 
+Current
+‰‰ 
+?
+‰‰  
+.
+‰‰  !
+
+Dispatcher
+‰‰! +
+.
+‰‰+ ,
+Invoke
+‰‰, 2
+(
+‰‰2 3
+(
+‰‰3 4
+)
+‰‰4 5
+=>
+‰‰6 8
+{
+ÂÂ 
+Console
+ÊÊ 
+.
+ÊÊ 
+	WriteLine
+ÊÊ !
+(
+ÊÊ! "
+$str
+ÊÊ" A
+)
+ÊÊA B
+;
+ÊÊB C
+CleanupConnection
+ÁÁ !
+(
+ÁÁ! "
+)
+ÁÁ" #
+;
+ÁÁ# $
+ConnectionLost
+ËË 
+?
+ËË 
+.
+ËË  
+Invoke
+ËË  &
+(
+ËË& '
+)
+ËË' (
+;
+ËË( )
+if
+ÈÈ 
+(
+ÈÈ 
+
+unexpected
+ÈÈ 
+)
+ÈÈ 
+{
+ÍÍ 
+
+MessageBox
+ÎÎ 
+.
+ÎÎ 
+Show
+ÎÎ #
+(
+ÎÎ# $
+$str
+ÎÎ$ K
+,
+ÎÎK L
+$str
+ÎÎM _
+,
+ÎÎ_ `
+MessageBoxButton
+ÎÎa q
+.
+ÎÎq r
+OK
+ÎÎr t
+,
+ÎÎt u
+MessageBoxImageÎÎv Ö
+.ÎÎÖ Ü
+WarningÎÎÜ ç
+)ÎÎç é
+;ÎÎé è
+}
+ÏÏ 
+}
+ÌÌ 
+)
+ÌÌ 
+;
+ÌÌ 
+}
+ÓÓ 	
+}
+ÔÔ 
+public
+ 
+
+class
+  
+ChatMessageDisplay
+ #
+{
+ÒÒ 
+public
+ÚÚ 
+string
+ÚÚ 
+FormattedMessage
+ÚÚ &
+{
+ÚÚ' (
+get
+ÚÚ) ,
+;
+ÚÚ, -
+set
+ÚÚ. 1
+;
+ÚÚ1 2
+}
+ÚÚ3 4
+}
+ÛÛ 
+}ÙÙ Ût
+•C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\MatchmakingClientManager.cs
 	namespace		 	
 GuessMyMessClient		
  
@@ -6850,914 +10513,3747 @@ Dispatcher
 ∑∑ 	
 }
 ∏∏ 
-}ππ âÆ
-úC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\LobbyClientManager.cs
-	namespace 	
-GuessMyMessClient
+}ππ ‹ç
+ûC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Session\GameClientManager.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-	ViewModel %
-.% &
-Session& -
-{ 
-public 
+. 
+	ViewModel %
+.% &
+Session& -
+{		 
+public
+
+ 
 
-class 
-LobbyClientManager #
-:$ %!
-ILobbyServiceCallback& ;
-{		 
-private
+class
 
- 
-static
+ 
+GameClientManager
 
- 
-readonly
+ "
+:
 
- 
-Lazy
+# $ 
+IGameServiceCallback
 
-  $
-<
-
-$ %
-LobbyClientManager
-
-% 7
->
-
-7 8
-_lazyInstance
-
-9 F
-=
-
-G H
-new 
-Lazy 
-< 
-LobbyClientManager '
->' (
-(( )
-() *
-)* +
-=>, .
-new/ 2
-LobbyClientManager3 E
-(E F
-)F G
-)G H
-;H I
-public 
-static 
-LobbyClientManager (
-Instance) 1
-=>2 4
-_lazyInstance5 B
-.B C
-ValueC H
-;H I
-private 
-LobbyClientManager "
-(" #
-)# $
-{% &
-}' (
-private 
-LobbyServiceClient "
-_client# *
-;* +
-private 
-string 
-_currentMatchId &
-;& '
-private 
-string 
-_currentUsername '
-;' (
-public 
-event 
-Action 
-< 
-LobbyStateDto )
->) *
-LobbyStateUpdated+ <
-;< =
-public 
-event 
-Action 
-< 
-ChatMessageDto *
->* + 
-LobbyMessageReceived, @
-;@ A
-public 
-event 
-Action 
-< 
-string "
->" #
-Kicked$ *
-;* +
-public 
-event 
-Action 
-< 
-int 
->  
-CountdownTick! .
-;. /
-public 
-event 
-Action 
-GameStarted '
-;' (
-public 
-event 
-Action 
-ConnectionLost *
-;* +
-public 
-bool 
-IsConnected 
-=>  "
-_client# *
-!=+ -
-null. 2
-&&3 5
-_client6 =
-.= >
-State> C
-==D F
-CommunicationStateG Y
-.Y Z
-OpenedZ `
-;` a
-public 
-void 
-Connect 
-( 
-string "
-username# +
-,+ ,
-string- 3
-matchId4 ;
-); <
-{ 	
-try   
-{!! 
-if"" 
-("" 
-IsConnected"" 
-)""  
+% 9
+{ 
+private 
+static 
+readonly 
+Lazy  $
+<$ %
+GameClientManager% 6
+>6 7
+_lazyInstance8 E
+=F G
+new 
+Lazy 
+< 
+GameClientManager &
+>& '
+(' (
+(( )
+)) *
+=>+ -
+new. 1
+GameClientManager2 C
+(C D
+)D E
+)E F
+;F G
+public 
+static 
+GameClientManager '
+Instance( 0
+=>1 3
+_lazyInstance4 A
+.A B
+ValueB G
+;G H
+private 
+GameClientManager !
+(! "
+)" #
+{$ %
+}& '
+private 
+GameServiceClient !
+_client" )
+;) *
+private 
+string 
+_currentUsername '
+;' (
+private 
+string 
+_currentMatchId &
+;& '
+private 
+const 
+string 
+EndpointName )
+=* +
+$str, H
+;H I
+public 
+string 
+GetCurrentUsername (
+(( )
+)) *
+{ 	
+return 
+_currentUsername #
+;# $
+} 	
+public 
+bool 
+IsConnected 
+=>  "
+_client# *
+!=+ -
+null. 2
+&&3 5
+_client6 =
+.= >
+State> C
+==D F
+CommunicationStateG Y
+.Y Z
+OpenedZ `
+;` a
+public 
+event 
+EventHandler !
+<! "
+RoundStartEventArgs" 5
+>5 6
 
-Disconnect""! +
-(""+ ,
-)"", -
-;""- .
-_currentUsername##  
-=##! "
-username### +
-;##+ ,
-_currentMatchId$$ 
-=$$  !
-matchId$$" )
-;$$) *
-var%% 
-instanceContext%% #
-=%%$ %
-new%%& )
-InstanceContext%%* 9
-(%%9 :
-this%%: >
-)%%> ?
-;%%? @
-_client&& 
-=&& 
-new&& 
-LobbyServiceClient&& 0
-(&&0 1
-instanceContext&&1 @
-)&&@ A
-;&&A B
-_client'' 
-.'' 
-Open'' 
-('' 
-)'' 
-;'' 
-_client(( 
-.(( 
-InnerChannel(( $
-.(($ %
-Faulted((% ,
-+=((- /
-Channel_Faulted((0 ?
-;((? @
-_client)) 
-.)) 
-InnerChannel)) $
-.))$ %
-Closed))% +
-+=)), .
-Channel_Closed))/ =
-;))= >
-_client** 
-.** 
-ConnectToLobby** &
-(**& '
-username**' /
-,**/ 0
-matchId**1 8
-)**8 9
-;**9 :
-Console++ 
-.++ 
-	WriteLine++ !
-(++! "
-$"++" $
-$str++$ C
-{++C D
-matchId++D K
-}++K L
-$str++L P
-{++P Q
-username++Q Y
-}++Y Z
-"++Z [
-)++[ \
-;++\ ]
-},, 
-catch-- 
-(-- 
-	Exception-- 
-ex-- 
-)--  
-{.. 
-Console// 
-.// 
-	WriteLine// !
-(//! "
-$"//" $
-$str//$ G
-{//G H
-ex//H J
-.//J K
-Message//K R
-}//R S
-"//S T
-)//T U
-;//U V
+RoundStart7 A
+;A B
+public   
+event   
+EventHandler   !
+<  ! "&
+DrawingPhaseStartEventArgs  " <
+>  < =
+DrawingPhaseStart  > O
+;  O P
+public!! 
+event!! 
+EventHandler!! !
+<!!! "'
+GuessingPhaseStartEventArgs!!" =
+>!!= >
+GuessingPhaseStart!!? Q
+;!!Q R
+public"" 
+event"" 
+EventHandler"" !
+<""! ""
+PlayerGuessedEventArgs""" 8
+>""8 9"
+PlayerGuessedCorrectly"": P
+;""P Q
+public## 
+event## 
+EventHandler## !
+<##! "
+TimeUpdateEventArgs##" 5
+>##5 6
 
-MessageBox00 
-.00 
-Show00 
-(00  
-$"00  "
-$str00" =
-{00= >
-ex00> @
-.00@ A
-Message00A H
-}00H I
-"00I J
-,00J K
-$str00L ^
-,00^ _
-MessageBoxButton00` p
-.00p q
-OK00q s
-,00s t
-MessageBoxImage	00u Ñ
-.
-00Ñ Ö
-Error
-00Ö ä
-)
-00ä ã
-;
-00ã å
-CleanupConnection11 !
-(11! "
-)11" #
-;11# $
-ConnectionLost22 
-?22 
-.22  
-Invoke22  &
-(22& '
-)22' (
-;22( )
-}33 
-}44 	
-public66 
-void66 
+TimeUpdate##7 A
+;##A B
+public$$ 
+event$$ 
+EventHandler$$ !
+<$$! "
+RoundEndEventArgs$$" 3
+>$$3 4
+RoundEnd$$5 =
+;$$= >
+public%% 
+event%% 
+EventHandler%% !
+<%%! "
+GameEndEventArgs%%" 2
+>%%2 3
+GameEnd%%4 ;
+;%%; <
+public&& 
+event&& 
+Action&& 
+ConnectionLost&& *
+;&&* +
+public'' 
+event'' 
+EventHandler'' !
+<''! ""
+InGameMessageEventArgs''" 8
+>''8 9!
+InGameMessageReceived'': O
+;''O P
+public(( 
+event(( 
+EventHandler(( !
+<((! "&
+AnswersPhaseStartEventArgs((" <
+>((< =
+AnswersPhaseStart((> O
+;((O P
+public)) 
+event)) 
+EventHandler)) !
+<))! "$
+ShowNextDrawingEventArgs))" :
+>)): ;
+ShowNextDrawing))< K
+;))K L
+public++ 
+void++ 
+Connect++ 
+(++ 
+string++ "
+username++# +
+,+++ ,
+string++- 3
+matchId++4 ;
+)++; <
+{,, 	
+try-- 
+{.. 
+if// 
+(// 
+IsConnected// 
+)//  
 
-Disconnect66 
-(66 
-)66  
-{77 	
-if88 
-(88 
-!88 
-IsConnected88 
-)88 
-return88 $
-;88$ %
-try99 
-{:: 
+Disconnect//! +
+(//+ ,
+)//, -
+;//- .
+_currentUsername11  
+=11! "
+username11# +
+;11+ ,
+_currentMatchId22 
+=22  !
+matchId22" )
+;22) *
+var44 
+instanceContext44 #
+=44$ %
+new44& )
+InstanceContext44* 9
+(449 :
+this44: >
+)44> ?
+;44? @
+_client55 
+=55 
+new55 
+GameServiceClient55 /
+(55/ 0
+instanceContext550 ?
+,55? @
+EndpointName55A M
+)55M N
+;55N O
+_client66 
+.66 
+Open66 
+(66 
+)66 
+;66 
+_client88 
+.88 
+InnerChannel88 $
+.88$ %
+Faulted88% ,
++=88- /
+Channel_Faulted880 ?
+;88? @
+_client99 
+.99 
+InnerChannel99 $
+.99$ %
+Closed99% +
++=99, .
+Channel_Closed99/ =
+;99= >
 _client;; 
-.;; 
-
-LeaveLobby;; "
-(;;" #
-_currentUsername;;# 3
-,;;3 4
-_currentMatchId;;5 D
-);;D E
-;;;E F
+.;; 
+Connect;; 
+(;;  
+_currentUsername;;  0
+,;;0 1
+_currentMatchId;;2 A
+);;A B
+;;;B C
 Console<< 
 .<< 
 	WriteLine<< !
 (<<! "
 $"<<" $
-$str<<$ @
-{<<@ A
-_currentUsername<<A Q
-}<<Q R
-$str<<R X
-{<<X Y
-_currentMatchId<<Y h
-}<<h i
-"<<i j
-)<<j k
-;<<k l
+$str<<$ D
+{<<D E
+username<<E M
+}<<M N
+$str<<N X
+{<<X Y
+matchId<<Y `
+}<<` a
+"<<a b
+)<<b c
+;<<c d
 }== 
 catch>> 
 (>> 
 	Exception>> 
 ex>> 
-)>>  
-when>>! %
-(>>& '
-ex>>' )
-is>>* ,"
-CommunicationException>>- C
-||>>D F
-ex>>G I
-is>>J L
-TimeoutException>>M ]
-)>>] ^
+)>>  
 {?? 
 Console@@ 
 .@@ 
 	WriteLine@@ !
 (@@! "
 $"@@" $
-$str@@$ J
-{@@J K
-ex@@K M
-.@@M N
-Message@@N U
-}@@U V
-$str@@V k
-"@@k l
-)@@l m
-;@@m n
-}AA 
-catchBB 
-(BB 
-	ExceptionBB 
-exBB 
-)BB  
-{CC 
-ConsoleDD 
-.DD 
-	WriteLineDD !
-(DD! "
-$"DD" $
-$strDD$ H
-{DDH I
-exDDI K
-.DDK L
-MessageDDL S
-}DDS T
-"DDT U
-)DDU V
-;DDV W
-}EE 
-finallyFF 
-{GG 
-CleanupConnectionHH !
-(HH! "
-)HH" #
-;HH# $
-}II 
-}JJ 	
-privateLL 
-voidLL 
-CleanupConnectionLL &
-(LL& '
-)LL' (
-{MM 	
-ifNN 
-(NN 
-_clientNN 
-!=NN 
-nullNN 
-)NN  
-{OO 
-tryPP 
-{QQ 
-_clientRR 
-.RR 
-InnerChannelRR (
-.RR( )
-FaultedRR) 0
--=RR1 3
-Channel_FaultedRR4 C
-;RRC D
-_clientSS 
-.SS 
-InnerChannelSS (
-.SS( )
-ClosedSS) /
--=SS0 2
-Channel_ClosedSS3 A
-;SSA B
-}TT 
-catchUU 
-(UU 
-	ExceptionUU  
-exUU! #
-)UU# $
-{VV 
-ConsoleWW 
-.WW 
-	WriteLineWW %
-(WW% &
-$"WW& (
-$strWW( Q
-{WWQ R
-exWWR T
-.WWT U
-MessageWWU \
-}WW\ ]
-"WW] ^
-)WW^ _
-;WW_ `
-}XX 
-tryYY 
-{ZZ 
-if[[ 
-([[ 
-_client[[ 
-.[[  
-State[[  %
-!=[[& (
-CommunicationState[[) ;
-.[[; <
-Faulted[[< C
-)[[C D
-{\\ 
-_client]] 
-.]]  
-Close]]  %
-(]]% &
-)]]& '
-;]]' (
-}^^ 
-else__ 
-{`` 
-_clientaa 
-.aa  
-Abortaa  %
-(aa% &
-)aa& '
-;aa' (
-}bb 
-}cc 
-catchdd 
-(dd 
-	Exceptiondd  
-exdd! #
-)dd# $
-{ee 
-Consoleff 
-.ff 
-	WriteLineff %
-(ff% &
-$"ff& (
-$strff( L
-{ffL M
-exffM O
-.ffO P
-MessageffP W
-}ffW X
-"ffX Y
-)ffY Z
-;ffZ [
-_clientgg 
-.gg 
-Abortgg !
-(gg! "
-)gg" #
-;gg# $
-}hh 
-finallyii 
-{jj 
-_clientkk 
-=kk 
-nullkk "
-;kk" #
-_currentMatchIdll #
-=ll$ %
-nullll& *
-;ll* +
-_currentUsernamemm $
-=mm% &
-nullmm' +
-;mm+ ,
-}nn 
-}oo 
-Consolepp 
-.pp 
-	WriteLinepp 
-(pp 
-$strpp :
-)pp: ;
-;pp; <
-}qq 	
-publicss 
-voidss 
-SendChatMessagess #
-(ss# $
-stringss$ *
+$str@@$ E
+{@@E F
+ex@@F H
+.@@H I
+Message@@I P
+}@@P Q
+"@@Q R
+)@@R S
+;@@S T
 
-messageKeyss+ 5
-)ss5 6
-{tt 	
-ifuu 
-(uu 
-!uu 
-IsConnecteduu 
-||uu 
-stringuu  &
-.uu& '
-IsNullOrEmptyuu' 4
-(uu4 5
-_currentUsernameuu5 E
-)uuE F
-||uuG I
-stringuuJ P
-.uuP Q
-IsNullOrEmptyuuQ ^
-(uu^ _
-_currentMatchIduu_ n
-)uun o
-)uuo p
-returnuuq w
-;uuw x
-tryvv 
-{ww 
-_clientxx 
-.xx 
-SendLobbyMessagexx (
-(xx( )
-_currentUsernamexx) 9
-,xx9 :
-_currentMatchIdxx; J
-,xxJ K
+MessageBoxAA 
+.AA 
+ShowAA 
+(AA  
+$"AA  "
+$strAA" H
+{AAH I
+exAAI K
+.AAK L
+MessageAAL S
+}AAS T
+"AAT U
+,AAU V
+$strAAW i
+,AAi j
+MessageBoxButtonAAk {
+.AA{ |
+OKAA| ~
+,AA~ 
+MessageBoxImage
+AAÄ è
+.
+AAè ê
+Error
+AAê ï
+)
+AAï ñ
+;
+AAñ ó
+CleanupConnectionBB !
+(BB! "
+)BB" #
+;BB# $
+ConnectionLostCC 
+?CC 
+.CC  
+InvokeCC  &
+(CC& '
+)CC' (
+;CC( )
+}DD 
+}EE 	
+publicGG 
+voidGG 
 
-messageKeyxxL V
-)xxV W
-;xxW X
-}yy 
-catchzz 
-(zz 
-	Exceptionzz 
-exzz 
-)zz  
-{{{ 
-Console|| 
-.|| 
-	WriteLine|| !
-(||! "
-$"||" $
-$str||$ @
-{||@ A
-ex||A C
-.||C D
-Message||D K
-}||K L
-"||L M
-)||M N
-;||N O$
-HandleCommunicationError}} (
-(}}( )
-)}}) *
-;}}* +
-}~~ 
-} 	
-public
-ÅÅ 
-void
-ÅÅ 
-RequestStartGame
-ÅÅ $
-(
-ÅÅ$ %
-)
-ÅÅ% &
-{
-ÇÇ 	
-if
-ÉÉ 
-(
-ÉÉ 
-!
-ÉÉ 
-IsConnected
-ÉÉ 
-||
-ÉÉ 
-string
-ÉÉ  &
-.
-ÉÉ& '
-IsNullOrEmpty
-ÉÉ' 4
-(
-ÉÉ4 5
-_currentUsername
-ÉÉ5 E
-)
-ÉÉE F
-||
-ÉÉG I
-string
-ÉÉJ P
-.
-ÉÉP Q
-IsNullOrEmpty
-ÉÉQ ^
-(
-ÉÉ^ _
-_currentMatchId
-ÉÉ_ n
-)
-ÉÉn o
-)
-ÉÉo p
+DisconnectGG 
+(GG 
+)GG  
+{HH 	
+ifII 
+(II 
+!II 
+IsConnectedII 
+)II 
+returnII $
+;II$ %
+tryJJ 
+{KK 
+_clientLL 
+.LL 
+
+DisconnectLL "
+(LL" #
+_currentUsernameLL# 3
+,LL3 4
+_currentMatchIdLL5 D
+)LLD E
+;LLE F
+ConsoleMM 
+.MM 
+	WriteLineMM !
+(MM! "
+$"MM" $
+$strMM$ S
+{MMS T
+_currentUsernameMMT d
+}MMd e
+"MMe f
+)MMf g
+;MMg h
+}NN 
+catchOO 
+(OO 
+	ExceptionOO 
+exOO 
+)OO  
+whenOO! %
+(OO& '
+exOO' )
+isOO* ,"
+CommunicationExceptionOO- C
+||OOD F
+exOOG I
+isOOJ L
+TimeoutExceptionOOM ]
+)OO] ^
+{PP 
+ConsoleQQ 
+.QQ 
+	WriteLineQQ !
+(QQ! "
+$"QQ" $
+$strQQ$ P
+{QQP Q
+exQQQ S
+.QQS T
+MessageQQT [
+}QQ[ \
+$strQQ\ r
+"QQr s
+)QQs t
+;QQt u
+}RR 
+finallySS 
+{TT 
+CleanupConnectionUU !
+(UU! "
+)UU" #
+;UU# $
+}VV 
+}WW 	
+privateYY 
+voidYY 
+CleanupConnectionYY &
+(YY& '
+)YY' (
+{ZZ 	
+if[[ 
+([[ 
+_client[[ 
+!=[[ 
+null[[ 
+)[[  
+{\\ 
+try]] 
+{^^ 
+_client__ 
+.__ 
+InnerChannel__ (
+.__( )
+Faulted__) 0
+-=__1 3
+Channel_Faulted__4 C
+;__C D
+_client`` 
+.`` 
+InnerChannel`` (
+.``( )
+Closed``) /
+-=``0 2
+Channel_Closed``3 A
+;``A B
+}aa 
+catchbb 
+(bb 
+	Exceptionbb  
+exbb! #
+)bb# $
+{cc 
+Consoledd 
+.dd 
+	WriteLinedd %
+(dd% &
+$"dd& (
+$strdd( W
+{ddW X
+exddX Z
+.ddZ [
+Messagedd[ b
+}ddb c
+"ddc d
+)ddd e
+;dde f
+}ee 
+trygg 
+{hh 
+ifii 
+(ii 
+_clientii 
+.ii  
+Stateii  %
+!=ii& (
+CommunicationStateii) ;
+.ii; <
+Faultedii< C
+)iiC D
+_clientiiE L
+.iiL M
+CloseiiM R
+(iiR S
+)iiS T
+;iiT U
+elsejj 
+_clientjj  
+.jj  !
+Abortjj! &
+(jj& '
+)jj' (
+;jj( )
+}kk 
+catchll 
+(ll 
+	Exceptionll  
+exll! #
+)ll# $
+{mm 
+Consolenn 
+.nn 
+	WriteLinenn %
+(nn% &
+$"nn& (
+$strnn( V
+{nnV W
+exnnW Y
+.nnY Z
+MessagennZ a
+}nna b
+"nnb c
+)nnc d
+;nnd e
+_clientoo 
+.oo 
+Abortoo !
+(oo! "
+)oo" #
+;oo# $
+}pp 
+finallyqq 
+{rr 
+_clientss 
+=ss 
+nullss "
+;ss" #
+_currentMatchIdtt #
+=tt$ %
+nulltt& *
+;tt* +
+_currentUsernameuu $
+=uu% &
+nulluu' +
+;uu+ ,
+}vv 
+}ww 
+Consolexx 
+.xx 
+	WriteLinexx 
+(xx 
+$strxx F
+)xxF G
+;xxG H
+}yy 	
+public{{ 
+async{{ 
+Task{{ 
+<{{ 
+WordDto{{ !
+[{{! "
+]{{" #
+>{{# $
+GetRandomWordsAsync{{% 8
+({{8 9
+){{9 :
+{|| 	
+if}} 
+(}} 
+!}} 
+IsConnected}} 
+)}} 
+return}} $
+null}}% )
+;}}) *
+try~~ 
+{ 
 return
-ÉÉq w
-;
-ÉÉw x
-try
-ÑÑ 
-{
-ÖÖ 
+ÄÄ 
+await
+ÄÄ 
 _client
-ÜÜ 
+ÄÄ $
 .
-ÜÜ 
-	StartGame
-ÜÜ !
+ÄÄ$ %!
+GetRandomWordsAsync
+ÄÄ% 8
 (
-ÜÜ! "
-_currentUsername
-ÜÜ" 2
-,
-ÜÜ2 3
-_currentMatchId
-ÜÜ4 C
+ÄÄ8 9
 )
-ÜÜC D
+ÄÄ9 :
 ;
-ÜÜD E
+ÄÄ: ;
 }
-áá 
+ÅÅ 
 catch
-àà 
+ÇÇ 
 (
-àà 
+ÇÇ 
 	Exception
-àà 
+ÇÇ 
 ex
-àà 
+ÇÇ 
 )
-àà  
+ÇÇ  
 {
-ââ 
+ÉÉ 
 Console
-ää 
+ÑÑ 
 .
-ää 
+ÑÑ 
 	WriteLine
-ää !
+ÑÑ !
 (
-ää! "
+ÑÑ! "
 $"
-ää" $
+ÑÑ" $
 $str
-ää$ A
+ÑÑ$ B
 {
-ääA B
+ÑÑB C
 ex
-ääB D
+ÑÑC E
 .
-ääD E
+ÑÑE F
 Message
-ääE L
+ÑÑF M
 }
-ääL M
+ÑÑM N
 "
-ääM N
+ÑÑN O
 )
-ääN O
+ÑÑO P
 ;
-ääO P&
+ÑÑP Q&
 HandleCommunicationError
-ãã (
+ÖÖ (
 (
-ãã( )
+ÖÖ( )
+true
+ÖÖ) -
 )
-ãã) *
+ÖÖ- .
 ;
-ãã* +
+ÖÖ. /
+return
+ÜÜ 
+null
+ÜÜ 
+;
+ÜÜ 
 }
-åå 
+áá 
 }
-çç 	
+àà 	
 public
-èè 
+ää 
 void
-èè 
-RequestKickPlayer
-èè %
-(
-èè% &
-string
-èè& ,
-playerToKick
-èè- 9
-)
-èè9 :
-{
-êê 	
-if
-ëë 
-(
-ëë 
-!
-ëë 
-IsConnected
-ëë 
-||
-ëë 
-string
-ëë  &
-.
-ëë& '
-IsNullOrEmpty
-ëë' 4
-(
-ëë4 5
-_currentUsername
-ëë5 E
-)
-ëëE F
-||
-ëëG I
-string
-ëëJ P
-.
-ëëP Q
-IsNullOrEmpty
-ëëQ ^
-(
-ëë^ _
-_currentMatchId
-ëë_ n
-)
-ëën o
-||
-ëëp r
-string
-ëës y
-.
-ëëy z
-IsNullOrEmptyëëz á
-(ëëá à
-playerToKickëëà î
-)ëëî ï
-)ëëï ñ
-returnëëó ù
-;ëëù û
-try
-íí 
-{
-ìì 
-_client
-îî 
-.
-îî 
+ää 
 
-KickPlayer
-îî "
+SelectWord
+ää 
 (
-îî" #
+ää 
+string
+ää %
+selectedWord
+ää& 2
+)
+ää2 3
+{
+ãã 	
+if
+åå 
+(
+åå 
+!
+åå 
+IsConnected
+åå 
+)
+åå 
+return
+åå $
+;
+åå$ %
+try
+çç 
+{
+éé 
+_client
+èè 
+.
+èè 
+
+SelectWord
+èè "
+(
+èè" #
 _currentUsername
-îî# 3
+èè# 3
 ,
-îî3 4
-playerToKick
-îî5 A
-,
-îîA B
+èè3 4
 _currentMatchId
-îîC R
+èè5 D
+,
+èèD E
+selectedWord
+èèF R
 )
-îîR S
+èèR S
 ;
-îîS T
+èèS T
 }
-ïï 
+êê 
 catch
-ññ 
+ëë 
 (
-ññ 
+ëë 
 	Exception
-ññ 
+ëë 
 ex
-ññ 
+ëë 
 )
-ññ  
+ëë  
 {
-óó 
+íí 
 Console
-òò 
+ìì 
 .
-òò 
+ìì 
 	WriteLine
-òò !
+ìì !
 (
-òò! "
+ìì! "
 $"
-òò" $
+ìì" $
 $str
-òò$ 9
+ìì$ 9
 {
-òò9 :
-playerToKick
-òò: F
-}
-òòF G
-$str
-òòG I
-{
-òòI J
+ìì9 :
 ex
-òòJ L
+ìì: <
 .
-òòL M
+ìì< =
 Message
-òòM T
+ìì= D
 }
-òòT U
+ììD E
 "
-òòU V
+ììE F
 )
-òòV W
+ììF G
 ;
-òòW X&
+ììG H&
 HandleCommunicationError
-ôô (
+îî (
 (
-ôô( )
+îî( )
+true
+îî) -
 )
-ôô) *
+îî- .
 ;
-ôô* +
+îî. /
+}
+ïï 
+}
+ññ 	
+public
+òò 
+void
+òò 
+SubmitDrawing
+òò !
+(
+òò! "
+byte
+òò" &
+[
+òò& '
+]
+òò' (
+drawingData
+òò) 4
+)
+òò4 5
+{
+ôô 	
+if
+öö 
+(
+öö 
+!
+öö 
+IsConnected
+öö 
+)
+öö 
+return
+öö $
+;
+öö$ %
+try
+õõ 
+{
+úú 
+_client
+ùù 
+.
+ùù 
+SubmitDrawing
+ùù %
+(
+ùù% &
+_currentUsername
+ùù& 6
+,
+ùù6 7
+_currentMatchId
+ùù8 G
+,
+ùùG H
+drawingData
+ùùI T
+)
+ùùT U
+;
+ùùU V
+}
+ûû 
+catch
+üü 
+(
+üü 
+	Exception
+üü 
+ex
+üü 
+)
+üü  
+{
+†† 
+Console
+°° 
+.
+°° 
+	WriteLine
+°° !
+(
+°°! "
+$"
+°°" $
+$str
+°°$ <
+{
+°°< =
+ex
+°°= ?
+.
+°°? @
+Message
+°°@ G
+}
+°°G H
+"
+°°H I
+)
+°°I J
+;
+°°J K&
+HandleCommunicationError
+¢¢ (
+(
+¢¢( )
+true
+¢¢) -
+)
+¢¢- .
+;
+¢¢. /
+}
+££ 
+}
+§§ 	
+public
+¶¶ 
+void
+¶¶ 
+SendInGameMessage
+¶¶ %
+(
+¶¶% &
+string
+¶¶& ,
+message
+¶¶- 4
+)
+¶¶4 5
+{
+ßß 	
+if
+®® 
+(
+®® 
+_client
+®® 
+!=
+®® 
+null
+®® 
+&&
+®®  "
+_client
+®®# *
+.
+®®* +
+State
+®®+ 0
+==
+®®1 3 
+CommunicationState
+®®4 F
+.
+®®F G
+Opened
+®®G M
+)
+®®M N
+{
+©© 
+try
+™™ 
+{
+´´ 
+_client
+¨¨ 
+.
+¨¨ (
+SendInGameChatMessageAsync
+¨¨ 6
+(
+¨¨6 7
+_currentUsername
+¨¨7 G
+,
+¨¨G H
+_currentMatchId
+¨¨I X
+,
+¨¨X Y
+message
+¨¨Z a
+)
+¨¨a b
+;
+¨¨b c
+}
+≠≠ 
+catch
+ÆÆ 
+(
+ÆÆ 
+	Exception
+ÆÆ  
+ex
+ÆÆ! #
+)
+ÆÆ# $
+{
+ØØ 
+Console
+∞∞ 
+.
+∞∞ 
+	WriteLine
+∞∞ %
+(
+∞∞% &
+$"
+∞∞& (
+$str
+∞∞( ?
+{
+∞∞? @
+ex
+∞∞@ B
+.
+∞∞B C
+Message
+∞∞C J
+}
+∞∞J K
+"
+∞∞K L
+)
+∞∞L M
+;
+∞∞M N&
+HandleCommunicationError
+±± ,
+(
+±±, -
+true
+±±- 1
+)
+±±1 2
+;
+±±2 3
+}
+≤≤ 
+}
+≥≥ 
+}
+¥¥ 	
+public
+∂∂ 
+void
+∂∂ 
+SubmitGuess
+∂∂ 
+(
+∂∂  
+string
+∂∂  &
+guess
+∂∂' ,
+,
+∂∂, -
+int
+∂∂. 1
+	drawingId
+∂∂2 ;
+)
+∂∂; <
+{
+∑∑ 	
+if
+∏∏ 
+(
+∏∏ 
+_client
+∏∏ 
+!=
+∏∏ 
+null
+∏∏ 
+&&
+∏∏  "
+_client
+∏∏# *
+.
+∏∏* +
+State
+∏∏+ 0
+==
+∏∏1 3 
+CommunicationState
+∏∏4 F
+.
+∏∏F G
+Opened
+∏∏G M
+)
+∏∏M N
+{
+ππ 
+try
+∫∫ 
+{
+ªª 
+_client
+ºº 
+.
+ºº 
+SubmitGuessAsync
+ºº ,
+(
+ºº, -
+_currentUsername
+ºº- =
+,
+ºº= >
+_currentMatchId
+ºº? N
+,
+ººN O
+	drawingId
+ººP Y
+,
+ººY Z
+guess
+ºº[ `
+)
+ºº` a
+;
+ººa b
+}
+ΩΩ 
+catch
+ææ 
+(
+ææ 
+	Exception
+ææ  
+ex
+ææ! #
+)
+ææ# $
+{
+øø 
+Console
+¿¿ 
+.
+¿¿ 
+	WriteLine
+¿¿ %
+(
+¿¿% &
+$"
+¿¿& (
+$str
+¿¿( =
+{
+¿¿= >
+ex
+¿¿> @
+.
+¿¿@ A
+Message
+¿¿A H
+}
+¿¿H I
+"
+¿¿I J
+)
+¿¿J K
+;
+¿¿K L&
+HandleCommunicationError
+¡¡ ,
+(
+¡¡, -
+true
+¡¡- 1
+)
+¡¡1 2
+;
+¡¡2 3
+}
+¬¬ 
+}
+√√ 
+}
+ƒƒ 	
+public
+∆∆ 
+void
+∆∆ 
+OnRoundStart
+∆∆  
+(
+∆∆  !
+int
+∆∆! $
+roundNumber
+∆∆% 0
+,
+∆∆0 1
+string
+∆∆2 8
+[
+∆∆8 9
+]
+∆∆9 :
+wordOptions
+∆∆; F
+)
+∆∆F G
+{
+«« 	
+Application
+»» 
+.
+»» 
+Current
+»» 
+?
+»»  
+.
+»»  !
+
+Dispatcher
+»»! +
+.
+»»+ ,
+Invoke
+»», 2
+(
+»»2 3
+(
+»»3 4
+)
+»»4 5
+=>
+»»6 8
+{
+…… 
+Console
+   
+.
+   
+	WriteLine
+   !
+(
+  ! "
+$"
+  " $
+$str
+  $ C
+{
+  C D
+roundNumber
+  D O
+}
+  O P
+"
+  P Q
+)
+  Q R
+;
+  R S
+
+RoundStart
+ÀÀ 
+?
+ÀÀ 
+.
+ÀÀ 
+Invoke
+ÀÀ "
+(
+ÀÀ" #
+this
+ÀÀ# '
+,
+ÀÀ' (
+new
+ÀÀ) ,!
+RoundStartEventArgs
+ÀÀ- @
+{
+ÀÀA B
+RoundNumber
+ÀÀC N
+=
+ÀÀO P
+roundNumber
+ÀÀQ \
+,
+ÀÀ\ ]
+WordOptions
+ÀÀ^ i
+=
+ÀÀj k
+wordOptions
+ÀÀl w
+}
+ÀÀx y
+)
+ÀÀy z
+;
+ÀÀz {
+}
+ÃÃ 
+)
+ÃÃ 
+;
+ÃÃ 
+}
+ÕÕ 	
+public
+œœ 
+void
+œœ !
+OnDrawingPhaseStart
+œœ '
+(
+œœ' (
+int
+œœ( +
+durationSeconds
+œœ, ;
+)
+œœ; <
+{
+–– 	
+Application
+—— 
+.
+—— 
+Current
+—— 
+?
+——  
+.
+——  !
+
+Dispatcher
+——! +
+.
+——+ ,
+Invoke
+——, 2
+(
+——2 3
+(
+——3 4
+)
+——4 5
+=>
+——6 8
+{
+““ 
+Console
+”” 
+.
+”” 
+	WriteLine
+”” !
+(
+””! "
+$"
+””" $
+$str
+””$ D
+{
+””D E
+durationSeconds
+””E T
+}
+””T U
+$str
+””U V
+"
+””V W
+)
+””W X
+;
+””X Y
+DrawingPhaseStart
+‘‘ !
+?
+‘‘! "
+.
+‘‘" #
+Invoke
+‘‘# )
+(
+‘‘) *
+this
+‘‘* .
+,
+‘‘. /
+new
+‘‘0 3(
+DrawingPhaseStartEventArgs
+‘‘4 N
+{
+‘‘O P
+DurationSeconds
+‘‘Q `
+=
+‘‘a b
+durationSeconds
+‘‘c r
+}
+‘‘s t
+)
+‘‘t u
+;
+‘‘u v
+}
+’’ 
+)
+’’ 
+;
+’’ 
+}
+÷÷ 	
+public
+ÿÿ 
+void
+ÿÿ "
+OnGuessingPhaseStart
+ÿÿ (
+(
+ÿÿ( )
+
+DrawingDto
+ÿÿ) 3
+drawing
+ÿÿ4 ;
+)
+ÿÿ; <
+{
+ŸŸ 	
+Application
+⁄⁄ 
+.
+⁄⁄ 
+Current
+⁄⁄ 
+?
+⁄⁄  
+.
+⁄⁄  !
+
+Dispatcher
+⁄⁄! +
+.
+⁄⁄+ ,
+Invoke
+⁄⁄, 2
+(
+⁄⁄2 3
+(
+⁄⁄3 4
+)
+⁄⁄4 5
+=>
+⁄⁄6 8
+{
+€€ 
+Console
+‹‹ 
+.
+‹‹ 
+	WriteLine
+‹‹ !
+(
+‹‹! "
+$"
+‹‹" $
+$str
+‹‹$ P
+{
+‹‹P Q
+drawing
+‹‹Q X
+.
+‹‹X Y
+OwnerUsername
+‹‹Y f
+}
+‹‹f g
+"
+‹‹g h
+)
+‹‹h i
+;
+‹‹i j 
+GuessingPhaseStart
+›› "
+?
+››" #
+.
+››# $
+Invoke
+››$ *
+(
+››* +
+this
+››+ /
+,
+››/ 0
+new
+››1 4)
+GuessingPhaseStartEventArgs
+››5 P
+{
+››Q R
+Drawing
+››S Z
+=
+››[ \
+drawing
+››] d
+}
+››e f
+)
+››f g
+;
+››g h
+}
+ﬁﬁ 
+)
+ﬁﬁ 
+;
+ﬁﬁ 
+}
+ﬂﬂ 	
+public
+·· 
+void
+·· &
+OnPlayerGuessedCorrectly
+·· ,
+(
+··, -
+string
+··- 3
+username
+··4 <
+)
+··< =
+{
+‚‚ 	
+Application
+„„ 
+.
+„„ 
+Current
+„„ 
+?
+„„  
+.
+„„  !
+
+Dispatcher
+„„! +
+.
+„„+ ,
+Invoke
+„„, 2
+(
+„„2 3
+(
+„„3 4
+)
+„„4 5
+=>
+„„6 8
+{
+‰‰ 
+Console
+ÂÂ 
+.
+ÂÂ 
+	WriteLine
+ÂÂ !
+(
+ÂÂ! "
+$"
+ÂÂ" $
+$str
+ÂÂ$ I
+{
+ÂÂI J
+username
+ÂÂJ R
+}
+ÂÂR S
+"
+ÂÂS T
+)
+ÂÂT U
+;
+ÂÂU V$
+PlayerGuessedCorrectly
+ÊÊ &
+?
+ÊÊ& '
+.
+ÊÊ' (
+Invoke
+ÊÊ( .
+(
+ÊÊ. /
+this
+ÊÊ/ 3
+,
+ÊÊ3 4
+new
+ÊÊ5 8$
+PlayerGuessedEventArgs
+ÊÊ9 O
+{
+ÊÊP Q
+Username
+ÊÊR Z
+=
+ÊÊ[ \
+username
+ÊÊ] e
+}
+ÊÊf g
+)
+ÊÊg h
+;
+ÊÊh i
+}
+ÁÁ 
+)
+ÁÁ 
+;
+ÁÁ 
+}
+ËË 	
+public
+ÍÍ 
+void
+ÍÍ 
+OnTimeUpdate
+ÍÍ  
+(
+ÍÍ  !
+int
+ÍÍ! $
+remainingSeconds
+ÍÍ% 5
+)
+ÍÍ5 6
+{
+ÎÎ 	
+Application
+ÏÏ 
+.
+ÏÏ 
+Current
+ÏÏ 
+?
+ÏÏ  
+.
+ÏÏ  !
+
+Dispatcher
+ÏÏ! +
+.
+ÏÏ+ ,
+Invoke
+ÏÏ, 2
+(
+ÏÏ2 3
+(
+ÏÏ3 4
+)
+ÏÏ4 5
+=>
+ÏÏ6 8
+{
+ÌÌ 
+
+TimeUpdate
+ÓÓ 
+?
+ÓÓ 
+.
+ÓÓ 
+Invoke
+ÓÓ "
+(
+ÓÓ" #
+this
+ÓÓ# '
+,
+ÓÓ' (
+new
+ÓÓ) ,!
+TimeUpdateEventArgs
+ÓÓ- @
+{
+ÓÓA B
+RemainingSeconds
+ÓÓC S
+=
+ÓÓT U
+remainingSeconds
+ÓÓV f
+}
+ÓÓg h
+)
+ÓÓh i
+;
+ÓÓi j
+}
+ÔÔ 
+)
+ÔÔ 
+;
+ÔÔ 
+}
+ 	
+public
+ÚÚ 
+void
+ÚÚ 
+
+OnRoundEnd
+ÚÚ 
+(
+ÚÚ 
+PlayerScoreDto
+ÚÚ -
+[
+ÚÚ- .
+]
+ÚÚ. /
+roundScores
+ÚÚ0 ;
+,
+ÚÚ; <
+string
+ÚÚ= C
+correctWord
+ÚÚD O
+)
+ÚÚO P
+{
+ÛÛ 	
+Application
+ÙÙ 
+.
+ÙÙ 
+Current
+ÙÙ 
+?
+ÙÙ  
+.
+ÙÙ  !
+
+Dispatcher
+ÙÙ! +
+.
+ÙÙ+ ,
+Invoke
+ÙÙ, 2
+(
+ÙÙ2 3
+(
+ÙÙ3 4
+)
+ÙÙ4 5
+=>
+ÙÙ6 8
+{
+ıı 
+Console
+ˆˆ 
+.
+ˆˆ 
+	WriteLine
+ˆˆ !
+(
+ˆˆ! "
+$"
+ˆˆ" $
+$str
+ˆˆ$ H
+{
+ˆˆH I
+correctWord
+ˆˆI T
+}
+ˆˆT U
+"
+ˆˆU V
+)
+ˆˆV W
+;
+ˆˆW X
+RoundEnd
+˜˜ 
+?
+˜˜ 
+.
+˜˜ 
+Invoke
+˜˜  
+(
+˜˜  !
+this
+˜˜! %
+,
+˜˜% &
+new
+˜˜' *
+RoundEndEventArgs
+˜˜+ <
+{
+˜˜= >
+RoundScores
+˜˜? J
+=
+˜˜K L
+roundScores
+˜˜M X
+,
+˜˜X Y
+CorrectWord
+˜˜Z e
+=
+˜˜f g
+correctWord
+˜˜h s
+}
+˜˜t u
+)
+˜˜u v
+;
+˜˜v w
+}
+¯¯ 
+)
+¯¯ 
+;
+¯¯ 
+}
+˘˘ 	
+public
+˚˚ 
+void
+˚˚ 
+	OnGameEnd
+˚˚ 
+(
+˚˚ 
+PlayerScoreDto
+˚˚ ,
+[
+˚˚, -
+]
+˚˚- .
+finalScores
+˚˚/ :
+)
+˚˚: ;
+{
+¸¸ 	
+Application
+˝˝ 
+.
+˝˝ 
+Current
+˝˝ 
+?
+˝˝  
+.
+˝˝  !
+
+Dispatcher
+˝˝! +
+.
+˝˝+ ,
+Invoke
+˝˝, 2
+(
+˝˝2 3
+(
+˝˝3 4
+)
+˝˝4 5
+=>
+˝˝6 8
+{
+˛˛ 
+Console
+ˇˇ 
+.
+ˇˇ 
+	WriteLine
+ˇˇ !
+(
+ˇˇ! "
+$str
+ˇˇ" 7
+)
+ˇˇ7 8
+;
+ˇˇ8 9
+GameEnd
+ÄÄ 
+?
+ÄÄ 
+.
+ÄÄ 
+Invoke
+ÄÄ 
+(
+ÄÄ  
+this
+ÄÄ  $
+,
+ÄÄ$ %
+new
+ÄÄ& )
+GameEndEventArgs
+ÄÄ* :
+{
+ÄÄ; <
+FinalScores
+ÄÄ= H
+=
+ÄÄI J
+finalScores
+ÄÄK V
+}
+ÄÄW X
+)
+ÄÄX Y
+;
+ÄÄY Z
+}
+ÅÅ 
+)
+ÅÅ 
+;
+ÅÅ 
+}
+ÇÇ 	
+public
+ÑÑ 
+void
+ÑÑ %
+OnInGameMessageReceived
+ÑÑ +
+(
+ÑÑ+ ,
+string
+ÑÑ, 2
+sender
+ÑÑ3 9
+,
+ÑÑ9 :
+string
+ÑÑ; A
+message
+ÑÑB I
+)
+ÑÑI J
+{
+ÖÖ 	
+Application
+ÜÜ 
+.
+ÜÜ 
+Current
+ÜÜ 
+?
+ÜÜ  
+.
+ÜÜ  !
+
+Dispatcher
+ÜÜ! +
+.
+ÜÜ+ ,
+Invoke
+ÜÜ, 2
+(
+ÜÜ2 3
+(
+ÜÜ3 4
+)
+ÜÜ4 5
+=>
+ÜÜ6 8
+{
+áá #
+InGameMessageReceived
+àà %
+?
+àà% &
+.
+àà& '
+Invoke
+àà' -
+(
+àà- .
+this
+àà. 2
+,
+àà2 3
+new
+àà4 7$
+InGameMessageEventArgs
+àà8 N
+{
+ààO P
+Sender
+ààQ W
+=
+ààX Y
+sender
+ààZ `
+,
+àà` a
+Message
+ààb i
+=
+ààj k
+message
+ààl s
+}
+ààt u
+)
+ààu v
+;
+ààv w
+}
+ââ 
+)
+ââ 
+;
+ââ 
+}
+ää 	
+public
+åå 
+void
+åå !
+OnAnswersPhaseStart
+åå '
+(
+åå' (
+
+DrawingDto
+åå( 2
+[
+åå2 3
+]
+åå3 4
+allDrawings
+åå5 @
+,
+åå@ A
+GuessDto
+ååB J
+[
+ååJ K
+]
+ååK L
+
+allGuesses
+ååM W
+,
+ååW X
+PlayerScoreDto
+ååY g
+[
+ååg h
+]
+ååh i
+currentScores
+ååj w
+)
+ååw x
+{
+çç 	
+Application
+éé 
+.
+éé 
+Current
+éé 
+?
+éé  
+.
+éé  !
+
+Dispatcher
+éé! +
+.
+éé+ ,
+Invoke
+éé, 2
+(
+éé2 3
+(
+éé3 4
+)
+éé4 5
+=>
+éé6 8
+{
+èè 
+Console
+êê 
+.
+êê 
+	WriteLine
+êê !
+(
+êê! "
+$str
+êê" W
+)
+êêW X
+;
+êêX Y
+AnswersPhaseStart
+ëë !
+?
+ëë! "
+.
+ëë" #
+Invoke
+ëë# )
+(
+ëë) *
+this
+ëë* .
+,
+ëë. /
+new
+ëë0 3(
+AnswersPhaseStartEventArgs
+ëë4 N
+{
+íí 
+AllDrawings
+ìì 
+=
+ìì  !
+allDrawings
+ìì" -
+,
+ìì- .
+
+AllGuesses
+îî 
+=
+îî  
+
+allGuesses
+îî! +
+,
+îî+ ,
+	AllScores
+ïï 
+=
+ïï 
+currentScores
+ïï  -
+}
+ññ 
+)
+ññ 
+;
+ññ 
+}
+óó 
+)
+óó 
+;
+óó 
+}
+òò 	
+public
+öö 
+void
+öö 
+OnShowNextDrawing
+öö %
+(
+öö% &
+
+DrawingDto
+öö& 0
+nextDrawing
+öö1 <
+)
+öö< =
+{
+õõ 	
+Application
+úú 
+.
+úú 
+Current
+úú 
+?
+úú  
+.
+úú  !
+
+Dispatcher
+úú! +
+.
+úú+ ,
+Invoke
+úú, 2
+(
+úú2 3
+(
+úú3 4
+)
+úú4 5
+=>
+úú6 8
+{
+ùù 
+Console
+ûû 
+.
+ûû 
+	WriteLine
+ûû !
+(
+ûû! "
+$"
+ûû" $
+$str
+ûû$ O
+{
+ûûO P
+nextDrawing
+ûûP [
+.
+ûû[ \
+	DrawingId
+ûû\ e
+}
+ûûe f
+"
+ûûf g
+)
+ûûg h
+;
+ûûh i
+ShowNextDrawing
+üü 
+?
+üü  
+.
+üü  !
+Invoke
+üü! '
+(
+üü' (
+this
+üü( ,
+,
+üü, -
+new
+üü. 1&
+ShowNextDrawingEventArgs
+üü2 J
+{
+üüK L
+NextDrawing
+üüM X
+=
+üüY Z
+nextDrawing
+üü[ f
+}
+üüg h
+)
+üüh i
+;
+üüi j
+}
+†† 
+)
+†† 
+;
+†† 
+}
+°° 	
+private
+££ 
+void
+££ 
+Channel_Faulted
+££ $
+(
+££$ %
+object
+££% +
+sender
+££, 2
+,
+££2 3
+	EventArgs
+££4 =
+e
+££> ?
+)
+££? @
+{
+§§ 	
+Console
+•• 
+.
+•• 
+	WriteLine
+•• 
+(
+•• 
+$str
+•• U
+)
+••U V
+;
+••V W&
+HandleCommunicationError
+¶¶ $
+(
+¶¶$ %
+true
+¶¶% )
+)
+¶¶) *
+;
+¶¶* +
+}
+ßß 	
+private
+©© 
+void
+©© 
+Channel_Closed
+©© #
+(
+©©# $
+object
+©©$ *
+sender
+©©+ 1
+,
+©©1 2
+	EventArgs
+©©3 <
+e
+©©= >
+)
+©©> ?
+{
+™™ 	
+Console
+´´ 
+.
+´´ 
+	WriteLine
+´´ 
+(
+´´ 
+$str
+´´ J
+)
+´´J K
+;
+´´K L
+if
+¨¨ 
+(
+¨¨ 
+_client
+¨¨ 
+!=
+¨¨ 
+null
+¨¨ 
+)
+¨¨  
+{
+≠≠ &
+HandleCommunicationError
+ÆÆ (
+(
+ÆÆ( )
+true
+ÆÆ) -
+)
+ÆÆ- .
+;
+ÆÆ. /
+}
+ØØ 
+}
+∞∞ 	
+private
+≤≤ 
+void
+≤≤ &
+HandleCommunicationError
+≤≤ -
+(
+≤≤- .
+bool
+≤≤. 2
+
+unexpected
+≤≤3 =
+=
+≤≤> ?
+false
+≤≤@ E
+)
+≤≤E F
+{
+≥≥ 	
+Application
+¥¥ 
+.
+¥¥ 
+Current
+¥¥ 
+?
+¥¥  
+.
+¥¥  !
+
+Dispatcher
+¥¥! +
+.
+¥¥+ ,
+Invoke
+¥¥, 2
+(
+¥¥2 3
+(
+¥¥3 4
+)
+¥¥4 5
+=>
+¥¥6 8
+{
+µµ 
+Console
+∂∂ 
+.
+∂∂ 
+	WriteLine
+∂∂ !
+(
+∂∂! "
+$str
+∂∂" T
+)
+∂∂T U
+;
+∂∂U V
+CleanupConnection
+∑∑ !
+(
+∑∑! "
+)
+∑∑" #
+;
+∑∑# $
+ConnectionLost
+∏∏ 
+?
+∏∏ 
+.
+∏∏  
+Invoke
+∏∏  &
+(
+∏∏& '
+)
+∏∏' (
+;
+∏∏( )
+if
+ππ 
+(
+ππ 
+
+unexpected
+ππ 
+)
+ππ 
+{
+∫∫ 
+
+MessageBox
+ªª 
+.
+ªª 
+Show
+ªª #
+(
+ªª# $
+$str
+ªª$ R
+,
+ªªR S
+$str
+ªªT f
+,
+ªªf g
+MessageBoxButton
+ªªh x
+.
+ªªx y
+OK
+ªªy {
+,
+ªª{ |
+MessageBoxImageªª} å
+.ªªå ç
+Warningªªç î
+)ªªî ï
+;ªªï ñ
+}
+ºº 
+}
+ΩΩ 
+)
+ΩΩ 
+;
+ΩΩ 
+}
+ææ 	
+}
+øø 
+public
+¡¡ 
+
+class
+¡¡ !
+RoundStartEventArgs
+¡¡ $
+:
+¡¡% &
+	EventArgs
+¡¡' 0
+{
+¬¬ 
+public
+√√ 
+int
+√√ 
+RoundNumber
+√√ 
+{
+√√  
+get
+√√! $
+;
+√√$ %
+set
+√√& )
+;
+√√) *
+}
+√√+ ,
+public
+ƒƒ 
+string
+ƒƒ 
+[
+ƒƒ 
+]
+ƒƒ 
+WordOptions
+ƒƒ #
+{
+ƒƒ$ %
+get
+ƒƒ& )
+;
+ƒƒ) *
+set
+ƒƒ+ .
+;
+ƒƒ. /
+}
+ƒƒ0 1
+}
+≈≈ 
+public
+«« 
+
+class
+«« (
+DrawingPhaseStartEventArgs
+«« +
+:
+««, -
+	EventArgs
+««. 7
+{
+»» 
+public
+…… 
+int
+…… 
+DurationSeconds
+…… "
+{
+……# $
+get
+……% (
+;
+……( )
+set
+……* -
+;
+……- .
+}
+……/ 0
+}
+   
+public
+ÃÃ 
+
+class
+ÃÃ $
+PlayerGuessedEventArgs
+ÃÃ '
+:
+ÃÃ( )
+	EventArgs
+ÃÃ* 3
+{
+ÕÕ 
+public
+ŒŒ 
+string
+ŒŒ 
+Username
+ŒŒ 
+{
+ŒŒ  
+get
+ŒŒ! $
+;
+ŒŒ$ %
+set
+ŒŒ& )
+;
+ŒŒ) *
+}
+ŒŒ+ ,
+}
+œœ 
+public
+—— 
+
+class
+—— !
+TimeUpdateEventArgs
+—— $
+:
+——% &
+	EventArgs
+——' 0
+{
+““ 
+public
+”” 
+int
+”” 
+RemainingSeconds
+”” #
+{
+””$ %
+get
+””& )
+;
+””) *
+set
+””+ .
+;
+””. /
+}
+””0 1
+}
+‘‘ 
+public
+÷÷ 
+
+class
+÷÷ 
+RoundEndEventArgs
+÷÷ "
+:
+÷÷# $
+	EventArgs
+÷÷% .
+{
+◊◊ 
+public
+ÿÿ 
+PlayerScoreDto
+ÿÿ 
+[
+ÿÿ 
+]
+ÿÿ 
+RoundScores
+ÿÿ  +
+{
+ÿÿ, -
+get
+ÿÿ. 1
+;
+ÿÿ1 2
+set
+ÿÿ3 6
+;
+ÿÿ6 7
+}
+ÿÿ8 9
+public
+ŸŸ 
+string
+ŸŸ 
+CorrectWord
+ŸŸ !
+{
+ŸŸ" #
+get
+ŸŸ$ '
+;
+ŸŸ' (
+set
+ŸŸ) ,
+;
+ŸŸ, -
+}
+ŸŸ. /
+}
+⁄⁄ 
+public
+‹‹ 
+
+class
+‹‹ $
+InGameMessageEventArgs
+‹‹ '
+:
+‹‹( )
+	EventArgs
+‹‹* 3
+{
+›› 
+public
+ﬁﬁ 
+string
+ﬁﬁ 
+Sender
+ﬁﬁ 
+{
+ﬁﬁ 
+get
+ﬁﬁ "
+;
+ﬁﬁ" #
+set
+ﬁﬁ$ '
+;
+ﬁﬁ' (
+}
+ﬁﬁ) *
+public
+ﬂﬂ 
+string
+ﬂﬂ 
+Message
+ﬂﬂ 
+{
+ﬂﬂ 
+get
+ﬂﬂ  #
+;
+ﬂﬂ# $
+set
+ﬂﬂ% (
+;
+ﬂﬂ( )
+}
+ﬂﬂ* +
+}
+‡‡ 
+public
+‚‚ 
+
+class
+‚‚ (
+AnswersPhaseStartEventArgs
+‚‚ +
+:
+‚‚, -
+	EventArgs
+‚‚. 7
+{
+„„ 
+public
+‰‰ 
+
+DrawingDto
+‰‰ 
+[
+‰‰ 
+]
+‰‰ 
+AllDrawings
+‰‰ '
+{
+‰‰( )
+get
+‰‰* -
+;
+‰‰- .
+set
+‰‰/ 2
+;
+‰‰2 3
+}
+‰‰4 5
+public
+ÂÂ 
+GuessDto
+ÂÂ 
+[
+ÂÂ 
+]
+ÂÂ 
+
+AllGuesses
+ÂÂ $
+{
+ÂÂ% &
+get
+ÂÂ' *
+;
+ÂÂ* +
+set
+ÂÂ, /
+;
+ÂÂ/ 0
+}
+ÂÂ1 2
+public
+ÊÊ 
+PlayerScoreDto
+ÊÊ 
+[
+ÊÊ 
+]
+ÊÊ 
+	AllScores
+ÊÊ  )
+{
+ÊÊ* +
+get
+ÊÊ, /
+;
+ÊÊ/ 0
+set
+ÊÊ1 4
+;
+ÊÊ4 5
+}
+ÊÊ6 7
+}
+ÁÁ 
+public
+ÈÈ 
+
+class
+ÈÈ &
+ShowNextDrawingEventArgs
+ÈÈ )
+:
+ÈÈ* +
+	EventArgs
+ÈÈ, 5
+{
+ÍÍ 
+public
+ÎÎ 
+
+DrawingDto
+ÎÎ 
+NextDrawing
+ÎÎ %
+{
+ÎÎ& '
+get
+ÎÎ( +
+;
+ÎÎ+ ,
+set
+ÎÎ- 0
+;
+ÎÎ0 1
+}
+ÎÎ2 3
+}
+ÏÏ 
+public
+ÓÓ 
+
+class
+ÓÓ )
+GuessingPhaseStartEventArgs
+ÓÓ ,
+:
+ÓÓ- .
+	EventArgs
+ÓÓ/ 8
+{
+ÔÔ 
+public
+ 
+
+DrawingDto
+ 
+Drawing
+ !
+{
+" #
+get
+$ '
+;
+' (
+set
+) ,
+;
+, -
+}
+. /
+}
+ÒÒ 
+public
+ÛÛ 
+
+class
+ÛÛ 
+GameEndEventArgs
+ÛÛ !
+:
+ÛÛ" #
+	EventArgs
+ÛÛ$ -
+{
+ÙÙ 
+public
+ıı 
+PlayerScoreDto
+ıı 
+[
+ıı 
+]
+ıı 
+FinalScores
+ıı  +
+{
+ıı, -
+get
+ıı. 1
+;
+ıı1 2
+set
+ıı3 6
+;
+ıı6 7
+}
+ıı8 9
+}
+ˆˆ 
+}˜˜ Ày
+°C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Match& +
+{ 
+internal 
+class "
+WordSelectionViewModel )
+:* +
+ViewModelBase, 9
+{ 
+private 
+DispatcherTimer 
+_countdownTimer  /
+;/ 0
+private 
+bool  
+_wordHasBeenSelected )
+;) *
+private 
+string 
+_word1 
+; 
+public 
+string 
+Word1 
+{ 	
+get 
+{ 
+return 
+_word1 
+;  
+}! "
+set 
+{ 
+_word1 
+= 
+value  
+;  !
+OnPropertyChanged" 3
+(3 4
+)4 5
+;5 6
+}7 8
+} 	
+private 
+string 
+_word2 
+; 
+public 
+string 
+Word2 
+{ 	
+get 
+{ 
+return 
+_word2 
+;  
+}! "
+set 
+{ 
+_word2 
+= 
+value  
+;  !
+OnPropertyChanged" 3
+(3 4
+)4 5
+;5 6
+}7 8
+} 	
+private   
+string   
+_word3   
+;   
+public!! 
+string!! 
+Word3!! 
+{"" 	
+get## 
+{## 
+return## 
+_word3## 
+;##  
+}##! "
+set$$ 
+{$$ 
+_word3$$ 
+=$$ 
+value$$  
+;$$  !
+OnPropertyChanged$$" 3
+($$3 4
+)$$4 5
+;$$5 6
+}$$7 8
+}%% 	
+private'' 
+int'' 
+_countdownTime'' "
+;''" #
+public(( 
+int(( 
+CountdownTime((  
+{)) 	
+get** 
+{** 
+return** 
+_countdownTime** '
+;**' (
+}**) *
+set++ 
+{++ 
+_countdownTime++  
+=++! "
+value++# (
+;++( )
+OnPropertyChanged++* ;
+(++; <
+)++< =
+;++= >
+}++? @
+},, 	
+public.. 
+ICommand.. 
+SelectWordCommand.. )
+{..* +
+get.., /
+;../ 0
+}..1 2
+public// 
+ICommand// 
+CloseWindowCommand// *
+{//+ ,
+get//- 0
+;//0 1
+}//2 3
+public00 
+ICommand00 !
+MaximizeWindowCommand00 -
+{00. /
+get000 3
+;003 4
+}005 6
+public11 
+ICommand11 !
+MinimizeWindowCommand11 -
+{11. /
+get110 3
+;113 4
+}115 6
+public33 "
+WordSelectionViewModel33 %
+(33% &
+)33& '
+{44 	 
+_wordHasBeenSelected55  
+=55! "
+false55# (
+;55( )
+CountdownTime66 
+=66 
+$num66 
+;66 
+SelectWordCommand88 
+=88 
+new88  #
+RelayCommand88$ 0
+(880 1
+
+SelectWord881 ;
+,88; <
+CanSelectWord88= J
+)88J K
+;88K L
+CloseWindowCommand99 
+=99  
+new99! $
+RelayCommand99% 1
+(991 2
+ExecuteCloseWindow992 D
+)99D E
+;99E F!
+MaximizeWindowCommand:: !
+=::" #
+new::$ '
+RelayCommand::( 4
+(::4 5!
+ExecuteMaximizeWindow::5 J
+)::J K
+;::K L!
+MinimizeWindowCommand;; !
+=;;" #
+new;;$ '
+RelayCommand;;( 4
+(;;4 5!
+ExecuteMinimizeWindow;;5 J
+);;J K
+;;;K L
+GameClientManager== 
+.== 
+Instance== &
+.==& '
+ConnectionLost==' 5
++===6 8 
+HandleConnectionLost==9 M
+;==M N
+_countdownTimer?? 
+=?? 
+new?? !
+DispatcherTimer??" 1
+(??1 2
+)??2 3
+;??3 4
+_countdownTimer@@ 
+.@@ 
+Interval@@ $
+=@@% &
+TimeSpan@@' /
+.@@/ 0
+FromSeconds@@0 ;
+(@@; <
+$num@@< =
+)@@= >
+;@@> ?
+_countdownTimerAA 
+.AA 
+TickAA  
++=AA! #
+OnTimerTickAA$ /
+;AA/ 0
+	LoadWordsCC 
+(CC 
+)CC 
+;CC 
+}DD 	
+privateFF 
+boolFF 
+CanSelectWordFF "
+(FF" #
+objectFF# )
+	parameterFF* 3
+)FF3 4
+{GG 	
+returnHH 
+!HH  
+_wordHasBeenSelectedHH (
+&&HH) +
+!II 
+stringII 
+.II 
+IsNullOrEmptyII (
+(II( )
+	parameterII) 2
+asII3 5
+stringII6 <
+)II< =
+&&II> @
+!JJ 
+(JJ 
+	parameterJJ 
+asJJ !
+stringJJ" (
+)JJ( )
+.JJ) *
+ContainsJJ* 2
+(JJ2 3
+$strJJ3 <
+)JJ< =
+;JJ= >
+}KK 	
+privateMM 
+asyncMM 
+voidMM 
+	LoadWordsMM $
+(MM$ %
+)MM% &
+{NN 	
+tryOO 
+{PP 
+WordDtoQQ 
+[QQ 
+]QQ 
+wordsQQ 
+=QQ  !
+awaitQQ" '
+GameClientManagerQQ( 9
+.QQ9 :
+InstanceQQ: B
+.QQB C
+GetRandomWordsAsyncQQC V
+(QQV W
+)QQW X
+;QQX Y
+ifSS 
+(SS 
+wordsSS 
+!=SS 
+nullSS !
+&&SS" $
+wordsSS% *
+.SS* +
+LengthSS+ 1
+>=SS2 4
+$numSS5 6
+)SS6 7
+{TT 
+Word1UU 
+=UU 
+wordsUU !
+[UU! "
+$numUU" #
+]UU# $
+.UU$ %
+WordKeyUU% ,
+;UU, -
+Word2VV 
+=VV 
+wordsVV !
+[VV! "
+$numVV" #
+]VV# $
+.VV$ %
+WordKeyVV% ,
+;VV, -
+Word3WW 
+=WW 
+wordsWW !
+[WW! "
+$numWW" #
+]WW# $
+.WW$ %
+WordKeyWW% ,
+;WW, -
+_countdownTimerYY #
+.YY# $
+StartYY$ )
+(YY) *
+)YY* +
+;YY+ ,
+}ZZ 
+else[[ 
+{\\ 
+
+MessageBox]] 
+.]] 
+Show]] #
+(]]# $
+$str]]$ K
+,]]K L
+$str]]M T
+,]]T U
+MessageBoxButton]]V f
+.]]f g
+OK]]g i
+,]]i j
+MessageBoxImage]]k z
+.]]z {
+Warning	]]{ Ç
+)
+]]Ç É
+;
+]]É Ñ
+}^^ 
+}__ 
+catch`` 
+(`` 
+	Exception`` 
+ex`` 
+)``  
+{aa 
+
+MessageBoxbb 
+.bb 
+Showbb 
+(bb  
+$"bb  "
+$strbb" 7
+{bb7 8
+exbb8 :
+.bb: ;
+Messagebb; B
+}bbB C
+"bbC D
+,bbD E
+$strbbF X
+,bbX Y
+MessageBoxButtonbbZ j
+.bbj k
+OKbbk m
+,bbm n
+MessageBoxImagebbo ~
+.bb~ 
+Error	bb Ñ
+)
+bbÑ Ö
+;
+bbÖ Ü
+}cc 
+}dd 	
+privateff 
+voidff 
+OnTimerTickff  
+(ff  !
+objectff! '
+senderff( .
+,ff. /
+	EventArgsff0 9
+eff: ;
+)ff; <
+{gg 	
+CountdownTimehh 
+--hh 
+;hh 
+ifjj 
+(jj 
+CountdownTimejj 
+<=jj  
+$numjj! "
+)jj" #
+{kk 
+_countdownTimerll 
+.ll  
+Stopll  $
+(ll$ %
+)ll% &
+;ll& '
+ifnn 
+(nn 
+!nn 
+stringnn 
+.nn 
+IsNullOrEmptynn )
+(nn) *
+Word1nn* /
+)nn/ 0
+)nn0 1
+{oo 
+HandleWordSelectionpp '
+(pp' (
+Word1pp( -
+)pp- .
+;pp. /
+}qq 
+elserr 
+{ss 
+
+MessageBoxtt 
+.tt 
+Showtt #
+(tt# $
+$strtt$ V
+,ttV W
+$strttX _
+,tt_ `
+MessageBoxButtontta q
+.ttq r
+OKttr t
+,ttt u
+MessageBoxImage	ttv Ö
+.
+ttÖ Ü
+Error
+ttÜ ã
+)
+ttã å
+;
+ttå ç 
+HandleConnectionLostuu (
+(uu( )
+)uu) *
+;uu* +
+}vv 
+}ww 
+}xx 	
+privatezz 
+voidzz 
+
+SelectWordzz 
+(zz  
+objectzz  &
+	parameterzz' 0
+)zz0 1
+{{{ 	
+_countdownTimer|| 
+.|| 
+Stop||  
+(||  !
+)||! "
+;||" #
+HandleWordSelection}} 
+(}}  
+	parameter}}  )
+as}}* ,
+string}}- 3
+)}}3 4
+;}}4 5
+}~~ 	
+private
+ÄÄ 
+void
+ÄÄ !
+HandleWordSelection
+ÄÄ (
+(
+ÄÄ( )
+string
+ÄÄ) /
+selectedWord
+ÄÄ0 <
+)
+ÄÄ< =
+{
+ÅÅ 	
+if
+ÇÇ 
+(
+ÇÇ "
+_wordHasBeenSelected
+ÇÇ $
+)
+ÇÇ$ %
+return
+ÇÇ& ,
+;
+ÇÇ, -"
+_wordHasBeenSelected
+ÉÉ  
+=
+ÉÉ! "
+true
+ÉÉ# '
+;
+ÉÉ' (
+_countdownTimer
+ÖÖ 
+?
+ÖÖ 
+.
+ÖÖ 
+Stop
+ÖÖ !
+(
+ÖÖ! "
+)
+ÖÖ" #
+;
+ÖÖ# $
+if
+áá 
+(
+áá 
+string
+áá 
+.
+áá 
+IsNullOrEmpty
+áá $
+(
+áá$ %
+selectedWord
+áá% 1
+)
+áá1 2
+)
+áá2 3
+return
+áá4 :
+;
+áá: ;
+try
+ââ 
+{
+ää 
+GameClientManager
+ãã !
+.
+ãã! "
+Instance
+ãã" *
+.
+ãã* +
+
+SelectWord
+ãã+ 5
+(
+ãã5 6
+selectedWord
+ãã6 B
+)
+ããB C
+;
+ããC D
+Window
+çç 
+currentWindow
+çç $
+=
+çç% &
+Application
+çç' 2
+.
+çç2 3
+Current
+çç3 :
+.
+çç: ;
+Windows
+çç; B
+.
+éé 
+OfType
+éé 
+<
+éé 
+WordSelectionView
+éé -
+>
+éé- .
+(
+éé. /
+)
+éé/ 0
+.
+èè 
+FirstOrDefault
+èè #
+(
+èè# $
+)
+èè$ %
+;
+èè% &
+if
+ëë 
+(
+ëë 
+currentWindow
+ëë !
+!=
+ëë" $
+null
+ëë% )
+)
+ëë) *
+{
+íí 
+ServiceLocator
+ìì "
+.
+ìì" #
+
+Navigation
+ìì# -
+.
+ìì- .%
+NavigateToDrawingScreen
+ìì. E
+(
+ììE F
+selectedWord
+ììF R
+)
+ììR S
+;
+ììS T
+currentWindow
+îî !
+.
+îî! "
+Close
+îî" '
+(
+îî' (
+)
+îî( )
+;
+îî) *
+}
+ïï 
+}
+ññ 
+catch
+óó 
+(
+óó 
+	Exception
+óó 
+ex
+óó 
+)
+óó  
+{
+òò 
+
+MessageBox
+ôô 
+.
+ôô 
+Show
+ôô 
+(
+ôô  
+$"
+ôô  "
+$str
+ôô" 8
+{
+ôô8 9
+ex
+ôô9 ;
+.
+ôô; <
+Message
+ôô< C
+}
+ôôC D
+"
+ôôD E
+,
+ôôE F
+$str
+ôôG N
+,
+ôôN O
+MessageBoxButton
+ôôP `
+.
+ôô` a
+OK
+ôôa c
+,
+ôôc d
+MessageBoxImage
+ôôe t
+.
+ôôt u
+Error
+ôôu z
+)
+ôôz {
+;
+ôô{ |
 }
 öö 
 }
-õõ 	
-public
-ùù 
+õõ 	
+private
+ùù 
 void
-ùù 
-UpdateLobbyState
-ùù $
+ùù "
+HandleConnectionLost
+ùù )
 (
-ùù$ %
-LobbyStateDto
-ùù% 2
-lobbyStateDto
-ùù3 @
+ùù) *
 )
-ùù@ A
+ùù* +
 {
 ûû 	
 Application
@@ -7787,830 +14283,585 @@ Dispatcher
 üü6 8
 {
 †† 
-Console
+Cleanup
 °° 
-.
-°° 
-	WriteLine
-°° !
 (
-°°! "
-$"
-°°" $
-$str
-°°$ A
-{
-°°A B
-lobbyStateDto
-°°B O
-.
-°°O P
-CurrentPlayers
-°°P ^
-}
-°°^ _
-$str
-°°_ `
-{
-°°` a
-lobbyStateDto
-°°a n
-.
-°°n o
-
-MaxPlayers
-°°o y
-}
-°°y z
-$str°°z É
-"°°É Ñ
-)°°Ñ Ö
-;°°Ö Ü
-LobbyStateUpdated
-¢¢ !
-?
-¢¢! "
-.
-¢¢" #
-Invoke
-¢¢# )
-(
-¢¢) *
-lobbyStateDto
-¢¢* 7
+°° 
 )
-¢¢7 8
+°° 
 ;
-¢¢8 9
-}
-££ 
-)
-££ 
-;
-££ 
-}
-§§ 	
-public
-¶¶ 
-void
-¶¶ !
-ReceiveLobbyMessage
-¶¶ '
-(
-¶¶' (
-ChatMessageDto
-¶¶( 6
-
-messageDto
-¶¶7 A
-)
-¶¶A B
-{
-ßß 	
-Application
-®® 
-.
-®® 
-Current
-®® 
-?
-®®  
-.
-®®  !
-
-Dispatcher
-®®! +
-.
-®®+ ,
-Invoke
-®®, 2
-(
-®®2 3
-(
-®®3 4
-)
-®®4 5
-=>
-®®6 8
-{
-©© 
-Console
-™™ 
-.
-™™ 
-	WriteLine
-™™ !
-(
-™™! "
-$"
-™™" $
-$str
-™™$ 4
-{
-™™4 5
-
-messageDto
-™™5 ?
-.
-™™? @
-SenderUsername
-™™@ N
-}
-™™N O
-$str
-™™O R
-{
-™™R S
-
-messageDto
-™™S ]
-.
-™™] ^
-MessageContent
-™™^ l
-}
-™™l m
-"
-™™m n
-)
-™™n o
-;
-™™o p"
-LobbyMessageReceived
-´´ $
-?
-´´$ %
-.
-´´% &
-Invoke
-´´& ,
-(
-´´, -
-
-messageDto
-´´- 7
-)
-´´7 8
-;
-´´8 9
-}
-¨¨ 
-)
-¨¨ 
-;
-¨¨ 
-}
-≠≠ 	
-public
-ØØ 
-void
-ØØ 
-KickedFromLobby
-ØØ #
-(
-ØØ# $
-string
-ØØ$ *
-reason
-ØØ+ 1
-)
-ØØ1 2
-{
-∞∞ 	
-Application
-±± 
-.
-±± 
-Current
-±± 
-?
-±±  
-.
-±±  !
-
-Dispatcher
-±±! +
-.
-±±+ ,
-Invoke
-±±, 2
-(
-±±2 3
-(
-±±3 4
-)
-±±4 5
-=>
-±±6 8
-{
-≤≤ 
-Console
-≥≥ 
-.
-≥≥ 
-	WriteLine
-≥≥ !
-(
-≥≥! "
-$"
-≥≥" $
-$str
-≥≥$ 7
-{
-≥≥7 8
-reason
-≥≥8 >
-}
-≥≥> ?
-"
-≥≥? @
-)
-≥≥@ A
-;
-≥≥A B
-Kicked
-¥¥ 
-?
-¥¥ 
-.
-¥¥ 
-Invoke
-¥¥ 
-(
-¥¥ 
-reason
-¥¥ %
-)
-¥¥% &
-;
-¥¥& '
-CleanupConnection
-µµ !
-(
-µµ! "
-)
-µµ" #
-;
-µµ# $
-}
-∂∂ 
-)
-∂∂ 
-;
-∂∂ 
-}
-∑∑ 	
-public
-ππ 
-void
-ππ 
-OnGameStarting
-ππ "
-(
-ππ" #
-int
-ππ# &
-countdownSeconds
-ππ' 7
-)
-ππ7 8
-{
-∫∫ 	
-Application
-ªª 
-.
-ªª 
-Current
-ªª 
-?
-ªª  
-.
-ªª  !
-
-Dispatcher
-ªª! +
-.
-ªª+ ,
-Invoke
-ªª, 2
-(
-ªª2 3
-(
-ªª3 4
-)
-ªª4 5
-=>
-ªª6 8
-{
-ºº 
-Console
-ΩΩ 
-.
-ΩΩ 
-	WriteLine
-ΩΩ !
-(
-ΩΩ! "
-$"
-ΩΩ" $
-$str
-ΩΩ$ 5
-{
-ΩΩ5 6
-countdownSeconds
-ΩΩ6 F
-}
-ΩΩF G
-$str
-ΩΩG J
-"
-ΩΩJ K
-)
-ΩΩK L
-;
-ΩΩL M
-CountdownTick
-ææ 
-?
-ææ 
-.
-ææ 
-Invoke
-ææ %
-(
-ææ% &
-countdownSeconds
-ææ& 6
-)
-ææ6 7
-;
-ææ7 8
-}
-øø 
-)
-øø 
-;
-øø 
-}
-¿¿ 	
-public
-¬¬ 
-void
-¬¬ 
-OnGameStarted
-¬¬ !
-(
-¬¬! "
-)
-¬¬" #
-{
-√√ 	
-Application
-ƒƒ 
-.
-ƒƒ 
-Current
-ƒƒ 
-?
-ƒƒ  
-.
-ƒƒ  !
-
-Dispatcher
-ƒƒ! +
-.
-ƒƒ+ ,
-Invoke
-ƒƒ, 2
-(
-ƒƒ2 3
-(
-ƒƒ3 4
-)
-ƒƒ4 5
-=>
-ƒƒ6 8
-{
-≈≈ 
-Console
-∆∆ 
-.
-∆∆ 
-	WriteLine
-∆∆ !
-(
-∆∆! "
-$str
-∆∆" 1
-)
-∆∆1 2
-;
-∆∆2 3
-GameStarted
-«« 
-?
-«« 
-.
-«« 
-Invoke
-«« #
-(
-««# $
-)
-««$ %
-;
-««% &
-}
-»» 
-)
-»» 
-;
-»» 
-}
-…… 	
-public
-ÀÀ 
-void
-ÀÀ 
-UpdateKickVote
-ÀÀ "
-(
-ÀÀ" #
-string
-ÀÀ# )
-targetUsername
-ÀÀ* 8
-,
-ÀÀ8 9
-int
-ÀÀ: =
-currentVotes
-ÀÀ> J
-,
-ÀÀJ K
-int
-ÀÀL O
-votesNeeded
-ÀÀP [
-)
-ÀÀ[ \
-{
-ÃÃ 	
-Application
-ÕÕ 
-.
-ÕÕ 
-Current
-ÕÕ 
-?
-ÕÕ  
-.
-ÕÕ  !
-
-Dispatcher
-ÕÕ! +
-.
-ÕÕ+ ,
-Invoke
-ÕÕ, 2
-(
-ÕÕ2 3
-(
-ÕÕ3 4
-)
-ÕÕ4 5
-=>
-ÕÕ6 8
-{
-ŒŒ 
-Console
-œœ 
-.
-œœ 
-	WriteLine
-œœ !
-(
-œœ! "
-$"
-œœ" $
-$str
-œœ$ 9
-{
-œœ9 :
-targetUsername
-œœ: H
-}
-œœH I
-$str
-œœI K
-{
-œœK L
-currentVotes
-œœL X
-}
-œœX Y
-$str
-œœY Z
-{
-œœZ [
-votesNeeded
-œœ[ f
-}
-œœf g
-"
-œœg h
-)
-œœh i
-;
-œœi j
-}
-–– 
-)
-–– 
-;
-–– 
-}
-—— 	
-private
-”” 
-void
-”” 
-Channel_Faulted
-”” $
-(
-””$ %
-object
-””% +
-sender
-””, 2
-,
-””2 3
-	EventArgs
-””4 =
-e
-””> ?
-)
-””? @
-{
-‘‘ 	
-Console
-’’ 
-.
-’’ 
-	WriteLine
-’’ 
-(
-’’ 
-$str
-’’ 8
-)
-’’8 9
-;
-’’9 :&
-HandleCommunicationError
-÷÷ $
-(
-÷÷$ %
-true
-÷÷% )
-)
-÷÷) *
-;
-÷÷* +
-}
-◊◊ 	
-private
-ŸŸ 
-void
-ŸŸ 
-Channel_Closed
-ŸŸ #
-(
-ŸŸ# $
-object
-ŸŸ$ *
-sender
-ŸŸ+ 1
-,
-ŸŸ1 2
-	EventArgs
-ŸŸ3 <
-e
-ŸŸ= >
-)
-ŸŸ> ?
-{
-⁄⁄ 	
-Console
-€€ 
-.
-€€ 
-	WriteLine
-€€ 
-(
-€€ 
-$str
-€€ 7
-)
-€€7 8
-;
-€€8 9
-if
-‹‹ 
-(
-‹‹ 
-_client
-‹‹ 
-!=
-‹‹ 
-null
-‹‹ 
-)
-‹‹  
-{
-›› &
-HandleCommunicationError
-ﬁﬁ (
-(
-ﬁﬁ( )
-true
-ﬁﬁ) -
-)
-ﬁﬁ- .
-;
-ﬁﬁ. /
-}
-ﬂﬂ 
-}
-‡‡ 	
-private
-‚‚ 
-void
-‚‚ &
-HandleCommunicationError
-‚‚ -
-(
-‚‚- .
-bool
-‚‚. 2
-
-unexpected
-‚‚3 =
-=
-‚‚> ?
-false
-‚‚@ E
-)
-‚‚E F
-{
-„„ 	
-Application
-‰‰ 
-.
-‰‰ 
-Current
-‰‰ 
-?
-‰‰  
-.
-‰‰  !
-
-Dispatcher
-‰‰! +
-.
-‰‰+ ,
-Invoke
-‰‰, 2
-(
-‰‰2 3
-(
-‰‰3 4
-)
-‰‰4 5
-=>
-‰‰6 8
-{
-ÂÂ 
-Console
-ÊÊ 
-.
-ÊÊ 
-	WriteLine
-ÊÊ !
-(
-ÊÊ! "
-$str
-ÊÊ" A
-)
-ÊÊA B
-;
-ÊÊB C
-CleanupConnection
-ÁÁ !
-(
-ÁÁ! "
-)
-ÁÁ" #
-;
-ÁÁ# $
-ConnectionLost
-ËË 
-?
-ËË 
-.
-ËË  
-Invoke
-ËË  &
-(
-ËË& '
-)
-ËË' (
-;
-ËË( )
-if
-ÈÈ 
-(
-ÈÈ 
-
-unexpected
-ÈÈ 
-)
-ÈÈ 
-{
-ÍÍ 
+°° 
 
 MessageBox
-ÎÎ 
+¢¢ 
 .
-ÎÎ 
+¢¢ 
 Show
-ÎÎ #
+¢¢ 
 (
-ÎÎ# $
+¢¢  
 $str
-ÎÎ$ K
+¢¢  I
 ,
-ÎÎK L
+¢¢I J
 $str
-ÎÎM _
+¢¢K ]
 ,
-ÎÎ_ `
+¢¢] ^
 MessageBoxButton
-ÎÎa q
+¢¢_ o
 .
-ÎÎq r
+¢¢o p
 OK
-ÎÎr t
+¢¢p r
 ,
-ÎÎt u
-MessageBoxImageÎÎv Ö
-.ÎÎÖ Ü
-WarningÎÎÜ ç
-)ÎÎç é
-;ÎÎé è
-}
-ÏÏ 
-}
-ÌÌ 
+¢¢r s
+MessageBoxImage¢¢t É
+.¢¢É Ñ
+Warning¢¢Ñ ã
+)¢¢ã å
+;¢¢å ç
+Application
+££ 
+.
+££ 
+Current
+££ #
+.
+££# $
+Shutdown
+££$ ,
+(
+££, -
 )
-ÌÌ 
+££- .
 ;
-ÌÌ 
+££. /
 }
-ÓÓ 	
+§§ 
+)
+§§ 
+;
+§§ 
 }
-ÔÔ 
-public
- 
-
-class
-  
-ChatMessageDisplay
- #
+•• 	
+private
+ßß 
+void
+ßß 
+Cleanup
+ßß 
+(
+ßß 
+)
+ßß 
 {
-ÒÒ 
-public
-ÚÚ 
-string
-ÚÚ 
-FormattedMessage
-ÚÚ &
+®® 	
+if
+©© 
+(
+©© 
+_countdownTimer
+©© 
+!=
+©©  "
+null
+©©# '
+)
+©©' (
 {
-ÚÚ' (
-get
-ÚÚ) ,
+™™ 
+_countdownTimer
+´´ 
+.
+´´  
+Stop
+´´  $
+(
+´´$ %
+)
+´´% &
 ;
-ÚÚ, -
-set
-ÚÚ. 1
+´´& '
+_countdownTimer
+¨¨ 
+.
+¨¨  
+Tick
+¨¨  $
+-=
+¨¨% '
+OnTimerTick
+¨¨( 3
 ;
-ÚÚ1 2
+¨¨3 4
 }
-ÚÚ3 4
+≠≠ 
+GameClientManager
+ØØ 
+.
+ØØ 
+Instance
+ØØ &
+.
+ØØ& '
+ConnectionLost
+ØØ' 5
+-=
+ØØ6 8"
+HandleConnectionLost
+ØØ9 M
+;
+ØØM N
 }
-ÛÛ 
-}ÙÙ ó
-éC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\RelayCommand.cs
+∞∞ 	
+private
+≤≤ 
+void
+≤≤  
+ExecuteCloseWindow
+≤≤ '
+(
+≤≤' (
+object
+≤≤( .
+	parameter
+≤≤/ 8
+)
+≤≤8 9
+{
+≥≥ 	
+if
+¥¥ 
+(
+¥¥ 
+	parameter
+¥¥ 
+is
+¥¥ 
+Window
+¥¥ #
+)
+¥¥# $
+{
+µµ 
+Cleanup
+∂∂ 
+(
+∂∂ 
+)
+∂∂ 
+;
+∂∂ 
+GameClientManager
+∑∑ !
+.
+∑∑! "
+Instance
+∑∑" *
+.
+∑∑* +
+
+Disconnect
+∑∑+ 5
+(
+∑∑5 6
+)
+∑∑6 7
+;
+∑∑7 8
+Application
+∏∏ 
+.
+∏∏ 
+Current
+∏∏ #
+.
+∏∏# $
+Shutdown
+∏∏$ ,
+(
+∏∏, -
+)
+∏∏- .
+;
+∏∏. /
+}
+ππ 
+}
+∫∫ 	
+private
+ºº 
+void
+ºº #
+ExecuteMaximizeWindow
+ºº *
+(
+ºº* +
+object
+ºº+ 1
+	parameter
+ºº2 ;
+)
+ºº; <
+{
+ΩΩ 	
+if
+ææ 
+(
+ææ 
+	parameter
+ææ 
+is
+ææ 
+Window
+ææ #
+window
+ææ$ *
+)
+ææ* +
+{
+øø 
+window
+¿¿ 
+.
+¿¿ 
+WindowState
+¿¿ "
+=
+¿¿# $
+window
+¿¿% +
+.
+¿¿+ ,
+WindowState
+¿¿, 7
+==
+¿¿8 :
+WindowState
+¿¿; F
+.
+¿¿F G
+	Maximized
+¿¿G P
+?
+¡¡ 
+WindowState
+¡¡ !
+.
+¡¡! "
+Normal
+¡¡" (
+:
+¬¬ 
+WindowState
+¬¬ !
+.
+¬¬! "
+	Maximized
+¬¬" +
+;
+¬¬+ ,
+}
+√√ 
+}
+ƒƒ 	
+private
+∆∆ 
+void
+∆∆ #
+ExecuteMinimizeWindow
+∆∆ *
+(
+∆∆* +
+object
+∆∆+ 1
+	parameter
+∆∆2 ;
+)
+∆∆; <
+{
+«« 	
+if
+»» 
+(
+»» 
+	parameter
+»» 
+is
+»» 
+Window
+»» #
+window
+»»$ *
+)
+»»* +
+{
+…… 
+window
+   
+.
+   
+WindowState
+   "
+=
+  # $
+WindowState
+  % 0
+.
+  0 1
+	Minimized
+  1 :
+;
+  : ;
+}
+ÀÀ 
+}
+ÃÃ 	
+}
+ÕÕ 
+}ŒŒ “#
+•C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WaitingForGuessesViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Match& +
+{ 
+public 
+
+class &
+WaitingForGuessesViewModel +
+:, -
+ViewModelBase. ;
+{		 
+private
+
+ 
+string
+
+ 
+_word
+
+ 
+;
+
+ 
+public 
+string 
+Word 
+{ 	
+get 
+=> 
+_word 
+; 
+set 
+{ 
+_word 
+= 
+value 
+;  
+OnPropertyChanged! 2
+(2 3
+)3 4
+;4 5
+}6 7
+} 	
+public &
+WaitingForGuessesViewModel )
+() *
+string* 0
+word1 5
+)5 6
+{ 	
+Word 
+= 
+word 
+; 
+GameClientManager 
+. 
+Instance &
+.& '
+ShowNextDrawing' 6
++=7 9%
+OnShowNextDrawing_Handler: S
+;S T
+GameClientManager 
+. 
+Instance &
+.& '
+AnswersPhaseStart' 8
++=9 ;'
+OnAnswersPhaseStart_Handler< W
+;W X
+GameClientManager 
+. 
+Instance &
+.& '
+ConnectionLost' 5
++=6 8$
+OnConnectionLost_Handler9 Q
+;Q R
+} 	
+private 
+void %
+OnShowNextDrawing_Handler .
+(. /
+object/ 5
+sender6 <
+,< =$
+ShowNextDrawingEventArgs> V
+eW X
+)X Y
+{ 	
+string 
+
+myUsername 
+= 
+GameClientManager  1
+.1 2
+Instance2 :
+.: ;
+GetCurrentUsername; M
+(M N
+)N O
+;O P
+if 
+( 
+e 
+. 
+NextDrawing 
+. 
+OwnerUsername +
+==, .
+
+myUsername/ 9
+)9 :
+{ 
+ServiceLocator   
+.   
+
+Navigation   )
+.  ) *'
+NavigateToWaitingForGuesses  * E
+(  E F
+e  F G
+.  G H
+NextDrawing  H S
+.  S T
+WordKey  T [
+)  [ \
+;  \ ]
+}!! 
+else"" 
+{## 
+ServiceLocator$$ 
+.$$ 
+
+Navigation$$ )
+.$$) *
+NavigateToNextGuess$$* =
+($$= >
+e$$> ?
+.$$? @
+NextDrawing$$@ K
+)$$K L
+;$$L M
+}%% 
+}&& 	
+private(( 
+void(( '
+OnAnswersPhaseStart_Handler(( 0
+(((0 1
+object((1 7
+sender((8 >
+,((> ?&
+AnswersPhaseStartEventArgs((@ Z
+e(([ \
+)((\ ]
+{)) 	
+Cleanup** 
+(** 
+)** 
+;** 
+ServiceLocator++ 
+.++ 
+
+Navigation++ %
+.++% &
+NavigateToAnswers++& 7
+(++7 8
+e++8 9
+.++9 :
+AllDrawings++: E
+,++E F
+e++G H
+.++H I
+
+AllGuesses++I S
+,++S T
+e++U V
+.++V W
+	AllScores++W `
+)++` a
+;++a b
+},, 	
+private.. 
+void.. $
+OnConnectionLost_Handler.. -
+(..- .
+)... /
+{// 	
+Cleanup00 
+(00 
+)00 
+;00 
+ServiceLocator11 
+.11 
+
+Navigation11 %
+.11% &"
+CloseCurrentGameWindow11& <
+(11< =
+)11= >
+;11> ?
+}22 	
+private44 
+void44 
+Cleanup44 
+(44 
+)44 
+{55 	
+GameClientManager66 
+.66 
+Instance66 &
+.66& '
+ShowNextDrawing66' 6
+-=667 9%
+OnShowNextDrawing_Handler66: S
+;66S T
+GameClientManager77 
+.77 
+Instance77 &
+.77& '
+AnswersPhaseStart77' 8
+-=779 ;'
+OnAnswersPhaseStart_Handler77< W
+;77W X
+GameClientManager88 
+.88 
+Instance88 &
+.88& '
+ConnectionLost88' 5
+-=886 8$
+OnConnectionLost_Handler889 Q
+;88Q R
+}99 	
+}:: 
+};; ö
+ëC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\RelayCommand.cs
 	namespace 	
 GuessMyMessClient
  
@@ -8738,93 +14989,5420 @@ CanExecute 
 ;$$  
 }%% 	
 }&& 
-}'' ¢
-ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\WordSelectionViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-Match& +
-{ 
-internal		 
-class		 "
-WordSelectionViewModel		 )
-{
+}'' Ûd
+†C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.cs
+	namespace
 
- 
-} 
-} †
-ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\GuessTheWordViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-Match& +
-{ 
-internal		 
-class		 !
-GuessTheWordViewModel		 (
-{
+ 	
+GuessMyMessClient
 
- 
-} 
-} ú
-õC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.cs
-	namespace 	
-GuessMyMessClient
+
  
-. 
-	ViewModel %
-.% &
-Match& +
-{ 
-internal		 
-class		 
-EndOfMatchViewModel		 &
-{
+.
 
- 
-} 
-} ¢
-ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.cs
-	namespace 	
-GuessMyMessClient
+ 
+	ViewModel
+
+ %
+.
+
+% &
+Match
+
+& +
+{ 
+internal 
+class !
+GuessTheWordViewModel (
+:) *
+ViewModelBase+ 8
+{ 
+private 
+StrokeCollection  
+_drawingToGuess! 0
+;0 1
+public 
+StrokeCollection 
+DrawingToGuess  .
+{ 	
+get 
+{ 
+return 
+_drawingToGuess (
+;( )
+}* +
+set 
+{ 
+_drawingToGuess !
+=" #
+value$ )
+;) *
+OnPropertyChanged+ <
+(< =
+)= >
+;> ?
+}@ A
+} 	
+private 
+string 
+
+_userGuess !
+;! "
+public 
+string 
+	UserGuess 
+{ 	
+get 
+{ 
+return 
+
+_userGuess #
+;# $
+}% &
+set 
+{ 
+
+_userGuess 
+= 
+value "
+;" #
+OnPropertyChanged !
+(! "
+)" #
+;# $
+} 
+} 	
+private   
+bool   
+
+_guessSent   
+;    
+private!! 
+readonly!! 
+int!! 
+
+_drawingId!! '
+;!!' (
+public## 
+ICommand## 
+ConfirmGuessCommand## +
+{##, -
+get##. 1
+;##1 2
+}##3 4
+public$$ 
+ICommand$$ 
+CloseWindowCommand$$ *
+{$$+ ,
+get$$- 0
+;$$0 1
+}$$2 3
+public%% 
+ICommand%% !
+MaximizeWindowCommand%% -
+{%%. /
+get%%0 3
+;%%3 4
+}%%5 6
+public&& 
+ICommand&& !
+MinimizeWindowCommand&& -
+{&&. /
+get&&0 3
+;&&3 4
+}&&5 6
+public(( !
+GuessTheWordViewModel(( $
+((($ %
+)((% &
+{)) 	
+
+_guessSent** 
+=** 
+false** 
+;** 
+ConfirmGuessCommand++ 
+=++  !
+new++" %
+RelayCommand++& 2
+(++2 3
+ExecuteConfirmGuess++3 F
+,++F G"
+CanExecuteConfirmGuess++H ^
+)++^ _
+;++_ `
+CloseWindowCommand,, 
+=,,  
+new,,! $
+RelayCommand,,% 1
+(,,1 2
+ExecuteCloseWindow,,2 D
+),,D E
+;,,E F!
+MaximizeWindowCommand-- !
+=--" #
+new--$ '
+RelayCommand--( 4
+(--4 5!
+ExecuteMaximizeWindow--5 J
+)--J K
+;--K L!
+MinimizeWindowCommand.. !
+=.." #
+new..$ '
+RelayCommand..( 4
+(..4 5!
+ExecuteMinimizeWindow..5 J
+)..J K
+;..K L
+DrawingToGuess// 
+=// 
+new//  
+StrokeCollection//! 1
+(//1 2
+)//2 3
+;//3 4
+	UserGuess00 
+=00 
+string00 
+.00 
+Empty00 $
+;00$ %
+}11 	
+public33 !
+GuessTheWordViewModel33 $
+(33$ %
+
+DrawingDto33% /
+drawing330 7
+)337 8
+:339 :
+this33; ?
+(33? @
+)33@ A
+{44 	
+if55 
+(55 
+drawing55 
+==55 
+null55 
+)55  
+{66 
+
+MessageBox77 
+.77 
+Show77 
+(77  
+$str77  F
+,77F G
+$str77H O
+,77O P
+MessageBoxButton77Q a
+.77a b
+OK77b d
+,77d e
+MessageBoxImage77f u
+.77u v
+Error77v {
+)77{ |
+;77| }
+return88 
+;88 
+}99 
+
+_drawingId;; 
+=;; 
+drawing;;  
+.;;  !
+	DrawingId;;! *
+;;;* + 
+LoadDrawingFromBytes<<  
+(<<  !
+drawing<<! (
+.<<( )
+DrawingData<<) 4
+)<<4 5
+;<<5 6
+GameClientManager>> 
+.>> 
+Instance>> &
+.>>& '
+ShowNextDrawing>>' 6
++=>>7 9%
+OnShowNextDrawing_Handler>>: S
+;>>S T
+GameClientManager?? 
+.?? 
+Instance?? &
+.??& '
+AnswersPhaseStart??' 8
++=??9 ;'
+OnAnswersPhaseStart_Handler??< W
+;??W X
+GameClientManager@@ 
+.@@ 
+Instance@@ &
+.@@& '
+ConnectionLost@@' 5
++=@@6 8$
+OnConnectionLost_Handler@@9 Q
+;@@Q R
+}AA 	
+privateCC 
+voidCC  
+LoadDrawingFromBytesCC )
+(CC) *
+byteCC* .
+[CC. /
+]CC/ 0
+drawingDataCC1 <
+)CC< =
+{DD 	
+ifEE 
+(EE 
+drawingDataEE 
+==EE 
+nullEE #
+||EE$ &
+drawingDataEE' 2
+.EE2 3
+LengthEE3 9
+==EE: <
+$numEE= >
+)EE> ?
+{FF 
+DrawingToGuessGG 
+=GG  
+newGG! $
+StrokeCollectionGG% 5
+(GG5 6
+)GG6 7
+;GG7 8
+returnHH 
+;HH 
+}II 
+tryKK 
+{LL 
+usingMM 
+(MM 
+varMM 
+msMM 
+=MM 
+newMM  #
+MemoryStreamMM$ 0
+(MM0 1
+drawingDataMM1 <
+)MM< =
+)MM= >
+{NN 
+DrawingToGuessOO "
+=OO# $
+newOO% (
+StrokeCollectionOO) 9
+(OO9 :
+msOO: <
+)OO< =
+;OO= >
+}PP 
+}QQ 
+catchRR 
+(RR 
+	ExceptionRR 
+exRR 
+)RR  
+{SS 
+
+MessageBoxTT 
+.TT 
+ShowTT 
+(TT  
+$"TT  "
+$strTT" B
+{TTB C
+exTTC E
+.TTE F
+MessageTTF M
+}TTM N
+"TTN O
+)TTO P
+;TTP Q
+DrawingToGuessUU 
+=UU  
+newUU! $
+StrokeCollectionUU% 5
+(UU5 6
+)UU6 7
+;UU7 8
+}VV 
+}WW 	
+privateYY 
+boolYY "
+CanExecuteConfirmGuessYY +
+(YY+ ,
+objectYY, 2
+	parameterYY3 <
+)YY< =
+{ZZ 	
+return[[ 
+![[ 
+
+_guessSent[[ 
+&&[[ !
+![[" #
+string[[# )
+.[[) *
+IsNullOrWhiteSpace[[* <
+([[< =
+	UserGuess[[= F
+)[[F G
+;[[G H
+}\\ 	
+private^^ 
+void^^ 
+ExecuteConfirmGuess^^ (
+(^^( )
+object^^) /
+	parameter^^0 9
+)^^9 :
+{__ 	
+
+_guessSent`` 
+=`` 
+true`` 
+;`` 
+trybb 
+{cc 
+GameClientManagerdd !
+.dd! "
+Instancedd" *
+.dd* +
+SubmitGuessdd+ 6
+(dd6 7
+	UserGuessdd7 @
+,dd@ A
+
+_drawingIdddB L
+)ddL M
+;ddM N
+	UserGuessee 
+=ee 
+$stree G
+;eeG H
+OnPropertyChangedff !
+(ff! "
+nameofff" (
+(ff( )
+	UserGuessff) 2
+)ff2 3
+)ff3 4
+;ff4 5
+}gg 
+catchhh 
+(hh 
+	Exceptionhh 
+exhh 
+)hh  
+{ii 
+
+MessageBoxjj 
+.jj 
+Showjj 
+(jj  
+$"jj  "
+$strjj" 8
+{jj8 9
+exjj9 ;
+.jj; <
+Messagejj< C
+}jjC D
+"jjD E
+)jjE F
+;jjF G
+
+_guessSentkk 
+=kk 
+falsekk "
+;kk" #
+}ll 
+}mm 	
+privateoo 
+voidoo %
+OnShowNextDrawing_Handleroo .
+(oo. /
+objectoo/ 5
+senderoo6 <
+,oo< =$
+ShowNextDrawingEventArgsoo> V
+eooW X
+)ooX Y
+{pp 	
+stringqq 
+
+myUsernameqq 
+=qq 
+GameClientManagerqq  1
+.qq1 2
+Instanceqq2 :
+.qq: ;
+GetCurrentUsernameqq; M
+(qqM N
+)qqN O
+;qqO P
+ifrr 
+(rr 
+err 
+.rr 
+NextDrawingrr 
+.rr 
+OwnerUsernamerr +
+==rr, .
+
+myUsernamerr/ 9
+)rr9 :
+{ss 
+ServiceLocatortt 
+.tt 
+
+Navigationtt )
+.tt) *'
+NavigateToWaitingForGuessestt* E
+(ttE F
+ettF G
+.ttG H
+NextDrawingttH S
+.ttS T
+WordKeyttT [
+)tt[ \
+;tt\ ]
+}uu 
+elsevv 
+{ww 
+ServiceLocatorxx 
+.xx 
+
+Navigationxx )
+.xx) *
+NavigateToNextGuessxx* =
+(xx= >
+exx> ?
+.xx? @
+NextDrawingxx@ K
+)xxK L
+;xxL M
+}yy 
+}zz 	
+private|| 
+void|| '
+OnAnswersPhaseStart_Handler|| 0
+(||0 1
+object||1 7
+sender||8 >
+,||> ?&
+AnswersPhaseStartEventArgs||@ Z
+e||[ \
+)||\ ]
+{}} 	
+Cleanup~~ 
+(~~ 
+)~~ 
+;~~ 
+ServiceLocator 
+. 
+
+Navigation %
+.% &
+NavigateToAnswers& 7
+(7 8
+e8 9
+.9 :
+AllDrawings: E
+,E F
+eG H
+.H I
+
+AllGuessesI S
+,S T
+eU V
+.V W
+	AllScoresW `
+)` a
+;a b
+}
+ÄÄ 	
+private
+ÇÇ 
+void
+ÇÇ &
+OnConnectionLost_Handler
+ÇÇ -
+(
+ÇÇ- .
+)
+ÇÇ. /
+{
+ÉÉ 	
+Cleanup
+ÑÑ 
+(
+ÑÑ 
+)
+ÑÑ 
+;
+ÑÑ 
+ServiceLocator
+ÖÖ 
+.
+ÖÖ 
+
+Navigation
+ÖÖ %
+.
+ÖÖ% &$
+CloseCurrentGameWindow
+ÖÖ& <
+(
+ÖÖ< =
+)
+ÖÖ= >
+;
+ÖÖ> ?
+}
+ÜÜ 	
+private
+àà 
+void
+àà 
+Cleanup
+àà 
+(
+àà 
+)
+àà 
+{
+ââ 	
+GameClientManager
+ää 
+.
+ää 
+Instance
+ää &
+.
+ää& '
+ShowNextDrawing
+ää' 6
+-=
+ää7 9'
+OnShowNextDrawing_Handler
+ää: S
+;
+ääS T
+GameClientManager
+ãã 
+.
+ãã 
+Instance
+ãã &
+.
+ãã& '
+AnswersPhaseStart
+ãã' 8
+-=
+ãã9 ;)
+OnAnswersPhaseStart_Handler
+ãã< W
+;
+ããW X
+GameClientManager
+åå 
+.
+åå 
+Instance
+åå &
+.
+åå& '
+ConnectionLost
+åå' 5
+-=
+åå6 8&
+OnConnectionLost_Handler
+åå9 Q
+;
+ååQ R
+}
+çç 	
+private
+èè 
+void
+èè  
+ExecuteCloseWindow
+èè '
+(
+èè' (
+object
+èè( .
+	parameter
+èè/ 8
+)
+èè8 9
+{
+êê 	
+Cleanup
+ëë 
+(
+ëë 
+)
+ëë 
+;
+ëë 
+GameClientManager
+íí 
+.
+íí 
+Instance
+íí &
+.
+íí& '
+
+Disconnect
+íí' 1
+(
+íí1 2
+)
+íí2 3
+;
+íí3 4
+ServiceLocator
+ìì 
+.
+ìì 
+
+Navigation
+ìì %
+.
+ìì% &$
+CloseCurrentGameWindow
+ìì& <
+(
+ìì< =
+)
+ìì= >
+;
+ìì> ?
+}
+îî 	
+private
+ññ 
+static
+ññ 
+void
+ññ #
+ExecuteMaximizeWindow
+ññ 1
+(
+ññ1 2
+object
+ññ2 8
+	parameter
+ññ9 B
+)
+ññB C
+{
+óó 	
+if
+òò 
+(
+òò 
+	parameter
+òò 
+is
+òò 
+Window
+òò #
+window
+òò$ *
+)
+òò* +
+{
+ôô 
+window
+öö 
+.
+öö 
+WindowState
+öö "
+=
+öö# $
+window
+öö% +
+.
+öö+ ,
+WindowState
+öö, 7
+==
+öö8 :
+WindowState
+öö; F
+.
+ööF G
+	Maximized
+ööG P
+?
+ööQ R
+WindowState
+ööS ^
+.
+öö^ _
+Normal
+öö_ e
+:
+ööf g
+WindowState
+ööh s
+.
+öös t
+	Maximized
+ööt }
+;
+öö} ~
+}
+õõ 
+}
+úú 	
+private
+ûû 
+static
+ûû 
+void
+ûû #
+ExecuteMinimizeWindow
+ûû 1
+(
+ûû1 2
+object
+ûû2 8
+	parameter
+ûû9 B
+)
+ûûB C
+{
+üü 	
+if
+†† 
+(
+†† 
+	parameter
+†† 
+is
+†† 
+Window
+†† #
+window
+††$ *
+)
+††* +
+{
+°° 
+window
+¢¢ 
+.
+¢¢ 
+WindowState
+¢¢ "
+=
+¢¢# $
+WindowState
+¢¢% 0
+.
+¢¢0 1
+	Minimized
+¢¢1 :
+;
+¢¢: ;
+}
+££ 
+}
+§§ 	
+}
+•• 
+}¶¶ ¢
+ûC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\EndOfMatchViewModel.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-	ViewModel %
-.% &
-Match& +
-{ 
-internal		 
-class		 "
-DrawingScreenViewModel		 )
-{
+. 
+	ViewModel %
+.% &
+Match& +
+{ 
+public 
+
+class 
+EndOfMatchViewModel $
+:% &
+ViewModelBase' 4
+{ 
+private		 
+string		 
+_winnerName		 "
+;		" #
+public
 
- 
-} 
-} ¢
-ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.cs
-	namespace 	
-GuessMyMessClient
+ 
+string
+
+ 
+
+WinnerName
+
+  
+{ 	
+get 
+=> 
+_winnerName 
+; 
+set 
+{ 
+_winnerName 
+= 
+value  %
+;% &
+OnPropertyChanged' 8
+(8 9
+nameof9 ?
+(? @
+
+WinnerName@ J
+)J K
+)K L
+;L M
+}N O
+} 	
+private 
+string !
+_firstPlacePlayerName ,
+;, -
+public 
+string  
+FirstPlacePlayerName *
+{ 	
+get 
+=> !
+_firstPlacePlayerName (
+;( )
+set 
+{ !
+_firstPlacePlayerName '
+=( )
+value* /
+;/ 0
+OnPropertyChanged1 B
+(B C
+nameofC I
+(I J 
+FirstPlacePlayerNameJ ^
+)^ _
+)_ `
+;` a
+}b c
+} 	
+private 
+string "
+_secondPlacePlayerName -
+;- .
+public 
+string !
+SecondPlacePlayerName +
+{ 	
+get 
+=> "
+_secondPlacePlayerName )
+;) *
+set 
+{ "
+_secondPlacePlayerName (
+=) *
+value+ 0
+;0 1
+OnPropertyChanged2 C
+(C D
+nameofD J
+(J K!
+SecondPlacePlayerNameK `
+)` a
+)a b
+;b c
+}d e
+} 	
+private 
+string !
+_thirdPlacePlayerName ,
+;, -
+public 
+string  
+ThirdPlacePlayerName *
+{   	
+get!! 
+=>!! !
+_thirdPlacePlayerName!! (
+;!!( )
+set"" 
+{"" !
+_thirdPlacePlayerName"" '
+=""( )
+value""* /
+;""/ 0
+OnPropertyChanged""1 B
+(""B C
+nameof""C I
+(""I J 
+ThirdPlacePlayerName""J ^
+)""^ _
+)""_ `
+;""` a
+}""b c
+}## 	
+public%% 
+ICommand%% 
+ExitCommand%% #
+{%%$ %
+get%%& )
+;%%) *
+}%%+ ,
+public'' 
+EndOfMatchViewModel'' "
+(''" #
+)''# $
+{(( 	
+ExitCommand)) 
+=)) 
+new)) 
+RelayCommand)) *
+())* +
+OnExit))+ 1
+,))1 2
+CanExit))3 :
+))): ;
+;)); <
+}** 	
+private,, 
+void,, 
+OnExit,, 
+(,, 
+object,, "
+	parameter,,# ,
+),,, -
+{-- 	
+}.. 	
+private00 
+bool00 
+CanExit00 
+(00 
+object00 #
+	parameter00$ -
+)00- .
+{11 	
+return22 
+true22 
+;22 
+}33 	
+}55 
+}66 ⁄˚
+°C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\DrawingScreenViewModel.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-	ViewModel %
-.% &
-Match& +
-{ 
-internal		 
-class		 "
-AnswersScreenViewModel		 )
-{
-
- 
-} 
-} öq
-¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\MatchSettings\MatchSettingsViewModel.cs
+. 
+	ViewModel %
+.% &
+Match& +
+{ 
+public 
+
+enum 
+DrawingTool 
+{ 
+Pencil 
+, 
+Eraser 
+, 
+Triangle 
+, 
+Circle 
+, 
+Square 
+} 
+internal 
+class "
+DrawingScreenViewModel )
+:* +
+ViewModelBase, 9
+{ 
+private 
+string 
+_wordToDraw "
+;" #
+public 
+string 
+
+WordToDraw  
+{ 	
+get 
+{ 
+return 
+_wordToDraw $
+;$ %
+}& '
+set   
+{   
+_wordToDraw   
+=   
+value    %
+;  % &
+OnPropertyChanged  ' 8
+(  8 9
+)  9 :
+;  : ;
+}  < =
+}!! 	
+private## 
+StrokeCollection##  
+_strokes##! )
+;##) *
+public$$ 
+StrokeCollection$$ 
+Strokes$$  '
+{%% 	
+get&& 
+{&& 
+return&& 
+_strokes&& !
+;&&! "
+}&&# $
+set'' 
+{'' 
+_strokes'' 
+='' 
+value'' "
+;''" #
+OnPropertyChanged''$ 5
+(''5 6
+)''6 7
+;''7 8
+}''9 :
+}(( 	
+private** 
+DrawingAttributes** !
+_inkAttributes**" 0
+;**0 1
+public++ 
+DrawingAttributes++  
+InkAttributes++! .
+{,, 	
+get-- 
+{-- 
+return-- 
+_inkAttributes-- '
+;--' (
+}--) *
+set.. 
+{.. 
+_inkAttributes..  
+=..! "
+value..# (
+;..( )
+OnPropertyChanged..* ;
+(..; <
+)..< =
+;..= >
+}..? @
+}// 	
+private11 
+double11 
+_brushThickness11 &
+;11& '
+public22 
+double22 
+BrushThickness22 $
+{33 	
+get44 
+{44 
+return44 
+_brushThickness44 (
+;44( )
+}44* +
+set55 
+{66 
+_brushThickness77 
+=77  !
+value77" '
+;77' (
+OnPropertyChanged88 !
+(88! "
+)88" #
+;88# $
+if99 
+(99 
+InkAttributes99 !
+!=99" $
+null99% )
+)99) *
+{:: 
+InkAttributes;; !
+.;;! "
+Width;;" '
+=;;( )
+value;;* /
+;;;/ 0
+InkAttributes<< !
+.<<! "
+Height<<" (
+=<<) *
+value<<+ 0
+;<<0 1
+}== 
+}>> 
+}?? 	
+privateAA  
+InkCanvasEditingModeAA $
+_editingModeAA% 1
+;AA1 2
+publicBB  
+InkCanvasEditingModeBB #
+EditingModeBB$ /
+{CC 	
+getDD 
+{DD 
+returnDD 
+_editingModeDD %
+;DD% &
+}DD' (
+setEE 
+{EE 
+_editingModeEE 
+=EE  
+valueEE! &
+;EE& '
+OnPropertyChangedEE( 9
+(EE9 :
+)EE: ;
+;EE; <
+}EE= >
+}FF 	
+privateHH 
+ColorHH 
+_currentColorHH #
+;HH# $
+privateII 
+DrawingToolII 
+_currentToolII (
+;II( )
+publicJJ 
+DrawingToolJJ 
+CurrentToolJJ &
+{KK 	
+getLL 
+{LL 
+returnLL 
+_currentToolLL %
+;LL% &
+}LL' (
+setMM 
+{MM 
+_currentToolMM 
+=MM  
+valueMM! &
+;MM& '
+OnPropertyChangedMM( 9
+(MM9 :
+)MM: ;
+;MM; <
+}MM= >
+}NN 	
+privatePP 
+PointPP 
+_startPointPP !
+;PP! "
+privateQQ 
+StrokeQQ 
+_currentShapeStrokeQQ *
+;QQ* +
+privateSS 
+DispatcherTimerSS 
+_countdownTimerSS  /
+;SS/ 0
+privateTT 
+intTT 
+_remainingTimeTT "
+;TT" #
+publicUU 
+intUU 
+RemainingTimeUU  
+{VV 	
+getWW 
+{WW 
+returnWW 
+_remainingTimeWW '
+;WW' (
+}WW) *
+setXX 
+{XX 
+_remainingTimeXX  
+=XX! "
+valueXX# (
+;XX( )
+OnPropertyChangedXX* ;
+(XX; <
+)XX< =
+;XX= >
+}XX? @
+}YY 	
+public[[ 
+ICommand[[ 
+SelectColorCommand[[ *
+{[[+ ,
+get[[- 0
+;[[0 1
+}[[2 3
+public\\ 
+ICommand\\ 
+SelectToolCommand\\ )
+{\\* +
+get\\, /
+;\\/ 0
+}\\1 2
+public]] 
+ICommand]] 
+CloseWindowCommand]] *
+{]]+ ,
+get]]- 0
+;]]0 1
+}]]2 3
+public^^ 
+ICommand^^ !
+MaximizeWindowCommand^^ -
+{^^. /
+get^^0 3
+;^^3 4
+}^^5 6
+public__ 
+ICommand__ !
+MinimizeWindowCommand__ -
+{__. /
+get__0 3
+;__3 4
+}__5 6
+publicaa 
+ICommandaa 
+StartShapeCommandaa )
+{aa* +
+getaa, /
+;aa/ 0
+}aa1 2
+publicbb 
+ICommandbb 
+UpdateShapeCommandbb *
+{bb+ ,
+getbb- 0
+;bb0 1
+}bb2 3
+publiccc 
+ICommandcc 
+EndShapeCommandcc '
+{cc( )
+getcc* -
+;cc- .
+}cc/ 0
+publicee "
+DrawingScreenViewModelee %
+(ee% &
+)ee& '
+{ff 	
+CloseWindowCommandgg 
+=gg  
+newgg! $
+RelayCommandgg% 1
+(gg1 2
+ExecuteCloseWindowgg2 D
+)ggD E
+;ggE F!
+MaximizeWindowCommandhh !
+=hh" #
+newhh$ '
+RelayCommandhh( 4
+(hh4 5!
+ExecuteMaximizeWindowhh5 J
+)hhJ K
+;hhK L!
+MinimizeWindowCommandii !
+=ii" #
+newii$ '
+RelayCommandii( 4
+(ii4 5!
+ExecuteMinimizeWindowii5 J
+)iiJ K
+;iiK L
+SelectColorCommandjj 
+=jj  
+newjj! $
+RelayCommandjj% 1
+(jj1 2
+ExecuteSelectColorjj2 D
+)jjD E
+;jjE F
+SelectToolCommandkk 
+=kk 
+newkk  #
+RelayCommandkk$ 0
+(kk0 1
+ExecuteSelectToolkk1 B
+)kkB C
+;kkC D
+StartShapeCommandmm 
+=mm 
+newmm  #
+RelayCommandmm$ 0
+(mm0 1
+parammm1 6
+=>mm7 9
+
+StartShapemm: D
+(mmD E
+(mmE F
+PointmmF K
+)mmK L
+parammmL Q
+)mmQ R
+)mmR S
+;mmS T
+UpdateShapeCommandnn 
+=nn  
+newnn! $
+RelayCommandnn% 1
+(nn1 2
+paramnn2 7
+=>nn8 :
+UpdateShapenn; F
+(nnF G
+(nnG H
+PointnnH M
+)nnM N
+paramnnN S
+)nnS T
+)nnT U
+;nnU V
+EndShapeCommandoo 
+=oo 
+newoo !
+RelayCommandoo" .
+(oo. /
+paramoo/ 4
+=>oo5 7
+EndShapeoo8 @
+(oo@ A
+)ooA B
+)ooB C
+;ooC D
+Strokesqq 
+=qq 
+newqq 
+StrokeCollectionqq *
+(qq* +
+)qq+ ,
+;qq, -
+InkAttributesrr 
+=rr 
+newrr 
+DrawingAttributesrr  1
+(rr1 2
+)rr2 3
+;rr3 4
+_currentColorss 
+=ss 
+Colorsss "
+.ss" #
+Blackss# (
+;ss( )
+InkAttributestt 
+.tt 
+Colortt 
+=tt  !
+_currentColortt" /
+;tt/ 0
+InkAttributesuu 
+.uu 
+	StylusTipuu #
+=uu$ %
+	StylusTipuu& /
+.uu/ 0
+Ellipseuu0 7
+;uu7 8
+CurrentToolww 
+=ww 
+DrawingToolww %
+.ww% &
+Pencilww& ,
+;ww, -
+EditingModexx 
+=xx  
+InkCanvasEditingModexx .
+.xx. /
+Inkxx/ 2
+;xx2 3
+BrushThicknessyy 
+=yy 
+$numyy 
+;yy 
+InitializeTimer{{ 
+({{ 
+){{ 
+;{{ !
+SubscribeToGameEvents|| !
+(||! "
+)||" #
+;||# $
+}}} 	
+public "
+DrawingScreenViewModel %
+(% &
+string& ,
+word- 1
+)1 2
+:3 4
+this5 9
+(9 :
+): ;
+{
+ÄÄ 	
+
+WordToDraw
+ÅÅ 
+=
+ÅÅ 
+word
+ÅÅ 
+;
+ÅÅ 
+}
+ÇÇ 	
+private
+ÑÑ 
+void
+ÑÑ 
+InitializeTimer
+ÑÑ $
+(
+ÑÑ$ %
+)
+ÑÑ% &
+{
+ÖÖ 	
+RemainingTime
+ÜÜ 
+=
+ÜÜ 
+$num
+ÜÜ 
+;
+ÜÜ 
+_countdownTimer
+áá 
+=
+áá 
+new
+áá !
+DispatcherTimer
+áá" 1
+(
+áá1 2
+)
+áá2 3
+;
+áá3 4
+_countdownTimer
+àà 
+.
+àà 
+Interval
+àà $
+=
+àà% &
+TimeSpan
+àà' /
+.
+àà/ 0
+FromSeconds
+àà0 ;
+(
+àà; <
+$num
+àà< =
+)
+àà= >
+;
+àà> ?
+_countdownTimer
+ââ 
+.
+ââ 
+Tick
+ââ  
++=
+ââ! #!
+CountdownTimer_Tick
+ââ$ 7
+;
+ââ7 8
+_countdownTimer
+ää 
+.
+ää 
+Start
+ää !
+(
+ää! "
+)
+ää" #
+;
+ää# $
+}
+ãã 	
+private
+çç 
+void
+çç !
+CountdownTimer_Tick
+çç (
+(
+çç( )
+object
+çç) /
+sender
+çç0 6
+,
+çç6 7
+	EventArgs
+çç8 A
+e
+ççB C
+)
+ççC D
+{
+éé 	
+RemainingTime
+èè 
+--
+èè 
+;
+èè 
+if
+êê 
+(
+êê 
+RemainingTime
+êê 
+<=
+êê  
+$num
+êê! "
+)
+êê" #
+{
+ëë 
+_countdownTimer
+íí 
+.
+íí  
+Stop
+íí  $
+(
+íí$ %
+)
+íí% &
+;
+íí& '
+OnTimerFinished
+ìì 
+(
+ìì  
+)
+ìì  !
+;
+ìì! "
+}
+îî 
+}
+ïï 	
+private
+óó 
+void
+óó 
+OnTimerFinished
+óó $
+(
+óó$ %
+)
+óó% &
+{
+òò 	
+EditingMode
+ôô 
+=
+ôô "
+InkCanvasEditingMode
+ôô .
+.
+ôô. /
+None
+ôô/ 3
+;
+ôô3 4
+SaveDrawing
+öö 
+(
+öö 
+)
+öö 
+;
+öö 
+Console
+õõ 
+.
+õõ 
+	WriteLine
+õõ 
+(
+õõ 
+$str
+õõ H
+)
+õõH I
+;
+õõI J
+}
+úú 	
+private
+ûû 
+void
+ûû 
+SaveDrawing
+ûû  
+(
+ûû  !
+)
+ûû! "
+{
+üü 	
+try
+†† 
+{
+°° 
+Console
+¢¢ 
+.
+¢¢ 
+	WriteLine
+¢¢ !
+(
+¢¢! "
+$str
+¢¢" H
+)
+¢¢H I
+;
+¢¢I J
+byte
+££ 
+[
+££ 
+]
+££ 
+drawingBytes
+££ #
+=
+££$ %'
+ConvertStrokesToByteArray
+££& ?
+(
+££? @
+)
+££@ A
+;
+££A B
+GameClientManager
+§§ !
+.
+§§! "
+Instance
+§§" *
+.
+§§* +
+SubmitDrawing
+§§+ 8
+(
+§§8 9
+drawingBytes
+§§9 E
+)
+§§E F
+;
+§§F G
+Console
+•• 
+.
+•• 
+	WriteLine
+•• !
+(
+••! "
+$str
+••" L
+)
+••L M
+;
+••M N
+EditingMode
+¶¶ 
+=
+¶¶ "
+InkCanvasEditingMode
+¶¶ 2
+.
+¶¶2 3
+None
+¶¶3 7
+;
+¶¶7 8
+}
+ßß 
+catch
+®® 
+(
+®® 
+	Exception
+®® 
+ex
+®® 
+)
+®®  
+{
+©© 
+
+MessageBox
+™™ 
+.
+™™ 
+Show
+™™ 
+(
+™™  
+$"
+™™  "
+$str
+™™" P
+{
+™™P Q
+ex
+™™Q S
+.
+™™S T
+Message
+™™T [
+}
+™™[ \
+"
+™™\ ]
+,
+™™] ^
+$str
+™™_ f
+,
+™™f g
+MessageBoxButton
+™™h x
+.
+™™x y
+OK
+™™y {
+,
+™™{ |
+MessageBoxImage™™} å
+.™™å ç
+Error™™ç í
+)™™í ì
+;™™ì î
+}
+´´ 
+}
+¨¨ 	
+private
+ÆÆ 
+void
+ÆÆ  
+ExecuteSelectColor
+ÆÆ '
+(
+ÆÆ' (
+object
+ÆÆ( .
+	parameter
+ÆÆ/ 8
+)
+ÆÆ8 9
+{
+ØØ 	
+string
+∞∞ 
+colorString
+∞∞ 
+=
+∞∞  
+	parameter
+∞∞! *
+as
+∞∞+ -
+string
+∞∞. 4
+;
+∞∞4 5
+if
+±± 
+(
+±± 
+colorString
+±± 
+!=
+±± 
+null
+±± #
+)
+±±# $
+{
+≤≤ 
+_currentColor
+≥≥ 
+=
+≥≥ 
+(
+≥≥  !
+Color
+≥≥! &
+)
+≥≥& '
+ColorConverter
+≥≥' 5
+.
+≥≥5 6
+ConvertFromString
+≥≥6 G
+(
+≥≥G H
+colorString
+≥≥H S
+)
+≥≥S T
+;
+≥≥T U
+InkAttributes
+¥¥ 
+.
+¥¥ 
+Color
+¥¥ #
+=
+¥¥$ %
+_currentColor
+¥¥& 3
+;
+¥¥3 4
+if
+∂∂ 
+(
+∂∂ 
+CurrentTool
+∂∂ 
+==
+∂∂  "
+DrawingTool
+∂∂# .
+.
+∂∂. /
+Eraser
+∂∂/ 5
+)
+∂∂5 6
+{
+∑∑ 
+ExecuteSelectTool
+∏∏ %
+(
+∏∏% &
+$str
+∏∏& .
+)
+∏∏. /
+;
+∏∏/ 0
+}
+ππ 
+}
+∫∫ 
+}
+ªª 	
+private
+ΩΩ 
+void
+ΩΩ 
+ExecuteSelectTool
+ΩΩ &
+(
+ΩΩ& '
+object
+ΩΩ' -
+	parameter
+ΩΩ. 7
+)
+ΩΩ7 8
+{
+ææ 	
+string
+øø 
+tool
+øø 
+=
+øø 
+	parameter
+øø #
+as
+øø$ &
+string
+øø' -
+;
+øø- .
+switch
+¿¿ 
+(
+¿¿ 
+tool
+¿¿ 
+)
+¿¿ 
+{
+¡¡ 
+case
+¬¬ 
+$str
+¬¬ 
+:
+¬¬ 
+CurrentTool
+√√ 
+=
+√√  !
+DrawingTool
+√√" -
+.
+√√- .
+Pencil
+√√. 4
+;
+√√4 5
+EditingMode
+ƒƒ 
+=
+ƒƒ  !"
+InkCanvasEditingMode
+ƒƒ" 6
+.
+ƒƒ6 7
+Ink
+ƒƒ7 :
+;
+ƒƒ: ;
+InkAttributes
+≈≈ !
+.
+≈≈! "
+Color
+≈≈" '
+=
+≈≈( )
+_currentColor
+≈≈* 7
+;
+≈≈7 8
+break
+∆∆ 
+;
+∆∆ 
+case
+»» 
+$str
+»» 
+:
+»» 
+CurrentTool
+…… 
+=
+……  !
+DrawingTool
+……" -
+.
+……- .
+Eraser
+……. 4
+;
+……4 5
+EditingMode
+   
+=
+    !"
+InkCanvasEditingMode
+  " 6
+.
+  6 7
+EraseByPoint
+  7 C
+;
+  C D
+break
+ÀÀ 
+;
+ÀÀ 
+case
+ÕÕ 
+$str
+ÕÕ 
+:
+ÕÕ  
+CurrentTool
+ŒŒ 
+=
+ŒŒ  !
+DrawingTool
+ŒŒ" -
+.
+ŒŒ- .
+Triangle
+ŒŒ. 6
+;
+ŒŒ6 7
+EditingMode
+œœ 
+=
+œœ  !"
+InkCanvasEditingMode
+œœ" 6
+.
+œœ6 7
+None
+œœ7 ;
+;
+œœ; <
+break
+–– 
+;
+–– 
+case
+““ 
+$str
+““ 
+:
+““ 
+CurrentTool
+”” 
+=
+””  !
+DrawingTool
+””" -
+.
+””- .
+Circle
+””. 4
+;
+””4 5
+EditingMode
+‘‘ 
+=
+‘‘  !"
+InkCanvasEditingMode
+‘‘" 6
+.
+‘‘6 7
+None
+‘‘7 ;
+;
+‘‘; <
+break
+’’ 
+;
+’’ 
+case
+◊◊ 
+$str
+◊◊ 
+:
+◊◊ 
+CurrentTool
+ÿÿ 
+=
+ÿÿ  !
+DrawingTool
+ÿÿ" -
+.
+ÿÿ- .
+Square
+ÿÿ. 4
+;
+ÿÿ4 5
+EditingMode
+ŸŸ 
+=
+ŸŸ  !"
+InkCanvasEditingMode
+ŸŸ" 6
+.
+ŸŸ6 7
+None
+ŸŸ7 ;
+;
+ŸŸ; <
+break
+⁄⁄ 
+;
+⁄⁄ 
+}
+€€ 
+}
+‹‹ 	
+private
+ﬁﬁ 
+void
+ﬁﬁ 
+
+StartShape
+ﬁﬁ 
+(
+ﬁﬁ  
+Point
+ﬁﬁ  %
+position
+ﬁﬁ& .
+)
+ﬁﬁ. /
+{
+ﬂﬂ 	
+if
+‡‡ 
+(
+‡‡ 
+CurrentTool
+‡‡ 
+==
+‡‡ 
+DrawingTool
+‡‡ *
+.
+‡‡* +
+Pencil
+‡‡+ 1
+||
+‡‡2 4
+CurrentTool
+‡‡5 @
+==
+‡‡A C
+DrawingTool
+‡‡D O
+.
+‡‡O P
+Eraser
+‡‡P V
+)
+‡‡V W
+return
+‡‡X ^
+;
+‡‡^ _
+_startPoint
+‚‚ 
+=
+‚‚ 
+position
+‚‚ "
+;
+‚‚" ##
+StylusPointCollection
+„„ !
+points
+„„" (
+=
+„„) *
+new
+„„+ .#
+StylusPointCollection
+„„/ D
+(
+„„D E
+new
+„„E H
+Point
+„„I N
+[
+„„N O
+]
+„„O P
+{
+„„Q R
+position
+„„S [
+}
+„„\ ]
+)
+„„] ^
+;
+„„^ _!
+_currentShapeStroke
+‰‰ 
+=
+‰‰  !
+new
+‰‰" %
+Stroke
+‰‰& ,
+(
+‰‰, -
+points
+‰‰- 3
+)
+‰‰3 4
+{
+ÂÂ 
+DrawingAttributes
+ÊÊ !
+=
+ÊÊ" #
+InkAttributes
+ÊÊ$ 1
+.
+ÊÊ1 2
+Clone
+ÊÊ2 7
+(
+ÊÊ7 8
+)
+ÊÊ8 9
+}
+ÁÁ 
+;
+ÁÁ 
+Strokes
+ÈÈ 
+.
+ÈÈ 
+Add
+ÈÈ 
+(
+ÈÈ !
+_currentShapeStroke
+ÈÈ +
+)
+ÈÈ+ ,
+;
+ÈÈ, -
+}
+ÍÍ 	
+private
+ÏÏ 
+void
+ÏÏ 
+UpdateShape
+ÏÏ  
+(
+ÏÏ  !
+Point
+ÏÏ! &
+currentPosition
+ÏÏ' 6
+)
+ÏÏ6 7
+{
+ÌÌ 	
+if
+ÓÓ 
+(
+ÓÓ !
+_currentShapeStroke
+ÓÓ #
+==
+ÓÓ$ &
+null
+ÓÓ' +
+)
+ÓÓ+ ,
+return
+ÓÓ- 3
+;
+ÓÓ3 4#
+StylusPointCollection
+ !
+	newPoints
+" +
+=
+, -
+null
+. 2
+;
+2 3
+switch
+ÚÚ 
+(
+ÚÚ 
+CurrentTool
+ÚÚ 
+)
+ÚÚ  
+{
+ÛÛ 
+case
+ÙÙ 
+DrawingTool
+ÙÙ  
+.
+ÙÙ  !
+Square
+ÙÙ! '
+:
+ÙÙ' (
+	newPoints
+ıı 
+=
+ıı #
+CalculateSquarePoints
+ıı  5
+(
+ıı5 6
+_startPoint
+ıı6 A
+,
+ııA B
+currentPosition
+ııC R
+)
+ııR S
+;
+ııS T
+break
+ˆˆ 
+;
+ˆˆ 
+case
+˜˜ 
+DrawingTool
+˜˜  
+.
+˜˜  !
+Triangle
+˜˜! )
+:
+˜˜) *
+	newPoints
+¯¯ 
+=
+¯¯ %
+CalculateTrianglePoints
+¯¯  7
+(
+¯¯7 8
+_startPoint
+¯¯8 C
+,
+¯¯C D
+currentPosition
+¯¯E T
+)
+¯¯T U
+;
+¯¯U V
+break
+˘˘ 
+;
+˘˘ 
+case
+˙˙ 
+DrawingTool
+˙˙  
+.
+˙˙  !
+Circle
+˙˙! '
+:
+˙˙' (
+	newPoints
+˚˚ 
+=
+˚˚ #
+CalculateCirclePoints
+˚˚  5
+(
+˚˚5 6
+_startPoint
+˚˚6 A
+,
+˚˚A B
+currentPosition
+˚˚C R
+)
+˚˚R S
+;
+˚˚S T
+break
+¸¸ 
+;
+¸¸ 
+}
+˝˝ 
+if
+ˇˇ 
+(
+ˇˇ 
+	newPoints
+ˇˇ 
+!=
+ˇˇ 
+null
+ˇˇ !
+)
+ˇˇ! "
+{
+ÄÄ !
+_currentShapeStroke
+ÅÅ #
+.
+ÅÅ# $
+StylusPoints
+ÅÅ$ 0
+=
+ÅÅ1 2
+	newPoints
+ÅÅ3 <
+;
+ÅÅ< =
+}
+ÇÇ 
+}
+ÉÉ 	
+private
+ÖÖ 
+void
+ÖÖ 
+EndShape
+ÖÖ 
+(
+ÖÖ 
+)
+ÖÖ 
+{
+ÜÜ 	!
+_currentShapeStroke
+áá 
+=
+áá  !
+null
+áá" &
+;
+áá& '
+}
+àà 	
+private
+ää #
+StylusPointCollection
+ää %#
+CalculateSquarePoints
+ää& ;
+(
+ää; <
+Point
+ää< A
+start
+ääB G
+,
+ääG H
+Point
+ääI N
+end
+ääO R
+)
+ääR S
+{
+ãã 	
+var
+åå 
+points
+åå 
+=
+åå 
+new
+åå 
+List
+åå !
+<
+åå! "
+Point
+åå" '
+>
+åå' (
+{
+çç 
+start
+éé 
+,
+éé 
+new
+èè 
+Point
+èè 
+(
+èè 
+end
+èè 
+.
+èè 
+X
+èè 
+,
+èè  
+start
+èè! &
+.
+èè& '
+Y
+èè' (
+)
+èè( )
+,
+èè) *
+end
+êê 
+,
+êê 
+new
+ëë 
+Point
+ëë 
+(
+ëë 
+start
+ëë 
+.
+ëë  
+X
+ëë  !
+,
+ëë! "
+end
+ëë# &
+.
+ëë& '
+Y
+ëë' (
+)
+ëë( )
+,
+ëë) *
+start
+íí 
+}
+ìì 
+;
+ìì 
+return
+îî 
+new
+îî #
+StylusPointCollection
+îî ,
+(
+îî, -
+points
+îî- 3
+)
+îî3 4
+;
+îî4 5
+}
+ïï 	
+private
+óó #
+StylusPointCollection
+óó %%
+CalculateTrianglePoints
+óó& =
+(
+óó= >
+Point
+óó> C
+start
+óóD I
+,
+óóI J
+Point
+óóK P
+end
+óóQ T
+)
+óóT U
+{
+òò 	
+double
+ôô 
+topX
+ôô 
+=
+ôô 
+(
+ôô 
+start
+ôô  
+.
+ôô  !
+X
+ôô! "
++
+ôô# $
+end
+ôô% (
+.
+ôô( )
+X
+ôô) *
+)
+ôô* +
+/
+ôô, -
+$num
+ôô. /
+;
+ôô/ 0
+var
+öö 
+points
+öö 
+=
+öö 
+new
+öö 
+List
+öö !
+<
+öö! "
+Point
+öö" '
+>
+öö' (
+{
+õõ 
+new
+úú 
+Point
+úú 
+(
+úú 
+topX
+úú 
+,
+úú 
+start
+úú  %
+.
+úú% &
+Y
+úú& '
+)
+úú' (
+,
+úú( )
+end
+ùù 
+,
+ùù 
+new
+ûû 
+Point
+ûû 
+(
+ûû 
+start
+ûû 
+.
+ûû  
+X
+ûû  !
+,
+ûû! "
+end
+ûû# &
+.
+ûû& '
+Y
+ûû' (
+)
+ûû( )
+,
+ûû) *
+new
+üü 
+Point
+üü 
+(
+üü 
+topX
+üü 
+,
+üü 
+start
+üü  %
+.
+üü% &
+Y
+üü& '
+)
+üü' (
+}
+†† 
+;
+†† 
+return
+°° 
+new
+°° #
+StylusPointCollection
+°° ,
+(
+°°, -
+points
+°°- 3
+)
+°°3 4
+;
+°°4 5
+}
+¢¢ 	
+private
+§§ #
+StylusPointCollection
+§§ %#
+CalculateCirclePoints
+§§& ;
+(
+§§; <
+Point
+§§< A
+start
+§§B G
+,
+§§G H
+Point
+§§I N
+end
+§§O R
+)
+§§R S
+{
+•• 	#
+StylusPointCollection
+¶¶ !
+points
+¶¶" (
+=
+¶¶) *
+new
+¶¶+ .#
+StylusPointCollection
+¶¶/ D
+(
+¶¶D E
+)
+¶¶E F
+;
+¶¶F G
+double
+ßß 
+centerX
+ßß 
+=
+ßß 
+(
+ßß 
+start
+ßß #
+.
+ßß# $
+X
+ßß$ %
++
+ßß& '
+end
+ßß( +
+.
+ßß+ ,
+X
+ßß, -
+)
+ßß- .
+/
+ßß/ 0
+$num
+ßß1 2
+;
+ßß2 3
+double
+®® 
+centerY
+®® 
+=
+®® 
+(
+®® 
+start
+®® #
+.
+®®# $
+Y
+®®$ %
++
+®®& '
+end
+®®( +
+.
+®®+ ,
+Y
+®®, -
+)
+®®- .
+/
+®®/ 0
+$num
+®®1 2
+;
+®®2 3
+double
+©© 
+radiusX
+©© 
+=
+©© 
+Math
+©© !
+.
+©©! "
+Abs
+©©" %
+(
+©©% &
+end
+©©& )
+.
+©©) *
+X
+©©* +
+-
+©©, -
+start
+©©. 3
+.
+©©3 4
+X
+©©4 5
+)
+©©5 6
+/
+©©7 8
+$num
+©©9 :
+;
+©©: ;
+double
+™™ 
+radiusY
+™™ 
+=
+™™ 
+Math
+™™ !
+.
+™™! "
+Abs
+™™" %
+(
+™™% &
+end
+™™& )
+.
+™™) *
+Y
+™™* +
+-
+™™, -
+start
+™™. 3
+.
+™™3 4
+Y
+™™4 5
+)
+™™5 6
+/
+™™7 8
+$num
+™™9 :
+;
+™™: ;
+for
+¨¨ 
+(
+¨¨ 
+int
+¨¨ 
+i
+¨¨ 
+=
+¨¨ 
+$num
+¨¨ 
+;
+¨¨ 
+i
+¨¨ 
+<=
+¨¨  
+$num
+¨¨! $
+;
+¨¨$ %
+i
+¨¨& '
++=
+¨¨( *
+$num
+¨¨+ ,
+)
+¨¨, -
+{
+≠≠ 
+double
+ÆÆ 
+angle
+ÆÆ 
+=
+ÆÆ 
+i
+ÆÆ  
+*
+ÆÆ! "
+Math
+ÆÆ# '
+.
+ÆÆ' (
+PI
+ÆÆ( *
+/
+ÆÆ+ ,
+$num
+ÆÆ- 0
+;
+ÆÆ0 1
+double
+ØØ 
+x
+ØØ 
+=
+ØØ 
+centerX
+ØØ "
++
+ØØ# $
+radiusX
+ØØ% ,
+*
+ØØ- .
+Math
+ØØ/ 3
+.
+ØØ3 4
+Cos
+ØØ4 7
+(
+ØØ7 8
+angle
+ØØ8 =
+)
+ØØ= >
+;
+ØØ> ?
+double
+∞∞ 
+y
+∞∞ 
+=
+∞∞ 
+centerY
+∞∞ "
++
+∞∞# $
+radiusY
+∞∞% ,
+*
+∞∞- .
+Math
+∞∞/ 3
+.
+∞∞3 4
+Sin
+∞∞4 7
+(
+∞∞7 8
+angle
+∞∞8 =
+)
+∞∞= >
+;
+∞∞> ?
+points
+±± 
+.
+±± 
+Add
+±± 
+(
+±± 
+new
+±± 
+StylusPoint
+±± *
+(
+±±* +
+x
+±±+ ,
+,
+±±, -
+y
+±±. /
+)
+±±/ 0
+)
+±±0 1
+;
+±±1 2
+}
+≤≤ 
+return
+≥≥ 
+points
+≥≥ 
+;
+≥≥ 
+}
+¥¥ 	
+private
+∂∂ 
+byte
+∂∂ 
+[
+∂∂ 
+]
+∂∂ '
+ConvertStrokesToByteArray
+∂∂ 0
+(
+∂∂0 1
+)
+∂∂1 2
+{
+∑∑ 	
+using
+∏∏ 
+(
+∏∏ 
+MemoryStream
+∏∏ 
+ms
+∏∏  "
+=
+∏∏# $
+new
+∏∏% (
+MemoryStream
+∏∏) 5
+(
+∏∏5 6
+)
+∏∏6 7
+)
+∏∏7 8
+{
+ππ 
+if
+∫∫ 
+(
+∫∫ 
+Strokes
+∫∫ 
+!=
+∫∫ 
+null
+∫∫ #
+&&
+∫∫$ &
+Strokes
+∫∫' .
+.
+∫∫. /
+Count
+∫∫/ 4
+>
+∫∫5 6
+$num
+∫∫7 8
+)
+∫∫8 9
+{
+ªª 
+Strokes
+ºº 
+.
+ºº 
+Save
+ºº  
+(
+ºº  !
+ms
+ºº! #
+)
+ºº# $
+;
+ºº$ %
+return
+ΩΩ 
+ms
+ΩΩ 
+.
+ΩΩ 
+ToArray
+ΩΩ %
+(
+ΩΩ% &
+)
+ΩΩ& '
+;
+ΩΩ' (
+}
+ææ 
+return
+øø 
+new
+øø 
+byte
+øø 
+[
+øø  
+$num
+øø  !
+]
+øø! "
+;
+øø" #
+}
+¿¿ 
+}
+¡¡ 	
+private
+√√ 
+void
+√√ #
+SubscribeToGameEvents
+√√ *
+(
+√√* +
+)
+√√+ ,
+{
+ƒƒ 	
+GameClientManager
+≈≈ 
+.
+≈≈ 
+Instance
+≈≈ &
+.
+≈≈& ' 
+GuessingPhaseStart
+≈≈' 9
++=
+≈≈: <-
+OnGuessingPhaseStart_FromServer
+≈≈= \
+;
+≈≈\ ]
+GameClientManager
+∆∆ 
+.
+∆∆ 
+Instance
+∆∆ &
+.
+∆∆& '
+ConnectionLost
+∆∆' 5
++=
+∆∆6 8
+OnConnectionLost
+∆∆9 I
+;
+∆∆I J
+}
+«« 	
+private
+…… 
+void
+…… -
+OnGuessingPhaseStart_FromServer
+…… 4
+(
+……4 5
+object
+……5 ;
+sender
+……< B
+,
+……B C)
+GuessingPhaseStartEventArgs
+……D _
+e
+……` a
+)
+……a b
+{
+   	
+var
+ÀÀ 
+drawing
+ÀÀ 
+=
+ÀÀ 
+e
+ÀÀ 
+.
+ÀÀ 
+Drawing
+ÀÀ #
+;
+ÀÀ# $
+string
+ÃÃ 
+
+myUsername
+ÃÃ 
+=
+ÃÃ 
+GameClientManager
+ÃÃ  1
+.
+ÃÃ1 2
+Instance
+ÃÃ2 :
+.
+ÃÃ: ; 
+GetCurrentUsername
+ÃÃ; M
+(
+ÃÃM N
+)
+ÃÃN O
+;
+ÃÃO P
+if
+ŒŒ 
+(
+ŒŒ 
+drawing
+ŒŒ 
+.
+ŒŒ 
+OwnerUsername
+ŒŒ %
+==
+ŒŒ& (
+
+myUsername
+ŒŒ) 3
+)
+ŒŒ3 4
+{
+œœ 
+ServiceLocator
+–– 
+.
+–– 
+
+Navigation
+–– )
+.
+––) *)
+NavigateToWaitingForGuesses
+––* E
+(
+––E F
+drawing
+––F M
+.
+––M N
+WordKey
+––N U
+)
+––U V
+;
+––V W
+}
+—— 
+else
+““ 
+{
+”” 
+ServiceLocator
+‘‘ 
+.
+‘‘ 
+
+Navigation
+‘‘ )
+.
+‘‘) *
+NavigateToGuess
+‘‘* 9
+(
+‘‘9 :
+drawing
+‘‘: A
+)
+‘‘A B
+;
+‘‘B C
+}
+’’ 
+}
+÷÷ 	
+private
+ÿÿ 
+void
+ÿÿ 
+OnConnectionLost
+ÿÿ %
+(
+ÿÿ% &
+)
+ÿÿ& '
+{
+ŸŸ 	
+Application
+⁄⁄ 
+.
+⁄⁄ 
+Current
+⁄⁄ 
+.
+⁄⁄  
+
+Dispatcher
+⁄⁄  *
+.
+⁄⁄* +
+Invoke
+⁄⁄+ 1
+(
+⁄⁄1 2 
+CloseCurrentWindow
+⁄⁄2 D
+)
+⁄⁄D E
+;
+⁄⁄E F
+}
+€€ 	
+private
+›› 
+void
+›› '
+UnsubscribeFromGameEvents
+›› .
+(
+››. /
+)
+››/ 0
+{
+ﬁﬁ 	
+GameClientManager
+ﬂﬂ 
+.
+ﬂﬂ 
+Instance
+ﬂﬂ &
+.
+ﬂﬂ& ' 
+GuessingPhaseStart
+ﬂﬂ' 9
+-=
+ﬂﬂ: <-
+OnGuessingPhaseStart_FromServer
+ﬂﬂ= \
+;
+ﬂﬂ\ ]
+GameClientManager
+‡‡ 
+.
+‡‡ 
+Instance
+‡‡ &
+.
+‡‡& '
+ConnectionLost
+‡‡' 5
+-=
+‡‡6 8
+OnConnectionLost
+‡‡9 I
+;
+‡‡I J
+}
+·· 	
+private
+„„ 
+void
+„„  
+CloseCurrentWindow
+„„ '
+(
+„„' (
+)
+„„( )
+{
+‰‰ 	'
+UnsubscribeFromGameEvents
+ÂÂ %
+(
+ÂÂ% &
+)
+ÂÂ& '
+;
+ÂÂ' (
+_countdownTimer
+ÊÊ 
+?
+ÊÊ 
+.
+ÊÊ 
+Stop
+ÊÊ !
+(
+ÊÊ! "
+)
+ÊÊ" #
+;
+ÊÊ# $
+Window
+ËË 
+currentWindow
+ËË  
+=
+ËË! "
+Application
+ËË# .
+.
+ËË. /
+Current
+ËË/ 6
+.
+ËË6 7
+Windows
+ËË7 >
+.
+ÈÈ 
+OfType
+ÈÈ 
+<
+ÈÈ 
+Window
+ÈÈ 
+>
+ÈÈ 
+(
+ÈÈ  
+)
+ÈÈ  !
+.
+ÍÍ 
+FirstOrDefault
+ÍÍ 
+(
+ÍÍ  
+w
+ÍÍ  !
+=>
+ÍÍ" $
+w
+ÍÍ% &
+.
+ÍÍ& '
+DataContext
+ÍÍ' 2
+==
+ÍÍ3 5
+this
+ÍÍ6 :
+)
+ÍÍ: ;
+;
+ÍÍ; <
+currentWindow
+ÏÏ 
+?
+ÏÏ 
+.
+ÏÏ 
+Close
+ÏÏ  
+(
+ÏÏ  !
+)
+ÏÏ! "
+;
+ÏÏ" #
+}
+ÌÌ 	
+private
+ÔÔ 
+static
+ÔÔ 
+void
+ÔÔ  
+ExecuteCloseWindow
+ÔÔ .
+(
+ÔÔ. /
+object
+ÔÔ/ 5
+	parameter
+ÔÔ6 ?
+)
+ÔÔ? @
+{
+ 	
+if
+ÒÒ 
+(
+ÒÒ 
+	parameter
+ÒÒ 
+is
+ÒÒ 
+Window
+ÒÒ #
+)
+ÒÒ# $
+Application
+ÒÒ% 0
+.
+ÒÒ0 1
+Current
+ÒÒ1 8
+.
+ÒÒ8 9
+Shutdown
+ÒÒ9 A
+(
+ÒÒA B
+)
+ÒÒB C
+;
+ÒÒC D
+}
+ÚÚ 	
+private
+ÙÙ 
+static
+ÙÙ 
+void
+ÙÙ #
+ExecuteMaximizeWindow
+ÙÙ 1
+(
+ÙÙ1 2
+object
+ÙÙ2 8
+	parameter
+ÙÙ9 B
+)
+ÙÙB C
+{
+ıı 	
+if
+ˆˆ 
+(
+ˆˆ 
+	parameter
+ˆˆ 
+is
+ˆˆ 
+Window
+ˆˆ #
+window
+ˆˆ$ *
+)
+ˆˆ* +
+window
+˜˜ 
+.
+˜˜ 
+WindowState
+˜˜ "
+=
+˜˜# $
+window
+˜˜% +
+.
+˜˜+ ,
+WindowState
+˜˜, 7
+==
+˜˜8 :
+WindowState
+˜˜; F
+.
+˜˜F G
+	Maximized
+˜˜G P
+?
+˜˜Q R
+WindowState
+˜˜S ^
+.
+˜˜^ _
+Normal
+˜˜_ e
+:
+˜˜f g
+WindowState
+˜˜h s
+.
+˜˜s t
+	Maximized
+˜˜t }
+;
+˜˜} ~
+}
+¯¯ 	
+private
+˙˙ 
+static
+˙˙ 
+void
+˙˙ #
+ExecuteMinimizeWindow
+˙˙ 1
+(
+˙˙1 2
+object
+˙˙2 8
+	parameter
+˙˙9 B
+)
+˙˙B C
+{
+˚˚ 	
+if
+¸¸ 
+(
+¸¸ 
+	parameter
+¸¸ 
+is
+¸¸ 
+Window
+¸¸ #
+window
+¸¸$ *
+)
+¸¸* +
+window
+¸¸, 2
+.
+¸¸2 3
+WindowState
+¸¸3 >
+=
+¸¸? @
+WindowState
+¸¸A L
+.
+¸¸L M
+	Minimized
+¸¸M V
+;
+¸¸V W
+}
+˝˝ 	
+}
+˛˛ 
+}ˇˇ ¨®
+°C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Match\AnswersScreenViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Match& +
+{ 
+public 
+
+class 
+PlayerViewModel  
+:! "
+ViewModelBase# 0
+{ 
+private 
+string 
+	_username  
+;  !
+public 
+string 
+Username 
+{ 	
+get 
+=> 
+	_username 
+; 
+set 
+{ 
+	_username 
+= 
+value #
+;# $
+OnPropertyChanged% 6
+(6 7
+nameof7 =
+(= >
+Username> F
+)F G
+)G H
+;H I
+}J K
+} 	
+private 
+int 
+_score 
+; 
+public 
+int 
+Score 
+{ 	
+get   
+=>   
+_score   
+;   
+set!! 
+{!! 
+_score!! 
+=!! 
+value!!  
+;!!  !
+OnPropertyChanged!!" 3
+(!!3 4
+nameof!!4 :
+(!!: ;
+Score!!; @
+)!!@ A
+)!!A B
+;!!B C
+}!!D E
+}"" 	
+}## 
+public%% 
+
+class%%  
+ChatMessageViewModel%% %
+:%%& '
+ViewModelBase%%( 5
+{&& 
+public'' 
+string'' 
+Sender'' 
+{'' 
+get'' "
+;''" #
+set''$ '
+;''' (
+}'') *
+public(( 
+string(( 
+Message(( 
+{(( 
+get((  #
+;((# $
+set((% (
+;((( )
+}((* +
+})) 
+public++ 
+
+class++ "
+AnswersScreenViewModel++ '
+:++( )
+ViewModelBase++* 7
+{,, 
+private-- 
+const-- 
+int-- 
+SecondsPerGuess-- )
+=--* +
+$num--, -
+;--- .
+private// 
+readonly// 
+List// 
+<// 
+
+DrawingDto// (
+>//( )
+_allDrawings//* 6
+;//6 7
+private00 
+readonly00 
+List00 
+<00 
+GuessDto00 &
+>00& '
+_allGuesses00( 3
+;003 4
+private11 
+List11 
+<11 
+GuessDto11 
+>11 %
+_guessesForCurrentDrawing11 8
+;118 9
+private22 
+DispatcherTimer22 
+_timer22  &
+;22& '
+private33 
+int33 
+_drawingIndex33 !
+=33" #
+-33$ %
+$num33% &
+;33& '
+private44 
+int44 
+_guessIndex44 
+=44  !
+-44" #
+$num44# $
+;44$ %
+private66 
+string66 
+_drawingArtistName66 )
+;66) *
+public77 
+string77 
+DrawingArtistName77 '
+{88 	
+get99 
+=>99 
+_drawingArtistName99 %
+;99% &
+set:: 
+{:: 
+_drawingArtistName:: $
+=::% &
+value::' ,
+;::, -
+OnPropertyChanged::. ?
+(::? @
+nameof::@ F
+(::F G
+DrawingArtistName::G X
+)::X Y
+)::Y Z
+;::Z [
+}::\ ]
+};; 	
+private== 
+StrokeCollection==  "
+_currentDrawingStrokes==! 7
+;==7 8
+public>> 
+StrokeCollection>> !
+CurrentDrawingStrokes>>  5
+{?? 	
+get@@ 
+=>@@ "
+_currentDrawingStrokes@@ )
+;@@) *
+setAA 
+{AA "
+_currentDrawingStrokesAA (
+=AA) *
+valueAA+ 0
+;AA0 1
+OnPropertyChangedAA2 C
+(AAC D
+nameofAAD J
+(AAJ K!
+CurrentDrawingStrokesAAK `
+)AA` a
+)AAa b
+;AAb c
+}AAd e
+}BB 	
+privateDD 
+stringDD "
+_currentDisplayedGuessDD -
+;DD- .
+publicEE 
+stringEE !
+CurrentDisplayedGuessEE +
+{FF 	
+getGG 
+=>GG "
+_currentDisplayedGuessGG )
+;GG) *
+setHH 
+{HH "
+_currentDisplayedGuessHH (
+=HH) *
+valueHH+ 0
+;HH0 1
+OnPropertyChangedHH2 C
+(HHC D
+nameofHHD J
+(HHJ K!
+CurrentDisplayedGuessHHK `
+)HH` a
+)HHa b
+;HHb c
+}HHd e
+}II 	
+privateKK 
+BrushKK 
+_currentGuessColorKK (
+;KK( )
+publicLL 
+BrushLL 
+CurrentGuessColorLL &
+{MM 	
+getNN 
+=>NN 
+_currentGuessColorNN %
+;NN% &
+setOO 
+{OO 
+_currentGuessColorOO $
+=OO% &
+valueOO' ,
+;OO, -
+OnPropertyChangedOO. ?
+(OO? @
+nameofOO@ F
+(OOF G
+CurrentGuessColorOOG X
+)OOX Y
+)OOY Z
+;OOZ [
+}OO\ ]
+}PP 	
+publicRR  
+ObservableCollectionRR #
+<RR# $
+PlayerViewModelRR$ 3
+>RR3 4
+
+PlayerListRR5 ?
+{RR@ A
+getRRB E
+;RRE F
+setRRG J
+;RRJ K
+}RRL M
+publicSS  
+ObservableCollectionSS #
+<SS# $ 
+ChatMessageViewModelSS$ 8
+>SS8 9
+ChatMessagesSS: F
+{SSG H
+getSSI L
+;SSL M
+setSSN Q
+;SSQ R
+}SSS T
+privateUU 
+stringUU 
+_newChatMessageUU &
+;UU& '
+publicVV 
+stringVV 
+NewChatMessageVV $
+{WW 	
+getXX 
+=>XX 
+_newChatMessageXX "
+;XX" #
+setYY 
+{ZZ 
+_newChatMessage[[ 
+=[[  !
+value[[" '
+;[[' (
+OnPropertyChanged\\ !
+(\\! "
+nameof\\" (
+(\\( )
+NewChatMessage\\) 7
+)\\7 8
+)\\8 9
+;\\9 :
+}]] 
+}^^ 	
+public`` 
+ICommand`` 
+SendMessageCommand`` *
+{``+ ,
+get``- 0
+;``0 1
+}``2 3
+publicbb "
+AnswersScreenViewModelbb %
+(bb% &
+Listbb& *
+<bb* +
+
+DrawingDtobb+ 5
+>bb5 6
+allDrawingsbb7 B
+,bbB C
+ListbbD H
+<bbH I
+GuessDtobbI Q
+>bbQ R
+
+allGuessesbbS ]
+,bb] ^
+Listbb_ c
+<bbc d
+PlayerScoreDtobbd r
+>bbr s
+	allScoresbbt }
+)bb} ~
+{cc 	
+_allDrawingsdd 
+=dd 
+allDrawingsdd &
+??dd' )
+newdd* -
+Listdd. 2
+<dd2 3
+
+DrawingDtodd3 =
+>dd= >
+(dd> ?
+)dd? @
+;dd@ A
+_allGuessesee 
+=ee 
+
+allGuessesee $
+??ee% '
+newee( +
+Listee, 0
+<ee0 1
+GuessDtoee1 9
+>ee9 :
+(ee: ;
+)ee; <
+;ee< =
+_drawingIndexff 
+=ff 
+-ff 
+$numff 
+;ff 
+_guessIndexgg 
+=gg 
+-gg 
+$numgg 
+;gg 
+CurrentGuessColorii 
+=ii 
+Brushesii  '
+.ii' (
+Blackii( -
+;ii- .
+
+PlayerListjj 
+=jj 
+newjj  
+ObservableCollectionjj 1
+<jj1 2
+PlayerViewModeljj2 A
+>jjA B
+(jjB C
+)jjC D
+;jjD E
+ifll 
+(ll 
+	allScoresll 
+!=ll 
+nullll !
+)ll! "
+{mm 
+foreachnn 
+(nn 
+varnn 
+scorenn "
+innn# %
+	allScoresnn& /
+.nn/ 0
+OrderByDescendingnn0 A
+(nnA B
+snnB C
+=>nnD F
+snnG H
+.nnH I
+ScorennI N
+)nnN O
+)nnO P
+{oo 
+
+PlayerListpp 
+.pp 
+Addpp "
+(pp" #
+newpp# &
+PlayerViewModelpp' 6
+{pp7 8
+Usernamepp9 A
+=ppB C
+scoreppD I
+.ppI J
+UsernameppJ R
+,ppR S
+ScoreppT Y
+=ppZ [
+scorepp\ a
+.ppa b
+Scoreppb g
+}pph i
+)ppi j
+;ppj k
+}qq 
+}rr 
+ChatMessagestt 
+=tt 
+newtt  
+ObservableCollectiontt 3
+<tt3 4 
+ChatMessageViewModeltt4 H
+>ttH I
+(ttI J
+)ttJ K
+;ttK L
+SendMessageCommanduu 
+=uu  
+newuu! $
+RelayCommanduu% 1
+(uu1 2
+OnSendChatMessageuu2 C
+,uuC D
+CanSendChatMessageuuE W
+)uuW X
+;uuX Y
+GameClientManagervv 
+.vv 
+Instancevv &
+.vv& '!
+InGameMessageReceivedvv' <
++=vv= ?+
+OnInGameMessageReceived_Handlervv@ _
+;vv_ `
+GameClientManagerxx 
+.xx 
+Instancexx &
+.xx& '
+GameEndxx' .
+-=xx/ 1
+CloseOnNextPhasexx2 B
+;xxB C
+GameClientManageryy 
+.yy 
+Instanceyy &
+.yy& '
+ConnectionLostyy' 5
+-=yy6 8
+CloseOnDisconnectyy9 J
+;yyJ K
+_timer{{ 
+={{ 
+new{{ 
+DispatcherTimer{{ (
+{{{) *
+Interval{{+ 3
+={{4 5
+TimeSpan{{6 >
+.{{> ?
+FromSeconds{{? J
+({{J K
+SecondsPerGuess{{K Z
+){{Z [
+}{{\ ]
+;{{] ^
+_timer|| 
+.|| 
+Tick|| 
++=|| 
+OnTimerTick|| &
+;||& '
+ShowNextItem~~ 
+(~~ 
+)~~ 
+;~~ 
+_timer 
+. 
+Start 
+( 
+) 
+; 
+}
+ÄÄ 	
+private
+ÇÇ 
+StrokeCollection
+ÇÇ  "
+LoadStrokesFromBytes
+ÇÇ! 5
+(
+ÇÇ5 6
+byte
+ÇÇ6 :
+[
+ÇÇ: ;
+]
+ÇÇ; <
+data
+ÇÇ= A
+)
+ÇÇA B
+{
+ÉÉ 	
+if
+ÑÑ 
+(
+ÑÑ 
+data
+ÑÑ 
+==
+ÑÑ 
+null
+ÑÑ 
+||
+ÑÑ 
+data
+ÑÑ  $
+.
+ÑÑ$ %
+Length
+ÑÑ% +
+==
+ÑÑ, .
+$num
+ÑÑ/ 0
+)
+ÑÑ0 1
+{
+ÖÖ 
+return
+ÜÜ 
+new
+ÜÜ 
+StrokeCollection
+ÜÜ +
+(
+ÜÜ+ ,
+)
+ÜÜ, -
+;
+ÜÜ- .
+}
+áá 
+try
+àà 
+{
+ââ 
+using
+ää 
+(
+ää 
+var
+ää 
+ms
+ää 
+=
+ää 
+new
+ää  #
+MemoryStream
+ää$ 0
+(
+ää0 1
+data
+ää1 5
+)
+ää5 6
+)
+ää6 7
+{
+ãã 
+return
+åå 
+new
+åå 
+StrokeCollection
+åå /
+(
+åå/ 0
+ms
+åå0 2
+)
+åå2 3
+;
+åå3 4
+}
+çç 
+}
+éé 
+catch
+èè 
+(
+èè 
+	Exception
+èè 
+ex
+èè 
+)
+èè  
+{
+êê 
+Console
+ëë 
+.
+ëë 
+	WriteLine
+ëë !
+(
+ëë! "
+$"
+ëë" $
+$str
+ëë$ ;
+{
+ëë; <
+ex
+ëë< >
+.
+ëë> ?
+Message
+ëë? F
+}
+ëëF G
+"
+ëëG H
+)
+ëëH I
+;
+ëëI J
+return
+íí 
+new
+íí 
+StrokeCollection
+íí +
+(
+íí+ ,
+)
+íí, -
+;
+íí- .
+}
+ìì 
+}
+îî 	
+private
+ññ 
+void
+ññ 
+OnTimerTick
+ññ  
+(
+ññ  !
+object
+ññ! '
+sender
+ññ( .
+,
+ññ. /
+	EventArgs
+ññ0 9
+e
+ññ: ;
+)
+ññ; <
+{
+óó 	
+ShowNextItem
+òò 
+(
+òò 
+)
+òò 
+;
+òò 
+}
+ôô 	
+private
+õõ 
+void
+õõ 
+ShowNextItem
+õõ !
+(
+õõ! "
+)
+õõ" #
+{
+úú 	
+if
+ùù 
+(
+ùù 
+_guessIndex
+ùù 
+==
+ùù 
+-
+ùù  
+$num
+ùù  !
+)
+ùù! "
+{
+ûû 
+_drawingIndex
+üü 
+++
+üü 
+;
+üü  
+if
+°° 
+(
+°° 
+_drawingIndex
+°° !
+>=
+°°" $
+_allDrawings
+°°% 1
+.
+°°1 2
+Count
+°°2 7
+)
+°°7 8
+{
+¢¢ 
+_timer
+££ 
+.
+££ 
+Stop
+££ 
+(
+££  
+)
+££  !
+;
+££! "#
+CurrentDisplayedGuess
+§§ )
+=
+§§* +
+Lang
+§§, 0
+.
+§§0 1)
+answersScreenLbEndOfAnswers
+§§1 L
+;
+§§L M
+CurrentGuessColor
+•• %
+=
+••& '
+Brushes
+••( /
+.
+••/ 0
+Black
+••0 5
+;
+••5 6
+return
+¶¶ 
+;
+¶¶ 
+}
+ßß 
+var
+©© 
+currentDrawing
+©© "
+=
+©©# $
+_allDrawings
+©©% 1
+[
+©©1 2
+_drawingIndex
+©©2 ?
+]
+©©? @
+;
+©©@ A
+DrawingArtistName
+™™ !
+=
+™™" #
+currentDrawing
+™™$ 2
+.
+™™2 3
+OwnerUsername
+™™3 @
+;
+™™@ A#
+CurrentDrawingStrokes
+´´ %
+=
+´´& '"
+LoadStrokesFromBytes
+´´( <
+(
+´´< =
+currentDrawing
+´´= K
+.
+´´K L
+DrawingData
+´´L W
+)
+´´W X
+;
+´´X Y'
+_guessesForCurrentDrawing
+≠≠ )
+=
+≠≠* +
+_allGuesses
+≠≠, 7
+.
+ÆÆ 
+Where
+ÆÆ 
+(
+ÆÆ 
+g
+ÆÆ 
+=>
+ÆÆ 
+g
+ÆÆ  !
+.
+ÆÆ! "
+	DrawingId
+ÆÆ" +
+==
+ÆÆ, .
+currentDrawing
+ÆÆ/ =
+.
+ÆÆ= >
+	DrawingId
+ÆÆ> G
+)
+ÆÆG H
+.
+ØØ 
+ToList
+ØØ 
+(
+ØØ 
+)
+ØØ 
+;
+ØØ #
+CurrentDisplayedGuess
+±± %
+=
+±±& '
+$"
+±±( *
+{
+±±* +
+Lang
+±±+ /
+.
+±±/ 0(
+answersScreenMsgTheWordWas
+±±0 J
+}
+±±J K
+{
+±±K L
+currentDrawing
+±±L Z
+.
+±±Z [
+WordKey
+±±[ b
+}
+±±b c
+"
+±±c d
+;
+±±d e
+CurrentGuessColor
+≤≤ !
+=
+≤≤" #
+Brushes
+≤≤$ +
+.
+≤≤+ ,
+DarkBlue
+≤≤, 4
+;
+≤≤4 5
+_guessIndex
+¥¥ 
+=
+¥¥ 
+$num
+¥¥ 
+;
+¥¥  
+}
+µµ 
+else
+∂∂ 
+{
+∑∑ 
+if
+∏∏ 
+(
+∏∏ 
+_guessIndex
+∏∏ 
+<
+∏∏  !'
+_guessesForCurrentDrawing
+∏∏" ;
+.
+∏∏; <
+Count
+∏∏< A
+)
+∏∏A B
+{
+ππ 
+var
+∫∫ 
+guess
+∫∫ 
+=
+∫∫ '
+_guessesForCurrentDrawing
+∫∫  9
+[
+∫∫9 :
+_guessIndex
+∫∫: E
+]
+∫∫E F
+;
+∫∫F G#
+CurrentDisplayedGuess
+ªª )
+=
+ªª* +
+$"
+ªª, .
+{
+ªª. /
+guess
+ªª/ 4
+.
+ªª4 5
+GuesserUsername
+ªª5 D
+}
+ªªD E
+$str
+ªªE G
+{
+ªªG H
+guess
+ªªH M
+.
+ªªM N
+	GuessText
+ªªN W
+}
+ªªW X
+"
+ªªX Y
+;
+ªªY Z
+CurrentGuessColor
+ºº %
+=
+ºº& '
+guess
+ºº( -
+.
+ºº- .
+	IsCorrect
+ºº. 7
+?
+ºº8 9
+Brushes
+ºº: A
+.
+ººA B
+Green
+ººB G
+:
+ººH I
+Brushes
+ººJ Q
+.
+ººQ R
+Red
+ººR U
+;
+ººU V
+_guessIndex
+ææ 
+++
+ææ !
+;
+ææ! "
+}
+øø 
+else
+¿¿ 
+{
+¡¡ #
+CurrentDisplayedGuess
+¬¬ )
+=
+¬¬* +
+Lang
+¬¬, 0
+.
+¬¬0 1)
+answersScreenMsgNextDrawing
+¬¬1 L
+;
+¬¬L M
+CurrentGuessColor
+√√ %
+=
+√√& '
+Brushes
+√√( /
+.
+√√/ 0
+Black
+√√0 5
+;
+√√5 6
+_guessIndex
+≈≈ 
+=
+≈≈  !
+-
+≈≈" #
+$num
+≈≈# $
+;
+≈≈$ %
+}
+∆∆ 
+}
+«« 
+}
+»» 	
+private
+   
+void
+   
+OnSendChatMessage
+   &
+(
+  & '
+object
+  ' -
+	parameter
+  . 7
+)
+  7 8
+{
+ÀÀ 	
+try
+ÃÃ 
+{
+ÕÕ 
+GameClientManager
+ŒŒ !
+.
+ŒŒ! "
+Instance
+ŒŒ" *
+.
+ŒŒ* +
+SendInGameMessage
+ŒŒ+ <
+(
+ŒŒ< =
+NewChatMessage
+ŒŒ= K
+)
+ŒŒK L
+;
+ŒŒL M
+NewChatMessage
+œœ 
+=
+œœ  
+string
+œœ! '
+.
+œœ' (
+Empty
+œœ( -
+;
+œœ- .
+}
+–– 
+catch
+—— 
+(
+—— 
+	Exception
+—— 
+ex
+—— 
+)
+——  
+{
+““ 
+
+MessageBox
+”” 
+.
+”” 
+Show
+”” 
+(
+””  
+$"
+””  "
+{
+””" #
+Lang
+””# '
+.
+””' (&
+alertErrorSendingMessage
+””( @
+}
+””@ A
+{
+””A B
+ex
+””B D
+.
+””D E
+Message
+””E L
+}
+””L M
+"
+””M N
+,
+””N O
+Lang
+””P T
+.
+””T U
+alertChatError
+””U c
+,
+””c d
+MessageBoxButton
+””e u
+.
+””u v
+OK
+””v x
+,
+””x y
+MessageBoxImage””z â
+.””â ä
+Warning””ä ë
+)””ë í
+;””í ì
+}
+‘‘ 
+}
+’’ 	
+private
+◊◊ 
+bool
+◊◊  
+CanSendChatMessage
+◊◊ '
+(
+◊◊' (
+object
+◊◊( .
+	parameter
+◊◊/ 8
+)
+◊◊8 9
+{
+ÿÿ 	
+return
+ŸŸ 
+!
+ŸŸ 
+string
+ŸŸ 
+.
+ŸŸ 
+IsNullOrEmpty
+ŸŸ (
+(
+ŸŸ( )
+NewChatMessage
+ŸŸ) 7
+)
+ŸŸ7 8
+;
+ŸŸ8 9
+}
+⁄⁄ 	
+private
+‹‹ 
+void
+‹‹ -
+OnInGameMessageReceived_Handler
+‹‹ 4
+(
+‹‹4 5
+object
+‹‹5 ;
+sender
+‹‹< B
+,
+‹‹B C$
+InGameMessageEventArgs
+‹‹D Z
+e
+‹‹[ \
+)
+‹‹\ ]
+{
+›› 	
+Application
+ﬁﬁ 
+.
+ﬁﬁ 
+Current
+ﬁﬁ 
+?
+ﬁﬁ  
+.
+ﬁﬁ  !
+
+Dispatcher
+ﬁﬁ! +
+.
+ﬁﬁ+ ,
+Invoke
+ﬁﬁ, 2
+(
+ﬁﬁ2 3
+(
+ﬁﬁ3 4
+)
+ﬁﬁ4 5
+=>
+ﬁﬁ6 8
+{
+ﬂﬂ 
+ChatMessages
+‡‡ 
+.
+‡‡ 
+Add
+‡‡  
+(
+‡‡  !
+new
+‡‡! $"
+ChatMessageViewModel
+‡‡% 9
+{
+‡‡: ;
+Sender
+‡‡< B
+=
+‡‡C D
+e
+‡‡E F
+.
+‡‡F G
+Sender
+‡‡G M
+,
+‡‡M N
+Message
+‡‡O V
+=
+‡‡W X
+e
+‡‡Y Z
+.
+‡‡Z [
+Message
+‡‡[ b
+}
+‡‡c d
+)
+‡‡d e
+;
+‡‡e f
+}
+·· 
+)
+·· 
+;
+·· 
+}
+‚‚ 	
+private
+‰‰ 
+void
+‰‰ 
+CloseOnNextPhase
+‰‰ %
+(
+‰‰% &
+object
+‰‰& ,
+sender
+‰‰- 3
+,
+‰‰3 4
+	EventArgs
+‰‰5 >
+e
+‰‰? @
+)
+‰‰@ A
+{
+ÂÂ 	
+Application
+ÊÊ 
+.
+ÊÊ 
+Current
+ÊÊ 
+?
+ÊÊ  
+.
+ÊÊ  !
+
+Dispatcher
+ÊÊ! +
+.
+ÊÊ+ ,
+Invoke
+ÊÊ, 2
+(
+ÊÊ2 3
+CloseWindow
+ÊÊ3 >
+)
+ÊÊ> ?
+;
+ÊÊ? @
+}
+ÁÁ 	
+private
+ÈÈ 
+void
+ÈÈ 
+CloseOnDisconnect
+ÈÈ &
+(
+ÈÈ& '
+)
+ÈÈ' (
+{
+ÍÍ 	
+Application
+ÎÎ 
+.
+ÎÎ 
+Current
+ÎÎ 
+?
+ÎÎ  
+.
+ÎÎ  !
+
+Dispatcher
+ÎÎ! +
+.
+ÎÎ+ ,
+Invoke
+ÎÎ, 2
+(
+ÎÎ2 3
+CloseWindow
+ÎÎ3 >
+)
+ÎÎ> ?
+;
+ÎÎ? @
+}
+ÏÏ 	
+private
+ÓÓ 
+void
+ÓÓ 
+Cleanup
+ÓÓ 
+(
+ÓÓ 
+)
+ÓÓ 
+{
+ÔÔ 	
+if
+ 
+(
+ 
+_timer
+ 
+!=
+ 
+null
+ 
+)
+ 
+{
+ÒÒ 
+_timer
+ÚÚ 
+.
+ÚÚ 
+Stop
+ÚÚ 
+(
+ÚÚ 
+)
+ÚÚ 
+;
+ÚÚ 
+_timer
+ÛÛ 
+.
+ÛÛ 
+Tick
+ÛÛ 
+-=
+ÛÛ 
+OnTimerTick
+ÛÛ *
+;
+ÛÛ* +
+}
+ÙÙ 
+GameClientManager
+ˆˆ 
+.
+ˆˆ 
+Instance
+ˆˆ &
+.
+ˆˆ& '#
+InGameMessageReceived
+ˆˆ' <
+-=
+ˆˆ= ?-
+OnInGameMessageReceived_Handler
+ˆˆ@ _
+;
+ˆˆ_ `
+GameClientManager
+˜˜ 
+.
+˜˜ 
+Instance
+˜˜ &
+.
+˜˜& '
+GameEnd
+˜˜' .
+-=
+˜˜/ 1
+CloseOnNextPhase
+˜˜2 B
+;
+˜˜B C
+GameClientManager
+¯¯ 
+.
+¯¯ 
+Instance
+¯¯ &
+.
+¯¯& '
+ConnectionLost
+¯¯' 5
+-=
+¯¯6 8
+CloseOnDisconnect
+¯¯9 J
+;
+¯¯J K
+}
+˘˘ 	
+private
+˚˚ 
+void
+˚˚ 
+CloseWindow
+˚˚  
+(
+˚˚  !
+)
+˚˚! "
+{
+¸¸ 	
+Cleanup
+˝˝ 
+(
+˝˝ 
+)
+˝˝ 
+;
+˝˝ 
+Window
+˛˛ 
+w
+˛˛ 
+=
+˛˛ 
+Application
+˛˛ "
+.
+˛˛" #
+Current
+˛˛# *
+.
+˛˛* +
+Windows
+˛˛+ 2
+.
+ˇˇ 
+OfType
+ˇˇ 
+<
+ˇˇ 
+AnswersScreenView
+ˇˇ )
+>
+ˇˇ) *
+(
+ˇˇ* +
+)
+ˇˇ+ ,
+.
+ÄÄ 
+FirstOrDefault
+ÄÄ 
+(
+ÄÄ  
+win
+ÄÄ  #
+=>
+ÄÄ$ &
+win
+ÄÄ' *
+.
+ÄÄ* +
+DataContext
+ÄÄ+ 6
+==
+ÄÄ7 9
+this
+ÄÄ: >
+)
+ÄÄ> ?
+;
+ÄÄ? @
+w
+ÇÇ 
+?
+ÇÇ 
+.
+ÇÇ 
+Close
+ÇÇ 
+(
+ÇÇ 
+)
+ÇÇ 
+;
+ÇÇ 
+}
+ÉÉ 	
+}
+ÑÑ 
+}ÖÖ ùq
+©C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\MatchSettings\MatchSettingsViewModel.cs
 	namespace
 
  	
@@ -9772,525 +21350,5910 @@ MessageBox
 ÆÆ 	
 }
 ØØ 
-}∞∞ Ÿ¨
-öC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.cs
-	namespace 	
-GuessMyMessClient
+}∞∞ ≈¿
+°C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-	ViewModel %
-.% &
-Matches& -
-{ 
-public 
+. 
+	ViewModel %
+.% &
+Lobby& +
+{ 
+public 
 
-class 
-MatchesViewModel !
-:" #
-ViewModelBase$ 1
-{ 
-private 
-bool !
-_isPublicViewSelected *
-=+ ,
-true- 1
-;1 2
+class "
+DirectMessageViewModel '
+:( )
+ViewModelBase* 7
+,7 8
+IDisposable9 D
+{ 
 private 
-string 
-
-_matchCode !
-;! "
-private  
-ObservableCollection $
-<$ %
-MatchInfoModel% 3
->3 4
-_publicMatches5 C
-;C D
-private 
-string 
-_joiningMatchId &
-=' (
-null) -
-;- .
-private 
-bool  
-_joiningPrivateMatch )
-=* +
-false, 1
-;1 2
+static 
+SocialServiceClient *
+Client+ 1
+=>2 4
+SocialClientManager5 H
+.H I
+InstanceI Q
+.Q R
+ClientR X
+;X Y
+public  
+ObservableCollection #
+<# $
+	FriendDto$ -
+>- .
+Conversations/ <
+{= >
+get? B
+;B C
+}D E
+public  
+ObservableCollection #
+<# $
+DirectMessageDto$ 4
+>4 5
+ChatHistory6 A
+{B C
+getD G
+;G H
+}I J
 private 
-Window 
-_currentWindow %
-=& '
-null( ,
-;, -
-public 
-bool  
-IsPublicViewSelected (
-{ 	
-get 
-=> !
-_isPublicViewSelected (
-;( )
-set 
-=> 
-SetProperty 
-( 
-ref "!
-_isPublicViewSelected# 8
-,8 9
-value: ?
-)? @
-;@ A
-} 	
-public 
-string 
-	MatchCode 
-{ 	
-get 
-=> 
+string 
+_messageText #
+;# $
+public 
+string 
+MessageText !
+{ 	
+get 
+{ 
+return 
+_messageText #
+;# $
+} 
+set 
+{ 
+if 
+( 
+_messageText  
+!=! #
+value$ )
+)) *
+{ 
+_messageText    
+=  ! "
+value  # (
+;  ( )
+OnPropertyChanged!! %
+(!!% &
+)!!& '
+;!!' (
+}"" 
+}## 
+}$$ 	
+private&& 
+string&& '
+_currentChatPartnerUsername&& 2
+;&&2 3
+private'' 
+	FriendDto'' !
+_selectedConversation'' /
+;''/ 0
+public(( 
+	FriendDto((  
+SelectedConversation(( -
+{)) 	
+get** 
+{++ 
+return,, !
+_selectedConversation,, ,
+;,,, -
+}-- 
+set.. 
+{// 
+if00 
+(00 !
+_selectedConversation00 )
+!=00* ,
+value00- 2
+)002 3
+{11 !
+_selectedConversation22 )
+=22* +
+value22, 1
+;221 2
+OnPropertyChanged33 %
+(33% &
+)33& '
+;33' (
+if55 
+(55 
+value55 
+!=55  
+null55! %
+)55% &
+{66 
+LoadChatHistory77 '
+(77' (
+value77( -
+.77- .
+Username77. 6
+)776 7
+;777 8
+}88 
+else99 
+{:: 
+ClearChatHistory;; (
+(;;( )
+);;) *
+;;;* +
+}<< 
+}== 
+}>> 
+}?? 	
+publicAA 
+ICommandAA 
+SendMessageCommandAA *
+{AA+ ,
+getAA- 0
+;AA0 1
+}AA2 3
+publicCC "
+DirectMessageViewModelCC %
+(CC% &
+)CC& '
+{DD 	
+ConversationsEE 
+=EE 
+newEE  
+ObservableCollectionEE  4
+<EE4 5
+	FriendDtoEE5 >
+>EE> ?
+(EE? @
+)EE@ A
+;EEA B
+ChatHistoryFF 
+=FF 
+newFF  
+ObservableCollectionFF 2
+<FF2 3
+DirectMessageDtoFF3 C
+>FFC D
+(FFD E
+)FFE F
+;FFF G
+SendMessageCommandGG 
+=GG  
+newGG! $
+RelayCommandGG% 1
+(GG1 2
+PerformSendMessageGG2 D
+,GGD E
+	parameterGGF O
+=>GGP R!
+CanPerformSendMessageGGS h
+(GGh i
+)GGi j
+)GGj k
+;GGk l
+SubscribeToEventsII 
+(II 
+)II 
+;II  
+ifKK 
+(KK $
+CanExecuteNetworkActionsKK (
+(KK( )
+)KK) *
+)KK* +
+{LL  
+LoadFriendsListAsyncMM $
+(MM$ %
+)MM% &
+;MM& '
+}NN 
+elseOO 
+{PP 
+ConsoleQQ 
+.QQ 
+	WriteLineQQ !
+(QQ! "
+$strQQ" _
+)QQ_ `
+;QQ` a
+}RR 
+}SS 	
+privateUU 
+boolUU $
+CanExecuteNetworkActionsUU -
+(UU- .
+)UU. /
+{VV 	
+returnWW 
+ClientWW 
+!=WW 
+nullWW !
+&&WW" $
+ClientWW% +
+.WW+ ,
+StateWW, 1
+==WW2 4
+CommunicationStateWW5 G
+.WWG H
+OpenedWWH N
+;WWN O
+}XX 	
+privateZZ 
+asyncZZ 
+TaskZZ  
+LoadFriendsListAsyncZZ /
+(ZZ/ 0
+)ZZ0 1
+{[[ 	
+if\\ 
+(\\ 
+!\\ $
+CanExecuteNetworkActions\\ )
+(\\) *
+)\\* +
+)\\+ ,
+{]] 
+Console^^ 
+.^^ 
+	WriteLine^^ !
+(^^! "
+$str^^" a
+)^^a b
+;^^b c
+return__ 
+;__ 
+}`` 
+tryaa 
+{bb 
+varcc 
+userscc 
+=cc 
+awaitcc !
+Clientcc" (
+.cc( )
+GetFriendsListAsynccc) <
+(cc< =
+SessionManagercc= K
+.ccK L
+InstanceccL T
+.ccT U
+CurrentUsernameccU d
+)ccd e
+;cce f
+Applicationdd 
+.dd 
+Currentdd #
+.dd# $
 
-_matchCode 
-; 
-set   
-=>   
-SetProperty   
-(   
-ref   "
+Dispatcherdd$ .
+.dd. /
+Invokedd/ 5
+(dd5 6
+(dd6 7
+)dd7 8
+=>dd9 ;
+{ee 
+Conversationsff !
+.ff! "
+Clearff" '
+(ff' (
+)ff( )
+;ff) *
+ifgg 
+(gg 
+usersgg 
+!=gg  
+nullgg! %
+)gg% &
+{hh 
+foreachii 
+(ii  !
+varii! $
+uii% &
+inii' )
+usersii* /
+)ii/ 0
+{jj 
+Conversationskk )
+.kk) *
+Addkk* -
+(kk- .
+ukk. /
+)kk/ 0
+;kk0 1
+}ll 
+}mm 
+}nn 
+)nn 
+;nn 
+}oo 
+catchpp 
+(pp 
+FaultExceptionpp !
 
-_matchCode  # -
-,  - .
-value  / 4
-)  4 5
-;  5 6
-}!! 	
-public##  
-ObservableCollection## #
-<### $
-MatchInfoModel##$ 2
->##2 3
-PublicMatches##4 A
-{$$ 	
-get%% 
-=>%% 
-_publicMatches%% !
-;%%! "
-set&& 
-=>&& 
-SetProperty&& 
-(&& 
-ref&& "
-_publicMatches&&# 1
-,&&1 2
-value&&3 8
-)&&8 9
-;&&9 :
-}'' 	
-public)) 
-RelayCommand)) $
-ShowPublicMatchesCommand)) 4
-{))5 6
-get))7 :
-;)): ;
-private))< C
-set))D G
-;))G H
-}))I J
-public** 
-RelayCommand** %
-ShowPrivateMatchesCommand** 5
-{**6 7
-get**8 ;
-;**; <
-private**= D
-set**E H
-;**H I
-}**J K
-public++ 
-RelayCommand++ "
-JoinPublicMatchCommand++ 2
-{++3 4
-get++5 8
-;++8 9
-private++: A
-set++B E
-;++E F
-}++G H
-public,, 
-RelayCommand,, #
-JoinPrivateMatchCommand,, 3
-{,,4 5
-get,,6 9
-;,,9 :
-private,,; B
-set,,C F
-;,,F G
-},,H I
-public-- 
-RelayCommand-- 
-RefreshCommand-- *
-{--+ ,
-get--- 0
-;--0 1
-set--3 6
-;--6 7
-}--8 9
-public.. 
-RelayCommand.. 
-ReturnCommand.. )
-{..* +
-get.., /
-;../ 0
-private..1 8
-set..9 <
-;..< =
-}..> ?
-public00 
-MatchesViewModel00 
-(00  
-)00  !
-{11 	
-PublicMatches22 
-=22 
-new22  
-ObservableCollection22  4
-<224 5
-MatchInfoModel225 C
->22C D
-(22D E
-)22E F
-;22F G$
-ShowPublicMatchesCommand44 $
-=44% &
-new44' *
-RelayCommand44+ 7
-(447 8
-(448 9
-p449 :
-)44: ;
-=>44< > 
-IsPublicViewSelected44? S
-=44T U
-true44V Z
-)44Z [
-;44[ \%
-ShowPrivateMatchesCommand55 %
-=55& '
-new55( +
-RelayCommand55, 8
-(558 9
-(559 :
-p55: ;
-)55; <
-=>55= ? 
-IsPublicViewSelected55@ T
-=55U V
-false55W \
-)55\ ]
-;55] ^"
-JoinPublicMatchCommand66 "
-=66# $
-new66% (
-RelayCommand66) 5
-(665 6"
-ExecuteJoinPublicMatch666 L
-)66L M
-;66M N#
-JoinPrivateMatchCommand77 #
-=77$ %
-new77& )
-RelayCommand77* 6
-(776 7
-async777 <
-(77= >
-p77> ?
-)77? @
-=>77A C
-await77D I(
-ExecuteJoinPrivateMatchAsync77J f
-(77f g
-p77g h
-)77h i
-)77i j
-;77j k
-ReturnCommand88 
-=88 
-new88 
-RelayCommand88  ,
-(88, -
-ExecuteReturn88- :
-)88: ;
-;88; <$
-MatchmakingClientManager:: $
-.::$ %
-Instance::% -
-.::- .&
-OnPublicMatchesListUpdated::. H
-+=::I K&
-OnPublicMatchesListUpdated::L f
-;::f g$
-MatchmakingClientManager;; $
-.;;$ %
-Instance;;% -
-.;;- .%
-OnMatchJoinedSuccessfully;;. G
-+=;;H J
-OnMatchJoined;;K X
-;;;X Y$
-MatchmakingClientManager<< $
-.<<$ %
-Instance<<% -
-.<<- .
-OnMatchmakingFailed<<. A
-+=<<B D
-OnMatchmakingFailed<<E X
-;<<X Y
-LoadPublicMatches>> 
-(>> 
-)>> 
-;>>  
-}?? 	
-privateAA 
-asyncAA 
-TaskAA 
-LoadPublicMatchesAA ,
-(AA, -
-)AA- .
-{BB 	
-varCC 
+fexGeneralpp" ,
+)pp, -
+{qq 
 
-matchesDtoCC 
-=CC 
-awaitCC "$
-MatchmakingClientManagerCC# ;
-.CC; <
-InstanceCC< D
-.CCD E!
-GetPublicMatchesAsyncCCE Z
-(CCZ [
-)CC[ \
-;CC\ ]&
-OnPublicMatchesListUpdatedDD &
-(DD& '
+MessageBoxrr 
+.rr 
+Showrr 
+(rr  
+Langss 
+.ss %
+alertChatLoadFriendsErrorss 2
+,ss2 3
+Langtt 
+.tt 
+alertErrorTitlett (
+,tt( )
+MessageBoxButtonuu $
+.uu$ %
+OKuu% '
+,uu' (
+MessageBoxImagevv #
+.vv# $
+Errorvv$ )
+)vv) *
+;vv* +
+Consoleww 
+.ww 
+	WriteLineww !
+(ww! "
+$"ww" $
+$strww$ D
+{wwD E
 
-matchesDtoDD' 1
-)DD1 2
-;DD2 3
-}EE 	
-privateGG 
-voidGG "
-ExecuteJoinPublicMatchGG +
-(GG+ ,
-objectGG, 2
-	parameterGG3 <
-)GG< =
-{HH 	
-ifII 
-(II 
-	parameterII 
-isII 
-MatchInfoModelII +
-	matchInfoII, 5
-&&II6 8
-	matchInfoII9 B
-.IIB C
-CanJoinIIC J
-)IIJ K
-{JJ 
-_joiningMatchIdKK 
-=KK  !
-	matchInfoKK" +
-.KK+ ,
-MatchIdKK, 3
-;KK3 4 
-_joiningPrivateMatchLL $
-=LL% &
-falseLL' ,
-;LL, -
-_currentWindowMM 
-=MM  
-FindParentWindowMM! 1
-(MM1 2
-)MM2 3
-;MM3 4$
-MatchmakingClientManagerOO (
-.OO( )
-InstanceOO) 1
-.OO1 2
-JoinPublicMatchOO2 A
-(OOA B
-	matchInfoOOB K
-.OOK L
-MatchIdOOL S
-)OOS T
-;OOT U
-}PP 
-elseQQ 
-ifQQ 
-(QQ 
-	parameterQQ 
-isQQ !
-stringQQ" (
-matchIdQQ) 0
-)QQ0 1
-{RR 
-_joiningMatchIdSS 
-=SS  !
-matchIdSS" )
-;SS) * 
-_joiningPrivateMatchTT $
-=TT% &
-falseTT' ,
-;TT, -
-_currentWindowUU 
-=UU  
-FindParentWindowUU! 1
-(UU1 2
-)UU2 3
-;UU3 4$
-MatchmakingClientManagerVV (
-.VV( )
-InstanceVV) 1
-.VV1 2
-JoinPublicMatchVV2 A
-(VVA B
-matchIdVVB I
-)VVI J
-;VVJ K
-}WW 
-elseXX 
-{YY 
+fexGeneralwwE O
+.wwO P
+MessagewwP W
+}wwW X
+"wwX Y
+)wwY Z
+;wwZ [
+}xx 
+catchyy 
+(yy %
+EndpointNotFoundExceptionyy ,
+exyy- /
+)yy/ 0
+{zz 
 
-MessageBoxZZ 
-.ZZ 
-ShowZZ 
-(ZZ  
-$strZZ  M
-,ZZM N
-$strZZO V
-)ZZV W
-;ZZW X
+MessageBox{{ 
+.{{ 
+Show{{ 
+({{  
+Lang|| 
+.|| '
+alertConnectionErrorMessage|| 4
+,||4 5
+Lang}} 
+.}} %
+alertConnectionErrorTitle}} 2
+,}}2 3
+MessageBoxButton~~ $
+.~~$ %
+OK~~% '
+,~~' (
+MessageBoxImage #
+.# $
+Error$ )
+)) *
+;* +
+Console
+ÄÄ 
+.
+ÄÄ 
+	WriteLine
+ÄÄ !
+(
+ÄÄ! "
+$"
+ÄÄ" $
+$str
+ÄÄ$ K
+{
+ÄÄK L
+ex
+ÄÄL N
+.
+ÄÄN O
+Message
+ÄÄO V
+}
+ÄÄV W
+"
+ÄÄW X
+)
+ÄÄX Y
+;
+ÄÄY Z
+}
+ÅÅ 
+catch
+ÇÇ 
+(
+ÇÇ 
+	Exception
+ÇÇ 
+ex
+ÇÇ 
+)
+ÇÇ  
+{
+ÉÉ 
+
+MessageBox
+ÑÑ 
+.
+ÑÑ 
+Show
+ÑÑ 
+(
+ÑÑ  
+Lang
+ÖÖ 
+.
+ÖÖ '
+alertChatLoadFriendsError
+ÖÖ 2
+,
+ÖÖ2 3
+Lang
+ÜÜ 
+.
+ÜÜ 
+alertErrorTitle
+ÜÜ (
+,
+ÜÜ( )
+MessageBoxButton
+áá $
+.
+áá$ %
+OK
+áá% '
+,
+áá' (
+MessageBoxImage
+àà #
+.
+àà# $
+Error
+àà$ )
+)
+àà) *
+;
+àà* +
+Console
+ââ 
+.
+ââ 
+	WriteLine
+ââ !
+(
+ââ! "
+$"
+ââ" $
+$str
+ââ$ G
+{
+ââG H
+ex
+ââH J
+.
+ââJ K
+Message
+ââK R
+}
+ââR S
+"
+ââS T
+)
+ââT U
+;
+ââU V
+}
+ää 
+}
+ãã 	
+private
+çç 
+async
+çç 
+Task
+çç 
+LoadChatHistory
+çç *
+(
+çç* +
+string
+çç+ 1
+otherUsername
+çç2 ?
+)
+çç? @
+{
+éé 	
+if
+èè 
+(
+èè 
+string
+èè 
+.
+èè 
+IsNullOrEmpty
+èè $
+(
+èè$ %
+otherUsername
+èè% 2
+)
+èè2 3
+)
+èè3 4
+{
+êê 
+ClearChatHistory
+ëë  
+(
+ëë  !
+)
+ëë! "
+;
+ëë" #
+return
+íí 
+;
+íí 
+}
+ìì 
+if
+ïï 
+(
+ïï 
+!
+ïï &
+CanExecuteNetworkActions
+ïï )
+(
+ïï) *
+)
+ïï* +
+)
+ïï+ ,
+{
+ññ 
+Console
+óó 
+.
+óó 
+	WriteLine
+óó !
+(
+óó! "
+$str
+óó" \
+)
+óó\ ]
+;
+óó] ^
+ClearChatHistory
+òò  
+(
+òò  !
+)
+òò! "
+;
+òò" #
+return
+ôô 
+;
+ôô 
+}
+öö )
+_currentChatPartnerUsername
+úú '
+=
+úú( )
+otherUsername
+úú* 7
+;
+úú7 8
+try
+ùù 
+{
+ûû 
+string
+üü 
+currentUsername
+üü &
+=
+üü' (
+SessionManager
+üü) 7
+.
+üü7 8
+Instance
+üü8 @
+.
+üü@ A
+CurrentUsername
+üüA P
+;
+üüP Q
+var
+†† 
+history
+†† 
+=
+†† 
+await
+†† #
+Client
+††$ *
+.
+††* +)
+GetConversationHistoryAsync
+††+ F
+(
+††F G
+currentUsername
+††G V
+,
+††V W
+otherUsername
+††X e
+)
+††e f
+;
+††f g
+Application
+¢¢ 
+.
+¢¢ 
+Current
+¢¢ #
+.
+¢¢# $
+
+Dispatcher
+¢¢$ .
+.
+¢¢. /
+Invoke
+¢¢/ 5
+(
+¢¢5 6
+(
+¢¢6 7
+)
+¢¢7 8
+=>
+¢¢9 ;
+{
+££ 
+ChatHistory
+§§ 
+.
+§§  
+Clear
+§§  %
+(
+§§% &
+)
+§§& '
+;
+§§' (
+if
+•• 
+(
+•• 
+history
+•• 
+!=
+••  "
+null
+••# '
+)
+••' (
+{
+¶¶ 
+foreach
+ßß 
+(
+ßß  !
+var
+ßß! $
+msg
+ßß% (
+in
+ßß) +
+history
+ßß, 3
+)
+ßß3 4
+{
+®® 
+if
+©© 
+(
+©©  
+msg
+©©  #
+.
+©©# $
+SenderUsername
+©©$ 2
+==
+©©3 5
+currentUsername
+©©6 E
+)
+©©E F
+{
+™™ 
+var
+´´  #
+localMessageDto
+´´$ 3
+=
+´´4 5
+new
+´´6 9
+DirectMessageDto
+´´: J
+{
+¨¨  !
+SenderUsername
+≠≠$ 2
+=
+≠≠3 4
+Lang
+≠≠5 9
+.
+≠≠9 : 
+alertChatSenderYou
+≠≠: L
+,
+≠≠L M
+RecipientUsername
+ÆÆ$ 5
+=
+ÆÆ6 7
+msg
+ÆÆ8 ;
+.
+ÆÆ; <
+RecipientUsername
+ÆÆ< M
+,
+ÆÆM N
+Content
+ØØ$ +
+=
+ØØ, -
+msg
+ØØ. 1
+.
+ØØ1 2
+Content
+ØØ2 9
+,
+ØØ9 :
+	Timestamp
+∞∞$ -
+=
+∞∞. /
+msg
+∞∞0 3
+.
+∞∞3 4
+	Timestamp
+∞∞4 =
+}
+±±  !
+;
+±±! "
+ChatHistory
+≤≤  +
+.
+≤≤+ ,
+Add
+≤≤, /
+(
+≤≤/ 0
+localMessageDto
+≤≤0 ?
+)
+≤≤? @
+;
+≤≤@ A
+}
+≥≥ 
+else
+¥¥  
+{
+µµ 
+ChatHistory
+∂∂  +
+.
+∂∂+ ,
+Add
+∂∂, /
+(
+∂∂/ 0
+msg
+∂∂0 3
+)
+∂∂3 4
+;
+∂∂4 5
+}
+∑∑ 
+}
+∏∏ 
+}
+ππ 
+}
+∫∫ 
+)
+∫∫ 
+;
+∫∫ 
+}
+ªª 
+catch
+ºº 
+(
+ºº 
+FaultException
+ºº !
+
+fexGeneral
+ºº" ,
+)
+ºº, -
+{
+ΩΩ 
+
+MessageBox
+ææ 
+.
+ææ 
+Show
+ææ 
+(
+ææ  
+Lang
+øø 
+.
+øø '
+alertChatLoadHistoryError
+øø 2
+,
+øø2 3
+Lang
+¿¿ 
+.
+¿¿ 
+alertErrorTitle
+¿¿ (
+,
+¿¿( )
+MessageBoxButton
+¡¡ $
+.
+¡¡$ %
+OK
+¡¡% '
+,
+¡¡' (
+MessageBoxImage
+¬¬ #
+.
+¬¬# $
+Error
+¬¬$ )
+)
+¬¬) *
+;
+¬¬* +
+Console
+√√ 
+.
+√√ 
+	WriteLine
+√√ !
+(
+√√! "
+$"
+√√" $
+$str
+√√$ D
+{
+√√D E
+
+fexGeneral
+√√E O
+.
+√√O P
+Message
+√√P W
+}
+√√W X
+"
+√√X Y
+)
+√√Y Z
+;
+√√Z [
+ClearChatHistory
+ƒƒ  
+(
+ƒƒ  !
+)
+ƒƒ! "
+;
+ƒƒ" #
+}
+≈≈ 
+catch
+∆∆ 
+(
+∆∆ '
+EndpointNotFoundException
+∆∆ ,
+ex
+∆∆- /
+)
+∆∆/ 0
+{
+«« 
+
+MessageBox
+»» 
+.
+»» 
+Show
+»» 
+(
+»»  
+Lang
+…… 
+.
+…… )
+alertConnectionErrorMessage
+…… 4
+,
+……4 5
+Lang
+   
+.
+   '
+alertConnectionErrorTitle
+   2
+,
+  2 3
+MessageBoxButton
+ÀÀ $
+.
+ÀÀ$ %
+OK
+ÀÀ% '
+,
+ÀÀ' (
+MessageBoxImage
+ÃÃ #
+.
+ÃÃ# $
+Error
+ÃÃ$ )
+)
+ÃÃ) *
+;
+ÃÃ* +
+Console
+ÕÕ 
+.
+ÕÕ 
+	WriteLine
+ÕÕ !
+(
+ÕÕ! "
+$"
+ÕÕ" $
+$str
+ÕÕ$ K
+{
+ÕÕK L
+ex
+ÕÕL N
+.
+ÕÕN O
+Message
+ÕÕO V
+}
+ÕÕV W
+"
+ÕÕW X
+)
+ÕÕX Y
+;
+ÕÕY Z
+ClearChatHistory
+ŒŒ  
+(
+ŒŒ  !
+)
+ŒŒ! "
+;
+ŒŒ" #
+}
+œœ 
+catch
+–– 
+(
+–– 
+	Exception
+–– 
+ex
+–– 
+)
+––  
+{
+—— 
+
+MessageBox
+““ 
+.
+““ 
+Show
+““ 
+(
+““  
+Lang
+”” 
+.
+”” '
+alertChatLoadHistoryError
+”” 2
+,
+””2 3
+Lang
+‘‘ 
+.
+‘‘ 
+alertErrorTitle
+‘‘ (
+,
+‘‘( )
+MessageBoxButton
+’’ $
+.
+’’$ %
+OK
+’’% '
+,
+’’' (
+MessageBoxImage
+÷÷ #
+.
+÷÷# $
+Error
+÷÷$ )
+)
+÷÷) *
+;
+÷÷* +
+Console
+◊◊ 
+.
+◊◊ 
+	WriteLine
+◊◊ !
+(
+◊◊! "
+$"
+◊◊" $
+$str
+◊◊$ @
+{
+◊◊@ A
+ex
+◊◊A C
+.
+◊◊C D
+Message
+◊◊D K
+}
+◊◊K L
+"
+◊◊L M
+)
+◊◊M N
+;
+◊◊N O
+ClearChatHistory
+ÿÿ  
+(
+ÿÿ  !
+)
+ÿÿ! "
+;
+ÿÿ" #
+}
+ŸŸ 
+}
+⁄⁄ 	
+private
+‹‹ 
+void
+‹‹ 
+ClearChatHistory
+‹‹ %
+(
+‹‹% &
+)
+‹‹& '
+{
+›› 	)
+_currentChatPartnerUsername
+ﬁﬁ '
+=
+ﬁﬁ( )
+null
+ﬁﬁ* .
+;
+ﬁﬁ. /
+Application
+ﬂﬂ 
+.
+ﬂﬂ 
+Current
+ﬂﬂ 
+.
+ﬂﬂ  
+
+Dispatcher
+ﬂﬂ  *
+.
+ﬂﬂ* +
+Invoke
+ﬂﬂ+ 1
+(
+ﬂﬂ1 2
+(
+ﬂﬂ2 3
+)
+ﬂﬂ3 4
+=>
+ﬂﬂ5 7
+ChatHistory
+ﬂﬂ8 C
+.
+ﬂﬂC D
+Clear
+ﬂﬂD I
+(
+ﬂﬂI J
+)
+ﬂﬂJ K
+)
+ﬂﬂK L
+;
+ﬂﬂL M
+}
+‡‡ 	
+private
+‚‚ 
+bool
+‚‚ #
+CanPerformSendMessage
+‚‚ *
+(
+‚‚* +
+)
+‚‚+ ,
+{
+„„ 	
+return
+‰‰ 
+!
+‰‰ 
+string
+‰‰ 
+.
+‰‰  
+IsNullOrWhiteSpace
+‰‰ -
+(
+‰‰- .
+MessageText
+‰‰. 9
+)
+‰‰9 :
+&&
+‰‰; =)
+_currentChatPartnerUsername
+ÂÂ .
+!=
+ÂÂ/ 1
+null
+ÂÂ2 6
+&&
+ÂÂ7 9&
+CanExecuteNetworkActions
+ÊÊ +
+(
+ÊÊ+ ,
+)
+ÊÊ, -
+;
+ÊÊ- .
+}
+ÁÁ 	
+private
+ÈÈ 
+void
+ÈÈ  
+PerformSendMessage
+ÈÈ '
+(
+ÈÈ' (
+object
+ÈÈ( .
+obj
+ÈÈ/ 2
+)
+ÈÈ2 3
+{
+ÍÍ 	
+if
+ÎÎ 
+(
+ÎÎ 
+!
+ÎÎ #
+CanPerformSendMessage
+ÎÎ &
+(
+ÎÎ& '
+)
+ÎÎ' (
+)
+ÎÎ( )
+{
+ÏÏ 
+return
+ÌÌ 
+;
+ÌÌ 
+}
+ÓÓ 
+var
+ 
+
+messageDto
+ 
+=
+ 
+new
+  
+DirectMessageDto
+! 1
+{
+ÒÒ 
+SenderUsername
+ÚÚ 
+=
+ÚÚ  
+SessionManager
+ÚÚ! /
+.
+ÚÚ/ 0
+Instance
+ÚÚ0 8
+.
+ÚÚ8 9
+CurrentUsername
+ÚÚ9 H
+,
+ÚÚH I
+RecipientUsername
+ÛÛ !
+=
+ÛÛ" #)
+_currentChatPartnerUsername
+ÛÛ$ ?
+,
+ÛÛ? @
+Content
+ÙÙ 
+=
+ÙÙ 
+MessageText
+ÙÙ %
+,
+ÙÙ% &
+	Timestamp
+ıı 
+=
+ıı 
+DateTime
+ıı $
+.
+ıı$ %
+UtcNow
+ıı% +
+}
+ˆˆ 
+;
+ˆˆ 
+try
+¯¯ 
+{
+˘˘ 
+Client
+˙˙ 
+.
+˙˙ 
+SendDirectMessage
+˙˙ (
+(
+˙˙( )
+
+messageDto
+˙˙) 3
+)
+˙˙3 4
+;
+˙˙4 5
+var
+¸¸ 
+localMsg
+¸¸ 
+=
+¸¸ 
+new
+¸¸ "
+DirectMessageDto
+¸¸# 3
+{
+˝˝ 
+SenderUsername
+˛˛ "
+=
+˛˛# $
+Lang
+˛˛% )
+.
+˛˛) * 
+alertChatSenderYou
+˛˛* <
+,
+˛˛< =
+Content
+ˇˇ 
+=
+ˇˇ 
+MessageText
+ˇˇ )
+,
+ˇˇ) *
+	Timestamp
+ÄÄ 
+=
+ÄÄ 
+DateTime
+ÄÄ  (
+.
+ÄÄ( )
+Now
+ÄÄ) ,
+}
+ÅÅ 
+;
+ÅÅ 
+ChatHistory
+ÇÇ 
+.
+ÇÇ 
+Add
+ÇÇ 
+(
+ÇÇ  
+localMsg
+ÇÇ  (
+)
+ÇÇ( )
+;
+ÇÇ) *
+MessageText
+ÉÉ 
+=
+ÉÉ 
+string
+ÉÉ $
+.
+ÉÉ$ %
+Empty
+ÉÉ% *
+;
+ÉÉ* +
+}
+ÑÑ 
+catch
+ÖÖ 
+(
+ÖÖ $
+CommunicationException
+ÖÖ )
+commEx
+ÖÖ* 0
+)
+ÖÖ0 1
+{
+ÜÜ 
+
+MessageBox
+áá 
+.
+áá 
+Show
+áá 
+(
+áá  
+Lang
+àà 
+.
+àà '
+alertChatMessageSendError
+àà 2
+,
+àà2 3
+Lang
+ââ 
+.
+ââ 
+alertErrorTitle
+ââ (
+,
+ââ( )
+MessageBoxButton
+ää $
+.
+ää$ %
+OK
+ää% '
+,
+ää' (
+MessageBoxImage
+ãã #
+.
+ãã# $
+Error
+ãã$ )
+)
+ãã) *
+;
+ãã* +
+Console
+åå 
+.
+åå 
+	WriteLine
+åå !
+(
+åå! "
+$"
+åå" $
+$str
+åå$ I
+{
+ååI J
+commEx
+ååJ P
+.
+ååP Q
+Message
+ååQ X
+}
+ååX Y
+"
+ååY Z
+)
+ååZ [
+;
+åå[ \
+}
+çç 
+catch
+éé 
+(
+éé 
+	Exception
+éé 
+ex
+éé 
+)
+éé  
+{
+èè 
+
+MessageBox
+êê 
+.
+êê 
+Show
+êê 
+(
+êê  
+Lang
+ëë 
+.
+ëë '
+alertChatMessageSendError
+ëë 2
+,
+ëë2 3
+Lang
+íí 
+.
+íí 
+alertErrorTitle
+íí (
+,
+íí( )
+MessageBoxButton
+ìì $
+.
+ìì$ %
+OK
+ìì% '
+,
+ìì' (
+MessageBoxImage
+îî #
+.
+îî# $
+Error
+îî$ )
+)
+îî) *
+;
+îî* +
+Console
+ïï 
+.
+ïï 
+	WriteLine
+ïï !
+(
+ïï! "
+$"
+ïï" $
+$str
+ïï$ <
+{
+ïï< =
+ex
+ïï= ?
+.
+ïï? @
+Message
+ïï@ G
+}
+ïïG H
+"
+ïïH I
+)
+ïïI J
+;
+ïïJ K
+}
+ññ 
+}
+óó 	
+private
+ôô 
+void
+ôô 
+SubscribeToEvents
+ôô &
+(
+ôô& '
+)
+ôô' (
+{
+öö 	!
+SocialClientManager
+õõ 
+.
+õõ  
+Instance
+õõ  (
+.
+õõ( )
+OnMessageReceived
+õõ) :
++=
+õõ; =#
+HandleMessageReceived
+õõ> S
+;
+õõS T!
+SocialClientManager
+úú 
+.
+úú  
+Instance
+úú  (
+.
+úú( )
+OnFriendResponse
+úú) 9
++=
+úú: <"
+HandleFriendResponse
+úú= Q
+;
+úúQ R
+Console
+ùù 
+.
+ùù 
+	WriteLine
+ùù 
+(
+ùù 
+$str
+ùù V
+)
+ùùV W
+;
+ùùW X
+}
+ûû 	
+private
+†† 
+void
+†† #
+UnsubscribeFromEvents
+†† *
+(
+††* +
+)
+††+ ,
+{
+°° 	!
+SocialClientManager
+¢¢ 
+.
+¢¢  
+Instance
+¢¢  (
+.
+¢¢( )
+OnMessageReceived
+¢¢) :
+-=
+¢¢; =#
+HandleMessageReceived
+¢¢> S
+;
+¢¢S T!
+SocialClientManager
+££ 
+.
+££  
+Instance
+££  (
+.
+££( )
+OnFriendResponse
+££) 9
+-=
+££: <"
+HandleFriendResponse
+££= Q
+;
+££Q R
+Console
+§§ 
+.
+§§ 
+	WriteLine
+§§ 
+(
+§§ 
+$str
+§§ Y
+)
+§§Y Z
+;
+§§Z [
+}
+•• 	
+public
+ßß 
+void
+ßß 
+Dispose
+ßß 
+(
+ßß 
+)
+ßß 
+{
+®® 	
+Dispose
+©© 
+(
+©© 
+true
+©© 
+)
+©© 
+;
+©© 
+GC
+™™ 
+.
+™™ 
+SuppressFinalize
+™™ 
+(
+™™  
+this
+™™  $
+)
+™™$ %
+;
+™™% &
+}
+´´ 	
+	protected
+≠≠ 
+virtual
+≠≠ 
+void
+≠≠ 
+Dispose
+≠≠ &
+(
+≠≠& '
+bool
+≠≠' +
+	disposing
+≠≠, 5
+)
+≠≠5 6
+{
+ÆÆ 	
+if
+ØØ 
+(
+ØØ 
+	disposing
+ØØ 
+)
+ØØ 
+{
+∞∞ #
+UnsubscribeFromEvents
+±± %
+(
+±±% &
+)
+±±& '
+;
+±±' (
+}
+≤≤ 
+}
+≥≥ 	
+public
+µµ 
+void
+µµ 
+Cleanup
+µµ 
+(
+µµ 
+)
+µµ 
+{
+∂∂ 	
+Dispose
+∑∑ 
+(
+∑∑ 
+)
+∑∑ 
+;
+∑∑ 
+}
+∏∏ 	
+private
+∫∫ 
+void
+∫∫ #
+HandleMessageReceived
+∫∫ *
+(
+∫∫* +
+DirectMessageDto
+∫∫+ ;
+message
+∫∫< C
+)
+∫∫C D
+{
+ªª 	
+Application
+ºº 
+.
+ºº 
+Current
+ºº 
+.
+ºº  
+
+Dispatcher
+ºº  *
+.
+ºº* +
+Invoke
+ºº+ 1
+(
+ºº1 2
+(
+ºº2 3
+)
+ºº3 4
+=>
+ºº5 7
+{
+ΩΩ 
+if
+ææ 
+(
+ææ 
+message
+ææ 
+.
+ææ 
+SenderUsername
+ææ *
+==
+ææ+ -)
+_currentChatPartnerUsername
+ææ. I
+)
+ææI J
+{
+øø 
+ChatHistory
+¿¿ 
+.
+¿¿  
+Add
+¿¿  #
+(
+¿¿# $
+message
+¿¿$ +
+)
+¿¿+ ,
+;
+¿¿, -
+}
+¡¡ 
+else
+¬¬ 
+{
+√√ 
+
+MessageBox
+ƒƒ 
+.
+ƒƒ 
+Show
+ƒƒ #
+(
+ƒƒ# $
+string
+≈≈ 
+.
+≈≈ 
+Format
+≈≈ %
+(
+≈≈% &
+Lang
+≈≈& *
+.
+≈≈* +%
+alertChatNewMessageFrom
+≈≈+ B
+,
+≈≈B C
+message
+≈≈D K
+.
+≈≈K L
+SenderUsername
+≈≈L Z
+)
+≈≈Z [
+,
+≈≈[ \
+Lang
+∆∆ 
+.
+∆∆ &
+alertChatNewMessageTitle
+∆∆ 5
+,
+∆∆5 6
+MessageBoxButton
+«« (
+.
+««( )
+OK
+««) +
+,
+««+ ,
+MessageBoxImage
+»» '
+.
+»»' (
+Information
+»»( 3
+)
+»»3 4
+;
+»»4 5
+}
+…… 
+}
+   
+)
+   
+;
+   
+}
+ÀÀ 	
+private
+ÕÕ 
+void
+ÕÕ "
+HandleFriendResponse
+ÕÕ )
+(
+ÕÕ) *
+string
+ÕÕ* 0
+fromUsername
+ÕÕ1 =
+,
+ÕÕ= >
+bool
+ÕÕ? C
+accepted
+ÕÕD L
+)
+ÕÕL M
+{
+ŒŒ 	
+if
+œœ 
+(
+œœ 
+accepted
+œœ 
+)
+œœ 
+{
+–– 
+Application
+—— 
+.
+—— 
+Current
+—— #
+.
+——# $
+
+Dispatcher
+——$ .
+.
+——. /
+Invoke
+——/ 5
+(
+——5 6
+(
+——6 7
+)
+——7 8
+=>
+——9 ;"
+LoadFriendsListAsync
+——< P
+(
+——P Q
+)
+——Q R
+)
+——R S
+;
+——S T
+}
+““ 
+}
+”” 	
+~
+’’ 	$
+DirectMessageViewModel
+’’	 
+(
+’’  
+)
+’’  !
+{
+÷÷ 	
+Dispose
+◊◊ 
+(
+◊◊ 
+false
+◊◊ 
+)
+◊◊ 
+;
+◊◊ 
+}
+ÿÿ 	
+}
+ŸŸ 
+}⁄⁄ Î†
+ûC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+	HomePages& /
+{ 
+public 
+
+class 
+SignUpViewModel  
+:! "
+ViewModelBase# 0
+{ 
+private 
+string 
+	_username  
+;  !
+public 
+string 
+Username 
+{ 	
+get 
+=> 
+	_username 
+; 
+set 
+{ 
+if 
+( 
+	_username 
+!=  
+value! &
+)& '
+{ 
+	_username   
+=   
+value    %
+;  % &
+OnPropertyChanged!! %
+(!!% &
+)!!& '
+;!!' (
+}"" 
+}## 
+}$$ 	
+private&& 
+string&& 
+
+_firstName&& !
+;&&! "
+public'' 
+string'' 
+	FirstName'' 
+{(( 	
+get)) 
+=>)) 
+
+_firstName)) 
+;)) 
+set** 
+{++ 
+if,, 
+(,, 
+
+_firstName,, 
+!=,, !
+value,," '
+),,' (
+{-- 
+
+_firstName.. 
+=..  
+value..! &
+;..& '
+OnPropertyChanged// %
+(//% &
+)//& '
+;//' (
+}00 
+}11 
+}22 	
+private44 
+string44 
+	_lastName44  
+;44  !
+public55 
+string55 
+LastName55 
+{66 	
+get77 
+=>77 
+	_lastName77 
+;77 
+set88 
+{99 
+if:: 
+(:: 
+	_lastName:: 
+!=::  
+value::! &
+)::& '
+{;; 
+	_lastName<< 
+=<< 
+value<<  %
+;<<% &
+OnPropertyChanged== %
+(==% &
+)==& '
+;==' (
+}>> 
+}?? 
+}@@ 	
+privateBB 
+stringBB 
+_emailBB 
+;BB 
+publicCC 
+stringCC 
+EmailCC 
+{DD 	
+getEE 
+=>EE 
+_emailEE 
+;EE 
+setFF 
+{GG 
+ifHH 
+(HH 
+_emailHH 
+!=HH 
+valueHH #
+)HH# $
+{II 
+_emailJJ 
+=JJ 
+valueJJ "
+;JJ" #
+OnPropertyChangedKK %
+(KK% &
+)KK& '
+;KK' (
+}LL 
+}MM 
+}NN 	
+privatePP 
+stringPP 
+	_passwordPP  
+;PP  !
+publicQQ 
+stringQQ 
+PasswordQQ 
+{RR 	
+getSS 
+=>SS 
+	_passwordSS 
+;SS 
+setTT 
+{UU 
+ifVV 
+(VV 
+	_passwordVV 
+!=VV  
+valueVV! &
+)VV& '
+{WW 
+	_passwordXX 
+=XX 
+valueXX  %
+;XX% &
+OnPropertyChangedYY %
+(YY% &
+)YY& '
+;YY' (
+}ZZ 
 }[[ 
 }\\ 	
-private^^ 
-async^^ 
-Task^^ (
-ExecuteJoinPrivateMatchAsync^^ 7
-(^^7 8
-object^^8 >
-	parameter^^? H
-)^^H I
-{__ 	
-if`` 
-(`` 
-string`` 
-.`` 
-IsNullOrWhiteSpace`` )
-(``) *
-	MatchCode``* 3
-)``3 4
-)``4 5
-{aa 
+private^^ 
+bool^^ 
+_isMale^^ 
+=^^ 
+true^^ #
+;^^# $
+public__ 
+bool__ 
+IsMale__ 
+{`` 	
+getaa 
+=>aa 
+_isMaleaa 
+;aa 
+setbb 
+{cc 
+ifdd 
+(dd 
+valuedd 
+&&dd 
+_isMaledd $
+!=dd% '
+valuedd( -
+)dd- .
+{ee 
+_isMaleff 
+=ff 
+valueff #
+;ff# $
+OnPropertyChangedgg %
+(gg% &
+)gg& '
+;gg' (
+ResetGenderhh 
+(hh  
+$numhh  !
+)hh! "
+;hh" #
+}ii 
+}jj 
+}kk 	
+privatemm 
+boolmm 
+	_isFemalemm 
+;mm 
+publicnn 
+boolnn 
+IsFemalenn 
+{oo 	
+getpp 
+=>pp 
+	_isFemalepp 
+;pp 
+setqq 
+{rr 
+ifss 
+(ss 
+valuess 
+&&ss 
+	_isFemaless &
+!=ss' )
+valuess* /
+)ss/ 0
+{tt 
+	_isFemaleuu 
+=uu 
+valueuu  %
+;uu% &
+OnPropertyChangedvv %
+(vv% &
+)vv& '
+;vv' (
+ResetGenderww 
+(ww  
+$numww  !
+)ww! "
+;ww" #
+}xx 
+}yy 
+}zz 	
+private|| 
+bool|| 
+_isNonBinary|| !
+;||! "
+public}} 
+bool}} 
+IsNonBinary}} 
+{~~ 	
+get 
+=> 
+_isNonBinary 
+;  
+set
+ÄÄ 
+{
+ÅÅ 
+if
+ÇÇ 
+(
+ÇÇ 
+value
+ÇÇ 
+&&
+ÇÇ 
+_isNonBinary
+ÇÇ )
+!=
+ÇÇ* ,
+value
+ÇÇ- 2
+)
+ÇÇ2 3
+{
+ÉÉ 
+_isNonBinary
+ÑÑ  
+=
+ÑÑ! "
+value
+ÑÑ# (
+;
+ÑÑ( )
+OnPropertyChanged
+ÖÖ %
+(
+ÖÖ% &
+)
+ÖÖ& '
+;
+ÖÖ' (
+ResetGender
+ÜÜ 
+(
+ÜÜ  
+$num
+ÜÜ  !
+)
+ÜÜ! "
+;
+ÜÜ" #
+}
+áá 
+}
+àà 
+}
+ââ 	
+private
+ãã 
+int
+ãã 
+_selectedAvatarId
+ãã %
+=
+ãã& '
+$num
+ãã( )
+;
+ãã) *
+public
+åå 
+int
+åå 
+SelectedAvatarId
+åå #
+{
+çç 	
+get
+éé 
+=>
+éé 
+_selectedAvatarId
+éé $
+;
+éé$ %
+set
+èè 
+{
+êê 
+if
+ëë 
+(
+ëë 
+_selectedAvatarId
+ëë %
+!=
+ëë& (
+value
+ëë) .
+)
+ëë. /
+{
+íí 
+_selectedAvatarId
+ìì %
+=
+ìì& '
+value
+ìì( -
+;
+ìì- .
+OnPropertyChanged
+îî %
+(
+îî% &
+)
+îî& '
+;
+îî' (
+}
+ïï 
+}
+ññ 
+}
+óó 	
+private
+ôô 
+BitmapImage
+ôô "
+_selectedAvatarImage
+ôô 0
+;
+ôô0 1
+public
+öö 
+BitmapImage
+öö !
+SelectedAvatarImage
+öö .
+{
+õõ 	
+get
+úú 
+=>
+úú "
+_selectedAvatarImage
+úú '
+;
+úú' (
+set
+ùù 
+{
+ûû 
+if
+üü 
+(
+üü "
+_selectedAvatarImage
+üü (
+!=
+üü) +
+value
+üü, 1
+)
+üü1 2
+{
+†† "
+_selectedAvatarImage
+°° (
+=
+°°) *
+value
+°°+ 0
+;
+°°0 1
+OnPropertyChanged
+¢¢ %
+(
+¢¢% &
+)
+¢¢& '
+;
+¢¢' (
+}
+££ 
+}
+§§ 
+}
+•• 	
+public
+ßß 
+ICommand
+ßß 
+SignUpCommand
+ßß %
+{
+ßß& '
+get
+ßß( +
+;
+ßß+ ,
+}
+ßß- .
+public
+®® 
+ICommand
+®® !
+SelectAvatarCommand
+®® +
+{
+®®, -
+get
+®®. 1
+;
+®®1 2
+}
+®®3 4
+public
+©© 
+ICommand
+©©  
+CloseWindowCommand
+©© *
+{
+©©+ ,
+get
+©©- 0
+;
+©©0 1
+}
+©©2 3
+public
+™™ 
+ICommand
+™™ #
+MaximizeWindowCommand
+™™ -
+{
+™™. /
+get
+™™0 3
+;
+™™3 4
+}
+™™5 6
+public
+´´ 
+ICommand
+´´ #
+MinimizeWindowCommand
+´´ -
+{
+´´. /
+get
+´´0 3
+;
+´´3 4
+}
+´´5 6
+public
+¨¨ 
+ICommand
+¨¨ 
+ReturnCommand
+¨¨ %
+{
+¨¨& '
+get
+¨¨( +
+;
+¨¨+ ,
+}
+¨¨- .
+public
+ÆÆ 
+SignUpViewModel
+ÆÆ 
+(
+ÆÆ 
+)
+ÆÆ  
+{
+ØØ 	
+SignUpCommand
+∞∞ 
+=
+∞∞ 
+new
+∞∞ 
+RelayCommand
+∞∞  ,
+(
+∞∞, -
+ExecuteSignUp
+∞∞- :
+,
+∞∞: ;
+CanExecuteSignUp
+∞∞< L
+)
+∞∞L M
+;
+∞∞M N!
+SelectAvatarCommand
+±± 
+=
+±±  !
+new
+±±" %
+RelayCommand
+±±& 2
+(
+±±2 3$
+OpenSelectAvatarDialog
+±±3 I
+)
+±±I J
+;
+±±J K 
+CloseWindowCommand
+≤≤ 
+=
+≤≤  
+new
+≤≤! $
+RelayCommand
+≤≤% 1
+(
+≤≤1 2 
+ExecuteCloseWindow
+≤≤2 D
+)
+≤≤D E
+;
+≤≤E F#
+MaximizeWindowCommand
+≥≥ !
+=
+≥≥" #
+new
+≥≥$ '
+RelayCommand
+≥≥( 4
+(
+≥≥4 5#
+ExecuteMaximizeWindow
+≥≥5 J
+)
+≥≥J K
+;
+≥≥K L#
+MinimizeWindowCommand
+¥¥ !
+=
+¥¥" #
+new
+¥¥$ '
+RelayCommand
+¥¥( 4
+(
+¥¥4 5#
+ExecuteMinimizeWindow
+¥¥5 J
+)
+¥¥J K
+;
+¥¥K L
+ReturnCommand
+µµ 
+=
+µµ 
+new
+µµ 
+RelayCommand
+µµ  ,
+(
+µµ, -
+ExecuteReturn
+µµ- :
+)
+µµ: ;
+;
+µµ; <
+LoadDefaultAvatar
+∂∂ 
+(
+∂∂ 
+)
+∂∂ 
+;
+∂∂  
+}
+∑∑ 	
+private
+ππ 
+void
+ππ 
+ResetGender
+ππ  
+(
+ππ  !
+int
+ππ! $
+selectedGenderId
+ππ% 5
+)
+ππ5 6
+{
+∫∫ 	
+bool
+ªª 
+oldMale
+ªª 
+=
+ªª 
+_isMale
+ªª "
+;
+ªª" #
+bool
+ºº 
+	oldFemale
+ºº 
+=
+ºº 
+	_isFemale
+ºº &
+;
+ºº& '
+bool
+ΩΩ 
+oldNonBinary
+ΩΩ 
+=
+ΩΩ 
+_isNonBinary
+ΩΩ  ,
+;
+ΩΩ, -
+_isMale
+øø 
+=
+øø 
+(
+øø 
+selectedGenderId
+øø '
+==
+øø( *
+$num
+øø+ ,
+)
+øø, -
+;
+øø- .
+	_isFemale
+¿¿ 
+=
+¿¿ 
+(
+¿¿ 
+selectedGenderId
+¿¿ )
+==
+¿¿* ,
+$num
+¿¿- .
+)
+¿¿. /
+;
+¿¿/ 0
+_isNonBinary
+¡¡ 
+=
+¡¡ 
+(
+¡¡ 
+selectedGenderId
+¡¡ ,
+==
+¡¡- /
+$num
+¡¡0 1
+)
+¡¡1 2
+;
+¡¡2 3
+if
+√√ 
+(
+√√ 
+oldMale
+√√ 
+!=
+√√ 
+_isMale
+√√ "
+)
+√√" #
+OnPropertyChanged
+ƒƒ !
+(
+ƒƒ! "
+nameof
+ƒƒ" (
+(
+ƒƒ( )
+IsMale
+ƒƒ) /
+)
+ƒƒ/ 0
+)
+ƒƒ0 1
+;
+ƒƒ1 2
+if
+≈≈ 
+(
+≈≈ 
+	oldFemale
+≈≈ 
+!=
+≈≈ 
+	_isFemale
+≈≈ &
+)
+≈≈& '
+OnPropertyChanged
+∆∆ !
+(
+∆∆! "
+nameof
+∆∆" (
+(
+∆∆( )
+IsFemale
+∆∆) 1
+)
+∆∆1 2
+)
+∆∆2 3
+;
+∆∆3 4
+if
+«« 
+(
+«« 
+oldNonBinary
+«« 
+!=
+«« 
+_isNonBinary
+««  ,
+)
+««, -
+OnPropertyChanged
+»» !
+(
+»»! "
+nameof
+»»" (
+(
+»»( )
+IsNonBinary
+»») 4
+)
+»»4 5
+)
+»»5 6
+;
+»»6 7
+}
+…… 	
+private
+ÀÀ 
+async
+ÀÀ 
+Task
+ÀÀ 
+LoadDefaultAvatar
+ÀÀ ,
+(
+ÀÀ, -
+)
+ÀÀ- .
+{
+ÃÃ 	
+var
+ÕÕ 
+client
+ÕÕ 
+=
+ÕÕ 
+new
+ÕÕ &
+UserProfileServiceClient
+ÕÕ 5
+(
+ÕÕ5 6
+)
+ÕÕ6 7
+;
+ÕÕ7 8
+bool
+ŒŒ 
+success
+ŒŒ 
+=
+ŒŒ 
+false
+ŒŒ  
+;
+ŒŒ  !
+try
+œœ 
+{
+–– 
+var
+—— 
+avatars
+—— 
+=
+—— 
+await
+—— #
+client
+——$ *
+.
+——* +&
+GetAvailableAvatarsAsync
+——+ C
+(
+——C D
+)
+——D E
+;
+——E F
+if
+““ 
+(
+““ 
+avatars
+““ 
+!=
+““ 
+null
+““ #
+&&
+““$ &
+avatars
+““' .
+.
+““. /
+Any
+““/ 2
+(
+““2 3
+)
+““3 4
+)
+““4 5
+{
+”” 
+var
+‘‘ 
+defaultAvatar
+‘‘ %
+=
+‘‘& '
+avatars
+‘‘( /
+.
+‘‘/ 0
+FirstOrDefault
+‘‘0 >
+(
+‘‘> ?
+a
+‘‘? @
+=>
+‘‘A C
+a
+‘‘D E
+.
+‘‘E F
+IdAvatar
+‘‘F N
+==
+‘‘O Q
+$num
+‘‘R S
+)
+‘‘S T
+??
+‘‘U W
+avatars
+‘‘X _
+[
+‘‘_ `
+$num
+‘‘` a
+]
+‘‘a b
+;
+‘‘b c
+SelectedAvatarId
+’’ $
+=
+’’% &
+defaultAvatar
+’’' 4
+.
+’’4 5
+IdAvatar
+’’5 =
+;
+’’= >!
+SelectedAvatarImage
+÷÷ '
+=
+÷÷( ) 
+ConvertByteToImage
+÷÷* <
+(
+÷÷< =
+defaultAvatar
+÷÷= J
+.
+÷÷J K
 
-MessageBoxbb 
-.bb 
-Showbb 
-(bb  
+AvatarData
+÷÷K U
+)
+÷÷U V
+;
+÷÷V W
+}
+◊◊ 
+client
+ÿÿ 
+.
+ÿÿ 
+Close
+ÿÿ 
+(
+ÿÿ 
+)
+ÿÿ 
+;
+ÿÿ 
+success
+ŸŸ 
+=
+ŸŸ 
+true
+ŸŸ 
+;
+ŸŸ 
+}
+⁄⁄ 
+catch
+€€ 
+(
+€€ 
+FaultException
+€€ !
+)
+€€! "
+{
+‹‹ 
 
-Propertiesbb  *
-.bb* +
-Langsbb+ 0
-.bb0 1
-Langbb1 5
-.bb5 6*
-alertPrivateMatchesErrorNoCodebb6 T
-)bbT U
-;bbU V
-returncc 
-;cc 
-}dd 
-stringff 
+MessageBox
+›› 
+.
+›› 
+Show
+›› 
+(
+››  
+Lang
+››  $
+.
+››$ %%
+alertServerErrorMessage
+››% <
+,
+››< =
+Lang
+››> B
+.
+››B C
+alertErrorTitle
+››C R
+,
+››R S
+MessageBoxButton
+››T d
+.
+››d e
+OK
+››e g
+,
+››g h
+MessageBoxImage
+››i x
+.
+››x y
+Error
+››y ~
+)
+››~ 
+;›› Ä
+}
+ﬁﬁ 
+catch
+ﬂﬂ 
+(
+ﬂﬂ '
+EndpointNotFoundException
+ﬂﬂ ,
+)
+ﬂﬂ, -
+{
+‡‡ 
 
-codeToJoinff 
-=ff 
-	MatchCodeff  )
-.ff) *
-ToUpperff* 1
+MessageBox
+·· 
+.
+·· 
+Show
+·· 
+(
+··  
+Lang
+··  $
+.
+··$ %)
+alertConnectionErrorMessage
+··% @
+,
+··@ A
+Lang
+··B F
+.
+··F G'
+alertConnectionErrorTitle
+··G `
+,
+··` a
+MessageBoxButton
+··b r
+.
+··r s
+OK
+··s u
+,
+··u v
+MessageBoxImage··w Ü
+.··Ü á
+Error··á å
+)··å ç
+;··ç é
+}
+‚‚ 
+catch
+„„ 
+{
+‰‰ 
+
+MessageBox
+ÂÂ 
+.
+ÂÂ 
+Show
+ÂÂ 
+(
+ÂÂ  
+Lang
+ÂÂ  $
+.
+ÂÂ$ %"
+alertAvatarLoadError
+ÂÂ% 9
+,
+ÂÂ9 :
+Lang
+ÂÂ; ?
+.
+ÂÂ? @
+alertErrorTitle
+ÂÂ@ O
+,
+ÂÂO P
+MessageBoxButton
+ÂÂQ a
+.
+ÂÂa b
+OK
+ÂÂb d
+,
+ÂÂd e
+MessageBoxImage
+ÂÂf u
+.
+ÂÂu v
+Error
+ÂÂv {
+)
+ÂÂ{ |
+;
+ÂÂ| }
+}
+ÊÊ 
+finally
+ÁÁ 
+{
+ËË 
+if
+ÈÈ 
+(
+ÈÈ 
+!
+ÈÈ 
+success
+ÈÈ 
+&&
+ÈÈ 
+client
+ÈÈ  &
+.
+ÈÈ& '
+State
+ÈÈ' ,
+!=
+ÈÈ- / 
+CommunicationState
+ÈÈ0 B
+.
+ÈÈB C
+Closed
+ÈÈC I
+)
+ÈÈI J
+client
+ÍÍ 
+.
+ÍÍ 
+Abort
+ÍÍ  
+(
+ÍÍ  !
+)
+ÍÍ! "
+;
+ÍÍ" #
+}
+ÎÎ 
+}
+ÏÏ 	
+private
+ÓÓ 
+void
+ÓÓ $
+OpenSelectAvatarDialog
+ÓÓ +
+(
+ÓÓ+ ,
+object
+ÓÓ, 2
+	parameter
+ÓÓ3 <
+)
+ÓÓ< =
+{
+ÔÔ 	
+var
+ 
+selectAvatarView
+  
+=
+! "
+new
+# &
+SelectAvatarView
+' 7
+(
+7 8
+)
+8 9
+;
+9 :
+var
+ÒÒ #
+selectAvatarViewModel
+ÒÒ %
+=
+ÒÒ& '
+new
+ÒÒ( +#
+SelectAvatarViewModel
+ÒÒ, A
+(
+ÒÒA B
+SelectedAvatarId
+ÒÒB R
+)
+ÒÒR S
+;
+ÒÒS T#
+selectAvatarViewModel
+ÚÚ !
+.
+ÚÚ! "
+AvatarSelected
+ÚÚ" 0
++=
+ÚÚ1 3
+OnAvatarSelected
+ÚÚ4 D
+;
+ÚÚD E
+selectAvatarView
+ÛÛ 
+.
+ÛÛ 
+DataContext
+ÛÛ (
+=
+ÛÛ) *#
+selectAvatarViewModel
+ÛÛ+ @
+;
+ÛÛ@ A
+selectAvatarView
+ÙÙ 
+.
+ÙÙ 
+
+ShowDialog
+ÙÙ '
+(
+ÙÙ' (
+)
+ÙÙ( )
+;
+ÙÙ) *#
+selectAvatarViewModel
+ıı !
+.
+ıı! "
+AvatarSelected
+ıı" 0
+-=
+ıı1 3
+OnAvatarSelected
+ıı4 D
+;
+ııD E
+}
+ˆˆ 	
+private
+¯¯ 
+void
+¯¯ 
+OnAvatarSelected
+¯¯ %
+(
+¯¯% &
+AvatarModel
+¯¯& 1
+avatar
+¯¯2 8
+)
+¯¯8 9
+{
+˘˘ 	
+if
+˙˙ 
+(
+˙˙ 
+avatar
+˙˙ 
+!=
+˙˙ 
+null
+˙˙ 
+)
+˙˙ 
+{
+˚˚ 
+SelectedAvatarId
+¸¸  
+=
+¸¸! "
+avatar
+¸¸# )
+.
+¸¸) *
+Id
+¸¸* ,
+;
+¸¸, -!
+SelectedAvatarImage
+˝˝ #
+=
+˝˝$ %
+avatar
+˝˝& ,
+.
+˝˝, -
+ImageSource
+˝˝- 8
+;
+˝˝8 9
+}
+˛˛ 
+}
+ˇˇ 	
+private
+ÅÅ 
+static
+ÅÅ 
+bool
+ÅÅ 
+IsValidEmail
+ÅÅ (
+(
+ÅÅ( )
+string
+ÅÅ) /
+email
+ÅÅ0 5
+)
+ÅÅ5 6
+{
+ÇÇ 	
+if
+ÉÉ 
+(
+ÉÉ 
+string
+ÉÉ 
+.
+ÉÉ  
+IsNullOrWhiteSpace
+ÉÉ )
+(
+ÉÉ) *
+email
+ÉÉ* /
+)
+ÉÉ/ 0
+)
+ÉÉ0 1
+return
+ÑÑ 
+false
+ÑÑ 
+;
+ÑÑ 
+try
+ÜÜ 
+{
+áá 
+var
+àà 
+regex
+àà 
+=
+àà 
+new
+àà 
+Regex
+àà  %
+(
+àà% &
+$str
+àà& H
+,
+ààH I
+RegexOptions
+ààJ V
+.
+ààV W
+
+IgnoreCase
+ààW a
+,
+ààa b
+TimeSpan
+ààc k
+.
+ààk l
+FromMilliseconds
+ààl |
+(
+àà| }
+$numàà} Ä
+)ààÄ Å
+)ààÅ Ç
+;ààÇ É
+return
+ââ 
+regex
+ââ 
+.
+ââ 
+IsMatch
+ââ $
+(
+ââ$ %
+email
+ââ% *
+)
+ââ* +
+;
+ââ+ ,
+}
+ää 
+catch
+ãã 
+(
+ãã (
+RegexMatchTimeoutException
+ãã -
+)
+ãã- .
+{
+åå 
+return
+çç 
+false
+çç 
+;
+çç 
+}
+éé 
+}
+èè 	
+private
+ëë 
+static
+ëë 
+bool
+ëë 
+IsPasswordSecure
+ëë ,
+(
+ëë, -
+string
+ëë- 3
+password
+ëë4 <
+,
+ëë< =
+out
+ëë> A
+string
+ëëB H
+errorLangKey
+ëëI U
+)
+ëëU V
+{
+íí 	
+if
+ìì 
+(
+ìì 
+string
+ìì 
+.
+ìì  
+IsNullOrWhiteSpace
+ìì )
+(
+ìì) *
+password
+ìì* 2
+)
+ìì2 3
+)
+ìì3 4
+{
+îî 
+errorLangKey
+ïï 
+=
+ïï 
+$str
+ïï 3
+;
+ïï3 4
+return
+ññ 
+false
+ññ 
+;
+ññ 
+}
+óó 
+if
+òò 
+(
+òò 
+password
+òò 
+.
+òò 
+Length
+òò 
+<
+òò  !
+$num
+òò" #
+)
+òò# $
+{
+ôô 
+errorLangKey
+öö 
+=
+öö 
+$str
+öö 6
+;
+öö6 7
+return
+õõ 
+false
+õõ 
+;
+õõ 
+}
+úú 
+if
+ùù 
+(
+ùù 
+password
+ùù 
+.
+ùù 
+Length
+ùù 
+>
+ùù  !
+$num
+ùù" $
+)
+ùù$ %
+{
+ûû 
+errorLangKey
+üü 
+=
+üü 
+$str
+üü 5
+;
+üü5 6
+return
+†† 
+false
+†† 
+;
+†† 
+}
+°° 
+if
+¢¢ 
+(
+¢¢ 
+!
+¢¢ 
+password
+¢¢ 
+.
+¢¢ 
+Any
+¢¢ 
+(
+¢¢ 
+char
+¢¢ "
+.
+¢¢" #
+IsUpper
+¢¢# *
+)
+¢¢* +
+)
+¢¢+ ,
+{
+££ 
+errorLangKey
+§§ 
+=
+§§ 
+$str
+§§ 8
+;
+§§8 9
+return
+•• 
+false
+•• 
+;
+•• 
+}
+¶¶ 
+if
+ßß 
+(
+ßß 
+!
+ßß 
+password
+ßß 
+.
+ßß 
+Any
+ßß 
+(
+ßß 
+char
+ßß "
+.
+ßß" #
+IsLower
+ßß# *
+)
+ßß* +
+)
+ßß+ ,
+{
+®® 
+errorLangKey
+©© 
+=
+©© 
+$str
+©© 8
+;
+©©8 9
+return
+™™ 
+false
+™™ 
+;
+™™ 
+}
+´´ 
+if
+¨¨ 
+(
+¨¨ 
+!
+¨¨ 
+password
+¨¨ 
+.
+¨¨ 
+Any
+¨¨ 
+(
+¨¨ 
+char
+¨¨ "
+.
+¨¨" #
+IsDigit
+¨¨# *
+)
+¨¨* +
+)
+¨¨+ ,
+{
+≠≠ 
+errorLangKey
+ÆÆ 
+=
+ÆÆ 
+$str
+ÆÆ 8
+;
+ÆÆ8 9
+return
+ØØ 
+false
+ØØ 
+;
+ØØ 
+}
+∞∞ 
+if
+±± 
+(
+±± 
+password
+±± 
+.
+±± 
+All
+±± 
+(
+±± 
+char
+±± !
+.
+±±! "
+IsLetterOrDigit
+±±" 1
+)
+±±1 2
+)
+±±2 3
+{
+≤≤ 
+errorLangKey
+≥≥ 
+=
+≥≥ 
+$str
+≥≥ :
+;
+≥≥: ;
+return
+¥¥ 
+false
+¥¥ 
+;
+¥¥ 
+}
+µµ 
+if
+∂∂ 
+(
+∂∂ 
+!
+∂∂ 
+password
+∂∂ 
+.
+∂∂ 
+Contains
+∂∂ "
+(
+∂∂" #
+$str
+∂∂# &
+)
+∂∂& '
+)
+∂∂' (
+{
+∑∑ 
+errorLangKey
+∏∏ 
+=
+∏∏ 
+$str
+∏∏ 8
+;
+∏∏8 9
+return
+ππ 
+false
+ππ 
+;
+ππ 
+}
+∫∫ 
+errorLangKey
+ºº 
+=
+ºº 
+null
+ºº 
+;
+ºº  
+return
+ΩΩ 
+true
+ΩΩ 
+;
+ΩΩ 
+}
+ææ 	
+private
+¿¿ 
+bool
+¿¿ 
+CanExecuteSignUp
+¿¿ %
+(
+¿¿% &
+object
+¿¿& ,
+	parameter
+¿¿- 6
+)
+¿¿6 7
+{
+¡¡ 	
+return
+¬¬ 
+!
+¬¬ 
+string
+¬¬ 
+.
+¬¬  
+IsNullOrWhiteSpace
+¬¬ -
+(
+¬¬- .
+Username
+¬¬. 6
+)
+¬¬6 7
+&&
+¬¬8 :
+!
+√√ 
+string
+√√ 
+.
+√√  
+IsNullOrWhiteSpace
+√√ -
+(
+√√- .
+	FirstName
+√√. 7
+)
+√√7 8
+&&
+√√9 ;
+!
+ƒƒ 
+string
+ƒƒ 
+.
+ƒƒ  
+IsNullOrWhiteSpace
+ƒƒ -
+(
+ƒƒ- .
+LastName
+ƒƒ. 6
+)
+ƒƒ6 7
+&&
+ƒƒ8 :
+!
+≈≈ 
+string
+≈≈ 
+.
+≈≈  
+IsNullOrWhiteSpace
+≈≈ -
+(
+≈≈- .
+Email
+≈≈. 3
+)
+≈≈3 4
+&&
+≈≈5 7
+!
+∆∆ 
+string
+∆∆ 
+.
+∆∆  
+IsNullOrWhiteSpace
+∆∆ -
+(
+∆∆- .
+Password
+∆∆. 6
+)
+∆∆6 7
+&&
+∆∆8 :
+(
+«« 
+IsMale
+«« 
+||
+«« 
+IsFemale
+«« &
+||
+««' )
+IsNonBinary
+««* 5
+)
+««5 6
+;
+««6 7
+}
+»» 	
+private
+   
+async
+   
+void
+   
+ExecuteSignUp
+   (
+(
+  ( )
+object
+  ) /
+	parameter
+  0 9
+)
+  9 :
+{
+ÀÀ 	
+if
+ÃÃ 
+(
+ÃÃ 
+!
+ÃÃ 
+CanExecuteSignUp
+ÃÃ !
+(
+ÃÃ! "
+	parameter
+ÃÃ" +
+)
+ÃÃ+ ,
+)
+ÃÃ, -
+{
+ÕÕ 
+
+MessageBox
+ŒŒ 
+.
+ŒŒ 
+Show
+ŒŒ 
+(
+ŒŒ  
+Lang
+ŒŒ  $
+.
+ŒŒ$ %$
+alertAllFieldsRequired
+ŒŒ% ;
+,
+ŒŒ; <
+Lang
+ŒŒ= A
+.
+ŒŒA B"
+alertInputErrorTitle
+ŒŒB V
+,
+ŒŒV W
+MessageBoxButton
+ŒŒX h
+.
+ŒŒh i
+OK
+ŒŒi k
+,
+ŒŒk l
+MessageBoxImage
+ŒŒm |
+.
+ŒŒ| }
+WarningŒŒ} Ñ
+)ŒŒÑ Ö
+;ŒŒÖ Ü
+return
+œœ 
+;
+œœ 
+}
+–– 
+if
+““ 
+(
+““ 
+!
+““ 
+IsValidEmail
+““ 
+(
+““ 
+Email
+““ #
+)
+““# $
+)
+““$ %
+{
+”” 
+
+MessageBox
+‘‘ 
+.
+‘‘ 
+Show
+‘‘ 
+(
+‘‘  
+Lang
+‘‘  $
+.
+‘‘$ %%
+alertInvalidEmailFormat
+‘‘% <
+,
+‘‘< =
+Lang
+‘‘> B
+.
+‘‘B C$
+alertInvalidEmailTitle
+‘‘C Y
+,
+‘‘Y Z
+MessageBoxButton
+‘‘[ k
+.
+‘‘k l
+OK
+‘‘l n
+,
+‘‘n o
+MessageBoxImage
+‘‘p 
+.‘‘ Ä
+Warning‘‘Ä á
+)‘‘á à
+;‘‘à â
+return
+’’ 
+;
+’’ 
+}
+÷÷ 
+if
+ÿÿ 
+(
+ÿÿ 
+!
+ÿÿ 
+IsPasswordSecure
+ÿÿ !
+(
+ÿÿ! "
+Password
+ÿÿ" *
+,
+ÿÿ* +
+out
+ÿÿ, /
+string
+ÿÿ0 6
+passwordErrorKey
+ÿÿ7 G
+)
+ÿÿG H
+)
+ÿÿH I
+{
+ŸŸ 
+string
+⁄⁄ "
+passwordErrorMessage
+⁄⁄ +
+=
+⁄⁄, -
+Lang
+⁄⁄. 2
+.
+⁄⁄2 3
+ResourceManager
+⁄⁄3 B
+.
+⁄⁄B C
+	GetString
+⁄⁄C L
+(
+⁄⁄L M
+passwordErrorKey
+⁄⁄M ]
+)
+⁄⁄] ^
+??
+⁄⁄_ a
+Lang
+⁄⁄b f
+.
+⁄⁄f g(
+alertPasswordGenericError⁄⁄g Ä
+;⁄⁄Ä Å
+
+MessageBox
+€€ 
+.
+€€ 
+Show
+€€ 
+(
+€€  "
+passwordErrorMessage
+€€  4
+,
+€€4 5
+Lang
+€€6 :
+.
+€€: ;)
+alertPasswordNotSecureTitle
+€€; V
+,
+€€V W
+MessageBoxButton
+€€X h
+.
+€€h i
+OK
+€€i k
+,
+€€k l
+MessageBoxImage
+€€m |
+.
+€€| }
+Warning€€} Ñ
+)€€Ñ Ö
+;€€Ö Ü
+return
+‹‹ 
+;
+‹‹ 
+}
+›› 
+int
+ﬂﬂ 
+genderId
+ﬂﬂ 
+;
+ﬂﬂ 
+if
+‡‡ 
+(
+‡‡ 
+IsMale
+‡‡ 
+)
+‡‡ 
+{
+·· 
+genderId
+‚‚ 
+=
+‚‚ 
+$num
+‚‚ 
+;
+‚‚ 
+}
+„„ 
+else
+‰‰ 
+if
+‰‰ 
+(
+‰‰ 
+IsFemale
+‰‰ 
+)
+‰‰ 
+{
+ÂÂ 
+genderId
+ÊÊ 
+=
+ÊÊ 
+$num
+ÊÊ 
+;
+ÊÊ 
+}
+ÁÁ 
+else
+ËË 
+{
+ÈÈ 
+genderId
+ÍÍ 
+=
+ÍÍ 
+$num
+ÍÍ 
+;
+ÍÍ 
+}
+ÎÎ 
+var
+ÏÏ 
+newUserProfile
+ÏÏ 
+=
+ÏÏ  
+new
+ÏÏ! $
+AuthService
+ÏÏ% 0
+.
+ÏÏ0 1
+UserProfileDto
+ÏÏ1 ?
+{
+ÌÌ 
+Username
+ÓÓ 
+=
+ÓÓ 
+Username
+ÓÓ #
+,
+ÓÓ# $
+	FirstName
+ÔÔ 
+=
+ÔÔ 
+	FirstName
+ÔÔ %
+,
+ÔÔ% &
+LastName
+ 
+=
+ 
+LastName
+ #
+,
+# $
+Email
+ÒÒ 
+=
+ÒÒ 
+Email
+ÒÒ 
+,
+ÒÒ 
+GenderId
+ÚÚ 
+=
+ÚÚ 
+genderId
+ÚÚ #
+,
+ÚÚ# $
+AvatarId
+ÛÛ 
+=
+ÛÛ 
+SelectedAvatarId
+ÛÛ +
+}
+ÙÙ 
+;
+ÙÙ 
+var
+ˆˆ 
+client
+ˆˆ 
+=
+ˆˆ 
+new
+ˆˆ )
+AuthenticationServiceClient
+ˆˆ 8
+(
+ˆˆ8 9
+)
+ˆˆ9 :
+;
+ˆˆ: ;
+bool
+˜˜ 
+success
+˜˜ 
+=
+˜˜ 
+false
+˜˜  
+;
+˜˜  !
+try
+¯¯ 
+{
+˘˘ 
+var
+˙˙ 
+result
+˙˙ 
+=
+˙˙ 
+await
+˙˙ "
+client
+˙˙# )
+.
+˙˙) *
+RegisterAsync
+˙˙* 7
+(
+˙˙7 8
+newUserProfile
+˙˙8 F
+,
+˙˙F G
+Password
+˙˙H P
+)
+˙˙P Q
+;
+˙˙Q R
+if
+¸¸ 
+(
+¸¸ 
+result
+¸¸ 
+.
+¸¸ 
+Success
+¸¸ "
+)
+¸¸" #
+{
+˝˝ 
+
+MessageBox
+˛˛ 
+.
+˛˛ 
+Show
+˛˛ #
+(
+˛˛# $
+Lang
+˛˛$ (
+.
+˛˛( )&
+alertRegistrationSuccess
+˛˛) A
++
+˛˛B C
+$str
+˛˛D G
++
+˛˛H I
+result
+˛˛J P
+.
+˛˛P Q
+Message
+˛˛Q X
+,
+˛˛X Y
+Lang
+˛˛Z ^
+.
+˛˛^ _
+alertSuccessTitle
+˛˛_ p
+,
+˛˛p q
+MessageBoxButton˛˛r Ç
+.˛˛Ç É
+OK˛˛É Ö
+,˛˛Ö Ü
+MessageBoxImage˛˛á ñ
+.˛˛ñ ó
+Information˛˛ó ¢
+)˛˛¢ £
+;˛˛£ §$
+OpenVerificationDialog
+ˇˇ *
+(
+ˇˇ* +
+	parameter
+ˇˇ+ 4
+)
+ˇˇ4 5
+;
+ˇˇ5 6
+client
+ÄÄ 
+.
+ÄÄ 
+Close
+ÄÄ  
+(
+ÄÄ  !
+)
+ÄÄ! "
+;
+ÄÄ" #
+success
+ÅÅ 
+=
+ÅÅ 
+true
+ÅÅ "
+;
+ÅÅ" #
+}
+ÇÇ 
+else
+ÉÉ 
+{
+ÑÑ 
+
+MessageBox
+ÖÖ 
+.
+ÖÖ 
+Show
+ÖÖ #
+(
+ÖÖ# $
+result
+ÖÖ$ *
+.
+ÖÖ* +
+Message
+ÖÖ+ 2
+,
+ÖÖ2 3
+Lang
+ÖÖ4 8
+.
+ÖÖ8 9)
+alertRegistrationErrorTitle
+ÖÖ9 T
+,
+ÖÖT U
+MessageBoxButton
+ÖÖV f
+.
+ÖÖf g
+OK
+ÖÖg i
+,
+ÖÖi j
+MessageBoxImage
+ÖÖk z
+.
+ÖÖz {
+ErrorÖÖ{ Ä
+)ÖÖÄ Å
+;ÖÖÅ Ç
+}
+ÜÜ 
+}
+áá 
+catch
+àà 
+(
+àà 
+FaultException
+àà !
+<
+àà! "
+string
+àà" (
+>
+àà( )
+fex
+àà* -
+)
+àà- .
+{
+ââ 
+
+MessageBox
+ää 
+.
+ää 
+Show
+ää 
+(
+ää  
+fex
+ää  #
+.
+ää# $
+Detail
+ää$ *
+,
+ää* +
+Lang
+ää, 0
+.
+ää0 1)
+alertRegistrationErrorTitle
+ää1 L
+,
+ääL M
+MessageBoxButton
+ääN ^
+.
+ää^ _
+OK
+ää_ a
+,
+ääa b
+MessageBoxImage
+ääc r
+.
+äär s
+Error
+ääs x
+)
+ääx y
+;
+ääy z
+}
+ãã 
+catch
+åå 
+(
+åå 
+FaultException
+åå !
+)
+åå! "
+{
+çç 
+
+MessageBox
+éé 
+.
+éé 
+Show
+éé 
+(
+éé  
+Lang
+éé  $
+.
+éé$ %%
+alertServerErrorMessage
+éé% <
+,
+éé< =
+Lang
+éé> B
+.
+ééB C
+alertErrorTitle
+ééC R
+,
+ééR S
+MessageBoxButton
+ééT d
+.
+ééd e
+OK
+éée g
+,
+éég h
+MessageBoxImage
+ééi x
+.
+ééx y
+Error
+ééy ~
+)
+éé~ 
+;éé Ä
+}
+èè 
+catch
+êê 
+(
+êê '
+EndpointNotFoundException
+êê ,
+)
+êê, -
+{
+ëë 
+
+MessageBox
+íí 
+.
+íí 
+Show
+íí 
+(
+íí  
+Lang
+íí  $
+.
+íí$ %)
+alertConnectionErrorMessage
+íí% @
+,
+íí@ A
+Lang
+ííB F
+.
+ííF G'
+alertConnectionErrorTitle
+ííG `
+,
+íí` a
+MessageBoxButton
+ííb r
+.
+íír s
+OK
+íís u
+,
+ííu v
+MessageBoxImageííw Ü
+.ííÜ á
+Errorííá å
+)ííå ç
+;ííç é
+}
+ìì 
+catch
+îî 
+{
+ïï 
+
+MessageBox
+ññ 
+.
+ññ 
+Show
+ññ 
+(
+ññ  
+Lang
+ññ  $
+.
+ññ$ %&
+alertUnknownErrorMessage
+ññ% =
+,
+ññ= >
+Lang
+ññ? C
+.
+ññC D
+alertErrorTitle
+ññD S
+,
+ññS T
+MessageBoxButton
+ññU e
+.
+ññe f
+OK
+ññf h
+,
+ññh i
+MessageBoxImage
+ññj y
+.
+ññy z
+Error
+ññz 
+)ññ Ä
+;ññÄ Å
+}
+óó 
+finally
+òò 
+{
+ôô 
+if
+öö 
+(
+öö 
+!
+öö 
+success
+öö 
+&&
+öö 
+client
+öö  &
+.
+öö& '
+State
+öö' ,
+!=
+öö- / 
+CommunicationState
+öö0 B
+.
+ööB C
+Closed
+ööC I
+)
+ööI J
+client
+õõ 
+.
+õõ 
+Abort
+õõ  
+(
+õõ  !
+)
+õõ! "
+;
+õõ" #
+}
+úú 
+}
+ùù 	
+private
+üü 
+void
+üü $
+OpenVerificationDialog
+üü +
+(
+üü+ ,
+object
+üü, 2
+	parameter
+üü3 <
+)
+üü< =
+{
+†† 	
+var
+°° 
+
+verifyView
+°° 
+=
+°° 
+new
+°°  
+VerifyByCodeView
+°°! 1
+(
+°°1 2
+)
+°°2 3
+;
+°°3 4
+
+verifyView
+¢¢ 
+.
+¢¢ 
+DataContext
+¢¢ "
+=
+¢¢# $
+new
+¢¢% (#
+VerifyByCodeViewModel
+¢¢) >
+(
+¢¢> ?
+Email
+¢¢? D
+)
+¢¢D E
+;
+¢¢E F
+
+verifyView
+££ 
+.
+££ 
+Show
+££ 
+(
+££ 
+)
+££ 
+;
+££ 
+if
+•• 
+(
+•• 
+	parameter
+•• 
+is
+•• 
+Window
+•• #
+signUpWindow
+••$ 0
+)
+••0 1
+signUpWindow
+¶¶ 
+.
+¶¶ 
+Close
+¶¶ "
+(
+¶¶" #
+)
+¶¶# $
+;
+¶¶$ %
+}
+ßß 	
+private
+©© 
+static
+©© 
+void
+©©  
+ExecuteCloseWindow
+©© .
+(
+©©. /
+object
+©©/ 5
+	parameter
+©©6 ?
+)
+©©? @
+{
+™™ 	
+if
+´´ 
+(
+´´ 
+	parameter
+´´ 
+is
+´´ 
+Window
+´´ #
+)
+´´# $
+Application
+¨¨ 
+.
+¨¨ 
+Current
+¨¨ #
+.
+¨¨# $
+Shutdown
+¨¨$ ,
+(
+¨¨, -
+)
+¨¨- .
+;
+¨¨. /
+}
+≠≠ 	
+private
+ØØ 
+static
+ØØ 
+void
+ØØ #
+ExecuteMaximizeWindow
+ØØ 1
+(
+ØØ1 2
+object
+ØØ2 8
+	parameter
+ØØ9 B
+)
+ØØB C
+{
+∞∞ 	
+if
+±± 
+(
+±± 
+	parameter
+±± 
+is
+±± 
+Window
+±± #
+window
+±±$ *
+)
+±±* +
+window
+≤≤ 
+.
+≤≤ 
+WindowState
+≤≤ "
+=
+≤≤# $
+window
+≤≤% +
+.
+≤≤+ ,
+WindowState
+≤≤, 7
+==
+≤≤8 :
+WindowState
+≤≤; F
+.
+≤≤F G
+	Maximized
+≤≤G P
+?
+≤≤Q R
+WindowState
+≤≤S ^
+.
+≤≤^ _
+Normal
+≤≤_ e
+:
+≤≤f g
+WindowState
+≤≤h s
+.
+≤≤s t
+	Maximized
+≤≤t }
+;
+≤≤} ~
+}
+≥≥ 	
+private
+µµ 
+static
+µµ 
+void
+µµ #
+ExecuteMinimizeWindow
+µµ 1
+(
+µµ1 2
+object
+µµ2 8
+	parameter
+µµ9 B
+)
+µµB C
+{
+∂∂ 	
+if
+∑∑ 
+(
+∑∑ 
+	parameter
+∑∑ 
+is
+∑∑ 
+Window
+∑∑ #
+window
+∑∑$ *
+)
+∑∑* +
+window
+∏∏ 
+.
+∏∏ 
+WindowState
+∏∏ "
+=
+∏∏# $
+WindowState
+∏∏% 0
+.
+∏∏0 1
+	Minimized
+∏∏1 :
+;
+∏∏: ;
+}
+ππ 	
+private
+ªª 
+static
+ªª 
+void
+ªª 
+ExecuteReturn
+ªª )
+(
+ªª) *
+object
+ªª* 0
+	parameter
+ªª1 :
+)
+ªª: ;
+{
+ºº 	
+if
+ΩΩ 
+(
+ΩΩ 
+	parameter
+ΩΩ 
+is
+ΩΩ 
+Window
+ΩΩ #
+currentWindow
+ΩΩ$ 1
+)
+ΩΩ1 2
+{
+ææ 
+var
+øø 
+welcomeView
+øø 
+=
+øø  !
+new
+øø" %
+WelcomeView
+øø& 1
+(
+øø1 2
+)
+øø2 3
+;
+øø3 4
+welcomeView
+¿¿ 
+.
+¿¿ 
+Show
+¿¿  
+(
+¿¿  !
+)
+¿¿! "
+;
+¿¿" #
+currentWindow
+¡¡ 
+.
+¡¡ 
+Close
+¡¡ #
+(
+¡¡# $
+)
+¡¡$ %
+;
+¡¡% &
+}
+¬¬ 
+}
+√√ 	
+public
+≈≈ 
+static
+≈≈ 
+BitmapImage
+≈≈ ! 
+ConvertByteToImage
+≈≈" 4
+(
+≈≈4 5
+byte
+≈≈5 9
+[
+≈≈9 :
+]
+≈≈: ;
+
+imageBytes
+≈≈< F
+)
+≈≈F G
+{
+∆∆ 	
+if
+«« 
+(
+«« 
+
+imageBytes
+«« 
+==
+«« 
+null
+«« "
+||
+««# %
+
+imageBytes
+««& 0
+.
+««0 1
+Length
+««1 7
+==
+««8 :
+$num
+««; <
+)
+««< =
+return
+»» 
+null
+»» 
+;
+»» 
+var
+   
+image
+   
+=
+   
+new
+   
+BitmapImage
+   '
+(
+  ' (
+)
+  ( )
+;
+  ) *
+using
+ÀÀ 
+(
+ÀÀ 
+var
+ÀÀ 
+mem
+ÀÀ 
+=
+ÀÀ 
+new
+ÀÀ  
+MemoryStream
+ÀÀ! -
+(
+ÀÀ- .
+
+imageBytes
+ÀÀ. 8
+)
+ÀÀ8 9
+)
+ÀÀ9 :
+{
+ÃÃ 
+mem
+ÕÕ 
+.
+ÕÕ 
+Position
+ÕÕ 
+=
+ÕÕ 
+$num
+ÕÕ  
+;
+ÕÕ  !
+image
+ŒŒ 
+.
+ŒŒ 
+	BeginInit
+ŒŒ 
+(
+ŒŒ  
+)
+ŒŒ  !
+;
+ŒŒ! "
+image
+œœ 
+.
+œœ 
+CreateOptions
+œœ #
+=
+œœ$ %!
+BitmapCreateOptions
+œœ& 9
+.
+œœ9 :!
+PreservePixelFormat
+œœ: M
+;
+œœM N
+image
+–– 
+.
+–– 
+CacheOption
+–– !
+=
+––" #
+BitmapCacheOption
+––$ 5
+.
+––5 6
+OnLoad
+––6 <
+;
+––< =
+image
+—— 
+.
+—— 
+	UriSource
+—— 
+=
+——  !
+null
+——" &
+;
+——& '
+image
+““ 
+.
+““ 
+StreamSource
+““ "
+=
+““# $
+mem
+““% (
+;
+““( )
+image
+”” 
+.
+”” 
+EndInit
+”” 
+(
+”” 
+)
+”” 
+;
+””  
+}
+‘‘ 
+image
+’’ 
+.
+’’ 
+Freeze
+’’ 
+(
+’’ 
+)
+’’ 
+;
+’’ 
+return
+÷÷ 
+image
+÷÷ 
+;
+÷÷ 
+}
+◊◊ 	
+}
+ÿÿ 
+}ŸŸ æ¬
+ùC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Matches& -
+{ 
+public 
+
+class 
+MatchesViewModel !
+:" #
+ViewModelBase$ 1
+{ 
+private 
+bool !
+_isPublicViewSelected *
+=+ ,
+true- 1
+;1 2
+private 
+string 
+
+_matchCode !
+;! "
+private  
+ObservableCollection $
+<$ %
+MatchInfoModel% 3
+>3 4
+_publicMatches5 C
+;C D
+private 
+string 
+_joiningMatchId &
+=' (
+null) -
+;- .
+private 
+bool  
+_joiningPrivateMatch )
+=* +
+false, 1
+;1 2
+private 
+Window 
+_currentWindow %
+=& '
+null( ,
+;, -
+public 
+bool  
+IsPublicViewSelected (
+{ 	
+get 
+=> !
+_isPublicViewSelected (
+;( )
+set 
+=> 
+SetProperty 
+( 
+ref "!
+_isPublicViewSelected# 8
+,8 9
+value: ?
+)? @
+;@ A
+} 	
+public 
+string 
+	MatchCode 
+{ 	
+get   
+=>   
+
+_matchCode   
+;   
+set!! 
+=>!! 
+SetProperty!! 
+(!! 
+ref!! "
+
+_matchCode!!# -
+,!!- .
+value!!/ 4
+)!!4 5
+;!!5 6
+}"" 	
+private$$ 
+bool$$ 
+
+_isJoining$$ 
+;$$  
+public%% 
+bool%% 
+	IsJoining%% 
+{&& 	
+get'' 
+=>'' 
+
+_isJoining'' 
+;'' 
+set(( 
+{)) 
+if** 
+(** 
+SetProperty** 
+(**  
+ref**  #
+
+_isJoining**$ .
+,**. /
+value**0 5
+)**5 6
+)**6 7
+{++ 
+Application,, 
+.,,  
+Current,,  '
+?,,' (
+.,,( )
+
+Dispatcher,,) 3
+.,,3 4
+Invoke,,4 :
+(,,: ;
+(,,; <
+),,< =
+=>,,> @
+{-- 
+CommandManager.. &
+...& '&
+InvalidateRequerySuggested..' A
+(..A B
+)..B C
+;..C D
+}// 
+)// 
+;// 
+}00 
+}11 
+}22 	
+public44  
+ObservableCollection44 #
+<44# $
+MatchInfoModel44$ 2
+>442 3
+PublicMatches444 A
+{55 	
+get66 
+=>66 
+_publicMatches66 !
+;66! "
+set77 
+=>77 
+SetProperty77 
+(77 
+ref77 "
+_publicMatches77# 1
+,771 2
+value773 8
+)778 9
+;779 :
+}88 	
+public:: 
+RelayCommand:: $
+ShowPublicMatchesCommand:: 4
+{::5 6
+get::7 :
+;::: ;
+private::< C
+set::D G
+;::G H
+}::I J
+public;; 
+RelayCommand;; %
+ShowPrivateMatchesCommand;; 5
+{;;6 7
+get;;8 ;
+;;;; <
+private;;= D
+set;;E H
+;;;H I
+};;J K
+public<< 
+RelayCommand<< "
+JoinPublicMatchCommand<< 2
+{<<3 4
+get<<5 8
+;<<8 9
+private<<: A
+set<<B E
+;<<E F
+}<<G H
+public== 
+RelayCommand== #
+JoinPrivateMatchCommand== 3
+{==4 5
+get==6 9
+;==9 :
+private==; B
+set==C F
+;==F G
+}==H I
+public>> 
+RelayCommand>> 
+RefreshCommand>> *
+{>>+ ,
+get>>- 0
+;>>0 1
+set>>3 6
+;>>6 7
+}>>8 9
+public?? 
+RelayCommand?? 
+ReturnCommand?? )
+{??* +
+get??, /
+;??/ 0
+private??1 8
+set??9 <
+;??< =
+}??> ?
+publicAA 
+MatchesViewModelAA 
+(AA  
+)AA  !
+{BB 	
+PublicMatchesCC 
+=CC 
+newCC  
+ObservableCollectionCC  4
+<CC4 5
+MatchInfoModelCC5 C
+>CCC D
+(CCD E
+)CCE F
+;CCF G$
+ShowPublicMatchesCommandEE $
+=EE% &
+newEE' *
+RelayCommandEE+ 7
+(EE7 8
+(EE8 9
+pEE9 :
+)EE: ;
+=>EE< > 
+IsPublicViewSelectedEE? S
+=EET U
+trueEEV Z
+)EEZ [
+;EE[ \%
+ShowPrivateMatchesCommandFF %
+=FF& '
+newFF( +
+RelayCommandFF, 8
+(FF8 9
+(FF9 :
+pFF: ;
+)FF; <
+=>FF= ? 
+IsPublicViewSelectedFF@ T
+=FFU V
+falseFFW \
+)FF\ ]
+;FF] ^"
+JoinPublicMatchCommandGG "
+=GG# $
+newGG% (
+RelayCommandGG) 5
+(GG5 6"
+ExecuteJoinPublicMatchGG6 L
+,GGL M
+CanExecuteJoinGGN \
+)GG\ ]
+;GG] ^#
+JoinPrivateMatchCommandHH #
+=HH$ %
+newHH& )
+RelayCommandHH* 6
+(HH6 7
+asyncHH7 <
+(HH= >
+pHH> ?
+)HH? @
+=>HHA C
+awaitHHD I(
+ExecuteJoinPrivateMatchAsyncHHJ f
+(HHf g
+pHHg h
+)HHh i
+,HHi j
+CanExecuteJoinHHk y
+)HHy z
+;HHz {
+ReturnCommandII 
+=II 
+newII 
+RelayCommandII  ,
+(II, -
+ExecuteReturnII- :
+)II: ;
+;II; <$
+MatchmakingClientManagerKK $
+.KK$ %
+InstanceKK% -
+.KK- .&
+OnPublicMatchesListUpdatedKK. H
++=KKI K&
+OnPublicMatchesListUpdatedKKL f
+;KKf g$
+MatchmakingClientManagerLL $
+.LL$ %
+InstanceLL% -
+.LL- .%
+OnMatchJoinedSuccessfullyLL. G
++=LLH J
+OnMatchJoinedLLK X
+;LLX Y$
+MatchmakingClientManagerMM $
+.MM$ %
+InstanceMM% -
+.MM- .
+OnMatchmakingFailedMM. A
++=MMB D
+OnMatchmakingFailedMME X
+;MMX Y
+LoadPublicMatchesOO 
+(OO 
+)OO 
+;OO  
+}PP 	
+privateRR 
+boolRR 
+CanExecuteJoinRR #
+(RR# $
+objectRR$ *
+	parameterRR+ 4
+)RR4 5
+{SS 	
+returnTT 
+!TT 
+	IsJoiningTT 
+;TT 
+}UU 	
+privateWW 
+asyncWW 
+TaskWW 
+LoadPublicMatchesWW ,
+(WW, -
+)WW- .
+{XX 	
+varYY 
+
+matchesDtoYY 
+=YY 
+awaitYY "$
+MatchmakingClientManagerYY# ;
+.YY; <
+InstanceYY< D
+.YYD E!
+GetPublicMatchesAsyncYYE Z
+(YYZ [
+)YY[ \
+;YY\ ]&
+OnPublicMatchesListUpdatedZZ &
+(ZZ& '
+
+matchesDtoZZ' 1
+)ZZ1 2
+;ZZ2 3
+}[[ 	
+private]] 
+void]] "
+ExecuteJoinPublicMatch]] +
+(]]+ ,
+object]], 2
+	parameter]]3 <
+)]]< =
+{^^ 	
+if__ 
+(__ 
+	IsJoining__ 
+)__ 
+return__ !
+;__! "
+	IsJoining`` 
+=`` 
+true`` 
+;`` 
+ifbb 
+(bb 
+	parameterbb 
+isbb 
+MatchInfoModelbb +
+	matchInfobb, 5
+&&bb6 8
+	matchInfobb9 B
+.bbB C
+CanJoinbbC J
+)bbJ K
+{cc 
+_joiningMatchIddd 
+=dd  !
+	matchInfodd" +
+.dd+ ,
+MatchIddd, 3
+;dd3 4 
+_joiningPrivateMatchee $
+=ee% &
+falseee' ,
+;ee, -
+_currentWindowff 
+=ff  
+FindParentWindowff! 1
 (ff1 2
 )ff2 3
-;ff3 4
-vargg 
-resultgg 
-=gg 
-awaitgg $
-MatchmakingClientManagergg 7
-.gg7 8
-Instancegg8 @
-.gg@ A!
-JoinPrivateMatchAsyncggA V
-(ggV W
-
-codeToJoinggW a
-)gga b
-;ggb c
-ifjj 
-(jj 
-resultjj 
-.jj 
-Successjj 
-&&jj !
-resultjj" (
-.jj( )
-Datajj) -
-!=jj. 0
-nulljj1 5
-&&jj6 8
-resultjj9 ?
-.jj? @
-Datajj@ D
-.jjD E
-ContainsKeyjjE P
-(jjP Q
-$strjjQ Z
-)jjZ [
-)jj[ \
+;ff3 4$
+MatchmakingClientManagerhh (
+.hh( )
+Instancehh) 1
+.hh1 2
+JoinPublicMatchhh2 A
+(hhA B
+	matchInfohhB K
+.hhK L
+MatchIdhhL S
+)hhS T
+;hhT U
+}ii 
+elsejj 
+ifjj 
+(jj 
+	parameterjj 
+isjj !
+stringjj" (
+matchIdjj) 0
+)jj0 1
 {kk 
 _joiningMatchIdll 
-=ll  !
-resultll" (
-.ll( )
-Datall) -
-[ll- .
-$strll. 7
-]ll7 8
-;ll8 9 
+=ll  !
+matchIdll" )
+;ll) * 
 _joiningPrivateMatchmm $
-=mm% &
-truemm' +
-;mm+ ,
+=mm% &
+falsemm' ,
+;mm, -
 _currentWindownn 
 =nn  
 FindParentWindownn! 1
-(nn1 2
-	parameternn2 ;
-)nn; <
-;nn< =
-
-MessageBoxoo 
-.oo 
-Showoo 
-(oo  
-$"oo  "
-$stroo" B
-{ooB C
-
-codeToJoinooC M
-}ooM N
-$strooN Y
-"ooY Z
-)ooZ [
-;oo[ \
+(nn1 2
+)nn2 3
+;nn3 4$
+MatchmakingClientManageroo (
+.oo( )
+Instanceoo) 1
+.oo1 2
+JoinPublicMatchoo2 A
+(ooA B
+matchIdooB I
+)ooI J
+;ooJ K
 }pp 
 elseqq 
 {rr 
@@ -10298,1141 +27261,2649 @@ codeToJoinooC M
 MessageBoxss 
 .ss 
 Showss 
-(ss  
-resultss  &
-.ss& '
-Messagess' .
-??ss/ 1
-$strss2 b
-,ssb c
-$strssd k
-)ssk l
-;ssl m
+(ss  
+$strss  M
+,ssM N
+$strssO V
+)ssV W
+;ssW X
 }tt 
 }uu 	
-privateww 
-voidww 
-ExecuteReturnww "
-(ww" #
-objectww# )
-	parameterww* 3
-)ww3 4
-{xx 	
-CleanupEventsyy 
-(yy 
-)yy 
-;yy 
-ifzz 
-(zz 
-	parameterzz 
-iszz 
-Windowzz #
-windowzz$ *
-)zz* +
-{{{ 
-var|| 
-	lobbyView|| 
-=|| 
-new||  #
-View||$ (
-.||( )
-Lobby||) .
-.||. /
-	LobbyView||/ 8
-(||8 9
-)||9 :
-;||: ;
-	lobbyView}} 
-.}} 
-Show}} 
-(}} 
-)}}  
-;}}  !
-window~~ 
-.~~ 
-Close~~ 
-(~~ 
-)~~ 
-;~~ 
-} 
-}
-ÄÄ 	
-private
-ÇÇ 
-void
-ÇÇ (
-OnPublicMatchesListUpdated
-ÇÇ /
+privateww 
+asyncww 
+Taskww (
+ExecuteJoinPrivateMatchAsyncww 7
+(ww7 8
+objectww8 >
+	parameterww? H
+)wwH I
+{xx 	
+ifyy 
+(yy 
+stringyy 
+.yy 
+IsNullOrWhiteSpaceyy )
+(yy) *
+	MatchCodeyy* 3
+)yy3 4
+)yy4 5
+{zz 
+
+MessageBox{{ 
+.{{ 
+Show{{ 
+({{  
+
+Properties{{  *
+.{{* +
+Langs{{+ 0
+.{{0 1
+Lang{{1 5
+.{{5 6*
+alertPrivateMatchesErrorNoCode{{6 T
+){{T U
+;{{U V
+return|| 
+;|| 
+}}} 
+if 
+( 
+	IsJoining 
+) 
+return !
+;! "
+	IsJoining
+ÄÄ 
+=
+ÄÄ 
+true
+ÄÄ 
+;
+ÄÄ 
+string
+ÇÇ 
+
+codeToJoin
+ÇÇ 
+=
+ÇÇ 
+	MatchCode
+ÇÇ  )
+.
+ÇÇ) *
+ToUpper
+ÇÇ* 1
 (
-ÇÇ/ 0
-List
-ÇÇ0 4
-<
-ÇÇ4 5
-MatchInfoDto
-ÇÇ5 A
->
-ÇÇA B
-publicMatches
-ÇÇC P
+ÇÇ1 2
 )
-ÇÇP Q
+ÇÇ2 3
+;
+ÇÇ3 4
+var
+ÉÉ 
+result
+ÉÉ 
+=
+ÉÉ 
+await
+ÉÉ &
+MatchmakingClientManager
+ÉÉ 7
+.
+ÉÉ7 8
+Instance
+ÉÉ8 @
+.
+ÉÉ@ A#
+JoinPrivateMatchAsync
+ÉÉA V
+(
+ÉÉV W
+
+codeToJoin
+ÉÉW a
+)
+ÉÉa b
+;
+ÉÉb c
+if
+ÖÖ 
+(
+ÖÖ 
+result
+ÖÖ 
+.
+ÖÖ 
+Success
+ÖÖ 
+&&
+ÖÖ !
+result
+ÖÖ" (
+.
+ÖÖ( )
+Data
+ÖÖ) -
+!=
+ÖÖ. 0
+null
+ÖÖ1 5
+&&
+ÖÖ6 8
+result
+ÖÖ9 ?
+.
+ÖÖ? @
+Data
+ÖÖ@ D
+.
+ÖÖD E
+ContainsKey
+ÖÖE P
+(
+ÖÖP Q
+$str
+ÖÖQ Z
+)
+ÖÖZ [
+)
+ÖÖ[ \
 {
-ÉÉ 	
+ÜÜ 
+string
+áá 
+matchId
+áá 
+=
+áá  
+result
+áá! '
+.
+áá' (
+Data
+áá( ,
+[
+áá, -
+$str
+áá- 6
+]
+áá6 7
+;
+áá7 8
+var
+ââ 
+lobbyManager
+ââ  
+=
+ââ! " 
+LobbyClientManager
+ââ# 5
+.
+ââ5 6
+Instance
+ââ6 >
+;
+ââ> ?
+var
+ää 
+sessionManager
+ää "
+=
+ää# $
+SessionManager
+ää% 3
+.
+ää3 4
+Instance
+ää4 <
+;
+ää< =
+string
+ãã 
+currentUsername
+ãã &
+=
+ãã' (
+sessionManager
+ãã) 7
+.
+ãã7 8
+CurrentUsername
+ãã8 G
+;
+ããG H
+lobbyManager
+åå 
+.
+åå 
+Connect
+åå $
+(
+åå$ %
+currentUsername
+åå% 4
+,
+åå4 5
+matchId
+åå6 =
+)
+åå= >
+;
+åå> ?
+var
+çç "
+waitingRoomViewModel
+çç (
+=
+çç) *
+new
+çç+ ..
+ WaitingRoomPrivateMatchViewModel
+çç/ O
+(
+ççO P
+lobbyManager
+ççP \
+,
+çç\ ]
+sessionManager
+çç^ l
+)
+ççl m
+;
+ççm n
+var
+éé 
+waitingRoomView
+éé #
+=
+éé$ %
+new
+éé& ))
+WaitingRoomPrivateMatchView
+éé* E
+{
+èè 
+DataContext
+êê 
+=
+êê  !"
+waitingRoomViewModel
+êê" 6
+}
+ëë 
+;
+ëë 
+Window
+ìì 
+currentWindow
+ìì $
+=
+ìì% &
+FindParentWindow
+ìì' 7
+(
+ìì7 8
+	parameter
+ìì8 A
+)
+ììA B
+;
+ììB C
+if
+îî 
+(
+îî 
+currentWindow
+îî !
+!=
+îî" $
+null
+îî% )
+)
+îî) *
+{
+ïï 
+CleanupEvents
+ññ !
+(
+ññ! "
+)
+ññ" #
+;
+ññ# $
+waitingRoomView
+óó #
+.
+óó# $
+Show
+óó$ (
+(
+óó( )
+)
+óó) *
+;
+óó* +
+currentWindow
+òò !
+.
+òò! "
+Close
+òò" '
+(
+òò' (
+)
+òò( )
+;
+òò) *
+}
+ôô 
+else
+öö 
+{
+õõ 
+
+MessageBox
+úú 
+.
+úú 
+Show
+úú #
+(
+úú# $
+$"
+úú$ &
+$str
+úú& :
+{
+úú: ;
+
+codeToJoin
+úú; E
+}
+úúE F
+$str
+úúF e
+"
+úúe f
+,
+úúf g
+$str
+úúh n
+)
+úún o
+;
+úúo p
+lobbyManager
+ùù  
+.
+ùù  !
+
+Disconnect
+ùù! +
+(
+ùù+ ,
+)
+ùù, -
+;
+ùù- .
+}
+ûû 
+}
+üü 
+else
+†† 
+{
+°° 
+
+MessageBox
+¢¢ 
+.
+¢¢ 
+Show
+¢¢ 
+(
+¢¢  
+result
+¢¢  &
+.
+¢¢& '
+Message
+¢¢' .
+??
+¢¢/ 1
+$str
+¢¢2 b
+,
+¢¢b c
+$str
+¢¢d k
+)
+¢¢k l
+;
+¢¢l m
+}
+££ 
+	IsJoining
+§§ 
+=
+§§ 
+false
+§§ 
+;
+§§ 
+}
+•• 	
+private
+ßß 
+void
+ßß 
+ExecuteReturn
+ßß "
+(
+ßß" #
+object
+ßß# )
+	parameter
+ßß* 3
+)
+ßß3 4
+{
+®® 	
+CleanupEvents
+©© 
+(
+©© 
+)
+©© 
+;
+©© 
+if
+™™ 
+(
+™™ 
+	parameter
+™™ 
+is
+™™ 
+Window
+™™ #
+window
+™™$ *
+)
+™™* +
+{
+´´ 
+var
+¨¨ 
+	lobbyView
+¨¨ 
+=
+¨¨ 
+new
+¨¨  #
+View
+¨¨$ (
+.
+¨¨( )
+Lobby
+¨¨) .
+.
+¨¨. /
+	LobbyView
+¨¨/ 8
+(
+¨¨8 9
+)
+¨¨9 :
+;
+¨¨: ;
+	lobbyView
+≠≠ 
+.
+≠≠ 
+Show
+≠≠ 
+(
+≠≠ 
+)
+≠≠  
+;
+≠≠  !
+window
+ÆÆ 
+.
+ÆÆ 
+Close
+ÆÆ 
+(
+ÆÆ 
+)
+ÆÆ 
+;
+ÆÆ 
+}
+ØØ 
+}
+∞∞ 	
+private
+≤≤ 
+void
+≤≤ (
+OnPublicMatchesListUpdated
+≤≤ /
+(
+≤≤/ 0
+List
+≤≤0 4
+<
+≤≤4 5
+MatchInfoDto
+≤≤5 A
+>
+≤≤A B
+publicMatches
+≤≤C P
+)
+≤≤P Q
+{
+≥≥ 	
 Application
-ÑÑ 
+¥¥ 
 .
-ÑÑ 
+¥¥ 
 Current
-ÑÑ 
+¥¥ 
 ?
-ÑÑ  
+¥¥  
 .
-ÑÑ  !
+¥¥  !
 
 Dispatcher
-ÑÑ! +
+¥¥! +
 ?
-ÑÑ+ ,
+¥¥+ ,
 .
-ÑÑ, -
+¥¥, -
 Invoke
-ÑÑ- 3
+¥¥- 3
 (
-ÑÑ3 4
+¥¥3 4
 (
-ÑÑ4 5
+¥¥4 5
 )
-ÑÑ5 6
+¥¥5 6
 =>
-ÑÑ7 9
+¥¥7 9
 {
-ÖÖ 
+µµ 
 PublicMatches
-ÜÜ 
+∂∂ 
 .
-ÜÜ 
+∂∂ 
 Clear
-ÜÜ #
+∂∂ #
 (
-ÜÜ# $
+∂∂# $
 )
-ÜÜ$ %
+∂∂$ %
 ;
-ÜÜ% &
+∂∂% &
 if
-áá 
+∑∑ 
 (
-áá 
+∑∑ 
 publicMatches
-áá !
+∑∑ !
 !=
-áá" $
+∑∑" $
 null
-áá% )
+∑∑% )
 )
-áá) *
+∑∑) *
 {
-àà 
+∏∏ 
 foreach
-ââ 
+ππ 
 (
-ââ 
+ππ 
 var
-ââ  
+ππ  
 matchDto
-ââ! )
+ππ! )
 in
-ââ* ,
+ππ* ,
 publicMatches
-ââ- :
+ππ- :
 )
-ââ: ;
+ππ: ;
 {
-ää 
+∫∫ 
 PublicMatches
-ãã %
+ªª %
 .
-ãã% &
+ªª% &
 Add
-ãã& )
+ªª& )
 (
-ãã) *
+ªª) *
 new
-ãã* -
+ªª* -
 MatchInfoModel
-ãã. <
+ªª. <
 (
-ãã< =
+ªª< =
 matchDto
-ãã= E
+ªª= E
 )
-ããE F
+ªªE F
 )
-ããF G
+ªªF G
 ;
-ããG H
+ªªG H
+}
+ºº 
+}
+ΩΩ 
+}
+ææ 
+)
+ææ 
+;
+ææ 
+}
+øø 	
+private
+¡¡ 
+void
+¡¡ 
+OnMatchJoined
+¡¡ "
+(
+¡¡" #
+string
+¡¡# )
+matchId
+¡¡* 1
+,
+¡¡1 2 
+OperationResultDto
+¡¡3 E
+result
+¡¡F L
+)
+¡¡L M
+{
+¬¬ 	
+if
+√√ 
+(
+√√ 
+matchId
+√√ 
+!=
+√√ 
+_joiningMatchId
+√√ *
+||
+√√+ -"
+_joiningPrivateMatch
+√√. B
+)
+√√B C
+{
+ƒƒ 
+return
+≈≈ 
+;
+≈≈ 
+}
+∆∆ 
+Application
+»» 
+.
+»» 
+Current
+»» 
+?
+»»  
+.
+»»  !
+
+Dispatcher
+»»! +
+?
+»»+ ,
+.
+»», -
+Invoke
+»»- 3
+(
+»»3 4
+(
+»»4 5
+)
+»»5 6
+=>
+»»7 9
+{
+…… 
+	IsJoining
+   
+=
+   
+false
+   !
+;
+  ! "
+if
+ÃÃ 
+(
+ÃÃ 
+result
+ÃÃ 
+.
+ÃÃ 
+Success
+ÃÃ "
+)
+ÃÃ" #
+{
+ÕÕ 
+var
+ŒŒ 
+lobbyManager
+ŒŒ $
+=
+ŒŒ% & 
+LobbyClientManager
+ŒŒ' 9
+.
+ŒŒ9 :
+Instance
+ŒŒ: B
+;
+ŒŒB C
+var
+œœ 
+sessionManager
+œœ &
+=
+œœ' (
+SessionManager
+œœ) 7
+.
+œœ7 8
+Instance
+œœ8 @
+;
+œœ@ A
+string
+–– 
+currentUsername
+–– *
+=
+––+ ,
+sessionManager
+––- ;
+.
+––; <
+CurrentUsername
+––< K
+;
+––K L
+lobbyManager
+——  
+.
+——  !
+Connect
+——! (
+(
+——( )
+currentUsername
+——) 8
+,
+——8 9
+matchId
+——: A
+)
+——A B
+;
+——B C
+var
+““ "
+waitingRoomViewModel
+““ ,
+=
+““- .
+new
+““/ 2-
+WaitingRoomPublicMatchViewModel
+““3 R
+(
+““R S
+lobbyManager
+““S _
+,
+““_ `
+sessionManager
+““a o
+)
+““o p
+;
+““p q
+var
+”” 
+waitingRoomView
+”” '
+=
+””( )
+new
+””* -(
+WaitingRoomPublicMatchView
+””. H
+{
+‘‘ 
+DataContext
+’’ #
+=
+’’$ %"
+waitingRoomViewModel
+’’& :
+}
+÷÷ 
+;
+÷÷ 
+if
+ÿÿ 
+(
+ÿÿ 
+_currentWindow
+ÿÿ &
+!=
+ÿÿ' )
+null
+ÿÿ* .
+)
+ÿÿ. /
+{
+ŸŸ 
+CleanupEvents
+⁄⁄ %
+(
+⁄⁄% &
+)
+⁄⁄& '
+;
+⁄⁄' (
+waitingRoomView
+€€ '
+.
+€€' (
+Show
+€€( ,
+(
+€€, -
+)
+€€- .
+;
+€€. /
+_currentWindow
+‹‹ &
+.
+‹‹& '
+Close
+‹‹' ,
+(
+‹‹, -
+)
+‹‹- .
+;
+‹‹. /
+}
+›› 
+else
+ﬁﬁ 
+{
+ﬂﬂ 
+
+MessageBox
+‡‡ "
+.
+‡‡" #
+Show
+‡‡# '
+(
+‡‡' (
+$"
+‡‡( *
+$str
+‡‡* >
+{
+‡‡> ?
+matchId
+‡‡? F
+}
+‡‡F G
+$str
+‡‡G f
+"
+‡‡f g
+,
+‡‡g h
+$str
+‡‡i o
+)
+‡‡o p
+;
+‡‡p q
+lobbyManager
+·· $
+.
+··$ %
+
+Disconnect
+··% /
+(
+··/ 0
+)
+··0 1
+;
+··1 2
+}
+‚‚ 
+}
+„„ 
+else
+‰‰ 
+{
+ÂÂ 
+
+MessageBox
+ÊÊ 
+.
+ÊÊ 
+Show
+ÊÊ #
+(
+ÊÊ# $
+$"
+ÊÊ$ &
+$str
+ÊÊ& C
+{
+ÊÊC D
+matchId
+ÊÊD K
+}
+ÊÊK L
+$str
+ÊÊL N
+{
+ÊÊN O
+result
+ÊÊO U
+.
+ÊÊU V
+Message
+ÊÊV ]
+}
+ÊÊ] ^
+"
+ÊÊ^ _
+,
+ÊÊ_ `
+$str
+ÊÊa h
+)
+ÊÊh i
+;
+ÊÊi j
+}
+ÁÁ 
+_joiningMatchId
+ÈÈ 
+=
+ÈÈ  !
+null
+ÈÈ" &
+;
+ÈÈ& '"
+_joiningPrivateMatch
+ÍÍ $
+=
+ÍÍ% &
+false
+ÍÍ' ,
+;
+ÍÍ, -
+_currentWindow
+ÎÎ 
+=
+ÎÎ  
+null
+ÎÎ! %
+;
+ÎÎ% &
+}
+ÏÏ 
+)
+ÏÏ 
+;
+ÏÏ 
+}
+ÌÌ 	
+private
+ÔÔ 
+void
+ÔÔ 
+CleanupEvents
+ÔÔ "
+(
+ÔÔ" #
+)
+ÔÔ# $
+{
+ 	&
+MatchmakingClientManager
+ÒÒ $
+.
+ÒÒ$ %
+Instance
+ÒÒ% -
+.
+ÒÒ- .(
+OnPublicMatchesListUpdated
+ÒÒ. H
+-=
+ÒÒI K(
+OnPublicMatchesListUpdated
+ÒÒL f
+;
+ÒÒf g&
+MatchmakingClientManager
+ÚÚ $
+.
+ÚÚ$ %
+Instance
+ÚÚ% -
+.
+ÚÚ- .'
+OnMatchJoinedSuccessfully
+ÚÚ. G
+-=
+ÚÚH J
+OnMatchJoined
+ÚÚK X
+;
+ÚÚX Y&
+MatchmakingClientManager
+ÛÛ $
+.
+ÛÛ$ %
+Instance
+ÛÛ% -
+.
+ÛÛ- .!
+OnMatchmakingFailed
+ÛÛ. A
+-=
+ÛÛB D!
+OnMatchmakingFailed
+ÛÛE X
+;
+ÛÛX Y
+}
+ÙÙ 	
+private
+ˆˆ 
+Window
+ˆˆ 
+FindParentWindow
+ˆˆ '
+(
+ˆˆ' (
+object
+ˆˆ( .
+commandParameter
+ˆˆ/ ?
+=
+ˆˆ@ A
+null
+ˆˆB F
+)
+ˆˆF G
+{
+˜˜ 	
+if
+¯¯ 
+(
+¯¯ 
+commandParameter
+¯¯  
+is
+¯¯! #
+Window
+¯¯$ *
+win
+¯¯+ .
+)
+¯¯. /
+return
+¯¯0 6
+win
+¯¯7 :
+;
+¯¯: ;
+return
+˘˘ 
+Application
+˘˘ 
+.
+˘˘ 
+Current
+˘˘ &
+?
+˘˘& '
+.
+˘˘' (
+Windows
+˘˘( /
+.
+˘˘/ 0
+OfType
+˘˘0 6
+<
+˘˘6 7
+Window
+˘˘7 =
+>
+˘˘= >
+(
+˘˘> ?
+)
+˘˘? @
+.
+˘˘@ A
+SingleOrDefault
+˘˘A P
+(
+˘˘P Q
+w
+˘˘Q R
+=>
+˘˘S U
+w
+˘˘V W
+.
+˘˘W X
+DataContext
+˘˘X c
+==
+˘˘d f
+this
+˘˘g k
+||
+˘˘l n
+w
+˘˘o p
+.
+˘˘p q
+IsActive
+˘˘q y
+)
+˘˘y z
+;
+˘˘z {
+}
+˙˙ 	
+private
+¸¸ 
+void
+¸¸ !
+OnMatchmakingFailed
+¸¸ (
+(
+¸¸( )
+string
+¸¸) /
+reason
+¸¸0 6
+)
+¸¸6 7
+{
+˝˝ 	
+Application
+˛˛ 
+.
+˛˛ 
+Current
+˛˛ 
+?
+˛˛  
+.
+˛˛  !
+
+Dispatcher
+˛˛! +
+?
+˛˛+ ,
+.
+˛˛, -
+Invoke
+˛˛- 3
+(
+˛˛3 4
+(
+˛˛4 5
+)
+˛˛5 6
+=>
+˛˛7 9
+{
+ˇˇ 
+
+MessageBox
+ÄÄ 
+.
+ÄÄ 
+Show
+ÄÄ 
+(
+ÄÄ  
+$"
+ÄÄ  "
+$str
+ÄÄ" 8
+{
+ÄÄ8 9
+reason
+ÄÄ9 ?
+}
+ÄÄ? @
+"
+ÄÄ@ A
+)
+ÄÄA B
+;
+ÄÄB C
+	IsJoining
+ÅÅ 
+=
+ÅÅ 
+false
+ÅÅ !
+;
+ÅÅ! "
+}
+ÇÇ 
+)
+ÇÇ 
+;
+ÇÇ 
+}
+ÉÉ 	
+}
+ÑÑ 
+public
+ÜÜ 
+
+class
+ÜÜ 
+MatchInfoModel
+ÜÜ 
+:
+ÜÜ  !
+ViewModelBase
+ÜÜ" /
+{
+áá 
+public
+àà 
+string
+àà 
+MatchId
+àà 
+{
+àà 
+get
+àà  #
+;
+àà# $
+set
+àà% (
+;
+àà( )
+}
+àà* +
+public
+ââ 
+string
+ââ 
+	MatchName
+ââ 
+{
+ââ  !
+get
+ââ" %
+;
+ââ% &
+set
+ââ' *
+;
+ââ* +
+}
+ââ, -
+public
+ää 
+string
+ää 
+HostUsername
+ää "
+{
+ää# $
+get
+ää% (
+;
+ää( )
+set
+ää* -
+;
+ää- .
+}
+ää/ 0
+public
+ãã 
+int
+ãã 
+CurrentPlayers
+ãã !
+{
+ãã" #
+get
+ãã$ '
+;
+ãã' (
+set
+ãã) ,
+;
+ãã, -
+}
+ãã. /
+public
+åå 
+int
+åå 
+
+MaxPlayers
+åå 
+{
+åå 
+get
+åå  #
+;
+åå# $
+set
+åå% (
+;
+åå( )
+}
+åå* +
+public
+çç 
+string
+çç 
+DifficultyName
+çç $
+{
+çç% &
+get
+çç' *
+;
+çç* +
+set
+çç, /
+;
+çç/ 0
+}
+çç1 2
+public
+éé 
+bool
+éé 
+CanJoin
+éé 
+=>
+éé 
+CurrentPlayers
+éé -
+<
+éé. /
+
+MaxPlayers
+éé0 :
+;
+éé: ;
+public
+êê 
+MatchInfoModel
+êê 
+(
+êê 
+MatchInfoDto
+êê *
+dto
+êê+ .
+)
+êê. /
+{
+ëë 	
+MatchId
+íí 
+=
+íí 
+dto
+íí 
+.
+íí 
+MatchId
+íí !
+;
+íí! "
+	MatchName
+ìì 
+=
+ìì 
+dto
+ìì 
+.
+ìì 
+	MatchName
+ìì %
+;
+ìì% &
+HostUsername
+îî 
+=
+îî 
+dto
+îî 
+.
+îî 
+HostUsername
+îî +
+;
+îî+ ,
+CurrentPlayers
+ïï 
+=
+ïï 
+dto
+ïï  
+.
+ïï  !
+CurrentPlayers
+ïï! /
+;
+ïï/ 0
+
+MaxPlayers
+ññ 
+=
+ññ 
+dto
+ññ 
+.
+ññ 
+
+MaxPlayers
+ññ '
+;
+ññ' (
+DifficultyName
+óó 
+=
+óó 
+dto
+óó  
+.
+óó  !
+DifficultyName
+óó! /
+;
+óó/ 0
+}
+òò 	
+}
+ôô 
+}öö ¶$
+úC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.cs
+	namespace
+
+ 	
+GuessMyMessClient
+
+
+ 
+.
+
+ 
+	ViewModel
+
+ %
+.
+
+% &
+	HomePages
+
+& /
+{ 
+public 
+
+class 
+MainViewModel 
+:  
+ViewModelBase! .
+{ 
+public 
+ICommand 
+StartGameCommand (
+{) *
+get+ .
+;. /
+}0 1
+public 
+ICommand 
+CloseWindowCommand *
+{+ ,
+get- 0
+;0 1
+}2 3
+public 
+ICommand !
+MaximizeWindowCommand -
+{. /
+get0 3
+;3 4
+}5 6
+public 
+ICommand !
+MinimizeWindowCommand -
+{. /
+get0 3
+;3 4
+}5 6
+public 
+MainViewModel 
+( 
+) 
+{ 	
+StartGameCommand 
+= 
+new "
+RelayCommand# /
+(/ 0
+	StartGame0 9
+)9 :
+;: ;
+CloseWindowCommand 
+=  
+new! $
+RelayCommand% 1
+(1 2
+ExecuteCloseWindow2 D
+)D E
+;E F!
+MaximizeWindowCommand !
+=" #
+new$ '
+RelayCommand( 4
+(4 5!
+ExecuteMaximizeWindow5 J
+)J K
+;K L!
+MinimizeWindowCommand !
+=" #
+new$ '
+RelayCommand( 4
+(4 5!
+ExecuteMinimizeWindow5 J
+)J K
+;K L
+} 	
+private 
+static 
+void 
+	StartGame %
+(% &
+object& ,
+	parameter- 6
+)6 7
+{ 	
+var 
+welcomeView 
+= 
+new !
+WelcomeView" -
+(- .
+). /
+;/ 0
+welcomeView 
+. 
+WindowState #
+=$ %
+WindowState& 1
+.1 2
+	Maximized2 ;
+;; <
+welcomeView 
+. 
+WindowStyle #
+=$ %
+WindowStyle& 1
+.1 2
+None2 6
+;6 7
+welcomeView   
+.   
+
+ResizeMode   "
+=  # $
+
+ResizeMode  % /
+.  / 0
+NoResize  0 8
+;  8 9
+welcomeView!! 
+.!! 
+Show!! 
+(!! 
+)!! 
+;!! 
+if## 
+(## 
+	parameter## 
+is## 
+Window## #
+
+mainWindow##$ .
+)##. /
+{$$ 
+
+mainWindow%% 
+.%% 
+Close%%  
+(%%  !
+)%%! "
+;%%" #
+}&& 
+}'' 	
+private)) 
+static)) 
+void)) 
+ExecuteCloseWindow)) .
+()). /
+object))/ 5
+	parameter))6 ?
+)))? @
+{** 	
+if++ 
+(++ 
+	parameter++ 
+is++ 
+Window++ #
+)++# $
+{,, 
+Application-- 
+.-- 
+Current-- #
+.--# $
+Shutdown--$ ,
+(--, -
+)--- .
+;--. /
+}.. 
+}// 	
+private11 
+static11 
+void11 !
+ExecuteMaximizeWindow11 1
+(111 2
+object112 8
+	parameter119 B
+)11B C
+{22 	
+if33 
+(33 
+	parameter33 
+is33 
+Window33 #
+window33$ *
+)33* +
+{44 
+window55 
+.55 
+WindowState55 "
+=55# $
+window55% +
+.55+ ,
+WindowState55, 7
+==558 :
+WindowState55; F
+.55F G
+	Maximized55G P
+?55Q R
+WindowState55S ^
+.55^ _
+Normal55_ e
+:55f g
+WindowState55h s
+.55s t
+	Maximized55t }
+;55} ~
+}66 
+}77 	
+private99 
+static99 
+void99 !
+ExecuteMinimizeWindow99 1
+(991 2
+object992 8
+	parameter999 B
+)99B C
+{:: 	
+if;; 
+(;; 
+	parameter;; 
+is;; 
+Window;; #
+window;;$ *
+);;* +
+{<< 
+window== 
+.== 
+WindowState== "
+===# $
+WindowState==% 0
+.==0 1
+	Minimized==1 :
+;==: ;
+}>> 
+}?? 	
+}@@ 
+}AA üc
+™C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Lobby& +
+.+ ,
+Dialogs, 3
+{ 
+internal 
+class #
+ChangePasswordViewModel *
+:+ ,
+ViewModelBase- :
+{ 
+private 
+readonly 
+string 
+	_username  )
+;) *
+public 
+ICommand 
+ConfirmCommand &
+{' (
+get) ,
+;, -
+}. /
+public 
+ICommand 
+CloseCommand $
+{% &
+get' *
+;* +
+}, -
+public #
+ChangePasswordViewModel &
+(& '
+string' -
+username. 6
+)6 7
+{ 	
+	_username 
+= 
+username  
+;  !
+ConfirmCommand 
+= 
+new  
+RelayCommand! -
+(- .
+ExecuteConfirm. <
+)< =
+;= >
+CloseCommand 
+= 
+new 
+RelayCommand +
+(+ ,
+ExecuteClose, 8
+)8 9
+;9 :
+} 	
+private 
+static 
+bool 
+IsPasswordSecure ,
+(, -
+string- 3
+password4 <
+,< =
+out> A
+stringB H
+errorLangKeyI U
+)U V
+{ 	
+if 
+( 
+string 
+. 
+IsNullOrWhiteSpace )
+() *
+password* 2
+)2 3
+)3 4
+{   
+errorLangKey!! 
+=!! 
+$str!! 3
+;!!3 4
+return"" 
+false"" 
+;"" 
+}## 
+if$$ 
+($$ 
+password$$ 
+.$$ 
+Length$$ 
+<$$  !
+$num$$" #
+)$$# $
+{%% 
+errorLangKey&& 
+=&& 
+$str&& 6
+;&&6 7
+return'' 
+false'' 
+;'' 
+}(( 
+if)) 
+()) 
+!)) 
+password)) 
+.)) 
+Any)) 
+()) 
+char)) "
+.))" #
+IsUpper))# *
+)))* +
+)))+ ,
+{** 
+errorLangKey++ 
+=++ 
+$str++ 8
+;++8 9
+return,, 
+false,, 
+;,, 
+}-- 
+if.. 
+(.. 
+!.. 
+password.. 
+... 
+Any.. 
+(.. 
+char.. "
+..." #
+IsLower..# *
+)..* +
+)..+ ,
+{// 
+errorLangKey00 
+=00 
+$str00 8
+;008 9
+return11 
+false11 
+;11 
+}22 
+if33 
+(33 
+!33 
+password33 
+.33 
+Any33 
+(33 
+char33 "
+.33" #
+IsDigit33# *
+)33* +
+)33+ ,
+{44 
+errorLangKey55 
+=55 
+$str55 8
+;558 9
+return66 
+false66 
+;66 
+}77 
+if88 
+(88 
+password88 
+.88 
+All88 
+(88 
+char88 !
+.88! "
+IsLetterOrDigit88" 1
+)881 2
+)882 3
+{99 
+errorLangKey:: 
+=:: 
+$str:: :
+;::: ;
+return;; 
+false;; 
+;;; 
+}<< 
+errorLangKey>> 
+=>> 
+null>> 
+;>>  
+return?? 
+true?? 
+;?? 
+}@@ 	
+privateBB 
+asyncBB 
+voidBB 
+ExecuteConfirmBB )
+(BB) *
+objectBB* 0
+	parameterBB1 :
+)BB: ;
+{CC 	
+ifDD 
+(DD 
+!DD 
+(DD 
+	parameterDD 
+isDD 
+WindowDD %
+windowDD& ,
+)DD, -
+)DD- .
+{EE 
+returnFF 
+;FF 
+}GG 
+varII 
+newPasswordBoxII 
+=II  
+windowII! '
+.II' (
+FindNameII( 0
+(II0 1
+$strII1 A
+)IIA B
+asIIC E
+PasswordBoxIIF Q
+;IIQ R
+varJJ 
+confirmPasswordBoxJJ "
+=JJ# $
+windowJJ% +
+.JJ+ ,
+FindNameJJ, 4
+(JJ4 5
+$strJJ5 I
+)JJI J
+asJJK M
+PasswordBoxJJN Y
+;JJY Z
+ifLL 
+(LL 
+newPasswordBoxLL 
+==LL !
+nullLL" &
+||LL' )
+confirmPasswordBoxLL* <
+==LL= ?
+nullLL@ D
+)LLD E
+{MM 
+
+MessageBoxNN 
+.NN 
+ShowNN 
+(NN  
+LangOO 
+.OO )
+alertPasswordControlsNotFoundOO 6
+,OO6 7
+LangPP 
+.PP 
+alertErrorTitlePP (
+,PP( )
+MessageBoxButtonQQ $
+.QQ$ %
+OKQQ% '
+,QQ' (
+MessageBoxImageRR #
+.RR# $
+ErrorRR$ )
+)RR) *
+;RR* +
+returnSS 
+;SS 
+}TT 
+stringVV 
+newPasswordVV 
+=VV  
+newPasswordBoxVV! /
+.VV/ 0
+PasswordVV0 8
+;VV8 9
+stringWW 
+confirmPasswordWW "
+=WW# $
+confirmPasswordBoxWW% 7
+.WW7 8
+PasswordWW8 @
+;WW@ A
+ifYY 
+(YY 
+!YY 
+IsPasswordSecureYY !
+(YY! "
+newPasswordYY" -
+,YY- .
+outYY/ 2
+stringYY3 9
+passwordErrorKeyYY: J
+)YYJ K
+)YYK L
+{ZZ 
+string[[  
+passwordErrorMessage[[ +
+=[[, -
+Lang[[. 2
+.[[2 3
+ResourceManager[[3 B
+.[[B C
+	GetString[[C L
+([[L M
+passwordErrorKey[[M ]
+)[[] ^
+??[[_ a
+Lang[[b f
+.[[f g&
+alertPasswordGenericError	[[g Ä
+;
+[[Ä Å
+
+MessageBox\\ 
+.\\ 
+Show\\ 
+(\\   
+passwordErrorMessage]] (
+,]]( )
+Lang^^ 
+.^^ '
+alertPasswordNotSecureTitle^^ 4
+,^^4 5
+MessageBoxButton__ $
+.__$ %
+OK__% '
+,__' (
+MessageBoxImage`` #
+.``# $
+Warning``$ +
+)``+ ,
+;``, -
+returnaa 
+;aa 
+}bb 
+ifdd 
+(dd 
+newPassworddd 
+!=dd 
+confirmPassworddd .
+)dd. /
+{ee 
+
+MessageBoxff 
+.ff 
+Showff 
+(ff  
+Langgg 
+.gg $
+alertPasswordsDoNotMatchgg 1
+,gg1 2
+Langhh 
+.hh  
+alertInputErrorTitlehh -
+,hh- .
+MessageBoxButtonii $
+.ii$ %
+OKii% '
+,ii' (
+MessageBoxImagejj #
+.jj# $
+Warningjj$ +
+)jj+ ,
+;jj, -
+returnkk 
+;kk 
+}ll 
+trynn 
+{oo 
+usingpp 
+(pp 
+varpp 
+clientpp !
+=pp" #
+newpp$ '$
+UserProfileServiceClientpp( @
+(pp@ A
+)ppA B
+)ppB C
+{qq 
+varrr 
+resultrr 
+=rr  
+awaitrr! &
+clientrr' -
+.rr- .&
+RequestChangePasswordAsyncrr. H
+(rrH I
+	_usernamerrI R
+)rrR S
+;rrS T
+ifss 
+(ss 
+resultss 
+.ss 
+Successss &
+)ss& '
+{tt 
+
+MessageBoxuu "
+.uu" #
+Showuu# '
+(uu' (
+resultvv "
+.vv" #
+Messagevv# *
+,vv* +
+Langww  
+.ww  !
+alertCodeSentTitleww! 3
+,ww3 4
+MessageBoxButtonxx ,
+.xx, -
+OKxx- /
+,xx/ 0
+MessageBoxImageyy +
+.yy+ ,
+Informationyy, 7
+)yy7 8
+;yy8 9
+var{{ 
+verifyVM{{ $
+={{% &
+new{{' *(
+VerifyChangesByCodeViewModel{{+ G
+({{G H(
+VerifyChangesByCodeViewModel|| 8
+.||8 9
+VerificationMode||9 I
+.||I J
+Password||J R
+,||R S
+	_username}} %
+,}}% &
+newPassword~~ '
+,~~' (
+null  
+)  !
+;! "
+var
+ÄÄ 
+
+verifyView
+ÄÄ &
+=
+ÄÄ' (
+new
+ÄÄ) ,%
+VerifyChangesByCodeView
+ÄÄ- D
+{
+ÄÄE F
+DataContext
+ÄÄG R
+=
+ÄÄS T
+verifyVM
+ÄÄU ]
+}
+ÄÄ^ _
+;
+ÄÄ_ `
+ExecuteClose
+ÇÇ $
+(
+ÇÇ$ %
+	parameter
+ÇÇ% .
+)
+ÇÇ. /
+;
+ÇÇ/ 0
+
+verifyView
+ÉÉ "
+.
+ÉÉ" #
+
+ShowDialog
+ÉÉ# -
+(
+ÉÉ- .
+)
+ÉÉ. /
+;
+ÉÉ/ 0
+}
+ÑÑ 
+else
+ÖÖ 
+{
+ÜÜ 
+
+MessageBox
+áá "
+.
+áá" #
+Show
+áá# '
+(
+áá' (
+result
+àà "
+.
+àà" #
+Message
+àà# *
+,
+àà* +
+Lang
+ââ  
+.
+ââ  !
+alertErrorTitle
+ââ! 0
+,
+ââ0 1
+MessageBoxButton
+ää ,
+.
+ää, -
+OK
+ää- /
+,
+ää/ 0
+MessageBoxImage
+ãã +
+.
+ãã+ ,
+Warning
+ãã, 3
+)
+ãã3 4
+;
+ãã4 5
 }
 åå 
 }
 çç 
 }
-éé 
-)
-éé 
-;
-éé 
-}
-èè 	
-private
-ëë 
-void
-ëë 
-OnMatchJoined
-ëë "
+éé 
+catch
+èè 
 (
-ëë" #
-string
-ëë# )
-matchId
-ëë* 1
-,
-ëë1 2 
-OperationResultDto
-ëë3 E
-result
-ëëF L
-)
-ëëL M
-{
-íí 	
-if
-ìì 
-(
-ìì 
-matchId
-ìì 
-!=
-ìì 
-_joiningMatchId
-ìì *
-)
-ìì* +
-return
-ìì, 2
-;
-ìì2 3
-Application
-ïï 
-.
-ïï 
-Current
-ïï 
-?
-ïï  
-.
-ïï  !
+èè 
+FaultException
+èè !
 
-Dispatcher
-ïï! +
-?
-ïï+ ,
-.
-ïï, -
-Invoke
-ïï- 3
-(
-ïï3 4
-(
-ïï4 5
+fexGeneral
+èè" ,
 )
-ïï5 6
-=>
-ïï7 9
+èè, -
 {
-ññ 
-if
-óó 
-(
-óó 
-result
-óó 
-.
-óó 
-Success
-óó "
-)
-óó" #
-{
-òò 
-var
-ôô 
-lobbyManager
-ôô $
-=
-ôô% & 
-LobbyClientManager
-ôô' 9
-.
-ôô9 :
-Instance
-ôô: B
-;
-ôôB C
-var
-öö 
-sessionManager
-öö &
-=
-öö' (
-SessionManager
-öö) 7
-.
-öö7 8
-Instance
-öö8 @
-;
-öö@ A
-string
-õõ 
-currentUsername
-õõ *
-=
-õõ+ ,
-sessionManager
-õõ- ;
-.
-õõ; <
-CurrentUsername
-õõ< K
-;
-õõK L
-lobbyManager
-ùù  
-.
-ùù  !
-Connect
-ùù! (
-(
-ùù( )
-currentUsername
-ùù) 8
-,
-ùù8 9
-matchId
-ùù: A
-)
-ùùA B
-;
-ùùB C
-Window
-üü 
-waitingRoomView
-üü *
-=
-üü+ ,
-null
-üü- 1
-;
-üü1 2
-ViewModelBase
-†† !"
-waitingRoomViewModel
-††" 6
-=
-††7 8
-null
-††9 =
-;
-††= >
-if
-¢¢ 
-(
-¢¢ "
-_joiningPrivateMatch
-¢¢ ,
-)
-¢¢, -
-{
-££ "
-waitingRoomViewModel
-§§ ,
-=
-§§- .
-new
-§§/ 2.
- WaitingRoomPrivateMatchViewModel
-§§3 S
-(
-§§S T
-lobbyManager
-§§T `
-,
-§§` a
-sessionManager
-§§b p
-)
-§§p q
-;
-§§q r
-waitingRoomView
-•• '
-=
-••( )
-new
-••* -)
-WaitingRoomPrivateMatchView
-••. I
-{
-¶¶ 
-DataContext
-ßß '
-=
-ßß( )"
-waitingRoomViewModel
-ßß* >
-}
-®® 
-;
-®® 
-}
-©© 
-else
-™™ 
-{
-´´ "
-waitingRoomViewModel
-¨¨ ,
-=
-¨¨- .
-new
-¨¨/ 2-
-WaitingRoomPublicMatchViewModel
-¨¨3 R
-(
-¨¨R S
-lobbyManager
-¨¨S _
-,
-¨¨_ `
-sessionManager
-¨¨a o
-)
-¨¨o p
-;
-¨¨p q
-waitingRoomView
-≠≠ '
-=
-≠≠( )
-new
-≠≠* -(
-WaitingRoomPublicMatchView
-≠≠. H
-{
-ÆÆ 
-DataContext
-ØØ '
-=
-ØØ( )"
-waitingRoomViewModel
-ØØ* >
-}
-∞∞ 
-;
-∞∞ 
-}
-±± 
-if
-≥≥ 
-(
-≥≥ 
-_currentWindow
-≥≥ &
-!=
-≥≥' )
-null
-≥≥* .
-&&
-≥≥/ 1
-waitingRoomView
-≥≥2 A
-!=
-≥≥B D
-null
-≥≥E I
-)
-≥≥I J
-{
-¥¥ 
-CleanupEvents
-µµ %
-(
-µµ% &
-)
-µµ& '
-;
-µµ' (
-waitingRoomView
-∂∂ '
-.
-∂∂' (
-Show
-∂∂( ,
-(
-∂∂, -
-)
-∂∂- .
-;
-∂∂. /
-_currentWindow
-∑∑ &
-.
-∑∑& '
-Close
-∑∑' ,
-(
-∑∑, -
-)
-∑∑- .
-;
-∑∑. /
-}
-∏∏ 
-else
-ππ 
-{
-∫∫ 
+êê 
 
 MessageBox
-ªª "
+ëë 
 .
-ªª" #
+ëë 
 Show
-ªª# '
+ëë 
 (
-ªª' (
-$"
-ªª( *
-$str
-ªª* >
-{
-ªª> ?
-matchId
-ªª? F
-}
-ªªF G
-$str
-ªªG f
-"
-ªªf g
+ëë  
+Lang
+íí 
+.
+íí %
+alertServerErrorMessage
+íí 0
 ,
-ªªg h
-$str
-ªªi o
-)
-ªªo p
-;
-ªªp q
-lobbyManager
-ºº $
+íí0 1
+Lang
+ìì 
 .
-ºº$ %
-
-Disconnect
-ºº% /
-(
-ºº/ 0
-)
-ºº0 1
-;
-ºº1 2
-}
-ΩΩ 
-_joiningMatchId
-øø #
-=
-øø$ %
-null
-øø& *
-;
-øø* +"
-_joiningPrivateMatch
-¿¿ (
-=
-¿¿) *
-false
-¿¿+ 0
-;
-¿¿0 1
-_currentWindow
-¡¡ "
-=
-¡¡# $
-null
-¡¡% )
-;
-¡¡) *
-}
-¬¬ 
-else
-√√ 
-{
-ƒƒ 
-
-MessageBox
-≈≈ 
+ìì 
+alertErrorTitle
+ìì (
+,
+ìì( )
+MessageBoxButton
+îî $
 .
-≈≈ 
-Show
-≈≈ #
+îî$ %
+OK
+îî% '
+,
+îî' (
+MessageBoxImage
+ïï #
+.
+ïï# $
+Error
+ïï$ )
+)
+ïï) *
+;
+ïï* +
+Console
+ññ 
+.
+ññ 
+	WriteLine
+ññ !
 (
-≈≈# $
+ññ! "
 $"
-≈≈$ &
+ññ" $
 $str
-≈≈& C
+ññ$ O
 {
-≈≈C D
-matchId
-≈≈D K
-}
-≈≈K L
-$str
-≈≈L N
-{
-≈≈N O
-result
-≈≈O U
+ññO P
+
+fexGeneral
+ññP Z
 .
-≈≈U V
+ññZ [
 Message
-≈≈V ]
+ññ[ b
 }
-≈≈] ^
+ññb c
 "
-≈≈^ _
-,
-≈≈_ `
-$str
-≈≈a h
+ññc d
 )
-≈≈h i
+ññd e
 ;
-≈≈i j
-_joiningMatchId
-∆∆ #
-=
-∆∆$ %
-null
-∆∆& *
-;
-∆∆* +"
-_joiningPrivateMatch
-«« (
-=
-««) *
-false
-««+ 0
-;
-««0 1
-_currentWindow
-»» "
-=
-»»# $
-null
-»»% )
-;
-»») *
+ññe f
 }
-…… 
-}
-   
-)
-   
-;
-   
-}
-ÀÀ 	
-private
-ÕÕ 
-void
-ÕÕ 
-CleanupEvents
-ÕÕ "
+óó 
+catch
+òò 
 (
-ÕÕ" #
+òò '
+EndpointNotFoundException
+òò ,
+ex
+òò- /
 )
-ÕÕ# $
+òò/ 0
 {
-ŒŒ 	&
-MatchmakingClientManager
-œœ $
-.
-œœ$ %
-Instance
-œœ% -
-.
-œœ- .(
-OnPublicMatchesListUpdated
-œœ. H
--=
-œœI K(
-OnPublicMatchesListUpdated
-œœL f
-;
-œœf g&
-MatchmakingClientManager
-–– $
-.
-––$ %
-Instance
-––% -
-.
-––- .'
-OnMatchJoinedSuccessfully
-––. G
--=
-––H J
-OnMatchJoined
-––K X
-;
-––X Y&
-MatchmakingClientManager
-—— $
-.
-——$ %
-Instance
-——% -
-.
-——- .!
-OnMatchmakingFailed
-——. A
--=
-——B D!
-OnMatchmakingFailed
-——E X
-;
-——X Y
-}
-““ 	
-private
-‘‘ 
-Window
-‘‘ 
-FindParentWindow
-‘‘ '
-(
-‘‘' (
-object
-‘‘( .
-commandParameter
-‘‘/ ?
-=
-‘‘@ A
-null
-‘‘B F
-)
-‘‘F G
-{
-’’ 	
-if
-÷÷ 
-(
-÷÷ 
-commandParameter
-÷÷  
-is
-÷÷! #
-Window
-÷÷$ *
-win
-÷÷+ .
-)
-÷÷. /
-return
-÷÷0 6
-win
-÷÷7 :
-;
-÷÷: ;
-return
-◊◊ 
-Application
-◊◊ 
-.
-◊◊ 
-Current
-◊◊ &
-?
-◊◊& '
-.
-◊◊' (
-Windows
-◊◊( /
-.
-◊◊/ 0
-OfType
-◊◊0 6
-<
-◊◊6 7
-Window
-◊◊7 =
->
-◊◊= >
-(
-◊◊> ?
-)
-◊◊? @
-.
-◊◊@ A
-SingleOrDefault
-◊◊A P
-(
-◊◊P Q
-w
-◊◊Q R
-=>
-◊◊S U
-w
-◊◊V W
-.
-◊◊W X
-DataContext
-◊◊X c
-==
-◊◊d f
-this
-◊◊g k
-||
-◊◊l n
-w
-◊◊o p
-.
-◊◊p q
-IsActive
-◊◊q y
-)
-◊◊y z
-;
-◊◊z {
-}
-ÿÿ 	
-private
-⁄⁄ 
-static
-⁄⁄ 
-void
-⁄⁄ !
-OnMatchmakingFailed
-⁄⁄ /
-(
-⁄⁄/ 0
-string
-⁄⁄0 6
-reason
-⁄⁄7 =
-)
-⁄⁄= >
-{
-€€ 	
-Application
-‹‹ 
-.
-‹‹ 
-Current
-‹‹ 
-?
-‹‹  
-.
-‹‹  !
-
-Dispatcher
-‹‹! +
-?
-‹‹+ ,
-.
-‹‹, -
-Invoke
-‹‹- 3
-(
-‹‹3 4
-(
-‹‹4 5
-)
-‹‹5 6
-=>
-‹‹7 9
-{
-›› 
+ôô 
 
 MessageBox
-ﬁﬁ 
+öö 
 .
-ﬁﬁ 
+öö 
 Show
-ﬁﬁ 
+öö 
 (
-ﬁﬁ  
+öö  
+Lang
+õõ 
+.
+õõ )
+alertConnectionErrorMessage
+õõ 4
+,
+õõ4 5
+Lang
+úú 
+.
+úú '
+alertConnectionErrorTitle
+úú 2
+,
+úú2 3
+MessageBoxButton
+ùù $
+.
+ùù$ %
+OK
+ùù% '
+,
+ùù' (
+MessageBoxImage
+ûû #
+.
+ûû# $
+Error
+ûû$ )
+)
+ûû) *
+;
+ûû* +
+Console
+üü 
+.
+üü 
+	WriteLine
+üü !
+(
+üü! "
 $"
-ﬁﬁ  "
+üü" $
 $str
-ﬁﬁ" 8
+üü$ V
 {
-ﬁﬁ8 9
-reason
-ﬁﬁ9 ?
+üüV W
+ex
+üüW Y
+.
+üüY Z
+Message
+üüZ a
 }
-ﬁﬁ? @
+üüa b
 "
-ﬁﬁ@ A
+üüb c
 )
-ﬁﬁA B
+üüc d
 ;
-ﬁﬁB C
+üüd e
 }
-ﬂﬂ 
-)
-ﬂﬂ 
-;
-ﬂﬂ 
-}
-‡‡ 	
-}
-·· 
-public
-„„ 
-
-class
-„„ 
-MatchInfoModel
-„„ 
-:
-„„  !
-ViewModelBase
-„„" /
-{
-‰‰ 
-public
-ÂÂ 
-string
-ÂÂ 
-MatchId
-ÂÂ 
-{
-ÂÂ 
-get
-ÂÂ  #
-;
-ÂÂ# $
-set
-ÂÂ% (
-;
-ÂÂ( )
-}
-ÂÂ* +
-public
-ÊÊ 
-string
-ÊÊ 
-	MatchName
-ÊÊ 
-{
-ÊÊ  !
-get
-ÊÊ" %
-;
-ÊÊ% &
-set
-ÊÊ' *
-;
-ÊÊ* +
-}
-ÊÊ, -
-public
-ÁÁ 
-string
-ÁÁ 
-HostUsername
-ÁÁ "
-{
-ÁÁ# $
-get
-ÁÁ% (
-;
-ÁÁ( )
-set
-ÁÁ* -
-;
-ÁÁ- .
-}
-ÁÁ/ 0
-public
-ËË 
-int
-ËË 
-CurrentPlayers
-ËË !
-{
-ËË" #
-get
-ËË$ '
-;
-ËË' (
-set
-ËË) ,
-;
-ËË, -
-}
-ËË. /
-public
-ÈÈ 
-int
-ÈÈ 
-
-MaxPlayers
-ÈÈ 
-{
-ÈÈ 
-get
-ÈÈ  #
-;
-ÈÈ# $
-set
-ÈÈ% (
-;
-ÈÈ( )
-}
-ÈÈ* +
-public
-ÍÍ 
-string
-ÍÍ 
-DifficultyName
-ÍÍ $
-{
-ÍÍ% &
-get
-ÍÍ' *
-;
-ÍÍ* +
-set
-ÍÍ, /
-;
-ÍÍ/ 0
-}
-ÍÍ1 2
-public
-ÎÎ 
-bool
-ÎÎ 
-CanJoin
-ÎÎ 
-=>
-ÎÎ 
-CurrentPlayers
-ÎÎ -
-<
-ÎÎ. /
-
-MaxPlayers
-ÎÎ0 :
-;
-ÎÎ: ;
-public
-ÌÌ 
-MatchInfoModel
-ÌÌ 
+†† 
+catch
+°° 
 (
-ÌÌ 
-MatchInfoDto
-ÌÌ *
-dto
-ÌÌ+ .
+°° 
+	Exception
+°° 
+ex
+°° 
 )
-ÌÌ. /
+°°  
 {
-ÓÓ 	
-MatchId
-ÔÔ 
-=
-ÔÔ 
-dto
-ÔÔ 
-.
-ÔÔ 
-MatchId
-ÔÔ !
-;
-ÔÔ! "
-	MatchName
- 
-=
- 
-dto
- 
-.
- 
-	MatchName
- %
-;
-% &
-HostUsername
-ÒÒ 
-=
-ÒÒ 
-dto
-ÒÒ 
-.
-ÒÒ 
-HostUsername
-ÒÒ +
-;
-ÒÒ+ ,
-CurrentPlayers
-ÚÚ 
-=
-ÚÚ 
-dto
-ÚÚ  
-.
-ÚÚ  !
-CurrentPlayers
-ÚÚ! /
-;
-ÚÚ/ 0
+¢¢ 
 
-MaxPlayers
-ÛÛ 
-=
-ÛÛ 
-dto
-ÛÛ 
+MessageBox
+££ 
 .
-ÛÛ 
-
-MaxPlayers
-ÛÛ '
-;
-ÛÛ' (
-DifficultyName
-ÙÙ 
-=
-ÙÙ 
-dto
-ÙÙ  
+££ 
+Show
+££ 
+(
+££  
+Lang
+§§ 
 .
-ÙÙ  !
-DifficultyName
-ÙÙ! /
+§§ &
+alertUnknownErrorMessage
+§§ 1
+,
+§§1 2
+Lang
+•• 
+.
+•• 
+alertErrorTitle
+•• (
+,
+••( )
+MessageBoxButton
+¶¶ $
+.
+¶¶$ %
+OK
+¶¶% '
+,
+¶¶' (
+MessageBoxImage
+ßß #
+.
+ßß# $
+Error
+ßß$ )
+)
+ßß) *
 ;
-ÙÙ/ 0
+ßß* +
+Console
+®® 
+.
+®® 
+	WriteLine
+®® !
+(
+®®! "
+$"
+®®" $
+$str
+®®$ S
+{
+®®S T
+ex
+®®T V
+.
+®®V W
+Message
+®®W ^
 }
-ıı 	
+®®^ _
+"
+®®_ `
+)
+®®` a
+;
+®®a b
 }
-ˆˆ 
-}˜˜ Û|
-òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.cs
+©© 
+}
+™™ 	
+private
+¨¨ 
+static
+¨¨ 
+void
+¨¨ 
+ExecuteClose
+¨¨ (
+(
+¨¨( )
+object
+¨¨) /
+	parameter
+¨¨0 9
+)
+¨¨9 :
+{
+≠≠ 	
+if
+ÆÆ 
+(
+ÆÆ 
+	parameter
+ÆÆ 
+is
+ÆÆ 
+Window
+ÆÆ #
+window
+ÆÆ$ *
+)
+ÆÆ* +
+{
+ØØ 
+window
+∞∞ 
+.
+∞∞ 
+Close
+∞∞ 
+(
+∞∞ 
+)
+∞∞ 
+;
+∞∞ 
+}
+±± 
+}
+≤≤ 	
+}
+≥≥ 
+}¥¥ ˆ|
+õC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -12631,1304 +31102,8 @@ MessageBox
 ‡‡ 	
 }
 ·· 
-}‚‚ £$
-ôC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.cs
-	namespace
-
- 	
-GuessMyMessClient
-
-
- 
-.
-
- 
-	ViewModel
-
- %
-.
-
-% &
-	HomePages
-
-& /
-{ 
-public 
-
-class 
-MainViewModel 
-:  
-ViewModelBase! .
-{ 
-public 
-ICommand 
-StartGameCommand (
-{) *
-get+ .
-;. /
-}0 1
-public 
-ICommand 
-CloseWindowCommand *
-{+ ,
-get- 0
-;0 1
-}2 3
-public 
-ICommand !
-MaximizeWindowCommand -
-{. /
-get0 3
-;3 4
-}5 6
-public 
-ICommand !
-MinimizeWindowCommand -
-{. /
-get0 3
-;3 4
-}5 6
-public 
-MainViewModel 
-( 
-) 
-{ 	
-StartGameCommand 
-= 
-new "
-RelayCommand# /
-(/ 0
-	StartGame0 9
-)9 :
-;: ;
-CloseWindowCommand 
-=  
-new! $
-RelayCommand% 1
-(1 2
-ExecuteCloseWindow2 D
-)D E
-;E F!
-MaximizeWindowCommand !
-=" #
-new$ '
-RelayCommand( 4
-(4 5!
-ExecuteMaximizeWindow5 J
-)J K
-;K L!
-MinimizeWindowCommand !
-=" #
-new$ '
-RelayCommand( 4
-(4 5!
-ExecuteMinimizeWindow5 J
-)J K
-;K L
-} 	
-private 
-static 
-void 
-	StartGame %
-(% &
-object& ,
-	parameter- 6
-)6 7
-{ 	
-var 
-welcomeView 
-= 
-new !
-WelcomeView" -
-(- .
-). /
-;/ 0
-welcomeView 
-. 
-WindowState #
-=$ %
-WindowState& 1
-.1 2
-	Maximized2 ;
-;; <
-welcomeView 
-. 
-WindowStyle #
-=$ %
-WindowStyle& 1
-.1 2
-None2 6
-;6 7
-welcomeView   
-.   
-
-ResizeMode   "
-=  # $
-
-ResizeMode  % /
-.  / 0
-NoResize  0 8
-;  8 9
-welcomeView!! 
-.!! 
-Show!! 
-(!! 
-)!! 
-;!! 
-if## 
-(## 
-	parameter## 
-is## 
-Window## #
-
-mainWindow##$ .
-)##. /
-{$$ 
-
-mainWindow%% 
-.%% 
-Close%%  
-(%%  !
-)%%! "
-;%%" #
-}&& 
-}'' 	
-private)) 
-static)) 
-void)) 
-ExecuteCloseWindow)) .
-()). /
-object))/ 5
-	parameter))6 ?
-)))? @
-{** 	
-if++ 
-(++ 
-	parameter++ 
-is++ 
-Window++ #
-)++# $
-{,, 
-Application-- 
-.-- 
-Current-- #
-.--# $
-Shutdown--$ ,
-(--, -
-)--- .
-;--. /
-}.. 
-}// 	
-private11 
-static11 
-void11 !
-ExecuteMaximizeWindow11 1
-(111 2
-object112 8
-	parameter119 B
-)11B C
-{22 	
-if33 
-(33 
-	parameter33 
-is33 
-Window33 #
-window33$ *
-)33* +
-{44 
-window55 
-.55 
-WindowState55 "
-=55# $
-window55% +
-.55+ ,
-WindowState55, 7
-==558 :
-WindowState55; F
-.55F G
-	Maximized55G P
-?55Q R
-WindowState55S ^
-.55^ _
-Normal55_ e
-:55f g
-WindowState55h s
-.55s t
-	Maximized55t }
-;55} ~
-}66 
-}77 	
-private99 
-static99 
-void99 !
-ExecuteMinimizeWindow99 1
-(991 2
-object992 8
-	parameter999 B
-)99B C
-{:: 	
-if;; 
-(;; 
-	parameter;; 
-is;; 
-Window;; #
-window;;$ *
-);;* +
-{<< 
-window== 
-.== 
-WindowState== "
-===# $
-WindowState==% 0
-.==0 1
-	Minimized==1 :
-;==: ;
-}>> 
-}?? 	
-}@@ 
-}AA ùn
-ùC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-Lobby& +
-{ 
-public 
-
-class !
-SelectAvatarViewModel &
-:' (
-ViewModelBase) 6
-{ 
-private 
-readonly 
-int 
-_currentAvatarId -
-;- .
-public 
-event 
-Action 
-< 
-AvatarModel '
->' (
-AvatarSelected) 7
-;7 8
-private  
-ObservableCollection $
-<$ %
-AvatarModel% 0
->0 1
-_availableAvatars2 C
-;C D
-public  
-ObservableCollection #
-<# $
-AvatarModel$ /
->/ 0
-AvailableAvatars1 A
-{ 	
-get 
-{ 
-return 
-_availableAvatars (
-;( )
-} 
-set 
-{   
-if!! 
-(!! 
-_availableAvatars!! %
-!=!!& (
-value!!) .
-)!!. /
-{"" 
-_availableAvatars## %
-=##& '
-value##( -
-;##- .
-OnPropertyChanged$$ %
-($$% &
-)$$& '
-;$$' (
-}%% 
-}&& 
-}'' 	
-private)) 
-AvatarModel)) 
-_selectedAvatar)) +
-;))+ ,
-public** 
-AvatarModel** 
-SelectedAvatar** )
-{++ 	
-get,, 
-{-- 
-return.. 
-_selectedAvatar.. &
-;..& '
-}// 
-set00 
-{11 
-if22 
-(22 
-_selectedAvatar22 #
-!=22$ &
-value22' ,
-)22, -
-{33 
-if44 
-(44 
-_selectedAvatar44 '
-!=44( *
-null44+ /
-)44/ 0
-{55 
-_selectedAvatar66 '
-.66' (
-
-IsSelected66( 2
-=663 4
-false665 :
-;66: ;
-}77 
-_selectedAvatar99 #
-=99$ %
-value99& +
-;99+ ,
-if;; 
-(;; 
-_selectedAvatar;; '
-!=;;( *
-null;;+ /
-);;/ 0
-{<< 
-_selectedAvatar== '
-.==' (
-
-IsSelected==( 2
-===3 4
-true==5 9
-;==9 :
-}>> 
-OnPropertyChanged?? %
-(??% &
-)??& '
-;??' (
-}@@ 
-}AA 
-}BB 	
-publicDD 
-ICommandDD #
-ConfirmSelectionCommandDD /
-{DD0 1
-getDD2 5
-;DD5 6
-}DD7 8
-publicEE 
-ICommandEE 
-CloseCommandEE $
-{EE% &
-getEE' *
-;EE* +
-}EE, -
-publicFF 
-ICommandFF #
-SelectAvatarItemCommandFF /
-{FF0 1
-getFF2 5
-;FF5 6
-}FF7 8
-publicHH !
-SelectAvatarViewModelHH $
-(HH$ %
-intHH% (
-currentAvatarIdHH) 8
-=HH9 :
-$numHH; <
-)HH< =
-{II 	
-_currentAvatarIdJJ 
-=JJ 
-currentAvatarIdJJ .
-;JJ. /
-AvailableAvatarsKK 
-=KK 
-newKK " 
-ObservableCollectionKK# 7
-<KK7 8
-AvatarModelKK8 C
->KKC D
-(KKD E
-)KKE F
-;KKF G#
-ConfirmSelectionCommandMM #
-=MM$ %
-newMM& )
-RelayCommandMM* 6
-(MM6 7#
-ExecuteConfirmSelectionMM7 N
-,MMN O&
-CanExecuteConfirmSelectionMMP j
-)MMj k
-;MMk l
-CloseCommandNN 
-=NN 
-newNN 
-RelayCommandNN +
-(NN+ ,
-CloseWindowNN, 7
-)NN7 8
-;NN8 9#
-SelectAvatarItemCommandOO #
-=OO$ %
-newOO& )
-RelayCommandOO* 6
-(OO6 7#
-ExecuteSelectAvatarItemOO7 N
-)OON O
-;OOO P
-ifQQ 
-(QQ 
-!QQ 
-DesignerPropertiesQQ #
-.QQ# $
-GetIsInDesignModeQQ$ 5
-(QQ5 6
-newQQ6 9
-DependencyObjectQQ: J
-(QQJ K
-)QQK L
-)QQL M
-)QQM N
-{RR 
-LoadAvatarsSS 
-(SS 
-)SS 
-;SS 
-}TT 
-}UU 	
-privateWW 
-asyncWW 
-TaskWW 
-LoadAvatarsWW &
-(WW& '
-)WW' (
-{XX 	
-awaitYY 
-LoadAvatarsAsyncYY "
-(YY" #
-)YY# $
-;YY$ %
-}ZZ 	
-private\\ 
-async\\ 
-Task\\ 
-LoadAvatarsAsync\\ +
-(\\+ ,
-)\\, -
-{]] 	
-using^^ 
-(^^ 
-var^^ 
-client^^ 
-=^^ 
-new^^  #$
-UserProfileServiceClient^^$ <
-(^^< =
-)^^= >
-)^^> ?
-{__ 
-try`` 
-{aa 
-varbb 
-serverAvatarsbb %
-=bb& '
-awaitbb( -
-clientbb. 4
-.bb4 5$
-GetAvailableAvatarsAsyncbb5 M
-(bbM N
-)bbN O
-;bbO P
-vardd 
-tempAvatarsdd #
-=dd$ %
-newdd& )
-Listdd* .
-<dd. /
-AvatarModeldd/ :
->dd: ;
-(dd; <
-)dd< =
-;dd= >
-ifee 
-(ee 
-serverAvatarsee %
-!=ee& (
-nullee) -
-)ee- .
-{ff 
-foreachgg 
-(gg  !
-vargg! $
-	avatarDtogg% .
-ingg/ 1
-serverAvatarsgg2 ?
-)gg? @
-{hh 
-tempAvatarsii '
-.ii' (
-Addii( +
-(ii+ ,
-newii, /
-AvatarModelii0 ;
-{jj 
-Idkk  "
-=kk# $
-	avatarDtokk% .
-.kk. /
-IdAvatarkk/ 7
-,kk7 8
-Namell  $
-=ll% &
-	avatarDtoll' 0
-.ll0 1
-
-AvatarNamell1 ;
-,ll; <
-	ImageDatamm  )
-=mm* +
-	avatarDtomm, 5
-.mm5 6
-
-AvatarDatamm6 @
-,mm@ A
-ImageSourcenn  +
-=nn, -
-ConvertByteToImagenn. @
-(nn@ A
-	avatarDtonnA J
-.nnJ K
-
-AvatarDatannK U
-)nnU V
-}oo 
-)oo 
-;oo 
-}pp 
-}qq 
-AvailableAvatarsss $
-=ss% &
-newss' * 
-ObservableCollectionss+ ?
-<ss? @
-AvatarModelss@ K
->ssK L
-(ssL M
-tempAvatarsssM X
-)ssX Y
-;ssY Z
-SelectedAvataruu "
-=uu# $
-AvailableAvatarsuu% 5
-.uu5 6
-FirstOrDefaultuu6 D
-(uuD E
-auuE F
-=>uuG I
-auuJ K
-.uuK L
-IduuL N
-==uuO Q
-_currentAvatarIduuR b
-)uub c
-??vv% '
-AvailableAvatarsvv( 8
-.vv8 9
-FirstOrDefaultvv9 G
-(vvG H
-)vvH I
-;vvI J
-}ww 
-catchxx 
-(xx 
-FaultExceptionxx %
-
-fexGeneralxx& 0
-)xx0 1
-{yy 
-
-MessageBoxzz 
-.zz 
-Showzz #
-(zz# $
-Lang{{ 
-.{{ &
-alertAvatarLoadServerError{{ 7
-,{{7 8
-Lang|| 
-.|| 
-alertErrorTitle|| ,
-,||, -
-MessageBoxButton}} (
-.}}( )
-OK}}) +
-,}}+ ,
-MessageBoxImage~~ '
-.~~' (
-Error~~( -
-)~~- .
-;~~. /
-Console 
-. 
-	WriteLine %
-(% &
-$"& (
-$str( C
-{C D
-
-fexGeneralD N
-.N O
-MessageO V
-}V W
-"W X
-)X Y
-;Y Z
-}
-ÄÄ 
-catch
-ÅÅ 
-(
-ÅÅ '
-EndpointNotFoundException
-ÅÅ 0
-ex
-ÅÅ1 3
-)
-ÅÅ3 4
-{
-ÇÇ 
-
-MessageBox
-ÉÉ 
-.
-ÉÉ 
-Show
-ÉÉ #
-(
-ÉÉ# $
-Lang
-ÑÑ 
-.
-ÑÑ )
-alertConnectionErrorMessage
-ÑÑ 8
-,
-ÑÑ8 9
-Lang
-ÖÖ 
-.
-ÖÖ '
-alertConnectionErrorTitle
-ÖÖ 6
-,
-ÖÖ6 7
-MessageBoxButton
-ÜÜ (
-.
-ÜÜ( )
-OK
-ÜÜ) +
-,
-ÜÜ+ ,
-MessageBoxImage
-áá '
-.
-áá' (
-Error
-áá( -
-)
-áá- .
-;
-áá. /
-Console
-àà 
-.
-àà 
-	WriteLine
-àà %
-(
-àà% &
-$"
-àà& (
-$str
-àà( J
-{
-ààJ K
-ex
-ààK M
-.
-ààM N
-Message
-ààN U
-}
-ààU V
-"
-ààV W
-)
-ààW X
-;
-ààX Y
-}
-ââ 
-catch
-ää 
-(
-ää 
-	Exception
-ää  
-ex
-ää! #
-)
-ää# $
-{
-ãã 
-
-MessageBox
-åå 
-.
-åå 
-Show
-åå #
-(
-åå# $
-Lang
-çç 
-.
-çç )
-alertAvatarLoadUnknownError
-çç 8
-,
-çç8 9
-Lang
-éé 
-.
-éé 
-alertErrorTitle
-éé ,
-,
-éé, -
-MessageBoxButton
-èè (
-.
-èè( )
-OK
-èè) +
-,
-èè+ ,
-MessageBoxImage
-êê '
-.
-êê' (
-Error
-êê( -
-)
-êê- .
-;
-êê. /
-Console
-ëë 
-.
-ëë 
-	WriteLine
-ëë %
-(
-ëë% &
-$"
-ëë& (
-$str
-ëë( J
-{
-ëëJ K
-ex
-ëëK M
-.
-ëëM N
-Message
-ëëN U
-}
-ëëU V
-"
-ëëV W
-)
-ëëW X
-;
-ëëX Y
-}
-íí 
-}
-ìì 
-}
-îî 	
-private
-ññ 
-void
-ññ %
-ExecuteSelectAvatarItem
-ññ ,
-(
-ññ, -
-object
-ññ- 3
-	parameter
-ññ4 =
-)
-ññ= >
-{
-óó 	
-if
-òò 
-(
-òò 
-	parameter
-òò 
-is
-òò 
-AvatarModel
-òò (
-avatar
-òò) /
-)
-òò/ 0
-{
-ôô 
-SelectedAvatar
-öö 
-=
-öö  
-avatar
-öö! '
-;
-öö' (
-}
-õõ 
-}
-úú 	
-private
-ûû 
-bool
-ûû (
-CanExecuteConfirmSelection
-ûû /
-(
-ûû/ 0
-object
-ûû0 6
-	parameter
-ûû7 @
-)
-ûû@ A
-{
-üü 	
-return
-†† 
-SelectedAvatar
-†† !
-!=
-††" $
-null
-††% )
-;
-††) *
-}
-°° 	
-private
-££ 
-void
-££ %
-ExecuteConfirmSelection
-££ ,
-(
-££, -
-object
-££- 3
-	parameter
-££4 =
-)
-££= >
-{
-§§ 	
-AvatarSelected
-•• 
-?
-•• 
-.
-•• 
-Invoke
-•• "
-(
-••" #
-SelectedAvatar
-••# 1
-)
-••1 2
-;
-••2 3
-CloseWindow
-¶¶ 
-(
-¶¶ 
-	parameter
-¶¶ !
-)
-¶¶! "
-;
-¶¶" #
-}
-ßß 	
-private
-©© 
-void
-©© 
-CloseWindow
-©©  
-(
-©©  !
-object
-©©! '
-	parameter
-©©( 1
-)
-©©1 2
-{
-™™ 	
-if
-´´ 
-(
-´´ 
-	parameter
-´´ 
-is
-´´ 
-Window
-´´ #
-window
-´´$ *
-)
-´´* +
-{
-¨¨ 
-window
-≠≠ 
-.
-≠≠ 
-Close
-≠≠ 
-(
-≠≠ 
-)
-≠≠ 
-;
-≠≠ 
-}
-ÆÆ 
-else
-ØØ 
-{
-∞∞ 
-var
-±± 
-activeWindow
-±±  
-=
-±±! "
-Application
-±±# .
-.
-±±. /
-Current
-±±/ 6
-.
-±±6 7
-Windows
-±±7 >
-.
-±±> ?
-OfType
-±±? E
-<
-±±E F
-Window
-±±F L
->
-±±L M
-(
-±±M N
-)
-±±N O
-.
-±±O P
-FirstOrDefault
-±±P ^
-(
-±±^ _
-w
-±±_ `
-=>
-±±a c
-w
-±±d e
-.
-±±e f
-DataContext
-±±f q
-==
-±±r t
-this
-±±u y
-)
-±±y z
-;
-±±z {
-activeWindow
-≤≤ 
-?
-≤≤ 
-.
-≤≤ 
-Close
-≤≤ #
-(
-≤≤# $
-)
-≤≤$ %
-;
-≤≤% &
-}
-≥≥ 
-}
-¥¥ 	
-public
-∂∂ 
-static
-∂∂ 
-BitmapImage
-∂∂ ! 
-ConvertByteToImage
-∂∂" 4
-(
-∂∂4 5
-byte
-∂∂5 9
-[
-∂∂9 :
-]
-∂∂: ;
-
-imageBytes
-∂∂< F
-)
-∂∂F G
-{
-∑∑ 	
-if
-∏∏ 
-(
-∏∏ 
-
-imageBytes
-∏∏ 
-==
-∏∏ 
-null
-∏∏ "
-||
-∏∏# %
-
-imageBytes
-∏∏& 0
-.
-∏∏0 1
-Length
-∏∏1 7
-==
-∏∏8 :
-$num
-∏∏; <
-)
-∏∏< =
-{
-ππ 
-return
-∫∫ 
-null
-∫∫ 
-;
-∫∫ 
-}
-ªª 
-var
-ΩΩ 
-image
-ΩΩ 
-=
-ΩΩ 
-new
-ΩΩ 
-BitmapImage
-ΩΩ '
-(
-ΩΩ' (
-)
-ΩΩ( )
-;
-ΩΩ) *
-using
-ææ 
-(
-ææ 
-var
-ææ 
-mem
-ææ 
-=
-ææ 
-new
-ææ  
-MemoryStream
-ææ! -
-(
-ææ- .
-
-imageBytes
-ææ. 8
-)
-ææ8 9
-)
-ææ9 :
-{
-øø 
-mem
-¿¿ 
-.
-¿¿ 
-Position
-¿¿ 
-=
-¿¿ 
-$num
-¿¿  
-;
-¿¿  !
-image
-¡¡ 
-.
-¡¡ 
-	BeginInit
-¡¡ 
-(
-¡¡  
-)
-¡¡  !
-;
-¡¡! "
-image
-¬¬ 
-.
-¬¬ 
-CreateOptions
-¬¬ #
-=
-¬¬$ %!
-BitmapCreateOptions
-¬¬& 9
-.
-¬¬9 :!
-PreservePixelFormat
-¬¬: M
-;
-¬¬M N
-image
-√√ 
-.
-√√ 
-CacheOption
-√√ !
-=
-√√" #
-BitmapCacheOption
-√√$ 5
-.
-√√5 6
-OnLoad
-√√6 <
-;
-√√< =
-image
-ƒƒ 
-.
-ƒƒ 
-	UriSource
-ƒƒ 
-=
-ƒƒ  !
-null
-ƒƒ" &
-;
-ƒƒ& '
-image
-≈≈ 
-.
-≈≈ 
-StreamSource
-≈≈ "
-=
-≈≈# $
-mem
-≈≈% (
-;
-≈≈( )
-image
-∆∆ 
-.
-∆∆ 
-EndInit
-∆∆ 
-(
-∆∆ 
-)
-∆∆ 
-;
-∆∆  
-}
-«« 
-image
-»» 
-.
-»» 
-Freeze
-»» 
-(
-»» 
-)
-»» 
-;
-»» 
-return
-…… 
-image
-…… 
-;
-…… 
-}
-   	
-}
-ÀÀ 
-}ÃÃ ä∑
-ñC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.cs
+}‚‚ ç∑
+ôC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -17519,8 +34694,8 @@ MessageBox
 •• 	
 }
 ¶¶ 
-}ßß ’™
-òC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.cs
+}ßß ÿ™
+õC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -20865,2086 +38040,8 @@ Dispatcher
 ππ 	
 }
 ∫∫ 
-}ªª ¬¿
-ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-Lobby& +
-{ 
-public 
-
-class "
-DirectMessageViewModel '
-:( )
-ViewModelBase* 7
-,7 8
-IDisposable9 D
-{ 
-private 
-static 
-SocialServiceClient *
-Client+ 1
-=>2 4
-SocialClientManager5 H
-.H I
-InstanceI Q
-.Q R
-ClientR X
-;X Y
-public  
-ObservableCollection #
-<# $
-	FriendDto$ -
->- .
-Conversations/ <
-{= >
-get? B
-;B C
-}D E
-public  
-ObservableCollection #
-<# $
-DirectMessageDto$ 4
->4 5
-ChatHistory6 A
-{B C
-getD G
-;G H
-}I J
-private 
-string 
-_messageText #
-;# $
-public 
-string 
-MessageText !
-{ 	
-get 
-{ 
-return 
-_messageText #
-;# $
-} 
-set 
-{ 
-if 
-( 
-_messageText  
-!=! #
-value$ )
-)) *
-{ 
-_messageText    
-=  ! "
-value  # (
-;  ( )
-OnPropertyChanged!! %
-(!!% &
-)!!& '
-;!!' (
-}"" 
-}## 
-}$$ 	
-private&& 
-string&& '
-_currentChatPartnerUsername&& 2
-;&&2 3
-private'' 
-	FriendDto'' !
-_selectedConversation'' /
-;''/ 0
-public(( 
-	FriendDto((  
-SelectedConversation(( -
-{)) 	
-get** 
-{++ 
-return,, !
-_selectedConversation,, ,
-;,,, -
-}-- 
-set.. 
-{// 
-if00 
-(00 !
-_selectedConversation00 )
-!=00* ,
-value00- 2
-)002 3
-{11 !
-_selectedConversation22 )
-=22* +
-value22, 1
-;221 2
-OnPropertyChanged33 %
-(33% &
-)33& '
-;33' (
-if55 
-(55 
-value55 
-!=55  
-null55! %
-)55% &
-{66 
-LoadChatHistory77 '
-(77' (
-value77( -
-.77- .
-Username77. 6
-)776 7
-;777 8
-}88 
-else99 
-{:: 
-ClearChatHistory;; (
-(;;( )
-);;) *
-;;;* +
-}<< 
-}== 
-}>> 
-}?? 	
-publicAA 
-ICommandAA 
-SendMessageCommandAA *
-{AA+ ,
-getAA- 0
-;AA0 1
-}AA2 3
-publicCC "
-DirectMessageViewModelCC %
-(CC% &
-)CC& '
-{DD 	
-ConversationsEE 
-=EE 
-newEE  
-ObservableCollectionEE  4
-<EE4 5
-	FriendDtoEE5 >
->EE> ?
-(EE? @
-)EE@ A
-;EEA B
-ChatHistoryFF 
-=FF 
-newFF  
-ObservableCollectionFF 2
-<FF2 3
-DirectMessageDtoFF3 C
->FFC D
-(FFD E
-)FFE F
-;FFF G
-SendMessageCommandGG 
-=GG  
-newGG! $
-RelayCommandGG% 1
-(GG1 2
-PerformSendMessageGG2 D
-,GGD E
-	parameterGGF O
-=>GGP R!
-CanPerformSendMessageGGS h
-(GGh i
-)GGi j
-)GGj k
-;GGk l
-SubscribeToEventsII 
-(II 
-)II 
-;II  
-ifKK 
-(KK $
-CanExecuteNetworkActionsKK (
-(KK( )
-)KK) *
-)KK* +
-{LL  
-LoadFriendsListAsyncMM $
-(MM$ %
-)MM% &
-;MM& '
-}NN 
-elseOO 
-{PP 
-ConsoleQQ 
-.QQ 
-	WriteLineQQ !
-(QQ! "
-$strQQ" _
-)QQ_ `
-;QQ` a
-}RR 
-}SS 	
-privateUU 
-boolUU $
-CanExecuteNetworkActionsUU -
-(UU- .
-)UU. /
-{VV 	
-returnWW 
-ClientWW 
-!=WW 
-nullWW !
-&&WW" $
-ClientWW% +
-.WW+ ,
-StateWW, 1
-==WW2 4
-CommunicationStateWW5 G
-.WWG H
-OpenedWWH N
-;WWN O
-}XX 	
-privateZZ 
-asyncZZ 
-TaskZZ  
-LoadFriendsListAsyncZZ /
-(ZZ/ 0
-)ZZ0 1
-{[[ 	
-if\\ 
-(\\ 
-!\\ $
-CanExecuteNetworkActions\\ )
-(\\) *
-)\\* +
-)\\+ ,
-{]] 
-Console^^ 
-.^^ 
-	WriteLine^^ !
-(^^! "
-$str^^" a
-)^^a b
-;^^b c
-return__ 
-;__ 
-}`` 
-tryaa 
-{bb 
-varcc 
-userscc 
-=cc 
-awaitcc !
-Clientcc" (
-.cc( )
-GetFriendsListAsynccc) <
-(cc< =
-SessionManagercc= K
-.ccK L
-InstanceccL T
-.ccT U
-CurrentUsernameccU d
-)ccd e
-;cce f
-Applicationdd 
-.dd 
-Currentdd #
-.dd# $
-
-Dispatcherdd$ .
-.dd. /
-Invokedd/ 5
-(dd5 6
-(dd6 7
-)dd7 8
-=>dd9 ;
-{ee 
-Conversationsff !
-.ff! "
-Clearff" '
-(ff' (
-)ff( )
-;ff) *
-ifgg 
-(gg 
-usersgg 
-!=gg  
-nullgg! %
-)gg% &
-{hh 
-foreachii 
-(ii  !
-varii! $
-uii% &
-inii' )
-usersii* /
-)ii/ 0
-{jj 
-Conversationskk )
-.kk) *
-Addkk* -
-(kk- .
-ukk. /
-)kk/ 0
-;kk0 1
-}ll 
-}mm 
-}nn 
-)nn 
-;nn 
-}oo 
-catchpp 
-(pp 
-FaultExceptionpp !
-
-fexGeneralpp" ,
-)pp, -
-{qq 
-
-MessageBoxrr 
-.rr 
-Showrr 
-(rr  
-Langss 
-.ss %
-alertChatLoadFriendsErrorss 2
-,ss2 3
-Langtt 
-.tt 
-alertErrorTitlett (
-,tt( )
-MessageBoxButtonuu $
-.uu$ %
-OKuu% '
-,uu' (
-MessageBoxImagevv #
-.vv# $
-Errorvv$ )
-)vv) *
-;vv* +
-Consoleww 
-.ww 
-	WriteLineww !
-(ww! "
-$"ww" $
-$strww$ D
-{wwD E
-
-fexGeneralwwE O
-.wwO P
-MessagewwP W
-}wwW X
-"wwX Y
-)wwY Z
-;wwZ [
-}xx 
-catchyy 
-(yy %
-EndpointNotFoundExceptionyy ,
-exyy- /
-)yy/ 0
-{zz 
-
-MessageBox{{ 
-.{{ 
-Show{{ 
-({{  
-Lang|| 
-.|| '
-alertConnectionErrorMessage|| 4
-,||4 5
-Lang}} 
-.}} %
-alertConnectionErrorTitle}} 2
-,}}2 3
-MessageBoxButton~~ $
-.~~$ %
-OK~~% '
-,~~' (
-MessageBoxImage #
-.# $
-Error$ )
-)) *
-;* +
-Console
-ÄÄ 
-.
-ÄÄ 
-	WriteLine
-ÄÄ !
-(
-ÄÄ! "
-$"
-ÄÄ" $
-$str
-ÄÄ$ K
-{
-ÄÄK L
-ex
-ÄÄL N
-.
-ÄÄN O
-Message
-ÄÄO V
-}
-ÄÄV W
-"
-ÄÄW X
-)
-ÄÄX Y
-;
-ÄÄY Z
-}
-ÅÅ 
-catch
-ÇÇ 
-(
-ÇÇ 
-	Exception
-ÇÇ 
-ex
-ÇÇ 
-)
-ÇÇ  
-{
-ÉÉ 
-
-MessageBox
-ÑÑ 
-.
-ÑÑ 
-Show
-ÑÑ 
-(
-ÑÑ  
-Lang
-ÖÖ 
-.
-ÖÖ '
-alertChatLoadFriendsError
-ÖÖ 2
-,
-ÖÖ2 3
-Lang
-ÜÜ 
-.
-ÜÜ 
-alertErrorTitle
-ÜÜ (
-,
-ÜÜ( )
-MessageBoxButton
-áá $
-.
-áá$ %
-OK
-áá% '
-,
-áá' (
-MessageBoxImage
-àà #
-.
-àà# $
-Error
-àà$ )
-)
-àà) *
-;
-àà* +
-Console
-ââ 
-.
-ââ 
-	WriteLine
-ââ !
-(
-ââ! "
-$"
-ââ" $
-$str
-ââ$ G
-{
-ââG H
-ex
-ââH J
-.
-ââJ K
-Message
-ââK R
-}
-ââR S
-"
-ââS T
-)
-ââT U
-;
-ââU V
-}
-ää 
-}
-ãã 	
-private
-çç 
-async
-çç 
-Task
-çç 
-LoadChatHistory
-çç *
-(
-çç* +
-string
-çç+ 1
-otherUsername
-çç2 ?
-)
-çç? @
-{
-éé 	
-if
-èè 
-(
-èè 
-string
-èè 
-.
-èè 
-IsNullOrEmpty
-èè $
-(
-èè$ %
-otherUsername
-èè% 2
-)
-èè2 3
-)
-èè3 4
-{
-êê 
-ClearChatHistory
-ëë  
-(
-ëë  !
-)
-ëë! "
-;
-ëë" #
-return
-íí 
-;
-íí 
-}
-ìì 
-if
-ïï 
-(
-ïï 
-!
-ïï &
-CanExecuteNetworkActions
-ïï )
-(
-ïï) *
-)
-ïï* +
-)
-ïï+ ,
-{
-ññ 
-Console
-óó 
-.
-óó 
-	WriteLine
-óó !
-(
-óó! "
-$str
-óó" \
-)
-óó\ ]
-;
-óó] ^
-ClearChatHistory
-òò  
-(
-òò  !
-)
-òò! "
-;
-òò" #
-return
-ôô 
-;
-ôô 
-}
-öö )
-_currentChatPartnerUsername
-úú '
-=
-úú( )
-otherUsername
-úú* 7
-;
-úú7 8
-try
-ùù 
-{
-ûû 
-string
-üü 
-currentUsername
-üü &
-=
-üü' (
-SessionManager
-üü) 7
-.
-üü7 8
-Instance
-üü8 @
-.
-üü@ A
-CurrentUsername
-üüA P
-;
-üüP Q
-var
-†† 
-history
-†† 
-=
-†† 
-await
-†† #
-Client
-††$ *
-.
-††* +)
-GetConversationHistoryAsync
-††+ F
-(
-††F G
-currentUsername
-††G V
-,
-††V W
-otherUsername
-††X e
-)
-††e f
-;
-††f g
-Application
-¢¢ 
-.
-¢¢ 
-Current
-¢¢ #
-.
-¢¢# $
-
-Dispatcher
-¢¢$ .
-.
-¢¢. /
-Invoke
-¢¢/ 5
-(
-¢¢5 6
-(
-¢¢6 7
-)
-¢¢7 8
-=>
-¢¢9 ;
-{
-££ 
-ChatHistory
-§§ 
-.
-§§  
-Clear
-§§  %
-(
-§§% &
-)
-§§& '
-;
-§§' (
-if
-•• 
-(
-•• 
-history
-•• 
-!=
-••  "
-null
-••# '
-)
-••' (
-{
-¶¶ 
-foreach
-ßß 
-(
-ßß  !
-var
-ßß! $
-msg
-ßß% (
-in
-ßß) +
-history
-ßß, 3
-)
-ßß3 4
-{
-®® 
-if
-©© 
-(
-©©  
-msg
-©©  #
-.
-©©# $
-SenderUsername
-©©$ 2
-==
-©©3 5
-currentUsername
-©©6 E
-)
-©©E F
-{
-™™ 
-var
-´´  #
-localMessageDto
-´´$ 3
-=
-´´4 5
-new
-´´6 9
-DirectMessageDto
-´´: J
-{
-¨¨  !
-SenderUsername
-≠≠$ 2
-=
-≠≠3 4
-Lang
-≠≠5 9
-.
-≠≠9 : 
-alertChatSenderYou
-≠≠: L
-,
-≠≠L M
-RecipientUsername
-ÆÆ$ 5
-=
-ÆÆ6 7
-msg
-ÆÆ8 ;
-.
-ÆÆ; <
-RecipientUsername
-ÆÆ< M
-,
-ÆÆM N
-Content
-ØØ$ +
-=
-ØØ, -
-msg
-ØØ. 1
-.
-ØØ1 2
-Content
-ØØ2 9
-,
-ØØ9 :
-	Timestamp
-∞∞$ -
-=
-∞∞. /
-msg
-∞∞0 3
-.
-∞∞3 4
-	Timestamp
-∞∞4 =
-}
-±±  !
-;
-±±! "
-ChatHistory
-≤≤  +
-.
-≤≤+ ,
-Add
-≤≤, /
-(
-≤≤/ 0
-localMessageDto
-≤≤0 ?
-)
-≤≤? @
-;
-≤≤@ A
-}
-≥≥ 
-else
-¥¥  
-{
-µµ 
-ChatHistory
-∂∂  +
-.
-∂∂+ ,
-Add
-∂∂, /
-(
-∂∂/ 0
-msg
-∂∂0 3
-)
-∂∂3 4
-;
-∂∂4 5
-}
-∑∑ 
-}
-∏∏ 
-}
-ππ 
-}
-∫∫ 
-)
-∫∫ 
-;
-∫∫ 
-}
-ªª 
-catch
-ºº 
-(
-ºº 
-FaultException
-ºº !
-
-fexGeneral
-ºº" ,
-)
-ºº, -
-{
-ΩΩ 
-
-MessageBox
-ææ 
-.
-ææ 
-Show
-ææ 
-(
-ææ  
-Lang
-øø 
-.
-øø '
-alertChatLoadHistoryError
-øø 2
-,
-øø2 3
-Lang
-¿¿ 
-.
-¿¿ 
-alertErrorTitle
-¿¿ (
-,
-¿¿( )
-MessageBoxButton
-¡¡ $
-.
-¡¡$ %
-OK
-¡¡% '
-,
-¡¡' (
-MessageBoxImage
-¬¬ #
-.
-¬¬# $
-Error
-¬¬$ )
-)
-¬¬) *
-;
-¬¬* +
-Console
-√√ 
-.
-√√ 
-	WriteLine
-√√ !
-(
-√√! "
-$"
-√√" $
-$str
-√√$ D
-{
-√√D E
-
-fexGeneral
-√√E O
-.
-√√O P
-Message
-√√P W
-}
-√√W X
-"
-√√X Y
-)
-√√Y Z
-;
-√√Z [
-ClearChatHistory
-ƒƒ  
-(
-ƒƒ  !
-)
-ƒƒ! "
-;
-ƒƒ" #
-}
-≈≈ 
-catch
-∆∆ 
-(
-∆∆ '
-EndpointNotFoundException
-∆∆ ,
-ex
-∆∆- /
-)
-∆∆/ 0
-{
-«« 
-
-MessageBox
-»» 
-.
-»» 
-Show
-»» 
-(
-»»  
-Lang
-…… 
-.
-…… )
-alertConnectionErrorMessage
-…… 4
-,
-……4 5
-Lang
-   
-.
-   '
-alertConnectionErrorTitle
-   2
-,
-  2 3
-MessageBoxButton
-ÀÀ $
-.
-ÀÀ$ %
-OK
-ÀÀ% '
-,
-ÀÀ' (
-MessageBoxImage
-ÃÃ #
-.
-ÃÃ# $
-Error
-ÃÃ$ )
-)
-ÃÃ) *
-;
-ÃÃ* +
-Console
-ÕÕ 
-.
-ÕÕ 
-	WriteLine
-ÕÕ !
-(
-ÕÕ! "
-$"
-ÕÕ" $
-$str
-ÕÕ$ K
-{
-ÕÕK L
-ex
-ÕÕL N
-.
-ÕÕN O
-Message
-ÕÕO V
-}
-ÕÕV W
-"
-ÕÕW X
-)
-ÕÕX Y
-;
-ÕÕY Z
-ClearChatHistory
-ŒŒ  
-(
-ŒŒ  !
-)
-ŒŒ! "
-;
-ŒŒ" #
-}
-œœ 
-catch
-–– 
-(
-–– 
-	Exception
-–– 
-ex
-–– 
-)
-––  
-{
-—— 
-
-MessageBox
-““ 
-.
-““ 
-Show
-““ 
-(
-““  
-Lang
-”” 
-.
-”” '
-alertChatLoadHistoryError
-”” 2
-,
-””2 3
-Lang
-‘‘ 
-.
-‘‘ 
-alertErrorTitle
-‘‘ (
-,
-‘‘( )
-MessageBoxButton
-’’ $
-.
-’’$ %
-OK
-’’% '
-,
-’’' (
-MessageBoxImage
-÷÷ #
-.
-÷÷# $
-Error
-÷÷$ )
-)
-÷÷) *
-;
-÷÷* +
-Console
-◊◊ 
-.
-◊◊ 
-	WriteLine
-◊◊ !
-(
-◊◊! "
-$"
-◊◊" $
-$str
-◊◊$ @
-{
-◊◊@ A
-ex
-◊◊A C
-.
-◊◊C D
-Message
-◊◊D K
-}
-◊◊K L
-"
-◊◊L M
-)
-◊◊M N
-;
-◊◊N O
-ClearChatHistory
-ÿÿ  
-(
-ÿÿ  !
-)
-ÿÿ! "
-;
-ÿÿ" #
-}
-ŸŸ 
-}
-⁄⁄ 	
-private
-‹‹ 
-void
-‹‹ 
-ClearChatHistory
-‹‹ %
-(
-‹‹% &
-)
-‹‹& '
-{
-›› 	)
-_currentChatPartnerUsername
-ﬁﬁ '
-=
-ﬁﬁ( )
-null
-ﬁﬁ* .
-;
-ﬁﬁ. /
-Application
-ﬂﬂ 
-.
-ﬂﬂ 
-Current
-ﬂﬂ 
-.
-ﬂﬂ  
-
-Dispatcher
-ﬂﬂ  *
-.
-ﬂﬂ* +
-Invoke
-ﬂﬂ+ 1
-(
-ﬂﬂ1 2
-(
-ﬂﬂ2 3
-)
-ﬂﬂ3 4
-=>
-ﬂﬂ5 7
-ChatHistory
-ﬂﬂ8 C
-.
-ﬂﬂC D
-Clear
-ﬂﬂD I
-(
-ﬂﬂI J
-)
-ﬂﬂJ K
-)
-ﬂﬂK L
-;
-ﬂﬂL M
-}
-‡‡ 	
-private
-‚‚ 
-bool
-‚‚ #
-CanPerformSendMessage
-‚‚ *
-(
-‚‚* +
-)
-‚‚+ ,
-{
-„„ 	
-return
-‰‰ 
-!
-‰‰ 
-string
-‰‰ 
-.
-‰‰  
-IsNullOrWhiteSpace
-‰‰ -
-(
-‰‰- .
-MessageText
-‰‰. 9
-)
-‰‰9 :
-&&
-‰‰; =)
-_currentChatPartnerUsername
-ÂÂ .
-!=
-ÂÂ/ 1
-null
-ÂÂ2 6
-&&
-ÂÂ7 9&
-CanExecuteNetworkActions
-ÊÊ +
-(
-ÊÊ+ ,
-)
-ÊÊ, -
-;
-ÊÊ- .
-}
-ÁÁ 	
-private
-ÈÈ 
-void
-ÈÈ  
-PerformSendMessage
-ÈÈ '
-(
-ÈÈ' (
-object
-ÈÈ( .
-obj
-ÈÈ/ 2
-)
-ÈÈ2 3
-{
-ÍÍ 	
-if
-ÎÎ 
-(
-ÎÎ 
-!
-ÎÎ #
-CanPerformSendMessage
-ÎÎ &
-(
-ÎÎ& '
-)
-ÎÎ' (
-)
-ÎÎ( )
-{
-ÏÏ 
-return
-ÌÌ 
-;
-ÌÌ 
-}
-ÓÓ 
-var
- 
-
-messageDto
- 
-=
- 
-new
-  
-DirectMessageDto
-! 1
-{
-ÒÒ 
-SenderUsername
-ÚÚ 
-=
-ÚÚ  
-SessionManager
-ÚÚ! /
-.
-ÚÚ/ 0
-Instance
-ÚÚ0 8
-.
-ÚÚ8 9
-CurrentUsername
-ÚÚ9 H
-,
-ÚÚH I
-RecipientUsername
-ÛÛ !
-=
-ÛÛ" #)
-_currentChatPartnerUsername
-ÛÛ$ ?
-,
-ÛÛ? @
-Content
-ÙÙ 
-=
-ÙÙ 
-MessageText
-ÙÙ %
-,
-ÙÙ% &
-	Timestamp
-ıı 
-=
-ıı 
-DateTime
-ıı $
-.
-ıı$ %
-UtcNow
-ıı% +
-}
-ˆˆ 
-;
-ˆˆ 
-try
-¯¯ 
-{
-˘˘ 
-Client
-˙˙ 
-.
-˙˙ 
-SendDirectMessage
-˙˙ (
-(
-˙˙( )
-
-messageDto
-˙˙) 3
-)
-˙˙3 4
-;
-˙˙4 5
-var
-¸¸ 
-localMsg
-¸¸ 
-=
-¸¸ 
-new
-¸¸ "
-DirectMessageDto
-¸¸# 3
-{
-˝˝ 
-SenderUsername
-˛˛ "
-=
-˛˛# $
-Lang
-˛˛% )
-.
-˛˛) * 
-alertChatSenderYou
-˛˛* <
-,
-˛˛< =
-Content
-ˇˇ 
-=
-ˇˇ 
-MessageText
-ˇˇ )
-,
-ˇˇ) *
-	Timestamp
-ÄÄ 
-=
-ÄÄ 
-DateTime
-ÄÄ  (
-.
-ÄÄ( )
-Now
-ÄÄ) ,
-}
-ÅÅ 
-;
-ÅÅ 
-ChatHistory
-ÇÇ 
-.
-ÇÇ 
-Add
-ÇÇ 
-(
-ÇÇ  
-localMsg
-ÇÇ  (
-)
-ÇÇ( )
-;
-ÇÇ) *
-MessageText
-ÉÉ 
-=
-ÉÉ 
-string
-ÉÉ $
-.
-ÉÉ$ %
-Empty
-ÉÉ% *
-;
-ÉÉ* +
-}
-ÑÑ 
-catch
-ÖÖ 
-(
-ÖÖ $
-CommunicationException
-ÖÖ )
-commEx
-ÖÖ* 0
-)
-ÖÖ0 1
-{
-ÜÜ 
-
-MessageBox
-áá 
-.
-áá 
-Show
-áá 
-(
-áá  
-Lang
-àà 
-.
-àà '
-alertChatMessageSendError
-àà 2
-,
-àà2 3
-Lang
-ââ 
-.
-ââ 
-alertErrorTitle
-ââ (
-,
-ââ( )
-MessageBoxButton
-ää $
-.
-ää$ %
-OK
-ää% '
-,
-ää' (
-MessageBoxImage
-ãã #
-.
-ãã# $
-Error
-ãã$ )
-)
-ãã) *
-;
-ãã* +
-Console
-åå 
-.
-åå 
-	WriteLine
-åå !
-(
-åå! "
-$"
-åå" $
-$str
-åå$ I
-{
-ååI J
-commEx
-ååJ P
-.
-ååP Q
-Message
-ååQ X
-}
-ååX Y
-"
-ååY Z
-)
-ååZ [
-;
-åå[ \
-}
-çç 
-catch
-éé 
-(
-éé 
-	Exception
-éé 
-ex
-éé 
-)
-éé  
-{
-èè 
-
-MessageBox
-êê 
-.
-êê 
-Show
-êê 
-(
-êê  
-Lang
-ëë 
-.
-ëë '
-alertChatMessageSendError
-ëë 2
-,
-ëë2 3
-Lang
-íí 
-.
-íí 
-alertErrorTitle
-íí (
-,
-íí( )
-MessageBoxButton
-ìì $
-.
-ìì$ %
-OK
-ìì% '
-,
-ìì' (
-MessageBoxImage
-îî #
-.
-îî# $
-Error
-îî$ )
-)
-îî) *
-;
-îî* +
-Console
-ïï 
-.
-ïï 
-	WriteLine
-ïï !
-(
-ïï! "
-$"
-ïï" $
-$str
-ïï$ <
-{
-ïï< =
-ex
-ïï= ?
-.
-ïï? @
-Message
-ïï@ G
-}
-ïïG H
-"
-ïïH I
-)
-ïïI J
-;
-ïïJ K
-}
-ññ 
-}
-óó 	
-private
-ôô 
-void
-ôô 
-SubscribeToEvents
-ôô &
-(
-ôô& '
-)
-ôô' (
-{
-öö 	!
-SocialClientManager
-õõ 
-.
-õõ  
-Instance
-õõ  (
-.
-õõ( )
-OnMessageReceived
-õõ) :
-+=
-õõ; =#
-HandleMessageReceived
-õõ> S
-;
-õõS T!
-SocialClientManager
-úú 
-.
-úú  
-Instance
-úú  (
-.
-úú( )
-OnFriendResponse
-úú) 9
-+=
-úú: <"
-HandleFriendResponse
-úú= Q
-;
-úúQ R
-Console
-ùù 
-.
-ùù 
-	WriteLine
-ùù 
-(
-ùù 
-$str
-ùù V
-)
-ùùV W
-;
-ùùW X
-}
-ûû 	
-private
-†† 
-void
-†† #
-UnsubscribeFromEvents
-†† *
-(
-††* +
-)
-††+ ,
-{
-°° 	!
-SocialClientManager
-¢¢ 
-.
-¢¢  
-Instance
-¢¢  (
-.
-¢¢( )
-OnMessageReceived
-¢¢) :
--=
-¢¢; =#
-HandleMessageReceived
-¢¢> S
-;
-¢¢S T!
-SocialClientManager
-££ 
-.
-££  
-Instance
-££  (
-.
-££( )
-OnFriendResponse
-££) 9
--=
-££: <"
-HandleFriendResponse
-££= Q
-;
-££Q R
-Console
-§§ 
-.
-§§ 
-	WriteLine
-§§ 
-(
-§§ 
-$str
-§§ Y
-)
-§§Y Z
-;
-§§Z [
-}
-•• 	
-public
-ßß 
-void
-ßß 
-Dispose
-ßß 
-(
-ßß 
-)
-ßß 
-{
-®® 	
-Dispose
-©© 
-(
-©© 
-true
-©© 
-)
-©© 
-;
-©© 
-GC
-™™ 
-.
-™™ 
-SuppressFinalize
-™™ 
-(
-™™  
-this
-™™  $
-)
-™™$ %
-;
-™™% &
-}
-´´ 	
-	protected
-≠≠ 
-virtual
-≠≠ 
-void
-≠≠ 
-Dispose
-≠≠ &
-(
-≠≠& '
-bool
-≠≠' +
-	disposing
-≠≠, 5
-)
-≠≠5 6
-{
-ÆÆ 	
-if
-ØØ 
-(
-ØØ 
-	disposing
-ØØ 
-)
-ØØ 
-{
-∞∞ #
-UnsubscribeFromEvents
-±± %
-(
-±±% &
-)
-±±& '
-;
-±±' (
-}
-≤≤ 
-}
-≥≥ 	
-public
-µµ 
-void
-µµ 
-Cleanup
-µµ 
-(
-µµ 
-)
-µµ 
-{
-∂∂ 	
-Dispose
-∑∑ 
-(
-∑∑ 
-)
-∑∑ 
-;
-∑∑ 
-}
-∏∏ 	
-private
-∫∫ 
-void
-∫∫ #
-HandleMessageReceived
-∫∫ *
-(
-∫∫* +
-DirectMessageDto
-∫∫+ ;
-message
-∫∫< C
-)
-∫∫C D
-{
-ªª 	
-Application
-ºº 
-.
-ºº 
-Current
-ºº 
-.
-ºº  
-
-Dispatcher
-ºº  *
-.
-ºº* +
-Invoke
-ºº+ 1
-(
-ºº1 2
-(
-ºº2 3
-)
-ºº3 4
-=>
-ºº5 7
-{
-ΩΩ 
-if
-ææ 
-(
-ææ 
-message
-ææ 
-.
-ææ 
-SenderUsername
-ææ *
-==
-ææ+ -)
-_currentChatPartnerUsername
-ææ. I
-)
-ææI J
-{
-øø 
-ChatHistory
-¿¿ 
-.
-¿¿  
-Add
-¿¿  #
-(
-¿¿# $
-message
-¿¿$ +
-)
-¿¿+ ,
-;
-¿¿, -
-}
-¡¡ 
-else
-¬¬ 
-{
-√√ 
-
-MessageBox
-ƒƒ 
-.
-ƒƒ 
-Show
-ƒƒ #
-(
-ƒƒ# $
-string
-≈≈ 
-.
-≈≈ 
-Format
-≈≈ %
-(
-≈≈% &
-Lang
-≈≈& *
-.
-≈≈* +%
-alertChatNewMessageFrom
-≈≈+ B
-,
-≈≈B C
-message
-≈≈D K
-.
-≈≈K L
-SenderUsername
-≈≈L Z
-)
-≈≈Z [
-,
-≈≈[ \
-Lang
-∆∆ 
-.
-∆∆ &
-alertChatNewMessageTitle
-∆∆ 5
-,
-∆∆5 6
-MessageBoxButton
-«« (
-.
-««( )
-OK
-««) +
-,
-««+ ,
-MessageBoxImage
-»» '
-.
-»»' (
-Information
-»»( 3
-)
-»»3 4
-;
-»»4 5
-}
-…… 
-}
-   
-)
-   
-;
-   
-}
-ÀÀ 	
-private
-ÕÕ 
-void
-ÕÕ "
-HandleFriendResponse
-ÕÕ )
-(
-ÕÕ) *
-string
-ÕÕ* 0
-fromUsername
-ÕÕ1 =
-,
-ÕÕ= >
-bool
-ÕÕ? C
-accepted
-ÕÕD L
-)
-ÕÕL M
-{
-ŒŒ 	
-if
-œœ 
-(
-œœ 
-accepted
-œœ 
-)
-œœ 
-{
-–– 
-Application
-—— 
-.
-—— 
-Current
-—— #
-.
-——# $
-
-Dispatcher
-——$ .
-.
-——. /
-Invoke
-——/ 5
-(
-——5 6
-(
-——6 7
-)
-——7 8
-=>
-——9 ;"
-LoadFriendsListAsync
-——< P
-(
-——P Q
-)
-——Q R
-)
-——R S
-;
-——S T
-}
-““ 
-}
-”” 	
-~
-’’ 	$
-DirectMessageViewModel
-’’	 
-(
-’’  
-)
-’’  !
-{
-÷÷ 	
-Dispose
-◊◊ 
-(
-◊◊ 
-false
-◊◊ 
-)
-◊◊ 
-;
-◊◊ 
-}
-ÿÿ 	
-}
-ŸŸ 
-}⁄⁄ Ée
-¨C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.cs
+}ªª Üe
+ØC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -23821,312 +38918,327 @@ MessageBox
 ≤≤ 	
 }
 ≥≥ 
-}¥¥ ı?
-•C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs
-	namespace 	
-GuessMyMessClient
+}¥¥ ﬁk
+ùC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-	ViewModel %
-.% &
-Lobby& +
-.+ ,
-Dialogs, 3
-{ 
-public 
+. 
+	ViewModel %
+.% &
+	HomePages& /
+{ 
+public 
 
-class !
-VerifyByCodeViewModel &
-:' (
-ViewModelBase) 6
-{ 
-private 
-readonly 
-string 
-
-_userEmail  *
-;* +
+class 
+LoginViewModel 
+:  !
+ViewModelBase" /
+{ 
 private 
-string 
-_verificationCode (
-;( )
+string 
+_usernameOrEmail '
+;' (
 public 
-string 
-VerificationCode &
+string 
+UsernameOrEmail %
 { 	
-get 
-{ 
-return 
-_verificationCode (
-;( )
-} 
-set 
-{ 
-if 
-( 
-_verificationCode %
-!=& (
-value) .
-). /
-{ 
-_verificationCode %
-=& '
-value( -
-;- .
-OnPropertyChanged %
-(% &
-)& '
-;' (
-}   
-}!! 
-}"" 	
-public$$ 
-ICommand$$ 
-VerifyCommand$$ %
-{$$& '
-get$$( +
-;$$+ ,
-}$$- .
-public%% 
-ICommand%% 
-CloseCommand%% $
-{%%% &
-get%%' *
-;%%* +
-}%%, -
-public'' !
-VerifyByCodeViewModel'' $
-(''$ %
-string''% +
-	userEmail'', 5
-)''5 6
-{(( 	
-if)) 
-()) 
-string)) 
-.)) 
-IsNullOrWhiteSpace)) )
-())) *
-	userEmail))* 3
-)))3 4
-)))4 5
-{** 
-throw++ 
-new++ !
-ArgumentNullException++ /
-(++/ 0
-nameof++0 6
-(++6 7
-	userEmail++7 @
-)++@ A
-,++A B
-$str++C q
-)++q r
-;++r s
-},, 
+get 
+=> 
+_usernameOrEmail #
+;# $
+set 
+{ 
+_usernameOrEmail  
+=! "
+value# (
+;( )
+OnPropertyChanged !
+(! "
+)" #
+;# $
+} 
+} 	
+private 
+string 
+	_password  
+;  !
+public 
+string 
+Password 
+{   	
+get!! 
+=>!! 
+	_password!! 
+;!! 
+set"" 
+{## 
+	_password$$ 
+=$$ 
+value$$ !
+;$$! "
+OnPropertyChanged%% !
+(%%! "
+)%%" #
+;%%# $
+CommandManager&& 
+.&& &
+InvalidateRequerySuggested&& 9
+(&&9 :
+)&&: ;
+;&&; <
+}'' 
+}(( 	
+public** 
+ICommand** 
+LoginCommand** $
+{**% &
+get**' *
+;*** +
+}**, -
+public++ 
+ICommand++ 
+CloseWindowCommand++ *
+{+++ ,
+get++- 0
+;++0 1
+}++2 3
+public,, 
+ICommand,, !
+MaximizeWindowCommand,, -
+{,,. /
+get,,0 3
+;,,3 4
+},,5 6
+public-- 
+ICommand-- !
+MinimizeWindowCommand-- -
+{--. /
+get--0 3
+;--3 4
+}--5 6
+public.. 
+ICommand.. 
+ReturnCommand.. %
+{..& '
+get..( +
+;..+ ,
+}..- .
+public00 
+LoginViewModel00 
+(00 
+)00 
+{11 	
+LoginCommand22 
+=22 
+new22 
+RelayCommand22 +
+(22+ ,
+ExecuteLogin22, 8
+,228 9
+CanExecuteLogin22: I
+)22I J
+;22J K
+CloseWindowCommand33 
+=33  
+new33! $
+RelayCommand33% 1
+(331 2
+ExecuteCloseWindow332 D
+)33D E
+;33E F!
+MaximizeWindowCommand44 !
+=44" #
+new44$ '
+RelayCommand44( 4
+(444 5!
+ExecuteMaximizeWindow445 J
+)44J K
+;44K L!
+MinimizeWindowCommand55 !
+=55" #
+new55$ '
+RelayCommand55( 4
+(554 5!
+ExecuteMinimizeWindow555 J
+)55J K
+;55K L
+ReturnCommand66 
+=66 
+new66 
+RelayCommand66  ,
+(66, -
+ExecuteReturn66- :
+)66: ;
+;66; <
+}77 	
+private99 
+bool99 
+CanExecuteLogin99 $
+(99$ %
+object99% +
+	parameter99, 5
+)995 6
+{:: 	
+return;; 
+!;; 
+string;; 
+.;; 
+IsNullOrWhiteSpace;; -
+(;;- .
+UsernameOrEmail;;. =
+);;= >
+&&;;? A
+!<< 
+string<< 
+.<< 
+IsNullOrWhiteSpace<< -
+(<<- .
+Password<<. 6
+)<<6 7
+;<<7 8
+}== 	
+private?? 
+async?? 
+void?? 
+ExecuteLogin?? '
+(??' (
+object??( .
+	parameter??/ 8
+)??8 9
+{@@ 	
+ifAA 
+(AA 
+!AA 
+CanExecuteLoginAA  
+(AA  !
+	parameterAA! *
+)AA* +
+)AA+ ,
+{BB 
 
-_userEmail-- 
-=-- 
-	userEmail-- "
-;--" #
-VerifyCommand// 
-=// 
-new// 
-RelayCommand//  ,
-(//, -
-ExecuteVerify//- :
-,//: ;
-CanExecuteVerify//< L
-)//L M
-;//M N
-CloseCommand00 
-=00 
-new00 
-RelayCommand00 +
-(00+ ,
-CloseWindow00, 7
-)007 8
-;008 9
-}11 	
-private33 
-bool33 
-CanExecuteVerify33 %
-(33% &
-object33& ,
-	parameter33- 6
-)336 7
-{44 	
-return55 
-!55 
-string55 
-.55 
-IsNullOrWhiteSpace55 -
-(55- .
-VerificationCode55. >
-)55> ?
-;55? @
-}66 	
-private88 
-async88 
-void88 
-ExecuteVerify88 (
-(88( )
-object88) /
-	parameter880 9
-)889 :
-{99 	
-using:: 
-(:: '
-AuthenticationServiceClient:: .
-client::/ 5
-=::6 7
-new::8 ;'
-AuthenticationServiceClient::< W
-(::W X
-)::X Y
-)::Y Z
-{;; 
-try<< 
-{== 
-OperationResultDto>> &
-result>>' -
-=>>. /
-await>>0 5
-client>>6 <
-.>>< =
-VerifyAccountAsync>>= O
-(>>O P
+MessageBoxCC 
+.CC 
+ShowCC 
+(CC  
+LangDD 
+.DD 
+alertRequiredFieldsDD ,
+,DD, -
+LangEE 
+.EE  
+alertInputErrorTitleEE -
+,EE- .
+MessageBoxButtonFF $
+.FF$ %
+OKFF% '
+,FF' (
+MessageBoxImageGG #
+.GG# $
+WarningGG$ +
+)GG+ ,
+;GG, -
+returnHH 
+;HH 
+}II 
+varKK 
+clientKK 
+=KK 
+newKK '
+AuthenticationServiceClientKK 8
+(KK8 9
+)KK9 :
+;KK: ;
+boolLL 
+successLL 
+=LL 
+falseLL  
+;LL  !
+tryNN 
+{OO 
+OperationResultDtoPP "
+resultPP# )
+=PP* +
+awaitPP, 1
+clientPP2 8
+.PP8 9
 
-_userEmail>>P Z
-,>>Z [
-VerificationCode>>\ l
-)>>l m
-;>>m n
-if@@ 
-(@@ 
-result@@ 
-.@@ 
-Success@@ &
-)@@& '
-{AA 
+LoginAsyncPP9 C
+(PPC D
+UsernameOrEmailPPD S
+,PPS T
+PasswordPPU ]
+)PP] ^
+;PP^ _
+ifRR 
+(RR 
+resultRR 
+.RR 
+SuccessRR "
+)RR" #
+{SS 
+SessionManagerTT "
+.TT" #
+InstanceTT# +
+.TT+ ,
+StartSessionTT, 8
+(TT8 9
+resultTT9 ?
+.TT? @
+MessageTT@ G
+)TTG H
+;TTH I$
+MatchmakingClientManagerUU ,
+.UU, -
 
-MessageBoxBB "
-.BB" #
-ShowBB# '
-(BB' (
-LangCC  
-.CC  !$
-alertVerificationSuccessCC! 9
-,CC9 :
-LangDD  
-.DD  !(
-alertActivationCompleteTitleDD! =
-,DD= >
-MessageBoxButtonEE ,
-.EE, -
-OKEE- /
-,EE/ 0
-MessageBoxImageFF +
-.FF+ ,
-InformationFF, 7
-)FF7 8
-;FF8 9
-OpenLoginWindowGG '
-(GG' (
-	parameterGG( 1
-)GG1 2
-;GG2 3
-}HH 
-elseII 
-{JJ 
-
-MessageBoxKK "
-.KK" #
-ShowKK# '
-(KK' (
-resultLL "
-.LL" #
-MessageLL# *
-,LL* +
-LangMM  
-.MM  !'
-alertVerificationErrorTitleMM! <
-,MM< =
-MessageBoxButtonNN ,
-.NN, -
-OKNN- /
-,NN/ 0
-MessageBoxImageOO +
-.OO+ ,
-WarningOO, 3
-)OO3 4
-;OO4 5
-}PP 
-}QQ 
-catchRR 
-(RR 
-FaultExceptionRR %
-
-fexGeneralRR& 0
-)RR0 1
-{SS 
-
-MessageBoxTT 
-.TT 
-ShowTT #
-(TT# $
-LangUU 
-.UU #
-alertServerErrorMessageUU 4
-,UU4 5
-LangVV 
-.VV 
-alertErrorTitleVV ,
-,VV, -
-MessageBoxButtonWW (
-.WW( )
-OKWW) +
-,WW+ ,
-MessageBoxImageXX '
-.XX' (
-ErrorXX( -
-)XX- .
-;XX. /
-ConsoleYY 
-.YY 
-	WriteLineYY %
-(YY% &
-$"YY& (
-$strYY( G
-{YYG H
-
-fexGeneralYYH R
-.YYR S
-MessageYYS Z
-}YYZ [
-"YY[ \
-)YY\ ]
-;YY] ^
-}ZZ 
-catch[[ 
-([[ %
-EndpointNotFoundException[[ 0
-ex[[1 3
-)[[3 4
+InitializeUU- 7
+(UU7 8
+)UU8 9
+;UU9 :$
+MatchmakingClientManagerVV ,
+.VV, -
+InstanceVV- 5
+.VV5 6
+ConnectVV6 =
+(VV= >
+SessionManagerVV> L
+.VVL M
+InstanceVVM U
+.VVU V
+CurrentUsernameVVV e
+)VVe f
+;VVf g
+	OpenLobbyWW 
+(WW 
+	parameterWW '
+)WW' (
+;WW( )
+clientXX 
+.XX 
+CloseXX  
+(XX  !
+)XX! "
+;XX" #
+successYY 
+=YY 
+trueYY "
+;YY" #
+}ZZ 
+else[[ 
 {\\ 
 
 MessageBox]] 
 .]] 
 Show]] #
-(]]# $
-Lang^^ 
-.^^ '
-alertConnectionErrorMessage^^ 8
-,^^8 9
+(]]# $
+result^^ 
+.^^ 
+Message^^ &
+,^^& '
 Lang__ 
-.__ %
-alertConnectionErrorTitle__ 6
-,__6 7
+.__  
+alertLoginErrorTitle__ 1
+,__1 2
 MessageBoxButton`` (
 .``( )
 OK``) +
@@ -24135,1008 +39247,652 @@ MessageBox]] 
 .aa' (
 Erroraa( -
 )aa- .
-;aa. /
-Consolebb 
-.bb 
-	WriteLinebb %
-(bb% &
-$"bb& (
-$strbb( N
-{bbN O
-exbbO Q
-.bbQ R
-MessagebbR Y
-}bbY Z
-"bbZ [
-)bb[ \
-;bb\ ]
-}cc 
-catchdd 
-(dd 
-	Exceptiondd  
-exdd! #
-)dd# $
-{ee 
-
-MessageBoxff 
-.ff 
-Showff #
-(ff# $
-Langgg 
-.gg $
-alertUnknownErrorMessagegg 5
-,gg5 6
-Langhh 
-.hh 
-alertErrorTitlehh ,
-,hh, -
-MessageBoxButtonii (
-.ii( )
-OKii) +
-,ii+ ,
-MessageBoxImagejj '
-.jj' (
-Errorjj( -
-)jj- .
-;jj. /
-Consolekk 
-.kk 
-	WriteLinekk %
-(kk% &
-$"kk& (
-$strkk( K
-{kkK L
-exkkL N
-.kkN O
-MessagekkO V
-}kkV W
-"kkW X
-)kkX Y
-;kkY Z
-}ll 
-}mm 
-}nn 	
-privatepp 
-staticpp 
-voidpp 
-OpenLoginWindowpp +
-(pp+ ,
-objectpp, 2
-	parameterpp3 <
-)pp< =
-{qq 	
-varrr 
-	loginViewrr 
-=rr 
-newrr 
-	LoginViewrr  )
-(rr) *
-)rr* +
-;rr+ ,
-	loginViewss 
-.ss 
-Showss 
-(ss 
-)ss 
-;ss 
-ifuu 
-(uu 
-	parameteruu 
-isuu 
-Windowuu #
-verifyWindowuu$ 0
-)uu0 1
-{vv 
-verifyWindowww 
-.ww 
-Closeww "
-(ww" #
-)ww# $
-;ww$ %
-}xx 
-}yy 	
-private{{ 
-static{{ 
-void{{ 
-CloseWindow{{ '
-({{' (
-object{{( .
-	parameter{{/ 8
-){{8 9
-{|| 	
-if}} 
-(}} 
-	parameter}} 
-is}} 
-Window}} #
-window}}$ *
-)}}* +
-{~~ 
-window 
-. 
-Close 
-( 
-) 
-; 
-}
-ÄÄ 
-}
-ÅÅ 	
-}
-ÇÇ 
-}ÉÉ úc
-ßC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-Lobby& +
-.+ ,
-Dialogs, 3
-{ 
-internal 
-class #
-ChangePasswordViewModel *
-:+ ,
-ViewModelBase- :
-{ 
-private 
-readonly 
-string 
-	_username  )
-;) *
-public 
-ICommand 
-ConfirmCommand &
-{' (
-get) ,
-;, -
-}. /
-public 
-ICommand 
-CloseCommand $
-{% &
-get' *
-;* +
-}, -
-public #
-ChangePasswordViewModel &
-(& '
-string' -
-username. 6
-)6 7
-{ 	
-	_username 
-= 
-username  
-;  !
-ConfirmCommand 
-= 
-new  
-RelayCommand! -
-(- .
-ExecuteConfirm. <
-)< =
-;= >
-CloseCommand 
-= 
-new 
-RelayCommand +
-(+ ,
-ExecuteClose, 8
-)8 9
-;9 :
-} 	
-private 
-static 
-bool 
-IsPasswordSecure ,
-(, -
-string- 3
-password4 <
-,< =
-out> A
-stringB H
-errorLangKeyI U
-)U V
-{ 	
-if 
-( 
-string 
-. 
-IsNullOrWhiteSpace )
-() *
-password* 2
-)2 3
-)3 4
-{   
-errorLangKey!! 
-=!! 
-$str!! 3
-;!!3 4
-return"" 
-false"" 
-;"" 
-}## 
-if$$ 
-($$ 
-password$$ 
-.$$ 
-Length$$ 
-<$$  !
-$num$$" #
-)$$# $
-{%% 
-errorLangKey&& 
-=&& 
-$str&& 6
-;&&6 7
-return'' 
-false'' 
-;'' 
-}(( 
-if)) 
-()) 
-!)) 
-password)) 
-.)) 
-Any)) 
-()) 
-char)) "
-.))" #
-IsUpper))# *
-)))* +
-)))+ ,
-{** 
-errorLangKey++ 
-=++ 
-$str++ 8
-;++8 9
-return,, 
-false,, 
-;,, 
-}-- 
-if.. 
-(.. 
-!.. 
-password.. 
-... 
-Any.. 
-(.. 
-char.. "
-..." #
-IsLower..# *
-)..* +
-)..+ ,
-{// 
-errorLangKey00 
-=00 
-$str00 8
-;008 9
-return11 
-false11 
-;11 
-}22 
-if33 
-(33 
-!33 
-password33 
-.33 
-Any33 
-(33 
-char33 "
-.33" #
-IsDigit33# *
-)33* +
-)33+ ,
-{44 
-errorLangKey55 
-=55 
-$str55 8
-;558 9
-return66 
-false66 
-;66 
-}77 
-if88 
-(88 
-password88 
-.88 
-All88 
-(88 
-char88 !
-.88! "
-IsLetterOrDigit88" 1
-)881 2
-)882 3
-{99 
-errorLangKey:: 
-=:: 
-$str:: :
-;::: ;
-return;; 
-false;; 
-;;; 
-}<< 
-errorLangKey>> 
-=>> 
-null>> 
-;>>  
-return?? 
-true?? 
-;?? 
-}@@ 	
-privateBB 
-asyncBB 
-voidBB 
-ExecuteConfirmBB )
-(BB) *
-objectBB* 0
-	parameterBB1 :
-)BB: ;
-{CC 	
-ifDD 
-(DD 
-!DD 
-(DD 
-	parameterDD 
-isDD 
-WindowDD %
-windowDD& ,
-)DD, -
-)DD- .
-{EE 
-returnFF 
-;FF 
-}GG 
-varII 
-newPasswordBoxII 
-=II  
-windowII! '
-.II' (
-FindNameII( 0
-(II0 1
-$strII1 A
-)IIA B
-asIIC E
-PasswordBoxIIF Q
-;IIQ R
-varJJ 
-confirmPasswordBoxJJ "
-=JJ# $
-windowJJ% +
-.JJ+ ,
-FindNameJJ, 4
-(JJ4 5
-$strJJ5 I
-)JJI J
-asJJK M
-PasswordBoxJJN Y
-;JJY Z
-ifLL 
-(LL 
-newPasswordBoxLL 
-==LL !
-nullLL" &
-||LL' )
-confirmPasswordBoxLL* <
-==LL= ?
-nullLL@ D
-)LLD E
-{MM 
-
-MessageBoxNN 
-.NN 
-ShowNN 
-(NN  
-LangOO 
-.OO )
-alertPasswordControlsNotFoundOO 6
-,OO6 7
-LangPP 
-.PP 
-alertErrorTitlePP (
-,PP( )
-MessageBoxButtonQQ $
-.QQ$ %
-OKQQ% '
-,QQ' (
-MessageBoxImageRR #
-.RR# $
-ErrorRR$ )
-)RR) *
-;RR* +
-returnSS 
-;SS 
-}TT 
-stringVV 
-newPasswordVV 
-=VV  
-newPasswordBoxVV! /
-.VV/ 0
-PasswordVV0 8
-;VV8 9
-stringWW 
-confirmPasswordWW "
-=WW# $
-confirmPasswordBoxWW% 7
-.WW7 8
-PasswordWW8 @
-;WW@ A
-ifYY 
-(YY 
-!YY 
-IsPasswordSecureYY !
-(YY! "
-newPasswordYY" -
-,YY- .
-outYY/ 2
-stringYY3 9
-passwordErrorKeyYY: J
-)YYJ K
-)YYK L
-{ZZ 
-string[[  
-passwordErrorMessage[[ +
-=[[, -
-Lang[[. 2
-.[[2 3
-ResourceManager[[3 B
-.[[B C
-	GetString[[C L
-([[L M
-passwordErrorKey[[M ]
-)[[] ^
-??[[_ a
-Lang[[b f
-.[[f g&
-alertPasswordGenericError	[[g Ä
-;
-[[Ä Å
-
-MessageBox\\ 
-.\\ 
-Show\\ 
-(\\   
-passwordErrorMessage]] (
-,]]( )
-Lang^^ 
-.^^ '
-alertPasswordNotSecureTitle^^ 4
-,^^4 5
-MessageBoxButton__ $
-.__$ %
-OK__% '
-,__' (
-MessageBoxImage`` #
-.``# $
-Warning``$ +
-)``+ ,
-;``, -
-returnaa 
-;aa 
-}bb 
-ifdd 
-(dd 
-newPassworddd 
-!=dd 
-confirmPassworddd .
-)dd. /
+;aa. /
+}bb 
+}cc 
+catchdd 
+(dd 
+FaultExceptiondd !
+<dd! "
+stringdd" (
+>dd( )
+fexdd* -
+)dd- .
 {ee 
 
 MessageBoxff 
 .ff 
 Showff 
-(ff  
-Langgg 
-.gg $
-alertPasswordsDoNotMatchgg 1
-,gg1 2
+(ff  
+fexgg 
+.gg 
+Detailgg 
+,gg 
 Langhh 
 .hh  
-alertInputErrorTitlehh -
+alertLoginErrorTitlehh -
 ,hh- .
 MessageBoxButtonii $
 .ii$ %
 OKii% '
 ,ii' (
 MessageBoxImagejj #
-.jj# $
-Warningjj$ +
-)jj+ ,
-;jj, -
-returnkk 
-;kk 
-}ll 
-trynn 
-{oo 
-usingpp 
-(pp 
-varpp 
-clientpp !
-=pp" #
-newpp$ '$
-UserProfileServiceClientpp( @
-(pp@ A
-)ppA B
-)ppB C
-{qq 
-varrr 
-resultrr 
-=rr  
-awaitrr! &
-clientrr' -
-.rr- .&
-RequestChangePasswordAsyncrr. H
-(rrH I
-	_usernamerrI R
-)rrR S
-;rrS T
-ifss 
-(ss 
-resultss 
-.ss 
-Successss &
-)ss& '
-{tt 
+.jj# $
+Errorjj$ )
+)jj) *
+;jj* +
+}kk 
+catchll 
+(ll 
+FaultExceptionll !
 
-MessageBoxuu "
-.uu" #
-Showuu# '
-(uu' (
-resultvv "
-.vv" #
-Messagevv# *
-,vv* +
-Langww  
-.ww  !
-alertCodeSentTitleww! 3
-,ww3 4
-MessageBoxButtonxx ,
-.xx, -
-OKxx- /
-,xx/ 0
-MessageBoxImageyy +
-.yy+ ,
-Informationyy, 7
-)yy7 8
-;yy8 9
-var{{ 
-verifyVM{{ $
-={{% &
-new{{' *(
-VerifyChangesByCodeViewModel{{+ G
-({{G H(
-VerifyChangesByCodeViewModel|| 8
-.||8 9
-VerificationMode||9 I
-.||I J
-Password||J R
-,||R S
-	_username}} %
-,}}% &
-newPassword~~ '
-,~~' (
-null  
-)  !
-;! "
-var
-ÄÄ 
+fexGeneralll" ,
+)ll, -
+{mm 
 
-verifyView
-ÄÄ &
-=
-ÄÄ' (
-new
-ÄÄ) ,%
-VerifyChangesByCodeView
-ÄÄ- D
-{
-ÄÄE F
-DataContext
-ÄÄG R
-=
-ÄÄS T
-verifyVM
-ÄÄU ]
-}
-ÄÄ^ _
-;
-ÄÄ_ `
-ExecuteClose
-ÇÇ $
-(
-ÇÇ$ %
-	parameter
-ÇÇ% .
-)
-ÇÇ. /
-;
-ÇÇ/ 0
+MessageBoxnn 
+.nn 
+Shownn 
+(nn  
+Langoo 
+.oo #
+alertServerErrorMessageoo 0
+,oo0 1
+Langpp 
+.pp 
+alertErrorTitlepp (
+,pp( )
+MessageBoxButtonqq $
+.qq$ %
+OKqq% '
+,qq' (
+MessageBoxImagerr #
+.rr# $
+Errorrr$ )
+)rr) *
+;rr* +
+Consoless 
+.ss 
+	WriteLiness !
+(ss! "
+$"ss" $
+$strss$ /
+{ss/ 0
 
-verifyView
-ÉÉ "
-.
-ÉÉ" #
+fexGeneralss0 :
+.ss: ;
+Messagess; B
+}ssB C
+"ssC D
+)ssD E
+;ssE F
+}tt 
+catchuu 
+(uu %
+EndpointNotFoundExceptionuu ,
+exuu- /
+)uu/ 0
+{vv 
 
-ShowDialog
-ÉÉ# -
-(
-ÉÉ- .
-)
-ÉÉ. /
-;
-ÉÉ/ 0
-}
-ÑÑ 
-else
-ÖÖ 
-{
-ÜÜ 
+MessageBoxww 
+.ww 
+Showww 
+(ww  
+Langxx 
+.xx '
+alertConnectionErrorMessagexx 4
+,xx4 5
+Langyy 
+.yy %
+alertConnectionErrorTitleyy 2
+,yy2 3
+MessageBoxButtonzz $
+.zz$ %
+OKzz% '
+,zz' (
+MessageBoxImage{{ #
+.{{# $
+Error{{$ )
+){{) *
+;{{* +
+Console|| 
+.|| 
+	WriteLine|| !
+(||! "
+$"||" $
+$str||$ 6
+{||6 7
+ex||7 9
+.||9 :
+Message||: A
+}||A B
+"||B C
+)||C D
+;||D E
+}}} 
+catch~~ 
+(~~ 
+	Exception~~ 
+ex~~ 
+)~~  
+{ 
 
 MessageBox
-áá "
+ÄÄ 
 .
-áá" #
+ÄÄ 
 Show
-áá# '
+ÄÄ 
 (
-áá' (
-result
-àà "
-.
-àà" #
-Message
-àà# *
-,
-àà* +
+ÄÄ  
 Lang
-ââ  
+ÅÅ 
 .
-ââ  !
-alertErrorTitle
-ââ! 0
-,
-ââ0 1
-MessageBoxButton
-ää ,
-.
-ää, -
-OK
-ää- /
-,
-ää/ 0
-MessageBoxImage
-ãã +
-.
-ãã+ ,
-Warning
-ãã, 3
-)
-ãã3 4
-;
-ãã4 5
-}
-åå 
-}
-çç 
-}
-éé 
-catch
-èè 
-(
-èè 
-FaultException
-èè !
-
-fexGeneral
-èè" ,
-)
-èè, -
-{
-êê 
-
-MessageBox
-ëë 
-.
-ëë 
-Show
-ëë 
-(
-ëë  
-Lang
-íí 
-.
-íí %
-alertServerErrorMessage
-íí 0
-,
-íí0 1
-Lang
-ìì 
-.
-ìì 
-alertErrorTitle
-ìì (
-,
-ìì( )
-MessageBoxButton
-îî $
-.
-îî$ %
-OK
-îî% '
-,
-îî' (
-MessageBoxImage
-ïï #
-.
-ïï# $
-Error
-ïï$ )
-)
-ïï) *
-;
-ïï* +
-Console
-ññ 
-.
-ññ 
-	WriteLine
-ññ !
-(
-ññ! "
-$"
-ññ" $
-$str
-ññ$ O
-{
-ññO P
-
-fexGeneral
-ññP Z
-.
-ññZ [
-Message
-ññ[ b
-}
-ññb c
-"
-ññc d
-)
-ññd e
-;
-ññe f
-}
-óó 
-catch
-òò 
-(
-òò '
-EndpointNotFoundException
-òò ,
-ex
-òò- /
-)
-òò/ 0
-{
-ôô 
-
-MessageBox
-öö 
-.
-öö 
-Show
-öö 
-(
-öö  
-Lang
-õõ 
-.
-õõ )
-alertConnectionErrorMessage
-õõ 4
-,
-õõ4 5
-Lang
-úú 
-.
-úú '
-alertConnectionErrorTitle
-úú 2
-,
-úú2 3
-MessageBoxButton
-ùù $
-.
-ùù$ %
-OK
-ùù% '
-,
-ùù' (
-MessageBoxImage
-ûû #
-.
-ûû# $
-Error
-ûû$ )
-)
-ûû) *
-;
-ûû* +
-Console
-üü 
-.
-üü 
-	WriteLine
-üü !
-(
-üü! "
-$"
-üü" $
-$str
-üü$ V
-{
-üüV W
-ex
-üüW Y
-.
-üüY Z
-Message
-üüZ a
-}
-üüa b
-"
-üüb c
-)
-üüc d
-;
-üüd e
-}
-†† 
-catch
-°° 
-(
-°° 
-	Exception
-°° 
-ex
-°° 
-)
-°°  
-{
-¢¢ 
-
-MessageBox
-££ 
-.
-££ 
-Show
-££ 
-(
-££  
-Lang
-§§ 
-.
-§§ &
+ÅÅ &
 alertUnknownErrorMessage
-§§ 1
+ÅÅ 1
 ,
-§§1 2
+ÅÅ1 2
 Lang
-•• 
+ÇÇ 
 .
-•• 
+ÇÇ 
 alertErrorTitle
-•• (
+ÇÇ (
 ,
-••( )
+ÇÇ( )
 MessageBoxButton
-¶¶ $
+ÉÉ $
 .
-¶¶$ %
+ÉÉ$ %
 OK
-¶¶% '
+ÉÉ% '
 ,
-¶¶' (
+ÉÉ' (
 MessageBoxImage
-ßß #
+ÑÑ #
 .
-ßß# $
+ÑÑ# $
 Error
-ßß$ )
+ÑÑ$ )
 )
-ßß) *
+ÑÑ) *
 ;
-ßß* +
+ÑÑ* +
 Console
-®® 
+ÖÖ 
 .
-®® 
+ÖÖ 
 	WriteLine
-®® !
+ÖÖ !
 (
-®®! "
+ÖÖ! "
 $"
-®®" $
+ÖÖ" $
 $str
-®®$ S
+ÖÖ$ 3
 {
-®®S T
+ÖÖ3 4
 ex
-®®T V
+ÖÖ4 6
 .
-®®V W
+ÖÖ6 7
 Message
-®®W ^
+ÖÖ7 >
 }
-®®^ _
+ÖÖ> ?
 "
-®®_ `
+ÖÖ? @
 )
-®®` a
+ÖÖ@ A
 ;
-®®a b
+ÖÖA B
 }
-©© 
-}
-™™ 	
-private
-¨¨ 
-static
-¨¨ 
-void
-¨¨ 
-ExecuteClose
-¨¨ (
-(
-¨¨( )
-object
-¨¨) /
-	parameter
-¨¨0 9
-)
-¨¨9 :
+ÜÜ 
+finally
+áá 
 {
-≠≠ 	
+àà 
 if
-ÆÆ 
+ââ 
 (
-ÆÆ 
-	parameter
-ÆÆ 
-is
-ÆÆ 
-Window
-ÆÆ #
-window
-ÆÆ$ *
-)
-ÆÆ* +
-{
-ØØ 
-window
-∞∞ 
+ââ 
+!
+ââ 
+success
+ââ 
+&&
+ââ 
+client
+ââ  &
 .
-∞∞ 
-Close
-∞∞ 
-(
-∞∞ 
+ââ& '
+State
+ââ' ,
+!=
+ââ- / 
+CommunicationState
+ââ0 B
+.
+ââB C
+Closed
+ââC I
 )
-∞∞ 
+ââI J
+{
+ää 
+client
+ãã 
+.
+ãã 
+Abort
+ãã  
+(
+ãã  !
+)
+ãã! "
 ;
-∞∞ 
+ãã" #
 }
-±± 
+åå 
 }
-≤≤ 	
+çç 
 }
-≥≥ 
-}¥¥ ¯
-¶C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs
+éé 	
+private
+êê 
+static
+êê 
+void
+êê 
+	OpenLobby
+êê %
+(
+êê% &
+object
+êê& ,
+	parameter
+êê- 6
+)
+êê6 7
+{
+ëë 	
+if
+íí 
+(
+íí 
+	parameter
+íí 
+is
+íí 
+Window
+íí #
+loginWindow
+íí$ /
+)
+íí/ 0
+{
+ìì 
+loginWindow
+îî 
+.
+îî 
+Close
+îî !
+(
+îî! "
+)
+îî" #
+;
+îî# $
+}
+ïï 
+var
+óó 
+	lobbyView
+óó 
+=
+óó 
+new
+óó 
+	LobbyView
+óó  )
+(
+óó) *
+)
+óó* +
+;
+óó+ ,
+	lobbyView
+òò 
+.
+òò 
+Show
+òò 
+(
+òò 
+)
+òò 
+;
+òò 
+}
+ôô 	
+private
+õõ 
+static
+õõ 
+void
+õõ  
+ExecuteCloseWindow
+õõ .
+(
+õõ. /
+object
+õõ/ 5
+	parameter
+õõ6 ?
+)
+õõ? @
+{
+úú 	
+if
+ùù 
+(
+ùù 
+	parameter
+ùù 
+is
+ùù 
+Window
+ùù #
+)
+ùù# $
+{
+ûû 
+Application
+üü 
+.
+üü 
+Current
+üü #
+.
+üü# $
+Shutdown
+üü$ ,
+(
+üü, -
+)
+üü- .
+;
+üü. /
+}
+†† 
+}
+°° 	
+private
+££ 
+static
+££ 
+void
+££ #
+ExecuteMaximizeWindow
+££ 1
+(
+££1 2
+object
+££2 8
+	parameter
+££9 B
+)
+££B C
+{
+§§ 	
+if
+•• 
+(
+•• 
+	parameter
+•• 
+is
+•• 
+Window
+•• #
+window
+••$ *
+)
+••* +
+{
+¶¶ 
+window
+ßß 
+.
+ßß 
+WindowState
+ßß "
+=
+ßß# $
+window
+ßß% +
+.
+ßß+ ,
+WindowState
+ßß, 7
+==
+ßß8 :
+WindowState
+ßß; F
+.
+ßßF G
+	Maximized
+ßßG P
+?
+ßßQ R
+WindowState
+ßßS ^
+.
+ßß^ _
+Normal
+ßß_ e
+:
+ßßf g
+WindowState
+ßßh s
+.
+ßßs t
+	Maximized
+ßßt }
+;
+ßß} ~
+}
+®® 
+}
+©© 	
+private
+´´ 
+static
+´´ 
+void
+´´ #
+ExecuteMinimizeWindow
+´´ 1
+(
+´´1 2
+object
+´´2 8
+	parameter
+´´9 B
+)
+´´B C
+{
+¨¨ 	
+if
+≠≠ 
+(
+≠≠ 
+	parameter
+≠≠ 
+is
+≠≠ 
+Window
+≠≠ #
+window
+≠≠$ *
+)
+≠≠* +
+{
+ÆÆ 
+window
+ØØ 
+.
+ØØ 
+WindowState
+ØØ "
+=
+ØØ# $
+WindowState
+ØØ% 0
+.
+ØØ0 1
+	Minimized
+ØØ1 :
+;
+ØØ: ;
+}
+∞∞ 
+}
+±± 	
+private
+≥≥ 
+static
+≥≥ 
+void
+≥≥ 
+ExecuteReturn
+≥≥ )
+(
+≥≥) *
+object
+≥≥* 0
+	parameter
+≥≥1 :
+)
+≥≥: ;
+{
+¥¥ 	
+if
+µµ 
+(
+µµ 
+	parameter
+µµ 
+is
+µµ 
+Window
+µµ #
+currentWindow
+µµ$ 1
+)
+µµ1 2
+{
+∂∂ 
+var
+∑∑ 
+welcomeView
+∑∑ 
+=
+∑∑  !
+new
+∑∑" %
+WelcomeView
+∑∑& 1
+(
+∑∑1 2
+)
+∑∑2 3
+;
+∑∑3 4
+welcomeView
+∏∏ 
+.
+∏∏ 
+WindowState
+∏∏ '
+=
+∏∏( )
+WindowState
+∏∏* 5
+.
+∏∏5 6
+	Maximized
+∏∏6 ?
+;
+∏∏? @
+welcomeView
+ππ 
+.
+ππ 
+WindowStyle
+ππ '
+=
+ππ( )
+WindowStyle
+ππ* 5
+.
+ππ5 6
+None
+ππ6 :
+;
+ππ: ;
+welcomeView
+∫∫ 
+.
+∫∫ 
+
+ResizeMode
+∫∫ &
+=
+∫∫' (
+
+ResizeMode
+∫∫) 3
+.
+∫∫3 4
+NoResize
+∫∫4 <
+;
+∫∫< =
+welcomeView
+ªª 
+.
+ªª 
+Show
+ªª  
+(
+ªª  !
+)
+ªª! "
+;
+ªª" #
+currentWindow
+ºº 
+.
+ºº 
+Close
+ºº #
+(
+ºº# $
+)
+ºº$ %
+;
+ºº% &
+}
+ΩΩ 
+}
+ææ 	
+}
+øø 
+}¿¿ ˚
+©C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -25156,462 +39912,8 @@ MessageBox
 
  
 } 
-} ‘?
-§C:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs
-	namespace
-
- 	
-GuessMyMessClient
-
-
- 
-.
-
- 
-	ViewModel
-
- %
-.
-
-% &
-Lobby
-
-& +
-.
-
-+ ,
-Dialogs
-
-, 3
-{ 
-internal 
-class  
-ChangeEmailViewModel '
-:( )
-ViewModelBase* 7
-{ 
-private 
-readonly 
-string 
-	_username  )
-;) *
-private 
-readonly 
-Action 
-<  
-string  &
->& ' 
-_emailUpdateCallback( <
-;< =
-private 
-string 
-	_newEmail  
-;  !
-public 
-string 
-NewEmail 
-{ 	
-get 
-{ 
-return 
-	_newEmail  
-;  !
-} 
-set 
-{ 
-if 
-( 
-	_newEmail 
-!=  
-value! &
-)& '
-{ 
-	_newEmail 
-= 
-value  %
-;% &
-OnPropertyChanged %
-(% &
-)& '
-;' (
-} 
-} 
-}   	
-public"" 
-ICommand"" 
-ConfirmCommand"" &
-{""' (
-get"") ,
-;"", -
-}"". /
-public## 
-ICommand## 
-CloseCommand## $
-{##% &
-get##' *
-;##* +
-}##, -
-public%%  
-ChangeEmailViewModel%% #
-(%%# $
-string%%$ *
-username%%+ 3
-,%%3 4
-Action%%5 ;
-<%%; <
-string%%< B
->%%B C
-emailUpdateCallback%%D W
-)%%W X
-{&& 	
-	_username'' 
-='' 
-username''  
-;''  ! 
-_emailUpdateCallback((  
-=((! "
-emailUpdateCallback((# 6
-;((6 7
-ConfirmCommand)) 
-=)) 
-new))  
-RelayCommand))! -
-())- .
-ExecuteConfirm)). <
-,))< =
-CanExecuteConfirm))> O
-)))O P
-;))P Q
-CloseCommand** 
-=** 
-new** 
-RelayCommand** +
-(**+ ,
-ExecuteClose**, 8
-)**8 9
-;**9 :
-}++ 	
-private-- 
-bool-- 
-CanExecuteConfirm-- &
-(--& '
-object--' -
-obj--. 1
-)--1 2
-{.. 	
-return// 
-!// 
-string// 
-.// 
-IsNullOrWhiteSpace// -
-(//- .
-NewEmail//. 6
-)//6 7
-&&//8 :
-NewEmail//; C
-.//C D
-Contains//D L
-(//L M
-$str//M P
-)//P Q
-;//Q R
-}00 	
-private22 
-async22 
-void22 
-ExecuteConfirm22 )
-(22) *
-object22* 0
-	parameter221 :
-)22: ;
-{33 	
-try44 
-{55 
-using66 
-(66 
-var66 
-client66 !
-=66" #
-new66$ '$
-UserProfileServiceClient66( @
-(66@ A
-)66A B
-)66B C
-{77 
-var88 
-result88 
-=88  
-await88! &
-client88' -
-.88- .#
-RequestChangeEmailAsync88. E
-(88E F
-	_username88F O
-,88O P
-NewEmail88Q Y
-)88Y Z
-;88Z [
-if99 
-(99 
-result99 
-.99 
-Success99 &
-)99' (
-{:: 
-
-MessageBox;; "
-.;;" #
-Show;;# '
-(;;' (
-result<< "
-.<<" #
-Message<<# *
-,<<* +
-Lang==  
-.==  !
-alertCodeSentTitle==! 3
-,==3 4
-MessageBoxButton>> ,
-.>>, -
-OK>>- /
-,>>/ 0
-MessageBoxImage?? +
-.??+ ,
-Information??, 7
-)??7 8
-;??8 9
-varAA 
-verifyVMAA $
-=AA% &
-newAA' *(
-VerifyChangesByCodeViewModelAA+ G
-(AAG H(
-VerifyChangesByCodeViewModelBB 8
-.BB8 9
-VerificationModeBB9 I
-.BBI J
-EmailBBJ O
-,BBO P
-	_usernameCC %
-,CC% &
-NewEmailDD $
-,DD$ % 
-_emailUpdateCallbackEE 0
-)FF 
-;FF 
-varHH 
-
-verifyViewHH &
-=HH' (
-newHH) ,#
-VerifyChangesByCodeViewHH- D
-{HHE F
-DataContextHHG R
-=HHS T
-verifyVMHHU ]
-}HH^ _
-;HH_ `
-ExecuteCloseJJ $
-(JJ$ %
-	parameterJJ% .
-)JJ. /
-;JJ/ 0
-
-verifyViewKK "
-.KK" #
-
-ShowDialogKK# -
-(KK- .
-)KK. /
-;KK/ 0
-}LL 
-elseMM 
-{NN 
-
-MessageBoxOO "
-.OO" #
-ShowOO# '
-(OO' (
-resultPP "
-.PP" #
-MessagePP# *
-,PP* +
-LangQQ  
-.QQ  !
-alertErrorTitleQQ! 0
-,QQ0 1
-MessageBoxButtonRR ,
-.RR, -
-OKRR- /
-,RR/ 0
-MessageBoxImageSS +
-.SS+ ,
-WarningSS, 3
-)SS3 4
-;SS4 5
-}TT 
-}UU 
-}VV 
-catchWW 
-(WW 
-FaultExceptionWW !
-
-fexGeneralWW" ,
-)WW, -
-{XX 
-
-MessageBoxYY 
-.YY 
-ShowYY 
-(YY  
-LangZZ 
-.ZZ #
-alertServerErrorMessageZZ 0
-,ZZ0 1
-Lang[[ 
-.[[ 
-alertErrorTitle[[ (
-,[[( )
-MessageBoxButton\\ $
-.\\$ %
-OK\\% '
-,\\' (
-MessageBoxImage]] #
-.]]# $
-Error]]$ )
-)]]) *
-;]]* +
-Console^^ 
-.^^ 
-	WriteLine^^ !
-(^^! "
-$"^^" $
-$str^^$ G
-{^^G H
-
-fexGeneral^^H R
-.^^R S
-Message^^S Z
-}^^Z [
-"^^[ \
-)^^\ ]
-;^^] ^
-}__ 
-catch`` 
-(`` %
-EndpointNotFoundException`` ,
-ex``- /
-)``/ 0
-{aa 
-
-MessageBoxbb 
-.bb 
-Showbb 
-(bb  
-Langcc 
-.cc '
-alertConnectionErrorMessagecc 4
-,cc4 5
-Langdd 
-.dd %
-alertConnectionErrorTitledd 2
-,dd2 3
-MessageBoxButtonee $
-.ee$ %
-OKee% '
-,ee' (
-MessageBoxImageff #
-.ff# $
-Errorff$ )
-)ff) *
-;ff* +
-Consolegg 
-.gg 
-	WriteLinegg !
-(gg! "
-$"gg" $
-$strgg$ N
-{ggN O
-exggO Q
-.ggQ R
-MessageggR Y
-}ggY Z
-"ggZ [
-)gg[ \
-;gg\ ]
-}hh 
-catchii 
-(ii 
-	Exceptionii 
-exii 
-)ii  
-{jj 
-
-MessageBoxkk 
-.kk 
-Showkk 
-(kk  
-Langll 
-.ll $
-alertUnknownErrorMessagell 1
-,ll1 2
-Langmm 
-.mm 
-alertErrorTitlemm (
-,mm( )
-MessageBoxButtonnn $
-.nn$ %
-OKnn% '
-,nn' (
-MessageBoxImageoo #
-.oo# $
-Erroroo$ )
-)oo) *
-;oo* +
-Consolepp 
-.pp 
-	WriteLinepp !
-(pp! "
-$"pp" $
-$strpp$ K
-{ppK L
-exppL N
-.ppN O
-MessageppO V
-}ppV W
-"ppW X
-)ppX Y
-;ppY Z
-}qq 
-}rr 	
-privatett 
-statictt 
-voidtt 
-ExecuteClosett (
-(tt( )
-objecttt) /
-	parametertt0 9
-)tt9 :
-{uu 	
-ifvv 
-(vv 
-	parametervv 
-isvv 
-Windowvv #
-windowvv$ *
-)vv* +
-{ww 
-windowxx 
-.xx 
-Closexx 
-(xx 
-)xx 
-;xx 
-}yy 
-}zz 	
-}{{ 
-}|| πÄ
-ûC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.cs
+} ¿Ä
+°C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -26718,15 +41020,15 @@ Disconnect
 =
 ÀÀ 
 new
-ÀÀ 
-Main
-ÀÀ #
+ÀÀ 
+MainView
+ÀÀ '
 (
-ÀÀ# $
+ÀÀ' (
 )
-ÀÀ$ %
+ÀÀ( )
 ;
-ÀÀ% &
+ÀÀ) *
 mainView
 ÃÃ 
 .
@@ -26861,3614 +41163,312 @@ ResizeMode
 ◊◊ 	
 }
 ÿÿ 
-}ŸŸ ¥õ
-õC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.cs
-	namespace 	
-GuessMyMessClient
+}ŸŸ ¯?
+®C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs
+	namespace 	
+GuessMyMessClient
  
-. 
-	ViewModel %
-.% &
-	HomePages& /
-{ 
-public 
+. 
+	ViewModel %
+.% &
+Lobby& +
+.+ ,
+Dialogs, 3
+{ 
+public 
 
-class 
-SignUpViewModel  
-:! "
-ViewModelBase# 0
-{ 
-private 
-string 
-	_username  
-;  !
-public 
-string 
-Username 
-{ 	
-get 
-=> 
-	_username 
-; 
-set 
-{ 
-if 
-( 
-	_username 
-!=  
-value! &
-)& '
-{ 
-	_username   
-=   
-value    %
-;  % &
-OnPropertyChanged!! %
-(!!% &
-)!!& '
-;!!' (
-}"" 
-}## 
-}$$ 	
-private&& 
-string&& 
+class !
+VerifyByCodeViewModel &
+:' (
+ViewModelBase) 6
+{ 
+private 
+readonly 
+string 
 
-_firstName&& !
-;&&! "
-public'' 
-string'' 
-	FirstName'' 
-{(( 	
-get)) 
-=>)) 
-
-_firstName)) 
-;)) 
-set** 
-{++ 
-if,, 
-(,, 
-
-_firstName,, 
-!=,, !
-value,," '
-),,' (
-{-- 
-
-_firstName.. 
-=..  
-value..! &
-;..& '
-OnPropertyChanged// %
-(//% &
-)//& '
-;//' (
-}00 
-}11 
-}22 	
-private44 
-string44 
-	_lastName44  
-;44  !
-public55 
-string55 
-LastName55 
-{66 	
-get77 
-=>77 
-	_lastName77 
-;77 
-set88 
-{99 
-if:: 
-(:: 
-	_lastName:: 
-!=::  
-value::! &
-)::& '
-{;; 
-	_lastName<< 
-=<< 
-value<<  %
-;<<% &
-OnPropertyChanged== %
-(==% &
-)==& '
-;==' (
-}>> 
-}?? 
-}@@ 	
-privateBB 
-stringBB 
-_emailBB 
-;BB 
-publicCC 
-stringCC 
-EmailCC 
-{DD 	
-getEE 
-=>EE 
-_emailEE 
-;EE 
-setFF 
-{GG 
-ifHH 
-(HH 
-_emailHH 
-!=HH 
-valueHH #
-)HH# $
-{II 
-_emailJJ 
-=JJ 
-valueJJ "
-;JJ" #
-OnPropertyChangedKK %
-(KK% &
-)KK& '
-;KK' (
-}LL 
-}MM 
-}NN 	
-privatePP 
-stringPP 
-	_passwordPP  
-;PP  !
-publicQQ 
-stringQQ 
-PasswordQQ 
-{RR 	
-getSS 
-=>SS 
-	_passwordSS 
-;SS 
-setTT 
-{UU 
-ifVV 
-(VV 
-	_passwordVV 
-!=VV  
-valueVV! &
-)VV& '
-{WW 
-	_passwordXX 
-=XX 
-valueXX  %
-;XX% &
-OnPropertyChangedYY %
-(YY% &
-)YY& '
-;YY' (
-}ZZ 
-}[[ 
-}\\ 	
-private^^ 
-bool^^ 
-_isMale^^ 
-=^^ 
-true^^ #
-;^^# $
-public__ 
-bool__ 
-IsMale__ 
-{`` 	
-getaa 
-=>aa 
-_isMaleaa 
-;aa 
-setbb 
-{cc 
-ifdd 
-(dd 
-valuedd 
-&&dd 
-_isMaledd $
-!=dd% '
-valuedd( -
-)dd- .
-{ee 
-_isMaleff 
-=ff 
-valueff #
-;ff# $
-OnPropertyChangedgg %
-(gg% &
-)gg& '
-;gg' (
-ResetGenderhh 
-(hh  
-$numhh  !
-)hh! "
-;hh" #
-}ii 
-}jj 
-}kk 	
-privatemm 
-boolmm 
-	_isFemalemm 
-;mm 
-publicnn 
-boolnn 
-IsFemalenn 
-{oo 	
-getpp 
-=>pp 
-	_isFemalepp 
-;pp 
-setqq 
-{rr 
-ifss 
-(ss 
-valuess 
-&&ss 
-	_isFemaless &
-!=ss' )
-valuess* /
-)ss/ 0
-{tt 
-	_isFemaleuu 
-=uu 
-valueuu  %
-;uu% &
-OnPropertyChangedvv %
-(vv% &
-)vv& '
-;vv' (
-ResetGenderww 
-(ww  
-$numww  !
-)ww! "
-;ww" #
-}xx 
-}yy 
-}zz 	
-private|| 
-bool|| 
-_isNonBinary|| !
-;||! "
-public}} 
-bool}} 
-IsNonBinary}} 
-{~~ 	
-get 
-=> 
-_isNonBinary 
-;  
-set
-ÄÄ 
-{
-ÅÅ 
-if
-ÇÇ 
-(
-ÇÇ 
-value
-ÇÇ 
-&&
-ÇÇ 
-_isNonBinary
-ÇÇ )
-!=
-ÇÇ* ,
-value
-ÇÇ- 2
-)
-ÇÇ2 3
-{
-ÉÉ 
-_isNonBinary
-ÑÑ  
-=
-ÑÑ! "
-value
-ÑÑ# (
-;
-ÑÑ( )
-OnPropertyChanged
-ÖÖ %
-(
-ÖÖ% &
-)
-ÖÖ& '
-;
-ÖÖ' (
-ResetGender
-ÜÜ 
-(
-ÜÜ  
-$num
-ÜÜ  !
-)
-ÜÜ! "
-;
-ÜÜ" #
-}
-áá 
-}
-àà 
-}
-ââ 	
-private
-ãã 
-int
-ãã 
-_selectedAvatarId
-ãã %
-=
-ãã& '
-$num
-ãã( )
-;
-ãã) *
-public
-åå 
-int
-åå 
-SelectedAvatarId
-åå #
-{
-çç 	
-get
-éé 
-=>
-éé 
-_selectedAvatarId
-éé $
-;
-éé$ %
-set
-èè 
-{
-êê 
-if
-ëë 
-(
-ëë 
-_selectedAvatarId
-ëë %
-!=
-ëë& (
-value
-ëë) .
-)
-ëë. /
-{
-íí 
-_selectedAvatarId
-ìì %
-=
-ìì& '
-value
-ìì( -
-;
-ìì- .
-OnPropertyChanged
-îî %
-(
-îî% &
-)
-îî& '
-;
-îî' (
-}
-ïï 
-}
-ññ 
-}
-óó 	
-private
-ôô 
-BitmapImage
-ôô "
-_selectedAvatarImage
-ôô 0
-;
-ôô0 1
-public
-öö 
-BitmapImage
-öö !
-SelectedAvatarImage
-öö .
-{
-õõ 	
-get
-úú 
-=>
-úú "
-_selectedAvatarImage
-úú '
-;
-úú' (
-set
-ùù 
-{
-ûû 
-if
-üü 
-(
-üü "
-_selectedAvatarImage
-üü (
-!=
-üü) +
-value
-üü, 1
-)
-üü1 2
-{
-†† "
-_selectedAvatarImage
-°° (
-=
-°°) *
-value
-°°+ 0
-;
-°°0 1
-OnPropertyChanged
-¢¢ %
-(
-¢¢% &
-)
-¢¢& '
-;
-¢¢' (
-}
-££ 
-}
-§§ 
-}
-•• 	
-public
-ßß 
-ICommand
-ßß 
-SignUpCommand
-ßß %
-{
-ßß& '
-get
-ßß( +
-;
-ßß+ ,
-}
-ßß- .
-public
-®® 
-ICommand
-®® !
-SelectAvatarCommand
-®® +
-{
-®®, -
-get
-®®. 1
-;
-®®1 2
-}
-®®3 4
-public
-©© 
-ICommand
-©©  
-CloseWindowCommand
-©© *
-{
-©©+ ,
-get
-©©- 0
-;
-©©0 1
-}
-©©2 3
-public
-™™ 
-ICommand
-™™ #
-MaximizeWindowCommand
-™™ -
-{
-™™. /
-get
-™™0 3
-;
-™™3 4
-}
-™™5 6
-public
-´´ 
-ICommand
-´´ #
-MinimizeWindowCommand
-´´ -
-{
-´´. /
-get
-´´0 3
-;
-´´3 4
-}
-´´5 6
-public
-¨¨ 
-ICommand
-¨¨ 
-ReturnCommand
-¨¨ %
-{
-¨¨& '
-get
-¨¨( +
-;
-¨¨+ ,
-}
-¨¨- .
-public
-ÆÆ 
-SignUpViewModel
-ÆÆ 
-(
-ÆÆ 
-)
-ÆÆ  
-{
-ØØ 	
-SignUpCommand
-∞∞ 
-=
-∞∞ 
-new
-∞∞ 
-RelayCommand
-∞∞  ,
-(
-∞∞, -
-ExecuteSignUp
-∞∞- :
-,
-∞∞: ;
-CanExecuteSignUp
-∞∞< L
-)
-∞∞L M
-;
-∞∞M N!
-SelectAvatarCommand
-±± 
-=
-±±  !
-new
-±±" %
-RelayCommand
-±±& 2
-(
-±±2 3$
-OpenSelectAvatarDialog
-±±3 I
-)
-±±I J
-;
-±±J K 
-CloseWindowCommand
-≤≤ 
-=
-≤≤  
-new
-≤≤! $
-RelayCommand
-≤≤% 1
-(
-≤≤1 2 
-ExecuteCloseWindow
-≤≤2 D
-)
-≤≤D E
-;
-≤≤E F#
-MaximizeWindowCommand
-≥≥ !
-=
-≥≥" #
-new
-≥≥$ '
-RelayCommand
-≥≥( 4
-(
-≥≥4 5#
-ExecuteMaximizeWindow
-≥≥5 J
-)
-≥≥J K
-;
-≥≥K L#
-MinimizeWindowCommand
-¥¥ !
-=
-¥¥" #
-new
-¥¥$ '
-RelayCommand
-¥¥( 4
-(
-¥¥4 5#
-ExecuteMinimizeWindow
-¥¥5 J
-)
-¥¥J K
-;
-¥¥K L
-ReturnCommand
-µµ 
-=
-µµ 
-new
-µµ 
-RelayCommand
-µµ  ,
-(
-µµ, -
-ExecuteReturn
-µµ- :
-)
-µµ: ;
-;
-µµ; <
-LoadDefaultAvatar
-∂∂ 
-(
-∂∂ 
-)
-∂∂ 
-;
-∂∂  
-}
-∑∑ 	
-private
-ππ 
-void
-ππ 
-ResetGender
-ππ  
-(
-ππ  !
-int
-ππ! $
-selectedGenderId
-ππ% 5
-)
-ππ5 6
-{
-∫∫ 	
-bool
-ªª 
-oldMale
-ªª 
-=
-ªª 
-_isMale
-ªª "
-;
-ªª" #
-bool
-ºº 
-	oldFemale
-ºº 
-=
-ºº 
-	_isFemale
-ºº &
-;
-ºº& '
-bool
-ΩΩ 
-oldNonBinary
-ΩΩ 
-=
-ΩΩ 
-_isNonBinary
-ΩΩ  ,
-;
-ΩΩ, -
-_isMale
-øø 
-=
-øø 
-(
-øø 
-selectedGenderId
-øø '
-==
-øø( *
-$num
-øø+ ,
-)
-øø, -
-;
-øø- .
-	_isFemale
-¿¿ 
-=
-¿¿ 
-(
-¿¿ 
-selectedGenderId
-¿¿ )
-==
-¿¿* ,
-$num
-¿¿- .
-)
-¿¿. /
-;
-¿¿/ 0
-_isNonBinary
-¡¡ 
-=
-¡¡ 
-(
-¡¡ 
-selectedGenderId
-¡¡ ,
-==
-¡¡- /
-$num
-¡¡0 1
-)
-¡¡1 2
-;
-¡¡2 3
-if
-√√ 
-(
-√√ 
-oldMale
-√√ 
-!=
-√√ 
-_isMale
-√√ "
-)
-√√" #
-OnPropertyChanged
-ƒƒ !
-(
-ƒƒ! "
-nameof
-ƒƒ" (
-(
-ƒƒ( )
-IsMale
-ƒƒ) /
-)
-ƒƒ/ 0
-)
-ƒƒ0 1
-;
-ƒƒ1 2
-if
-≈≈ 
-(
-≈≈ 
-	oldFemale
-≈≈ 
-!=
-≈≈ 
-	_isFemale
-≈≈ &
-)
-≈≈& '
-OnPropertyChanged
-∆∆ !
-(
-∆∆! "
-nameof
-∆∆" (
-(
-∆∆( )
-IsFemale
-∆∆) 1
-)
-∆∆1 2
-)
-∆∆2 3
-;
-∆∆3 4
-if
-«« 
-(
-«« 
-oldNonBinary
-«« 
-!=
-«« 
-_isNonBinary
-««  ,
-)
-««, -
-OnPropertyChanged
-»» !
-(
-»»! "
-nameof
-»»" (
-(
-»»( )
-IsNonBinary
-»») 4
-)
-»»4 5
-)
-»»5 6
-;
-»»6 7
-}
-…… 	
-private
-ÀÀ 
-async
-ÀÀ 
-Task
-ÀÀ 
-LoadDefaultAvatar
-ÀÀ ,
-(
-ÀÀ, -
-)
-ÀÀ- .
-{
-ÃÃ 	
-var
-ÕÕ 
-client
-ÕÕ 
-=
-ÕÕ 
-new
-ÕÕ &
-UserProfileServiceClient
-ÕÕ 5
-(
-ÕÕ5 6
-)
-ÕÕ6 7
-;
-ÕÕ7 8
-bool
-ŒŒ 
-success
-ŒŒ 
-=
-ŒŒ 
-false
-ŒŒ  
-;
-ŒŒ  !
-try
-œœ 
-{
-–– 
-var
-—— 
-avatars
-—— 
-=
-—— 
-await
-—— #
-client
-——$ *
-.
-——* +&
-GetAvailableAvatarsAsync
-——+ C
-(
-——C D
-)
-——D E
-;
-——E F
-if
-““ 
-(
-““ 
-avatars
-““ 
-!=
-““ 
-null
-““ #
-&&
-““$ &
-avatars
-““' .
-.
-““. /
-Any
-““/ 2
-(
-““2 3
-)
-““3 4
-)
-““4 5
-{
-”” 
-var
-‘‘ 
-defaultAvatar
-‘‘ %
-=
-‘‘& '
-avatars
-‘‘( /
-.
-‘‘/ 0
-FirstOrDefault
-‘‘0 >
-(
-‘‘> ?
-a
-‘‘? @
-=>
-‘‘A C
-a
-‘‘D E
-.
-‘‘E F
-IdAvatar
-‘‘F N
-==
-‘‘O Q
-$num
-‘‘R S
-)
-‘‘S T
-??
-‘‘U W
-avatars
-‘‘X _
-[
-‘‘_ `
-$num
-‘‘` a
-]
-‘‘a b
-;
-‘‘b c
-SelectedAvatarId
-’’ $
-=
-’’% &
-defaultAvatar
-’’' 4
-.
-’’4 5
-IdAvatar
-’’5 =
-;
-’’= >!
-SelectedAvatarImage
-÷÷ '
-=
-÷÷( ) 
-ConvertByteToImage
-÷÷* <
-(
-÷÷< =
-defaultAvatar
-÷÷= J
-.
-÷÷J K
-
-AvatarData
-÷÷K U
-)
-÷÷U V
-;
-÷÷V W
-}
-◊◊ 
-client
-ÿÿ 
-.
-ÿÿ 
-Close
-ÿÿ 
-(
-ÿÿ 
-)
-ÿÿ 
-;
-ÿÿ 
-success
-ŸŸ 
-=
-ŸŸ 
-true
-ŸŸ 
-;
-ŸŸ 
-}
-⁄⁄ 
-catch
-€€ 
-(
-€€ 
-FaultException
-€€ !
-)
-€€! "
-{
-‹‹ 
-
-MessageBox
-›› 
-.
-›› 
-Show
-›› 
-(
-››  
-Lang
-››  $
-.
-››$ %%
-alertServerErrorMessage
-››% <
-,
-››< =
-Lang
-››> B
-.
-››B C
-alertErrorTitle
-››C R
-,
-››R S
-MessageBoxButton
-››T d
-.
-››d e
-OK
-››e g
-,
-››g h
-MessageBoxImage
-››i x
-.
-››x y
-Error
-››y ~
-)
-››~ 
-;›› Ä
-}
-ﬁﬁ 
-catch
-ﬂﬂ 
-(
-ﬂﬂ '
-EndpointNotFoundException
-ﬂﬂ ,
-)
-ﬂﬂ, -
-{
-‡‡ 
-
-MessageBox
-·· 
-.
-·· 
-Show
-·· 
-(
-··  
-Lang
-··  $
-.
-··$ %)
-alertConnectionErrorMessage
-··% @
-,
-··@ A
-Lang
-··B F
-.
-··F G'
-alertConnectionErrorTitle
-··G `
-,
-··` a
-MessageBoxButton
-··b r
-.
-··r s
-OK
-··s u
-,
-··u v
-MessageBoxImage··w Ü
-.··Ü á
-Error··á å
-)··å ç
-;··ç é
-}
-‚‚ 
-catch
-„„ 
-{
-‰‰ 
-
-MessageBox
-ÂÂ 
-.
-ÂÂ 
-Show
-ÂÂ 
-(
-ÂÂ  
-Lang
-ÂÂ  $
-.
-ÂÂ$ %"
-alertAvatarLoadError
-ÂÂ% 9
-,
-ÂÂ9 :
-Lang
-ÂÂ; ?
-.
-ÂÂ? @
-alertErrorTitle
-ÂÂ@ O
-,
-ÂÂO P
-MessageBoxButton
-ÂÂQ a
-.
-ÂÂa b
-OK
-ÂÂb d
-,
-ÂÂd e
-MessageBoxImage
-ÂÂf u
-.
-ÂÂu v
-Error
-ÂÂv {
-)
-ÂÂ{ |
-;
-ÂÂ| }
-}
-ÊÊ 
-finally
-ÁÁ 
-{
-ËË 
-if
-ÈÈ 
-(
-ÈÈ 
-!
-ÈÈ 
-success
-ÈÈ 
-&&
-ÈÈ 
-client
-ÈÈ  &
-.
-ÈÈ& '
-State
-ÈÈ' ,
-!=
-ÈÈ- / 
-CommunicationState
-ÈÈ0 B
-.
-ÈÈB C
-Closed
-ÈÈC I
-)
-ÈÈI J
-client
-ÍÍ 
-.
-ÍÍ 
-Abort
-ÍÍ  
-(
-ÍÍ  !
-)
-ÍÍ! "
-;
-ÍÍ" #
-}
-ÎÎ 
-}
-ÏÏ 	
-private
-ÓÓ 
-void
-ÓÓ $
-OpenSelectAvatarDialog
-ÓÓ +
-(
-ÓÓ+ ,
-object
-ÓÓ, 2
-	parameter
-ÓÓ3 <
-)
-ÓÓ< =
-{
-ÔÔ 	
-var
- 
-selectAvatarView
-  
-=
-! "
-new
-# &
-SelectAvatarView
-' 7
-(
-7 8
-)
-8 9
-;
-9 :
-var
-ÒÒ #
-selectAvatarViewModel
-ÒÒ %
-=
-ÒÒ& '
-new
-ÒÒ( +#
-SelectAvatarViewModel
-ÒÒ, A
-(
-ÒÒA B
-SelectedAvatarId
-ÒÒB R
-)
-ÒÒR S
-;
-ÒÒS T#
-selectAvatarViewModel
-ÚÚ !
-.
-ÚÚ! "
-AvatarSelected
-ÚÚ" 0
-+=
-ÚÚ1 3
-OnAvatarSelected
-ÚÚ4 D
-;
-ÚÚD E
-selectAvatarView
-ÛÛ 
-.
-ÛÛ 
-DataContext
-ÛÛ (
-=
-ÛÛ) *#
-selectAvatarViewModel
-ÛÛ+ @
-;
-ÛÛ@ A
-selectAvatarView
-ÙÙ 
-.
-ÙÙ 
-
-ShowDialog
-ÙÙ '
-(
-ÙÙ' (
-)
-ÙÙ( )
-;
-ÙÙ) *#
-selectAvatarViewModel
-ıı !
-.
-ıı! "
-AvatarSelected
-ıı" 0
--=
-ıı1 3
-OnAvatarSelected
-ıı4 D
-;
-ııD E
-}
-ˆˆ 	
-private
-¯¯ 
-void
-¯¯ 
-OnAvatarSelected
-¯¯ %
-(
-¯¯% &
-AvatarModel
-¯¯& 1
-avatar
-¯¯2 8
-)
-¯¯8 9
-{
-˘˘ 	
-if
-˙˙ 
-(
-˙˙ 
-avatar
-˙˙ 
-!=
-˙˙ 
-null
-˙˙ 
-)
-˙˙ 
-{
-˚˚ 
-SelectedAvatarId
-¸¸  
-=
-¸¸! "
-avatar
-¸¸# )
-.
-¸¸) *
-Id
-¸¸* ,
-;
-¸¸, -!
-SelectedAvatarImage
-˝˝ #
-=
-˝˝$ %
-avatar
-˝˝& ,
-.
-˝˝, -
-ImageSource
-˝˝- 8
-;
-˝˝8 9
-}
-˛˛ 
-}
-ˇˇ 	
-private
-ÅÅ 
-static
-ÅÅ 
-bool
-ÅÅ 
-IsValidEmail
-ÅÅ (
-(
-ÅÅ( )
-string
-ÅÅ) /
-email
-ÅÅ0 5
-)
-ÅÅ5 6
-{
-ÇÇ 	
-if
-ÉÉ 
-(
-ÉÉ 
-string
-ÉÉ 
-.
-ÉÉ  
-IsNullOrWhiteSpace
-ÉÉ )
-(
-ÉÉ) *
-email
-ÉÉ* /
-)
-ÉÉ/ 0
-)
-ÉÉ0 1
-return
-ÑÑ 
-false
-ÑÑ 
-;
-ÑÑ 
-try
-ÜÜ 
-{
-áá 
-var
-àà 
-regex
-àà 
-=
-àà 
-new
-àà 
-Regex
-àà  %
-(
-àà% &
-$str
-àà& H
-,
-ààH I
-RegexOptions
-ààJ V
-.
-ààV W
-
-IgnoreCase
-ààW a
-,
-ààa b
-TimeSpan
-ààc k
-.
-ààk l
-FromMilliseconds
-ààl |
-(
-àà| }
-$numàà} Ä
-)ààÄ Å
-)ààÅ Ç
-;ààÇ É
-return
-ââ 
-regex
-ââ 
-.
-ââ 
-IsMatch
-ââ $
-(
-ââ$ %
-email
-ââ% *
-)
-ââ* +
-;
-ââ+ ,
-}
-ää 
-catch
-ãã 
-(
-ãã (
-RegexMatchTimeoutException
-ãã -
-)
-ãã- .
-{
-åå 
-return
-çç 
-false
-çç 
-;
-çç 
-}
-éé 
-}
-èè 	
-private
-ëë 
-static
-ëë 
-bool
-ëë 
-IsPasswordSecure
-ëë ,
-(
-ëë, -
-string
-ëë- 3
-password
-ëë4 <
-,
-ëë< =
-out
-ëë> A
-string
-ëëB H
-errorLangKey
-ëëI U
-)
-ëëU V
-{
-íí 	
-if
-ìì 
-(
-ìì 
-string
-ìì 
-.
-ìì  
-IsNullOrWhiteSpace
-ìì )
-(
-ìì) *
-password
-ìì* 2
-)
-ìì2 3
-)
-ìì3 4
-{
-îî 
-errorLangKey
-ïï 
-=
-ïï 
-$str
-ïï 3
-;
-ïï3 4
-return
-ññ 
-false
-ññ 
-;
-ññ 
-}
-óó 
-if
-òò 
-(
-òò 
-password
-òò 
-.
-òò 
-Length
-òò 
-<
-òò  !
-$num
-òò" #
-)
-òò# $
-{
-ôô 
-errorLangKey
-öö 
-=
-öö 
-$str
-öö 6
-;
-öö6 7
-return
-õõ 
-false
-õõ 
-;
-õõ 
-}
-úú 
-if
-ùù 
-(
-ùù 
-!
-ùù 
-password
-ùù 
-.
-ùù 
-Any
-ùù 
-(
-ùù 
-char
-ùù "
-.
-ùù" #
-IsUpper
-ùù# *
-)
-ùù* +
-)
-ùù+ ,
-{
-ûû 
-errorLangKey
-üü 
-=
-üü 
-$str
-üü 8
-;
-üü8 9
-return
-†† 
-false
-†† 
-;
-†† 
-}
-°° 
-if
-¢¢ 
-(
-¢¢ 
-!
-¢¢ 
-password
-¢¢ 
-.
-¢¢ 
-Any
-¢¢ 
-(
-¢¢ 
-char
-¢¢ "
-.
-¢¢" #
-IsLower
-¢¢# *
-)
-¢¢* +
-)
-¢¢+ ,
-{
-££ 
-errorLangKey
-§§ 
-=
-§§ 
-$str
-§§ 8
-;
-§§8 9
-return
-•• 
-false
-•• 
-;
-•• 
-}
-¶¶ 
-if
-ßß 
-(
-ßß 
-!
-ßß 
-password
-ßß 
-.
-ßß 
-Any
-ßß 
-(
-ßß 
-char
-ßß "
-.
-ßß" #
-IsDigit
-ßß# *
-)
-ßß* +
-)
-ßß+ ,
-{
-®® 
-errorLangKey
-©© 
-=
-©© 
-$str
-©© 8
-;
-©©8 9
-return
-™™ 
-false
-™™ 
-;
-™™ 
-}
-´´ 
-if
-¨¨ 
-(
-¨¨ 
-password
-¨¨ 
-.
-¨¨ 
-All
-¨¨ 
-(
-¨¨ 
-char
-¨¨ !
-.
-¨¨! "
-IsLetterOrDigit
-¨¨" 1
-)
-¨¨1 2
-)
-¨¨2 3
-{
-≠≠ 
-errorLangKey
-ÆÆ 
-=
-ÆÆ 
-$str
-ÆÆ :
-;
-ÆÆ: ;
-return
-ØØ 
-false
-ØØ 
-;
-ØØ 
-}
-∞∞ 
-errorLangKey
-≤≤ 
-=
-≤≤ 
-null
-≤≤ 
-;
-≤≤  
-return
-≥≥ 
-true
-≥≥ 
-;
-≥≥ 
-}
-¥¥ 	
-private
-∂∂ 
-bool
-∂∂ 
-CanExecuteSignUp
-∂∂ %
-(
-∂∂% &
-object
-∂∂& ,
-	parameter
-∂∂- 6
-)
-∂∂6 7
-{
-∑∑ 	
-return
-∏∏ 
-!
-∏∏ 
-string
-∏∏ 
-.
-∏∏  
-IsNullOrWhiteSpace
-∏∏ -
-(
-∏∏- .
-Username
-∏∏. 6
-)
-∏∏6 7
-&&
-∏∏8 :
-!
-ππ 
-string
-ππ 
-.
-ππ  
-IsNullOrWhiteSpace
-ππ -
-(
-ππ- .
-	FirstName
-ππ. 7
-)
-ππ7 8
-&&
-ππ9 ;
-!
-∫∫ 
-string
-∫∫ 
-.
-∫∫  
-IsNullOrWhiteSpace
-∫∫ -
-(
-∫∫- .
-LastName
-∫∫. 6
-)
-∫∫6 7
-&&
-∫∫8 :
-!
-ªª 
-string
-ªª 
-.
-ªª  
-IsNullOrWhiteSpace
-ªª -
-(
-ªª- .
-Email
-ªª. 3
-)
-ªª3 4
-&&
-ªª5 7
-!
-ºº 
-string
-ºº 
-.
-ºº  
-IsNullOrWhiteSpace
-ºº -
-(
-ºº- .
-Password
-ºº. 6
-)
-ºº6 7
-&&
-ºº8 :
-(
-ΩΩ 
-IsMale
-ΩΩ 
-||
-ΩΩ 
-IsFemale
-ΩΩ &
-||
-ΩΩ' )
-IsNonBinary
-ΩΩ* 5
-)
-ΩΩ5 6
-;
-ΩΩ6 7
-}
-ææ 	
-private
-¿¿ 
-async
-¿¿ 
-void
-¿¿ 
-ExecuteSignUp
-¿¿ (
-(
-¿¿( )
-object
-¿¿) /
-	parameter
-¿¿0 9
-)
-¿¿9 :
-{
-¡¡ 	
-if
-¬¬ 
-(
-¬¬ 
-!
-¬¬ 
-CanExecuteSignUp
-¬¬ !
-(
-¬¬! "
-	parameter
-¬¬" +
-)
-¬¬+ ,
-)
-¬¬, -
-{
-√√ 
-
-MessageBox
-ƒƒ 
-.
-ƒƒ 
-Show
-ƒƒ 
-(
-ƒƒ  
-Lang
-ƒƒ  $
-.
-ƒƒ$ %$
-alertAllFieldsRequired
-ƒƒ% ;
-,
-ƒƒ; <
-Lang
-ƒƒ= A
-.
-ƒƒA B"
-alertInputErrorTitle
-ƒƒB V
-,
-ƒƒV W
-MessageBoxButton
-ƒƒX h
-.
-ƒƒh i
-OK
-ƒƒi k
-,
-ƒƒk l
-MessageBoxImage
-ƒƒm |
-.
-ƒƒ| }
-Warningƒƒ} Ñ
-)ƒƒÑ Ö
-;ƒƒÖ Ü
-return
-≈≈ 
-;
-≈≈ 
-}
-∆∆ 
-if
-»» 
-(
-»» 
-!
-»» 
-IsValidEmail
-»» 
-(
-»» 
-Email
-»» #
-)
-»»# $
-)
-»»$ %
-{
-…… 
-
-MessageBox
-   
-.
-   
-Show
-   
-(
-    
-Lang
-    $
-.
-  $ %%
-alertInvalidEmailFormat
-  % <
-,
-  < =
-Lang
-  > B
-.
-  B C$
-alertInvalidEmailTitle
-  C Y
-,
-  Y Z
-MessageBoxButton
-  [ k
-.
-  k l
-OK
-  l n
-,
-  n o
-MessageBoxImage
-  p 
-.   Ä
-Warning  Ä á
-)  á à
-;  à â
-return
-ÀÀ 
-;
-ÀÀ 
-}
-ÃÃ 
-if
-ŒŒ 
-(
-ŒŒ 
-!
-ŒŒ 
-IsPasswordSecure
-ŒŒ !
-(
-ŒŒ! "
-Password
-ŒŒ" *
-,
-ŒŒ* +
-out
-ŒŒ, /
-string
-ŒŒ0 6
-passwordErrorKey
-ŒŒ7 G
-)
-ŒŒG H
-)
-ŒŒH I
-{
-œœ 
-string
-–– "
-passwordErrorMessage
-–– +
-=
-––, -
-Lang
-––. 2
-.
-––2 3
-ResourceManager
-––3 B
-.
-––B C
-	GetString
-––C L
-(
-––L M
-passwordErrorKey
-––M ]
-)
-––] ^
-??
-––_ a
-Lang
-––b f
-.
-––f g(
-alertPasswordGenericError––g Ä
-;––Ä Å
-
-MessageBox
-—— 
-.
-—— 
-Show
-—— 
-(
-——  "
-passwordErrorMessage
-——  4
-,
-——4 5
-Lang
-——6 :
-.
-——: ;)
-alertPasswordNotSecureTitle
-——; V
-,
-——V W
-MessageBoxButton
-——X h
-.
-——h i
-OK
-——i k
-,
-——k l
-MessageBoxImage
-——m |
-.
-——| }
-Warning——} Ñ
-)——Ñ Ö
-;——Ö Ü
-return
-““ 
-;
-““ 
-}
-”” 
-int
-’’ 
-genderId
-’’ 
-;
-’’ 
-if
-÷÷ 
-(
-÷÷ 
-IsMale
-÷÷ 
-)
-÷÷ 
-{
-◊◊ 
-genderId
-ÿÿ 
-=
-ÿÿ 
-$num
-ÿÿ 
-;
-ÿÿ 
-}
-ŸŸ 
-else
-⁄⁄ 
-if
-⁄⁄ 
-(
-⁄⁄ 
-IsFemale
-⁄⁄ 
-)
-⁄⁄ 
-{
-€€ 
-genderId
-‹‹ 
-=
-‹‹ 
-$num
-‹‹ 
-;
-‹‹ 
-}
-›› 
-else
-ﬁﬁ 
-{
-ﬂﬂ 
-genderId
-‡‡ 
-=
-‡‡ 
-$num
-‡‡ 
-;
-‡‡ 
-}
-·· 
-var
-‚‚ 
-newUserProfile
-‚‚ 
-=
-‚‚  
-new
-‚‚! $
-AuthService
-‚‚% 0
-.
-‚‚0 1
-UserProfileDto
-‚‚1 ?
-{
-„„ 
-Username
-‰‰ 
-=
-‰‰ 
-Username
-‰‰ #
-,
-‰‰# $
-	FirstName
-ÂÂ 
-=
-ÂÂ 
-	FirstName
-ÂÂ %
-,
-ÂÂ% &
-LastName
-ÊÊ 
-=
-ÊÊ 
-LastName
-ÊÊ #
-,
-ÊÊ# $
-Email
-ÁÁ 
-=
-ÁÁ 
-Email
-ÁÁ 
-,
-ÁÁ 
-GenderId
-ËË 
-=
-ËË 
-genderId
-ËË #
-,
-ËË# $
-AvatarId
-ÈÈ 
-=
-ÈÈ 
-SelectedAvatarId
-ÈÈ +
-}
-ÍÍ 
-;
-ÍÍ 
-var
-ÏÏ 
-client
-ÏÏ 
-=
-ÏÏ 
-new
-ÏÏ )
-AuthenticationServiceClient
-ÏÏ 8
-(
-ÏÏ8 9
-)
-ÏÏ9 :
-;
-ÏÏ: ;
-bool
-ÌÌ 
-success
-ÌÌ 
-=
-ÌÌ 
-false
-ÌÌ  
-;
-ÌÌ  !
-try
-ÓÓ 
-{
-ÔÔ 
-var
- 
-result
- 
-=
- 
-await
- "
-client
-# )
-.
-) *
-RegisterAsync
-* 7
-(
-7 8
-newUserProfile
-8 F
-,
-F G
-Password
-H P
-)
-P Q
-;
-Q R
-if
-ÚÚ 
-(
-ÚÚ 
-result
-ÚÚ 
-.
-ÚÚ 
-Success
-ÚÚ "
-)
-ÚÚ" #
-{
-ÛÛ 
-
-MessageBox
-ÙÙ 
-.
-ÙÙ 
-Show
-ÙÙ #
-(
-ÙÙ# $
-Lang
-ÙÙ$ (
-.
-ÙÙ( )&
-alertRegistrationSuccess
-ÙÙ) A
-+
-ÙÙB C
-$str
-ÙÙD G
-+
-ÙÙH I
-result
-ÙÙJ P
-.
-ÙÙP Q
-Message
-ÙÙQ X
-,
-ÙÙX Y
-Lang
-ÙÙZ ^
-.
-ÙÙ^ _
-alertSuccessTitle
-ÙÙ_ p
-,
-ÙÙp q
-MessageBoxButtonÙÙr Ç
-.ÙÙÇ É
-OKÙÙÉ Ö
-,ÙÙÖ Ü
-MessageBoxImageÙÙá ñ
-.ÙÙñ ó
-InformationÙÙó ¢
-)ÙÙ¢ £
-;ÙÙ£ §$
-OpenVerificationDialog
-ıı *
-(
-ıı* +
-	parameter
-ıı+ 4
-)
-ıı4 5
-;
-ıı5 6
-client
-ˆˆ 
-.
-ˆˆ 
-Close
-ˆˆ  
-(
-ˆˆ  !
-)
-ˆˆ! "
-;
-ˆˆ" #
-success
-˜˜ 
-=
-˜˜ 
-true
-˜˜ "
-;
-˜˜" #
-}
-¯¯ 
-else
-˘˘ 
-{
-˙˙ 
-
-MessageBox
-˚˚ 
-.
-˚˚ 
-Show
-˚˚ #
-(
-˚˚# $
-result
-˚˚$ *
-.
-˚˚* +
-Message
-˚˚+ 2
-,
-˚˚2 3
-Lang
-˚˚4 8
-.
-˚˚8 9)
-alertRegistrationErrorTitle
-˚˚9 T
-,
-˚˚T U
-MessageBoxButton
-˚˚V f
-.
-˚˚f g
-OK
-˚˚g i
-,
-˚˚i j
-MessageBoxImage
-˚˚k z
-.
-˚˚z {
-Error˚˚{ Ä
-)˚˚Ä Å
-;˚˚Å Ç
-}
-¸¸ 
-}
-˝˝ 
-catch
-˛˛ 
-(
-˛˛ 
-FaultException
-˛˛ !
-<
-˛˛! "
-string
-˛˛" (
->
-˛˛( )
-fex
-˛˛* -
-)
-˛˛- .
-{
-ˇˇ 
-
-MessageBox
-ÄÄ 
-.
-ÄÄ 
-Show
-ÄÄ 
-(
-ÄÄ  
-fex
-ÄÄ  #
-.
-ÄÄ# $
-Detail
-ÄÄ$ *
-,
-ÄÄ* +
-Lang
-ÄÄ, 0
-.
-ÄÄ0 1)
-alertRegistrationErrorTitle
-ÄÄ1 L
-,
-ÄÄL M
-MessageBoxButton
-ÄÄN ^
-.
-ÄÄ^ _
-OK
-ÄÄ_ a
-,
-ÄÄa b
-MessageBoxImage
-ÄÄc r
-.
-ÄÄr s
-Error
-ÄÄs x
-)
-ÄÄx y
-;
-ÄÄy z
-}
-ÅÅ 
-catch
-ÇÇ 
-(
-ÇÇ 
-FaultException
-ÇÇ !
-)
-ÇÇ! "
-{
-ÉÉ 
-
-MessageBox
-ÑÑ 
-.
-ÑÑ 
-Show
-ÑÑ 
-(
-ÑÑ  
-Lang
-ÑÑ  $
-.
-ÑÑ$ %%
-alertServerErrorMessage
-ÑÑ% <
-,
-ÑÑ< =
-Lang
-ÑÑ> B
-.
-ÑÑB C
-alertErrorTitle
-ÑÑC R
-,
-ÑÑR S
-MessageBoxButton
-ÑÑT d
-.
-ÑÑd e
-OK
-ÑÑe g
-,
-ÑÑg h
-MessageBoxImage
-ÑÑi x
-.
-ÑÑx y
-Error
-ÑÑy ~
-)
-ÑÑ~ 
-;ÑÑ Ä
-}
-ÖÖ 
-catch
-ÜÜ 
-(
-ÜÜ '
-EndpointNotFoundException
-ÜÜ ,
-)
-ÜÜ, -
-{
-áá 
-
-MessageBox
-àà 
-.
-àà 
-Show
-àà 
-(
-àà  
-Lang
-àà  $
-.
-àà$ %)
-alertConnectionErrorMessage
-àà% @
-,
-àà@ A
-Lang
-ààB F
-.
-ààF G'
-alertConnectionErrorTitle
-ààG `
-,
-àà` a
-MessageBoxButton
-ààb r
-.
-ààr s
-OK
-ààs u
-,
-ààu v
-MessageBoxImageààw Ü
-.ààÜ á
-Errorààá å
-)ààå ç
-;ààç é
-}
-ââ 
-catch
-ää 
-{
-ãã 
-
-MessageBox
-åå 
-.
-åå 
-Show
-åå 
-(
-åå  
-Lang
-åå  $
-.
-åå$ %&
-alertUnknownErrorMessage
-åå% =
-,
-åå= >
-Lang
-åå? C
-.
-ååC D
-alertErrorTitle
-ååD S
-,
-ååS T
-MessageBoxButton
-ååU e
-.
-ååe f
-OK
-ååf h
-,
-ååh i
-MessageBoxImage
-ååj y
-.
-ååy z
-Error
-ååz 
-)åå Ä
-;ååÄ Å
-}
-çç 
-finally
-éé 
-{
-èè 
-if
-êê 
-(
-êê 
-!
-êê 
-success
-êê 
-&&
-êê 
-client
-êê  &
-.
-êê& '
-State
-êê' ,
-!=
-êê- / 
-CommunicationState
-êê0 B
-.
-êêB C
-Closed
-êêC I
-)
-êêI J
-client
-ëë 
-.
-ëë 
-Abort
-ëë  
-(
-ëë  !
-)
-ëë! "
-;
-ëë" #
-}
-íí 
-}
-ìì 	
-private
-ïï 
-void
-ïï $
-OpenVerificationDialog
-ïï +
-(
-ïï+ ,
-object
-ïï, 2
-	parameter
-ïï3 <
-)
-ïï< =
-{
-ññ 	
-var
-óó 
-
-verifyView
-óó 
-=
-óó 
-new
-óó  
-VerifyByCodeView
-óó! 1
-(
-óó1 2
-)
-óó2 3
-;
-óó3 4
-
-verifyView
-òò 
-.
-òò 
-DataContext
-òò "
-=
-òò# $
-new
-òò% (#
-VerifyByCodeViewModel
-òò) >
-(
-òò> ?
-Email
-òò? D
-)
-òòD E
-;
-òòE F
-
-verifyView
-ôô 
-.
-ôô 
-Show
-ôô 
-(
-ôô 
-)
-ôô 
-;
-ôô 
-if
-õõ 
-(
-õõ 
-	parameter
-õõ 
-is
-õõ 
-Window
-õõ #
-signUpWindow
-õõ$ 0
-)
-õõ0 1
-signUpWindow
-úú 
-.
-úú 
-Close
-úú "
-(
-úú" #
-)
-úú# $
-;
-úú$ %
-}
-ùù 	
-private
-üü 
-static
-üü 
-void
-üü  
-ExecuteCloseWindow
-üü .
-(
-üü. /
-object
-üü/ 5
-	parameter
-üü6 ?
-)
-üü? @
-{
-†† 	
-if
-°° 
-(
-°° 
-	parameter
-°° 
-is
-°° 
-Window
-°° #
-)
-°°# $
-Application
-¢¢ 
-.
-¢¢ 
-Current
-¢¢ #
-.
-¢¢# $
-Shutdown
-¢¢$ ,
-(
-¢¢, -
-)
-¢¢- .
-;
-¢¢. /
-}
-££ 	
-private
-•• 
-static
-•• 
-void
-•• #
-ExecuteMaximizeWindow
-•• 1
-(
-••1 2
-object
-••2 8
-	parameter
-••9 B
-)
-••B C
-{
-¶¶ 	
-if
-ßß 
-(
-ßß 
-	parameter
-ßß 
-is
-ßß 
-Window
-ßß #
-window
-ßß$ *
-)
-ßß* +
-window
-®® 
-.
-®® 
-WindowState
-®® "
-=
-®®# $
-window
-®®% +
-.
-®®+ ,
-WindowState
-®®, 7
-==
-®®8 :
-WindowState
-®®; F
-.
-®®F G
-	Maximized
-®®G P
-?
-®®Q R
-WindowState
-®®S ^
-.
-®®^ _
-Normal
-®®_ e
-:
-®®f g
-WindowState
-®®h s
-.
-®®s t
-	Maximized
-®®t }
-;
-®®} ~
-}
-©© 	
-private
-´´ 
-static
-´´ 
-void
-´´ #
-ExecuteMinimizeWindow
-´´ 1
-(
-´´1 2
-object
-´´2 8
-	parameter
-´´9 B
-)
-´´B C
-{
-¨¨ 	
-if
-≠≠ 
-(
-≠≠ 
-	parameter
-≠≠ 
-is
-≠≠ 
-Window
-≠≠ #
-window
-≠≠$ *
-)
-≠≠* +
-window
-ÆÆ 
-.
-ÆÆ 
-WindowState
-ÆÆ "
-=
-ÆÆ# $
-WindowState
-ÆÆ% 0
-.
-ÆÆ0 1
-	Minimized
-ÆÆ1 :
-;
-ÆÆ: ;
-}
-ØØ 	
-private
-±± 
-static
-±± 
-void
-±± 
-ExecuteReturn
-±± )
-(
-±±) *
-object
-±±* 0
-	parameter
-±±1 :
-)
-±±: ;
-{
-≤≤ 	
-if
-≥≥ 
-(
-≥≥ 
-	parameter
-≥≥ 
-is
-≥≥ 
-Window
-≥≥ #
-currentWindow
-≥≥$ 1
-)
-≥≥1 2
-{
-¥¥ 
-var
-µµ 
-welcomeView
-µµ 
-=
-µµ  !
-new
-µµ" %
-WelcomeView
-µµ& 1
-(
-µµ1 2
-)
-µµ2 3
-;
-µµ3 4
-welcomeView
-∂∂ 
-.
-∂∂ 
-Show
-∂∂  
-(
-∂∂  !
-)
-∂∂! "
-;
-∂∂" #
-currentWindow
-∑∑ 
-.
-∑∑ 
-Close
-∑∑ #
-(
-∑∑# $
-)
-∑∑$ %
-;
-∑∑% &
-}
-∏∏ 
-}
-ππ 	
-public
-ªª 
-static
-ªª 
-BitmapImage
-ªª ! 
-ConvertByteToImage
-ªª" 4
-(
-ªª4 5
-byte
-ªª5 9
-[
-ªª9 :
-]
-ªª: ;
-
-imageBytes
-ªª< F
-)
-ªªF G
-{
-ºº 	
-if
-ΩΩ 
-(
-ΩΩ 
-
-imageBytes
-ΩΩ 
-==
-ΩΩ 
-null
-ΩΩ "
-||
-ΩΩ# %
-
-imageBytes
-ΩΩ& 0
-.
-ΩΩ0 1
-Length
-ΩΩ1 7
-==
-ΩΩ8 :
-$num
-ΩΩ; <
-)
-ΩΩ< =
-return
-ææ 
-null
-ææ 
-;
-ææ 
-var
-¿¿ 
-image
-¿¿ 
-=
-¿¿ 
-new
-¿¿ 
-BitmapImage
-¿¿ '
-(
-¿¿' (
-)
-¿¿( )
-;
-¿¿) *
-using
-¡¡ 
-(
-¡¡ 
-var
-¡¡ 
-mem
-¡¡ 
-=
-¡¡ 
-new
-¡¡  
-MemoryStream
-¡¡! -
-(
-¡¡- .
-
-imageBytes
-¡¡. 8
-)
-¡¡8 9
-)
-¡¡9 :
-{
-¬¬ 
-mem
-√√ 
-.
-√√ 
-Position
-√√ 
-=
-√√ 
-$num
-√√  
-;
-√√  !
-image
-ƒƒ 
-.
-ƒƒ 
-	BeginInit
-ƒƒ 
-(
-ƒƒ  
-)
-ƒƒ  !
-;
-ƒƒ! "
-image
-≈≈ 
-.
-≈≈ 
-CreateOptions
-≈≈ #
-=
-≈≈$ %!
-BitmapCreateOptions
-≈≈& 9
-.
-≈≈9 :!
-PreservePixelFormat
-≈≈: M
-;
-≈≈M N
-image
-∆∆ 
-.
-∆∆ 
-CacheOption
-∆∆ !
-=
-∆∆" #
-BitmapCacheOption
-∆∆$ 5
-.
-∆∆5 6
-OnLoad
-∆∆6 <
-;
-∆∆< =
-image
-«« 
-.
-«« 
-	UriSource
-«« 
-=
-««  !
-null
-««" &
-;
-««& '
-image
-»» 
-.
-»» 
-StreamSource
-»» "
-=
-»»# $
-mem
-»»% (
-;
-»»( )
-image
-…… 
-.
-…… 
-EndInit
-…… 
-(
-…… 
-)
-…… 
-;
-……  
-}
-   
-image
-ÀÀ 
-.
-ÀÀ 
-Freeze
-ÀÀ 
-(
-ÀÀ 
-)
-ÀÀ 
-;
-ÀÀ 
-return
-ÃÃ 
-image
-ÃÃ 
-;
-ÃÃ 
-}
-ÕÕ 	
-}
-ŒŒ 
-}œœ €k
-öC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.cs
-	namespace 	
-GuessMyMessClient
- 
-. 
-	ViewModel %
-.% &
-	HomePages& /
-{ 
-public 
-
-class 
-LoginViewModel 
-:  !
-ViewModelBase" /
-{ 
+_userEmail  *
+;* +
 private 
-string 
-_usernameOrEmail '
-;' (
+string 
+_verificationCode (
+;( )
 public 
-string 
-UsernameOrEmail %
+string 
+VerificationCode &
 { 	
-get 
-=> 
-_usernameOrEmail #
-;# $
-set 
-{ 
-_usernameOrEmail  
-=! "
-value# (
-;( )
-OnPropertyChanged !
-(! "
-)" #
-;# $
-} 
-} 	
-private 
-string 
-	_password  
-;  !
-public 
-string 
-Password 
-{   	
-get!! 
-=>!! 
-	_password!! 
-;!! 
-set"" 
-{## 
-	_password$$ 
-=$$ 
-value$$ !
-;$$! "
-OnPropertyChanged%% !
-(%%! "
-)%%" #
-;%%# $
-CommandManager&& 
-.&& &
-InvalidateRequerySuggested&& 9
-(&&9 :
-)&&: ;
-;&&; <
-}'' 
-}(( 	
-public** 
-ICommand** 
-LoginCommand** $
-{**% &
-get**' *
-;*** +
-}**, -
-public++ 
-ICommand++ 
-CloseWindowCommand++ *
-{+++ ,
-get++- 0
-;++0 1
-}++2 3
-public,, 
-ICommand,, !
-MaximizeWindowCommand,, -
-{,,. /
-get,,0 3
-;,,3 4
-},,5 6
-public-- 
-ICommand-- !
-MinimizeWindowCommand-- -
-{--. /
-get--0 3
-;--3 4
-}--5 6
-public.. 
-ICommand.. 
-ReturnCommand.. %
-{..& '
-get..( +
-;..+ ,
-}..- .
-public00 
-LoginViewModel00 
-(00 
-)00 
-{11 	
-LoginCommand22 
-=22 
-new22 
-RelayCommand22 +
-(22+ ,
-ExecuteLogin22, 8
-,228 9
-CanExecuteLogin22: I
-)22I J
-;22J K
-CloseWindowCommand33 
-=33  
-new33! $
-RelayCommand33% 1
-(331 2
-ExecuteCloseWindow332 D
-)33D E
-;33E F!
-MaximizeWindowCommand44 !
-=44" #
-new44$ '
-RelayCommand44( 4
-(444 5!
-ExecuteMaximizeWindow445 J
-)44J K
-;44K L!
-MinimizeWindowCommand55 !
-=55" #
-new55$ '
-RelayCommand55( 4
-(554 5!
-ExecuteMinimizeWindow555 J
-)55J K
-;55K L
-ReturnCommand66 
-=66 
-new66 
-RelayCommand66  ,
-(66, -
-ExecuteReturn66- :
-)66: ;
-;66; <
-}77 	
-private99 
-bool99 
-CanExecuteLogin99 $
-(99$ %
-object99% +
-	parameter99, 5
-)995 6
-{:: 	
-return;; 
-!;; 
-string;; 
-.;; 
-IsNullOrWhiteSpace;; -
-(;;- .
-UsernameOrEmail;;. =
-);;= >
-&&;;? A
-!<< 
-string<< 
-.<< 
-IsNullOrWhiteSpace<< -
-(<<- .
-Password<<. 6
-)<<6 7
-;<<7 8
-}== 	
-private?? 
-async?? 
-void?? 
-ExecuteLogin?? '
-(??' (
-object??( .
-	parameter??/ 8
-)??8 9
-{@@ 	
-ifAA 
-(AA 
-!AA 
-CanExecuteLoginAA  
-(AA  !
-	parameterAA! *
-)AA* +
-)AA+ ,
-{BB 
+get 
+{ 
+return 
+_verificationCode (
+;( )
+} 
+set 
+{ 
+if 
+( 
+_verificationCode %
+!=& (
+value) .
+). /
+{ 
+_verificationCode %
+=& '
+value( -
+;- .
+OnPropertyChanged %
+(% &
+)& '
+;' (
+}   
+}!! 
+}"" 	
+public$$ 
+ICommand$$ 
+VerifyCommand$$ %
+{$$& '
+get$$( +
+;$$+ ,
+}$$- .
+public%% 
+ICommand%% 
+CloseCommand%% $
+{%%% &
+get%%' *
+;%%* +
+}%%, -
+public'' !
+VerifyByCodeViewModel'' $
+(''$ %
+string''% +
+	userEmail'', 5
+)''5 6
+{(( 	
+if)) 
+()) 
+string)) 
+.)) 
+IsNullOrWhiteSpace)) )
+())) *
+	userEmail))* 3
+)))3 4
+)))4 5
+{** 
+throw++ 
+new++ !
+ArgumentNullException++ /
+(++/ 0
+nameof++0 6
+(++6 7
+	userEmail++7 @
+)++@ A
+,++A B
+$str++C q
+)++q r
+;++r s
+},, 
 
-MessageBoxCC 
-.CC 
-ShowCC 
-(CC  
-LangDD 
-.DD 
-alertRequiredFieldsDD ,
-,DD, -
-LangEE 
-.EE  
-alertInputErrorTitleEE -
-,EE- .
-MessageBoxButtonFF $
-.FF$ %
-OKFF% '
-,FF' (
-MessageBoxImageGG #
-.GG# $
-WarningGG$ +
-)GG+ ,
-;GG, -
-returnHH 
-;HH 
-}II 
-varKK 
-clientKK 
-=KK 
-newKK '
-AuthenticationServiceClientKK 8
-(KK8 9
-)KK9 :
-;KK: ;
-boolLL 
-successLL 
-=LL 
-falseLL  
-;LL  !
-tryNN 
-{OO 
-OperationResultDtoPP "
-resultPP# )
-=PP* +
-awaitPP, 1
-clientPP2 8
-.PP8 9
+_userEmail-- 
+=-- 
+	userEmail-- "
+;--" #
+VerifyCommand// 
+=// 
+new// 
+RelayCommand//  ,
+(//, -
+ExecuteVerify//- :
+,//: ;
+CanExecuteVerify//< L
+)//L M
+;//M N
+CloseCommand00 
+=00 
+new00 
+RelayCommand00 +
+(00+ ,
+CloseWindow00, 7
+)007 8
+;008 9
+}11 	
+private33 
+bool33 
+CanExecuteVerify33 %
+(33% &
+object33& ,
+	parameter33- 6
+)336 7
+{44 	
+return55 
+!55 
+string55 
+.55 
+IsNullOrWhiteSpace55 -
+(55- .
+VerificationCode55. >
+)55> ?
+;55? @
+}66 	
+private88 
+async88 
+void88 
+ExecuteVerify88 (
+(88( )
+object88) /
+	parameter880 9
+)889 :
+{99 	
+using:: 
+(:: '
+AuthenticationServiceClient:: .
+client::/ 5
+=::6 7
+new::8 ;'
+AuthenticationServiceClient::< W
+(::W X
+)::X Y
+)::Y Z
+{;; 
+try<< 
+{== 
+OperationResultDto>> &
+result>>' -
+=>>. /
+await>>0 5
+client>>6 <
+.>>< =
+VerifyAccountAsync>>= O
+(>>O P
 
-LoginAsyncPP9 C
-(PPC D
-UsernameOrEmailPPD S
-,PPS T
-PasswordPPU ]
-)PP] ^
-;PP^ _
-ifRR 
-(RR 
-resultRR 
-.RR 
-SuccessRR "
-)RR" #
-{SS 
-SessionManagerTT "
-.TT" #
-InstanceTT# +
-.TT+ ,
-StartSessionTT, 8
-(TT8 9
-resultTT9 ?
-.TT? @
-MessageTT@ G
-)TTG H
-;TTH I$
-MatchmakingClientManagerUU ,
-.UU, -
+_userEmail>>P Z
+,>>Z [
+VerificationCode>>\ l
+)>>l m
+;>>m n
+if@@ 
+(@@ 
+result@@ 
+.@@ 
+Success@@ &
+)@@& '
+{AA 
 
-InitializeUU- 7
-(UU7 8
-)UU8 9
-;UU9 :$
-MatchmakingClientManagerVV ,
-.VV, -
-InstanceVV- 5
-.VV5 6
-ConnectVV6 =
-(VV= >
-SessionManagerVV> L
-.VVL M
-InstanceVVM U
-.VVU V
-CurrentUsernameVVV e
-)VVe f
-;VVf g
-	OpenLobbyWW 
-(WW 
-	parameterWW '
-)WW' (
-;WW( )
-clientXX 
-.XX 
-CloseXX  
-(XX  !
-)XX! "
-;XX" #
-successYY 
-=YY 
-trueYY "
-;YY" #
-}ZZ 
-else[[ 
+MessageBoxBB "
+.BB" #
+ShowBB# '
+(BB' (
+LangCC  
+.CC  !$
+alertVerificationSuccessCC! 9
+,CC9 :
+LangDD  
+.DD  !(
+alertActivationCompleteTitleDD! =
+,DD= >
+MessageBoxButtonEE ,
+.EE, -
+OKEE- /
+,EE/ 0
+MessageBoxImageFF +
+.FF+ ,
+InformationFF, 7
+)FF7 8
+;FF8 9
+OpenLoginWindowGG '
+(GG' (
+	parameterGG( 1
+)GG1 2
+;GG2 3
+}HH 
+elseII 
+{JJ 
+
+MessageBoxKK "
+.KK" #
+ShowKK# '
+(KK' (
+resultLL "
+.LL" #
+MessageLL# *
+,LL* +
+LangMM  
+.MM  !'
+alertVerificationErrorTitleMM! <
+,MM< =
+MessageBoxButtonNN ,
+.NN, -
+OKNN- /
+,NN/ 0
+MessageBoxImageOO +
+.OO+ ,
+WarningOO, 3
+)OO3 4
+;OO4 5
+}PP 
+}QQ 
+catchRR 
+(RR 
+FaultExceptionRR %
+
+fexGeneralRR& 0
+)RR0 1
+{SS 
+
+MessageBoxTT 
+.TT 
+ShowTT #
+(TT# $
+LangUU 
+.UU #
+alertServerErrorMessageUU 4
+,UU4 5
+LangVV 
+.VV 
+alertErrorTitleVV ,
+,VV, -
+MessageBoxButtonWW (
+.WW( )
+OKWW) +
+,WW+ ,
+MessageBoxImageXX '
+.XX' (
+ErrorXX( -
+)XX- .
+;XX. /
+ConsoleYY 
+.YY 
+	WriteLineYY %
+(YY% &
+$"YY& (
+$strYY( G
+{YYG H
+
+fexGeneralYYH R
+.YYR S
+MessageYYS Z
+}YYZ [
+"YY[ \
+)YY\ ]
+;YY] ^
+}ZZ 
+catch[[ 
+([[ %
+EndpointNotFoundException[[ 0
+ex[[1 3
+)[[3 4
 {\\ 
 
 MessageBox]] 
 .]] 
 Show]] #
-(]]# $
-result^^ 
-.^^ 
-Message^^ &
-,^^& '
+(]]# $
+Lang^^ 
+.^^ '
+alertConnectionErrorMessage^^ 8
+,^^8 9
 Lang__ 
-.__  
-alertLoginErrorTitle__ 1
-,__1 2
+.__ %
+alertConnectionErrorTitle__ 6
+,__6 7
 MessageBoxButton`` (
 .``( )
 OK``) +
@@ -30477,652 +41477,137 @@ MessageBox]] 
 .aa' (
 Erroraa( -
 )aa- .
-;aa. /
-}bb 
-}cc 
-catchdd 
-(dd 
-FaultExceptiondd !
-<dd! "
-stringdd" (
->dd( )
-fexdd* -
-)dd- .
-{ee 
+;aa. /
+Consolebb 
+.bb 
+	WriteLinebb %
+(bb% &
+$"bb& (
+$strbb( N
+{bbN O
+exbbO Q
+.bbQ R
+MessagebbR Y
+}bbY Z
+"bbZ [
+)bb[ \
+;bb\ ]
+}cc 
+catchdd 
+(dd 
+	Exceptiondd  
+exdd! #
+)dd# $
+{ee 
 
-MessageBoxff 
-.ff 
-Showff 
-(ff  
-fexgg 
-.gg 
-Detailgg 
-,gg 
-Langhh 
-.hh  
-alertLoginErrorTitlehh -
-,hh- .
-MessageBoxButtonii $
-.ii$ %
-OKii% '
-,ii' (
-MessageBoxImagejj #
-.jj# $
-Errorjj$ )
-)jj) *
-;jj* +
-}kk 
-catchll 
-(ll 
-FaultExceptionll !
-
-fexGeneralll" ,
-)ll, -
-{mm 
-
-MessageBoxnn 
-.nn 
-Shownn 
-(nn  
-Langoo 
-.oo #
-alertServerErrorMessageoo 0
-,oo0 1
-Langpp 
-.pp 
-alertErrorTitlepp (
-,pp( )
-MessageBoxButtonqq $
-.qq$ %
-OKqq% '
-,qq' (
-MessageBoxImagerr #
-.rr# $
-Errorrr$ )
-)rr) *
-;rr* +
-Consoless 
-.ss 
-	WriteLiness !
-(ss! "
-$"ss" $
-$strss$ /
-{ss/ 0
-
-fexGeneralss0 :
-.ss: ;
-Messagess; B
-}ssB C
-"ssC D
-)ssD E
-;ssE F
-}tt 
-catchuu 
-(uu %
-EndpointNotFoundExceptionuu ,
-exuu- /
-)uu/ 0
-{vv 
-
-MessageBoxww 
-.ww 
-Showww 
-(ww  
-Langxx 
-.xx '
-alertConnectionErrorMessagexx 4
-,xx4 5
-Langyy 
-.yy %
-alertConnectionErrorTitleyy 2
-,yy2 3
-MessageBoxButtonzz $
-.zz$ %
-OKzz% '
-,zz' (
-MessageBoxImage{{ #
-.{{# $
-Error{{$ )
-){{) *
-;{{* +
-Console|| 
-.|| 
-	WriteLine|| !
-(||! "
-$"||" $
-$str||$ 6
-{||6 7
-ex||7 9
-.||9 :
-Message||: A
-}||A B
-"||B C
-)||C D
-;||D E
-}}} 
-catch~~ 
-(~~ 
-	Exception~~ 
-ex~~ 
-)~~  
-{ 
-
-MessageBox
-ÄÄ 
-.
-ÄÄ 
-Show
-ÄÄ 
-(
-ÄÄ  
-Lang
-ÅÅ 
-.
-ÅÅ &
-alertUnknownErrorMessage
-ÅÅ 1
-,
-ÅÅ1 2
-Lang
-ÇÇ 
-.
-ÇÇ 
-alertErrorTitle
-ÇÇ (
-,
-ÇÇ( )
-MessageBoxButton
-ÉÉ $
-.
-ÉÉ$ %
-OK
-ÉÉ% '
-,
-ÉÉ' (
-MessageBoxImage
-ÑÑ #
-.
-ÑÑ# $
-Error
-ÑÑ$ )
-)
-ÑÑ) *
-;
-ÑÑ* +
-Console
-ÖÖ 
-.
-ÖÖ 
-	WriteLine
-ÖÖ !
-(
-ÖÖ! "
-$"
-ÖÖ" $
-$str
-ÖÖ$ 3
-{
-ÖÖ3 4
-ex
-ÖÖ4 6
-.
-ÖÖ6 7
-Message
-ÖÖ7 >
+MessageBoxff 
+.ff 
+Showff #
+(ff# $
+Langgg 
+.gg $
+alertUnknownErrorMessagegg 5
+,gg5 6
+Langhh 
+.hh 
+alertErrorTitlehh ,
+,hh, -
+MessageBoxButtonii (
+.ii( )
+OKii) +
+,ii+ ,
+MessageBoxImagejj '
+.jj' (
+Errorjj( -
+)jj- .
+;jj. /
+Consolekk 
+.kk 
+	WriteLinekk %
+(kk% &
+$"kk& (
+$strkk( K
+{kkK L
+exkkL N
+.kkN O
+MessagekkO V
+}kkV W
+"kkW X
+)kkX Y
+;kkY Z
+}ll 
+}mm 
+}nn 	
+privatepp 
+staticpp 
+voidpp 
+OpenLoginWindowpp +
+(pp+ ,
+objectpp, 2
+	parameterpp3 <
+)pp< =
+{qq 	
+varrr 
+	loginViewrr 
+=rr 
+newrr 
+	LoginViewrr  )
+(rr) *
+)rr* +
+;rr+ ,
+	loginViewss 
+.ss 
+Showss 
+(ss 
+)ss 
+;ss 
+ifuu 
+(uu 
+	parameteruu 
+isuu 
+Windowuu #
+verifyWindowuu$ 0
+)uu0 1
+{vv 
+verifyWindowww 
+.ww 
+Closeww "
+(ww" #
+)ww# $
+;ww$ %
+}xx 
+}yy 	
+private{{ 
+static{{ 
+void{{ 
+CloseWindow{{ '
+({{' (
+object{{( .
+	parameter{{/ 8
+){{8 9
+{|| 	
+if}} 
+(}} 
+	parameter}} 
+is}} 
+Window}} #
+window}}$ *
+)}}* +
+{~~ 
+window 
+. 
+Close 
+( 
+) 
+; 
 }
-ÖÖ> ?
-"
-ÖÖ? @
-)
-ÖÖ@ A
-;
-ÖÖA B
+ÄÄ 
 }
-ÜÜ 
-finally
-áá 
-{
-àà 
-if
-ââ 
-(
-ââ 
-!
-ââ 
-success
-ââ 
-&&
-ââ 
-client
-ââ  &
-.
-ââ& '
-State
-ââ' ,
-!=
-ââ- / 
-CommunicationState
-ââ0 B
-.
-ââB C
-Closed
-ââC I
-)
-ââI J
-{
-ää 
-client
-ãã 
-.
-ãã 
-Abort
-ãã  
-(
-ãã  !
-)
-ãã! "
-;
-ãã" #
+ÅÅ 	
 }
-åå 
-}
-çç 
-}
-éé 	
-private
-êê 
-static
-êê 
-void
-êê 
-	OpenLobby
-êê %
-(
-êê% &
-object
-êê& ,
-	parameter
-êê- 6
-)
-êê6 7
-{
-ëë 	
-if
-íí 
-(
-íí 
-	parameter
-íí 
-is
-íí 
-Window
-íí #
-loginWindow
-íí$ /
-)
-íí/ 0
-{
-ìì 
-loginWindow
-îî 
-.
-îî 
-Close
-îî !
-(
-îî! "
-)
-îî" #
-;
-îî# $
-}
-ïï 
-var
-óó 
-	lobbyView
-óó 
-=
-óó 
-new
-óó 
-	LobbyView
-óó  )
-(
-óó) *
-)
-óó* +
-;
-óó+ ,
-	lobbyView
-òò 
-.
-òò 
-Show
-òò 
-(
-òò 
-)
-òò 
-;
-òò 
-}
-ôô 	
-private
-õõ 
-static
-õõ 
-void
-õõ  
-ExecuteCloseWindow
-õõ .
-(
-õõ. /
-object
-õõ/ 5
-	parameter
-õõ6 ?
-)
-õõ? @
-{
-úú 	
-if
-ùù 
-(
-ùù 
-	parameter
-ùù 
-is
-ùù 
-Window
-ùù #
-)
-ùù# $
-{
-ûû 
-Application
-üü 
-.
-üü 
-Current
-üü #
-.
-üü# $
-Shutdown
-üü$ ,
-(
-üü, -
-)
-üü- .
-;
-üü. /
-}
-†† 
-}
-°° 	
-private
-££ 
-static
-££ 
-void
-££ #
-ExecuteMaximizeWindow
-££ 1
-(
-££1 2
-object
-££2 8
-	parameter
-££9 B
-)
-££B C
-{
-§§ 	
-if
-•• 
-(
-•• 
-	parameter
-•• 
-is
-•• 
-Window
-•• #
-window
-••$ *
-)
-••* +
-{
-¶¶ 
-window
-ßß 
-.
-ßß 
-WindowState
-ßß "
-=
-ßß# $
-window
-ßß% +
-.
-ßß+ ,
-WindowState
-ßß, 7
-==
-ßß8 :
-WindowState
-ßß; F
-.
-ßßF G
-	Maximized
-ßßG P
-?
-ßßQ R
-WindowState
-ßßS ^
-.
-ßß^ _
-Normal
-ßß_ e
-:
-ßßf g
-WindowState
-ßßh s
-.
-ßßs t
-	Maximized
-ßßt }
-;
-ßß} ~
-}
-®® 
-}
-©© 	
-private
-´´ 
-static
-´´ 
-void
-´´ #
-ExecuteMinimizeWindow
-´´ 1
-(
-´´1 2
-object
-´´2 8
-	parameter
-´´9 B
-)
-´´B C
-{
-¨¨ 	
-if
-≠≠ 
-(
-≠≠ 
-	parameter
-≠≠ 
-is
-≠≠ 
-Window
-≠≠ #
-window
-≠≠$ *
-)
-≠≠* +
-{
-ÆÆ 
-window
-ØØ 
-.
-ØØ 
-WindowState
-ØØ "
-=
-ØØ# $
-WindowState
-ØØ% 0
-.
-ØØ0 1
-	Minimized
-ØØ1 :
-;
-ØØ: ;
-}
-∞∞ 
-}
-±± 	
-private
-≥≥ 
-static
-≥≥ 
-void
-≥≥ 
-ExecuteReturn
-≥≥ )
-(
-≥≥) *
-object
-≥≥* 0
-	parameter
-≥≥1 :
-)
-≥≥: ;
-{
-¥¥ 	
-if
-µµ 
-(
-µµ 
-	parameter
-µµ 
-is
-µµ 
-Window
-µµ #
-currentWindow
-µµ$ 1
-)
-µµ1 2
-{
-∂∂ 
-var
-∑∑ 
-welcomeView
-∑∑ 
-=
-∑∑  !
-new
-∑∑" %
-WelcomeView
-∑∑& 1
-(
-∑∑1 2
-)
-∑∑2 3
-;
-∑∑3 4
-welcomeView
-∏∏ 
-.
-∏∏ 
-WindowState
-∏∏ '
-=
-∏∏( )
-WindowState
-∏∏* 5
-.
-∏∏5 6
-	Maximized
-∏∏6 ?
-;
-∏∏? @
-welcomeView
-ππ 
-.
-ππ 
-WindowStyle
-ππ '
-=
-ππ( )
-WindowStyle
-ππ* 5
-.
-ππ5 6
-None
-ππ6 :
-;
-ππ: ;
-welcomeView
-∫∫ 
-.
-∫∫ 
-
-ResizeMode
-∫∫ &
-=
-∫∫' (
-
-ResizeMode
-∫∫) 3
-.
-∫∫3 4
-NoResize
-∫∫4 <
-;
-∫∫< =
-welcomeView
-ªª 
-.
-ªª 
-Show
-ªª  
-(
-ªª  !
-)
-ªª! "
-;
-ªª" #
-currentWindow
-ºº 
-.
-ºº 
-Close
-ºº #
-(
-ºº# $
-)
-ºº$ %
-;
-ºº% &
-}
-ΩΩ 
-}
-ææ 	
-}
-øø 
-}¿¿ Â9
-úC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.cs
+ÇÇ 
+}ÉÉ Ë9
+üC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.cs
 	namespace 	
 GuessMyMessClient
  
@@ -31521,8 +42006,1503 @@ ResizeMode22' 1
 }XX 
 }YY 	
 }ZZ 
-}[[ ≈
-âC:\Users\Raul\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstrucci√≥n\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.cs
+}[[ ◊?
+ßC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs
+	namespace
+
+ 	
+GuessMyMessClient
+
+
+ 
+.
+
+ 
+	ViewModel
+
+ %
+.
+
+% &
+Lobby
+
+& +
+.
+
++ ,
+Dialogs
+
+, 3
+{ 
+internal 
+class  
+ChangeEmailViewModel '
+:( )
+ViewModelBase* 7
+{ 
+private 
+readonly 
+string 
+	_username  )
+;) *
+private 
+readonly 
+Action 
+<  
+string  &
+>& ' 
+_emailUpdateCallback( <
+;< =
+private 
+string 
+	_newEmail  
+;  !
+public 
+string 
+NewEmail 
+{ 	
+get 
+{ 
+return 
+	_newEmail  
+;  !
+} 
+set 
+{ 
+if 
+( 
+	_newEmail 
+!=  
+value! &
+)& '
+{ 
+	_newEmail 
+= 
+value  %
+;% &
+OnPropertyChanged %
+(% &
+)& '
+;' (
+} 
+} 
+}   	
+public"" 
+ICommand"" 
+ConfirmCommand"" &
+{""' (
+get"") ,
+;"", -
+}"". /
+public## 
+ICommand## 
+CloseCommand## $
+{##% &
+get##' *
+;##* +
+}##, -
+public%%  
+ChangeEmailViewModel%% #
+(%%# $
+string%%$ *
+username%%+ 3
+,%%3 4
+Action%%5 ;
+<%%; <
+string%%< B
+>%%B C
+emailUpdateCallback%%D W
+)%%W X
+{&& 	
+	_username'' 
+='' 
+username''  
+;''  ! 
+_emailUpdateCallback((  
+=((! "
+emailUpdateCallback((# 6
+;((6 7
+ConfirmCommand)) 
+=)) 
+new))  
+RelayCommand))! -
+())- .
+ExecuteConfirm)). <
+,))< =
+CanExecuteConfirm))> O
+)))O P
+;))P Q
+CloseCommand** 
+=** 
+new** 
+RelayCommand** +
+(**+ ,
+ExecuteClose**, 8
+)**8 9
+;**9 :
+}++ 	
+private-- 
+bool-- 
+CanExecuteConfirm-- &
+(--& '
+object--' -
+obj--. 1
+)--1 2
+{.. 	
+return// 
+!// 
+string// 
+.// 
+IsNullOrWhiteSpace// -
+(//- .
+NewEmail//. 6
+)//6 7
+&&//8 :
+NewEmail//; C
+.//C D
+Contains//D L
+(//L M
+$str//M P
+)//P Q
+;//Q R
+}00 	
+private22 
+async22 
+void22 
+ExecuteConfirm22 )
+(22) *
+object22* 0
+	parameter221 :
+)22: ;
+{33 	
+try44 
+{55 
+using66 
+(66 
+var66 
+client66 !
+=66" #
+new66$ '$
+UserProfileServiceClient66( @
+(66@ A
+)66A B
+)66B C
+{77 
+var88 
+result88 
+=88  
+await88! &
+client88' -
+.88- .#
+RequestChangeEmailAsync88. E
+(88E F
+	_username88F O
+,88O P
+NewEmail88Q Y
+)88Y Z
+;88Z [
+if99 
+(99 
+result99 
+.99 
+Success99 &
+)99' (
+{:: 
+
+MessageBox;; "
+.;;" #
+Show;;# '
+(;;' (
+result<< "
+.<<" #
+Message<<# *
+,<<* +
+Lang==  
+.==  !
+alertCodeSentTitle==! 3
+,==3 4
+MessageBoxButton>> ,
+.>>, -
+OK>>- /
+,>>/ 0
+MessageBoxImage?? +
+.??+ ,
+Information??, 7
+)??7 8
+;??8 9
+varAA 
+verifyVMAA $
+=AA% &
+newAA' *(
+VerifyChangesByCodeViewModelAA+ G
+(AAG H(
+VerifyChangesByCodeViewModelBB 8
+.BB8 9
+VerificationModeBB9 I
+.BBI J
+EmailBBJ O
+,BBO P
+	_usernameCC %
+,CC% &
+NewEmailDD $
+,DD$ % 
+_emailUpdateCallbackEE 0
+)FF 
+;FF 
+varHH 
+
+verifyViewHH &
+=HH' (
+newHH) ,#
+VerifyChangesByCodeViewHH- D
+{HHE F
+DataContextHHG R
+=HHS T
+verifyVMHHU ]
+}HH^ _
+;HH_ `
+ExecuteCloseJJ $
+(JJ$ %
+	parameterJJ% .
+)JJ. /
+;JJ/ 0
+
+verifyViewKK "
+.KK" #
+
+ShowDialogKK# -
+(KK- .
+)KK. /
+;KK/ 0
+}LL 
+elseMM 
+{NN 
+
+MessageBoxOO "
+.OO" #
+ShowOO# '
+(OO' (
+resultPP "
+.PP" #
+MessagePP# *
+,PP* +
+LangQQ  
+.QQ  !
+alertErrorTitleQQ! 0
+,QQ0 1
+MessageBoxButtonRR ,
+.RR, -
+OKRR- /
+,RR/ 0
+MessageBoxImageSS +
+.SS+ ,
+WarningSS, 3
+)SS3 4
+;SS4 5
+}TT 
+}UU 
+}VV 
+catchWW 
+(WW 
+FaultExceptionWW !
+
+fexGeneralWW" ,
+)WW, -
+{XX 
+
+MessageBoxYY 
+.YY 
+ShowYY 
+(YY  
+LangZZ 
+.ZZ #
+alertServerErrorMessageZZ 0
+,ZZ0 1
+Lang[[ 
+.[[ 
+alertErrorTitle[[ (
+,[[( )
+MessageBoxButton\\ $
+.\\$ %
+OK\\% '
+,\\' (
+MessageBoxImage]] #
+.]]# $
+Error]]$ )
+)]]) *
+;]]* +
+Console^^ 
+.^^ 
+	WriteLine^^ !
+(^^! "
+$"^^" $
+$str^^$ G
+{^^G H
+
+fexGeneral^^H R
+.^^R S
+Message^^S Z
+}^^Z [
+"^^[ \
+)^^\ ]
+;^^] ^
+}__ 
+catch`` 
+(`` %
+EndpointNotFoundException`` ,
+ex``- /
+)``/ 0
+{aa 
+
+MessageBoxbb 
+.bb 
+Showbb 
+(bb  
+Langcc 
+.cc '
+alertConnectionErrorMessagecc 4
+,cc4 5
+Langdd 
+.dd %
+alertConnectionErrorTitledd 2
+,dd2 3
+MessageBoxButtonee $
+.ee$ %
+OKee% '
+,ee' (
+MessageBoxImageff #
+.ff# $
+Errorff$ )
+)ff) *
+;ff* +
+Consolegg 
+.gg 
+	WriteLinegg !
+(gg! "
+$"gg" $
+$strgg$ N
+{ggN O
+exggO Q
+.ggQ R
+MessageggR Y
+}ggY Z
+"ggZ [
+)gg[ \
+;gg\ ]
+}hh 
+catchii 
+(ii 
+	Exceptionii 
+exii 
+)ii  
+{jj 
+
+MessageBoxkk 
+.kk 
+Showkk 
+(kk  
+Langll 
+.ll $
+alertUnknownErrorMessagell 1
+,ll1 2
+Langmm 
+.mm 
+alertErrorTitlemm (
+,mm( )
+MessageBoxButtonnn $
+.nn$ %
+OKnn% '
+,nn' (
+MessageBoxImageoo #
+.oo# $
+Erroroo$ )
+)oo) *
+;oo* +
+Consolepp 
+.pp 
+	WriteLinepp !
+(pp! "
+$"pp" $
+$strpp$ K
+{ppK L
+exppL N
+.ppN O
+MessageppO V
+}ppV W
+"ppW X
+)ppX Y
+;ppY Z
+}qq 
+}rr 	
+privatett 
+statictt 
+voidtt 
+ExecuteClosett (
+(tt( )
+objecttt) /
+	parametertt0 9
+)tt9 :
+{uu 	
+ifvv 
+(vv 
+	parametervv 
+isvv 
+Windowvv #
+windowvv$ *
+)vv* +
+{ww 
+windowxx 
+.xx 
+Closexx 
+(xx 
+)xx 
+;xx 
+}yy 
+}zz 	
+}{{ 
+}|| †n
+†C:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.cs
+	namespace 	
+GuessMyMessClient
+ 
+. 
+	ViewModel %
+.% &
+Lobby& +
+{ 
+public 
+
+class !
+SelectAvatarViewModel &
+:' (
+ViewModelBase) 6
+{ 
+private 
+readonly 
+int 
+_currentAvatarId -
+;- .
+public 
+event 
+Action 
+< 
+AvatarModel '
+>' (
+AvatarSelected) 7
+;7 8
+private  
+ObservableCollection $
+<$ %
+AvatarModel% 0
+>0 1
+_availableAvatars2 C
+;C D
+public  
+ObservableCollection #
+<# $
+AvatarModel$ /
+>/ 0
+AvailableAvatars1 A
+{ 	
+get 
+{ 
+return 
+_availableAvatars (
+;( )
+} 
+set 
+{   
+if!! 
+(!! 
+_availableAvatars!! %
+!=!!& (
+value!!) .
+)!!. /
+{"" 
+_availableAvatars## %
+=##& '
+value##( -
+;##- .
+OnPropertyChanged$$ %
+($$% &
+)$$& '
+;$$' (
+}%% 
+}&& 
+}'' 	
+private)) 
+AvatarModel)) 
+_selectedAvatar)) +
+;))+ ,
+public** 
+AvatarModel** 
+SelectedAvatar** )
+{++ 	
+get,, 
+{-- 
+return.. 
+_selectedAvatar.. &
+;..& '
+}// 
+set00 
+{11 
+if22 
+(22 
+_selectedAvatar22 #
+!=22$ &
+value22' ,
+)22, -
+{33 
+if44 
+(44 
+_selectedAvatar44 '
+!=44( *
+null44+ /
+)44/ 0
+{55 
+_selectedAvatar66 '
+.66' (
+
+IsSelected66( 2
+=663 4
+false665 :
+;66: ;
+}77 
+_selectedAvatar99 #
+=99$ %
+value99& +
+;99+ ,
+if;; 
+(;; 
+_selectedAvatar;; '
+!=;;( *
+null;;+ /
+);;/ 0
+{<< 
+_selectedAvatar== '
+.==' (
+
+IsSelected==( 2
+===3 4
+true==5 9
+;==9 :
+}>> 
+OnPropertyChanged?? %
+(??% &
+)??& '
+;??' (
+}@@ 
+}AA 
+}BB 	
+publicDD 
+ICommandDD #
+ConfirmSelectionCommandDD /
+{DD0 1
+getDD2 5
+;DD5 6
+}DD7 8
+publicEE 
+ICommandEE 
+CloseCommandEE $
+{EE% &
+getEE' *
+;EE* +
+}EE, -
+publicFF 
+ICommandFF #
+SelectAvatarItemCommandFF /
+{FF0 1
+getFF2 5
+;FF5 6
+}FF7 8
+publicHH !
+SelectAvatarViewModelHH $
+(HH$ %
+intHH% (
+currentAvatarIdHH) 8
+=HH9 :
+$numHH; <
+)HH< =
+{II 	
+_currentAvatarIdJJ 
+=JJ 
+currentAvatarIdJJ .
+;JJ. /
+AvailableAvatarsKK 
+=KK 
+newKK " 
+ObservableCollectionKK# 7
+<KK7 8
+AvatarModelKK8 C
+>KKC D
+(KKD E
+)KKE F
+;KKF G#
+ConfirmSelectionCommandMM #
+=MM$ %
+newMM& )
+RelayCommandMM* 6
+(MM6 7#
+ExecuteConfirmSelectionMM7 N
+,MMN O&
+CanExecuteConfirmSelectionMMP j
+)MMj k
+;MMk l
+CloseCommandNN 
+=NN 
+newNN 
+RelayCommandNN +
+(NN+ ,
+CloseWindowNN, 7
+)NN7 8
+;NN8 9#
+SelectAvatarItemCommandOO #
+=OO$ %
+newOO& )
+RelayCommandOO* 6
+(OO6 7#
+ExecuteSelectAvatarItemOO7 N
+)OON O
+;OOO P
+ifQQ 
+(QQ 
+!QQ 
+DesignerPropertiesQQ #
+.QQ# $
+GetIsInDesignModeQQ$ 5
+(QQ5 6
+newQQ6 9
+DependencyObjectQQ: J
+(QQJ K
+)QQK L
+)QQL M
+)QQM N
+{RR 
+LoadAvatarsSS 
+(SS 
+)SS 
+;SS 
+}TT 
+}UU 	
+privateWW 
+asyncWW 
+TaskWW 
+LoadAvatarsWW &
+(WW& '
+)WW' (
+{XX 	
+awaitYY 
+LoadAvatarsAsyncYY "
+(YY" #
+)YY# $
+;YY$ %
+}ZZ 	
+private\\ 
+async\\ 
+Task\\ 
+LoadAvatarsAsync\\ +
+(\\+ ,
+)\\, -
+{]] 	
+using^^ 
+(^^ 
+var^^ 
+client^^ 
+=^^ 
+new^^  #$
+UserProfileServiceClient^^$ <
+(^^< =
+)^^= >
+)^^> ?
+{__ 
+try`` 
+{aa 
+varbb 
+serverAvatarsbb %
+=bb& '
+awaitbb( -
+clientbb. 4
+.bb4 5$
+GetAvailableAvatarsAsyncbb5 M
+(bbM N
+)bbN O
+;bbO P
+vardd 
+tempAvatarsdd #
+=dd$ %
+newdd& )
+Listdd* .
+<dd. /
+AvatarModeldd/ :
+>dd: ;
+(dd; <
+)dd< =
+;dd= >
+ifee 
+(ee 
+serverAvatarsee %
+!=ee& (
+nullee) -
+)ee- .
+{ff 
+foreachgg 
+(gg  !
+vargg! $
+	avatarDtogg% .
+ingg/ 1
+serverAvatarsgg2 ?
+)gg? @
+{hh 
+tempAvatarsii '
+.ii' (
+Addii( +
+(ii+ ,
+newii, /
+AvatarModelii0 ;
+{jj 
+Idkk  "
+=kk# $
+	avatarDtokk% .
+.kk. /
+IdAvatarkk/ 7
+,kk7 8
+Namell  $
+=ll% &
+	avatarDtoll' 0
+.ll0 1
+
+AvatarNamell1 ;
+,ll; <
+	ImageDatamm  )
+=mm* +
+	avatarDtomm, 5
+.mm5 6
+
+AvatarDatamm6 @
+,mm@ A
+ImageSourcenn  +
+=nn, -
+ConvertByteToImagenn. @
+(nn@ A
+	avatarDtonnA J
+.nnJ K
+
+AvatarDatannK U
+)nnU V
+}oo 
+)oo 
+;oo 
+}pp 
+}qq 
+AvailableAvatarsss $
+=ss% &
+newss' * 
+ObservableCollectionss+ ?
+<ss? @
+AvatarModelss@ K
+>ssK L
+(ssL M
+tempAvatarsssM X
+)ssX Y
+;ssY Z
+SelectedAvataruu "
+=uu# $
+AvailableAvatarsuu% 5
+.uu5 6
+FirstOrDefaultuu6 D
+(uuD E
+auuE F
+=>uuG I
+auuJ K
+.uuK L
+IduuL N
+==uuO Q
+_currentAvatarIduuR b
+)uub c
+??vv% '
+AvailableAvatarsvv( 8
+.vv8 9
+FirstOrDefaultvv9 G
+(vvG H
+)vvH I
+;vvI J
+}ww 
+catchxx 
+(xx 
+FaultExceptionxx %
+
+fexGeneralxx& 0
+)xx0 1
+{yy 
+
+MessageBoxzz 
+.zz 
+Showzz #
+(zz# $
+Lang{{ 
+.{{ &
+alertAvatarLoadServerError{{ 7
+,{{7 8
+Lang|| 
+.|| 
+alertErrorTitle|| ,
+,||, -
+MessageBoxButton}} (
+.}}( )
+OK}}) +
+,}}+ ,
+MessageBoxImage~~ '
+.~~' (
+Error~~( -
+)~~- .
+;~~. /
+Console 
+. 
+	WriteLine %
+(% &
+$"& (
+$str( C
+{C D
+
+fexGeneralD N
+.N O
+MessageO V
+}V W
+"W X
+)X Y
+;Y Z
+}
+ÄÄ 
+catch
+ÅÅ 
+(
+ÅÅ '
+EndpointNotFoundException
+ÅÅ 0
+ex
+ÅÅ1 3
+)
+ÅÅ3 4
+{
+ÇÇ 
+
+MessageBox
+ÉÉ 
+.
+ÉÉ 
+Show
+ÉÉ #
+(
+ÉÉ# $
+Lang
+ÑÑ 
+.
+ÑÑ )
+alertConnectionErrorMessage
+ÑÑ 8
+,
+ÑÑ8 9
+Lang
+ÖÖ 
+.
+ÖÖ '
+alertConnectionErrorTitle
+ÖÖ 6
+,
+ÖÖ6 7
+MessageBoxButton
+ÜÜ (
+.
+ÜÜ( )
+OK
+ÜÜ) +
+,
+ÜÜ+ ,
+MessageBoxImage
+áá '
+.
+áá' (
+Error
+áá( -
+)
+áá- .
+;
+áá. /
+Console
+àà 
+.
+àà 
+	WriteLine
+àà %
+(
+àà% &
+$"
+àà& (
+$str
+àà( J
+{
+ààJ K
+ex
+ààK M
+.
+ààM N
+Message
+ààN U
+}
+ààU V
+"
+ààV W
+)
+ààW X
+;
+ààX Y
+}
+ââ 
+catch
+ää 
+(
+ää 
+	Exception
+ää  
+ex
+ää! #
+)
+ää# $
+{
+ãã 
+
+MessageBox
+åå 
+.
+åå 
+Show
+åå #
+(
+åå# $
+Lang
+çç 
+.
+çç )
+alertAvatarLoadUnknownError
+çç 8
+,
+çç8 9
+Lang
+éé 
+.
+éé 
+alertErrorTitle
+éé ,
+,
+éé, -
+MessageBoxButton
+èè (
+.
+èè( )
+OK
+èè) +
+,
+èè+ ,
+MessageBoxImage
+êê '
+.
+êê' (
+Error
+êê( -
+)
+êê- .
+;
+êê. /
+Console
+ëë 
+.
+ëë 
+	WriteLine
+ëë %
+(
+ëë% &
+$"
+ëë& (
+$str
+ëë( J
+{
+ëëJ K
+ex
+ëëK M
+.
+ëëM N
+Message
+ëëN U
+}
+ëëU V
+"
+ëëV W
+)
+ëëW X
+;
+ëëX Y
+}
+íí 
+}
+ìì 
+}
+îî 	
+private
+ññ 
+void
+ññ %
+ExecuteSelectAvatarItem
+ññ ,
+(
+ññ, -
+object
+ññ- 3
+	parameter
+ññ4 =
+)
+ññ= >
+{
+óó 	
+if
+òò 
+(
+òò 
+	parameter
+òò 
+is
+òò 
+AvatarModel
+òò (
+avatar
+òò) /
+)
+òò/ 0
+{
+ôô 
+SelectedAvatar
+öö 
+=
+öö  
+avatar
+öö! '
+;
+öö' (
+}
+õõ 
+}
+úú 	
+private
+ûû 
+bool
+ûû (
+CanExecuteConfirmSelection
+ûû /
+(
+ûû/ 0
+object
+ûû0 6
+	parameter
+ûû7 @
+)
+ûû@ A
+{
+üü 	
+return
+†† 
+SelectedAvatar
+†† !
+!=
+††" $
+null
+††% )
+;
+††) *
+}
+°° 	
+private
+££ 
+void
+££ %
+ExecuteConfirmSelection
+££ ,
+(
+££, -
+object
+££- 3
+	parameter
+££4 =
+)
+££= >
+{
+§§ 	
+AvatarSelected
+•• 
+?
+•• 
+.
+•• 
+Invoke
+•• "
+(
+••" #
+SelectedAvatar
+••# 1
+)
+••1 2
+;
+••2 3
+CloseWindow
+¶¶ 
+(
+¶¶ 
+	parameter
+¶¶ !
+)
+¶¶! "
+;
+¶¶" #
+}
+ßß 	
+private
+©© 
+void
+©© 
+CloseWindow
+©©  
+(
+©©  !
+object
+©©! '
+	parameter
+©©( 1
+)
+©©1 2
+{
+™™ 	
+if
+´´ 
+(
+´´ 
+	parameter
+´´ 
+is
+´´ 
+Window
+´´ #
+window
+´´$ *
+)
+´´* +
+{
+¨¨ 
+window
+≠≠ 
+.
+≠≠ 
+Close
+≠≠ 
+(
+≠≠ 
+)
+≠≠ 
+;
+≠≠ 
+}
+ÆÆ 
+else
+ØØ 
+{
+∞∞ 
+var
+±± 
+activeWindow
+±±  
+=
+±±! "
+Application
+±±# .
+.
+±±. /
+Current
+±±/ 6
+.
+±±6 7
+Windows
+±±7 >
+.
+±±> ?
+OfType
+±±? E
+<
+±±E F
+Window
+±±F L
+>
+±±L M
+(
+±±M N
+)
+±±N O
+.
+±±O P
+FirstOrDefault
+±±P ^
+(
+±±^ _
+w
+±±_ `
+=>
+±±a c
+w
+±±d e
+.
+±±e f
+DataContext
+±±f q
+==
+±±r t
+this
+±±u y
+)
+±±y z
+;
+±±z {
+activeWindow
+≤≤ 
+?
+≤≤ 
+.
+≤≤ 
+Close
+≤≤ #
+(
+≤≤# $
+)
+≤≤$ %
+;
+≤≤% &
+}
+≥≥ 
+}
+¥¥ 	
+public
+∂∂ 
+static
+∂∂ 
+BitmapImage
+∂∂ ! 
+ConvertByteToImage
+∂∂" 4
+(
+∂∂4 5
+byte
+∂∂5 9
+[
+∂∂9 :
+]
+∂∂: ;
+
+imageBytes
+∂∂< F
+)
+∂∂F G
+{
+∑∑ 	
+if
+∏∏ 
+(
+∏∏ 
+
+imageBytes
+∏∏ 
+==
+∏∏ 
+null
+∏∏ "
+||
+∏∏# %
+
+imageBytes
+∏∏& 0
+.
+∏∏0 1
+Length
+∏∏1 7
+==
+∏∏8 :
+$num
+∏∏; <
+)
+∏∏< =
+{
+ππ 
+return
+∫∫ 
+null
+∫∫ 
+;
+∫∫ 
+}
+ªª 
+var
+ΩΩ 
+image
+ΩΩ 
+=
+ΩΩ 
+new
+ΩΩ 
+BitmapImage
+ΩΩ '
+(
+ΩΩ' (
+)
+ΩΩ( )
+;
+ΩΩ) *
+using
+ææ 
+(
+ææ 
+var
+ææ 
+mem
+ææ 
+=
+ææ 
+new
+ææ  
+MemoryStream
+ææ! -
+(
+ææ- .
+
+imageBytes
+ææ. 8
+)
+ææ8 9
+)
+ææ9 :
+{
+øø 
+mem
+¿¿ 
+.
+¿¿ 
+Position
+¿¿ 
+=
+¿¿ 
+$num
+¿¿  
+;
+¿¿  !
+image
+¡¡ 
+.
+¡¡ 
+	BeginInit
+¡¡ 
+(
+¡¡  
+)
+¡¡  !
+;
+¡¡! "
+image
+¬¬ 
+.
+¬¬ 
+CreateOptions
+¬¬ #
+=
+¬¬$ %!
+BitmapCreateOptions
+¬¬& 9
+.
+¬¬9 :!
+PreservePixelFormat
+¬¬: M
+;
+¬¬M N
+image
+√√ 
+.
+√√ 
+CacheOption
+√√ !
+=
+√√" #
+BitmapCacheOption
+√√$ 5
+.
+√√5 6
+OnLoad
+√√6 <
+;
+√√< =
+image
+ƒƒ 
+.
+ƒƒ 
+	UriSource
+ƒƒ 
+=
+ƒƒ  !
+null
+ƒƒ" &
+;
+ƒƒ& '
+image
+≈≈ 
+.
+≈≈ 
+StreamSource
+≈≈ "
+=
+≈≈# $
+mem
+≈≈% (
+;
+≈≈( )
+image
+∆∆ 
+.
+∆∆ 
+EndInit
+∆∆ 
+(
+∆∆ 
+)
+∆∆ 
+;
+∆∆  
+}
+«« 
+image
+»» 
+.
+»» 
+Freeze
+»» 
+(
+»» 
+)
+»» 
+;
+»» 
+return
+…… 
+image
+…… 
+;
+…… 
+}
+   	
+}
+ÀÀ 
+}ÃÃ »
+åC:\Users\Gabriela\Desktop\Rodrigo\5¬∞Semestre\Tecnolog√≠asParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.cs
 	namespace		 	
 GuessMyMessClient		
  

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SonarProjectConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sonarsource.com/msbuild/analyzer/2021/1">
-  <AnalysisConfigPath>C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\conf\SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
-  <ProjectPath>C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\GuessMyMessClient\GuessMyMessClient.csproj</ProjectPath>
-  <FilesToAnalyzePath>C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\conf\1\FilesToAnalyze.txt</FilesToAnalyzePath>
-  <OutPath>C:\Users\Raul\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstrucción\GuessMyMessClientProyect\.sonarqube\out\1</OutPath>
+  <AnalysisConfigPath>C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\.sonarqube\conf\SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
+  <ProjectPath>C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\GuessMyMessClient.csproj</ProjectPath>
+  <FilesToAnalyzePath>C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\.sonarqube\conf\1\FilesToAnalyze.txt</FilesToAnalyzePath>
+  <OutPath>C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\.sonarqube\out\1</OutPath>
   <ProjectType>Product</ProjectType>
 </SonarProjectConfig>
