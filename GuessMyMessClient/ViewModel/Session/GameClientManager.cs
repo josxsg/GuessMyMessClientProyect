@@ -222,32 +222,6 @@ namespace GuessMyMessClient.ViewModel.Session
             });
         }
 
-        public void OnPlayerGuessedCorrectly(string username)
-        {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Callback: OnPlayerGuessedCorrectly - {username}");
-                PlayerGuessedCorrectly?.Invoke(this, new PlayerGuessedEventArgs { Username = username });
-            });
-        }
-
-        public void OnTimeUpdate(int remainingSeconds)
-        {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                TimeUpdate?.Invoke(this, new TimeUpdateEventArgs { RemainingSeconds = remainingSeconds });
-            });
-        }
-
-        public void OnRoundEnd(PlayerScoreDto[] roundScores, string correctWord)
-        {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Callback: OnRoundEnd - The word was {correctWord}");
-                RoundEnd?.Invoke(this, new RoundEndEventArgs { RoundScores = roundScores, CorrectWord = correctWord });
-            });
-        }
-
         public void OnGameEnd(PlayerScoreDto[] finalScores)
         {
             Application.Current?.Dispatcher.Invoke(() =>
