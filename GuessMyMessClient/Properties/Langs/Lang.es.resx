@@ -822,4 +822,7 @@
   <data name="alertChangeLanguageError" xml:space="preserve">
     <value>No se pudo cambiar el idioma. Por favor, inténtelo de nuevo más tarde.</value>
   </data>
+  <data name="answersScreenLbAnswers" xml:space="preserve">
+    <value>Respuestas</value>
+  </data>
 </root>

@@ -916,6 +916,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Answers.
+        /// </summary>
+        public static string answersScreenLbAnswers {
+            get {
+                return ResourceManager.GetString("answersScreenLbAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a End of responses. Awaiting scores....
         /// </summary>
         public static string answersScreenLbEndOfAnswers {
