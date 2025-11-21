@@ -53,11 +53,17 @@
   <wsdl:message name="IMatchmakingService_GetPublicMatches_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPublicMatchesResponse" />
   </wsdl:message>
+  <wsdl:message name="IMatchmakingService_GetPublicMatches_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q1:ServiceFaultDto" />
+  </wsdl:message>
   <wsdl:message name="IMatchmakingService_CreateMatch_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateMatch" />
   </wsdl:message>
   <wsdl:message name="IMatchmakingService_CreateMatch_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchmakingService_CreateMatch_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q2:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IMatchmakingService_JoinPublicMatch_InputMessage">
     <wsdl:part name="parameters" element="tns:JoinPublicMatch" />
@@ -67,6 +73,9 @@
   </wsdl:message>
   <wsdl:message name="IMatchmakingService_JoinPrivateMatch_OutputMessage">
     <wsdl:part name="parameters" element="tns:JoinPrivateMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchmakingService_JoinPrivateMatch_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q3:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IMatchmakingService_InviteToMatch_InputMessage">
     <wsdl:part name="parameters" element="tns:InviteToMatch" />
@@ -96,10 +105,12 @@
     <wsdl:operation name="GetPublicMatches">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchmakingService/GetPublicMatches" message="tns:IMatchmakingService_GetPublicMatches_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchmakingService/GetPublicMatchesResponse" message="tns:IMatchmakingService_GetPublicMatches_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMatchmakingService/GetPublicMatchesServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IMatchmakingService_GetPublicMatches_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchmakingService/CreateMatch" message="tns:IMatchmakingService_CreateMatch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchmakingService/CreateMatchResponse" message="tns:IMatchmakingService_CreateMatch_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMatchmakingService/CreateMatchServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IMatchmakingService_CreateMatch_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="JoinPublicMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchmakingService/JoinPublicMatch" message="tns:IMatchmakingService_JoinPublicMatch_InputMessage" />
@@ -107,6 +118,7 @@
     <wsdl:operation name="JoinPrivateMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchmakingService/JoinPrivateMatch" message="tns:IMatchmakingService_JoinPrivateMatch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchmakingService/JoinPrivateMatchResponse" message="tns:IMatchmakingService_JoinPrivateMatch_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMatchmakingService/JoinPrivateMatchServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IMatchmakingService_JoinPrivateMatch_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="InviteToMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchmakingService/InviteToMatch" message="tns:IMatchmakingService_InviteToMatch_InputMessage" />
@@ -151,6 +163,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="CreateMatch">
       <soap12:operation soapAction="http://tempuri.org/IMatchmakingService/CreateMatch" style="document" />
@@ -160,6 +175,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="JoinPublicMatch">
       <soap12:operation soapAction="http://tempuri.org/IMatchmakingService/JoinPublicMatch" style="document" />
@@ -175,6 +193,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="InviteToMatch">
       <soap12:operation soapAction="http://tempuri.org/IMatchmakingService/InviteToMatch" style="document" />
@@ -219,7 +240,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8734/GuessMyMessServer/Matchmaking/</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>Gaby\Gabriela</Upn>
+          <Upn>DESKTOP-MBESJIN\zenbook i5</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

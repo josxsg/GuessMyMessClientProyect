@@ -393,6 +393,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\AuthService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AuthService\GuessMyMessClient.AuthService.OperationResultDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -454,6 +457,9 @@
     <None Include="Connected Services\MatchmakingService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ProfileService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -471,6 +477,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProfileService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SocialService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\SocialService\GuessMyMessClient.SocialService.DirectMessageDto.datasource">

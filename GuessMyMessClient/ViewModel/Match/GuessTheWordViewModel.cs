@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Ink;
 using System.Windows.Input;
 using GuessMyMessClient.GameService;
+using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.ViewModel.Support;
+using ServiceGameFault = GuessMyMessClient.GameService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -14,14 +17,24 @@ namespace GuessMyMessClient.ViewModel.Match
         private StrokeCollection _drawingToGuess;
         public StrokeCollection DrawingToGuess
         {
-            get { return _drawingToGuess; }
-            set { _drawingToGuess = value; OnPropertyChanged(); }
+            get
+            {
+                return _drawingToGuess;
+            }
+            set
+            {
+                _drawingToGuess = value; 
+                OnPropertyChanged();
+            }
         }
 
         private string _userGuess;
         public string UserGuess
         {
-            get { return _userGuess; }
+            get
+            {
+                return _userGuess;
+            }
             set
             {
                 _userGuess = value;
@@ -52,7 +65,11 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             if (drawing == null)
             {
-                MessageBox.Show("Error: No drawing received to guess.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertNoDrawingReceived,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 return;
             }
 
@@ -81,7 +98,11 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Critical error loading drawing: {ex.Message}");
+                MessageBox.Show(
+                    $"{Lang.alertDrawingLoadError}\n{ex.Message}",
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 DrawingToGuess = new StrokeCollection();
             }
         }
@@ -98,39 +119,64 @@ namespace GuessMyMessClient.ViewModel.Match
             try
             {
                 GameClientManager.Instance.SubmitGuess(UserGuess, _drawingId);
-                UserGuess = "Answer sent! Waiting for other players...";
+                UserGuess = Lang.statusAnswerSent;
                 OnPropertyChanged(nameof(UserGuess));
+            }
+            catch (FaultException<ServiceGameFault> fex)
+            {
+                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                _guessSent = false;
+            }
+            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            {
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error sending answer: {ex.Message}");
+                MessageBox.Show(
+                    $"{Lang.alertGuessSubmitError}\n{ex.Message}",
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 _guessSent = false;
             }
         }
 
         private void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
         {
-            string myUsername = GameClientManager.Instance.GetCurrentUsername();
-            if (e.NextDrawing.OwnerUsername == myUsername)
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                ServiceLocator.Navigation.NavigateToWaitingForGuesses(e.NextDrawing.WordKey);
-            }
-            else
-            {
-                ServiceLocator.Navigation.NavigateToNextGuess(e.NextDrawing);
-            }
+                Cleanup();
+                string myUsername = GameClientManager.Instance.GetCurrentUsername();
+
+                if (e.NextDrawing.OwnerUsername == myUsername)
+                {
+                    ServiceLocator.Navigation.NavigateToWaitingForGuesses(e.NextDrawing.WordKey);
+                }
+                else
+                {
+                    ServiceLocator.Navigation.NavigateToNextGuess(e.NextDrawing);
+                }
+            });
         }
 
         private void OnAnswersPhaseStart_Handler(object sender, AnswersPhaseStartEventArgs e)
         {
-            Cleanup();
-            ServiceLocator.Navigation.NavigateToAnswers(e.AllDrawings, e.AllGuesses, e.AllScores);
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Cleanup();
+                ServiceLocator.Navigation.NavigateToAnswers(e.AllDrawings, e.AllGuesses, e.AllScores);
+            });
         }
 
         private void OnConnectionLost_Handler()
         {
-            Cleanup();
-            ServiceLocator.Navigation.CloseCurrentGameWindow();
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                Cleanup();
+                ServiceLocator.Navigation.CloseCurrentGameWindow();
+            });
         }
 
         private void Cleanup()

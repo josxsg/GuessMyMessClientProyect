@@ -1,16 +1,19 @@
-﻿using GuessMyMessClient.ViewModel.Support;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using System.IO;
-using GuessMyMessClient.ViewModel.Session;
-using System.Linq;
+using GuessMyMessClient.GameService;
+using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.View.Match;
+using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -28,28 +31,52 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _wordToDraw;
         public string WordToDraw
         {
-            get { return _wordToDraw; }
-            set { _wordToDraw = value; OnPropertyChanged(); }
+            get
+            {
+                return _wordToDraw;
+            }
+            set
+            {
+                _wordToDraw = value; 
+                OnPropertyChanged();
+            }
         }
 
         private StrokeCollection _strokes;
         public StrokeCollection Strokes
         {
-            get { return _strokes; }
-            set { _strokes = value; OnPropertyChanged(); }
+            get
+            {
+                return _strokes;
+            }
+            set
+            {
+                _strokes = value; 
+                OnPropertyChanged();
+            }
         }
 
         private DrawingAttributes _inkAttributes;
         public DrawingAttributes InkAttributes
         {
-            get { return _inkAttributes; }
-            set { _inkAttributes = value; OnPropertyChanged(); }
+            get
+            {
+                return _inkAttributes;
+            }
+            set
+            {
+                _inkAttributes = value; 
+                OnPropertyChanged();
+            }
         }
 
         private double _brushThickness;
         public double BrushThickness
         {
-            get { return _brushThickness; }
+            get
+            {
+                return _brushThickness;
+            }
             set
             {
                 _brushThickness = value;
@@ -65,16 +92,30 @@ namespace GuessMyMessClient.ViewModel.Match
         private InkCanvasEditingMode _editingMode;
         public InkCanvasEditingMode EditingMode
         {
-            get { return _editingMode; }
-            set { _editingMode = value; OnPropertyChanged(); }
+            get
+            {
+                return _editingMode;
+            }
+            set
+            {
+                _editingMode = value; 
+                OnPropertyChanged();
+            }
         }
 
         private Color _currentColor;
         private DrawingTool _currentTool;
         public DrawingTool CurrentTool
         {
-            get { return _currentTool; }
-            set { _currentTool = value; OnPropertyChanged(); }
+            get
+            {
+                return _currentTool;
+            }
+            set
+            {
+                _currentTool = value; 
+                OnPropertyChanged();
+            }
         }
 
         private Point _startPoint;
@@ -84,8 +125,15 @@ namespace GuessMyMessClient.ViewModel.Match
         private int _remainingTime;
         public int RemainingTime
         {
-            get { return _remainingTime; }
-            set { _remainingTime = value; OnPropertyChanged(); }
+            get
+            {
+                return _remainingTime;
+            }
+            set
+            {
+                _remainingTime = value; 
+                OnPropertyChanged();
+            }
         }
 
         public ICommand SelectColorCommand { get; }
@@ -152,22 +200,31 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             EditingMode = InkCanvasEditingMode.None;
             SaveDrawing();
-            Console.WriteLine("Time is up. Waiting for other players...");
         }
 
         private void SaveDrawing()
         {
             try
             {
-                Console.WriteLine("Processing drawing before sending...");
                 byte[] drawingBytes = ConvertStrokesToByteArray();
                 GameClientManager.Instance.SubmitDrawing(drawingBytes);
-                Console.WriteLine("Drawing successfully sent to the server!");
                 EditingMode = InkCanvasEditingMode.None;
+            }
+            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while sending your drawing: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    $"{Lang.alertDrawingSubmitError}\n{ex.Message}",
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -196,22 +253,18 @@ namespace GuessMyMessClient.ViewModel.Match
                     EditingMode = InkCanvasEditingMode.Ink;
                     InkAttributes.Color = _currentColor;
                     break;
-
                 case "Eraser":
                     CurrentTool = DrawingTool.Eraser;
                     EditingMode = InkCanvasEditingMode.EraseByPoint;
                     break;
-
                 case "Triangle":
                     CurrentTool = DrawingTool.Triangle;
                     EditingMode = InkCanvasEditingMode.None;
                     break;
-
                 case "Circle":
                     CurrentTool = DrawingTool.Circle;
                     EditingMode = InkCanvasEditingMode.None;
                     break;
-
                 case "Square":
                     CurrentTool = DrawingTool.Square;
                     EditingMode = InkCanvasEditingMode.None;
@@ -221,7 +274,10 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void StartShape(Point position)
         {
-            if (CurrentTool == DrawingTool.Pencil || CurrentTool == DrawingTool.Eraser) return;
+            if (CurrentTool == DrawingTool.Pencil || CurrentTool == DrawingTool.Eraser)
+            {
+                return;
+            }
 
             _startPoint = position;
             StylusPointCollection points = new StylusPointCollection(new Point[] { position });
@@ -235,7 +291,10 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void UpdateShape(Point currentPosition)
         {
-            if (_currentShapeStroke == null) return;
+            if (_currentShapeStroke == null)
+            {
+                return;
+            }
 
             StylusPointCollection newPoints = null;
 
@@ -309,13 +368,20 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private byte[] ConvertStrokesToByteArray()
         {
-            using (MemoryStream ms = new MemoryStream())
+            try
             {
-                if (Strokes != null && Strokes.Count > 0)
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    Strokes.Save(ms);
-                    return ms.ToArray();
+                    if (Strokes != null && Strokes.Count > 0)
+                    {
+                        Strokes.Save(ms);
+                        return ms.ToArray();
+                    }
+                    return new byte[0];
                 }
+            }
+            catch
+            {
                 return new byte[0];
             }
         }
@@ -328,22 +394,34 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnGuessingPhaseStart_FromServer(object sender, GuessingPhaseStartEventArgs e)
         {
-            var drawing = e.Drawing;
-            string myUsername = GameClientManager.Instance.GetCurrentUsername();
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var drawing = e.Drawing;
+                string myUsername = SessionManager.Instance.CurrentUsername;
 
-            if (drawing.OwnerUsername == myUsername)
-            {
-                ServiceLocator.Navigation.NavigateToWaitingForGuesses(drawing.WordKey);
-            }
-            else
-            {
-                ServiceLocator.Navigation.NavigateToGuess(drawing);
-            }
+                if (drawing.OwnerUsername == myUsername)
+                {
+                    ServiceLocator.Navigation.NavigateToWaitingForGuesses(drawing.WordKey);
+                }
+                else
+                {
+                    ServiceLocator.Navigation.NavigateToGuess(drawing);
+                }
+            });
         }
 
         private void OnConnectionLost()
         {
-            Application.Current.Dispatcher.Invoke(CloseCurrentWindow);
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                CloseCurrentWindow();
+            });
         }
 
         private void UnsubscribeFromGameEvents()
@@ -366,18 +444,26 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private static void ExecuteCloseWindow(object parameter)
         {
-            if (parameter is Window) Application.Current.Shutdown();
+            if (parameter is Window)
+            {
+                Application.Current.Shutdown();
+            }
         }
 
         private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
+            {
                 window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            }
         }
 
         private static void ExecuteMinimizeWindow(object parameter)
         {
-            if (parameter is Window window) window.WindowState = WindowState.Minimized;
+            if (parameter is Window window)
+            {
+                window.WindowState = WindowState.Minimized;
+            }
         }
     }
 }

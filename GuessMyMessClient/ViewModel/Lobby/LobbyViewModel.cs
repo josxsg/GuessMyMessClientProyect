@@ -18,6 +18,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
+using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -37,12 +38,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public UserProfileDto UserProfileData
         {
-            get { return _userProfileData; }
+            get
+            {
+                return _userProfileData;
+            }
             set
             {
                 if (_userProfileData != value)
                 {
-                    _userProfileData = value;
+                    _userProfileData = value; 
                     OnPropertyChanged();
                 }
             }
@@ -50,12 +54,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public string Username
         {
-            get { return _username; }
+            get
+            {
+                return _username;
+            }
             set
             {
                 if (_username != value)
                 {
-                    _username = value;
+                    _username = value; 
                     OnPropertyChanged();
                 }
             }
@@ -63,12 +70,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public BitmapImage UserAvatar
         {
-            get { return _userAvatar; }
+            get
+            {
+                return _userAvatar;
+            }
             set
             {
                 if (_userAvatar != value)
                 {
-                    _userAvatar = value;
+                    _userAvatar = value; 
                     OnPropertyChanged();
                 }
             }
@@ -76,12 +86,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public bool IsProfilePopupOpen
         {
-            get { return _isProfilePopupOpen; }
+            get
+            {
+                return _isProfilePopupOpen;
+            }
             set
             {
                 if (_isProfilePopupOpen != value)
                 {
-                    _isProfilePopupOpen = value;
+                    _isProfilePopupOpen = value; 
                     OnPropertyChanged();
                 }
             }
@@ -89,12 +102,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public ProfileViewModel ProfileViewModel
         {
-            get { return _profileViewModel; }
+            get
+            {
+                return _profileViewModel;
+            }
             set
             {
                 if (_profileViewModel != value)
                 {
-                    _profileViewModel = value;
+                    _profileViewModel = value; 
                     OnPropertyChanged();
                 }
             }
@@ -102,12 +118,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public bool IsFriendsPopupOpen
         {
-            get { return _isFriendsPopupOpen; }
+            get
+            {
+                return _isFriendsPopupOpen;
+            }
             set
             {
                 if (_isFriendsPopupOpen != value)
                 {
-                    _isFriendsPopupOpen = value;
+                    _isFriendsPopupOpen = value; 
                     OnPropertyChanged();
                 }
             }
@@ -115,12 +134,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public FriendsViewModel FriendsViewModel
         {
-            get { return _friendsViewModel; }
+            get
+            {
+                return _friendsViewModel;
+            }
             set
             {
                 if (_friendsViewModel != value)
                 {
-                    _friendsViewModel = value;
+                    _friendsViewModel = value; 
                     OnPropertyChanged();
                 }
             }
@@ -128,12 +150,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public bool IsConfigurationPopupOpen
         {
-            get { return _isConfigurationPopupOpen; }
+            get
+            {
+                return _isConfigurationPopupOpen;
+            }
             set
             {
                 if (_isConfigurationPopupOpen != value)
                 {
-                    _isConfigurationPopupOpen = value;
+                    _isConfigurationPopupOpen = value; 
                     OnPropertyChanged();
                 }
             }
@@ -141,12 +166,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public ConfigurationViewModel ConfigurationViewModel
         {
-            get { return _configurationViewModel; }
+            get
+            {
+                return _configurationViewModel;
+            }
             set
             {
                 if (_configurationViewModel != value)
                 {
-                    _configurationViewModel = value;
+                    _configurationViewModel = value; 
                     OnPropertyChanged();
                 }
             }
@@ -154,12 +182,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public bool IsChatPopupOpen
         {
-            get { return _isChatPopupOpen; }
+            get
+            {
+                return _isChatPopupOpen;
+            }
             set
             {
                 if (_isChatPopupOpen != value)
                 {
-                    _isChatPopupOpen = value;
+                    _isChatPopupOpen = value; 
                     OnPropertyChanged();
                 }
             }
@@ -167,12 +198,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public DirectMessageViewModel DirectMessageViewModel
         {
-            get { return _directMessageViewModel; }
+            get
+            {
+                return _directMessageViewModel;
+            }
             set
             {
                 if (_directMessageViewModel != value)
                 {
-                    _directMessageViewModel = value;
+                    _directMessageViewModel = value; 
                     OnPropertyChanged();
                 }
             }
@@ -202,6 +236,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
 
+            InitializeSocialFeatures();
+            Task.Run(() => LoadDataOnEntry());
+        }
+
+        private void InitializeSocialFeatures()
+        {
             try
             {
                 SocialClientManager.Instance.Initialize();
@@ -211,15 +251,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    string.Format(Lang.alertSocialServiceInitError, ex.Message),
-                    Lang.alertCriticalErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                MessageBox.Show(string.Format(Lang.alertSocialServiceInitError, ex.Message), Lang.alertCriticalErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
                 Console.WriteLine($"Error inicializando SocialClientManager: {ex.Message}");
             }
-
-            LoadDataOnEntry();
         }
 
         private async Task LoadDataOnEntry()
@@ -227,60 +261,189 @@ namespace GuessMyMessClient.ViewModel.Lobby
             await LoadUserProfileAsync();
         }
 
+        private async Task LoadUserProfileAsync()
+        {
+            if (!SessionManager.Instance.IsLoggedIn)
+            {
+                return;
+            }
+
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
+            try
+            {
+                UserProfileDto profileData = await client.GetUserProfileAsync(SessionManager.Instance.CurrentUsername);
+
+                if (profileData == null)
+                {
+                    ShowError(Lang.alertProfileLoadError);
+                    return;
+                }
+
+                var allAvatars = await client.GetAvailableAvatarsAsync();
+
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    UserProfileData = profileData;
+                    Username = profileData.Username;
+                    ProfileViewModel = new ProfileViewModel(UserProfileData);
+
+                    if (allAvatars != null)
+                    {
+                        var userAvatarDto = allAvatars.FirstOrDefault(a => a.IdAvatar == profileData.AvatarId);
+                        if (userAvatarDto?.AvatarData != null)
+                        {
+                            UserAvatar = ConvertByteToImage(userAvatarDto.AvatarData);
+                        }
+                    }
+                });
+
+                client.Close();
+                isSuccess = true;
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                ShowError(fex.Detail.Message);
+            }
+            catch (FaultException)
+            {
+                ShowError(Lang.alertProfileLoadServerError);
+            }
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
+            {
+                ShowError(Lang.alertConnectionErrorMessage);
+            }
+            catch
+            {
+                ShowError(Lang.alertProfileLoadError);
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
+            }
+        }
+
+        private async void OnAvatarSelected(AvatarModel newAvatar)
+        {
+            if (newAvatar == null || UserProfileData == null || newAvatar.Id == UserProfileData.AvatarId)
+            {
+                return;
+            }
+
+            UserProfileData.AvatarId = newAvatar.Id;
+
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
+            try
+            {
+                OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
+
+                if (result.Success)
+                {
+                    UserAvatar = newAvatar.ImageSource;
+                    MessageBox.Show(Lang.alertAvatarUpdateSuccess, Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                    client.Close();
+                    isSuccess = true;
+                }
+                else
+                {
+                    MessageBox.Show(result.Message, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(fex.Detail.Message, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
+            {
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch
+            {
+                MessageBox.Show(Lang.alertAvatarUpdateUnknownError, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
+            }
+        }
+
         private void ExecuteSettings(object parameter)
         {
-            if (ConfigurationViewModel != null)
+            if (ConfigurationViewModel == null)
             {
-                IsProfilePopupOpen = false;
-                IsFriendsPopupOpen = false;
-                IsChatPopupOpen = false;
-                IsConfigurationPopupOpen = !IsConfigurationPopupOpen;
+                ShowFeatureUnavailable();
+                return;
             }
-            else
-            {
-                MessageBox.Show(
-                    Lang.alertFeatureUnavailableError,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
+
+            CloseAllPopupsExcept("Configuration");
+            IsConfigurationPopupOpen = !IsConfigurationPopupOpen;
         }
 
         private void ExecuteFriends(object param)
         {
-            if (FriendsViewModel != null)
+            if (FriendsViewModel == null)
             {
-                IsProfilePopupOpen = false;
-                IsConfigurationPopupOpen = false;
-                IsChatPopupOpen = false;
-                IsFriendsPopupOpen = !IsFriendsPopupOpen;
+                ShowFeatureUnavailable();
+                return;
             }
-            else
-            {
-                MessageBox.Show(
-                    Lang.alertFeatureUnavailableError,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
+
+            CloseAllPopupsExcept("Friends");
+            IsFriendsPopupOpen = !IsFriendsPopupOpen;
         }
 
         private void ExecuteChat(object param)
         {
-            if (DirectMessageViewModel != null)
+            if (DirectMessageViewModel == null)
+            {
+                MessageBox.Show(Lang.alertChatLoadError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            CloseAllPopupsExcept("Chat");
+            IsChatPopupOpen = !IsChatPopupOpen;
+        }
+
+        private void ExecuteEditProfile(object parameter)
+        {
+            if (ProfileViewModel == null)
+            {
+                MessageBox.Show(Lang.alertProfileNotLoaded, Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            CloseAllPopupsExcept("Profile");
+            IsProfilePopupOpen = !IsProfilePopupOpen;
+        }
+
+        private void CloseAllPopupsExcept(string except)
+        {
+            if (except != "Configuration")
+            {
+                IsConfigurationPopupOpen = false;
+            }
+
+            if (except != "Friends")
+            {
+                IsFriendsPopupOpen = false;
+            }
+
+            if (except != "Chat")
+            {
+                IsChatPopupOpen = false;
+            }
+
+            if (except != "Profile")
             {
                 IsProfilePopupOpen = false;
-                IsConfigurationPopupOpen = false;
-                IsFriendsPopupOpen = false;
-                IsChatPopupOpen = !IsChatPopupOpen;
-            }
-            else
-            {
-                MessageBox.Show(
-                    Lang.alertChatLoadError,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
             }
         }
 
@@ -302,106 +465,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
             CloseCurrentLobbyWindow();
         }
 
-        private async Task LoadUserProfileAsync()
-        {
-            if (!SessionManager.Instance.IsLoggedIn)
-            {
-                Console.WriteLine("LoadUserProfileAsync: Usuario no logueado.");
-                return;
-            }
-
-            using (var client = new UserProfileServiceClient())
-            {
-                try
-                {
-                    UserProfileDto profileData = await client.GetUserProfileAsync(SessionManager.Instance.CurrentUsername);
-
-                    if (profileData == null)
-                    {
-                        MessageBox.Show(
-                            Lang.alertProfileLoadError,
-                            Lang.alertErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error);
-                        return;
-                    }
-
-                    UserProfileData = profileData;
-                    Username = profileData.Username;
-                    ProfileViewModel = new ProfileViewModel(UserProfileData);
-
-                    var allAvatars = await client.GetAvailableAvatarsAsync();
-                    if (allAvatars != null)
-                    {
-                        var userAvatarDto = allAvatars.FirstOrDefault(a => a.IdAvatar == profileData.AvatarId);
-                        if (userAvatarDto?.AvatarData != null)
-                        {
-                            UserAvatar = ConvertByteToImage(userAvatarDto.AvatarData);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Avatar con ID {profileData.AvatarId} no encontrado o sin datos.");
-                        }
-                    }
-                }
-                catch (FaultException fexGeneral)
-                {
-                    MessageBox.Show(
-                        Lang.alertProfileLoadServerError,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"WCF Error loading profile: {fexGeneral.Message}");
-                }
-                catch (EndpointNotFoundException ex)
-                {
-                    MessageBox.Show(
-                        Lang.alertConnectionErrorMessage,
-                        Lang.alertConnectionErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Connection Error loading profile: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        Lang.alertProfileLoadError,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Error cargando perfil: {ex.Message}");
-                }
-            }
-        }
-
-        private void ExecuteEditProfile(object parameter)
-        {
-            if (ProfileViewModel != null)
-            {
-                IsConfigurationPopupOpen = false;
-                IsFriendsPopupOpen = false;
-                IsChatPopupOpen = false;
-                IsProfilePopupOpen = !IsProfilePopupOpen;
-            }
-            else
-            {
-                MessageBox.Show(
-                    Lang.alertProfileNotLoaded,
-                    Lang.alertInfoTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-            }
-        }
-
         private void ExecuteSelectAvatar(object parameter)
         {
             if (UserProfileData == null)
             {
-                MessageBox.Show(
-                    Lang.alertProfileNotLoaded,
-                    Lang.alertInfoTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                MessageBox.Show(Lang.alertProfileNotLoaded, Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
@@ -413,66 +481,26 @@ namespace GuessMyMessClient.ViewModel.Lobby
             selectAvatarViewModel.AvatarSelected -= OnAvatarSelected;
         }
 
-        private async void OnAvatarSelected(AvatarModel newAvatar)
+        private void ExecuteCloseWindow(object parameter)
         {
-            if (newAvatar == null || UserProfileData == null || newAvatar.Id == UserProfileData.AvatarId)
+            if (parameter is Window)
             {
-                return;
+                CleanupSocialConnection();
+                Application.Current.Shutdown();
             }
+        }
 
-            UserProfileData.AvatarId = newAvatar.Id;
-
-            using (var client = new UserProfileServiceClient())
+        private void ShowError(string message)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                try
-                {
-                    OperationResultDto result = await client.UpdateProfileAsync(Username, UserProfileData);
-                    if (result.Success)
-                    {
-                        UserAvatar = newAvatar.ImageSource;
-                        MessageBox.Show(
-                            Lang.alertAvatarUpdateSuccess,
-                            Lang.alertSuccessTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertAvatarUpdateErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-                    }
-                }
-                catch (FaultException fexGeneral)
-                {
-                    MessageBox.Show(
-                        Lang.alertServerErrorMessage,
-                        Lang.alertAvatarUpdateErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"WCF Error saving avatar: {fexGeneral.Message}");
-                }
-                catch (EndpointNotFoundException ex)
-                {
-                    MessageBox.Show(
-                        Lang.alertConnectionErrorMessage,
-                        Lang.alertAvatarUpdateErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Connection Error saving avatar: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        Lang.alertAvatarUpdateUnknownError,
-                        Lang.alertAvatarUpdateErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Error guardando avatar: {ex.Message}");
-                }
-            }
+                MessageBox.Show(message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            });
+        }
+
+        private void ShowFeatureUnavailable()
+        {
+            MessageBox.Show(Lang.alertFeatureUnavailableError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
@@ -481,7 +509,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 return null;
             }
-
             var image = new BitmapImage();
             using (var mem = new MemoryStream(imageBytes))
             {
@@ -502,7 +529,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
             FriendsViewModel?.Cleanup();
             DirectMessageViewModel?.Cleanup();
             SocialClientManager.Instance.Cleanup();
-            Console.WriteLine("Conexión social limpiada.");
         }
 
         private static void CloseCurrentLobbyWindow()
@@ -514,21 +540,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             else
             {
-                MessageBox.Show(
-                    Lang.alertLobbyWindowNotFoundError,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                Console.WriteLine("Error: No se pudo encontrar LobbyView para cerrar.");
-            }
-        }
-
-        private void ExecuteCloseWindow(object parameter)
-        {
-            if (parameter is Window)
-            {
-                CleanupSocialConnection();
-                Application.Current.Shutdown();
+                MessageBox.Show(Lang.alertLobbyWindowNotFoundError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

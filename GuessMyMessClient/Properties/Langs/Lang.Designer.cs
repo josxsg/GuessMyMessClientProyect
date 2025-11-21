@@ -133,6 +133,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cannot join the selected match..
+        /// </summary>
+        public static string alertCannotJoinMatch {
+            get {
+                return ResourceManager.GetString("alertCannotJoinMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Chat Error.
         /// </summary>
         public static string alertChatError {
@@ -259,6 +268,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error creating match..
+        /// </summary>
+        public static string alertCreateGameErrorGeneric {
+            get {
+                return ResourceManager.GetString("alertCreateGameErrorGeneric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You must enter a name for the game..
         /// </summary>
         public static string alertCreateGameErrorName {
@@ -273,6 +291,33 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertCriticalErrorTitle {
             get {
                 return ResourceManager.GetString("alertCriticalErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Critical error loading the drawing data..
+        /// </summary>
+        public static string alertDrawingLoadError {
+            get {
+                return ResourceManager.GetString("alertDrawingLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error occurred while sending your drawing..
+        /// </summary>
+        public static string alertDrawingSubmitError {
+            get {
+                return ResourceManager.GetString("alertDrawingSubmitError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a User email cannot be empty for verification..
+        /// </summary>
+        public static string alertEmailEmpty {
+            get {
+                return ResourceManager.GetString("alertEmailEmpty", resourceCulture);
             }
         }
         
@@ -403,6 +448,24 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error starting the game session..
+        /// </summary>
+        public static string alertGameStartError {
+            get {
+                return ResourceManager.GetString("alertGameStartError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error occurred while sending your answer..
+        /// </summary>
+        public static string alertGuessSubmitError {
+            get {
+                return ResourceManager.GetString("alertGuessSubmitError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Information.
         /// </summary>
         public static string alertInfoTitle {
@@ -457,6 +520,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error joining match..
+        /// </summary>
+        public static string alertJoinMatchError {
+            get {
+                return ResourceManager.GetString("alertJoinMatchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Internal Error: The main lobby window could not be found to close..
         /// </summary>
         public static string alertLobbyWindowNotFoundError {
@@ -471,6 +543,33 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertLoginErrorTitle {
             get {
                 return ResourceManager.GetString("alertLoginErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Matchmaking Error..
+        /// </summary>
+        public static string alertMatchmakingError {
+            get {
+                return ResourceManager.GetString("alertMatchmakingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The new email address has an invalid format..
+        /// </summary>
+        public static string alertNewEmailIvalideFormat {
+            get {
+                return ResourceManager.GetString("alertNewEmailIvalideFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error: No drawing data received for this round..
+        /// </summary>
+        public static string alertNoDrawingReceived {
+            get {
+                return ResourceManager.GetString("alertNoDrawingReceived", resourceCulture);
             }
         }
         
@@ -768,6 +867,33 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertVerificationSuccess {
             get {
                 return ResourceManager.GetString("alertVerificationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Time expired and auto-selection failed..
+        /// </summary>
+        public static string alertWordAutoSelectFailed {
+            get {
+                return ResourceManager.GetString("alertWordAutoSelectFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not load words from the server..
+        /// </summary>
+        public static string alertWordLoadError {
+            get {
+                return ResourceManager.GetString("alertWordLoadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error selecting the word..
+        /// </summary>
+        public static string alertWordSelectError {
+            get {
+                return ResourceManager.GetString("alertWordSelectError", resourceCulture);
             }
         }
         
@@ -1083,6 +1209,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string createGameLbSettings {
             get {
                 return ResourceManager.GetString("createGameLbSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Match of.
+        /// </summary>
+        public static string defaultMatchNamePrefix {
+            get {
+                return ResourceManager.GetString("defaultMatchNamePrefix", resourceCulture);
             }
         }
         
@@ -1866,6 +2001,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string socialTfSearchPlayers {
             get {
                 return ResourceManager.GetString("socialTfSearchPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Answer sent! Waiting for other players....
+        /// </summary>
+        public static string statusAnswerSent {
+            get {
+                return ResourceManager.GetString("statusAnswerSent", resourceCulture);
             }
         }
         

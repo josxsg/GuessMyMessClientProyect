@@ -771,4 +771,52 @@
   <data name="alertChatError" xml:space="preserve">
     <value>Chat Error</value>
   </data>
+  <data name="alertNewEmailIvalideFormat" xml:space="preserve">
+    <value>The new email address has an invalid format.</value>
+  </data>
+  <data name="alertDrawingSubmitError" xml:space="preserve">
+    <value>An error occurred while sending your drawing.</value>
+  </data>
+  <data name="alertNoDrawingReceived" xml:space="preserve">
+    <value>Error: No drawing data received for this round.</value>
+  </data>
+  <data name="alertDrawingLoadError" xml:space="preserve">
+    <value>Critical error loading the drawing data.</value>
+  </data>
+  <data name="statusAnswerSent" xml:space="preserve">
+    <value>Answer sent! Waiting for other players...</value>
+  </data>
+  <data name="alertGuessSubmitError" xml:space="preserve">
+    <value>An error occurred while sending your answer.</value>
+  </data>
+  <data name="alertWordLoadError" xml:space="preserve">
+    <value>Could not load words from the server.</value>
+  </data>
+  <data name="alertWordAutoSelectFailed" xml:space="preserve">
+    <value>Time expired and auto-selection failed.</value>
+  </data>
+  <data name="alertWordSelectError" xml:space="preserve">
+    <value>Error selecting the word.</value>
+  </data>
+  <data name="alertCannotJoinMatch" xml:space="preserve">
+    <value>Cannot join the selected match.</value>
+  </data>
+  <data name="alertJoinMatchError" xml:space="preserve">
+    <value>Error joining match.</value>
+  </data>
+  <data name="alertMatchmakingError" xml:space="preserve">
+    <value>Matchmaking Error.</value>
+  </data>
+  <data name="defaultMatchNamePrefix" xml:space="preserve">
+    <value>Match of</value>
+  </data>
+  <data name="alertCreateGameErrorGeneric" xml:space="preserve">
+    <value>Error creating match.</value>
+  </data>
+  <data name="alertGameStartError" xml:space="preserve">
+    <value>Error starting the game session.</value>
+  </data>
+  <data name="alertEmailEmpty" xml:space="preserve">
+    <value>User email cannot be empty for verification.</value>
+  </data>
 </root>

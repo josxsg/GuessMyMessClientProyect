@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Text.RegularExpressions;
@@ -9,13 +10,12 @@ using System.Windows.Media.Imaging;
 using GuessMyMessClient.AuthService;
 using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.Model;
-using GuessMyMessClient.View.HomePages;
-using GuessMyMessClient.View.Lobby;
-using GuessMyMessClient.View.Lobby.Dialogs;
-using GuessMyMessClient.ViewModel.Lobby;
-using GuessMyMessClient.ViewModel.Lobby.Dialogs;
 using GuessMyMessClient.Properties.Langs;
-using System.IO;
+using GuessMyMessClient.View.HomePages;
+using GuessMyMessClient.View.Lobby.Dialogs;
+using GuessMyMessClient.ViewModel.Lobby.Dialogs;
+using GuessMyMessClient.View.Lobby;
+using GuessMyMessClient.ViewModel.Lobby;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -24,12 +24,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _username;
         public string Username
         {
-            get => _username;
+            get
+            {
+                return _username;
+            }
             set
             {
                 if (_username != value)
                 {
-                    _username = value;
+                    _username = value; 
                     OnPropertyChanged();
                 }
             }
@@ -38,12 +41,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _firstName;
         public string FirstName
         {
-            get => _firstName;
+            get
+            {
+                return _firstName;
+            }
             set
             {
                 if (_firstName != value)
                 {
-                    _firstName = value;
+                    _firstName = value; 
                     OnPropertyChanged();
                 }
             }
@@ -52,12 +58,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _lastName;
         public string LastName
         {
-            get => _lastName;
+            get
+            {
+                return _lastName;
+            }
             set
             {
                 if (_lastName != value)
                 {
-                    _lastName = value;
+                    _lastName = value; 
                     OnPropertyChanged();
                 }
             }
@@ -71,7 +80,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (_email != value)
                 {
-                    _email = value;
+                    _email = value; 
                     OnPropertyChanged();
                 }
             }
@@ -80,12 +89,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _password;
         public string Password
         {
-            get => _password;
+            get
+            {
+                return _password;
+            }
             set
             {
                 if (_password != value)
                 {
-                    _password = value;
+                    _password = value; 
                     OnPropertyChanged();
                 }
             }
@@ -94,13 +106,16 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private bool _isMale = true;
         public bool IsMale
         {
-            get => _isMale;
+            get
+            {
+                return _isMale;
+            }
             set
             {
                 if (value && _isMale != value)
                 {
-                    _isMale = value;
-                    OnPropertyChanged();
+                    _isMale = value; 
+                    OnPropertyChanged(); 
                     ResetGender(1);
                 }
             }
@@ -109,13 +124,16 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private bool _isFemale;
         public bool IsFemale
         {
-            get => _isFemale;
+            get
+            {
+                return _isFemale;
+            }
             set
             {
                 if (value && _isFemale != value)
                 {
-                    _isFemale = value;
-                    OnPropertyChanged();
+                    _isFemale = value; 
+                    OnPropertyChanged(); 
                     ResetGender(2);
                 }
             }
@@ -124,13 +142,16 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private bool _isNonBinary;
         public bool IsNonBinary
         {
-            get => _isNonBinary;
+            get
+            {
+                return _isNonBinary;
+            }
             set
             {
                 if (value && _isNonBinary != value)
                 {
-                    _isNonBinary = value;
-                    OnPropertyChanged();
+                    _isNonBinary = value; 
+                    OnPropertyChanged(); 
                     ResetGender(3);
                 }
             }
@@ -139,12 +160,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private int _selectedAvatarId = 1;
         public int SelectedAvatarId
         {
-            get => _selectedAvatarId;
+            get
+            {
+                return _selectedAvatarId;
+            }
             set
             {
                 if (_selectedAvatarId != value)
                 {
-                    _selectedAvatarId = value;
+                    _selectedAvatarId = value; 
                     OnPropertyChanged();
                 }
             }
@@ -153,13 +177,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private BitmapImage _selectedAvatarImage;
         public BitmapImage SelectedAvatarImage
         {
-            get => _selectedAvatarImage;
+            get
+            {
+                return _selectedAvatarImage;
+            }
             set
             {
                 if (_selectedAvatarImage != value)
                 {
-                    _selectedAvatarImage = value;
-                    OnPropertyChanged();
+                    _selectedAvatarImage = value; OnPropertyChanged();
                 }
             }
         }
@@ -179,62 +205,241 @@ namespace GuessMyMessClient.ViewModel.HomePages
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
             ReturnCommand = new RelayCommand(ExecuteReturn);
-            LoadDefaultAvatar();
+
+            Task.Run(() => LoadDefaultAvatar());
         }
 
         private void ResetGender(int selectedGenderId)
         {
-            bool oldMale = _isMale;
-            bool oldFemale = _isFemale;
-            bool oldNonBinary = _isNonBinary;
-
-            _isMale = (selectedGenderId == 1);
-            _isFemale = (selectedGenderId == 2);
-            _isNonBinary = (selectedGenderId == 3);
-
-            if (oldMale != _isMale)
+            if (_isMale != (selectedGenderId == 1))
+            {
+                _isMale = (selectedGenderId == 1); 
                 OnPropertyChanged(nameof(IsMale));
-            if (oldFemale != _isFemale)
+            }
+
+            if (_isFemale != (selectedGenderId == 2))
+            {
+                _isFemale = (selectedGenderId == 2); 
                 OnPropertyChanged(nameof(IsFemale));
-            if (oldNonBinary != _isNonBinary)
+            }
+
+            if (_isNonBinary != (selectedGenderId == 3))
+            {
+                _isNonBinary = (selectedGenderId == 3); 
                 OnPropertyChanged(nameof(IsNonBinary));
+            }
         }
 
         private async Task LoadDefaultAvatar()
         {
             var client = new UserProfileServiceClient();
-            bool success = false;
             try
             {
                 var avatars = await client.GetAvailableAvatarsAsync();
                 if (avatars != null && avatars.Any())
                 {
                     var defaultAvatar = avatars.FirstOrDefault(a => a.IdAvatar == 1) ?? avatars[0];
-                    SelectedAvatarId = defaultAvatar.IdAvatar;
-                    SelectedAvatarImage = ConvertByteToImage(defaultAvatar.AvatarData);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        SelectedAvatarId = defaultAvatar.IdAvatar;
+                        SelectedAvatarImage = ConvertByteToImage(defaultAvatar.AvatarData);
+                    });
                 }
                 client.Close();
-                success = true;
+            }
+            catch
+            {
+                client.Abort();
+            }
+        }
+
+        private async void ExecuteSignUp(object parameter)
+        {
+            if (!CanExecuteSignUp(parameter))
+            {
+                MessageBox.Show(Lang.alertRequiredFields, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!IsValidEmail(Email))
+            {
+                MessageBox.Show(Lang.alertInvalidEmailFormat, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!IsPasswordSecure(Password, out string passwordErrorKey))
+            {
+                string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
+                MessageBox.Show(passwordErrorMessage, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int genderId = IsMale ? 1 : (IsFemale ? 2 : 3);
+
+            var newUserProfile = new AuthService.UserProfileDto
+            {
+                Username = Username,
+                FirstName = FirstName,
+                LastName = LastName,
+                Email = Email,
+                GenderId = genderId,
+                AvatarId = SelectedAvatarId
+            };
+
+            var client = new AuthenticationServiceClient();
+            bool isSuccess = false;
+
+            try
+            {
+                var result = await client.RegisterAsync(newUserProfile, Password);
+
+                if (result.Success)
+                {
+                    MessageBox.Show($"{Lang.alertRegistrationSuccess}\n{result.Message}",
+                        Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    OpenVerificationDialog(parameter);
+                    client.Close();
+                    isSuccess = true;
+                }
+                else
+                {
+                    MessageBox.Show(result.Message, Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (FaultException<GuessMyMessClient.AuthService.ServiceFaultDto> fex)
+            {
+                string titulo = Lang.alertRegistrationErrorTitle;
+
+                if (fex.Detail.ErrorType == GuessMyMessClient.AuthService.ServiceErrorType.DuplicateRecord ||
+                    fex.Detail.ErrorType == GuessMyMessClient.AuthService.ServiceErrorType.UserAlreadyExists ||
+                    fex.Detail.ErrorType == GuessMyMessClient.AuthService.ServiceErrorType.EmailAlreadyRegistered)
+                {
+                    titulo = Lang.alertInputErrorTitle;
+                }
+
+                MessageBox.Show(fex.Detail.Message, titulo, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (FaultException)
             {
                 MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            catch (EndpointNotFoundException)
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
                 MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch
             {
-                MessageBox.Show(Lang.alertAvatarLoadError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
-                if (!success && client.State != CommunicationState.Closed)
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
                     client.Abort();
+                }
             }
         }
 
+        private bool CanExecuteSignUp(object parameter)
+        {
+            return !string.IsNullOrWhiteSpace(Username) &&
+                   !string.IsNullOrWhiteSpace(FirstName) &&
+                   !string.IsNullOrWhiteSpace(LastName) &&
+                   !string.IsNullOrWhiteSpace(Email) &&
+                   !string.IsNullOrWhiteSpace(Password) &&
+                   (IsMale || IsFemale || IsNonBinary);
+        }
+
+        private static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return false;
+            }
+            try
+            {
+                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                return regex.IsMatch(email);
+            }
+            catch (RegexMatchTimeoutException) { return false; }
+        }
+
+        private static bool IsPasswordSecure(string password, out string errorLangKey)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                errorLangKey = "alertPasswordEmpty"; 
+                return false;
+            }
+
+            if (password.Length < 8)
+            {
+                errorLangKey = "alertPasswordTooShort"; 
+                return false;
+            }
+
+            if (password.Length > 25)
+            {
+                errorLangKey = "alertPasswordTooLong"; 
+                return false;
+            }
+
+            if (!password.Any(char.IsUpper))
+            {
+                errorLangKey = "alertPasswordNeedsUpper"; 
+                return false;
+            }
+
+            if (!password.Any(char.IsLower))
+            {
+                errorLangKey = "alertPasswordNeedsLower"; 
+                return false;
+            }
+
+            if (!password.Any(char.IsDigit))
+            {
+                errorLangKey = "alertPasswordNeedsDigit"; 
+                return false;
+            }
+
+            if (password.All(char.IsLetterOrDigit))
+            {
+                errorLangKey = "alertPasswordNeedsSpecial"; 
+                return false;
+            }
+            if (!password.Contains(","))
+            {
+                errorLangKey = "alertPasswordNeedsComma";
+                return false;
+
+            }
+
+            errorLangKey = null;
+            return true;
+        }
+
+        public static BitmapImage ConvertByteToImage(byte[] imageBytes)
+        {
+            if (imageBytes == null || imageBytes.Length == 0)
+            {
+                return null;
+            }
+            var image = new BitmapImage();
+            using (var mem = new MemoryStream(imageBytes))
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+            }
+            image.Freeze();
+            return image;
+        }
+        
         private void OpenSelectAvatarDialog(object parameter)
         {
             var selectAvatarView = new SelectAvatarView();
@@ -254,164 +459,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private static bool IsValidEmail(string email)
-        {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-
-            try
-            {
-                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-                return regex.IsMatch(email);
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
-        }
-
-        private static bool IsPasswordSecure(string password, out string errorLangKey)
-        {
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                errorLangKey = "alertPasswordEmpty";
-                return false;
-            }
-            if (password.Length < 8)
-            {
-                errorLangKey = "alertPasswordTooShort";
-                return false;
-            }
-            if (password.Length > 25)
-            {
-                errorLangKey = "alertPasswordTooLong";
-                return false;
-            }
-            if (!password.Any(char.IsUpper))
-            {
-                errorLangKey = "alertPasswordNeedsUpper";
-                return false;
-            }
-            if (!password.Any(char.IsLower))
-            {
-                errorLangKey = "alertPasswordNeedsLower";
-                return false;
-            }
-            if (!password.Any(char.IsDigit))
-            {
-                errorLangKey = "alertPasswordNeedsDigit";
-                return false;
-            }
-            if (password.All(char.IsLetterOrDigit))
-            {
-                errorLangKey = "alertPasswordNeedsSpecial";
-                return false;
-            }
-            if (!password.Contains(","))
-            {
-                errorLangKey = "alertPasswordNeedsComma";
-                return false;
-            }
-
-            errorLangKey = null;
-            return true;
-        }
-
-        private bool CanExecuteSignUp(object parameter)
-        {
-            return !string.IsNullOrWhiteSpace(Username) &&
-                   !string.IsNullOrWhiteSpace(FirstName) &&
-                   !string.IsNullOrWhiteSpace(LastName) &&
-                   !string.IsNullOrWhiteSpace(Email) &&
-                   !string.IsNullOrWhiteSpace(Password) &&
-                   (IsMale || IsFemale || IsNonBinary);
-        }
-
-        private async void ExecuteSignUp(object parameter)
-        {
-            if (!CanExecuteSignUp(parameter))
-            {
-                MessageBox.Show(Lang.alertAllFieldsRequired, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (!IsValidEmail(Email))
-            {
-                MessageBox.Show(Lang.alertInvalidEmailFormat, Lang.alertInvalidEmailTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (!IsPasswordSecure(Password, out string passwordErrorKey))
-            {
-                string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
-                MessageBox.Show(passwordErrorMessage, Lang.alertPasswordNotSecureTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            int genderId;
-            if (IsMale)
-            {
-                genderId = 1;
-            }
-            else if (IsFemale)
-            {
-                genderId = 2;
-            }
-            else 
-            {
-                genderId = 3;
-            }
-            var newUserProfile = new AuthService.UserProfileDto
-            {
-                Username = Username,
-                FirstName = FirstName,
-                LastName = LastName,
-                Email = Email,
-                GenderId = genderId,
-                AvatarId = SelectedAvatarId
-            };
-
-            var client = new AuthenticationServiceClient();
-            bool success = false;
-            try
-            {
-                var result = await client.RegisterAsync(newUserProfile, Password);
-
-                if (result.Success)
-                {
-                    MessageBox.Show(Lang.alertRegistrationSuccess + " " + result.Message, Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
-                    OpenVerificationDialog(parameter);
-                    client.Close();
-                    success = true;
-                }
-                else
-                {
-                    MessageBox.Show(result.Message, Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            catch (FaultException<string> fex)
-            {
-                MessageBox.Show(fex.Detail, Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (EndpointNotFoundException)
-            {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch
-            {
-                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                if (!success && client.State != CommunicationState.Closed)
-                    client.Abort();
-            }
-        }
-
         private void OpenVerificationDialog(object parameter)
         {
             var verifyView = new VerifyByCodeView();
@@ -419,25 +466,33 @@ namespace GuessMyMessClient.ViewModel.HomePages
             verifyView.Show();
 
             if (parameter is Window signUpWindow)
+            {
                 signUpWindow.Close();
+            }
         }
 
         private static void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window)
+            {
                 Application.Current.Shutdown();
+            }
         }
 
         private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
+            {
                 window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            }
         }
 
         private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
+            {
                 window.WindowState = WindowState.Minimized;
+            }
         }
 
         private static void ExecuteReturn(object parameter)
@@ -448,26 +503,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 welcomeView.Show();
                 currentWindow.Close();
             }
-        }
-
-        public static BitmapImage ConvertByteToImage(byte[] imageBytes)
-        {
-            if (imageBytes == null || imageBytes.Length == 0)
-                return null;
-
-            var image = new BitmapImage();
-            using (var mem = new MemoryStream(imageBytes))
-            {
-                mem.Position = 0;
-                image.BeginInit();
-                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.UriSource = null;
-                image.StreamSource = mem;
-                image.EndInit();
-            }
-            image.Freeze();
-            return image;
         }
     }
 }

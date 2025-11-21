@@ -1,13 +1,14 @@
-﻿using GuessMyMessClient.ProfileService;
-using System;
+﻿using System;
 using System.Linq;
+using System.ServiceModel;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
-using System.ServiceModel;
+using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -38,23 +39,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         public ICommand VerifyCommand { get; }
         public ICommand CloseCommand { get; }
 
-        private static bool IsValidEmail(string email)
-        {
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                return false;
-            }
-            try
-            {
-                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-                return regex.IsMatch(email);
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
-        }
-
         public VerifyChangesByCodeViewModel(VerificationMode mode, string username, string payload, Action<string> emailUpdateCallback)
         {
             if (string.IsNullOrWhiteSpace(username))
@@ -65,13 +49,9 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             {
                 throw new ArgumentNullException(nameof(payload));
             }
-            if (mode == VerificationMode.Email && emailUpdateCallback == null)
-            {
-                Console.WriteLine("Advertencia: Callback de actualización de email no proporcionado para el modo Email.");
-            }
             if (mode == VerificationMode.Email && !IsValidEmail(payload))
             {
-                throw new ArgumentException("El nuevo email proporcionado (payload) tiene un formato inválido.", nameof(payload));
+                throw new ArgumentException(Lang.alertNewEmailIvalideFormat, nameof(payload));
             }
 
             _mode = mode;
@@ -102,43 +82,54 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 return;
             }
 
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
             try
             {
-                using (var client = new UserProfileServiceClient())
+                OperationResultDto result;
+
+                if (_mode == VerificationMode.Email)
                 {
-                    OperationResultDto result;
-
-                    if (_mode == VerificationMode.Email)
-                    {
-                        result = await client.ConfirmChangeEmailAsync(_username, VerificationCode);
-                        if (result.Success)
-                        {
-                            _emailUpdateCallback?.Invoke(_payload);
-                        }
-                    }
-                    else
-                    {
-                        result = await client.ConfirmChangePasswordAsync(_username, _payload, VerificationCode);
-                    }
-
+                    result = await client.ConfirmChangeEmailAsync(_username, VerificationCode);
                     if (result.Success)
                     {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertSuccessTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
-                        ExecuteClose(parameter);
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertVerificationErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
+                        _emailUpdateCallback?.Invoke(_payload);
                     }
                 }
+                else
+                {
+                    result = await client.ConfirmChangePasswordAsync(_username, _payload, VerificationCode);
+                }
+
+                if (result.Success)
+                {
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertSuccessTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+
+                    ExecuteClose(parameter);
+                    client.Close();
+                    isSuccess = true;
+                }
+                else
+                {
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertVerificationErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                }
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertVerificationErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
             catch (FaultException fexGeneral)
             {
@@ -147,16 +138,15 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error during change confirmation: {fexGeneral.Message}");
+                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
             }
-            catch (EndpointNotFoundException ex)
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
                 MessageBox.Show(
                     Lang.alertConnectionErrorMessage,
                     Lang.alertConnectionErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Connection Error during change confirmation: {ex.Message}");
             }
             catch (Exception ex)
             {
@@ -165,7 +155,14 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Unknown Error during change confirmation: {ex.Message}");
+                Console.WriteLine($"Unexpected Error: {ex.Message}");
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
             }
         }
 
@@ -174,6 +171,23 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             if (parameter is Window window)
             {
                 window.Close();
+            }
+        }
+
+        private static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return false;
+            }
+            try
+            {
+                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                return regex.IsMatch(email);
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
             }
         }
     }

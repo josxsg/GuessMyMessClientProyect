@@ -1,8 +1,10 @@
-﻿using GuessMyMessClient.LobbyService;
+﻿using GuessMyMessClient.GameService;
+using GuessMyMessClient.LobbyService;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.View.Lobby;
 using GuessMyMessClient.View.Match;
 using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -19,47 +21,82 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected readonly SessionManager _sessionManager;
         protected DispatcherTimer _countdownTimer;
         private int _isNavigatingBack = 0;
-
         private string _matchName;
         public string MatchName
         {
-            get => _matchName;
-            set => SetProperty(ref _matchName, value);
+            get
+            {
+                return _matchName;
+            }
+            set
+            {
+                SetProperty(ref _matchName, value);
+            }
         }
 
         private string _hostUsername;
         public string HostUsername
         {
-            get => _hostUsername;
-            set => SetProperty(ref _hostUsername, value);
+            get
+            {
+                return _hostUsername;
+            }
+            set
+            {
+                SetProperty(ref _hostUsername, value);
+            }
         }
 
         private string _difficulty;
         public string Difficulty
         {
-            get => _difficulty;
-            set => SetProperty(ref _difficulty, value);
+            get
+            {
+                return _difficulty;
+            }
+            set
+            {
+                SetProperty(ref _difficulty, value);
+            }
         }
 
         private string _playerCountDisplay;
         public string PlayerCountDisplay
         {
-            get => _playerCountDisplay;
-            set => SetProperty(ref _playerCountDisplay, value);
+            get
+            {
+                return _playerCountDisplay;
+            }
+            set
+            {
+                SetProperty(ref _playerCountDisplay, value);
+            }
         }
 
         private string _matchCode;
         public string MatchCode
         {
-            get => _matchCode;
-            set => SetProperty(ref _matchCode, value);
+            get
+            {
+                return _matchCode;
+            }
+            set
+            {
+                SetProperty(ref _matchCode, value);
+            }
         }
 
         private Visibility _matchCodeVisibility = Visibility.Collapsed;
         public Visibility MatchCodeVisibility
         {
-            get => _matchCodeVisibility;
-            set => SetProperty(ref _matchCodeVisibility, value);
+            get
+            {
+                return _matchCodeVisibility;
+            }
+            set
+            {
+                SetProperty(ref _matchCodeVisibility, value);
+            }
         }
 
         public ObservableCollection<PlayerViewModel> Players { get; } = new ObservableCollection<PlayerViewModel>();
@@ -68,18 +105,31 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         private int _countdownValue;
         public int CountdownValue
         {
-            get => _countdownValue;
-            set => SetProperty(ref _countdownValue, value);
+            get
+            {
+                return _countdownValue;
+            }
+            set
+            {
+                SetProperty(ref _countdownValue, value);
+            }
         }
 
         private Visibility _countdownVisibility = Visibility.Collapsed;
         public Visibility CountdownVisibility
         {
-            get => _countdownVisibility;
-            set => SetProperty(ref _countdownVisibility, value);
+            get
+            {
+                return _countdownVisibility;
+            }
+            set
+            {
+                SetProperty(ref _countdownVisibility, value);
+            }
         }
 
-        public bool IsHost => _sessionManager.CurrentUsername != null && _sessionManager.CurrentUsername.Equals(HostUsername, StringComparison.OrdinalIgnoreCase);
+        public bool IsHost => _sessionManager.CurrentUsername != null &&
+                              _sessionManager.CurrentUsername.Equals(HostUsername, StringComparison.OrdinalIgnoreCase);
 
         public ICommand LeaveCommand { get; protected set; }
         public ICommand SendMessageCommand { get; protected set; }
@@ -113,38 +163,48 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         protected virtual void OnLobbyStateUpdated(LobbyStateDto state)
         {
-            MatchName = state.MatchName;
-            HostUsername = state.HostUsername;
-            Difficulty = state.Difficulty;
-            PlayerCountDisplay = $"{state.CurrentPlayers}/{state.MaxPlayers}";
-            MatchCode = state.MatchCode;
-            MatchCodeVisibility = string.IsNullOrEmpty(state.MatchCode) ? Visibility.Collapsed : Visibility.Visible;
-
-            Players.Clear();
-            bool amIHost = _sessionManager.CurrentUsername?.Equals(HostUsername, StringComparison.OrdinalIgnoreCase) ?? false;
-            foreach (var username in state.PlayerUsernames.OrderBy(u => u))
+            Application.Current?.Dispatcher.Invoke(() =>
             {
-                var playerVM = new PlayerViewModel { Username = username };
-                if (amIHost && !username.Equals(_sessionManager.CurrentUsername, StringComparison.OrdinalIgnoreCase))
+                MatchName = state.MatchName;
+                HostUsername = state.HostUsername;
+                Difficulty = state.Difficulty;
+                PlayerCountDisplay = $"{state.CurrentPlayers}/{state.MaxPlayers}";
+                MatchCode = state.MatchCode;
+                MatchCodeVisibility = string.IsNullOrEmpty(state.MatchCode) ? Visibility.Collapsed : Visibility.Visible;
+
+                Players.Clear();
+                bool amIHost = IsHost;
+
+                foreach (var username in state.PlayerUsernames.OrderBy(u => u))
                 {
-                    playerVM.KickButtonVisibility = Visibility.Visible;
-                    playerVM.KickCommand = KickPlayerCommand;
+                    var playerVM = new PlayerViewModel { Username = username };
+                    if (amIHost && !username.Equals(_sessionManager.CurrentUsername, StringComparison.OrdinalIgnoreCase))
+                    {
+                        playerVM.KickButtonVisibility = Visibility.Visible;
+                        playerVM.KickCommand = KickPlayerCommand;
+                    }
+                    Players.Add(playerVM);
                 }
-                Players.Add(playerVM);
-            }
-            OnPropertyChanged(nameof(IsHost));
+
+                OnPropertyChanged(nameof(IsHost));
+            });
         }
 
         protected virtual void OnLobbyMessageReceived(ChatMessageDto message)
         {
-            string translatedMessage = TranslateMessageKey(message.MessageContent);
-            string formatted = $"[{message.SenderUsername}]: {translatedMessage}";
-            ChatMessages.Add(new ChatMessageDisplay { FormattedMessage = formatted });
-            const int maxMessages = 100;
-            if (ChatMessages.Count > maxMessages)
+            Application.Current?.Dispatcher.Invoke(() =>
             {
-                ChatMessages.RemoveAt(0);
-            }
+                string translatedMessage = TranslateMessageKey(message.MessageContent);
+                string formatted = $"[{message.SenderUsername}]: {translatedMessage}";
+
+                ChatMessages.Add(new ChatMessageDisplay { FormattedMessage = formatted });
+
+                const int maxMessages = 100;
+                if (ChatMessages.Count > maxMessages)
+                {
+                    ChatMessages.RemoveAt(0);
+                }
+            });
         }
 
         protected virtual void OnKicked(string reason)
@@ -152,47 +212,62 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
                 return;
 
-            MessageBox.Show($"{Lang.waitingRoomMsgKicked}: {reason}", Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-            NavigateBackToLobbyView();
-            CleanUp();
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show($"{Lang.waitingRoomMsgKicked}: {reason}", Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                NavigateBackToLobbyView();
+                CleanUp();
+            });
         }
 
         protected virtual void OnCountdownTick(int secondsRemaining)
         {
-            CountdownValue = secondsRemaining;
-            CountdownVisibility = Visibility.Visible;
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                CountdownValue = secondsRemaining;
+                CountdownVisibility = Visibility.Visible;
+            });
         }
 
         protected virtual void OnGameStarted()
         {
-            int originalValue = System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0);
-            if (originalValue != 0)
+            if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
                 return;
-
-            CountdownVisibility = Visibility.Collapsed;
-
-            string username = _sessionManager.CurrentUsername;
-            string matchId = _lobbyManager.CurrentMatchId;
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(matchId))
-            {
-                MessageBox.Show(Lang.alertActivationCompleteTitle, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                NavigateBackToLobbyView();
-                CleanUp();
-                return;
-            }
-
-            GameClientManager.Instance.Connect(username, matchId);
 
             Application.Current.Dispatcher.Invoke(() =>
             {
-                var wordSelectionView = new WordSelectionView();
-                wordSelectionView.Show();
+                CountdownVisibility = Visibility.Collapsed;
 
-                Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
-                currentWindow?.Close();
+                string username = _sessionManager.CurrentUsername;
+                string matchId = _lobbyManager.CurrentMatchId;
+
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(matchId))
+                {
+                    MessageBox.Show(Lang.alertGameStartError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    NavigateBackToLobbyView();
+                    CleanUp();
+                    return;
+                }
+
+                try
+                {
+                    GameClientManager.Instance.Connect(username, matchId);
+
+                    var wordSelectionView = new WordSelectionView();
+                    wordSelectionView.Show();
+
+                    Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
+                    currentWindow?.Close();
+
+                    CleanUp();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{Lang.alertGameStartError}: {ex.Message}", Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    NavigateBackToLobbyView();
+                    CleanUp();
+                }
             });
-            CleanUp();
         }
 
         protected virtual void OnConnectionLost()
@@ -200,8 +275,11 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
                 return;
 
-            NavigateBackToLobbyView();
-            CleanUp();
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                NavigateBackToLobbyView();
+                CleanUp();
+            });
         }
 
         protected virtual void LeaveLobby(object parameter = null)
@@ -226,8 +304,12 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         {
             if (!string.IsNullOrEmpty(usernameToKick) && IsHost)
             {
-                var result = MessageBox.Show(string.Format(Lang.waitingRoomMsgConfirmKick, usernameToKick),
-                                             Lang.alertConfirmationTitle, MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var result = MessageBox.Show(
+                    string.Format(Lang.waitingRoomMsgConfirmKick, usernameToKick),
+                    Lang.alertConfirmationTitle,
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question);
+
                 if (result == MessageBoxResult.Yes)
                 {
                     _lobbyManager.RequestKickPlayer(usernameToKick);
@@ -249,7 +331,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
                 var lobbyView = new LobbyView();
                 lobbyView.Show();
-                Console.WriteLine("Navegación a LobbyView completada.");
 
                 currentWindow?.Close();
             });
@@ -260,7 +341,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             UnsubscribeFromLobbyEvents();
             _countdownTimer?.Stop();
             _countdownTimer = null;
-            Console.WriteLine("WaitingRoom ViewModel cleaned up.");
+            Debug.WriteLine("WaitingRoom ViewModel cleaned up.");
         }
 
         protected virtual void UnsubscribeFromLobbyEvents()
@@ -271,7 +352,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             _lobbyManager.CountdownTick -= OnCountdownTick;
             _lobbyManager.GameStarted -= OnGameStarted;
             _lobbyManager.ConnectionLost -= OnConnectionLost;
-            Console.WriteLine("WaitingRoomViewModel desuscrito de GameStarted");
         }
     }
 

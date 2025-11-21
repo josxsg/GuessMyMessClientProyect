@@ -33,6 +33,9 @@
   <wsdl:message name="IGameService_GetRandomWords_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRandomWordsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameService_GetRandomWords_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q1:ServiceFaultDto" />
+  </wsdl:message>
   <wsdl:message name="IGameService_SubmitDrawing_InputMessage">
     <wsdl:part name="parameters" element="tns:SubmitDrawing" />
   </wsdl:message>
@@ -76,6 +79,7 @@
     <wsdl:operation name="GetRandomWords">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameService/GetRandomWords" message="tns:IGameService_GetRandomWords_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/GetRandomWordsResponse" message="tns:IGameService_GetRandomWords_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGameService/GetRandomWordsServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IGameService_GetRandomWords_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SubmitDrawing">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SubmitDrawing" message="tns:IGameService_SubmitDrawing_InputMessage" />
@@ -138,6 +142,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SubmitDrawing">
       <soap12:operation soapAction="http://tempuri.org/IGameService/SubmitDrawing" style="document" />

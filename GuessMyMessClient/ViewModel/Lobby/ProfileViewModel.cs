@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
+using System.ServiceModel;
 using System.Threading.Tasks;
-using GuessMyMessClient.View.Lobby.Dialogs;
-using GuessMyMessClient.ViewModel.Lobby.Dialogs;
-using System.Windows.Input;
 using System.Windows;
+using System.Windows.Input;
 using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.ViewModel;
-using System.ServiceModel;
+using GuessMyMessClient.ViewModel.Lobby.Dialogs;
+using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -32,6 +31,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
             }
         }
+
         public string LastName
         {
             get
@@ -76,8 +76,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public ProfileViewModel(UserProfileDto initialProfileData)
         {
-            _profileData = initialProfileData ?? throw new ArgumentNullException(nameof(initialProfileData), "Initial profile data cannot be null.");
-
+            _profileData = initialProfileData ?? throw new ArgumentNullException(nameof(initialProfileData));
             ChangeEmailCommand = new RelayCommand(ExecuteChangeEmail);
             ChangePasswordCommand = new RelayCommand(ExecuteChangePassword);
             SaveProfileCommand = new RelayCommand(ExecuteSaveProfile);
@@ -90,59 +89,75 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 MessageBox.Show(
                     Lang.alertProfileMandatoryFields,
                     Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
-            using (var client = new UserProfileServiceClient())
-            {
-                try
-                {
-                    OperationResultDto result = await client.UpdateProfileAsync(_profileData.Username, _profileData);
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
 
-                    if (result.Success)
-                    {
-                        MessageBox.Show(
-                            Lang.alertProfileUpdateSuccess,
-                            Lang.alertSuccessTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertProfileUpdateErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-                    }
-                }
-                catch (FaultException fexGeneral)
+            try
+            {
+                OperationResultDto result = await client.UpdateProfileAsync(_profileData.Username, _profileData);
+
+                if (result.Success)
                 {
                     MessageBox.Show(
-                        Lang.alertServerErrorMessage,
-                        Lang.alertProfileUpdateErrorTitle,
+                        Lang.alertProfileUpdateSuccess,
+                        Lang.alertSuccessTitle,
                         MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"WCF Error saving profile: {fexGeneral.Message}");
+                        MessageBoxImage.Information);
+
+                    client.Close();
+                    isSuccess = true;
                 }
-                catch (EndpointNotFoundException ex)
+                else
                 {
                     MessageBox.Show(
-                        Lang.alertConnectionErrorMessage,
+                        result.Message,
                         Lang.alertProfileUpdateErrorTitle,
                         MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Connection Error saving profile: {ex.Message}");
+                        MessageBoxImage.Warning);
                 }
-                catch (Exception ex)
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertProfileUpdateErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+            catch (FaultException)
+            {
+                MessageBox.Show(
+                    Lang.alertServerErrorMessage,
+                    Lang.alertProfileUpdateErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertProfileUpdateErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            catch
+            {
+                MessageBox.Show(
+                    Lang.alertProfileUpdateUnknownError,
+                    Lang.alertProfileUpdateErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
                 {
-                    MessageBox.Show(
-                        Lang.alertProfileUpdateUnknownError,
-                        Lang.alertProfileUpdateErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Error de comunicación al guardar perfil: {ex.Message}");
+                    client.Abort();
                 }
             }
         }
@@ -169,57 +184,73 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
 
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
             try
             {
-                using (var client = new UserProfileServiceClient())
-                {
-                    var result = await client.RequestChangePasswordAsync(_profileData.Username);
+                var result = await client.RequestChangePasswordAsync(_profileData.Username);
 
-                    if (result.Success)
+                if (result.Success)
+                {
+                    var changePasswordVM = new ChangePasswordViewModel(_profileData.Username);
+                    var changePasswordView = new ChangePasswordView
                     {
-                        var changePasswordVM = new ChangePasswordViewModel(_profileData.Username);
-                        var changePasswordView = new ChangePasswordView
-                        {
-                            DataContext = changePasswordVM
-                        };
-                        changePasswordView.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertPasswordRequestErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-                    }
+                        DataContext = changePasswordVM
+                    };
+
+                    client.Close();
+                    isSuccess = true;
+
+                    changePasswordView.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertPasswordRequestErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
                 }
             }
-            catch (FaultException fexGeneral)
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertPasswordRequestErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+            catch (FaultException)
             {
                 MessageBox.Show(
                     Lang.alertServerErrorMessage,
                     Lang.alertPasswordRequestErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error requesting password change: {fexGeneral.Message}");
             }
-            catch (EndpointNotFoundException ex)
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
                 MessageBox.Show(
                     Lang.alertConnectionErrorMessage,
                     Lang.alertPasswordRequestErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Connection Error requesting password change: {ex.Message}");
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show(
                     Lang.alertPasswordRequestUnknownError,
                     Lang.alertPasswordRequestErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Error de comunicación al solicitar cambio contraseña: {ex.Message}");
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
             }
         }
     }

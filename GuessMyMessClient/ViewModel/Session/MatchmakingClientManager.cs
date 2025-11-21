@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 
+using ServiceMatchFault = GuessMyMessClient.MatchmakingService.ServiceFaultDto;
+
 namespace GuessMyMessClient.ViewModel.Session
 {
     public class MatchmakingClientManager : IMatchmakingServiceCallback
@@ -21,9 +23,7 @@ namespace GuessMyMessClient.ViewModel.Session
         public event Action<string> OnMatchmakingFailed;
         public event Action<List<MatchInfoDto>> OnPublicMatchesListUpdated;
 
-        private MatchmakingClientManager()
-        {
-        }
+        private MatchmakingClientManager() { }
 
         public static void Initialize()
         {
@@ -42,15 +42,19 @@ namespace GuessMyMessClient.ViewModel.Session
                 InstanceContext context = new InstanceContext(this);
                 _client = new MatchmakingServiceClient(context);
                 _client.Open();
+
+                _client.InnerChannel.Faulted += Channel_Faulted;
+                _client.InnerChannel.Closed += Channel_Closed;
+
                 _client.Connect(username);
                 _connectedUsername = username;
+                Console.WriteLine($"MatchmakingClientManager: Connected as {username}");
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to connect to matchmaking service: {ex.Message}");
-                _client?.Abort();
-                _client = null;
+                Console.WriteLine($"Failed to connect to matchmaking service: {ex.Message}");
+                CleanupConnection();
                 return false;
             }
         }
@@ -70,44 +74,73 @@ namespace GuessMyMessClient.ViewModel.Session
                         Console.WriteLine($"Error sending Disconnect signal: {ex.Message}");
                     }
                 }
+                CleanupConnection();
+            }
+        }
 
-                if (_client.State != CommunicationState.Closed)
+        private void CleanupConnection()
+        {
+            if (_client != null)
+            {
+                try
                 {
-                    try
+                    _client.InnerChannel.Faulted -= Channel_Faulted;
+                    _client.InnerChannel.Closed -= Channel_Closed;
+                }
+                catch { }
+
+                try
+                {
+                    if (_client.State != CommunicationState.Faulted)
                     {
                         _client.Close();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Console.WriteLine($"Error closing client, aborting: {ex.Message}");
                         _client.Abort();
                     }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error closing client: {ex.Message}");
+                    _client.Abort();
+                }
+                finally
+                {
+                    _client = null;
+                    _connectedUsername = null;
+                }
             }
-
-            _client = null;
-            _connectedUsername = null;
         }
 
         public async Task<OperationResultDto> CreateMatchAsync(LobbySettingsDto settings)
         {
             if (_client == null || _client.State != CommunicationState.Opened)
+            {
                 return new OperationResultDto { Success = false, Message = "Not connected to service." };
+            }
 
             try
             {
                 return await _client.CreateMatchAsync(_connectedUsername, settings);
             }
+            catch (FaultException<ServiceMatchFault> fex)
+            {
+                return new OperationResultDto { Success = false, Message = fex.Detail.Message };
+            }
             catch (Exception ex)
             {
-                return new OperationResultDto { Success = false, Message = $"Error creating match: {ex.Message}" };
+                Console.WriteLine($"Error creating match: {ex.Message}");
+                return new OperationResultDto { Success = false, Message = "Connection error while creating match." };
             }
         }
 
         public async Task<List<MatchInfoDto>> GetPublicMatchesAsync()
         {
             if (_client == null || _client.State != CommunicationState.Opened)
+            {
                 return new List<MatchInfoDto>();
+            }
 
             try
             {
@@ -116,12 +149,12 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error getting public matches: {ex.Message}");
+                Console.WriteLine($"Error getting public matches: {ex.Message}");
                 return new List<MatchInfoDto>();
             }
         }
 
-        public async Task JoinPublicMatch(string matchId)
+        public void JoinPublicMatch(string matchId)
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {
@@ -131,55 +164,87 @@ namespace GuessMyMessClient.ViewModel.Session
 
             try
             {
-                await _client.JoinPublicMatchAsync(_connectedUsername, matchId);
+                _client.JoinPublicMatch(_connectedUsername, matchId);
             }
             catch (Exception ex)
             {
-                OnMatchmakingFailed?.Invoke($"Error joining public match: {ex.Message}");
+                OnMatchmakingFailed?.Invoke($"Error sending join request: {ex.Message}");
             }
         }
 
         public async Task<OperationResultDto> JoinPrivateMatchAsync(string matchCode)
         {
             if (_client == null || _client.State != CommunicationState.Opened)
+            {
                 return new OperationResultDto { Success = false, Message = "Not connected to service." };
+            }
 
             try
             {
                 return await _client.JoinPrivateMatchAsync(_connectedUsername, matchCode);
             }
+            catch (FaultException<ServiceMatchFault> fex)
+            {
+                return new OperationResultDto { Success = false, Message = fex.Detail.Message };
+            }
             catch (Exception ex)
             {
-                return new OperationResultDto
-                    { Success = false, Message = $"Error joining private match: {ex.Message}" };
+                return new OperationResultDto { Success = false, Message = $"Error joining private match: {ex.Message}" };
             }
         }
 
         public void ReceiveMatchInvite(string fromUsername, string matchId)
         {
-            OnMatchInviteReceived?.Invoke(fromUsername, matchId);
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                OnMatchInviteReceived?.Invoke(fromUsername, matchId);
+            });
         }
 
         public void MatchUpdate(MatchInfoDto matchInfo)
         {
-            OnMatchUpdated?.Invoke(matchInfo);
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                OnMatchUpdated?.Invoke(matchInfo);
+            });
         }
 
         public void MatchJoined(string matchId, OperationResultDto result)
         {
-            OnMatchJoinedSuccessfully?.Invoke(matchId, result);
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                OnMatchJoinedSuccessfully?.Invoke(matchId, result);
+            });
         }
 
         public void MatchmakingFailed(string reason)
         {
-            OnMatchmakingFailed?.Invoke(reason);
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                OnMatchmakingFailed?.Invoke(reason);
+            });
         }
 
         public void PublicMatchesListUpdated(MatchInfoDto[] publicMatches)
         {
             var matchesList = publicMatches?.ToList() ?? new List<MatchInfoDto>();
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                OnPublicMatchesListUpdated?.Invoke(matchesList);
+            });
+        }
 
-            Application.Current?.Dispatcher?.Invoke(() => { OnPublicMatchesListUpdated?.Invoke(matchesList); });
+        private void Channel_Faulted(object sender, EventArgs e)
+        {
+            Console.WriteLine("MatchmakingClientManager: Channel Faulted.");
+            CleanupConnection();
+            OnMatchmakingFailed?.Invoke("Connection lost (Channel Faulted).");
+        }
+
+        private void Channel_Closed(object sender, EventArgs e)
+        {
+            Console.WriteLine("MatchmakingClientManager: Channel Closed.");
+            CleanupConnection();
         }
     }
 }

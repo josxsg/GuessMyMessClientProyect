@@ -38,6 +38,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISocialService_Connect_InputMessage">
@@ -49,8 +50,8 @@
   <wsdl:message name="ISocialService_GetFriendsList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendsListResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_GetFriendsList_StringFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q1:string" />
+  <wsdl:message name="ISocialService_GetFriendsList_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q1:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_GetFriendRequests_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendRequests" />
@@ -58,8 +59,8 @@
   <wsdl:message name="ISocialService_GetFriendRequests_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendRequestsResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_GetFriendRequests_StringFault_FaultMessage">
-    <wsdl:part xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q2:string" />
+  <wsdl:message name="ISocialService_GetFriendRequests_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q2:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_SearchUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchUsers" />
@@ -67,8 +68,8 @@
   <wsdl:message name="ISocialService_SearchUsers_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchUsersResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_SearchUsers_StringFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q3:string" />
+  <wsdl:message name="ISocialService_SearchUsers_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q3:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_SendFriendRequest_InputMessage">
     <wsdl:part name="parameters" element="tns:SendFriendRequest" />
@@ -85,8 +86,8 @@
   <wsdl:message name="ISocialService_InviteFriendToGameByEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:InviteFriendToGameByEmailResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_InviteFriendToGameByEmail_StringFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q4:string" />
+  <wsdl:message name="ISocialService_InviteFriendToGameByEmail_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_SendDirectMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendDirectMessage" />
@@ -97,8 +98,8 @@
   <wsdl:message name="ISocialService_GetConversations_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationsResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_GetConversations_StringFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q5:string" />
+  <wsdl:message name="ISocialService_GetConversations_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q5:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_GetConversationHistory_InputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationHistory" />
@@ -106,8 +107,8 @@
   <wsdl:message name="ISocialService_GetConversationHistory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationHistoryResponse" />
   </wsdl:message>
-  <wsdl:message name="ISocialService_GetConversationHistory_StringFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q6:string" />
+  <wsdl:message name="ISocialService_GetConversationHistory_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q6:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_Disconnect_InputMessage">
     <wsdl:part name="parameters" element="tns:Disconnect" />
@@ -131,17 +132,17 @@
     <wsdl:operation name="GetFriendsList">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetFriendsList" message="tns:ISocialService_GetFriendsList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetFriendsListResponse" message="tns:ISocialService_GetFriendsList_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendsListStringFault" name="StringFault" message="tns:ISocialService_GetFriendsList_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendsListServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_GetFriendsList_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFriendRequests">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequests" message="tns:ISocialService_GetFriendRequests_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequestsResponse" message="tns:ISocialService_GetFriendRequests_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequestsStringFault" name="StringFault" message="tns:ISocialService_GetFriendRequests_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendRequestsServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_GetFriendRequests_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SearchUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SearchUsers" message="tns:ISocialService_SearchUsers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/SearchUsersResponse" message="tns:ISocialService_SearchUsers_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/SearchUsersStringFault" name="StringFault" message="tns:ISocialService_SearchUsers_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/SearchUsersServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_SearchUsers_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendFriendRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SendFriendRequest" message="tns:ISocialService_SendFriendRequest_InputMessage" />
@@ -155,7 +156,7 @@
     <wsdl:operation name="InviteFriendToGameByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail" message="tns:ISocialService_InviteFriendToGameByEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse" message="tns:ISocialService_InviteFriendToGameByEmail_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailStringFault" name="StringFault" message="tns:ISocialService_InviteFriendToGameByEmail_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_InviteFriendToGameByEmail_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendDirectMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SendDirectMessage" message="tns:ISocialService_SendDirectMessage_InputMessage" />
@@ -163,12 +164,12 @@
     <wsdl:operation name="GetConversations">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversations" message="tns:ISocialService_GetConversations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetConversationsResponse" message="tns:ISocialService_GetConversations_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetConversationsStringFault" name="StringFault" message="tns:ISocialService_GetConversations_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetConversationsServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_GetConversations_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetConversationHistory">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistory" message="tns:ISocialService_GetConversationHistory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistoryResponse" message="tns:ISocialService_GetConversationHistory_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistoryStringFault" name="StringFault" message="tns:ISocialService_GetConversationHistory_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetConversationHistoryServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_GetConversationHistory_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Disconnect">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/Disconnect" message="tns:ISocialService_Disconnect_InputMessage" />
@@ -204,8 +205,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetFriendRequests">
@@ -216,8 +217,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SearchUsers">
@@ -228,8 +229,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SendFriendRequest">
@@ -258,8 +259,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SendDirectMessage">
@@ -276,8 +277,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetConversationHistory">
@@ -288,8 +289,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Disconnect">

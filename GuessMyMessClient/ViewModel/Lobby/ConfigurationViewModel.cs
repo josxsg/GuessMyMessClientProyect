@@ -32,48 +32,111 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public string ConfigTitle
         {
-            get => _configTitle;
-            set { _configTitle = value; OnPropertyChanged(nameof(ConfigTitle)); }
+            get
+            {
+                return _configTitle;
+            }
+            set
+            {
+                _configTitle = value; 
+                OnPropertyChanged(nameof(ConfigTitle));
+            }
         }
         public string SoundTitle
         {
-            get => _soundTitle;
-            set { _soundTitle = value; OnPropertyChanged(nameof(SoundTitle)); }
+            get
+            {
+                return _soundTitle;
+            }
+            set
+            {
+                _soundTitle = value; 
+                OnPropertyChanged(nameof(SoundTitle));
+            }
         }
         public string SoundEffectsLabel
         {
-            get => _soundEffectsLabel;
-            set { _soundEffectsLabel = value; OnPropertyChanged(nameof(SoundEffectsLabel)); }
+            get
+            {
+                return _soundEffectsLabel;
+            }
+            set
+            {
+                _soundEffectsLabel = value; 
+                OnPropertyChanged(nameof(SoundEffectsLabel));
+            }
         }
         public string MusicLabel
         {
-            get => _musicLabel;
-            set { _musicLabel = value; OnPropertyChanged(nameof(MusicLabel)); }
+            get
+            {
+                return _musicLabel;
+            }
+            set
+            {
+                _musicLabel = value; 
+                OnPropertyChanged(nameof(MusicLabel));
+            }
         }
         public string VolumeLabel
         {
-            get => _volumeLabel;
-            set { _volumeLabel = value; OnPropertyChanged(nameof(VolumeLabel)); }
+            get
+            {
+                return _volumeLabel;
+            }
+            set
+            {
+                _volumeLabel = value; 
+                OnPropertyChanged(nameof(VolumeLabel));
+            }
         }
         public string LanguageTitle
         {
-            get => _languageTitle;
-            set { _languageTitle = value; OnPropertyChanged(nameof(LanguageTitle)); }
+            get
+            {
+                return _languageTitle;
+            }
+            set
+            {
+                _languageTitle = value; 
+                OnPropertyChanged(nameof(LanguageTitle));
+            }
         }
         public string SpanishButtonText
         {
-            get => _spanishButtonText;
-            set { _spanishButtonText = value; OnPropertyChanged(nameof(SpanishButtonText)); }
+            get
+            {
+                return _spanishButtonText;
+            }
+            set
+            {
+                _spanishButtonText = value; 
+                OnPropertyChanged(nameof(SpanishButtonText));
+            }
         }
         public string EnglishButtonText
         {
-            get => _englishButtonText;
-            set { _englishButtonText = value; OnPropertyChanged(nameof(EnglishButtonText)); }
+            get
+            {
+                return _englishButtonText;
+            }
+            set
+            {
+                _englishButtonText = value; 
+                OnPropertyChanged(nameof(EnglishButtonText));
+            }
         }
         public string LogoutButtonText
         {
-            get => _logoutButtonText;
-            set { _logoutButtonText = value; OnPropertyChanged(nameof(LogoutButtonText)); }
+            get
+            {
+                return _logoutButtonText;
+            }
+            set
+            {
+                _logoutButtonText = value;
+                OnPropertyChanged(nameof(LogoutButtonText));
+            }
         }
 
         public ConfigurationViewModel()
@@ -94,7 +157,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public bool IsSpanish
         {
-            get => _isSpanish;
+            get
+            {
+                return _isSpanish;
+            }
             set
             {
                 if (value && !_isSpanish)
@@ -111,7 +177,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         public bool IsEnglish
         {
-            get => _isEnglish;
+            get
+            {
+                return _isEnglish;
+            }
             set
             {
                 if (value && !_isEnglish)

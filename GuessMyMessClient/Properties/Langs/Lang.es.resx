@@ -771,4 +771,52 @@
   <data name="alertChatError" xml:space="preserve">
     <value>Error de Chat</value>
   </data>
+  <data name="alertNewEmailIvalideFormat" xml:space="preserve">
+    <value>El nuevo correo electrónico tiene un formato inválido.</value>
+  </data>
+  <data name="alertDrawingSubmitError" xml:space="preserve">
+    <value>Se ha producido un error al enviar su dibujo.</value>
+  </data>
+  <data name="alertNoDrawingReceived" xml:space="preserve">
+    <value>Error: No se han recibido datos de sorteo para esta ronda.</value>
+  </data>
+  <data name="alertDrawingLoadError" xml:space="preserve">
+    <value>Error crítico al cargar los datos del dibujo.</value>
+  </data>
+  <data name="statusAnswerSent" xml:space="preserve">
+    <value>¡Respuesta enviada! Esperando a otros jugadores...</value>
+  </data>
+  <data name="alertGuessSubmitError" xml:space="preserve">
+    <value>Se ha producido un error al enviar su respuesta.</value>
+  </data>
+  <data name="alertWordLoadError" xml:space="preserve">
+    <value>No se pudieron cargar las palabras desde el servidor.</value>
+  </data>
+  <data name="alertWordAutoSelectFailed" xml:space="preserve">
+    <value>El tiempo expiró y la selección automática falló.</value>
+  </data>
+  <data name="alertWordSelectError" xml:space="preserve">
+    <value>Error al seleccionar la palabra.</value>
+  </data>
+  <data name="alertCannotJoinMatch" xml:space="preserve">
+    <value>No se puede unir al partido seleccionado.</value>
+  </data>
+  <data name="alertJoinMatchError" xml:space="preserve">
+    <value>Error al unirte a la partida.</value>
+  </data>
+  <data name="alertMatchmakingError" xml:space="preserve">
+    <value>Error de emparejamiento.</value>
+  </data>
+  <data name="defaultMatchNamePrefix" xml:space="preserve">
+    <value>Partida de</value>
+  </data>
+  <data name="alertCreateGameErrorGeneric" xml:space="preserve">
+    <value>Error creando la partida.</value>
+  </data>
+  <data name="alertGameStartError" xml:space="preserve">
+    <value>Error al iniciar la sesión de juego.</value>
+  </data>
+  <data name="alertEmailEmpty" xml:space="preserve">
+    <value>El correo electrónico del usuario no puede estar vacío para la verificación.</value>
+  </data>
 </root>

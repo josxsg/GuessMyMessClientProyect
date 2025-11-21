@@ -13,8 +13,9 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
-      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUserProfileService_GetUserProfile_InputMessage">
@@ -23,8 +24,8 @@
   <wsdl:message name="IUserProfileService_GetUserProfile_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserProfileResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_GetUserProfile_StringFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q1:string" />
+  <wsdl:message name="IUserProfileService_GetUserProfile_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q1:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_UpdateProfile_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateProfile" />
@@ -32,8 +33,8 @@
   <wsdl:message name="IUserProfileService_UpdateProfile_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_UpdateProfile_StringFault_FaultMessage">
-    <wsdl:part xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q2:string" />
+  <wsdl:message name="IUserProfileService_UpdateProfile_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q2:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_RequestChangeEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:RequestChangeEmail" />
@@ -41,8 +42,8 @@
   <wsdl:message name="IUserProfileService_RequestChangeEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:RequestChangeEmailResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_RequestChangeEmail_StringFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q3:string" />
+  <wsdl:message name="IUserProfileService_RequestChangeEmail_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q3:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_ConfirmChangeEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:ConfirmChangeEmail" />
@@ -50,8 +51,8 @@
   <wsdl:message name="IUserProfileService_ConfirmChangeEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConfirmChangeEmailResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_ConfirmChangeEmail_StringFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q4:string" />
+  <wsdl:message name="IUserProfileService_ConfirmChangeEmail_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_RequestChangePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:RequestChangePassword" />
@@ -59,8 +60,8 @@
   <wsdl:message name="IUserProfileService_RequestChangePassword_OutputMessage">
     <wsdl:part name="parameters" element="tns:RequestChangePasswordResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_RequestChangePassword_StringFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q5:string" />
+  <wsdl:message name="IUserProfileService_RequestChangePassword_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q5:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_ConfirmChangePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:ConfirmChangePassword" />
@@ -68,8 +69,8 @@
   <wsdl:message name="IUserProfileService_ConfirmChangePassword_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConfirmChangePasswordResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_ConfirmChangePassword_StringFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q6:string" />
+  <wsdl:message name="IUserProfileService_ConfirmChangePassword_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q6:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_GetAvailableAvatars_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAvailableAvatars" />
@@ -77,44 +78,44 @@
   <wsdl:message name="IUserProfileService_GetAvailableAvatars_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAvailableAvatarsResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserProfileService_GetAvailableAvatars_StringFault_FaultMessage">
-    <wsdl:part xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q7:string" />
+  <wsdl:message name="IUserProfileService_GetAvailableAvatars_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q7:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:portType name="IUserProfileService">
     <wsdl:operation name="GetUserProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfile" message="tns:IUserProfileService_GetUserProfile_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfileResponse" message="tns:IUserProfileService_GetUserProfile_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfileStringFault" name="StringFault" message="tns:IUserProfileService_GetUserProfile_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfileServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_GetUserProfile_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfile" message="tns:IUserProfileService_UpdateProfile_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfileResponse" message="tns:IUserProfileService_UpdateProfile_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfileStringFault" name="StringFault" message="tns:IUserProfileService_UpdateProfile_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfileServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_UpdateProfile_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="RequestChangeEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmail" message="tns:IUserProfileService_RequestChangeEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse" message="tns:IUserProfileService_RequestChangeEmail_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmailStringFault" name="StringFault" message="tns:IUserProfileService_RequestChangeEmail_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmailServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_RequestChangeEmail_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ConfirmChangeEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmail" message="tns:IUserProfileService_ConfirmChangeEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmailResponse" message="tns:IUserProfileService_ConfirmChangeEmail_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmailStringFault" name="StringFault" message="tns:IUserProfileService_ConfirmChangeEmail_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangeEmailServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_ConfirmChangeEmail_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="RequestChangePassword">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangePassword" message="tns:IUserProfileService_RequestChangePassword_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangePasswordResponse" message="tns:IUserProfileService_RequestChangePassword_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangePasswordStringFault" name="StringFault" message="tns:IUserProfileService_RequestChangePassword_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangePasswordServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_RequestChangePassword_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ConfirmChangePassword">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangePassword" message="tns:IUserProfileService_ConfirmChangePassword_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangePasswordResponse" message="tns:IUserProfileService_ConfirmChangePassword_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangePasswordStringFault" name="StringFault" message="tns:IUserProfileService_ConfirmChangePassword_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/ConfirmChangePasswordServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_ConfirmChangePassword_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAvailableAvatars">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars" message="tns:IUserProfileService_GetAvailableAvatars_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse" message="tns:IUserProfileService_GetAvailableAvatars_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsStringFault" name="StringFault" message="tns:IUserProfileService_GetAvailableAvatars_StringFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_GetAvailableAvatars_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUserProfileService" type="tns:IUserProfileService">
@@ -129,8 +130,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="UpdateProfile">
@@ -141,8 +142,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RequestChangeEmail">
@@ -153,8 +154,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ConfirmChangeEmail">
@@ -165,8 +166,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="RequestChangePassword">
@@ -177,8 +178,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ConfirmChangePassword">
@@ -189,8 +190,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetAvailableAvatars">
@@ -201,8 +202,8 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="StringFault">
-        <soap12:fault use="literal" name="StringFault" namespace="" />
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>

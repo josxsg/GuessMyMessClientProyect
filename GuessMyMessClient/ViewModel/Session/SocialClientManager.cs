@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using GuessMyMessClient.SocialService;
+using System;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
-using GuessMyMessClient.SocialService;
 using System.Windows;
 
 namespace GuessMyMessClient.ViewModel.Session
 {
     public class SocialClientManager : ISocialServiceCallback
     {
-        private const string SOCIAL_SERVICE_ENDPOINT_NAME = "NetTcpBinding_ISocialService";
-        private SocialServiceClient _client;
+        private const string SocialServiceEndpointName = "NetTcpBinding_ISocialService";
 
+        private SocialServiceClient _client;
         private static readonly Lazy<SocialClientManager> _instance =
             new Lazy<SocialClientManager>(() => new SocialClientManager());
+
         public static SocialClientManager Instance => _instance.Value;
 
         public SocialServiceClient Client => _client;
@@ -24,137 +21,139 @@ namespace GuessMyMessClient.ViewModel.Session
         public event Action<string, bool> OnFriendResponse;
         public event Action<string, string> OnFriendStatusChanged;
         public event Action<DirectMessageDto> OnMessageReceived;
+        public event Action OnConnectionLost;
 
-        private SocialClientManager() { } 
+        private SocialClientManager() { }
 
         public void Initialize()
         {
-            if (_client != null && _client.State == CommunicationState.Opened)
+            if (IsConnected)
             {
-                Console.WriteLine("SocialClientManager ya inicializado.");
+                Console.WriteLine("SocialClientManager: Already initialized.");
                 return;
             }
 
             try
             {
-                _client = new SocialServiceClient(new InstanceContext(this), SOCIAL_SERVICE_ENDPOINT_NAME);
+                var context = new InstanceContext(this);
+                _client = new SocialServiceClient(context, SocialServiceEndpointName);
                 _client.Open();
 
-                if (_client.State == CommunicationState.Opened)
-                {
-                    _client.Connect(SessionManager.Instance.CurrentUsername);
-                    Console.WriteLine($"SocialClientManager inicializado y conectado como {SessionManager.Instance.CurrentUsername}.");
-                }
-                else
-                {
-                    Console.WriteLine($"SocialClientManager falló al abrir el canal. Estado: {_client.State}");
-                    throw new InvalidOperationException($"No se pudo abrir el canal WCF. Estado: {_client.State}");
-                }
+                _client.InnerChannel.Faulted += Channel_Faulted;
+                _client.InnerChannel.Closed += Channel_Closed;
 
-            }
-            catch (InvalidOperationException ioEx) 
-            {
-                MessageBox.Show($"Error CRÍTICO al conectar con SocialService: Endpoint '{SOCIAL_SERVICE_ENDPOINT_NAME}' no encontrado o contrato incorrecto en App.config.\n\nDetalles: {ioEx.Message}", "Error de Configuración WCF", MessageBoxButton.OK, MessageBoxImage.Error);
-                CloseClientSafely(); 
+                string username = SessionManager.Instance.CurrentUsername;
+                if (!string.IsNullOrEmpty(username))
+                {
+                    _client.Connect(username);
+                    Console.WriteLine($"SocialClientManager: Connected as {username}");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al inicializar SocialClientManager: {ex.Message}", "Error de Conexión", MessageBoxButton.OK, MessageBoxImage.Error);
-                CloseClientSafely(); 
+                Console.WriteLine($"SocialClientManager: Error connecting: {ex.Message}");
+                CleanupConnection();
             }
         }
+
+        public bool IsConnected => _client != null && _client.State == CommunicationState.Opened;
 
         public void Cleanup()
         {
-            Console.WriteLine("Iniciando Cleanup de SocialClientManager...");
-            if (_client != null && _client.State == CommunicationState.Opened)
+            string username = SessionManager.Instance.CurrentUsername;
+
+            if (IsConnected && !string.IsNullOrEmpty(username))
             {
                 try
                 {
-                    Console.WriteLine($"Intentando desconectar a {SessionManager.Instance.CurrentUsername}...");
-                    if (!string.IsNullOrEmpty(SessionManager.Instance.CurrentUsername))
-                    {
-                        _client.Disconnect(SessionManager.Instance.CurrentUsername);
-                        Console.WriteLine("Disconnect llamado (OneWay, servidor procesará).");
-                    }
-                    else { Console.WriteLine("Username vacío, no se puede llamar a Disconnect."); }
+                    _client.Disconnect(username);
                 }
-                catch (CommunicationException commEx) 
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"Error de comunicación durante Disconnect (puede ser normal si ya estaba cerrado): {commEx.Message}");
+                    Console.WriteLine($"SocialClientManager: Error sending disconnect: {ex.Message}");
                 }
-                catch (Exception ex) 
-                {
-                    Console.WriteLine($"Error inesperado durante Disconnect: {ex.Message}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Cliente no estaba abierto ({_client?.State}). Saltando Disconnect.");
             }
 
-            CloseClientSafely();
-            Console.WriteLine("Cleanup de SocialClientManager completado.");
+            CleanupConnection();
         }
 
-        private void CloseClientSafely()
+        private void CleanupConnection()
         {
-            if (_client == null) return;
-            Console.WriteLine($"Cerrando cliente WCF. Estado actual: {_client.State}");
-            try
+            if (_client != null)
             {
-                if (_client.State != CommunicationState.Faulted && _client.State != CommunicationState.Closed)
+                try
                 {
-                    _client.Close();
-                    Console.WriteLine("Cliente WCF cerrado correctamente.");
+                    _client.InnerChannel.Faulted -= Channel_Faulted;
+                    _client.InnerChannel.Closed -= Channel_Closed;
                 }
-                else
+                catch { }
+
+                try
                 {
+                    if (_client.State != CommunicationState.Faulted)
+                    {
+                        _client.Close();
+                    }
+                    else
+                    {
+                        _client.Abort();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"SocialClientManager: Error closing client: {ex.Message}");
                     _client.Abort();
-                    Console.WriteLine("Cliente WCF abortado (estaba Faulted o Closed).");
+                }
+                finally
+                {
+                    _client = null;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Excepción al cerrar/abortar cliente WCF: {ex.Message}. Abortando...");
-                _client.Abort(); 
-            }
-            finally 
-            {
-                _client = null;
-            }
+            Console.WriteLine("SocialClientManager: Connection cleaned.");
         }
 
+        private void Channel_Faulted(object sender, EventArgs e)
+        {
+            Console.WriteLine("SocialClientManager: Channel Faulted.");
+            CleanupConnection();
+            OnConnectionLost?.Invoke();
+        }
+
+        private void Channel_Closed(object sender, EventArgs e)
+        {
+            Console.WriteLine("SocialClientManager: Channel Closed.");
+            if (_client != null)
+            {
+                CleanupConnection();
+                OnConnectionLost?.Invoke();
+            }
+        }
 
         public void NotifyFriendRequest(string fromUsername)
         {
-            Console.WriteLine($"Callback recibido: NotifyFriendRequest de {fromUsername}");
+            Console.WriteLine($"Callback: Friend request from {fromUsername}");
             OnFriendRequest?.Invoke(fromUsername);
         }
 
         public void NotifyFriendResponse(string fromUsername, bool accepted)
         {
-            Console.WriteLine($"Callback recibido: NotifyFriendResponse de {fromUsername}, Aceptado: {accepted}");
+            Console.WriteLine($"Callback: Friend response from {fromUsername} (Accepted: {accepted})");
             OnFriendResponse?.Invoke(fromUsername, accepted);
         }
 
         public void NotifyFriendStatusChanged(string friendUsername, string status)
         {
-            Console.WriteLine($"Callback recibido: NotifyFriendStatusChanged para {friendUsername}, Estado: {status}");
             OnFriendStatusChanged?.Invoke(friendUsername, status);
         }
 
         public void NotifyMessageReceived(DirectMessageDto message)
         {
-            Console.WriteLine($"Callback recibido: NotifyMessageReceived de {message?.SenderUsername}");
-            if (message != null) 
+            if (message == null)
             {
-                OnMessageReceived?.Invoke(message);
+                return;
             }
-            else
-            {
-                Console.WriteLine("Error: NotifyMessageReceived recibió un mensaje nulo.");
-            }
+            Console.WriteLine($"Callback: DM received from {message.SenderUsername}");
+            OnMessageReceived?.Invoke(message);
         }
     }
 }

@@ -1,9 +1,12 @@
 ﻿using GuessMyMessClient.GameService;
+using GuessMyMessClient.Properties.Langs;
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
+
+using ServiceGameFault = GuessMyMessClient.GameService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Session
 {
@@ -19,6 +22,7 @@ namespace GuessMyMessClient.ViewModel.Session
         private GameServiceClient _client;
         private string _currentUsername;
         private string _currentMatchId;
+
         private const string EndpointName = "NetTcpBinding_IGameService";
 
         public string GetCurrentUsername()
@@ -41,7 +45,10 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             try
             {
-                if (IsConnected) Disconnect();
+                if (IsConnected)
+                {
+                    Disconnect();
+                }
 
                 _currentUsername = username;
                 _currentMatchId = matchId;
@@ -56,10 +63,23 @@ namespace GuessMyMessClient.ViewModel.Session
                 _client.Connect(_currentUsername, _currentMatchId);
                 Console.WriteLine($"GameClientManager: Connected as {username} to match {matchId}");
             }
+            catch (FaultException<ServiceGameFault> fex)
+            {
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                CleanupConnection();
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error connecting to GameService: {ex.Message}");
-                MessageBox.Show($"Error connecting to the game service: {ex.Message}", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 CleanupConnection();
                 ConnectionLost?.Invoke();
             }
@@ -67,15 +87,22 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void Disconnect()
         {
-            if (!IsConnected) return;
+            if (_client == null)
+            {
+                return;
+            }
+
             try
             {
-                _client.Disconnect(_currentUsername, _currentMatchId);
-                Console.WriteLine($"GameClientManager: Disconnect request sent for {_currentUsername}");
+                if (_client.State == CommunicationState.Opened)
+                {
+                    _client.Disconnect(_currentUsername, _currentMatchId);
+                    Console.WriteLine($"GameClientManager: Disconnect request sent for {_currentUsername}");
+                }
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            catch (Exception ex)
             {
-                Console.WriteLine($"GameClientManager: Error during disconnect: {ex.Message}. Aborting connection.");
+                Console.WriteLine($"GameClientManager: Error during disconnect: {ex.Message}");
             }
             finally
             {
@@ -92,26 +119,27 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client.InnerChannel.Faulted -= Channel_Faulted;
                     _client.InnerChannel.Closed -= Channel_Closed;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"GameClientManager: Error unsubscribing events: {ex.Message}");
-                }
+                catch { }
 
                 try
                 {
-                    if (_client.State != CommunicationState.Faulted) _client.Close();
-                    else _client.Abort();
+                    if (_client.State != CommunicationState.Faulted)
+                    {
+                        _client.Close();
+                    }
+                    else
+                    {
+                        _client.Abort();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"GameClientManager: Error cleaning connection: {ex.Message}");
+                    Console.WriteLine($"GameClientManager: Error closing client: {ex.Message}");
                     _client.Abort();
                 }
                 finally
                 {
                     _client = null;
-                    _currentMatchId = null;
-                    _currentUsername = null;
                 }
             }
             Console.WriteLine("GameClientManager: Connection cleaned.");
@@ -119,10 +147,19 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public async Task<WordDto[]> GetRandomWordsAsync()
         {
-            if (!IsConnected) return null;
+            if (!IsConnected)
+            {
+                return null;
+            }
+
             try
             {
                 return await _client.GetRandomWordsAsync();
+            }
+            catch (FaultException<ServiceGameFault> fex)
+            {
+                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                return null;
             }
             catch (Exception ex)
             {
@@ -134,7 +171,10 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void SelectWord(string selectedWord)
         {
-            if (!IsConnected) return;
+            if (!IsConnected)
+            {
+                return;
+            }
             try
             {
                 _client.SelectWord(_currentUsername, _currentMatchId, selectedWord);
@@ -148,7 +188,10 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void SubmitDrawing(byte[] drawingData)
         {
-            if (!IsConnected) return;
+            if (!IsConnected)
+            {
+                return;
+            }
             try
             {
                 _client.SubmitDrawing(_currentUsername, _currentMatchId, drawingData);
@@ -162,129 +205,119 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void SendInGameMessage(string message)
         {
-            if (_client != null && _client.State == CommunicationState.Opened)
+            if (!IsConnected)
             {
-                try
-                {
-                    _client.SendInGameChatMessageAsync(_currentUsername, _currentMatchId, message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error sending message: {ex.Message}");
-                    HandleCommunicationError(true);
-                }
+                return;
+            }
+            try
+            {
+                _client.SendInGameChatMessage(_currentUsername, _currentMatchId, message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending message: {ex.Message}");
+                HandleCommunicationError(true);
             }
         }
 
         public void SubmitGuess(string guess, int drawingId)
         {
-            if (_client != null && _client.State == CommunicationState.Opened)
+            if (!IsConnected)
             {
-                try
-                {
-                    _client.SubmitGuessAsync(_currentUsername, _currentMatchId, drawingId, guess);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error sending guess: {ex.Message}");
-                    HandleCommunicationError(true);
-                }
+                return;
+            }
+            try
+            {
+                _client.SubmitGuess(_currentUsername, _currentMatchId, drawingId, guess);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending guess: {ex.Message}");
+                HandleCommunicationError(true);
             }
         }
 
         public void OnRoundStart(int roundNumber, string[] wordOptions)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Callback: OnRoundStart - Round {roundNumber}");
-                RoundStart?.Invoke(this, new RoundStartEventArgs { RoundNumber = roundNumber, WordOptions = wordOptions });
-            });
+            Console.WriteLine($"Callback: OnRoundStart - Round {roundNumber}");
+            RoundStart?.Invoke(this, new RoundStartEventArgs { RoundNumber = roundNumber, WordOptions = wordOptions });
         }
 
         public void OnDrawingPhaseStart(int durationSeconds)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Callback: OnDrawingPhaseStart - {durationSeconds}s");
-                DrawingPhaseStart?.Invoke(this, new DrawingPhaseStartEventArgs { DurationSeconds = durationSeconds });
-            });
+            Console.WriteLine($"Callback: OnDrawingPhaseStart - {durationSeconds}s");
+            DrawingPhaseStart?.Invoke(this, new DrawingPhaseStartEventArgs { DurationSeconds = durationSeconds });
         }
 
         public void OnGuessingPhaseStart(DrawingDto drawing)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Callback: OnGuessingPhaseStart - Drawing by {drawing.OwnerUsername}");
-                GuessingPhaseStart?.Invoke(this, new GuessingPhaseStartEventArgs { Drawing = drawing });
-            });
+            Console.WriteLine($"Callback: OnGuessingPhaseStart - Drawing by {drawing.OwnerUsername}");
+            GuessingPhaseStart?.Invoke(this, new GuessingPhaseStartEventArgs { Drawing = drawing });
         }
 
         public void OnGameEnd(PlayerScoreDto[] finalScores)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine("Callback: OnGameEnd");
-                GameEnd?.Invoke(this, new GameEndEventArgs { FinalScores = finalScores });
-            });
+            Console.WriteLine("Callback: OnGameEnd");
+            GameEnd?.Invoke(this, new GameEndEventArgs { FinalScores = finalScores });
         }
 
         public void OnInGameMessageReceived(string sender, string message)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                InGameMessageReceived?.Invoke(this, new InGameMessageEventArgs { Sender = sender, Message = message });
-            });
+            InGameMessageReceived?.Invoke(this, new InGameMessageEventArgs { Sender = sender, Message = message });
         }
 
         public void OnAnswersPhaseStart(DrawingDto[] allDrawings, GuessDto[] allGuesses, PlayerScoreDto[] currentScores)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
+            Console.WriteLine("Callback: OnAnswersPhaseStart");
+            AnswersPhaseStart?.Invoke(this, new AnswersPhaseStartEventArgs
             {
-                Console.WriteLine("Callback: OnAnswersPhaseStart - Showing all answers");
-                AnswersPhaseStart?.Invoke(this, new AnswersPhaseStartEventArgs
-                {
-                    AllDrawings = allDrawings,
-                    AllGuesses = allGuesses,
-                    AllScores = currentScores
-                });
+                AllDrawings = allDrawings,
+                AllGuesses = allGuesses,
+                AllScores = currentScores
             });
         }
 
         public void OnShowNextDrawing(DrawingDto nextDrawing)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Callback: OnShowNextDrawing - Next drawing {nextDrawing.DrawingId}");
-                ShowNextDrawing?.Invoke(this, new ShowNextDrawingEventArgs { NextDrawing = nextDrawing });
-            });
+            Console.WriteLine($"Callback: OnShowNextDrawing - Next {nextDrawing.DrawingId}");
+            ShowNextDrawing?.Invoke(this, new ShowNextDrawingEventArgs { NextDrawing = nextDrawing });
         }
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("GameClientManager: WCF channel entered Faulted state.");
+            Console.WriteLine("GameClientManager: WCF channel faulted.");
             HandleCommunicationError(true);
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("GameClientManager: WCF channel was closed.");
+            Console.WriteLine("GameClientManager: WCF channel closed.");
             if (_client != null)
             {
-                HandleCommunicationError(true);
+                HandleCommunicationError(false);
             }
         }
 
-        private void HandleCommunicationError(bool unexpected = false)
+        private void HandleCommunicationError(bool showMessage)
         {
+            if (_client == null)
+            {
+                return;
+            }
+
+            CleanupConnection();
+
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine("GameClientManager: Handling communication error.");
-                CleanupConnection();
-                ConnectionLost?.Invoke();
-                if (unexpected)
+                if (showMessage)
                 {
-                    MessageBox.Show("The connection to the game service was lost.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(
+                        Lang.alertConnectionErrorMessage,
+                        Lang.alertConnectionErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
                 }
+                ConnectionLost?.Invoke();
             });
         }
     }

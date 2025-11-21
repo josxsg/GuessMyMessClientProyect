@@ -9,29 +9,57 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _winnerName;
         public string WinnerName
         {
-            get => _winnerName;
-            set { _winnerName = value; OnPropertyChanged(nameof(WinnerName)); }
+            get
+            {
+                return _winnerName;
+            }
+            set
+            {
+                _winnerName = value; 
+                OnPropertyChanged(nameof(WinnerName));
+            }
         }
 
         private string _firstPlacePlayerName;
         public string FirstPlacePlayerName
         {
-            get => _firstPlacePlayerName;
-            set { _firstPlacePlayerName = value; OnPropertyChanged(nameof(FirstPlacePlayerName)); }
+            get
+            {
+                return _firstPlacePlayerName;
+            }
+            set
+            {
+                _firstPlacePlayerName = value; 
+                OnPropertyChanged(nameof(FirstPlacePlayerName));
+            }
         }
 
         private string _secondPlacePlayerName;
         public string SecondPlacePlayerName
         {
-            get => _secondPlacePlayerName;
-            set { _secondPlacePlayerName = value; OnPropertyChanged(nameof(SecondPlacePlayerName)); }
+            get
+            {
+                return _secondPlacePlayerName;
+            }
+            set
+            {
+                _secondPlacePlayerName = value; 
+                OnPropertyChanged(nameof(SecondPlacePlayerName));
+            }
         }
 
         private string _thirdPlacePlayerName;
         public string ThirdPlacePlayerName
         {
-            get => _thirdPlacePlayerName;
-            set { _thirdPlacePlayerName = value; OnPropertyChanged(nameof(ThirdPlacePlayerName)); }
+            get
+            {
+                return _thirdPlacePlayerName;
+            }
+            set
+            {
+                _thirdPlacePlayerName = value; 
+                OnPropertyChanged(nameof(ThirdPlacePlayerName));
+            }
         }
 
         public ICommand ExitCommand { get; }

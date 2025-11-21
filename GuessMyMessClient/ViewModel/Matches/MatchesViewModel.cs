@@ -6,37 +6,57 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.ViewModel;
+using GuessMyMessClient.LobbyService;
+using ServiceMatchFault = GuessMyMessClient.MatchmakingService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Matches
 {
     public class MatchesViewModel : ViewModelBase
     {
-        private bool _isPublicViewSelected = true;
+        private bool _isPublicViewSelected = true;
         private string _matchCode;
         private ObservableCollection<MatchInfoModel> _publicMatches;
         private string _joiningMatchId = null;
         private bool _joiningPrivateMatch = false;
         private Window _currentWindow = null;
 
-        public bool IsPublicViewSelected
+        public bool IsPublicViewSelected
         {
-            get => _isPublicViewSelected;
-            set => SetProperty(ref _isPublicViewSelected, value);
+            get
+            {
+                return _isPublicViewSelected;
+            }
+            set
+            {
+                SetProperty(ref _isPublicViewSelected, value);
+            }
         }
 
         public string MatchCode
         {
-            get => _matchCode;
-            set => SetProperty(ref _matchCode, value);
+            get
+            {
+                return _matchCode;
+            }
+            set
+            {
+                SetProperty(ref _matchCode, value);
+            }
         }
 
         private bool _isJoining;
         public bool IsJoining
         {
-            get => _isJoining;
+            get
+            {
+                return _isJoining;
+            }
             set
             {
                 if (SetProperty(ref _isJoining, value))
@@ -51,18 +71,24 @@ namespace GuessMyMessClient.ViewModel.Matches
 
         public ObservableCollection<MatchInfoModel> PublicMatches
         {
-            get => _publicMatches;
-            set => SetProperty(ref _publicMatches, value);
+            get
+            {
+                return _publicMatches;
+            }
+            set
+            {
+                SetProperty(ref _publicMatches, value);
+            }
         }
 
-        public RelayCommand ShowPublicMatchesCommand { get; private set; }
+        public RelayCommand ShowPublicMatchesCommand { get; private set; }
         public RelayCommand ShowPrivateMatchesCommand { get; private set; }
         public RelayCommand JoinPublicMatchCommand { get; private set; }
         public RelayCommand JoinPrivateMatchCommand { get; private set; }
-        public RelayCommand RefreshCommand { get;  set; }
+        public RelayCommand RefreshCommand { get; set; }
         public RelayCommand ReturnCommand { get; private set; }
 
-        public MatchesViewModel()
+        public MatchesViewModel()
         {
             PublicMatches = new ObservableCollection<MatchInfoModel>();
 
@@ -72,11 +98,11 @@ namespace GuessMyMessClient.ViewModel.Matches
             JoinPrivateMatchCommand = new RelayCommand(async (p) => await ExecuteJoinPrivateMatchAsync(p), CanExecuteJoin);
             ReturnCommand = new RelayCommand(ExecuteReturn);
 
-            MatchmakingClientManager.Instance.OnPublicMatchesListUpdated += OnPublicMatchesListUpdated;
+            MatchmakingClientManager.Instance.OnPublicMatchesListUpdated += OnPublicMatchesListUpdated;
             MatchmakingClientManager.Instance.OnMatchJoinedSuccessfully += OnMatchJoined;
             MatchmakingClientManager.Instance.OnMatchmakingFailed += OnMatchmakingFailed;
 
-            LoadPublicMatches();
+            Task.Run(() => LoadPublicMatches());
         }
 
         private bool CanExecuteJoin(object parameter)
@@ -86,24 +112,42 @@ namespace GuessMyMessClient.ViewModel.Matches
 
         private async Task LoadPublicMatches()
         {
-            var matchesDto = await MatchmakingClientManager.Instance.GetPublicMatchesAsync();
-            OnPublicMatchesListUpdated(matchesDto); 
-        }
+            try
+            {
+                var matchesDto = await MatchmakingClientManager.Instance.GetPublicMatchesAsync();
+                OnPublicMatchesListUpdated(matchesDto);
+            }
+            catch (FaultException<ServiceMatchFault> fex)
+            {
+                ShowError(fex.Detail.Message);
+            }
+            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            {
+                ShowError(Lang.alertConnectionErrorMessage);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading public matches: {ex.Message}");
+            }
+        }
 
-        private void ExecuteJoinPublicMatch(object parameter) 
+        private void ExecuteJoinPublicMatch(object parameter)
         {
-            if (IsJoining) return;
+            if (IsJoining)
+            {
+                return;
+            }
             IsJoining = true;
 
-            if (parameter is MatchInfoModel matchInfo && matchInfo.CanJoin) 
+            if (parameter is MatchInfoModel matchInfo && matchInfo.CanJoin)
             {
                 _joiningMatchId = matchInfo.MatchId;
-                _joiningPrivateMatch = false; 
-                _currentWindow = FindParentWindow(); 
+                _joiningPrivateMatch = false;
+                _currentWindow = FindParentWindow();
 
                 MatchmakingClientManager.Instance.JoinPublicMatch(matchInfo.MatchId);
             }
-            else if (parameter is string matchId) 
+            else if (parameter is string matchId)
             {
                 _joiningMatchId = matchId;
                 _joiningPrivateMatch = false;
@@ -112,7 +156,8 @@ namespace GuessMyMessClient.ViewModel.Matches
             }
             else
             {
-                MessageBox.Show("No se puede unir a la partida seleccionada.", "Error");
+                ShowError(Lang.alertCannotJoinMatch);
+                IsJoining = false;
             }
         }
 
@@ -120,53 +165,93 @@ namespace GuessMyMessClient.ViewModel.Matches
         {
             if (string.IsNullOrWhiteSpace(MatchCode))
             {
-                MessageBox.Show(Properties.Langs.Lang.alertPrivateMatchesErrorNoCode);
+                ShowError(Lang.alertPrivateMatchesErrorNoCode);
                 return;
             }
 
-            if (IsJoining) return;
+            if (IsJoining)
+            {
+                return;
+            }
             IsJoining = true;
 
             string codeToJoin = MatchCode.ToUpper();
-            var result = await MatchmakingClientManager.Instance.JoinPrivateMatchAsync(codeToJoin);
 
-            if (result.Success && result.Data != null && result.Data.ContainsKey("MatchId"))
+            try
             {
-                string matchId = result.Data["MatchId"]; 
+                var result = await MatchmakingClientManager.Instance.JoinPrivateMatchAsync(codeToJoin);
 
-                var lobbyManager = LobbyClientManager.Instance;
-                var sessionManager = SessionManager.Instance;
-                string currentUsername = sessionManager.CurrentUsername;
-                lobbyManager.Connect(currentUsername, matchId);
-                var waitingRoomViewModel = new WaitingRoomPrivateMatchViewModel(lobbyManager, sessionManager);
-                var waitingRoomView = new WaitingRoomPrivateMatchView
+                if (result.Success && result.Data != null && result.Data.ContainsKey("MatchId"))
                 {
-                    DataContext = waitingRoomViewModel
-                };
-
-                Window currentWindow = FindParentWindow(parameter);
-                if (currentWindow != null)
-                {
-                    CleanupEvents(); 
-                    waitingRoomView.Show();
-                    currentWindow.Close();
+                    string matchId = result.Data["MatchId"];
+                    JoinLobbyAndNavigate(matchId, true, parameter);
                 }
                 else
                 {
-                    MessageBox.Show($"¡Unido a la partida {codeToJoin} con éxito! No se pudo navegar.", "Info");
-                    lobbyManager.Disconnect();
+                    ShowError(result.Message ?? Lang.alertJoinMatchError);
+                    IsJoining = false;
                 }
+            }
+            catch (FaultException<ServiceMatchFault> fex)
+            {
+                ShowError(fex.Detail.Message);
+                IsJoining = false;
+            }
+            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            {
+                ShowError(Lang.alertConnectionErrorMessage);
+                IsJoining = false;
+            }
+            catch (Exception ex)
+            {
+                ShowError($"{Lang.alertJoinMatchError}: {ex.Message}");
+                IsJoining = false;
+            }
+        }
+
+        private void JoinLobbyAndNavigate(string matchId, bool isPrivate, object parameter)
+        {
+            var lobbyManager = LobbyClientManager.Instance;
+            var sessionManager = SessionManager.Instance;
+            string currentUsername = sessionManager.CurrentUsername;
+
+            lobbyManager.Connect(currentUsername, matchId);
+
+            Window currentWindow = FindParentWindow(parameter) ?? _currentWindow;
+
+            if (isPrivate)
+            {
+                var waitingRoomViewModel = new WaitingRoomPrivateMatchViewModel(lobbyManager, sessionManager);
+                var waitingRoomView = new WaitingRoomPrivateMatchView { DataContext = waitingRoomViewModel };
+                NavigateToWindow(waitingRoomView, currentWindow);
             }
             else
             {
-                MessageBox.Show(result.Message ?? "Error al intentar unirse a la partida privada.", "Error");
+                var waitingRoomViewModel = new WaitingRoomPublicMatchViewModel(lobbyManager, sessionManager);
+                var waitingRoomView = new WaitingRoomPublicMatchView { DataContext = waitingRoomViewModel };
+                NavigateToWindow(waitingRoomView, currentWindow);
             }
-            IsJoining = false;
+        }
+
+        private void NavigateToWindow(Window newWindow, Window oldWindow)
+        {
+            if (oldWindow != null)
+            {
+                CleanupEvents();
+                newWindow.Show();
+                oldWindow.Close();
+            }
+            else
+            {
+                CleanupEvents();
+                newWindow.Show();
+                Application.Current.Windows.OfType<View.Matches.MatchesView>().FirstOrDefault()?.Close();
+            }
         }
 
         private void ExecuteReturn(object parameter)
         {
-            CleanupEvents(); 
+            CleanupEvents();
             if (parameter is Window window)
             {
                 var lobbyView = new View.Lobby.LobbyView();
@@ -175,9 +260,9 @@ namespace GuessMyMessClient.ViewModel.Matches
             }
         }
 
-        private void OnPublicMatchesListUpdated(List<MatchInfoDto> publicMatches)
+        private void OnPublicMatchesListUpdated(List<MatchInfoDto> publicMatches)
         {
-            Application.Current?.Dispatcher?.Invoke(() =>
+            Application.Current?.Dispatcher?.Invoke(() =>
             {
                 PublicMatches.Clear();
                 if (publicMatches != null)
@@ -194,45 +279,41 @@ namespace GuessMyMessClient.ViewModel.Matches
         {
             if (matchId != _joiningMatchId || _joiningPrivateMatch)
             {
-                return; 
+                return;
             }
 
             Application.Current?.Dispatcher?.Invoke(() =>
             {
-                IsJoining = false; 
-
                 if (result.Success)
                 {
-                    var lobbyManager = LobbyClientManager.Instance;
-                    var sessionManager = SessionManager.Instance;
-                    string currentUsername = sessionManager.CurrentUsername;
-                    lobbyManager.Connect(currentUsername, matchId);
-                    var waitingRoomViewModel = new WaitingRoomPublicMatchViewModel(lobbyManager, sessionManager);
-                    var waitingRoomView = new WaitingRoomPublicMatchView
-                    {
-                        DataContext = waitingRoomViewModel
-                    };
-
-                    if (_currentWindow != null)
-                    {
-                        CleanupEvents();
-                        waitingRoomView.Show();
-                        _currentWindow.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show($"¡Unido a la partida {matchId} con éxito! No se pudo navegar.", "Info");
-                        lobbyManager.Disconnect();
-                    }
+                    JoinLobbyAndNavigate(matchId, false, null);
                 }
                 else
                 {
-                    MessageBox.Show($"Error al unirse a la partida {matchId}: {result.Message}", "Error");
+                    ShowError(result.Message);
+                    IsJoining = false;
                 }
 
                 _joiningMatchId = null;
                 _joiningPrivateMatch = false;
                 _currentWindow = null;
+            });
+        }
+
+        private void OnMatchmakingFailed(string reason)
+        {
+            Application.Current?.Dispatcher?.Invoke(() =>
+            {
+                ShowError($"{Lang.alertMatchmakingError}: {reason}");
+                IsJoining = false;
+            });
+        }
+
+        private void ShowError(string message)
+        {
+            Application.Current?.Dispatcher?.Invoke(() =>
+            {
+                MessageBox.Show(message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             });
         }
 
@@ -245,21 +326,15 @@ namespace GuessMyMessClient.ViewModel.Matches
 
         private Window FindParentWindow(object commandParameter = null)
         {
-            if (commandParameter is Window win) return win;
-            return Application.Current?.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this || w.IsActive);
-        }
-
-        private void OnMatchmakingFailed(string reason)
-        {
-            Application.Current?.Dispatcher?.Invoke(() =>
+            if (commandParameter is Window win)
             {
-                MessageBox.Show($"Error de Matchmaking: {reason}");
-                IsJoining = false;
-            });
+                return win;
+            }
+            return Application.Current?.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this || w.IsActive);
         }
     }
 
-    public class MatchInfoModel : ViewModelBase
+    public class MatchInfoModel : ViewModelBase
     {
         public string MatchId { get; set; }
         public string MatchName { get; set; }

@@ -14,8 +14,15 @@ namespace GuessMyMessClient.ViewModel.Session
         private string _currentUsername;
         public string CurrentUsername
         {
-            get => _currentUsername;
-            set { _currentUsername = value; OnPropertyChanged(); }
+            get
+            {
+                return _currentUsername;
+            }
+            set
+            {
+                _currentUsername = value; 
+                OnPropertyChanged();
+            }
         }
 
         public bool IsLoggedIn => !string.IsNullOrEmpty(CurrentUsername);

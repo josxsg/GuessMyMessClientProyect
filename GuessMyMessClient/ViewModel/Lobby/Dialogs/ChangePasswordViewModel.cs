@@ -2,13 +2,13 @@
 using GuessMyMessClient.View.Lobby.Dialogs;
 using System;
 using System.Linq;
-using System.Security;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
+using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -33,30 +33,47 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 errorLangKey = "alertPasswordEmpty";
                 return false;
             }
+
             if (password.Length < 8)
             {
                 errorLangKey = "alertPasswordTooShort";
                 return false;
             }
+
+            if (password.Length > 25)
+            {
+                errorLangKey = "alertPasswordTooLong";
+                return false;
+            }
+
             if (!password.Any(char.IsUpper))
             {
                 errorLangKey = "alertPasswordNeedsUpper";
                 return false;
             }
+
             if (!password.Any(char.IsLower))
             {
                 errorLangKey = "alertPasswordNeedsLower";
                 return false;
             }
+
             if (!password.Any(char.IsDigit))
             {
                 errorLangKey = "alertPasswordNeedsDigit";
                 return false;
             }
+
             if (password.All(char.IsLetterOrDigit))
             {
                 errorLangKey = "alertPasswordNeedsSpecial";
                 return false;
+            }
+            if (!password.Contains(","))
+            {
+                errorLangKey = "alertPasswordNeedsComma";
+                return false;
+
             }
 
             errorLangKey = null;
@@ -75,11 +92,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
             if (newPasswordBox == null || confirmPasswordBox == null)
             {
-                MessageBox.Show(
-                    Lang.alertPasswordControlsNotFound,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                MessageBox.Show(Lang.alertPasswordControlsNotFound, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -89,83 +102,70 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             if (!IsPasswordSecure(newPassword, out string passwordErrorKey))
             {
                 string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
-                MessageBox.Show(
-                    passwordErrorMessage,
-                    Lang.alertPasswordNotSecureTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                MessageBox.Show(passwordErrorMessage, Lang.alertPasswordNotSecureTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (newPassword != confirmPassword)
             {
-                MessageBox.Show(
-                    Lang.alertPasswordsDoNotMatch,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                MessageBox.Show(Lang.alertPasswordsDoNotMatch, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
             try
             {
-                using (var client = new UserProfileServiceClient())
+                var result = await client.RequestChangePasswordAsync(_username);
+
+                if (result.Success)
                 {
-                    var result = await client.RequestChangePasswordAsync(_username);
-                    if (result.Success)
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertCodeSentTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
+                    MessageBox.Show(result.Message, Lang.alertCodeSentTitle, MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        var verifyVM = new VerifyChangesByCodeViewModel(
-                            VerifyChangesByCodeViewModel.VerificationMode.Password,
-                            _username,
-                            newPassword,
-                            null);
-                        var verifyView = new VerifyChangesByCodeView { DataContext = verifyVM };
+                    var verifyVM = new VerifyChangesByCodeViewModel(
+                        VerifyChangesByCodeViewModel.VerificationMode.Password,
+                        _username,
+                        newPassword,
+                        null);
 
-                        ExecuteClose(parameter);
-                        verifyView.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-                    }
+                    var verifyView = new VerifyChangesByCodeView { DataContext = verifyVM };
+
+                    ExecuteClose(parameter);
+                    verifyView.ShowDialog();
+
+                    client.Close();
+                    isSuccess = true;
                 }
+                else
+                {
+                    MessageBox.Show(result.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (FaultException fexGeneral)
             {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error requesting password change code: {fexGeneral.Message}");
+                MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
             }
-            catch (EndpointNotFoundException ex)
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertConnectionErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                Console.WriteLine($"Connection Error requesting password change code: {ex.Message}");
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                Console.WriteLine($"Unknown Error requesting password change code: {ex.Message}");
+                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine($"Critical Error: {ex.Message}");
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
             }
         }
 

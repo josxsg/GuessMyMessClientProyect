@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="1dc8eb7d-793e-4839-bd32-c8ee6f20fec5" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="3adefac2-f115-464d-a87f-798793317e6d" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
     <MetadataFile FileName="GuessMyMessServer.Contracts.DataContracts.xsd" MetadataType="Schema" ID="4e405f0d-45b5-45f6-98e4-9f4eeee0ba25" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="69952c5d-0ded-4071-a533-70166aa38c8d" SourceId="1" SourceUrl="net.tcp://localhost:8734/GuessMyMessServer/Profile/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

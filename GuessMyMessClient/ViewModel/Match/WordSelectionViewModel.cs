@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Windows.Input;
+using System.Linq;
+using System.ServiceModel;
+using System.Threading.Tasks;
 using System.Windows;
-using GuessMyMessClient.ViewModel.Support;
+using System.Windows.Input;
+using System.Windows.Threading;
+using GuessMyMessClient.GameService;
+using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.View.Match;
 using GuessMyMessClient.ViewModel.Session;
-using GuessMyMessClient.GameService;
-using System.Linq;
-using System.Windows.Threading;
+using GuessMyMessClient.ViewModel.Support;
+
+using ServiceGameFault = GuessMyMessClient.GameService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -18,29 +23,57 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _word1;
         public string Word1
         {
-            get { return _word1; }
-            set { _word1 = value; OnPropertyChanged(); }
+            get
+            {
+                return _word1;
+            }
+            set
+            {
+                _word1 = value; 
+                OnPropertyChanged();
+            }
         }
 
         private string _word2;
         public string Word2
         {
-            get { return _word2; }
-            set { _word2 = value; OnPropertyChanged(); }
+            get
+            {
+                return _word2;
+            }
+            set
+            {
+                _word2 = value; 
+                OnPropertyChanged();
+            }
         }
 
         private string _word3;
         public string Word3
         {
-            get { return _word3; }
-            set { _word3 = value; OnPropertyChanged(); }
+            get
+            {
+                return _word3;
+            }
+            set
+            {
+                _word3 = value; 
+                OnPropertyChanged();
+            }
         }
 
         private int _countdownTime;
         public int CountdownTime
         {
-            get { return _countdownTime; }
-            set { _countdownTime = value; OnPropertyChanged(); }
+            get
+            {
+                return _countdownTime;
+            }
+            set
+            {
+                _countdownTime = value;
+                OnPropertyChanged();
+            }
         }
 
         public ICommand SelectWordCommand { get; }
@@ -64,7 +97,7 @@ namespace GuessMyMessClient.ViewModel.Match
             _countdownTimer.Interval = TimeSpan.FromSeconds(1);
             _countdownTimer.Tick += OnTimerTick;
 
-            LoadWords();
+            Task.Run(() => LoadWordsAsync());
         }
 
         private bool CanSelectWord(object parameter)
@@ -74,28 +107,36 @@ namespace GuessMyMessClient.ViewModel.Match
                    !(parameter as string).Contains("Loading");
         }
 
-        private async void LoadWords()
+        private async Task LoadWordsAsync()
         {
             try
             {
                 WordDto[] words = await GameClientManager.Instance.GetRandomWordsAsync();
 
-                if (words != null && words.Length >= 3)
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    Word1 = words[0].WordKey;
-                    Word2 = words[1].WordKey;
-                    Word3 = words[2].WordKey;
-
-                    _countdownTimer.Start();
-                }
-                else
-                {
-                    MessageBox.Show("Could not load words from the server.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                    if (words != null && words.Length >= 3)
+                    {
+                        Word1 = words[0].WordKey;
+                        Word2 = words[1].WordKey;
+                        Word3 = words[2].WordKey;
+                        _countdownTimer.Start();
+                    }
+                    else
+                    {
+                        MessageBox.Show(Lang.alertWordLoadError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                });
+            }
+            catch (FaultException<ServiceGameFault> fex)
+            {
+                Application.Current.Dispatcher.Invoke(() =>
+                    MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning));
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading words: {ex.Message}", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Dispatcher.Invoke(() =>
+                    MessageBox.Show($"{Lang.alertWordLoadError}\n{ex.Message}", Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error));
             }
         }
 
@@ -113,7 +154,7 @@ namespace GuessMyMessClient.ViewModel.Match
                 }
                 else
                 {
-                    MessageBox.Show("Word loading failed. Auto-selection unavailable.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(Lang.alertWordAutoSelectFailed, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                     HandleConnectionLost();
                 }
             }
@@ -127,30 +168,39 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void HandleWordSelection(string selectedWord)
         {
-            if (_wordHasBeenSelected) return;
+            if (_wordHasBeenSelected)
+            {
+                return;
+            }
             _wordHasBeenSelected = true;
-
             _countdownTimer?.Stop();
 
-            if (string.IsNullOrEmpty(selectedWord)) return;
+            if (string.IsNullOrEmpty(selectedWord))
+            {
+                return;
+            }
 
             try
             {
                 GameClientManager.Instance.SelectWord(selectedWord);
 
-                Window currentWindow = Application.Current.Windows
-                    .OfType<WordSelectionView>()
-                    .FirstOrDefault();
-
-                if (currentWindow != null)
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    ServiceLocator.Navigation.NavigateToDrawingScreen(selectedWord);
-                    currentWindow.Close();
-                }
+                    Window currentWindow = Application.Current.Windows
+                        .OfType<WordSelectionView>()
+                        .FirstOrDefault();
+
+                    if (currentWindow != null)
+                    {
+                        ServiceLocator.Navigation.NavigateToDrawingScreen(selectedWord);
+                        currentWindow.Close();
+                    }
+                });
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error selecting word: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"{Lang.alertWordSelectError}\n{ex.Message}", Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                _wordHasBeenSelected = false;
             }
         }
 
@@ -159,7 +209,7 @@ namespace GuessMyMessClient.ViewModel.Match
             Application.Current?.Dispatcher.Invoke(() =>
             {
                 Cleanup();
-                MessageBox.Show("Connection to the game server was lost.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
                 Application.Current.Shutdown();
             });
         }
@@ -171,7 +221,6 @@ namespace GuessMyMessClient.ViewModel.Match
                 _countdownTimer.Stop();
                 _countdownTimer.Tick -= OnTimerTick;
             }
-
             GameClientManager.Instance.ConnectionLost -= HandleConnectionLost;
         }
 
@@ -185,7 +234,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
             {
@@ -195,7 +244,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
             {

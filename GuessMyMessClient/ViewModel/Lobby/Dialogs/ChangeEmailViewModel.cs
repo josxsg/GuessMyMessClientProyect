@@ -1,11 +1,12 @@
 ﻿using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.View.Lobby.Dialogs;
 using System;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
-using System.ServiceModel;
 using GuessMyMessClient.ViewModel;
+using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -49,40 +50,52 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         private async void ExecuteConfirm(object parameter)
         {
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
             try
             {
-                using (var client = new UserProfileServiceClient())
+                var result = await client.RequestChangeEmailAsync(_username, NewEmail);
+
+                if (result.Success)
                 {
-                    var result = await client.RequestChangeEmailAsync(_username, NewEmail);
-                    if (result.Success )
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertCodeSentTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertCodeSentTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
 
-                        var verifyVM = new VerifyChangesByCodeViewModel(
-                            VerifyChangesByCodeViewModel.VerificationMode.Email,
-                            _username,
-                            NewEmail,
-                            _emailUpdateCallback
-                        );
+                    var verifyVM = new VerifyChangesByCodeViewModel(
+                        VerifyChangesByCodeViewModel.VerificationMode.Email,
+                        _username,
+                        NewEmail,
+                        _emailUpdateCallback
+                    );
 
-                        var verifyView = new VerifyChangesByCodeView { DataContext = verifyVM };
+                    var verifyView = new VerifyChangesByCodeView { DataContext = verifyVM };
 
-                        ExecuteClose(parameter);
-                        verifyView.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-                    }
+                    ExecuteClose(parameter);
+                    verifyView.ShowDialog();
+
+                    client.Close();
+                    isSuccess = true;
                 }
+                else
+                {
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                }
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
             catch (FaultException fexGeneral)
             {
@@ -91,25 +104,29 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error requesting email change: {fexGeneral.Message}");
             }
-            catch (EndpointNotFoundException ex)
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
                 MessageBox.Show(
                     Lang.alertConnectionErrorMessage,
                     Lang.alertConnectionErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Connection Error requesting email change: {ex.Message}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
                     Lang.alertUnknownErrorMessage,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Unknown Error requesting email change: {ex.Message}");
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
             }
         }
 

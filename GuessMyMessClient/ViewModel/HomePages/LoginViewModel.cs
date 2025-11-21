@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
-using GuessMyMessClient.AuthService;
-using System.Windows.Input;
 using System.Windows;
+using System.Windows.Input;
+using GuessMyMessClient.AuthService;
+using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.View.HomePages;
 using GuessMyMessClient.View.Lobby;
 using GuessMyMessClient.ViewModel.Session;
-using GuessMyMessClient.Properties.Langs;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -19,10 +15,13 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _usernameOrEmail;
         public string UsernameOrEmail
         {
-            get => _usernameOrEmail;
+            get
+            {
+                return _usernameOrEmail;
+            }
             set
             {
-                _usernameOrEmail = value;
+                _usernameOrEmail = value; 
                 OnPropertyChanged();
             }
         }
@@ -30,7 +29,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _password;
         public string Password
         {
-            get => _password;
+            get
+            {
+                return _password;
+            }
             set
             {
                 _password = value;
@@ -73,7 +75,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
 
             var client = new AuthenticationServiceClient();
-            bool success = false;
+            bool isSuccess = false;
 
             try
             {
@@ -84,9 +86,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     SessionManager.Instance.StartSession(result.Message);
                     MatchmakingClientManager.Initialize();
                     MatchmakingClientManager.Instance.Connect(SessionManager.Instance.CurrentUsername);
+
                     OpenLobby(parameter);
                     client.Close();
-                    success = true;
+                    isSuccess = true;
                 }
                 else
                 {
@@ -97,44 +100,41 @@ namespace GuessMyMessClient.ViewModel.HomePages
                         MessageBoxImage.Error);
                 }
             }
-            catch (FaultException<string> fex)
+            catch (FaultException<ServiceFaultDto> fex)
             {
                 MessageBox.Show(
-                    fex.Detail,
+                    fex.Detail.Message,
                     Lang.alertLoginErrorTitle,
                     MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                    MessageBoxImage.Warning);
             }
-            catch (FaultException fexGeneral)
+            catch (FaultException)
             {
                 MessageBox.Show(
                     Lang.alertServerErrorMessage,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
             }
-            catch (EndpointNotFoundException ex)
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
                 MessageBox.Show(
                     Lang.alertConnectionErrorMessage,
                     Lang.alertConnectionErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Connection Error: {ex.Message}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
                     Lang.alertUnknownErrorMessage,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Unknown Error: {ex.Message}");
             }
             finally
             {
-                if (!success && client.State != CommunicationState.Closed)
+                if (!isSuccess && client.State != CommunicationState.Closed)
                 {
                     client.Abort();
                 }
@@ -181,9 +181,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             if (parameter is Window currentWindow)
             {
                 var welcomeView = new WelcomeView();
-                welcomeView.WindowState = WindowState.Maximized;
-                welcomeView.WindowStyle = WindowStyle.None;
-                welcomeView.ResizeMode = ResizeMode.NoResize;
+                welcomeView.WindowState = currentWindow.WindowState == WindowState.Maximized ? WindowState.Maximized : WindowState.Normal;
                 welcomeView.Show();
                 currentWindow.Close();
             }

@@ -77,6 +77,132 @@ namespace GuessMyMessClient.SocialService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class ServiceFaultDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GuessMyMessClient.SocialService.ServiceErrorType ErrorTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GuessMyMessClient.SocialService.ServiceErrorType ErrorType {
+            get {
+                return this.ErrorTypeField;
+            }
+            set {
+                if ((this.ErrorTypeField.Equals(value) != true)) {
+                    this.ErrorTypeField = value;
+                    this.RaisePropertyChanged("ErrorType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Target {
+            get {
+                return this.TargetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetField, value) != true)) {
+                    this.TargetField = value;
+                    this.RaisePropertyChanged("Target");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceErrorType", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    public enum ServiceErrorType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unknown = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DatabaseError = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OperationFailed = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConnectionTimeout = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidCredentials = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserAlreadyExists = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmailAlreadyRegistered = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountNotVerified = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LobbyFull = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MatchNotFound = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GameInProgress = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlayerBanned = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotFound = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DuplicateRecord = 25,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FriendRequestInfoDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
         "")]
     [System.SerializableAttribute()]
@@ -352,6 +478,9 @@ namespace GuessMyMessClient.SocialService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.Dictionary<string, string> DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -364,6 +493,19 @@ namespace GuessMyMessClient.SocialService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.Dictionary<string, string> Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
             }
         }
         
@@ -508,21 +650,24 @@ namespace GuessMyMessClient.SocialService {
         System.Threading.Tasks.Task ConnectAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendsList", ReplyAction="http://tempuri.org/ISocialService/GetFriendsListResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetFriendsListStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/GetFriendsListServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         GuessMyMessClient.SocialService.FriendDto[] GetFriendsList(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendsList", ReplyAction="http://tempuri.org/ISocialService/GetFriendsListResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetFriendsListAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendRequests", ReplyAction="http://tempuri.org/ISocialService/GetFriendRequestsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetFriendRequestsStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/GetFriendRequestsServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         GuessMyMessClient.SocialService.FriendRequestInfoDto[] GetFriendRequests(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendRequests", ReplyAction="http://tempuri.org/ISocialService/GetFriendRequestsResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendRequestInfoDto[]> GetFriendRequestsAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/SearchUsers", ReplyAction="http://tempuri.org/ISocialService/SearchUsersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/SearchUsersStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/SearchUsersServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         GuessMyMessClient.SocialService.UserProfileDto[] SearchUsers(string searchUsername, string requesterUsername);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/SearchUsers", ReplyAction="http://tempuri.org/ISocialService/SearchUsersResponse")]
@@ -547,7 +692,8 @@ namespace GuessMyMessClient.SocialService {
         System.Threading.Tasks.Task RemoveFriendAsync(string username, string friendToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         GuessMyMessClient.SocialService.OperationResultDto InviteFriendToGameByEmail(string fromUsername, string friendEmail, string matchCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse")]
@@ -560,14 +706,16 @@ namespace GuessMyMessClient.SocialService {
         System.Threading.Tasks.Task SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetConversationsStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/GetConversationsServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         GuessMyMessClient.SocialService.FriendDto[] GetConversations(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendDto[]> GetConversationsAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversationHistory", ReplyAction="http://tempuri.org/ISocialService/GetConversationHistoryResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(string), Action="http://tempuri.org/ISocialService/GetConversationHistoryStringFault", Name="string", Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/GetConversationHistoryServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         GuessMyMessClient.SocialService.DirectMessageDto[] GetConversationHistory(string user1, string user2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversationHistory", ReplyAction="http://tempuri.org/ISocialService/GetConversationHistoryResponse")]

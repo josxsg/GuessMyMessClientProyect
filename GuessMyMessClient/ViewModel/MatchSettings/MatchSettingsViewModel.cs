@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 using System.Windows;
 using GuessMyMessClient.View.WaitingRoom;
 using GuessMyMessClient.ViewModel.WaitingRoom;
+using GuessMyMessClient.Properties.Langs;
+using System.ServiceModel;
+using System;
+
+using ServiceMatchFault = GuessMyMessClient.MatchmakingService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.MatchSettings
 {
     public class MatchSettingsViewModel : ViewModelBase
     {
-        private string _matchName = "Partida de " + SessionManager.Instance.CurrentUsername;
+        private string _matchName = $"{Lang.defaultMatchNamePrefix} {SessionManager.Instance.CurrentUsername}";
         private bool _isPrivateMatch = false;
         private int _maxPlayers;
         private int _rounds;
@@ -23,38 +28,65 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
 
         public string MatchName
         {
-            get => _matchName;
-            set => SetProperty(ref _matchName, value);
+            get
+            {
+                return _matchName;
+            }
+            set
+            {
+                SetProperty(ref _matchName, value);
+            }
         }
 
         public bool IsPublicMatch
         {
-            get => !_isPrivateMatch;
+            get
+            {
+                return !_isPrivateMatch;
+            }
             set
             {
-                if (SetProperty(ref _isPrivateMatch, !value)) 
+                if (SetProperty(ref _isPrivateMatch, !value))
                 {
-                    OnPropertyChanged(nameof(IsPublicMatch)); 
+                    OnPropertyChanged(nameof(IsPublicMatch));
                 }
             }
         }
 
         public int MaxPlayers
         {
-            get => _maxPlayers;
-            set => SetProperty(ref _maxPlayers, value);
+            get
+            {
+                return _maxPlayers;
+            }
+            set
+            {
+                SetProperty(ref _maxPlayers, value);
+            }
         }
 
         public int Rounds
         {
-            get => _rounds;
-            set => SetProperty(ref _rounds, value);
+            get
+            {
+                return _rounds;
+            }
+            set
+            {
+                SetProperty(ref _rounds, value);
+            }
         }
 
         public DifficultyModel SelectedDifficulty
         {
-            get => _selectedDifficulty;
-            set => SetProperty(ref _selectedDifficulty, value);
+            get
+            {
+                return _selectedDifficulty;
+            }
+            set
+            {
+                SetProperty(ref _selectedDifficulty, value);
+            }
         }
 
         public RelayCommand SetMatchTypeCommand { get; private set; }
@@ -65,11 +97,12 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
         {
             AvailablePlayerCounts = Enumerable.Range(2, 7).ToList();
             AvailableRoundCounts = Enumerable.Range(3, 4).ToList();
+
             AvailableDifficulties = new List<DifficultyModel>
             {
-                new DifficultyModel { Id = 1, Name = Properties.Langs.Lang.createGameCbEasy },
-                new DifficultyModel { Id = 2, Name = Properties.Langs.Lang.createGameCbIntermediate },
-                new DifficultyModel { Id = 3, Name = Properties.Langs.Lang.createGameCbHard }
+                new DifficultyModel { Id = 1, Name = Lang.createGameCbEasy },
+                new DifficultyModel { Id = 2, Name = Lang.createGameCbIntermediate },
+                new DifficultyModel { Id = 3, Name = Lang.createGameCbHard }
             };
 
             MaxPlayers = AvailablePlayerCounts[0];
@@ -83,14 +116,14 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
 
         private void ExecuteSetMatchType(object parameter)
         {
-            IsPublicMatch = (parameter.ToString() == "Public");
+            IsPublicMatch = (parameter?.ToString() == "Public");
         }
 
         private async Task ExecuteCreateMatchAsync(object parameter)
         {
             if (string.IsNullOrWhiteSpace(MatchName))
             {
-                MessageBox.Show(Properties.Langs.Lang.alertCreateGameErrorName);
+                MessageBox.Show(Lang.alertCreateGameErrorName, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -99,56 +132,79 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                 MatchName = this.MatchName,
                 IsPrivate = this._isPrivateMatch,
                 MaxPlayers = this.MaxPlayers,
-                TotalRounds = this.Rounds, 
+                TotalRounds = this.Rounds,
                 DifficultyId = this.SelectedDifficulty.Id
             };
 
-            var result = await MatchmakingClientManager.Instance.CreateMatchAsync(settings);
-
-            if (result.Success && result.Data != null && result.Data.ContainsKey("MatchId"))
+            try
             {
-                string matchId = result.Data["MatchId"]; 
+                var result = await MatchmakingClientManager.Instance.CreateMatchAsync(settings);
 
-                var lobbyManager = LobbyClientManager.Instance; 
-                var sessionManager = SessionManager.Instance; 
-                string currentUsername = sessionManager.CurrentUsername;
-
-                lobbyManager.Connect(currentUsername, matchId);
-
-                Window waitingRoomView = null;
-                ViewModelBase waitingRoomViewModel = null;
-
-                if (_isPrivateMatch)
+                if (result.Success && result.Data != null && result.Data.ContainsKey("MatchId"))
                 {
-                    waitingRoomViewModel = new WaitingRoomPrivateMatchHostViewModel(lobbyManager, sessionManager);
-                    waitingRoomView = new WaitingRoomPrivateMatchHostView
+                    string matchId = result.Data["MatchId"];
+
+                    var lobbyManager = LobbyClientManager.Instance;
+                    var sessionManager = SessionManager.Instance;
+                    string currentUsername = sessionManager.CurrentUsername;
+
+                    lobbyManager.Connect(currentUsername, matchId);
+
+                    Window waitingRoomView = null;
+                    ViewModelBase waitingRoomViewModel = null;
+
+                    if (_isPrivateMatch)
                     {
-                        DataContext = waitingRoomViewModel
-                    };
-                }
-                else 
-                {
-                    waitingRoomViewModel = new WaitingRoomPublicMatchHostViewModel(lobbyManager, sessionManager);
-                    waitingRoomView = new WaitingRoomPublicMatchHostView
+                        waitingRoomViewModel = new WaitingRoomPrivateMatchHostViewModel(lobbyManager, sessionManager);
+                        waitingRoomView = new WaitingRoomPrivateMatchHostView
+                        {
+                            DataContext = waitingRoomViewModel
+                        };
+                    }
+                    else
                     {
-                        DataContext = waitingRoomViewModel
-                    };
-                }
+                        waitingRoomViewModel = new WaitingRoomPublicMatchHostViewModel(lobbyManager, sessionManager);
+                        waitingRoomView = new WaitingRoomPublicMatchHostView
+                        {
+                            DataContext = waitingRoomViewModel
+                        };
+                    }
 
-                if (parameter is Window currentWindow && waitingRoomView != null)
-                {
-                    waitingRoomView.Show();
-                    currentWindow.Close();
+                    if (parameter is Window currentWindow && waitingRoomView != null)
+                    {
+                        waitingRoomView.Show();
+                        currentWindow.Close();
+                    }
+                    else
+                    {
+                        waitingRoomView?.Show();
+                        Application.Current.Windows.OfType<View.MatchSettings.MatchSettingsView>().FirstOrDefault()?.Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"Partida creada (ID: {matchId}). No se pudo navegar automáticamente.", "Info");
-                    lobbyManager.Disconnect(); 
+                    MessageBox.Show(
+                        result.Message ?? Lang.alertCreateGameErrorGeneric,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
-            else
+            catch (FaultException<ServiceMatchFault> fex)
             {
-                MessageBox.Show(result.Message ?? "Error desconocido al crear la partida.", "Error");
+                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            {
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{Lang.alertCreateGameErrorGeneric}\n{ex.Message}",
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -168,9 +224,6 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() => Name;
     }
 }

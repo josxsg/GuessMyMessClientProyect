@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Ink;
 using System.Windows.Input;
@@ -11,9 +11,10 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using GuessMyMessClient.GameService;
 using GuessMyMessClient.View.Match;
-using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.ViewModel.Support;
 using GuessMyMessClient.Properties.Langs;
+using ServiceGameFault = GuessMyMessClient.GameService.ServiceFaultDto;
+using GuessMyMessClient.ViewModel.Session;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -22,15 +23,29 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _username;
         public string Username
         {
-            get { return _username; }
-            set { _username = value; OnPropertyChanged(nameof(Username)); }
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value; 
+                OnPropertyChanged(nameof(Username));
+            }
         }
 
         private int _score;
         public int Score
         {
-            get { return _score; }
-            set { _score = value; OnPropertyChanged(nameof(Score)); }
+            get
+            {
+                return _score;
+            }
+            set
+            {
+                _score = value; 
+                OnPropertyChanged(nameof(Score));
+            }
         }
     }
 
@@ -54,29 +69,57 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _drawingArtistName;
         public string DrawingArtistName
         {
-            get => _drawingArtistName;
-            set { _drawingArtistName = value; OnPropertyChanged(nameof(DrawingArtistName)); }
+            get
+            {
+                return _drawingArtistName;
+            }
+            set
+            {
+                _drawingArtistName = value; 
+                OnPropertyChanged(nameof(DrawingArtistName));
+            }
         }
 
         private StrokeCollection _currentDrawingStrokes;
         public StrokeCollection CurrentDrawingStrokes
         {
-            get => _currentDrawingStrokes;
-            set { _currentDrawingStrokes = value; OnPropertyChanged(nameof(CurrentDrawingStrokes)); }
+            get
+            {
+                return _currentDrawingStrokes;
+            }
+            set
+            {
+                _currentDrawingStrokes = value; 
+                OnPropertyChanged(nameof(CurrentDrawingStrokes));
+            }
         }
 
         private string _currentDisplayedGuess;
         public string CurrentDisplayedGuess
         {
-            get => _currentDisplayedGuess;
-            set { _currentDisplayedGuess = value; OnPropertyChanged(nameof(CurrentDisplayedGuess)); }
+            get
+            {
+                return _currentDisplayedGuess;
+            }
+            set
+            {
+                _currentDisplayedGuess = value; 
+                OnPropertyChanged(nameof(CurrentDisplayedGuess));
+            }
         }
 
         private Brush _currentGuessColor;
         public Brush CurrentGuessColor
         {
-            get => _currentGuessColor;
-            set { _currentGuessColor = value; OnPropertyChanged(nameof(CurrentGuessColor)); }
+            get
+            {
+                return _currentGuessColor;
+            }
+            set
+            {
+                _currentGuessColor = value; 
+                OnPropertyChanged(nameof(CurrentGuessColor));
+            }
         }
 
         public ObservableCollection<PlayerViewModel> PlayerList { get; set; }
@@ -85,7 +128,10 @@ namespace GuessMyMessClient.ViewModel.Match
         private string _newChatMessage;
         public string NewChatMessage
         {
-            get => _newChatMessage;
+            get
+            {
+                return _newChatMessage;
+            }
             set
             {
                 _newChatMessage = value;
@@ -115,10 +161,10 @@ namespace GuessMyMessClient.ViewModel.Match
 
             ChatMessages = new ObservableCollection<ChatMessageViewModel>();
             SendMessageCommand = new RelayCommand(OnSendChatMessage, CanSendChatMessage);
-            GameClientManager.Instance.InGameMessageReceived += OnInGameMessageReceived_Handler;
 
-            GameClientManager.Instance.GameEnd -= CloseOnNextPhase;
-            GameClientManager.Instance.ConnectionLost -= CloseOnDisconnect;
+            GameClientManager.Instance.InGameMessageReceived += OnInGameMessageReceived_Handler;
+            GameClientManager.Instance.GameEnd += CloseOnNextPhase;
+            GameClientManager.Instance.ConnectionLost += CloseOnDisconnect;
 
             _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SecondsPerGuess) };
             _timer.Tick += OnTimerTick;
@@ -174,7 +220,7 @@ namespace GuessMyMessClient.ViewModel.Match
                     .Where(g => g.DrawingId == currentDrawing.DrawingId)
                     .ToList();
 
-                CurrentDisplayedGuess = $"{Lang.answersScreenMsgTheWordWas}{currentDrawing.WordKey}";
+                CurrentDisplayedGuess = $"{Lang.answersScreenMsgTheWordWas} {currentDrawing.WordKey}";
                 CurrentGuessColor = Brushes.DarkBlue;
 
                 _guessIndex = 0;
@@ -201,14 +247,27 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnSendChatMessage(object parameter)
         {
+            if (!CanSendChatMessage(null))
+            {
+                return;
+            }
+
             try
             {
                 GameClientManager.Instance.SendInGameMessage(NewChatMessage);
                 NewChatMessage = string.Empty;
             }
+            catch (FaultException<ServiceGameFault> fex)
+            {
+                MessageBox.Show(fex.Detail.Message, Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            {
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"{Lang.alertErrorSendingMessage}{ex.Message}", Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"{Lang.alertErrorSendingMessage} {ex.Message}", Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

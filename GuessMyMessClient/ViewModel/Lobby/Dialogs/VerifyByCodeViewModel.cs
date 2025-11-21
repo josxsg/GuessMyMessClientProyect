@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GuessMyMessClient.AuthService;
-using GuessMyMessClient.View.HomePages;
-using System.Windows.Input;
-using System.Windows;
-using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.ViewModel;
 using System.ServiceModel;
+using System.Windows;
+using System.Windows.Input;
+using GuessMyMessClient.AuthService;
+using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.View.HomePages;
+using GuessMyMessClient.ViewModel;
+using ServiceAuthFault = GuessMyMessClient.AuthService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -17,6 +14,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
     {
         private readonly string _userEmail;
         private string _verificationCode;
+
         public string VerificationCode
         {
             get
@@ -40,10 +38,10 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         {
             if (string.IsNullOrWhiteSpace(userEmail))
             {
-                throw new ArgumentNullException(nameof(userEmail), "User email cannot be empty for verification.");
+                throw new ArgumentNullException(nameof(userEmail), Lang.alertEmailEmpty);
             }
-            _userEmail = userEmail;
 
+            _userEmail = userEmail;
             VerifyCommand = new RelayCommand(ExecuteVerify, CanExecuteVerify);
             CloseCommand = new RelayCommand(CloseWindow);
         }
@@ -55,56 +53,75 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         private async void ExecuteVerify(object parameter)
         {
-            using (AuthenticationServiceClient client = new AuthenticationServiceClient())
-            {
-                try
-                {
-                    OperationResultDto result = await client.VerifyAccountAsync(_userEmail, VerificationCode);
+            var client = new AuthenticationServiceClient();
+            bool isSuccess = false;
 
-                    if (result.Success)
-                    {
-                        MessageBox.Show(
-                            Lang.alertVerificationSuccess,
-                            Lang.alertActivationCompleteTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
-                        OpenLoginWindow(parameter);
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            result.Message,
-                            Lang.alertVerificationErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
-                    }
-                }
-                catch (FaultException fexGeneral)
+            try
+            {
+                var result = await client.VerifyAccountAsync(_userEmail, VerificationCode);
+
+                if (result.Success)
                 {
                     MessageBox.Show(
-                        Lang.alertServerErrorMessage,
-                        Lang.alertErrorTitle,
+                        Lang.alertVerificationSuccess,
+                        Lang.alertActivationCompleteTitle,
                         MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"WCF Error during verification: {fexGeneral.Message}");
+                        MessageBoxImage.Information);
+
+                    OpenLoginWindow(parameter);
+
+                    client.Close();
+                    isSuccess = true;
                 }
-                catch (EndpointNotFoundException ex)
+                else
                 {
                     MessageBox.Show(
-                        Lang.alertConnectionErrorMessage,
-                        Lang.alertConnectionErrorTitle,
+                        result.Message,
+                        Lang.alertVerificationErrorTitle,
                         MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Connection Error during verification: {ex.Message}");
+                        MessageBoxImage.Warning);
                 }
-                catch (Exception ex)
+            }
+            catch (FaultException<ServiceAuthFault> fex)
+            {
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertVerificationErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+            catch (FaultException fexGeneral)
+            {
+                MessageBox.Show(
+                    Lang.alertServerErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
+            }
+            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
+            {
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Connection Error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Console.WriteLine($"Unexpected Error: {ex.Message}");
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
                 {
-                    MessageBox.Show(
-                        Lang.alertUnknownErrorMessage,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                    Console.WriteLine($"Unknown Error during verification: {ex.Message}");
+                    client.Abort();
                 }
             }
         }

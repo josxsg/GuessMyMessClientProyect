@@ -1,4 +1,5 @@
 ﻿using GuessMyMessClient.LobbyService;
+using GuessMyMessClient.Properties.Langs;
 using System;
 using System.ServiceModel;
 using System.Windows;
@@ -31,21 +32,33 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             try
             {
-                if (IsConnected) Disconnect();
+                if (IsConnected)
+                {
+                    Disconnect();
+                }
+
                 _currentUsername = username;
                 CurrentMatchId = matchId;
+
                 var instanceContext = new InstanceContext(this);
                 _client = new LobbyServiceClient(instanceContext);
                 _client.Open();
+
                 _client.InnerChannel.Faulted += Channel_Faulted;
                 _client.InnerChannel.Closed += Channel_Closed;
+
                 _client.ConnectToLobby(username, matchId);
-                Console.WriteLine($"Attempting to connect to lobby {matchId} as {username}");
+                Console.WriteLine($"LobbyClientManager: Connecting to lobby {matchId} as {username}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error connecting to Lobby service: {ex.Message}");
-                MessageBox.Show($"Error connecting to lobby: {ex.Message}", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    $"{Lang.alertConnectionErrorMessage}\n({ex.Message})",
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+
                 CleanupConnection();
                 ConnectionLost?.Invoke();
             }
@@ -53,19 +66,25 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void Disconnect()
         {
-            if (!IsConnected) return;
+            if (_client == null)
+            {
+                return;
+            }
+
             try
             {
-                _client.LeaveLobby(_currentUsername, CurrentMatchId);
-                Console.WriteLine($"Sent LeaveLobby request for {_currentUsername} from {CurrentMatchId}");
+                if (_client.State == CommunicationState.Opened && !string.IsNullOrEmpty(_currentUsername))
+                {
+                    _client.LeaveLobby(_currentUsername, CurrentMatchId);
+                }
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
-                Console.WriteLine($"Failed to send LeaveLobby gracefully: {ex.Message}. Forcing disconnect.");
+                Console.WriteLine($"LobbyClientManager: Network error during disconnect: {ex.Message}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Unexpected error during LeaveLobby: {ex.Message}");
+                Console.WriteLine($"LobbyClientManager: Unexpected error during disconnect: {ex.Message}");
             }
             finally
             {
@@ -82,10 +101,8 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client.InnerChannel.Faulted -= Channel_Faulted;
                     _client.InnerChannel.Closed -= Channel_Closed;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error unsubscribing from channel events: {ex.Message}");
-                }
+                catch { }
+
                 try
                 {
                     if (_client.State != CommunicationState.Faulted)
@@ -99,7 +116,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Exception during WCF proxy cleanup: {ex.Message}");
+                    Console.WriteLine($"LobbyClientManager: Error closing client: {ex.Message}");
                     _client.Abort();
                 }
                 finally
@@ -109,26 +126,32 @@ namespace GuessMyMessClient.ViewModel.Session
                     _currentUsername = null;
                 }
             }
-            Console.WriteLine("WCF connection cleaned up.");
+            Console.WriteLine("LobbyClientManager: Connection cleaned.");
         }
 
         public void SendChatMessage(string messageKey)
         {
-            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(CurrentMatchId)) return;
+            if (!IsConnected)
+            {
+                return;
+            }
             try
             {
                 _client.SendLobbyMessage(_currentUsername, CurrentMatchId, messageKey);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error sending chat message: {ex.Message}");
+                Console.WriteLine($"Error sending chat: {ex.Message}");
                 HandleCommunicationError();
             }
         }
 
         public void RequestStartGame()
         {
-            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(CurrentMatchId)) return;
+            if (!IsConnected)
+            {
+                return;
+            }
             try
             {
                 _client.StartGame(_currentUsername, CurrentMatchId);
@@ -142,14 +165,17 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void RequestKickPlayer(string playerToKick)
         {
-            if (!IsConnected || string.IsNullOrEmpty(_currentUsername) || string.IsNullOrEmpty(CurrentMatchId) || string.IsNullOrEmpty(playerToKick)) return;
+            if (!IsConnected)
+            {
+                return;
+            }
             try
             {
                 _client.KickPlayer(_currentUsername, playerToKick, CurrentMatchId);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error kicking player {playerToKick}: {ex.Message}");
+                Console.WriteLine($"Error kicking player: {ex.Message}");
                 HandleCommunicationError();
             }
         }
@@ -158,7 +184,6 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Received Lobby State Update: {lobbyStateDto.CurrentPlayers}/{lobbyStateDto.MaxPlayers} players.");
                 LobbyStateUpdated?.Invoke(lobbyStateDto);
             });
         }
@@ -167,7 +192,6 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Received Chat: [{messageDto.SenderUsername}]: {messageDto.MessageContent}");
                 LobbyMessageReceived?.Invoke(messageDto);
             });
         }
@@ -176,7 +200,6 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Kicked from lobby: {reason}");
                 Kicked?.Invoke(reason);
                 CleanupConnection();
             });
@@ -186,7 +209,6 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Game starting in {countdownSeconds}...");
                 CountdownTick?.Invoke(countdownSeconds);
             });
         }
@@ -195,7 +217,6 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine("Game started!");
                 GameStarted?.Invoke();
             });
         }
@@ -204,19 +225,19 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine($"Kick vote update for {targetUsername}: {currentVotes}/{votesNeeded}");
+                Console.WriteLine($"Vote update: {targetUsername} {currentVotes}/{votesNeeded}");
             });
         }
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("WCF channel has faulted.");
+            Console.WriteLine("LobbyClientManager: Channel faulted.");
             HandleCommunicationError(true);
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("WCF channel was closed.");
+            Console.WriteLine("LobbyClientManager: Channel closed.");
             if (_client != null)
             {
                 HandleCommunicationError(true);
@@ -227,16 +248,21 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                Console.WriteLine("Handling communication error.");
                 CleanupConnection();
                 ConnectionLost?.Invoke();
+
                 if (unexpected)
                 {
-                    MessageBox.Show("Lost connection to the lobby service.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(
+                        Lang.alertConnectionErrorMessage,
+                        Lang.alertConnectionErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
                 }
             });
         }
     }
+
     public class ChatMessageDisplay
     {
         public string FormattedMessage { get; set; }
