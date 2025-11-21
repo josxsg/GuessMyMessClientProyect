@@ -123,7 +123,11 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
         {
             if (string.IsNullOrWhiteSpace(MatchName))
             {
-                MessageBox.Show(Lang.alertCreateGameErrorName, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertCreateGameErrorName,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Warning);
                 return;
             }
 
@@ -192,16 +196,24 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
             }
             catch (FaultException<ServiceMatchFault> fex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
-                    $"{Lang.alertCreateGameErrorGeneric}\n{ex.Message}",
+                    Lang.alertCreateGameErrorGeneric,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);

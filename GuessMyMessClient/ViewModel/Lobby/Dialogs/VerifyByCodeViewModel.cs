@@ -90,14 +90,13 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning);
             }
-            catch (FaultException fexGeneral)
+            catch (FaultException)
             {
                 MessageBox.Show(
                     Lang.alertServerErrorMessage,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
             }
             catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
@@ -106,16 +105,14 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     Lang.alertConnectionErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Connection Error: {ex.Message}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
                     Lang.alertUnknownErrorMessage,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                Console.WriteLine($"Unexpected Error: {ex.Message}");
             }
             finally
             {

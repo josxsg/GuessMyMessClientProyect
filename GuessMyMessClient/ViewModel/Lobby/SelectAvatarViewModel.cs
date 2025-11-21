@@ -117,8 +117,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     }
 
                     AvailableAvatars = new ObservableCollection<AvatarModel>(tempAvatars);
-                    SelectedAvatar = AvailableAvatars.FirstOrDefault(a => a.Id == _currentAvatarId)
-                                     ?? AvailableAvatars.FirstOrDefault();
+                    SelectedAvatar = AvailableAvatars.FirstOrDefault(a => a.Id == _currentAvatarId) ?? AvailableAvatars.FirstOrDefault();
                 });
 
                 client.Close();

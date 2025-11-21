@@ -124,19 +124,31 @@ namespace GuessMyMessClient.ViewModel.Match
                     }
                     else
                     {
-                        MessageBox.Show(Lang.alertWordLoadError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                        MessageBox.Show(
+                            Lang.alertWordLoadError,
+                            Lang.alertErrorTitle, 
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
                     }
                 });
             }
             catch (FaultException<ServiceGameFault> fex)
             {
                 Application.Current.Dispatcher.Invoke(() =>
-                    MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning));
+                    MessageBox.Show(
+                        fex.Detail.Message,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Application.Current.Dispatcher.Invoke(() =>
-                    MessageBox.Show($"{Lang.alertWordLoadError}\n{ex.Message}", Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error));
+                    MessageBox.Show(
+                    Lang.alertWordLoadError,
+                    Lang.alertConnectionErrorTitle, 
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Error));
             }
         }
 
@@ -154,7 +166,11 @@ namespace GuessMyMessClient.ViewModel.Match
                 }
                 else
                 {
-                    MessageBox.Show(Lang.alertWordAutoSelectFailed, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(
+                        Lang.alertWordAutoSelectFailed, 
+                        Lang.alertErrorTitle, 
+                        MessageBoxButton.OK, 
+                        MessageBoxImage.Error);
                     HandleConnectionLost();
                 }
             }
@@ -197,9 +213,13 @@ namespace GuessMyMessClient.ViewModel.Match
                     }
                 });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"{Lang.alertWordSelectError}\n{ex.Message}", Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertWordSelectError, 
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 _wordHasBeenSelected = false;
             }
         }
@@ -209,7 +229,11 @@ namespace GuessMyMessClient.ViewModel.Match
             Application.Current?.Dispatcher.Invoke(() =>
             {
                 Cleanup();
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage, 
+                    Lang.alertConnectionErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 Application.Current.Shutdown();
             });
         }

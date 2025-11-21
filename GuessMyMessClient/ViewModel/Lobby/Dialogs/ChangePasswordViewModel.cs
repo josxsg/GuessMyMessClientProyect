@@ -92,7 +92,11 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
             if (newPasswordBox == null || confirmPasswordBox == null)
             {
-                MessageBox.Show(Lang.alertPasswordControlsNotFound, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertPasswordControlsNotFound, 
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 return;
             }
 
@@ -102,13 +106,21 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             if (!IsPasswordSecure(newPassword, out string passwordErrorKey))
             {
                 string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
-                MessageBox.Show(passwordErrorMessage, Lang.alertPasswordNotSecureTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    passwordErrorMessage,
+                    Lang.alertPasswordNotSecureTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
             if (newPassword != confirmPassword)
             {
-                MessageBox.Show(Lang.alertPasswordsDoNotMatch, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertPasswordsDoNotMatch,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
@@ -121,7 +133,11 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
                 if (result.Success)
                 {
-                    MessageBox.Show(result.Message, Lang.alertCodeSentTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertCodeSentTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
 
                     var verifyVM = new VerifyChangesByCodeViewModel(
                         VerifyChangesByCodeViewModel.VerificationMode.Password,
@@ -139,26 +155,44 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 }
                 else
                 {
-                    MessageBox.Show(result.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(
+                        result.Message, 
+                        Lang.alertErrorTitle, 
+                        MessageBoxButton.OK, 
+                        MessageBoxImage.Warning);
                 }
             }
             catch (FaultException<ServiceProfileFault> fex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message, 
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
-            catch (FaultException fexGeneral)
+            catch (FaultException)
             {
-                MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                Console.WriteLine($"WCF Error: {fexGeneral.Message}");
+                MessageBox.Show(
+                    Lang.alertServerErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage, 
+                    Lang.alertConnectionErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                Console.WriteLine($"Critical Error: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             finally
             {

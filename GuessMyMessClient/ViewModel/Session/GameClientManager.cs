@@ -61,7 +61,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 _client.InnerChannel.Closed += Channel_Closed;
 
                 _client.Connect(_currentUsername, _currentMatchId);
-                Console.WriteLine($"GameClientManager: Connected as {username} to match {matchId}");
             }
             catch (FaultException<ServiceGameFault> fex)
             {
@@ -72,9 +71,8 @@ namespace GuessMyMessClient.ViewModel.Session
                     MessageBoxImage.Warning);
                 CleanupConnection();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error connecting to GameService: {ex.Message}");
                 MessageBox.Show(
                     Lang.alertConnectionErrorMessage,
                     Lang.alertConnectionErrorTitle,
@@ -97,12 +95,15 @@ namespace GuessMyMessClient.ViewModel.Session
                 if (_client.State == CommunicationState.Opened)
                 {
                     _client.Disconnect(_currentUsername, _currentMatchId);
-                    Console.WriteLine($"GameClientManager: Disconnect request sent for {_currentUsername}");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"GameClientManager: Error during disconnect: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             finally
             {
@@ -132,9 +133,13 @@ namespace GuessMyMessClient.ViewModel.Session
                         _client.Abort();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine($"GameClientManager: Error closing client: {ex.Message}");
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                     _client.Abort();
                 }
                 finally
@@ -142,7 +147,6 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client = null;
                 }
             }
-            Console.WriteLine("GameClientManager: Connection cleaned.");
         }
 
         public async Task<WordDto[]> GetRandomWordsAsync()
@@ -158,12 +162,20 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (FaultException<ServiceGameFault> fex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message, 
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error in GetRandomWordsAsync: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 HandleCommunicationError(true);
                 return null;
             }
@@ -179,10 +191,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.SelectWord(_currentUsername, _currentMatchId, selectedWord);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error in SelectWord: {ex.Message}");
-                HandleCommunicationError(true);
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error); HandleCommunicationError(true);
             }
         }
 
@@ -196,9 +211,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.SubmitDrawing(_currentUsername, _currentMatchId, drawingData);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error in SubmitDrawing: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 HandleCommunicationError(true);
             }
         }
@@ -213,9 +232,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.SendInGameChatMessage(_currentUsername, _currentMatchId, message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error sending message: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 HandleCommunicationError(true);
             }
         }
@@ -230,34 +253,33 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.SubmitGuess(_currentUsername, _currentMatchId, drawingId, guess);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error sending guess: {ex.Message}");
-                HandleCommunicationError(true);
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error); HandleCommunicationError(true);
             }
         }
 
         public void OnRoundStart(int roundNumber, string[] wordOptions)
         {
-            Console.WriteLine($"Callback: OnRoundStart - Round {roundNumber}");
             RoundStart?.Invoke(this, new RoundStartEventArgs { RoundNumber = roundNumber, WordOptions = wordOptions });
         }
 
         public void OnDrawingPhaseStart(int durationSeconds)
         {
-            Console.WriteLine($"Callback: OnDrawingPhaseStart - {durationSeconds}s");
             DrawingPhaseStart?.Invoke(this, new DrawingPhaseStartEventArgs { DurationSeconds = durationSeconds });
         }
 
         public void OnGuessingPhaseStart(DrawingDto drawing)
         {
-            Console.WriteLine($"Callback: OnGuessingPhaseStart - Drawing by {drawing.OwnerUsername}");
             GuessingPhaseStart?.Invoke(this, new GuessingPhaseStartEventArgs { Drawing = drawing });
         }
 
         public void OnGameEnd(PlayerScoreDto[] finalScores)
         {
-            Console.WriteLine("Callback: OnGameEnd");
             GameEnd?.Invoke(this, new GameEndEventArgs { FinalScores = finalScores });
         }
 
@@ -268,7 +290,6 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void OnAnswersPhaseStart(DrawingDto[] allDrawings, GuessDto[] allGuesses, PlayerScoreDto[] currentScores)
         {
-            Console.WriteLine("Callback: OnAnswersPhaseStart");
             AnswersPhaseStart?.Invoke(this, new AnswersPhaseStartEventArgs
             {
                 AllDrawings = allDrawings,
@@ -279,19 +300,16 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void OnShowNextDrawing(DrawingDto nextDrawing)
         {
-            Console.WriteLine($"Callback: OnShowNextDrawing - Next {nextDrawing.DrawingId}");
             ShowNextDrawing?.Invoke(this, new ShowNextDrawingEventArgs { NextDrawing = nextDrawing });
         }
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("GameClientManager: WCF channel faulted.");
             HandleCommunicationError(true);
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("GameClientManager: WCF channel closed.");
             if (_client != null)
             {
                 HandleCommunicationError(false);

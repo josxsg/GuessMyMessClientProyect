@@ -125,9 +125,13 @@ namespace GuessMyMessClient.ViewModel.Matches
             {
                 ShowError(Lang.alertConnectionErrorMessage);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error loading public matches: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -202,9 +206,9 @@ namespace GuessMyMessClient.ViewModel.Matches
                 ShowError(Lang.alertConnectionErrorMessage);
                 IsJoining = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ShowError($"{Lang.alertJoinMatchError}: {ex.Message}");
+                ShowError(Lang.alertJoinMatchError);
                 IsJoining = false;
             }
         }
@@ -313,7 +317,11 @@ namespace GuessMyMessClient.ViewModel.Matches
         {
             Application.Current?.Dispatcher?.Invoke(() =>
             {
-                MessageBox.Show(message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    message, 
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Error);
             });
         }
 

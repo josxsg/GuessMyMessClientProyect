@@ -215,9 +215,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     currentLobbyWindow.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Error al cambiar el idioma: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertChangeLanguageError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -249,9 +253,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
                         {
                             authClient.LogOut(currentUsername);
                         }
-                        catch (CommunicationException commEx)
+                        catch (CommunicationException)
                         {
-                            Console.WriteLine($"Error de comunicación al cerrar sesión en servidor: {commEx.Message}");
+                            MessageBox.Show(
+                                Lang.alertUnknownErrorMessage,
+                                Lang.alertErrorTitle,
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
                         }
                     }
                 }
@@ -260,9 +268,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 sessionClosedLocally = true;
                 MatchmakingClientManager.Instance.Disconnect();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error inesperado durante el cierre de sesión: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 if (!sessionClosedLocally)
                 {
                     SessionManager.Instance.CloseSession();

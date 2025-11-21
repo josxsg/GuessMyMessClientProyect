@@ -249,10 +249,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 DirectMessageViewModel = new DirectMessageViewModel();
                 ConfigurationViewModel = new ConfigurationViewModel();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(string.Format(Lang.alertSocialServiceInitError, ex.Message), Lang.alertCriticalErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-                Console.WriteLine($"Error inicializando SocialClientManager: {ex.Message}");
+                MessageBox.Show(
+                    string.Format(Lang.alertSocialServiceInitError),
+                    Lang.alertCriticalErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
         }
 
@@ -346,26 +349,46 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 if (result.Success)
                 {
                     UserAvatar = newAvatar.ImageSource;
-                    MessageBox.Show(Lang.alertAvatarUpdateSuccess, Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(
+                        Lang.alertAvatarUpdateSuccess, 
+                        Lang.alertSuccessTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
                     client.Close();
                     isSuccess = true;
                 }
                 else
                 {
-                    MessageBox.Show(result.Message, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(
+                        result.Message,
+                        Lang.alertAvatarUpdateErrorTitle, 
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
                 }
             }
             catch (FaultException<ServiceProfileFault> fex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertAvatarUpdateErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
             catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertAvatarUpdateErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             catch
             {
-                MessageBox.Show(Lang.alertAvatarUpdateUnknownError, Lang.alertAvatarUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertAvatarUpdateUnknownError,
+                    Lang.alertAvatarUpdateErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             finally
             {
@@ -404,7 +427,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (DirectMessageViewModel == null)
             {
-                MessageBox.Show(Lang.alertChatLoadError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertChatLoadError, 
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
@@ -416,7 +443,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (ProfileViewModel == null)
             {
-                MessageBox.Show(Lang.alertProfileNotLoaded, Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(
+                    Lang.alertProfileNotLoaded,
+                    Lang.alertInfoTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
                 return;
             }
 
@@ -469,7 +500,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (UserProfileData == null)
             {
-                MessageBox.Show(Lang.alertProfileNotLoaded, Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(
+                    Lang.alertProfileNotLoaded,
+                    Lang.alertInfoTitle,
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Information);
                 return;
             }
 
@@ -494,13 +529,21 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show(message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    message, 
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Error);
             });
         }
 
         private void ShowFeatureUnavailable()
         {
-            MessageBox.Show(Lang.alertFeatureUnavailableError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show(
+                Lang.alertFeatureUnavailableError,
+                Lang.alertErrorTitle,
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
         }
 
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
@@ -540,7 +583,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             else
             {
-                MessageBox.Show(Lang.alertLobbyWindowNotFoundError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertLobbyWindowNotFoundError,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
         }
 

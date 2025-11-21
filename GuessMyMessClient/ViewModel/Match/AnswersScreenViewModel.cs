@@ -186,9 +186,13 @@ namespace GuessMyMessClient.ViewModel.Match
                     return new StrokeCollection(ms);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error loading strokes: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 return new StrokeCollection();
             }
         }
@@ -259,15 +263,27 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             catch (FaultException<ServiceGameFault> fex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertChatError,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertChatError,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"{Lang.alertErrorSendingMessage} {ex.Message}", Lang.alertChatError, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertErrorSendingMessage,
+                    Lang.alertChatError, 
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Warning);
             }
         }
 

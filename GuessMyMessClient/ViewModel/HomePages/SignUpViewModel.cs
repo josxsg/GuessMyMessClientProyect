@@ -257,20 +257,32 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (!CanExecuteSignUp(parameter))
             {
-                MessageBox.Show(Lang.alertRequiredFields, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertRequiredFields,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
             if (!IsValidEmail(Email))
             {
-                MessageBox.Show(Lang.alertInvalidEmailFormat, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertInvalidEmailFormat,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
             if (!IsPasswordSecure(Password, out string passwordErrorKey))
             {
                 string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
-                MessageBox.Show(passwordErrorMessage, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    passwordErrorMessage,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
@@ -295,8 +307,11 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
                 if (result.Success)
                 {
-                    MessageBox.Show($"{Lang.alertRegistrationSuccess}\n{result.Message}",
-                        Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(
+                        $"{Lang.alertRegistrationSuccess}\n{result.Message}",
+                        Lang.alertSuccessTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
 
                     OpenVerificationDialog(parameter);
                     client.Close();
@@ -304,7 +319,11 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 }
                 else
                 {
-                    MessageBox.Show(result.Message, Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show
+                        (result.Message,
+                        Lang.alertRegistrationErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
             catch (FaultException<GuessMyMessClient.AuthService.ServiceFaultDto> fex)
@@ -318,19 +337,35 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     titulo = Lang.alertInputErrorTitle;
                 }
 
-                MessageBox.Show(fex.Detail.Message, titulo, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    titulo,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
             catch (FaultException)
             {
-                MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertServerErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             catch
             {
-                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             finally
             {
@@ -362,7 +397,10 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
                 return regex.IsMatch(email);
             }
-            catch (RegexMatchTimeoutException) { return false; }
+            catch (RegexMatchTimeoutException) 
+            { 
+                return false;
+            }
         }
 
         private static bool IsPasswordSecure(string password, out string errorLangKey)

@@ -1,4 +1,5 @@
-﻿using GuessMyMessClient.SocialService;
+﻿using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.SocialService;
 using System;
 using System.ServiceModel;
 using System.Windows;
@@ -29,7 +30,6 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             if (IsConnected)
             {
-                Console.WriteLine("SocialClientManager: Already initialized.");
                 return;
             }
 
@@ -46,12 +46,15 @@ namespace GuessMyMessClient.ViewModel.Session
                 if (!string.IsNullOrEmpty(username))
                 {
                     _client.Connect(username);
-                    Console.WriteLine($"SocialClientManager: Connected as {username}");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"SocialClientManager: Error connecting: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error); 
                 CleanupConnection();
             }
         }
@@ -68,9 +71,13 @@ namespace GuessMyMessClient.ViewModel.Session
                 {
                     _client.Disconnect(username);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine($"SocialClientManager: Error sending disconnect: {ex.Message}");
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
 
@@ -86,7 +93,14 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client.InnerChannel.Faulted -= Channel_Faulted;
                     _client.InnerChannel.Closed -= Channel_Closed;
                 }
-                catch { }
+                catch (Exception)
+                {
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
 
                 try
                 {
@@ -99,9 +113,13 @@ namespace GuessMyMessClient.ViewModel.Session
                         _client.Abort();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine($"SocialClientManager: Error closing client: {ex.Message}");
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                     _client.Abort();
                 }
                 finally
@@ -109,19 +127,16 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client = null;
                 }
             }
-            Console.WriteLine("SocialClientManager: Connection cleaned.");
         }
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("SocialClientManager: Channel Faulted.");
             CleanupConnection();
             OnConnectionLost?.Invoke();
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("SocialClientManager: Channel Closed.");
             if (_client != null)
             {
                 CleanupConnection();
@@ -131,13 +146,11 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void NotifyFriendRequest(string fromUsername)
         {
-            Console.WriteLine($"Callback: Friend request from {fromUsername}");
             OnFriendRequest?.Invoke(fromUsername);
         }
 
         public void NotifyFriendResponse(string fromUsername, bool accepted)
         {
-            Console.WriteLine($"Callback: Friend response from {fromUsername} (Accepted: {accepted})");
             OnFriendResponse?.Invoke(fromUsername, accepted);
         }
 
@@ -152,7 +165,6 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 return;
             }
-            Console.WriteLine($"Callback: DM received from {message.SenderUsername}");
             OnMessageReceived?.Invoke(message);
         }
     }

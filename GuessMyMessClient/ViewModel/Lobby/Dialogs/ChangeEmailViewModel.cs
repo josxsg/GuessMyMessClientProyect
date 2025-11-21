@@ -97,7 +97,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning);
             }
-            catch (FaultException fexGeneral)
+            catch (FaultException)
             {
                 MessageBox.Show(
                     Lang.alertServerErrorMessage,

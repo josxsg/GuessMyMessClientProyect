@@ -819,4 +819,7 @@
   <data name="alertEmailEmpty" xml:space="preserve">
     <value>El correo electrónico del usuario no puede estar vacío para la verificación.</value>
   </data>
+  <data name="alertChangeLanguageError" xml:space="preserve">
+    <value>No se pudo cambiar el idioma. Por favor, inténtelo de nuevo más tarde.</value>
+  </data>
 </root>

@@ -218,10 +218,10 @@ namespace GuessMyMessClient.ViewModel.Match
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
-                    $"{Lang.alertDrawingSubmitError}\n{ex.Message}",
+                    Lang.alertDrawingSubmitError,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);

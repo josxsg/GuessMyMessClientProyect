@@ -1,4 +1,5 @@
 ﻿using GuessMyMessClient.MatchmakingService;
+using GuessMyMessClient.Properties.Langs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,12 +49,15 @@ namespace GuessMyMessClient.ViewModel.Session
 
                 _client.Connect(username);
                 _connectedUsername = username;
-                Console.WriteLine($"MatchmakingClientManager: Connected as {username}");
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Failed to connect to matchmaking service: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error); 
                 CleanupConnection();
                 return false;
             }
@@ -69,9 +73,13 @@ namespace GuessMyMessClient.ViewModel.Session
                     {
                         _client.Disconnect(_connectedUsername);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        Console.WriteLine($"Error sending Disconnect signal: {ex.Message}");
+                        MessageBox.Show(
+                            Lang.alertUnknownErrorMessage,
+                            Lang.alertErrorTitle,
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
                     }
                 }
                 CleanupConnection();
@@ -100,9 +108,13 @@ namespace GuessMyMessClient.ViewModel.Session
                         _client.Abort();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine($"Error closing client: {ex.Message}");
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                     _client.Abort();
                 }
                 finally
@@ -128,9 +140,8 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 return new OperationResultDto { Success = false, Message = fex.Detail.Message };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error creating match: {ex.Message}");
                 return new OperationResultDto { Success = false, Message = "Connection error while creating match." };
             }
         }
@@ -147,9 +158,13 @@ namespace GuessMyMessClient.ViewModel.Session
                 var matchesArray = await _client.GetPublicMatchesAsync();
                 return matchesArray?.ToList() ?? new List<MatchInfoDto>();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error getting public matches: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 return new List<MatchInfoDto>();
             }
         }
@@ -166,9 +181,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.JoinPublicMatch(_connectedUsername, matchId);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                OnMatchmakingFailed?.Invoke($"Error sending join request: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
 
@@ -236,14 +255,12 @@ namespace GuessMyMessClient.ViewModel.Session
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("MatchmakingClientManager: Channel Faulted.");
             CleanupConnection();
             OnMatchmakingFailed?.Invoke("Connection lost (Channel Faulted).");
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("MatchmakingClientManager: Channel Closed.");
             CleanupConnection();
         }
     }

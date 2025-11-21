@@ -246,7 +246,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show(message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(message,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             });
         }
 

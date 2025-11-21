@@ -142,6 +142,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Could not change the language. Please try again later..
+        /// </summary>
+        public static string alertChangeLanguageError {
+            get {
+                return ResourceManager.GetString("alertChangeLanguageError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Chat Error.
         /// </summary>
         public static string alertChatError {

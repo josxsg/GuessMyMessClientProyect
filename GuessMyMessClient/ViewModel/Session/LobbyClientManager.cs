@@ -48,13 +48,11 @@ namespace GuessMyMessClient.ViewModel.Session
                 _client.InnerChannel.Closed += Channel_Closed;
 
                 _client.ConnectToLobby(username, matchId);
-                Console.WriteLine($"LobbyClientManager: Connecting to lobby {matchId} as {username}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error connecting to Lobby service: {ex.Message}");
                 MessageBox.Show(
-                    $"{Lang.alertConnectionErrorMessage}\n({ex.Message})",
+                    Lang.alertConnectionErrorMessage,
                     Lang.alertConnectionErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
@@ -80,11 +78,19 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
-                Console.WriteLine($"LobbyClientManager: Network error during disconnect: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"LobbyClientManager: Unexpected error during disconnect: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             finally
             {
@@ -114,10 +120,14 @@ namespace GuessMyMessClient.ViewModel.Session
                         _client.Abort();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine($"LobbyClientManager: Error closing client: {ex.Message}");
-                    _client.Abort();
+                    MessageBox.Show(
+                        Lang.alertUnknownErrorMessage,
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                     _client.Abort();
                 }
                 finally
                 {
@@ -126,7 +136,6 @@ namespace GuessMyMessClient.ViewModel.Session
                     _currentUsername = null;
                 }
             }
-            Console.WriteLine("LobbyClientManager: Connection cleaned.");
         }
 
         public void SendChatMessage(string messageKey)
@@ -139,9 +148,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.SendLobbyMessage(_currentUsername, CurrentMatchId, messageKey);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error sending chat: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 HandleCommunicationError();
             }
         }
@@ -156,9 +169,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.StartGame(_currentUsername, CurrentMatchId);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error requesting start game: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error); 
                 HandleCommunicationError();
             }
         }
@@ -173,9 +190,13 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 _client.KickPlayer(_currentUsername, playerToKick, CurrentMatchId);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error kicking player: {ex.Message}");
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 HandleCommunicationError();
             }
         }
@@ -231,13 +252,11 @@ namespace GuessMyMessClient.ViewModel.Session
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            Console.WriteLine("LobbyClientManager: Channel faulted.");
             HandleCommunicationError(true);
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
-            Console.WriteLine("LobbyClientManager: Channel closed.");
             if (_client != null)
             {
                 HandleCommunicationError(true);

@@ -96,10 +96,10 @@ namespace GuessMyMessClient.ViewModel.Match
                     DrawingToGuess = new StrokeCollection(ms);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
-                    $"{Lang.alertDrawingLoadError}\n{ex.Message}",
+                    Lang.alertDrawingLoadError,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
@@ -124,17 +124,25 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             catch (FaultException<ServiceGameFault> fex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 _guessSent = false;
             }
             catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage,
+                    Lang.alertConnectionErrorTitle, 
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(
-                    $"{Lang.alertGuessSubmitError}\n{ex.Message}",
+                    Lang.alertGuessSubmitError,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
@@ -173,7 +181,11 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertConnectionErrorMessage, 
+                    Lang.alertConnectionErrorTitle,
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Warning);
                 Cleanup();
                 ServiceLocator.Navigation.CloseCurrentGameWindow();
             });

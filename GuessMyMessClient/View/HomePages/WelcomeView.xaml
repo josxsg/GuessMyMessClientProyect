@@ -35,11 +35,26 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{x:Static language:Lang.welcomeLbDescription}"
-                       FontSize="18"
-                       Foreground="Black"
-                       Margin="0,0,0,20"/>
+            <Border Background="#AA000000" 
+        CornerRadius="20" 
+        Padding="30,15" 
+        Margin="10,0,10,30" 
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        MaxWidth="880">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="4" Color="Black" Opacity="0.3" BlurRadius="10"/>
+                </Border.Effect>
 
+                <TextBlock Text="{x:Static language:Lang.welcomeLbDescription}"
+               FontFamily="Arial Rounded MT Bold"
+               FontSize="30" 
+               Foreground="White"
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               LineHeight="28"/>
+            </Border>
+            
             <Button Content="{x:Static language:Lang.globalBtnSignUp}"
                     Style="{StaticResource YellowButton}"
                     Command="{Binding SignUpCommand}"
