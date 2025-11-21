@@ -137,7 +137,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         protected WaitingRoomViewModelBase(LobbyClientManager lobbyManager, SessionManager sessionManager)
         {
-            Debug.WriteLine(">>> INSTANCIA WaitingRoomViewModel creada: " + GetHashCode());
             _lobbyManager = lobbyManager;
             _sessionManager = sessionManager;
             InitializeCommands();
@@ -216,7 +215,11 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show($"{Lang.waitingRoomMsgKicked}: {reason}", Lang.alertInfoTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    $"{Lang.waitingRoomMsgKicked}: {reason}", 
+                    Lang.alertInfoTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 NavigateBackToLobbyView();
                 CleanUp();
             });
@@ -247,7 +250,11 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
                 if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(matchId))
                 {
-                    MessageBox.Show(Lang.alertGameStartError, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(
+                        Lang.alertGameStartError, 
+                        Lang.alertErrorTitle, 
+                        MessageBoxButton.OK, 
+                        MessageBoxImage.Error);
                     NavigateBackToLobbyView();
                     CleanUp();
                     return;
@@ -265,9 +272,13 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
                     CleanUp();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show($"{Lang.alertGameStartError}: {ex.Message}", Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(
+                        Lang.alertGameStartError, 
+                        Lang.alertErrorTitle,
+                        MessageBoxButton.OK, 
+                        MessageBoxImage.Error);
                     NavigateBackToLobbyView();
                     CleanUp();
                 }
@@ -349,7 +360,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             UnsubscribeFromLobbyEvents();
             _countdownTimer?.Stop();
             _countdownTimer = null;
-            Debug.WriteLine("WaitingRoom ViewModel cleaned up.");
         }
 
         protected virtual void UnsubscribeFromLobbyEvents()
