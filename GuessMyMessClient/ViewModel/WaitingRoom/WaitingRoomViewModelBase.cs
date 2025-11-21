@@ -210,7 +210,9 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void OnKicked(string reason)
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
+            {
                 return;
+            }
 
             Application.Current?.Dispatcher.Invoke(() =>
             {
@@ -232,7 +234,9 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void OnGameStarted()
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
+            {
                 return;
+            }
 
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -273,7 +277,9 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void OnConnectionLost()
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
+            {
                 return;
+            }
 
             Application.Current?.Dispatcher.Invoke(() =>
             {
@@ -285,7 +291,9 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         protected virtual void LeaveLobby(object parameter = null)
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
+            {
                 return;
+            }
 
             _lobbyManager.Disconnect();
             NavigateBackToLobbyView();
