@@ -55,11 +55,14 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private static void ContinueAsGuest(object parameter)
         {
-            var lobbyView = new LobbyView();
-            lobbyView.Show();
-
             if (parameter is Window welcomeWindow)
             {
+                var guestLoginView = new GuestLoginView();
+                guestLoginView.WindowState = welcomeWindow.WindowState;
+                guestLoginView.WindowState = WindowState.Maximized;
+                guestLoginView.WindowStyle = WindowStyle.None;
+                guestLoginView.ResizeMode = ResizeMode.NoResize;
+                guestLoginView.Show();
                 welcomeWindow.Close();
             }
         }

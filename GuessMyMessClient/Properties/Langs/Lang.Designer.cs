@@ -358,6 +358,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a All fields are required..
+        /// </summary>
+        public static string alertFieldsRequired {
+            get {
+                return ResourceManager.GetString("alertFieldsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Could not load friends list or pending requests..
         /// </summary>
         public static string alertFriendLoadError {
@@ -525,6 +534,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertInvalidEmailTitle {
             get {
                 return ResourceManager.GetString("alertInvalidEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invitation sent successfully..
+        /// </summary>
+        public static string alertInviteSentSuccess {
+            get {
+                return ResourceManager.GetString("alertInviteSentSuccess", resourceCulture);
             }
         }
         

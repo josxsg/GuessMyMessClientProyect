@@ -1,8 +1,11 @@
 ﻿using GuessMyMessClient.GameService;
 using GuessMyMessClient.LobbyService;
 using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.View.HomePages;
 using GuessMyMessClient.View.Lobby;
+using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.View.Match;
+using GuessMyMessClient.ViewModel.Lobby.Dialogs;
 using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.ViewModel.Support;
 using System;
@@ -134,6 +137,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         public ICommand LeaveCommand { get; protected set; }
         public ICommand SendMessageCommand { get; protected set; }
         public ICommand KickPlayerCommand { get; protected set; }
+        public ICommand InviteCommand { get; protected set; }
 
         protected WaitingRoomViewModelBase(LobbyClientManager lobbyManager, SessionManager sessionManager)
         {
@@ -148,6 +152,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             LeaveCommand = new RelayCommand(LeaveLobby);
             SendMessageCommand = new RelayCommand((param) => SendChatMessage(param as string));
             KickPlayerCommand = new RelayCommand((param) => KickPlayer(param as string));
+            InviteCommand = new RelayCommand(ExecuteInvite);
         }
 
         protected virtual void SubscribeToLobbyEvents()
@@ -193,6 +198,15 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
+                if (_sessionManager.IsGuest &&
+                    message.SenderUsername == "System" &&
+                    message.MessageContent.StartsWith("Bienvenido! Juegas como: "))
+                {
+                    string assignedName = message.MessageContent.Replace("Bienvenido! Juegas como: ", "").Trim();
+                    _sessionManager.CurrentUsername = assignedName;
+                    OnPropertyChanged(nameof(IsHost));
+                }
+
                 string translatedMessage = TranslateMessageKey(message.MessageContent);
                 string formatted = $"[{message.SenderUsername}]: {translatedMessage}";
 
@@ -336,6 +350,20 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             }
         }
 
+        private void ExecuteInvite(object obj)
+        {
+            string currentMatchId = _lobbyManager.CurrentMatchId;
+            if (string.IsNullOrEmpty(currentMatchId)) return;
+
+            var inviteVM = new InviteByEmailViewModel(currentMatchId);
+            var inviteView = new InviteByEmailView
+            {
+                DataContext = inviteVM,
+                Owner = Application.Current.MainWindow
+            };
+            inviteView.ShowDialog();
+        }
+
         protected static string TranslateMessageKey(string key)
         {
             var resource = Lang.ResourceManager.GetString(key);
@@ -348,8 +376,17 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             {
                 Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
 
-                var lobbyView = new LobbyView();
-                lobbyView.Show();
+                if (_sessionManager.IsGuest)
+                {
+                    _sessionManager.CloseSession();
+                    var mainView = new MainView();
+                    mainView.Show();
+                }
+                else
+                {
+                    var lobbyView = new LobbyView();
+                    lobbyView.Show();
+                }
 
                 currentWindow?.Close();
             });
@@ -378,15 +415,27 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         private string _username;
         public string Username
         {
-            get => _username;
-            set => SetProperty(ref _username, value);
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                SetProperty(ref _username, value);
+            }
         }
 
         private Visibility _kickButtonVisibility = Visibility.Collapsed;
         public Visibility KickButtonVisibility
         {
-            get => _kickButtonVisibility;
-            set => SetProperty(ref _kickButtonVisibility, value);
+            get
+            {
+                return _kickButtonVisibility;
+            }
+            set
+            {
+                SetProperty(ref _kickButtonVisibility, value);
+            }
         }
 
         public ICommand KickCommand { get; set; }

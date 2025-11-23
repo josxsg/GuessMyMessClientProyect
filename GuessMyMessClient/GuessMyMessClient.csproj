@@ -121,6 +121,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Model\AvatarModel.cs" />
+    <Compile Include="ViewModel\HomePages\GuestLoginViewModel.cs" />
     <Compile Include="ViewModel\HomePages\LoginViewModel.cs" />
     <Compile Include="ViewModel\HomePages\SignUpViewModel.cs" />
     <Compile Include="ViewModel\HomePages\WelcomeViewModel.cs" />
@@ -161,6 +162,9 @@
     <Compile Include="ViewModel\Support\ServiceLocator.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs" />
+    <Compile Include="View\HomePages\GuestLoginView.xaml.cs">
+      <DependentUpon>GuestLoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomePages\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -252,6 +256,10 @@
       <DependentUpon>WaitingRoomPublicMatchView.xaml</DependentUpon>
     </Compile>
     <Page Include="Properties\Styles\GlobalStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomePages\GuestLoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

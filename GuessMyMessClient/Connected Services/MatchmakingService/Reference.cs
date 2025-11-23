@@ -536,6 +536,12 @@ namespace GuessMyMessClient.MatchmakingService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMatchmakingService/InviteToMatch")]
         System.Threading.Tasks.Task InviteToMatchAsync(string inviterUsername, string invitedUsername, string matchId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmail", ReplyAction="http://tempuri.org/IMatchmakingService/InviteGuestByEmailResponse")]
+        void InviteGuestByEmail(string inviterUsername, string targetEmail, string matchId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmail", ReplyAction="http://tempuri.org/IMatchmakingService/InviteGuestByEmailResponse")]
+        System.Threading.Tasks.Task InviteGuestByEmailAsync(string inviterUsername, string targetEmail, string matchId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -639,6 +645,14 @@ namespace GuessMyMessClient.MatchmakingService {
         
         public System.Threading.Tasks.Task InviteToMatchAsync(string inviterUsername, string invitedUsername, string matchId) {
             return base.Channel.InviteToMatchAsync(inviterUsername, invitedUsername, matchId);
+        }
+        
+        public void InviteGuestByEmail(string inviterUsername, string targetEmail, string matchId) {
+            base.Channel.InviteGuestByEmail(inviterUsername, targetEmail, matchId);
+        }
+        
+        public System.Threading.Tasks.Task InviteGuestByEmailAsync(string inviterUsername, string targetEmail, string matchId) {
+            return base.Channel.InviteGuestByEmailAsync(inviterUsername, targetEmail, matchId);
         }
     }
 }

@@ -86,6 +86,18 @@ namespace GuessMyMessClient.ViewModel.Session
             }
         }
 
+        public async Task InviteGuestByEmailAsync(string inviterUsername, string targetEmail, string matchId)
+        {
+            if (_client == null || _client.State != CommunicationState.Opened)
+            {
+                throw new Exception("No estás conectado al servicio de matchmaking.");
+            }
+
+            // No capturamos la excepción aquí para permitir que el ViewModel
+            // maneje los errores específicos (como "Email ya registrado").
+            await _client.InviteGuestByEmailAsync(inviterUsername, targetEmail, matchId);
+        }
+
         private void CleanupConnection()
         {
             if (_client != null)

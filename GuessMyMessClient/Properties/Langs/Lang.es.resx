@@ -825,4 +825,10 @@
   <data name="answersScreenLbAnswers" xml:space="preserve">
     <value>Respuestas</value>
   </data>
+  <data name="alertInviteSentSuccess" xml:space="preserve">
+    <value>Invitación enviada correctamente.</value>
+  </data>
+  <data name="alertFieldsRequired" xml:space="preserve">
+    <value>Todos los campos son obligatorios.</value>
+  </data>
 </root>

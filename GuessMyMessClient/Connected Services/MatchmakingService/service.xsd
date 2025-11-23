@@ -74,6 +74,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InviteGuestByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inviterUsername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="matchId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InviteGuestByEmailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ReceiveMatchInvite">
     <xs:complexType>
       <xs:sequence>

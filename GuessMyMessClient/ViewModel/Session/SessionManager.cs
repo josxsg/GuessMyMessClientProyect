@@ -25,6 +25,20 @@ namespace GuessMyMessClient.ViewModel.Session
             }
         }
 
+        private bool _isGuest;
+        public bool IsGuest
+        {
+            get
+            {
+                return _isGuest;
+            }
+            set
+            {
+                _isGuest = value; 
+                OnPropertyChanged();
+            }
+        }
+
         public bool IsLoggedIn => !string.IsNullOrEmpty(CurrentUsername);
 
         private SessionManager() { }
@@ -37,6 +51,7 @@ namespace GuessMyMessClient.ViewModel.Session
         public void CloseSession()
         {
             CurrentUsername = null;
+            IsGuest = false; 
         }
     }
 }
