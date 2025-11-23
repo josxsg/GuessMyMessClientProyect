@@ -244,6 +244,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             try
             {
                 string currentUsername = SessionManager.Instance.CurrentUsername;
+                SocialClientManager.Instance.Cleanup();
 
                 if (!string.IsNullOrEmpty(currentUsername))
                 {

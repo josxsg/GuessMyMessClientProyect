@@ -22,7 +22,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         private bool CanStartGame(object parameter)
         {
-            return IsHost;
+            return IsHost && Players != null && Players.Count >= 2;
         }
 
         private void StartGame(object parameter)
@@ -32,17 +32,12 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
         protected override void OnLobbyStateUpdated(LobbyStateDto state)
         {
-            bool wasHostBeforeUpdate = this.IsHost;
-
             base.OnLobbyStateUpdated(state);
 
-            if (wasHostBeforeUpdate != this.IsHost)
+            Application.Current?.Dispatcher.Invoke(() =>
             {
-                Application.Current?.Dispatcher.Invoke(() =>
-                {
-                    CommandManager.InvalidateRequerySuggested();
-                });
-            }
+                CommandManager.InvalidateRequerySuggested();
+            });
         }
     }
 }
