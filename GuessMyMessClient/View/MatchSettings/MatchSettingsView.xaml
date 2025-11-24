@@ -4,166 +4,175 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.MatchSettings"
-        mc:Ignorable="d"
-        Title="MatchSettings"
-        Height="600" Width="950"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.MatchSettings"
+        d:DataContext="{d:DesignInstance Type=vm:MatchSettingsViewModel, IsDesignTimeCreatable=True}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize"
         WindowState="Maximized"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize" d:DataContext="{d:DesignInstance Type=vm:MatchSettingsViewModel, IsDesignTimeCreatable=True}"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        mc:Ignorable="d"
+        Title="MatchSettings" Height="600" Width="950"
+        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+        xmlns:converters="clr-namespace:GuessMyMessClient.ViewModel.Support.Converters">
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <Style x:Key="TabToggleButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid RenderTransformOrigin="0.5,0.5">
+                            <Border x:Name="shadow" CornerRadius="25" Background="#90A4AE" Margin="0,5,0,0"/>
+                            <Border x:Name="face" CornerRadius="25" Background="#ECEFF1" Margin="0,0,0,5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="face" Property="Background" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="face" Property="Margin" Value="0,5,0,0"/>
+                                <Setter TargetName="shadow" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="Tag" Value="Selected">
+                                <Setter TargetName="face" Property="Background" Value="#FFC107"/>
+                                <Setter TargetName="shadow" Property="Background" Value="#FFA000"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ConfigLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
+            <Setter Property="Foreground" Value="#546E7A"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,15,0"/>
+        </Style>
+    </Window.Resources>
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <Button Content="←" 
-                Style="{StaticResource ReturnButtonStyle}"
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="15,15,0,0"
+        <Button Content="←" Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0"
                 Command="{Binding ReturnCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                 ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
-        <TextBlock
-                Text="{x:Static language:Lang.createGameLbSettings}"
-                FontSize="30"
-                FontWeight="Bold"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Margin="0,66,0,0"/>
-
-        <Border Background="#F0F0F0"
-                CornerRadius="12"
-                Padding="5"
-                Height="52"
-                Width="400"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Margin="0,136,0,0">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Button Grid.Column="0"
-                        Content="{x:Static language:Lang.playMenuBtnPublicMatches}"
-                        Command="{Binding SetMatchTypeCommand}" CommandParameter="Public"
-                        Margin="0,0,2,0">
-                    <Button.Style>
-                        <Style TargetType="Button" BasedOn="{StaticResource TabButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsPublicMatch}" Value="True">
-                                    <Setter Property="Background" Value="Black"/>
-                                    <Setter Property="Foreground" Value="White"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-
-                <Button Grid.Column="1"
-                        Content="{x:Static language:Lang.playMenuBtnPrivateMatches}"
-                        Command="{Binding SetMatchTypeCommand}" CommandParameter="Private"
-                        Margin="2,0,0,0">
-                    <Button.Style>
-                        <Style TargetType="Button" BasedOn="{StaticResource TabButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsPublicMatch}" Value="False">
-                                    <Setter Property="Background" Value="Black"/>
-                                    <Setter Property="Foreground" Value="White"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-            </Grid>
-        </Border>
-
-        <TextBlock
-                Text="{x:Static language:Lang.globalLbName}"
-                FontSize="24"
-                FontWeight="Bold"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="185,231,0,0"
-                Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-        <TextBox
-                Text="{Binding MatchName}"
-                Height="39"
-                Width="450"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="299,227,0,0" Style="{StaticResource TextBox}"
-                Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-
-        <TextBlock
-                Text="{x:Static language:Lang.createGameLbMaxPlayers}"
-                FontSize="24"
-                FontWeight="Bold"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="185,310,0,0"/>
-        <ComboBox
-                ItemsSource="{Binding AvailablePlayerCounts}"
-                SelectedItem="{Binding MaxPlayers}"
-                Height="39"
-                Width="150"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="375,310,0,0" 
-                Style="{StaticResource ComboBoxStyle}"/>
-
-        <TextBlock
-                Text="{x:Static language:Lang.createGameLbRounds}"
-                FontSize="24"
-                FontWeight="Bold"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="549,314,0,0"/>
-        <ComboBox
-                ItemsSource="{Binding AvailableRoundCounts}"
-                SelectedItem="{Binding Rounds}"
-                Height="39"
-                Width="150"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="637,310,0,0" 
-                Style="{StaticResource ComboBoxStyle}"/>
-
-        <TextBlock
-                Text="{x:Static language:Lang.globalLbDifficulty}"
-                FontSize="24"
-                FontWeight="Bold"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="185,399,0,0"/>
-        <ComboBox
-                ItemsSource="{Binding AvailableDifficulties}"
-                SelectedItem="{Binding SelectedDifficulty}"
-                DisplayMemberPath="Name" 
-                Width="200"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="325,394,0,0" Height="40"
-                Style="{StaticResource ComboBoxStyle}"/>
-
-        <Button Content="{x:Static language:Lang.createGameBtnCreate}"
-                Command="{Binding CreateMatchCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                Style="{StaticResource JoinButton}"
-                FontSize="30"
-                Height="41"
-                Width="200"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Margin="0,480,0,0"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
         </StackPanel>
 
+        <Viewbox Stretch="Uniform" MaxWidth="900">
+            <StackPanel Width="800">
+
+                <Border Style="{StaticResource GlassTitleBorder}">
+                    <TextBlock Text="{x:Static language:Lang.createGameLbSettings}" Style="{StaticResource GlassTitleText}"/>
+                </Border>
+
+                <Border Background="White" CornerRadius="20" Padding="30" Margin="0,0,0,20">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="20"/>
+                    </Border.Effect>
+
+                    <StackPanel>
+
+                        <Grid Margin="0,0,0,25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0"
+                                    Content="{x:Static language:Lang.playMenuBtnPublicMatches}"
+                                    Command="{Binding SetMatchTypeCommand}" CommandParameter="Public">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource TabToggleButtonStyle}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsPublicMatch}" Value="True">
+                                                <Setter Property="Tag" Value="Selected"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+
+                            <Button Grid.Column="1"
+                                    Content="{x:Static language:Lang.playMenuBtnPrivateMatches}"
+                                    Command="{Binding SetMatchTypeCommand}" CommandParameter="Private">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource TabToggleButtonStyle}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsPublicMatch}" Value="False">
+                                                <Setter Property="Tag" Value="Selected"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static language:Lang.globalLbName}" Style="{StaticResource ConfigLabel}"
+                                       Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MatchName}" Style="{StaticResource InputField}" 
+                                     Height="45" Margin="0,0,0,15" Width="Auto" HorizontalAlignment="Stretch"
+                                     Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static language:Lang.createGameLbMaxPlayers}" Style="{StaticResource ConfigLabel}"/>
+                            <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding AvailablePlayerCounts}" SelectedItem="{Binding MaxPlayers}"
+                                      Style="{StaticResource ComboBoxStyle}" Height="45" Margin="0,0,0,15"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static language:Lang.createGameLbRounds}" Style="{StaticResource ConfigLabel}"/>
+                            <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding AvailableRoundCounts}" SelectedItem="{Binding Rounds}"
+                                      Style="{StaticResource ComboBoxStyle}" Height="45" Margin="0,0,0,15"/>
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static language:Lang.globalLbDifficulty}" Style="{StaticResource ConfigLabel}"/>
+                            <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding AvailableDifficulties}" SelectedItem="{Binding SelectedDifficulty}" DisplayMemberPath="Name"
+                                      Style="{StaticResource ComboBoxStyle}" Height="45"/>
+                        </Grid>
+
+                        <Button Content="{x:Static language:Lang.createGameBtnCreate}"
+                                Command="{Binding CreateMatchCommand}"
+                                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                                Style="{StaticResource JoinButton}" 
+                                FontSize="24" Height="55" Width="250"
+                                Margin="0,30,0,0" HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Window>

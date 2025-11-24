@@ -18,6 +18,41 @@
     <Window.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
+
+        <Style x:Key="TabToggleButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid RenderTransformOrigin="0.5,0.5">
+                            <Border x:Name="shadow" CornerRadius="25" Background="#90A4AE" Margin="0,5,0,0"/>
+                            <Border x:Name="face" CornerRadius="25" Background="#ECEFF1" Margin="0,0,0,5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="face" Property="Background" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="face" Property="Margin" Value="0,5,0,0"/>
+                                <Setter TargetName="shadow" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="Tag" Value="Selected">
+                                <Setter TargetName="face" Property="Background" Value="#FFC107"/>
+                                <Setter TargetName="shadow" Property="Background" Value="#FFA000"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -25,57 +60,58 @@
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <Button Content="←" 
-                Style="{StaticResource ReturnButtonStyle}"
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="15,15,0,0"
+        <Button Content="←" Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0"
                 Command="{Binding ReturnCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                 ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
         </StackPanel>
 
-        <Border Background="#F0F0F0" CornerRadius="12" Padding="15" Margin="89,70,89,70">
+        <Border Background="#F0F0F0" CornerRadius="20" Padding="20" Margin="89,70,89,50">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="20"/>
+            </Border.Effect>
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" Margin="0,0,0,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0"
-                            Content="{x:Static language:Lang.playMenuBtnPublicMatches}"
-                            Command="{Binding ShowPublicMatchesCommand}"
-                            Margin="0,0,2,0">
+                    <Button Grid.Column="0" Content="{x:Static language:Lang.playMenuBtnPublicMatches}"
+                            Command="{Binding ShowPublicMatchesCommand}">
                         <Button.Style>
-                            <Style TargetType="Button" BasedOn="{StaticResource TabButton}">
+                            <Style TargetType="Button" BasedOn="{StaticResource TabToggleButtonStyle}">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsPublicViewSelected}" Value="True">
-                                        <Setter Property="Background" Value="Black"/>
-                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Tag" Value="Selected"/>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
                     </Button>
 
-                    <Button Grid.Column="1"
-                            Content="{x:Static language:Lang.playMenuBtnPrivateMatches}"
-                            Command="{Binding ShowPrivateMatchesCommand}"
-                            Margin="2,0,0,0">
+                    <Button Grid.Column="1" Content="{x:Static language:Lang.playMenuBtnPrivateMatches}"
+                            Command="{Binding ShowPrivateMatchesCommand}">
                         <Button.Style>
-                            <Style TargetType="Button" BasedOn="{StaticResource TabButton}">
+                            <Style TargetType="Button" BasedOn="{StaticResource TabToggleButtonStyle}">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsPublicViewSelected}" Value="False">
-                                        <Setter Property="Background" Value="Black"/>
-                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Tag" Value="Selected"/>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -83,80 +119,82 @@
                     </Button>
                 </Grid>
 
-                <Grid Grid.Row="1" 
-                      Visibility="{Binding IsPublicViewSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid Grid.Row="1" Visibility="{Binding IsPublicViewSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0"
-                               Text="{x:Static language:Lang.playMenuLbAvailableMatches}"
-                               FontSize="18" 
-                               FontWeight="Bold" 
-                               Margin="0,20,0,10"/>
+                    <TextBlock Grid.Row="0" Text="{x:Static language:Lang.playMenuLbAvailableMatches}"
+                               FontSize="20" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Foreground="#555" Margin="0,10,0,15"/>
 
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                         <ItemsControl ItemsSource="{Binding PublicMatches}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border BorderBrush="#CCCCCC" 
-                                            BorderThickness="1.5" 
-                                            CornerRadius="8" 
-                                            Padding="15"
-                                            Margin="0,0,0,10">
+                                    <Border Background="White" CornerRadius="15" Margin="0,0,5,12" Padding="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="2" Color="#B0BEC5" Opacity="0.3" BlurRadius="5"/>
+                                        </Border.Effect>
+
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0">
-                                                <TextBlock Text="{Binding MatchName}" FontSize="20" FontWeight="Bold"/>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock Text="{Binding MatchName}" 
+                                                           FontSize="20" FontFamily="Arial Rounded MT Bold" FontWeight="Black" Foreground="#333" Margin="0,0,0,8"/>
 
-                                                <Grid Margin="0,5,0,0">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*"/>
-                                                        <ColumnDefinition Width="*"/>
-                                                        <ColumnDefinition Width="*"/>
-                                                    </Grid.ColumnDefinitions>
+                                                <WrapPanel Orientation="Horizontal">
+                                                    <Border Background="#E1F5FE" CornerRadius="8" Padding="8,4" Margin="0,0,8,5">
+                                                        <TextBlock FontSize="12" FontFamily="Arial Rounded MT Bold" Foreground="#0277BD">
+                                                            <Run Text="👤"/> 
+                                                            <Run Text="{x:Static language:Lang.globalLbHost}" FontWeight="Bold"/>
+                                                            <Run Text=": "/>
+                                                            <Run Text="{Binding HostUsername}"/>
+                                                        </TextBlock>
+                                                    </Border>
 
-                                                    <TextBlock Grid.Column="0" HorizontalAlignment="Left">
-                                                        <Run Text="{x:Static language:Lang.globalLbHost}" FontWeight="SemiBold"/>:
-                                                        <Run Text="{Binding HostUsername}"/>
-                                                    </TextBlock>
+                                                    <Border Background="#E8F5E9" CornerRadius="8" Padding="8,4" Margin="0,0,8,5">
+                                                        <TextBlock FontSize="12" FontFamily="Arial Rounded MT Bold" Foreground="#2E7D32">
+                                                            <Run Text="👥"/> 
+                                                            <Run Text="{x:Static language:Lang.globalLbPlayers}" FontWeight="Bold"/>
+                                                            <Run Text=": "/>
+                                                            <Run Text="{Binding CurrentPlayers}"/>/<Run Text="{Binding MaxPlayers}"/>
+                                                        </TextBlock>
+                                                    </Border>
 
-                                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center">
-                                                        <Run Text="{x:Static language:Lang.globalLbPlayers}" FontWeight="SemiBold"/>:
-                                                        <Run Text="{Binding CurrentPlayers}"/>/<Run Text="{Binding MaxPlayers}"/>
-                                                    </TextBlock>
-
-                                                    <TextBlock Grid.Column="2" HorizontalAlignment="Right">
-                                                        <Run Text="{x:Static language:Lang.globalLbDifficulty}" FontWeight="SemiBold"/>:
-                                                        <Run Text="{Binding DifficultyName}"/>
-                                                    </TextBlock>
-                                                </Grid>
+                                                    <Border Background="#FFF8E1" CornerRadius="8" Padding="8,4" Margin="0,0,8,5">
+                                                        <TextBlock FontSize="12" FontFamily="Arial Rounded MT Bold" Foreground="#FF8F00">
+                                                            <Run Text="⚡"/> 
+                                                            <Run Text="{x:Static language:Lang.globalLbDifficulty}" FontWeight="Bold"/>
+                                                            <Run Text=": "/>
+                                                            <Run Text="{Binding DifficultyName}"/>
+                                                        </TextBlock>
+                                                    </Border>
+                                                </WrapPanel>
                                             </StackPanel>
 
                                             <Button Grid.Column="1" 
                                                     Content="{x:Static language:Lang.globalBtnJoin}" 
-                                                    VerticalAlignment="Center" 
-                                                    Margin="0"
+                                                    Width="110" Height="45" 
+                                                    FontSize="16"
+                                                    Margin="10,0,0,0"
                                                     Command="{Binding DataContext.JoinPublicMatchCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                                     CommandParameter="{Binding MatchId}">
-
                                                 <Button.Style>
                                                     <Style TargetType="Button" BasedOn="{StaticResource JoinButton}">
                                                         <Setter Property="IsEnabled" Value="{Binding CanJoin}"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding DataContext.IsJoining, RelativeSource={RelativeSource AncestorType=vm:MatchesViewModel}}" Value="True">
+                                                            <DataTrigger Binding="{Binding DataContext.IsJoining, RelativeSource={RelativeSource AncestorType=Window}}" Value="True">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
-
                                         </Grid>
                                     </Border>
                                 </DataTemplate>
@@ -165,44 +203,25 @@
                     </ScrollViewer>
                 </Grid>
 
-                <StackPanel Grid.Row="1" 
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center"
-                            Width="476"
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="476"
                             Visibility="{Binding IsPublicViewSelected, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}">
 
-                    <TextBlock 
-                        Text="{x:Static language:Lang.globalLbMatchCode}"
-                        FontSize="30" 
-                        FontWeight="Bold" 
-                        HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static language:Lang.globalLbMatchCode}" 
+                               FontSize="30" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" Foreground="#455A64"/>
 
-                    <TextBlock 
-                        Text="{x:Static language:Lang.privateMatchesLbCodeMessage}"
-                        FontSize="20" 
-                        HorizontalAlignment="Center"
-                        TextWrapping="Wrap"
-                        TextAlignment="Center"
-                        Margin="0,15,0,0"/>
+                    <TextBlock Text="{x:Static language:Lang.privateMatchesLbCodeMessage}" 
+                               FontSize="18" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="#78909C" Margin="0,10,0,0"/>
 
-                    <TextBox
-                        Text="{Binding MatchCode, UpdateSourceTrigger=PropertyChanged}"
-                        Height="60"
-                        Width="476"
-                        FontSize="40"
-                        TextAlignment="Center"
-                        VerticalAlignment="Center"
-                        Margin="0,30,0,0" Style="{StaticResource TextBox}"/>
+                    <TextBox Text="{Binding MatchCode, UpdateSourceTrigger=PropertyChanged}" 
+                             Style="{StaticResource InputField}" 
+                             Height="60" Width="400" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,30,0,0"/>
 
-                    <Button 
-                        Content="{x:Static language:Lang.globalBtnJoin}" 
-                        Style="{StaticResource JoinButton}" 
-                        FontSize="30"
-                        Height="41"
-                        Margin="0,50,0,0"
-                        Command="{Binding JoinPrivateMatchCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                        IsEnabled="{Binding IsJoining, Converter={StaticResource BooleanNegationConverter}}"/>
+                    <Button Content="{x:Static language:Lang.globalBtnJoin}" 
+                            Style="{StaticResource JoinButton}" 
+                            FontSize="24" Height="55" Margin="0,40,0,0"
+                            Command="{Binding JoinPrivateMatchCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                            IsEnabled="{Binding IsJoining, Converter={StaticResource BooleanNegationConverter}}"/>
                 </StackPanel>
 
             </Grid>

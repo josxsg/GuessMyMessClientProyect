@@ -13,10 +13,12 @@
         ResizeMode="CanResize"
         WindowState="Maximized"
         WindowStyle="None">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
+        
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
 
@@ -38,76 +40,101 @@
                VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,60,0,0"/>
 
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20">
-            <Button x:Name="ConfigurationButton" Command="{Binding SettingsCommand}" ToolTip="{x:Static language:Lang.globalBtnConfiguration}">
+            <Button x:Name="ConfigurationButton" 
+        Command="{Binding SettingsCommand}" 
+        ToolTip="{x:Static language:Lang.globalBtnConfiguration}">
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource SettingsButton}">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsConfigurationPopupOpen}">
-                                <Setter Property="Background" Value="#D3D3D3"/>
-                                <Setter Property="BorderBrush" Value="White"/>
-                                <Setter Property="BorderThickness" Value="2"/>
+                            <DataTrigger Binding="{Binding IsConfigurationPopupOpen}" Value="True">
+                                <Setter Property="Background" Value="#FFFDE7"/>
+                                <Setter Property="BorderBrush" Value="#FFA000"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
-                <Image Source="/Resources/Images/settings.png" Width="30"/>
+                <Image Source="/Resources/Images/settings.png" Width="32"/>
             </Button>
-            <Button x:Name="FriendsButton" Command="{Binding FriendsCommand}" ToolTip="{x:Static language:Lang.socialLbFriends}">
+            <Button x:Name="FriendsButton" 
+        Command="{Binding FriendsCommand}" 
+        ToolTip="{x:Static language:Lang.socialLbFriends}">
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource FriendsButton}">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsFriendsPopupOpen}">
-                                <Setter Property="Background" Value="#87CEEB"/>
-                                <Setter Property="BorderBrush" Value="White"/>
-                                <Setter Property="BorderThickness" Value="2"/>
+                            <DataTrigger Binding="{Binding IsFriendsPopupOpen}" Value="True">
+                                <Setter Property="Background" Value="#FFFDE7"/>
+                                <Setter Property="BorderBrush" Value="#FFA000"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
-                <Image Source="/Resources/Images/friends.png" Width="30"/>
+                <Image Source="/Resources/Images/friends.png" Width="32"/>
             </Button>
-            <Button x:Name="EditProfileButton" ToolTip="{x:Static language:Lang.globalBtnEditProfile}"
-                    Command="{Binding EditProfileCommand}">
+            <Button x:Name="EditProfileButton" 
+        Command="{Binding EditProfileCommand}"
+        ToolTip="{x:Static language:Lang.globalBtnEditProfile}">
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource EditProfileButton}">
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding IsProfilePopupOpen}" Value="True">
-                                <Setter Property="Background" Value="#FF8C9A"/>
-                                <Setter Property="BorderBrush" Value="White"/>
-                                <Setter Property="BorderThickness" Value="2"/>
+                                <Setter Property="Background" Value="#FFFDE7"/>
+                                <Setter Property="BorderBrush" Value="#FFA000"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
-                <Image Source="/Resources/Images/editProfile.png" Width="30"/>
+                <Image Source="/Resources/Images/editProfile.png" Width="32"/>
             </Button>
         </StackPanel>
 
         <Button x:Name="ChatButton" 
-                Style="{StaticResource ChatButton}" Command="{Binding ChatCommand}" ToolTip="{x:Static language:Lang.globalBtnChat}"
-                VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10">
-            <Image Source="/Resources/Images/chat.png" Width="30"/>
+        Command="{Binding ChatCommand}" 
+        ToolTip="{x:Static language:Lang.globalBtnChat}"
+        VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource ChatButton}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChatPopupOpen}" Value="True">
+                            <Setter Property="Background" Value="#FFFDE7"/>
+                            <Setter Property="BorderBrush" Value="#FFA000"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Image Source="/Resources/Images/chat.png" Width="32"/>
         </Button>
-
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0">
-            <Grid Width="220" Height="220">
-                <Ellipse Fill="LightGray" Stroke="Black" StrokeThickness="3"/>
-                <Image Source="{Binding UserAvatar}" Width="200" Height="200" Stretch="UniformToFill" Margin="10" />
-                <Button Style="{StaticResource EditButtonStyle}" Width="45" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,-5,-5"
-                        Command="{Binding SelectAvatarCommand}"
-                        ToolTip="{x:Static language:Lang.globalBtnEditAvatar}"/>
-            </Grid>
-            <TextBox Text="{Binding Username, Mode=OneWay}" 
-                     Style="{StaticResource InputField}"
-                     IsReadOnly="True"
-                     TextAlignment="Center"
-                     FontWeight="Bold"
-                     FontSize="14"
-                     Width="300"
-                     Height="45"
-                     Margin="0,10,0,0"/>
-        </StackPanel>
 
+            <Grid Width="260" Height="260">
+
+                <Viewbox Width="240" Height="240">
+                    <ContentControl Style="{StaticResource AvatarFrame3D}">
+
+                        <Image Source="{Binding UserAvatar}" 
+                       Stretch="Uniform" 
+                       Margin="25"/>
+                    </ContentControl>
+                </Viewbox>
+
+                <Button Style="{StaticResource EditButtonStyle}" 
+                Width="55" Height="55" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right" 
+                Margin="0,0,10,10"
+                Command="{Binding SelectAvatarCommand}"
+                ToolTip="{x:Static language:Lang.globalBtnEditAvatar}"/>
+            </Grid>
+
+            <TextBox Text="{Binding Username, Mode=OneWay}" 
+             Style="{StaticResource InputField}"
+             IsReadOnly="True"
+             TextAlignment="Center"
+             FontWeight="Bold"
+             FontSize="24" 
+             Width="340"
+             Height="55"
+             Margin="0,20,0,0"/>
+        </StackPanel>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20">
             <Button Style="{StaticResource YellowButton}" Command="{Binding PlayCommand}">
                 <StackPanel Orientation="Horizontal">

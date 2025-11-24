@@ -14,40 +14,34 @@
         ResizeMode="CanResize"
         WindowState="Maximized"
         WindowStyle="None">
-    <Grid Cursor="">
+
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <Button Content="←" 
-                Style="{StaticResource ReturnButtonStyle}"
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="15,15,0,0"
-                Command="{Binding ReturnCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
-
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
-
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
-                    Command="{Binding MinimizeWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
-
+                    Command="{Binding MinimizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
             <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
-                    Command="{Binding MaximizeWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
-
+                    Command="{Binding MaximizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
             <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
-                    Command="{Binding CloseWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
-
+                    Command="{Binding CloseWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
         </StackPanel>
 
-        <Viewbox Stretch="Uniform" MaxWidth="800">
-            <StackPanel Height="416" Width="961">
-                <TextBlock Text="{x:Static language:Lang.signUpLbResgister}" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        <Button Content="←" Style="{StaticResource ReturnButtonStyle}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0"
+                Command="{Binding ReturnCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                ToolTip="{x:Static language:Lang.globalBtnReturn}"/>
 
+        <Viewbox Stretch="Uniform" MaxWidth="850">
+            <StackPanel Width="960">
+
+                <Border Style="{StaticResource GlassTitleBorder}">
+                    <TextBlock Text="{x:Static language:Lang.signUpLbResgister}" 
+               Style="{StaticResource GlassTitleText}"/>
+                </Border>
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -55,55 +49,85 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Grid.Column="0" Margin="10">
-                        <TextBlock Text="{x:Static language:Lang.globalTxtName}" HorizontalAlignment="Left" Margin="160,0,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
+                    <StackPanel Grid.Column="0" Margin="15">
 
-                        <TextBlock Text="{x:Static language:Lang.globalTxtUsername}" HorizontalAlignment="Left" Margin="130,15,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
+                        <Border Style="{StaticResource FormLabelBorder}">
+                            <TextBlock Text="{x:Static language:Lang.globalTxtName}" Style="{StaticResource FormLabelText}"/>
+                        </Border>
+                        <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource InputField}" Height="50" Margin="0,0,0,15"/>
 
-                        <TextBlock Text="{x:Static language:Lang.globalTxtEmail}" HorizontalAlignment="Left" Margin="130,15,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
+                        <Border Style="{StaticResource FormLabelBorder}">
+                            <TextBlock Text="{x:Static language:Lang.globalTxtUsername}" Style="{StaticResource FormLabelText}"/>
+                        </Border>
+                        <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource InputField}" Height="50" Margin="0,0,0,15"/>
+
+                        <Border Style="{StaticResource FormLabelBorder}">
+                            <TextBlock Text="{x:Static language:Lang.globalTxtEmail}" Style="{StaticResource FormLabelText}"/>
+                        </Border>
+                        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource InputField}" Height="50" Margin="0,0,0,15"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="2" Margin="10">
-                        <TextBlock Text="{x:Static language:Lang.globalLbLastName}" HorizontalAlignment="Left" Margin="160,0,0,5" FontWeight="SemiBold"/>
-                        <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" Height="45"/>
+                    <Grid Grid.Column="1" VerticalAlignment="Top" Margin="10,60" Width="160" Height="160">
 
-                        <TextBlock Text="{x:Static language:Lang.globalLbGender}" HorizontalAlignment="Left" Margin="160,15,0,5" FontWeight="SemiBold" Cursor="Hand"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Cursor="">
-                            <RadioButton GroupName="Gender" IsChecked="{Binding IsMale}" Style="{StaticResource GenderRadioButtonStyle}" ToolTip="{x:Static language:Lang.globalCmbMale}" Height="45">
-                                <Image Source="/Resources/Images/male.png" Height="25"/>
+                        <ContentControl Style="{StaticResource AvatarFrame3D}">
+                            <Image Source="{Binding SelectedAvatarImage}" Stretch="Uniform" Margin="25"/>
+                        </ContentControl>
+
+                        <Button Style="{StaticResource EditButtonStyle}" 
+            Width="45" Height="45" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Right" 
+            Margin="0,0,-5,-5"
+            Command="{Binding SelectAvatarCommand}" 
+            ToolTip="{x:Static language:Lang.editAvatarLbSelect}"/>
+                    </Grid>
+                    
+                    <StackPanel Grid.Column="2" Margin="15">
+
+                        <Border Style="{StaticResource FormLabelBorder}">
+                            <TextBlock Text="{x:Static language:Lang.globalLbLastName}" Style="{StaticResource FormLabelText}"/>
+                        </Border>
+                        <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource InputField}" Height="50" Margin="0,0,0,15"/>
+
+                        <Border Style="{StaticResource FormLabelBorder}">
+                            <TextBlock Text="{x:Static language:Lang.globalLbGender}" Style="{StaticResource FormLabelText}"/>
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,0,0,15">
+
+                            <RadioButton GroupName="Gender" 
+                 IsChecked="{Binding IsMale}" 
+                 Style="{StaticResource GenderRadioButtonStyle}" 
+                 ToolTip="{x:Static language:Lang.globalCmbMale}" 
+                 Width="55">
+                                <Image Source="/Resources/Images/male.png" Height="28"/>
                             </RadioButton>
-                            <RadioButton Content="{x:Static language:Lang.globalCmbNonBinary}" GroupName="Gender" IsChecked="{Binding IsNonBinary}" Style="{StaticResource GenderRadioButtonStyle}" Margin="5,0"/>
-                            <RadioButton GroupName="Gender" IsChecked="{Binding IsFemale}" Style="{StaticResource GenderRadioButtonStyle}" ToolTip="{x:Static language:Lang.globalCmbFemale}" Height="45">
-                                <Image Source="/Resources/Images/female.png" Height="25"/>
+
+                            <RadioButton Content="{x:Static language:Lang.globalCmbNonBinary}" 
+                 GroupName="Gender" 
+                 IsChecked="{Binding IsNonBinary}" 
+                 Style="{StaticResource GenderRadioButtonStyle}"/>
+
+                            <RadioButton GroupName="Gender" 
+                 IsChecked="{Binding IsFemale}" 
+                 Style="{StaticResource GenderRadioButtonStyle}" 
+                 ToolTip="{x:Static language:Lang.globalCmbFemale}" 
+                 Width="55">
+                                <Image Source="/Resources/Images/female.png" Height="28"/>
                             </RadioButton>
+
                         </StackPanel>
-
-                        <TextBlock Text="{x:Static language:Lang.globalPwdPassword}" HorizontalAlignment="Left" Margin="150,15,0,5" FontWeight="SemiBold"/>
+                        <Border Style="{StaticResource FormLabelBorder}">
+                            <TextBlock Text="{x:Static language:Lang.globalPwdPassword}" Style="{StaticResource FormLabelText}"/>
+                        </Border>
                         <PasswordBox helpers:PasswordBoxHelper.Attach="True"
                                      helpers:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource InputField}" Height="45"/>
+                                     Style="{StaticResource PasswordField}" Height="50" Margin="0,0,0,15"/>
                     </StackPanel>
-
-                    <Grid Grid.Column="1" VerticalAlignment="Top" Margin="20,40" Width="150" Height="150">
-                        <Ellipse Fill="LightGray" Stroke="Black" StrokeThickness="2"/>
-
-                        <Image Source="{Binding SelectedAvatarImage}" Stretch="Uniform" Margin="10"/>
-
-                        <Button Style="{StaticResource EditButtonStyle}" Width="40" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,-5,-5"
-                                Command="{Binding SelectAvatarCommand}"
-                                ToolTip="{x:Static language:Lang.editAvatarLbSelect}"/>
-                    </Grid>
                 </Grid>
 
-                <Button Content="{x:Static language:Lang.globalBtnSignUp}" 
-                        Style="{StaticResource YellowButton}" 
-                        Command="{Binding SignUpCommand}" 
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
-
-                
+                <Button Content="{x:Static language:Lang.globalBtnSignUp}" Style="{StaticResource YellowButton}" Width="280" Height="55" Margin="0,30,0,0" HorizontalAlignment="Center" FontSize="22"
+                        Command="{Binding SignUpCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
             </StackPanel>
         </Viewbox>
     </Grid>

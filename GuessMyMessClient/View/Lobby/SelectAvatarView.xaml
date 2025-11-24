@@ -12,64 +12,82 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
         Background="Transparent"
-        WindowStyle="None">
+        WindowStyle="None"
+        AllowsTransparency="True">
 
-    <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
+    <Border Background="White" BorderBrush="#FF42A5F5" BorderThickness="3" CornerRadius="20" Padding="20" Margin="20">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="10" Color="Black" Opacity="0.5" BlurRadius="30"/>
+        </Border.Effect>
 
-        <StackPanel Margin="20">
-            <Button HorizontalAlignment="Right" Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+        <Grid>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" 
+                    Content="X" Width="35" Height="35" Margin="0,-10,-10,0"
+                    Style="{StaticResource RedButton}"
                     Command="{Binding CloseCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
-            
-            <TextBlock Text="{x:Static language:Lang.editAvatarLbSelect}"
-                       HorizontalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       Margin="0,0,0,20"/>
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" 
+                    ToolTip="{x:Static language:Lang.globalBtnClose}"/>
 
-            <ItemsControl ItemsSource="{Binding AvailableAvatars}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel HorizontalAlignment="Center" MaxWidth="500"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Button Style="{StaticResource JoinButton}" 
-                                Command="{Binding DataContext.SelectAvatarItemCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"
-                                CommandParameter="{Binding}"
-                                Margin="10" 
-                                Width="80" 
-                                Height="80"
-                                ToolTip="{Binding Name}">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border x:Name="border"
-                                        CornerRadius="40" 
-                                        Background="LightGray"
-                                        BorderBrush="Gray"
-                                        BorderThickness="3">
-                                        <Image Source="{Binding ImageSource}" Stretch="Uniform" Margin="5"/>
-                                    </Border>
-                                    <ControlTemplate.Triggers>
-                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                            <Setter TargetName="border" Property="BorderBrush" Value="#FFD5A100"/>
-                                            <Setter TargetName="border" Property="BorderThickness" Value="5"/>
-                                        </DataTrigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <StackPanel Margin="0,30,0,0">
 
-            <Button Content="{x:Static language:Lang.globalBtnConfirm}" 
-                    Style="{StaticResource ConfirmButton}" 
-                    Command="{Binding ConfirmSelectionCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
-                    Margin="0,20,0,0" Width="150" Height="40"/>
-        </StackPanel>
+                <Border Style="{StaticResource GlassTitleBorder}">
+                    <TextBlock Text="{x:Static language:Lang.editAvatarLbSelect}" 
+                               Style="{StaticResource GlassTitleText}"/>
+                </Border>
+
+                <ItemsControl ItemsSource="{Binding AvailableAvatars}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel HorizontalAlignment="Center" MaxWidth="700"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.SelectAvatarItemCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"
+                                    CommandParameter="{Binding}"
+                                    Margin="15" Width="90" Height="90"
+                                    ToolTip="{Binding Name}" Cursor="Hand">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <Border x:Name="border" CornerRadius="45" Background="#F5F5F5" BorderBrush="#CFD8DC" BorderThickness="3">
+                                                <Border.Effect>
+                                                    <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.2" BlurRadius="5"/>
+                                                </Border.Effect>
+                                                <Border CornerRadius="42" ClipToBounds="True">
+                                                    <Image Source="{Binding ImageSource}" Stretch="Uniform" Margin="8"/>
+                                                </Border>
+                                            </Border>
+
+                                            <Border x:Name="CheckMark" Background="#FF2ECC71" CornerRadius="12" Width="24" Height="24" 
+                                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" BorderBrush="White" BorderThickness="2">
+                                                <TextBlock Text="✔" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                                            </Border>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#FF42A5F5"/>
+                                            </Trigger>
+                                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#FFC107"/>
+                                                <Setter TargetName="border" Property="BorderThickness" Value="5"/>
+                                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <Button Content="{x:Static language:Lang.globalBtnConfirm}" 
+                        Style="{StaticResource JoinButton}" 
+                        Command="{Binding ConfirmSelectionCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                        Margin="0,30,0,0" Width="200" Height="50" FontSize="20"/>
+            </StackPanel>
+        </Grid>
 
     </Border>
 </Window>

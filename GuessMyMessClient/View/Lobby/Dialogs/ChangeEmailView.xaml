@@ -1,22 +1,45 @@
-﻿<Window x:Class="GuessMyMessClient.View.Lobby.Dialogs.ChangeEmailView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window x:Class="GuessMyMessClient.View.Lobby.Dialogs.ChangeEmailView" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
-        xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby.Dialogs" mc:Ignorable="d"
+        xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby.Dialogs" 
+        mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:ChangeEmailViewModel, IsDesignTimeCreatable=True}"
         Style="{StaticResource DialogWindowStyle}"
         WindowStartupLocation="CenterScreen" Height="250" Width="450">
+    
     <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
         <Grid Margin="15">
             <Button Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Top"
                     Command="{Binding CloseCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
-            <StackPanel HorizontalAlignment="Center">
-                <TextBlock Text="{x:Static language:Lang.changeEmailLbNewEmail}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
-                <TextBlock Text="{x:Static language:Lang.changeEmailLbWriteNewEmail}" Margin="0,20,0,5" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"/>
-                <TextBox Style="{StaticResource InputField}" Text="{Binding NewEmail, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Content="{x:Static language:Lang.globalBtnConfirm}" Style="{StaticResource BlueButton}" Command="{Binding ConfirmCommand}" Margin="0,20,0,0"/>
+            
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                
+                <TextBlock Text="{x:Static language:Lang.changeEmailLbNewEmail}" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center"
+                           FontFamily="Arial Rounded MT Bold"/>
+
+                <TextBlock Text="{x:Static language:Lang.changeEmailLbWriteNewEmail}" 
+                           Margin="0,20,0,5" 
+                           HorizontalAlignment="Center" 
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center"
+                           FontFamily="Arial Rounded MT Bold"/>
+
+                <TextBox Style="{StaticResource InputField}" 
+                         Text="{Binding NewEmail, UpdateSourceTrigger=PropertyChanged}"
+                         Width="300"/>
+
+                <Button Content="{x:Static language:Lang.globalBtnConfirm}" 
+                        Style="{StaticResource BlueButton}" 
+                        Command="{Binding ConfirmCommand}" 
+                        Margin="0,20,0,0"
+                        Width="150" Height="40"/>
             </StackPanel>
         </Grid>
     </Border>

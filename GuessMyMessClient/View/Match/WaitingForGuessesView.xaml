@@ -13,6 +13,29 @@
         WindowState="Maximized"
         WindowStyle="None">
 
+    <Window.Resources>
+        <Style x:Key="FormLabelBorder" TargetType="Border">
+            <Setter Property="Background" Value="#90000000"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="12,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.2" BlurRadius="4"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="FormLabelText" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/background.jpeg" Stretch="UniformToFill"/>
@@ -21,7 +44,7 @@
         <StackPanel Orientation="Horizontal" 
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Top" 
-                    Margin="0,5,5,0"
+                    Margin="0,5,5,0" 
                     Panel.ZIndex="10">
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
                     Command="{Binding MinimizeWindowCommand}"
@@ -35,23 +58,54 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{x:Static language:Lang.waitingForGuessesTitle}"
-                       FontSize="36" FontWeight="Bold" Foreground="Black"
-                       HorizontalAlignment="Center"/>
 
-            <TextBlock Text="{x:Static language:Lang.waitingForGuessesYouDrewTheWord}"
-                       FontSize="24" Foreground="Black"
-                       HorizontalAlignment="Center" Margin="0,30,0,0"/>
+            <Border Style="{StaticResource GlassTitleBorder}" Padding="40,15" Margin="0,0,0,40">
+                <TextBlock Text="{x:Static language:Lang.waitingForGuessesTitle}" 
+                           Style="{StaticResource GlassTitleText}"/>
+            </Border>
 
-            <Border Background="#AAFFFFFF" CornerRadius="10" Padding="20,10" Margin="0,10,0,0">
+            <Border Style="{StaticResource FormLabelBorder}" HorizontalAlignment="Center" Margin="0,0,0,15">
+                <TextBlock Text="{x:Static language:Lang.waitingForGuessesYouDrewTheWord}"
+                           Style="{StaticResource FormLabelText}" FontSize="30"/>
+            </Border>
+
+            <Border Background="White" 
+                    CornerRadius="20" 
+                    Padding="50,15" 
+                    Margin="0,0,0,40"
+                    BorderBrush="#FF42A5F5" 
+                    BorderThickness="4"
+                    HorizontalAlignment="Center">
+
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="15"/>
+                </Border.Effect>
+
                 <TextBlock Text="{Binding Word}"
-                           FontSize="40" FontWeight="Bold" Foreground="DarkBlue"
-                           HorizontalAlignment="Center"/>
+                           FontFamily="Arial Rounded MT Bold" 
+                           FontSize="48" 
+                           FontWeight="Black" 
+                           Foreground="#FFC107" 
+                           HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="2" Color="#FFA000" Opacity="0.3" BlurRadius="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
             </Border>
 
             <TextBlock Text="{x:Static language:Lang.globalLbWaitingForOtherPlayers}"
-                       FontSize="24" Foreground="Black"
-                       HorizontalAlignment="Center" Margin="0,30,0,0"/>
+                       FontFamily="Arial Rounded MT Bold" 
+                       FontSize="22" 
+                       FontWeight="SemiBold" 
+                       Foreground="#E0E0E0"
+                       HorizontalAlignment="Center" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.8" BlurRadius="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
         </StackPanel>
     </Grid>
 </Window>

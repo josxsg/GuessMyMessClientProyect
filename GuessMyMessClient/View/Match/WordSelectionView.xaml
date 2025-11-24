@@ -36,36 +36,20 @@
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
         </StackPanel>
 
-        <Viewbox Grid.Row="1" Stretch="Uniform" Margin="50,20,50,50">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="1" Stretch="Uniform">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="800">
 
-                <TextBlock Text="{x:Static language:Lang.chooseWordLbTitle}"
-                           FontSize="30" 
-                           FontWeight="Bold" 
-                           HorizontalAlignment="Center"
-                           Margin="20"
-                           Foreground="White">
-                    <TextBlock.Effect>
-                        <DropShadowEffect ShadowDepth="3" 
-                                          Direction="315" 
-                                          Color="Black" 
-                                          Opacity="0.8" 
-                                          BlurRadius="5"/>
-                    </TextBlock.Effect>
-                </TextBlock>
+                <Border Style="{StaticResource GlassTitleBorder}" Margin="0,0,0,40">
+                    <TextBlock Text="{x:Static language:Lang.chooseWordLbTitle}" 
+                               Style="{StaticResource GlassTitleText}" FontSize="28"/>
+                </Border>
 
-                <TextBlock Text="{Binding CountdownTime}"
-                           FontSize="28" 
-                           FontWeight="Bold" 
-                           HorizontalAlignment="Center"
-                           Margin="0,-10,0,10"
-                           Foreground="Yellow">
-                    <TextBlock.Effect>
-                        <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="1" BlurRadius="4"/>
-                    </TextBlock.Effect>
-                </TextBlock>
+                <Label Content="{Binding CountdownTime}" 
+                       Style="{StaticResource TimerStyle}"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,40"/>
 
-                <Grid Margin="10">
+                <Grid Margin="0,0,0,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -75,27 +59,21 @@
                             Content="{Binding Word1}" 
                             Command="{Binding SelectWordCommand}"
                             CommandParameter="{Binding Word1}"
-                            Style="{StaticResource JoinButton}" 
-                            FontSize="30"
-                            MinWidth="250" Height="41"
-                            Margin="10,10,20,10"/>
+                            Style="{StaticResource WordToSelect}" 
+                            HorizontalAlignment="Right" Margin="0,0,15,0"/>
+
                     <Button Grid.Column="1"
                             Content="{Binding Word2}" 
                             Command="{Binding SelectWordCommand}"
                             CommandParameter="{Binding Word2}"
-                            Style="{StaticResource JoinButton}" 
-                            FontSize="30"
-                            MinWidth="250" Height="41"
-                            Margin="20,10,10,10"/>
+                            Style="{StaticResource WordToSelect}" 
+                            HorizontalAlignment="Left" Margin="15,0,0,0"/>
                 </Grid>
 
                 <Button Content="{Binding Word3}" 
                         Command="{Binding SelectWordCommand}"
                         CommandParameter="{Binding Word3}"
-                        Style="{StaticResource JoinButton}" 
-                        FontSize="30"
-                        MinWidth="250" Height="41"
-                        Margin="10,30,10,10"
+                        Style="{StaticResource WordToSelect}" 
                         HorizontalAlignment="Center"/>
 
             </StackPanel>

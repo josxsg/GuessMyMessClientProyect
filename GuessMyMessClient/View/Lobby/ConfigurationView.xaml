@@ -8,55 +8,86 @@
              xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
              xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
              d:DataContext="{d:DesignInstance Type=vm:ConfigurationViewModel, IsDesignTimeCreatable=True}"
-             d:DesignHeight="450" d:DesignWidth="300">
-    <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Padding="15">
+             d:DesignHeight="500" d:DesignWidth="350">
+
+    <Border Background="White" 
+            BorderBrush="#FF42A5F5" 
+            BorderThickness="3" 
+            CornerRadius="20" 
+            Padding="20">
+        
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.4" BlurRadius="20"/>
+        </Border.Effect>
+
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/> <RowDefinition Height="*"/>    <RowDefinition Height="Auto"/> </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="{Binding ConfigTitle}" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+            <Border Grid.Row="0" Style="{StaticResource PopupTitleBorder}">
+                <TextBlock Text="{Binding ConfigTitle}" Style="{StaticResource PopupTitleText}"/>
+            </Border>
 
             <StackPanel Grid.Row="1">
-                <TextBlock Text="{Binding SoundTitle}" FontSize="18" FontWeight="Bold"/>
+                
+                <Border Style="{StaticResource PopupSubtitleBorder}">
+                    <TextBlock Text="{Binding SoundTitle}" Style="{StaticResource PopupSubtitleText}"/>
+                </Border>
+
                 <Grid Margin="10,5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="{Binding SoundEffectsLabel}" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Text="{Binding SoundEffectsLabel}" 
+                               VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="14" FontWeight="SemiBold" Foreground="#333"/>
                     <ToggleButton Grid.Column="1" IsChecked="{Binding SoundEffectsEnabled}" Style="{StaticResource ToggleSwitchStyle}"/>
                 </Grid>
+
                 <Grid Margin="10,5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="{Binding MusicLabel}" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Text="{Binding MusicLabel}" 
+                               VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="14" FontWeight="SemiBold" Foreground="#333"/>
                     <ToggleButton Grid.Column="1" IsChecked="{Binding MusicEnabled}" Style="{StaticResource ToggleSwitchStyle}"/>
                 </Grid>
-                <Grid Margin="10,5">
+
+                <Grid Margin="10,10,10,5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="{Binding VolumeLabel}" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                    <Slider Grid.Column="1" Value="{Binding VolumeLevel}" Maximum="100" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Text="{Binding VolumeLabel}" 
+                               VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Arial Rounded MT Bold" FontSize="14" FontWeight="SemiBold" Foreground="#333"/>
+                    <Slider Grid.Column="1" 
+        Value="{Binding VolumeLevel}" 
+        Maximum="100" 
+        VerticalAlignment="Center"
+        Style="{StaticResource VolumeSliderStyle}"/>
                 </Grid>
 
-                <TextBlock Text="{Binding LanguageTitle}" FontSize="18" FontWeight="Bold" Margin="0,20,0,0"/>
+                <Border Style="{StaticResource PopupSubtitleBorder}">
+                    <TextBlock Text="{Binding LanguageTitle}" Style="{StaticResource PopupSubtitleText}"/>
+                </Border>
+
                 <StackPanel Orientation="Horizontal" Margin="10,5">
                     <RadioButton Content="{Binding SpanishButtonText}" GroupName="Language" IsChecked="{Binding IsSpanish}" Style="{StaticResource LanguageRadioButtonStyle}"/>
-                    <RadioButton Content="{Binding EnglishButtonText}" GroupName="Language" IsChecked="{Binding IsEnglish}" Style="{StaticResource LanguageRadioButtonStyle}" Margin="5,0"/>
+                    <RadioButton Content="{Binding EnglishButtonText}" GroupName="Language" IsChecked="{Binding IsEnglish}" Style="{StaticResource LanguageRadioButtonStyle}" Margin="15,0"/>
                 </StackPanel>
             </StackPanel>
 
-            <Button Grid.Row="2" Style="{StaticResource RedButtonStyle}" Command="{Binding LogOutCommand}" HorizontalAlignment="Right">
+            <Button Grid.Row="2" 
+                    Style="{StaticResource LeaveButtonStylee}" 
+                    Command="{Binding LogOutCommand}" 
+                    HorizontalAlignment="Center"
+                    Width="200" Height="45" 
+                    Margin="0,25,0,0">
+                
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Images/logout.png" Height="20" Margin="0,0,10,0" Width="26"/>
-                    <TextBlock Text="{Binding LogoutButtonText}" VerticalAlignment="Center" Height="23" Width="105"/>
+                    <Image Source="/Resources/Images/logout.png" Height="20" Margin="0,0,10,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <TextBlock Text="{Binding LogoutButtonText}" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="16"/>
                 </StackPanel>
             </Button>
         </Grid>

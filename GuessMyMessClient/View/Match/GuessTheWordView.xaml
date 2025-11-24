@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.Match"
         mc:Ignorable="d"
-        Title="GuessTheWordView" Height="550" Width="900"
+        Title="GuessTheWordView" Height="600" Width="950"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Match"
         d:DataContext="{d:DesignInstance Type=vm:GuessTheWordViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
@@ -25,61 +25,61 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.RowSpan="1" Orientation="Horizontal" 
-                    HorizontalAlignment="Right" 
-                    VerticalAlignment="Top" 
-                    Margin="0,5,5,0"
-                    Panel.ZIndex="10">
-            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
-                    Command="{Binding MinimizeWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
-
-            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
-                    Command="{Binding MaximizeWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
-
-            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
-                    Command="{Binding CloseWindowCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15,0,10">
+            <Border Style="{StaticResource GlassTitleBorder}" Padding="25,10">
+                <TextBlock Text="{x:Static language:Lang.guessScreenLbTitleGuessWord}" Style="{StaticResource GlassTitleText}" FontSize="32"/>
+            </Border>
         </StackPanel>
 
-        <TextBlock Grid.Row="0"
-                   Text="{x:Static language:Lang.guessScreenLbTitleGuessWord}"
-                   FontSize="36" 
-                   FontWeight="Bold" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Top"
-                   Margin="0,50,0,20" />
-        <Border Grid.Row="1"
-                Style="{StaticResource DrawingDisplayBorder}" 
-                Margin="100,0,100,20">
-            <InkCanvas 
-                Background="Transparent"
-                Strokes="{Binding DrawingToGuess}"
-                IsEnabled="False"/>
-        </Border>
+        <StackPanel Grid.Row="0" Grid.RowSpan="1" Orientation="Horizontal" 
+                    HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Panel.ZIndex="10">
+            <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
+                    Command="{Binding MinimizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
+            <Button Content="☐" Width="30" Height="30" Margin="5" Style="{StaticResource GreenButton}"
+                    Command="{Binding MaximizeWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnResize}"/>
+            <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
+                    Command="{Binding CloseWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
+        </StackPanel>
 
-        <Grid Grid.Row="2" Margin="100,0,100,50">
+        <Grid Grid.Row="1" Margin="20,0,20,10">
+            <Border Background="White" CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.3" BlurRadius="15"/>
+                </Border.Effect>
+
+                <Grid ClipToBounds="True">
+                    <InkCanvas Background="Transparent"
+                               Strokes="{Binding DrawingToGuess}"
+                               IsEnabled="False" 
+                               Margin="0">
+                        <InkCanvas.Clip>
+                            <RectangleGeometry Rect="0,0,2000,2000" RadiusX="15" RadiusY="15"/>
+                        </InkCanvas.Clip>
+                    </InkCanvas>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="100,0,100,30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
             <TextBox Grid.Column="0"
-                     Style="{StaticResource TextBox}"
+                     Style="{StaticResource InputField}"
                      Text="{Binding UserGuess, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      VerticalAlignment="Center"
-                     MinHeight="40"/>
+                     Height="50" Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,20,0"/>
 
             <Button Grid.Column="1"
                     Content="{x:Static language:Lang.globalBtnConfirm}" 
-                    Style="{StaticResource ConfirmButton}" 
-                    FontSize="25"
-                    MinHeight="40"
-                    MinWidth="150"
+                    Style="{StaticResource JoinButton}" 
+                    FontSize="20"
+                    Height="55"
+                    Width="180"
                     VerticalAlignment="Center"
-                    Margin="20,0,0,0" Command="{Binding ConfirmGuessCommand}"/>
+                    Command="{Binding ConfirmGuessCommand}"/>
         </Grid>
-
     </Grid>
 </Window>
