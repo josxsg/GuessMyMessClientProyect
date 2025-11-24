@@ -217,7 +217,7 @@
     <value>Enviar Invitación</value>
   </data>
   <data name="socialLbEmailInvitation" xml:space="preserve">
-    <value>Invitación por Correo Electrónico</value>
+    <value>Invitación por Correo</value>
   </data>
   <data name="socialLbFriends" xml:space="preserve">
     <value>Amigos</value>

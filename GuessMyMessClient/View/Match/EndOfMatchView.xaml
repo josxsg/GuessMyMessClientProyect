@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.Match"
         mc:Ignorable="d"
-        Title="EndOfMatchView" Height="450" Width="800"
+        Title="EndOfMatchView" Height="550" Width="900"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Match"
         d:DataContext="{d:DesignInstance Type=vm:EndOfMatchViewModel, IsDesignTimeCreatable=True}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs">
+        xmlns:language ="clr-namespace:GuessMyMessClient.Properties.Langs"
+        WindowState="Maximized"
+        WindowStyle="None">
 
     <Grid>
         <Grid.Background>
@@ -24,75 +26,115 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
-                   Text="{x:Static language:Lang.winnersScreenLbTitleEndMatch}"
-                   FontSize="30" FontWeight="Bold"
-                   HorizontalAlignment="Center"
-                   Margin="0,20,0,0" />
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <TextBlock FontSize="20" >
-                <Run Text="{x:Static language:Lang.winnersScreenLbCongrats}"/>
-                <Run Text=":"/>
-            </TextBlock>
-
-            <TextBlock Text="{Binding WinnerName}"
-                       FontSize="20" FontWeight="Bold"
-                       Foreground="DarkGoldenrod"
-                       Margin="5,0,0,0"/>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,30,0,10">
+            <Border Style="{StaticResource GlassTitleBorder}" Padding="40,10">
+                <TextBlock Text="{x:Static language:Lang.winnersScreenLbTitleEndMatch}" Style="{StaticResource GlassTitleText}"/>
+            </Border>
         </StackPanel>
+
+        <Border Grid.Row="1" Background="White" CornerRadius="15" Padding="20,10" HorizontalAlignment="Center" Margin="0,0,0,20"
+                BorderBrush="#FFC107" BorderThickness="3">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="3" Color="Black" Opacity="0.3" BlurRadius="10"/>
+            </Border.Effect>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="22" FontFamily="Arial Rounded MT Bold" Foreground="#555">
+                    <Run Text="{x:Static language:Lang.winnersScreenLbCongrats}"/>
+                    <Run Text=":"/>
+                </TextBlock>
+                <TextBlock Text="{Binding WinnerName}"
+                           FontSize="24" FontWeight="Black" FontFamily="Arial Rounded MT Bold"
+                           Foreground="#FFC107"
+                           Margin="10,0,0,0">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="1" Color="#FFA000" Opacity="0.5" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+        </Border>
 
         <StackPanel Grid.Row="2" 
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
-                    Margin="0,0,0,10">
+                    Margin="0,0,0,20">
 
-            <StackPanel VerticalAlignment="Bottom" >
+            <StackPanel VerticalAlignment="Bottom" Margin="0,0,10,0">
                 <TextBlock Text="{Binding SecondPlacePlayerName}"
-                           FontSize="18" FontWeight="SemiBold"
-                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                           FontSize="20" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Foreground="White"
+                           HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.8" BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
 
-                <Border Background="#AAFFFFFF" CornerRadius="5,5,0,0"
-                        Height="150" Width="150"
-                        BorderBrush="Silver" BorderThickness="2">
-                    <Image Source="/Resources/Images/2nd.png" Stretch="Uniform" Margin="10"/>
+                <Border Background="#E0E0E0" CornerRadius="15,15,0,0"
+                        Height="180" Width="160"
+                        BorderBrush="#B0BEC5" BorderThickness="4">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.4" BlurRadius="15"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Border Height="30" VerticalAlignment="Top" Background="White" Opacity="0.3" CornerRadius="10,10,50,50" Margin="5"/>
+                        <Image Source="/Resources/Images/2nd.png" Stretch="Uniform" Margin="20"/>
+                    </Grid>
                 </Border>
             </StackPanel>
 
-            <StackPanel VerticalAlignment="Bottom" >
+            <StackPanel VerticalAlignment="Bottom" Margin="10,0,10,0">
                 <TextBlock Text="{Binding FirstPlacePlayerName}"
-                           FontSize="22" FontWeight="Bold"
-                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                           FontSize="26" FontWeight="Black" FontFamily="Arial Rounded MT Bold" Foreground="#FFC107"
+                           HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.8" BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
 
-                <Border Background="#AAFFFFFF" CornerRadius="5,5,0,0"
-                        Height="200" Width="150"
-                        BorderBrush="Goldenrod" BorderThickness="3">
-                    <Image Source="/Resources/Images/1st.png" Stretch="Uniform" Margin="10"/>
+                <Border Background="#FFF176" CornerRadius="15,15,0,0"
+                        Height="240" Width="180"
+                        BorderBrush="#FFD700" BorderThickness="4">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="8" Color="Black" Opacity="0.4" BlurRadius="20"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Border Height="40" VerticalAlignment="Top" Background="White" Opacity="0.4" CornerRadius="10,10,60,60" Margin="5"/>
+                        <Image Source="/Resources/Images/1st.png" Stretch="Uniform" Margin="20"/>
+                    </Grid>
                 </Border>
             </StackPanel>
 
-            <StackPanel VerticalAlignment="Bottom" >
+            <StackPanel VerticalAlignment="Bottom" Margin="10,0,0,0">
                 <TextBlock Text="{Binding ThirdPlacePlayerName}"
-                           FontSize="16" FontWeight="SemiBold"
-                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                           FontSize="18" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Foreground="White"
+                           HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.8" BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
 
-                <Border Background="#AAFFFFFF" CornerRadius="5,5,0,0"
-                        Height="100" Width="150"
-                        BorderBrush="#CD7F32" BorderThickness="2">
-                    <Image Source="/Resources/Images/3rd.png" Stretch="Uniform" Margin="10"/>
+                <Border Background="#FFCC80" CornerRadius="15,15,0,0"
+                        Height="130" Width="160"
+                        BorderBrush="#D84315" BorderThickness="4">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5" Color="Black" Opacity="0.4" BlurRadius="15"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Border Height="25" VerticalAlignment="Top" Background="White" Opacity="0.3" CornerRadius="10,10,50,50" Margin="5"/>
+                        <Image Source="/Resources/Images/3rd.png" Stretch="Uniform" Margin="20"/>
+                    </Grid>
                 </Border>
             </StackPanel>
 
         </StackPanel>
+
         <Button Grid.Row="3"
                 Content="{x:Static language:Lang.winnersScreenBtnExit}" 
                 Command="{Binding ExitCommand}"
-                Style="{StaticResource JoinButton}" 
-                FontSize="20" Height="30"
+                Style="{StaticResource LeaveButtonStylee}" 
+                FontSize="22" 
+                Width="250" Height="55"
                 HorizontalAlignment="Center"
-                Margin="0,0,0,20"
-                MinWidth="100"/>
+                Margin="0,20,0,40"/>
 
     </Grid>
 </Window>

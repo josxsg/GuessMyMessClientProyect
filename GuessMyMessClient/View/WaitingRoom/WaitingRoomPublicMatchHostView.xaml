@@ -336,10 +336,14 @@
         </StackPanel>
 
         <Button Grid.Row="2" Grid.Column="2"
-                Content="📩 Invitar"
-                Style="{StaticResource InviteButtonStyle}"
-                Command="{Binding InviteCommand}"
-                HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                Margin="0,0,30,30" Height="40" Width="120"/>
+        Style="{StaticResource InviteButtonStyle}"
+        Command="{Binding InviteCommand}"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        Margin="0,0,30,30" Height="45" Width="210">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="📩" Margin="0,0,8,0"/>
+                <TextBlock Text="{x:Static lang:Lang.socialLbEmailInvitation}"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

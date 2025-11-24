@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessMyMessClient.View.WaitingRoom"
         mc:Ignorable="d"
-        Title="Waiting Room - Private Host" Height="650" Width="950"
+        Title="Waiting Room - Private Host" Height="650" Width="950" 
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.WaitingRoom"
         xmlns:lang="clr-namespace:GuessMyMessClient.Properties.Langs"
         xmlns:session="clr-namespace:GuessMyMessClient.ViewModel.Session" 
@@ -20,35 +20,74 @@
         <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
 
         <Style x:Key="KickButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="IndianRed"/>
+            <Setter Property="Background" Value="#FFEF5350"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="Visibility" Value="{Binding KickButtonVisibility}"/>
             <Setter Property="Command" Value="{Binding KickCommand}"/>
             <Setter Property="CommandParameter" Value="{Binding Username}"/>
-        </Style>
-        <Style x:Key="PredefinedMessageButtonStyle" TargetType="Button" BasedOn="{StaticResource MenuButtonBase}">
-            <Setter Property="Background" Value="#FF4A6E92"/>
-        </Style>
-        <Style x:Key="LeaveButtonStyle" TargetType="Button" BasedOn="{StaticResource MenuButtonBase}">
-            <Setter Property="Background" Value="Gray"/>
-            <Setter Property="Width" Value="180"/>
-            <Setter Property="Height" Value="45"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="ToolTip" Value="{x:Static lang:Lang.waitingRoomBtnKickTooltip}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid RenderTransformOrigin="0.5,0.5">
+                            <Border x:Name="shadow" CornerRadius="8" Background="#C62828" Margin="0,3,0,0"/>
+                            <Border x:Name="face" CornerRadius="8" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="0,0,0,3">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="face" Property="Background" Value="#FFFF867C"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="face" Property="Margin" Value="0,3,0,0"/>
+                                <Setter TargetName="shadow" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
-        <Style x:Key="InviteButtonStyle" TargetType="Button" BasedOn="{StaticResource MenuButtonBase}">
-            <Setter Property="Background" Value="#FF2196F3"/>
+        <Style x:Key="PredefinedMessageButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF03A9F4"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="Margin" Value="0,4"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="20" BorderBrush="White" BorderThickness="2">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
+                        <Grid RenderTransformOrigin="0.5,0.5">
+                            <Border x:Name="shadow" CornerRadius="15" Background="#FF0277BD" Margin="0,3,0,0"/>
+                            <Border x:Name="face" CornerRadius="15" Background="{TemplateBinding Background}" Margin="0,0,0,3">
+                                <Grid>
+                                    <TextBlock Text="💬" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="#80FFFFFF"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="face" Property="Background" Value="#FF29B6F6"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="face" Property="Margin" Value="0,3,0,0"/>
+                                <Setter TargetName="shadow" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -71,87 +110,172 @@
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Margin="30,20">
-            <TextBlock Text="{Binding MatchName}" FontSize="28" FontWeight="Bold" Foreground="Black" TextWrapping="Wrap"/>
-            <StackPanel Orientation="Horizontal" Margin="0,15,0,0" Visibility="{Binding MatchCodeVisibility}">
-                <TextBlock Text="{x:Static lang:Lang.globalLbMatchCode}" FontSize="20" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"/>
-                <TextBox Text="{Binding MatchCode}" FontSize="18" Margin="10,0,0,0" IsReadOnly="True" Background="#55FFFFFF" BorderThickness="0" Padding="5" VerticalContentAlignment="Center"/>
+        <Border Grid.Row="0" Grid.Column="0" 
+                Background="#CC000000" 
+                CornerRadius="20" 
+                Margin="30,20" 
+                Padding="25"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                MaxWidth="500">
+
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="4" Color="Black" Opacity="0.4" BlurRadius="15"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text="{Binding MatchName}" 
+                           FontFamily="Arial Rounded MT Bold"
+                           FontSize="32" 
+                           FontWeight="Normal" 
+                           Foreground="White" 
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,5">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="2" Direction="320" Color="#333333" Opacity="0.8" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10" Visibility="{Binding MatchCodeVisibility}">
+                    <TextBlock Text="{x:Static lang:Lang.globalLbMatchCode}" 
+                                FontFamily="Arial Rounded MT Bold" FontSize="20" Foreground="#FFFFC107" FontWeight="Bold" VerticalAlignment="Center"/>
+
+                    <Border Background="#33FFFFFF" CornerRadius="8" Padding="10,2" Margin="10,0,0,0">
+                        <TextBlock Text="{Binding MatchCode}" FontFamily="Arial Rounded MT Bold" FontSize="20" Foreground="White" FontWeight="Bold"/>
+                    </Border>
+                </StackPanel>
+
+                <Border Background="#44FFFFFF" CornerRadius="10" HorizontalAlignment="Left" Padding="10,4" Margin="0,0,0,15" Visibility="{Binding MatchCodeVisibility}">
+                    <TextBlock Text="{x:Static lang:Lang.waitingRoomLbMatchTypePrivate}" 
+                               FontFamily="Arial Rounded MT Bold" FontSize="14" Foreground="White" FontWeight="Bold"/>
+                </Border>
+
+                <TextBlock Margin="0,5,0,0" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White">
+                    <Run Text="{x:Static lang:Lang.globalLbHost}" Foreground="#FFFFC107"/> <Run Text=": " Foreground="#FFFFC107"/>
+                    <Run Text="{Binding HostUsername}"/>
+                </TextBlock>
+
+                <TextBlock Margin="0,8,0,0" FontSize="20" FontFamily="Arial Rounded MT Bold" Foreground="White">
+                    <Run Text="{x:Static lang:Lang.globalLbDifficulty}" Foreground="#FF42A5F5"/> <Run Text=": " Foreground="#FF42A5F5"/>
+                    <Run Text="{Binding Difficulty}"/>
+                </TextBlock>
+
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <Ellipse Width="15" Height="15" Fill="#FF66E070" Margin="0,0,10,0"/>
+                    <TextBlock Text="{Binding PlayerCountDisplay}" FontFamily="Arial Rounded MT Bold" FontSize="22" FontWeight="Bold" Foreground="#FF66E070"/>
+                </StackPanel>
             </StackPanel>
-            <TextBlock Text="{x:Static lang:Lang.waitingRoomLbMatchTypePrivate}" FontSize="14" FontWeight="SemiBold" Foreground="Black" Margin="0,5,0,0" Visibility="{Binding MatchCodeVisibility}"/>
-            <TextBlock Margin="0,15,0,0" FontSize="18" Foreground="Black">
-                <Run Text="{x:Static lang:Lang.globalLbHost}" FontWeight="Bold"/>: <Run Text="{Binding HostUsername}"/>
-            </TextBlock>
-            <TextBlock Margin="0,5,0,0" FontSize="18" Foreground="Black">
-                <Run Text="{x:Static lang:Lang.globalLbDifficulty}" FontWeight="Bold"/>: <Run Text="{Binding Difficulty}"/>
-            </TextBlock>
-            <TextBlock Text="{Binding PlayerCountDisplay}" FontSize="18" FontWeight="Bold" Foreground="LawnGreen" Margin="0,10,0,0"/>
-        </StackPanel>
+        </Border>
 
         <Grid Grid.Row="1" Grid.Column="0" Margin="30,0,30,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+
             <Border Grid.Row="0" Background="#AA000000" CornerRadius="5" Padding="5" Margin="0,0,0,10">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Name="ChatScrollViewer">
                     <ItemsControl ItemsSource="{Binding ChatMessages}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="{x:Type session:ChatMessageDisplay}">
-                                <TextBlock Text="{Binding FormattedMessage}" Foreground="White" FontSize="14" TextWrapping="Wrap" Margin="0,2"/>
+                                <TextBlock Text="{Binding FormattedMessage}" FontFamily="Arial Rounded MT Bold" FontSize="15" Foreground="White" TextWrapping="Wrap" Margin="0,4">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1.5" Direction="320" Color="Black" Opacity="0.6" BlurRadius="2"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
             </Border>
+
             <StackPanel Grid.Row="1" Orientation="Vertical">
-                <Button Content="{x:Static lang:Lang.chatMsgExcited}" Style="{StaticResource PredefinedMessageButtonStyle}" Command="{Binding SendMessageCommand}" CommandParameter="chatMsgExcited" Height="20"/>
-                <Button Content="{x:Static lang:Lang.chatMsgLetsGo}" Style="{StaticResource PredefinedMessageButtonStyle}" Command="{Binding SendMessageCommand}" CommandParameter="chatMsgLetsGo" Height="20"/>
-                <Button Content="{x:Static lang:Lang.chatMsgStartGame}" Style="{StaticResource PredefinedMessageButtonStyle}" Command="{Binding SendMessageCommand}" CommandParameter="chatMsgStartGame" Height="20"/>
-                <Button Content="{x:Static lang:Lang.chatMsgReady}" Style="{StaticResource PredefinedMessageButtonStyle}" Command="{Binding SendMessageCommand}" CommandParameter="chatMsgReady" Height="21"/>
+                <Button Content="{x:Static lang:Lang.chatMsgExcited}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                        Command="{Binding SendMessageCommand}" CommandParameter="chatMsgExcited" Height="20" Width="404"/>
+                <Button Content="{x:Static lang:Lang.chatMsgLetsGo}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                        Command="{Binding SendMessageCommand}" CommandParameter="chatMsgLetsGo" Height="20" Width="404"/>
+                <Button Content="{x:Static lang:Lang.chatMsgStartGame}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                        Command="{Binding SendMessageCommand}" CommandParameter="chatMsgStartGame" Height="20" Width="404"/>
+                <Button Content="{x:Static lang:Lang.chatMsgReady}" Style="{StaticResource PredefinedMessageButtonStyle}"
+                        Command="{Binding SendMessageCommand}" CommandParameter="chatMsgReady" Height="20" Width="404"/>
             </StackPanel>
         </Grid>
 
-        <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="#AA000000" CornerRadius="5" Padding="10" Margin="10,20,20,10">
-            <StackPanel>
-                <TextBlock Text="{x:Static lang:Lang.globalLbPlayers}" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" 
+                Background="#CC000000" 
+                CornerRadius="20" 
+                Padding="20" 
+                Margin="10,20,30,10">
+
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="4" Color="Black" Opacity="0.4" BlurRadius="15"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,15">
+                    <TextBlock Text="👥" FontSize="24" Foreground="#FF42A5F5" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{x:Static lang:Lang.globalLbPlayers}" FontFamily="Arial Rounded MT Bold" FontSize="24" FontWeight="Normal" Foreground="White">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2" Direction="320" Color="#333333" Opacity="0.8" BlurRadius="2"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding Players}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="{x:Type vm:PlayerViewModel}">
-                                <Grid Margin="0,3">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding Username}" Foreground="White" FontSize="16" VerticalAlignment="Center"/>
-                                    <Button Grid.Column="1" Content="{x:Static lang:Lang.waitingRoomBtnKick}" Style="{StaticResource KickButtonStyle}"/>
-                                </Grid>
+                                <Border Background="#33FFFFFF" CornerRadius="12" Padding="12,8" Margin="0,0,0,8">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Username}" FontFamily="Arial Rounded MT Bold" FontSize="16" Foreground="White" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="5,0,10,0"/>
+                                        <Button Grid.Column="1" Content="{x:Static lang:Lang.waitingRoomBtnKick}" Style="{StaticResource KickButtonStyle}"/>
+                                    </Grid>
+                                </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-            </StackPanel>
+            </Grid>
         </Border>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,20">
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,30">
+
             <Button Content="{x:Static lang:Lang.waitingRoomBtnStart}"
-                    Style="{StaticResource JoinButton}" FontSize="24" Width="180" Height="45" Margin="10"
+                    Style="{StaticResource JoinButton}" 
+                    FontSize="24" Width="180" Height="50" Margin="10"
                     Command="{Binding StartGameCommand}"
                     Visibility="{Binding IsHost, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
             <Button Content="{x:Static lang:Lang.globalBtnLeave}"
-                    Style="{StaticResource LeaveButtonStyle}" FontSize="24" Width="180" Height="45" Margin="10"
+                    Style="{StaticResource LeaveButtonStylee}" 
+                    FontSize="24" Width="180" Height="50" Margin="10"
                     Command="{Binding LeaveCommand}"/>
 
-            <TextBlock Text="{Binding CountdownValue}" FontSize="48" FontWeight="Bold" Foreground="Yellow"
-                       VerticalAlignment="Center" Margin="20,0,0,0"
-                       Visibility="{Binding CountdownVisibility}"/>
+            <Label Content="{Binding CountdownValue}" 
+                   Style="{StaticResource TimerStyle}"
+                   Visibility="{Binding CountdownVisibility}"
+                   Margin="20,0,0,0"
+                   />
         </StackPanel>
-
         <Button Grid.Row="2" Grid.Column="2"
-                Content="📩 Invitar"
-                Style="{StaticResource InviteButtonStyle}"
-                Command="{Binding InviteCommand}"
-                HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                Margin="0,0,30,30" Height="40" Width="120"/>
+        Style="{StaticResource InviteButtonStyle}"
+        Command="{Binding InviteCommand}"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        Margin="0,0,30,30" Height="45" Width="210">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="📩" Margin="0,0,8,0"/>
+                <TextBlock Text="{x:Static lang:Lang.socialLbEmailInvitation}"/>
+            </StackPanel>
+        </Button>
+
     </Grid>
 </Window>
