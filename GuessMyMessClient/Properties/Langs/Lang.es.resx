@@ -831,4 +831,10 @@
   <data name="alertFieldsRequired" xml:space="preserve">
     <value>Todos los campos son obligatorios.</value>
   </data>
+  <data name="infoGuestName" xml:space="preserve">
+    <value>Bienvenido! Juegas como:</value>
+  </data>
+  <data name="infoGuest" xml:space="preserve">
+    <value>Invitado</value>
+  </data>
 </root>

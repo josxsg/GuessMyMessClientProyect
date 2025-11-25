@@ -35,7 +35,11 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TargetEmail))
             {
-                MessageBox.Show(Lang.alertFieldsRequired, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    Lang.alertFieldsRequired, 
+                    Lang.alertInputErrorTitle, 
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Warning);
                 return;
             }
 
@@ -43,27 +47,34 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
             try
             {
-                // CAMBIO: Usamos el Manager en lugar de crear un cliente nuevo
                 await MatchmakingClientManager.Instance.InviteGuestByEmailAsync(myUsername, TargetEmail, _matchId);
 
-                MessageBox.Show(Lang.alertInviteSentSuccess, Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(
+                    Lang.alertInviteSentSuccess,
+                    Lang.alertSuccessTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
 
                 if (parameter is Window window)
                 {
                     window.Close();
                 }
             }
-            catch (FaultException<ServiceFaultDto> fault)
+            catch (FaultException<ServiceFaultDto> fex)
             {
-                string msg = fault.Detail.ErrorType == ServiceErrorType.EmailAlreadyRegistered
-                    ? "Este correo ya pertenece a un usuario registrado."
-                    : fault.Detail.Message;
-
-                MessageBox.Show(msg, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    fex.Detail.Message,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Warning);
             }
             catch (Exception)
             {
-                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(
+                    Lang.alertUnknownErrorMessage, 
+                    Lang.alertErrorTitle, 
+                    MessageBoxButton.OK, 
+                    MessageBoxImage.Error);
             }
         }
 

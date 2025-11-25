@@ -90,11 +90,9 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {
-                throw new Exception("No estás conectado al servicio de matchmaking.");
+                throw new Exception(Lang.alertConnectionErrorTitle);
             }
 
-            // No capturamos la excepción aquí para permitir que el ViewModel
-            // maneje los errores específicos (como "Email ya registrado").
             await _client.InviteGuestByEmailAsync(inviterUsername, targetEmail, matchId);
         }
 
@@ -141,7 +139,7 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {
-                return new OperationResultDto { Success = false, Message = "Not connected to service." };
+                return new OperationResultDto { Success = false, Message = Lang.alertConnectionErrorTitle };
             }
 
             try
@@ -154,7 +152,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                return new OperationResultDto { Success = false, Message = "Connection error while creating match." };
+                return new OperationResultDto { Success = false, Message = Lang.alertConnectionErrorTitle };
             }
         }
 
@@ -185,7 +183,7 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {
-                OnMatchmakingFailed?.Invoke("Not connected to service.");
+                OnMatchmakingFailed?.Invoke(Lang.alertConnectionErrorTitle);
                 return;
             }
 
@@ -207,7 +205,7 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {
-                return new OperationResultDto { Success = false, Message = "Not connected to service." };
+                return new OperationResultDto { Success = false, Message = Lang.alertConnectionErrorTitle };
             }
 
             try
@@ -218,9 +216,9 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 return new OperationResultDto { Success = false, Message = fex.Detail.Message };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return new OperationResultDto { Success = false, Message = $"Error joining private match: {ex.Message}" };
+                return new OperationResultDto { Success = false, Message = Lang.alertConnectionErrorTitle };
             }
         }
 

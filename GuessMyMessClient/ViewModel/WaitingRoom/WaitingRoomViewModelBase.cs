@@ -200,9 +200,11 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             {
                 if (_sessionManager.IsGuest &&
                     message.SenderUsername == "System" &&
-                    message.MessageContent.StartsWith("Bienvenido! Juegas como: "))
+                    !string.IsNullOrEmpty(message.MessageContent) &&
+                    message.MessageContent.StartsWith(Lang.infoGuestName))
                 {
-                    string assignedName = message.MessageContent.Replace("Bienvenido! Juegas como: ", "").Trim();
+                    string assignedName = message.MessageContent.Substring(Lang.infoGuestName.Length).Trim();
+
                     _sessionManager.CurrentUsername = assignedName;
                     OnPropertyChanged(nameof(IsHost));
                 }
@@ -212,8 +214,8 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
                 ChatMessages.Add(new ChatMessageDisplay { FormattedMessage = formatted });
 
-                const int maxMessages = 100;
-                if (ChatMessages.Count > maxMessages)
+                const int MaxMessages = 100;
+                if (ChatMessages.Count > MaxMessages)
                 {
                     ChatMessages.RemoveAt(0);
                 }
@@ -353,7 +355,10 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         private void ExecuteInvite(object obj)
         {
             string currentMatchId = _lobbyManager.CurrentMatchId;
-            if (string.IsNullOrEmpty(currentMatchId)) return;
+            if (string.IsNullOrEmpty(currentMatchId))
+            {
+                return;
+            }
 
             var inviteVM = new InviteByEmailViewModel(currentMatchId);
             var inviteView = new InviteByEmailView

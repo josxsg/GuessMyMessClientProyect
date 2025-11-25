@@ -1861,6 +1861,24 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Guest.
+        /// </summary>
+        public static string infoGuest {
+            get {
+                return ResourceManager.GetString("infoGuest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Welcome! You play as:.
+        /// </summary>
+        public static string infoGuestName {
+            get {
+                return ResourceManager.GetString("infoGuestName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create Game.
         /// </summary>
         public static string lobbyBtnCreateGame {
