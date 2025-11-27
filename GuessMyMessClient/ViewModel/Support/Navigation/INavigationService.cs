@@ -24,5 +24,7 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         void NavigateToWaitingForGuesses(string word);
 
         void CloseCurrentGameWindow();
+
+        void NavigateToWordSelection();
     }
 }

@@ -45,6 +45,9 @@
   <wsdl:message name="IGameService_SendInGameChatMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendInGameChatMessage" />
   </wsdl:message>
+  <wsdl:message name="IGameService_StartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartGame" />
+  </wsdl:message>
   <wsdl:message name="IGameService_OnRoundStart_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnRoundStart" />
   </wsdl:message>
@@ -89,6 +92,9 @@
     </wsdl:operation>
     <wsdl:operation name="SendInGameChatMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SendInGameChatMessage" message="tns:IGameService_SendInGameChatMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/StartGame" message="tns:IGameService_StartGame_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OnRoundStart">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnRoundStart" message="tns:IGameService_OnRoundStart_OutputCallbackMessage" />
@@ -160,6 +166,12 @@
     </wsdl:operation>
     <wsdl:operation name="SendInGameChatMessage">
       <soap12:operation soapAction="http://tempuri.org/IGameService/SendInGameChatMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/StartGame" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

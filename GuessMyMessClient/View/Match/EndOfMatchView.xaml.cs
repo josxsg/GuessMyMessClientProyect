@@ -23,7 +23,6 @@ namespace GuessMyMessClient.View.Match
         public EndOfMatchView()
         {
             InitializeComponent();
-            this.DataContext = new EndOfMatchViewModel();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _username = value; 
+                _username = value;
                 OnPropertyChanged(nameof(Username));
             }
         }
@@ -43,7 +43,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _score = value; 
+                _score = value;
                 OnPropertyChanged(nameof(Score));
             }
         }
@@ -57,14 +57,17 @@ namespace GuessMyMessClient.ViewModel.Match
 
     public class AnswersScreenViewModel : ViewModelBase
     {
-        private const int SecondsPerGuess = 3;
+        private const int SecondsPerGuessDisplay = 4;
+        private const int PointsPerCorrectGuess = 50;
+        private const int PointsForArtist = 10;
 
         private readonly List<DrawingDto> _allDrawings;
         private readonly List<GuessDto> _allGuesses;
-        private List<GuessDto> _guessesForCurrentDrawing;
-        private DispatcherTimer _timer;
-        private int _drawingIndex = -1;
-        private int _guessIndex = -1;
+        private DispatcherTimer _displayTimer;
+
+        private int _currentDrawingIndex = -1;
+        private int _currentGuessIndex = -1;
+        private List<GuessDto> _currentDrawingGuesses;
 
         private string _drawingArtistName;
         public string DrawingArtistName
@@ -75,8 +78,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _drawingArtistName = value; 
-                OnPropertyChanged(nameof(DrawingArtistName));
+                SetProperty(ref _drawingArtistName, value);
             }
         }
 
@@ -89,8 +91,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _currentDrawingStrokes = value; 
-                OnPropertyChanged(nameof(CurrentDrawingStrokes));
+                SetProperty(ref _currentDrawingStrokes, value);
             }
         }
 
@@ -103,8 +104,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _currentDisplayedGuess = value; 
-                OnPropertyChanged(nameof(CurrentDisplayedGuess));
+                SetProperty(ref _currentDisplayedGuess, value);
             }
         }
 
@@ -117,8 +117,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _currentGuessColor = value; 
-                OnPropertyChanged(nameof(CurrentGuessColor));
+                SetProperty(ref _currentGuessColor, value);
             }
         }
 
@@ -134,51 +133,140 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _newChatMessage = value;
-                OnPropertyChanged(nameof(NewChatMessage));
+                SetProperty(ref _newChatMessage, value);
             }
         }
 
         public ICommand SendMessageCommand { get; }
 
-        public AnswersScreenViewModel(List<DrawingDto> allDrawings, List<GuessDto> allGuesses, List<PlayerScoreDto> allScores)
+        public AnswersScreenViewModel(List<DrawingDto> allDrawings, List<GuessDto> allGuesses, List<PlayerScoreDto> finalRoundScores)
         {
             _allDrawings = allDrawings ?? new List<DrawingDto>();
             _allGuesses = allGuesses ?? new List<GuessDto>();
-            _drawingIndex = -1;
-            _guessIndex = -1;
 
-            CurrentGuessColor = Brushes.Black;
             PlayerList = new ObservableCollection<PlayerViewModel>();
-
-            if (allScores != null)
-            {
-                foreach (var score in allScores.OrderByDescending(s => s.Score))
-                {
-                    PlayerList.Add(new PlayerViewModel { Username = score.Username, Score = score.Score });
-                }
-            }
-
             ChatMessages = new ObservableCollection<ChatMessageViewModel>();
             SendMessageCommand = new RelayCommand(OnSendChatMessage, CanSendChatMessage);
 
-            GameClientManager.Instance.InGameMessageReceived += OnInGameMessageReceived_Handler;
-            GameClientManager.Instance.GameEnd += CloseOnNextPhase;
-            GameClientManager.Instance.ConnectionLost += CloseOnDisconnect;
+            InitializeScoresForAnimation(finalRoundScores);
 
-            _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SecondsPerGuess) };
-            _timer.Tick += OnTimerTick;
+            GameClientManager.Instance.InGameMessageReceived += OnInGameMessageReceived;
+            GameClientManager.Instance.GameEnd += OnGameEnd;
+            GameClientManager.Instance.RoundStart += OnRoundStart;
+            GameClientManager.Instance.ConnectionLost += OnConnectionLost;
+
+            _displayTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SecondsPerGuessDisplay) };
+            _displayTimer.Tick += DisplayTimer_Tick;
 
             ShowNextItem();
-            _timer.Start();
+            _displayTimer.Start();
+        }
+
+        private void InitializeScoresForAnimation(List<PlayerScoreDto> finalScores)
+        {
+            var scoresDict = new Dictionary<string, int>();
+
+            foreach (var score in finalScores)
+            {
+                scoresDict[score.Username] = score.Score;
+            }
+
+            foreach (var guess in _allGuesses.Where(g => g.IsCorrect))
+            {
+                if (scoresDict.ContainsKey(guess.GuesserUsername))
+                {
+                    scoresDict[guess.GuesserUsername] -= PointsPerCorrectGuess;
+                }
+
+                var drawing = _allDrawings.FirstOrDefault(d => d.DrawingId == guess.DrawingId);
+                if (drawing != null && scoresDict.ContainsKey(drawing.OwnerUsername))
+                {
+                    scoresDict[drawing.OwnerUsername] -= PointsForArtist;
+                }
+            }
+
+            foreach (var kvp in scoresDict.OrderByDescending(x => x.Value))
+            {
+                PlayerList.Add(new PlayerViewModel { Username = kvp.Key, Score = kvp.Value });
+            }
+        }
+
+        private void DisplayTimer_Tick(object sender, EventArgs e)
+        {
+            ShowNextItem();
+        }
+
+        private void ShowNextItem()
+        {
+            if (_currentGuessIndex == -1)
+            {
+                _currentDrawingIndex++;
+
+                if (_currentDrawingIndex >= _allDrawings.Count)
+                {
+                    _displayTimer.Stop();
+
+                    CurrentDisplayedGuess = Lang.answersScreenLbEndOfAnswers;
+                    CurrentGuessColor = Brushes.Black;
+                    DrawingArtistName = "";
+                    CurrentDrawingStrokes = new StrokeCollection();
+
+                    return;
+                }
+
+                var drawing = _allDrawings[_currentDrawingIndex];
+                DrawingArtistName = drawing.OwnerUsername;
+                CurrentDrawingStrokes = LoadStrokesFromBytes(drawing.DrawingData);
+
+                CurrentDisplayedGuess = $"{Lang.answersScreenMsgTheWordWas} {drawing.WordKey}";
+                CurrentGuessColor = Brushes.DarkBlue;
+
+                _currentDrawingGuesses = _allGuesses.Where(g => g.DrawingId == drawing.DrawingId).ToList();
+
+                _currentGuessIndex = 0;
+            }
+            else
+            {
+                if (_currentGuessIndex < _currentDrawingGuesses.Count)
+                {
+                    var guess = _currentDrawingGuesses[_currentGuessIndex];
+                    CurrentDisplayedGuess = $"{guess.GuesserUsername}: {guess.GuessText}";
+
+                    if (guess.IsCorrect)
+                    {
+                        CurrentGuessColor = Brushes.Green;
+                        AddScoreToPlayer(guess.GuesserUsername, PointsPerCorrectGuess);
+                        var currentDrawing = _allDrawings[_currentDrawingIndex];
+                        AddScoreToPlayer(currentDrawing.OwnerUsername, PointsForArtist);
+                    }
+                    else
+                    {
+                        CurrentGuessColor = Brushes.Red;
+                    }
+
+                    _currentGuessIndex++;
+                }
+                else
+                {
+                    CurrentDisplayedGuess = "Next drawing...";
+                    CurrentGuessColor = Brushes.Gray;
+                    _currentGuessIndex = -1;
+                }
+            }
+        }
+
+        private void AddScoreToPlayer(string username, int pointsToAdd)
+        {
+            var player = PlayerList.FirstOrDefault(p => p.Username == username);
+            if (player != null)
+            {
+                player.Score += pointsToAdd;
+            }
         }
 
         private StrokeCollection LoadStrokesFromBytes(byte[] data)
         {
-            if (data == null || data.Length == 0)
-            {
-                return new StrokeCollection();
-            }
+            if (data == null || data.Length == 0) return new StrokeCollection();
             try
             {
                 using (var ms = new MemoryStream(data))
@@ -186,151 +274,71 @@ namespace GuessMyMessClient.ViewModel.Match
                     return new StrokeCollection(ms);
                 }
             }
-            catch (Exception)
+            catch
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
                 return new StrokeCollection();
             }
         }
 
-        private void OnTimerTick(object sender, EventArgs e)
+        private void OnRoundStart(object sender, RoundStartEventArgs e)
         {
-            ShowNextItem();
+            CleanUp();
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                ServiceLocator.Navigation.NavigateToWordSelection();
+            });
         }
 
-        private void ShowNextItem()
+        private void OnGameEnd(object sender, GameEndEventArgs e)
         {
-            if (_guessIndex == -1)
+            CleanUp();
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                _drawingIndex++;
-
-                if (_drawingIndex >= _allDrawings.Count)
-                {
-                    _timer.Stop();
-                    CurrentDisplayedGuess = Lang.answersScreenLbEndOfAnswers;
-                    CurrentGuessColor = Brushes.Black;
-                    return;
-                }
-
-                var currentDrawing = _allDrawings[_drawingIndex];
-                DrawingArtistName = currentDrawing.OwnerUsername;
-                CurrentDrawingStrokes = LoadStrokesFromBytes(currentDrawing.DrawingData);
-
-                _guessesForCurrentDrawing = _allGuesses
-                    .Where(g => g.DrawingId == currentDrawing.DrawingId)
-                    .ToList();
-
-                CurrentDisplayedGuess = $"{Lang.answersScreenMsgTheWordWas} {currentDrawing.WordKey}";
-                CurrentGuessColor = Brushes.DarkBlue;
-
-                _guessIndex = 0;
-            }
-            else
-            {
-                if (_guessIndex < _guessesForCurrentDrawing.Count)
-                {
-                    var guess = _guessesForCurrentDrawing[_guessIndex];
-                    CurrentDisplayedGuess = $"{guess.GuesserUsername}: {guess.GuessText}";
-                    CurrentGuessColor = guess.IsCorrect ? Brushes.Green : Brushes.Red;
-
-                    _guessIndex++;
-                }
-                else
-                {
-                    CurrentDisplayedGuess = Lang.answersScreenMsgNextDrawing;
-                    CurrentGuessColor = Brushes.Black;
-
-                    _guessIndex = -1;
-                }
-            }
+                ServiceLocator.Navigation.NavigateToEndOfMatch(e.FinalScores);
+            });
         }
 
-        private void OnSendChatMessage(object parameter)
+        private void OnConnectionLost()
         {
-            if (!CanSendChatMessage(null))
+            CleanUp();
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                return;
-            }
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                ServiceLocator.Navigation.CloseCurrentGameWindow();
+            });
+        }
 
-            try
+        private void OnSendChatMessage(object obj)
+        {
+            if (CanSendChatMessage(null))
             {
                 GameClientManager.Instance.SendInGameMessage(NewChatMessage);
                 NewChatMessage = string.Empty;
             }
-            catch (FaultException<ServiceGameFault> fex)
-            {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertChatError,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
-            {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertChatError,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertErrorSendingMessage,
-                    Lang.alertChatError, 
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Warning);
-            }
         }
 
-        private bool CanSendChatMessage(object parameter)
-        {
-            return !string.IsNullOrEmpty(NewChatMessage);
-        }
+        private bool CanSendChatMessage(object obj) => !string.IsNullOrWhiteSpace(NewChatMessage);
 
-        private void OnInGameMessageReceived_Handler(object sender, InGameMessageEventArgs e)
+        private void OnInGameMessageReceived(object sender, InGameMessageEventArgs e)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 ChatMessages.Add(new ChatMessageViewModel { Sender = e.Sender, Message = e.Message });
             });
         }
 
-        private void CloseOnNextPhase(object sender, EventArgs e)
+        public void CleanUp()
         {
-            Application.Current?.Dispatcher.Invoke(CloseWindow);
-        }
-
-        private void CloseOnDisconnect()
-        {
-            Application.Current?.Dispatcher.Invoke(CloseWindow);
-        }
-
-        private void Cleanup()
-        {
-            if (_timer != null)
+            if (_displayTimer != null)
             {
-                _timer.Stop();
-                _timer.Tick -= OnTimerTick;
+                _displayTimer.Stop();
+                _displayTimer.Tick -= DisplayTimer_Tick;
+                _displayTimer = null;
             }
-
-            GameClientManager.Instance.InGameMessageReceived -= OnInGameMessageReceived_Handler;
-            GameClientManager.Instance.GameEnd -= CloseOnNextPhase;
-            GameClientManager.Instance.ConnectionLost -= CloseOnDisconnect;
-        }
-
-        private void CloseWindow()
-        {
-            Cleanup();
-            Window w = Application.Current.Windows
-                .OfType<AnswersScreenView>()
-                .FirstOrDefault(win => win.DataContext == this);
-
-            w?.Close();
+            GameClientManager.Instance.InGameMessageReceived -= OnInGameMessageReceived;
+            GameClientManager.Instance.GameEnd -= OnGameEnd;
+            GameClientManager.Instance.RoundStart -= OnRoundStart;
+            GameClientManager.Instance.ConnectionLost -= OnConnectionLost;
         }
     }
 }

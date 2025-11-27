@@ -191,7 +191,7 @@ namespace GuessMyMessClient.ViewModel.Match
             });
         }
 
-        private void Cleanup()
+        public void Cleanup()
         {
             GameClientManager.Instance.ShowNextDrawing -= OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart -= OnAnswersPhaseStart_Handler;
