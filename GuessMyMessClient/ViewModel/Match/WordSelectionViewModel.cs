@@ -202,15 +202,11 @@ namespace GuessMyMessClient.ViewModel.Match
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
-                    Window currentWindow = Application.Current.Windows
-                        .OfType<WordSelectionView>()
-                        .FirstOrDefault();
+                    Cleanup();
 
-                    if (currentWindow != null)
-                    {
-                        ServiceLocator.Navigation.NavigateToDrawingScreen(selectedWord);
-                        currentWindow.Close();
-                    }
+                    ServiceLocator.Navigation.NavigateToDrawingScreen(selectedWord);
+
+                    
                 });
             }
             catch (Exception)
@@ -238,7 +234,7 @@ namespace GuessMyMessClient.ViewModel.Match
             });
         }
 
-        private void Cleanup()
+        public void Cleanup()
         {
             if (_countdownTimer != null)
             {

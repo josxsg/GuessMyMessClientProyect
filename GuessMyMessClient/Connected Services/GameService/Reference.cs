@@ -546,6 +546,12 @@ namespace GuessMyMessClient.GameService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/SendInGameChatMessage")]
         System.Threading.Tasks.Task SendInGameChatMessageAsync(string username, string matchId, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/StartGame")]
+        void StartGame(string matchId, int totalRounds, string[] playerUsernames);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/StartGame")]
+        System.Threading.Tasks.Task StartGameAsync(string matchId, int totalRounds, string[] playerUsernames);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -655,6 +661,14 @@ namespace GuessMyMessClient.GameService {
         
         public System.Threading.Tasks.Task SendInGameChatMessageAsync(string username, string matchId, string message) {
             return base.Channel.SendInGameChatMessageAsync(username, matchId, message);
+        }
+        
+        public void StartGame(string matchId, int totalRounds, string[] playerUsernames) {
+            base.Channel.StartGame(matchId, totalRounds, playerUsernames);
+        }
+        
+        public System.Threading.Tasks.Task StartGameAsync(string matchId, int totalRounds, string[] playerUsernames) {
+            return base.Channel.StartGameAsync(matchId, totalRounds, playerUsernames);
         }
     }
 }

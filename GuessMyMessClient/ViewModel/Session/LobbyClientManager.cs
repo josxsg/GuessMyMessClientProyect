@@ -1,4 +1,5 @@
 ﻿using GuessMyMessClient.LobbyService;
+using GuessMyMessClient.MatchmakingService;
 using GuessMyMessClient.Properties.Langs;
 using System;
 using System.ServiceModel;
@@ -18,6 +19,8 @@ namespace GuessMyMessClient.ViewModel.Session
         private LobbyServiceClient _client;
         public string CurrentMatchId { get; private set; }
         private string _currentUsername;
+
+        public LobbySettingsDto CurrentLobbySettings { get; private set; }
 
         public event Action<LobbyStateDto> LobbyStateUpdated;
         public event Action<ChatMessageDto> LobbyMessageReceived;
@@ -199,6 +202,11 @@ namespace GuessMyMessClient.ViewModel.Session
                     MessageBoxImage.Error);
                 HandleCommunicationError();
             }
+        }
+
+        public void SetCurrentLobbySettings(LobbySettingsDto settings)
+        {
+            CurrentLobbySettings = settings;
         }
 
         public void UpdateLobbyState(LobbyStateDto lobbyStateDto)

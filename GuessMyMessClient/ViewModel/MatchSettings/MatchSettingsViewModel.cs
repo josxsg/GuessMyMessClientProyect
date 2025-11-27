@@ -152,6 +152,7 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                     var sessionManager = SessionManager.Instance;
                     string currentUsername = sessionManager.CurrentUsername;
 
+                    lobbyManager.SetCurrentLobbySettings(settings);
                     lobbyManager.Connect(currentUsername, matchId);
 
                     Window waitingRoomView = null;

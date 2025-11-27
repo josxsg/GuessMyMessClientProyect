@@ -394,6 +394,8 @@ namespace GuessMyMessClient.ViewModel.Match
 
         private void OnGuessingPhaseStart_FromServer(object sender, GuessingPhaseStartEventArgs e)
         {
+            Cleanup();
+
             Application.Current.Dispatcher.Invoke(() =>
             {
                 var drawing = e.Drawing;
@@ -407,6 +409,7 @@ namespace GuessMyMessClient.ViewModel.Match
                 {
                     ServiceLocator.Navigation.NavigateToGuess(drawing);
                 }
+
             });
         }
 
@@ -422,6 +425,17 @@ namespace GuessMyMessClient.ViewModel.Match
 
                 CloseCurrentWindow();
             });
+        }
+
+        public void Cleanup()
+        {
+            if (_countdownTimer != null)
+            {
+                _countdownTimer.Stop();
+                _countdownTimer.Tick -= CountdownTimer_Tick;
+                _countdownTimer = null;
+            }
+            UnsubscribeFromGameEvents();
         }
 
         private void UnsubscribeFromGameEvents()

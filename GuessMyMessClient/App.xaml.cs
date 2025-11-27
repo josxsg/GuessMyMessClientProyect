@@ -2,6 +2,9 @@
 using GuessMyMessClient.ViewModel.Support;
 using Serilog; 
 using System.Globalization;
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows;
 
@@ -28,7 +31,8 @@ namespace GuessMyMessClient
             CultureInfo cultureInfo = new CultureInfo("es-MX");
             Thread.CurrentThread.CurrentUICulture = cultureInfo;
             Thread.CurrentThread.CurrentCulture = cultureInfo;
-
+            ServicePointManager.ServerCertificateValidationCallback =
+                (object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) => true;
             base.OnStartup(e);
             ServiceLocator.Navigation = new WpfNavigationService();
         }

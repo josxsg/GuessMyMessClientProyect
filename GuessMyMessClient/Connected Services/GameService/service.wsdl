@@ -5,6 +5,28 @@
       <wsp:All>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
         </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:SslTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                </msf:SslTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
         <wsaw:UsingAddressing>
         </wsaw:UsingAddressing>
       </wsp:All>
@@ -44,6 +66,9 @@
   </wsdl:message>
   <wsdl:message name="IGameService_SendInGameChatMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendInGameChatMessage" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_StartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartGame" />
   </wsdl:message>
   <wsdl:message name="IGameService_OnRoundStart_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnRoundStart" />
@@ -89,6 +114,9 @@
     </wsdl:operation>
     <wsdl:operation name="SendInGameChatMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameService/SendInGameChatMessage" message="tns:IGameService_SendInGameChatMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/StartGame" message="tns:IGameService_StartGame_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OnRoundStart">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameService/OnRoundStart" message="tns:IGameService_OnRoundStart_OutputCallbackMessage" />
@@ -164,6 +192,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/StartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="OnRoundStart">
       <soap12:operation soapAction="http://tempuri.org/IGameService/OnRoundStart" style="document" />
       <wsdl:output>
@@ -212,6 +246,9 @@
       <soap12:address location="net.tcp://localhost:8734/GuessMyMessServer/Game/" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8734/GuessMyMessServer/Game/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

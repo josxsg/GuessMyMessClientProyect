@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GuessMyMessClient.GameService;
+using System.Reflection;
 using System.Windows;
+using GuessMyMessClient.GameService;
 using GuessMyMessClient.View.Match;
 using GuessMyMessClient.ViewModel.Match;
 
@@ -23,12 +22,34 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         {
             if (_currentMatchWindow != null)
             {
+                var windowToClose = _currentMatchWindow;
+                _currentMatchWindow = null;
+
                 Application.Current?.Dispatcher.Invoke(() =>
                 {
-                    _currentMatchWindow.Close();
-                    _currentMatchWindow = null;
+                    if (windowToClose.DataContext != null)
+                    {
+                        var vm = windowToClose.DataContext;
+                        var method = vm.GetType().GetMethod("Cleanup", BindingFlags.Public | BindingFlags.Instance)
+                                  ?? vm.GetType().GetMethod("CleanUp", BindingFlags.Public | BindingFlags.Instance);
+
+                        method?.Invoke(vm, null);
+                    }
+                    windowToClose.Close();
                 });
             }
+        }
+
+        public void NavigateToWordSelection()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CloseCurrentGameWindow();
+                var vm = new WordSelectionViewModel();
+                var view = new WordSelectionView { DataContext = vm };
+                view.Show();
+                _currentMatchWindow = view;
+            });
         }
 
         public void NavigateToDrawingScreen(string word)
@@ -36,10 +57,8 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             Application.Current.Dispatcher.Invoke(() =>
             {
                 CloseCurrentGameWindow();
-
                 var vm = new DrawingScreenViewModel(word);
                 var view = new DrawingScreenView { DataContext = vm };
-
                 view.Show();
                 _currentMatchWindow = view;
             });
@@ -50,10 +69,8 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             Application.Current.Dispatcher.Invoke(() =>
             {
                 CloseCurrentGameWindow();
-
                 var vm = new GuessTheWordViewModel(drawing);
                 var view = new GuessTheWordView { DataContext = vm };
-
                 view.Show();
                 _currentMatchWindow = view;
             });
@@ -64,14 +81,20 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             Application.Current.Dispatcher.Invoke(() =>
             {
                 CloseCurrentGameWindow();
-
-                var drawingsList = drawings?.ToList() ?? new List<DrawingDto>();
-                var guessesList = guesses?.ToList() ?? new List<GuessDto>();
-                var scoresList = scores?.ToList() ?? new List<PlayerScoreDto>();
-
-                var vm = new AnswersScreenViewModel(drawingsList, guessesList, scoresList);
+                var vm = new AnswersScreenViewModel(drawings?.ToList(), guesses?.ToList(), scores?.ToList());
                 var view = new AnswersScreenView { DataContext = vm };
+                view.Show();
+                _currentMatchWindow = view;
+            });
+        }
 
+        public void NavigateToWaitingForGuesses(string word)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CloseCurrentGameWindow();
+                var vm = new WaitingForGuessesViewModel(word);
+                var view = new WaitingForGuessesView { DataContext = vm };
                 view.Show();
                 _currentMatchWindow = view;
             });
@@ -87,26 +110,8 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
             Application.Current.Dispatcher.Invoke(() =>
             {
                 CloseCurrentGameWindow();
-
-                var scoresList = finalScores?.ToList() ?? new List<PlayerScoreDto>();
-
-                //var vm = new EndOfMatchViewModel(scoresList);
-                //var view = new EndOfMatchView { DataContext = vm };
-
-                //view.Show();
-                //_currentMatchWindow = view;
-            });
-        }
-
-        public void NavigateToWaitingForGuesses(string word)
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                CloseCurrentGameWindow();
-
-                var vm = new WaitingForGuessesViewModel(word);
-                var view = new WaitingForGuessesView { DataContext = vm };
-
+                var vm = new EndOfMatchViewModel(finalScores?.ToList());
+                var view = new EndOfMatchView { DataContext = vm };
                 view.Show();
                 _currentMatchWindow = view;
             });

@@ -163,6 +163,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             _lobbyManager.CountdownTick += OnCountdownTick;
             _lobbyManager.GameStarted += OnGameStarted;
             _lobbyManager.ConnectionLost += OnConnectionLost;
+            GameClientManager.Instance.RoundStart += OnRoundStartFromGame;
         }
 
         protected virtual void OnLobbyStateUpdated(LobbyStateDto state)
@@ -191,6 +192,15 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
                 }
 
                 OnPropertyChanged(nameof(IsHost));
+                if (!GameClientManager.Instance.IsConnected)
+                {
+                    string myUser = _sessionManager.CurrentUsername;
+                    string matchId = _lobbyManager.CurrentMatchId;
+                    if (!string.IsNullOrEmpty(myUser) && !string.IsNullOrEmpty(matchId))
+                    {
+                        GameClientManager.Instance.Connect(myUser, matchId);
+                    }
+                }
             });
         }
 
@@ -250,6 +260,23 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             });
         }
 
+        private void OnRoundStartFromGame(object sender, RoundStartEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                GameClientManager.Instance.RoundStart -= OnRoundStartFromGame;
+                CleanUp();
+                Window myWindow = Application.Current.Windows
+                    .OfType<Window>()
+                    .FirstOrDefault(w => w.DataContext == this);
+                ServiceLocator.Navigation.NavigateToWordSelection();
+                if (myWindow != null)
+                {
+                    myWindow.Close();
+                }
+            });
+        }
+
         protected virtual void OnGameStarted()
         {
             if (System.Threading.Interlocked.CompareExchange(ref _isNavigatingBack, 1, 0) != 0)
@@ -261,42 +288,22 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             {
                 CountdownVisibility = Visibility.Collapsed;
 
-                string username = _sessionManager.CurrentUsername;
-                string matchId = _lobbyManager.CurrentMatchId;
-
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(matchId))
+                if (IsHost)
                 {
-                    MessageBox.Show(
-                        Lang.alertGameStartError, 
-                        Lang.alertErrorTitle, 
-                        MessageBoxButton.OK, 
-                        MessageBoxImage.Error);
-                    NavigateBackToLobbyView();
-                    CleanUp();
-                    return;
-                }
-
-                try
-                {
-                    GameClientManager.Instance.Connect(username, matchId);
-
-                    var wordSelectionView = new WordSelectionView();
-                    wordSelectionView.Show();
-
-                    Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
-                    currentWindow?.Close();
-
-                    CleanUp();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show(
-                        Lang.alertGameStartError, 
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK, 
-                        MessageBoxImage.Error);
-                    NavigateBackToLobbyView();
-                    CleanUp();
+                    try
+                    {
+                        int rounds = _lobbyManager.CurrentLobbySettings?.TotalRounds ?? 3;
+                        var playerList = Players.Select(p => p.Username).ToList();
+                        GameClientManager.Instance.StartGame(rounds, playerList);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            Lang.alertGameStartError, 
+                            Lang.alertErrorTitle, 
+                            MessageBoxButton.OK, 
+                            MessageBoxImage.Error);
+                    }
                 }
             });
         }
@@ -412,6 +419,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             _lobbyManager.CountdownTick -= OnCountdownTick;
             _lobbyManager.GameStarted -= OnGameStarted;
             _lobbyManager.ConnectionLost -= OnConnectionLost;
+            GameClientManager.Instance.RoundStart -= OnRoundStartFromGame;
         }
     }
 

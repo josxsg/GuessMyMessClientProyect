@@ -1,6 +1,12 @@
-﻿using GuessMyMessClient.ViewModel;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows;
 using System.Windows.Input;
+using GuessMyMessClient.GameService;
+using GuessMyMessClient.ViewModel.Support;
+using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support.Navigation; 
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -16,7 +22,7 @@ namespace GuessMyMessClient.ViewModel.Match
             set
             {
                 _winnerName = value; 
-                OnPropertyChanged(nameof(WinnerName));
+                OnPropertyChanged();
             }
         }
 
@@ -30,7 +36,7 @@ namespace GuessMyMessClient.ViewModel.Match
             set
             {
                 _firstPlacePlayerName = value; 
-                OnPropertyChanged(nameof(FirstPlacePlayerName));
+                OnPropertyChanged();
             }
         }
 
@@ -43,8 +49,8 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _secondPlacePlayerName = value; 
-                OnPropertyChanged(nameof(SecondPlacePlayerName));
+                _secondPlacePlayerName = value;
+                OnPropertyChanged();
             }
         }
 
@@ -57,26 +63,50 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             set
             {
-                _thirdPlacePlayerName = value; 
-                OnPropertyChanged(nameof(ThirdPlacePlayerName));
+                _thirdPlacePlayerName = value;
+                OnPropertyChanged();
             }
         }
 
         public ICommand ExitCommand { get; }
 
-        public EndOfMatchViewModel()
+        public EndOfMatchViewModel(List<PlayerScoreDto> finalScores)
         {
-            ExitCommand = new RelayCommand(OnExit, CanExit);
+            ExitCommand = new RelayCommand(ExecuteExit);
+            ProcessScores(finalScores);
         }
 
-        private void OnExit(object parameter)
+        private void ProcessScores(List<PlayerScoreDto> scores)
         {
+            if (scores == null || scores.Count == 0)
+            {
+                return;
+            }
+
+            var sorted = scores.OrderByDescending(s => s.Score).ToList();
+
+            if (sorted.Count > 0)
+            {
+                FirstPlacePlayerName = sorted[0].Username; 
+                WinnerName = sorted[0].Username;
+            }
+
+            if (sorted.Count > 1)
+            {
+                SecondPlacePlayerName = sorted[1].Username;
+            }
+
+            if (sorted.Count > 2)
+            {
+                ThirdPlacePlayerName = sorted[2].Username;
+            }
         }
 
-        private bool CanExit(object parameter)
+        private void ExecuteExit(object parameter)
         {
-            return true;
-        }
+            GameClientManager.Instance.Disconnect();
 
+            Application.Current.Shutdown();
+        }
     }
 }

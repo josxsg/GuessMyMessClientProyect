@@ -9,9 +9,8 @@
           <wsp:Policy>
             <sp:TransportToken>
               <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
+                <msf:SslTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                </msf:SslTransportSecurity>
               </wsp:Policy>
             </sp:TransportToken>
             <sp:AlgorithmSuite>
@@ -330,7 +329,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8734/GuessMyMessServer/Social/</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>DESKTOP-MBESJIN\zenbook i5</Upn>
+          <Dns>localhost</Dns>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

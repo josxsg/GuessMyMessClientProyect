@@ -338,6 +338,20 @@ namespace GuessMyMessClient.ViewModel.Session
                 ConnectionLost?.Invoke();
             });
         }
+
+        public void StartGame(int totalRounds, List<string> players)
+        {
+            if (!IsConnected) return;
+            try
+            {
+                _client.StartGame(_currentMatchId, totalRounds, players.ToArray());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                HandleCommunicationError(true);
+            }
+        }
     }
 
     public class RoundStartEventArgs : EventArgs

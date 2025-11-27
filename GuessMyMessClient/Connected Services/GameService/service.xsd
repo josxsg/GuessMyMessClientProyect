@@ -67,11 +67,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="StartGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="totalRounds" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="playerUsernames" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="OnRoundStart">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="roundNumber" type="xs:int" />
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="wordOptions" nillable="true" type="q2:ArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="wordOptions" nillable="true" type="q3:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -85,7 +94,7 @@
   <xs:element name="OnGuessingPhaseStart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="drawing" nillable="true" type="q3:DrawingDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="drawing" nillable="true" type="q4:DrawingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -100,23 +109,23 @@
   <xs:element name="OnAnswersPhaseStart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="allDrawings" nillable="true" type="q4:ArrayOfDrawingDto" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="allGuesses" nillable="true" type="q5:ArrayOfGuessDto" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="currentScores" nillable="true" type="q6:ArrayOfPlayerScoreDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="allDrawings" nillable="true" type="q5:ArrayOfDrawingDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="allGuesses" nillable="true" type="q6:ArrayOfGuessDto" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="currentScores" nillable="true" type="q7:ArrayOfPlayerScoreDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnShowNextDrawing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="nextDrawing" nillable="true" type="q7:DrawingDto" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="nextDrawing" nillable="true" type="q8:DrawingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OnGameEnd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="finalScores" nillable="true" type="q8:ArrayOfPlayerScoreDto" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="finalScores" nillable="true" type="q9:ArrayOfPlayerScoreDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
