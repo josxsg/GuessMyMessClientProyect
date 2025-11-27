@@ -1,13 +1,14 @@
-﻿using System;
-using System.ServiceModel;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using GuessMyMessClient.ProfileService;
+﻿using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.ViewModel;
 using GuessMyMessClient.ViewModel.Lobby.Dialogs;
+using System;
+using System.Linq;
+using System.ServiceModel;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
@@ -73,40 +74,130 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public ICommand ChangeEmailCommand { get; }
         public ICommand ChangePasswordCommand { get; }
         public ICommand SaveProfileCommand { get; }
-        public ICommand AddSocialNetworkCommand { get; }
+        public ICommand AddDiscordCommand { get; }
+        public ICommand AddTwitterCommand { get; }
+        public ICommand AddInstagramCommand { get; }
+        public ICommand AddTiktokCommand { get; }
+        public ICommand AddTwitchCommand { get; }
+
 
         public ProfileViewModel(UserProfileDto initialProfileData)
         {
             _profileData = initialProfileData ?? throw new ArgumentNullException(nameof(initialProfileData));
+            if (_profileData.socialNetworks == null)
+            {
+                _profileData.socialNetworks = new SocialNetworkDto[0];
+            }
             ChangeEmailCommand = new RelayCommand(ExecuteChangeEmail);
             ChangePasswordCommand = new RelayCommand(ExecuteChangePassword);
             SaveProfileCommand = new RelayCommand(ExecuteSaveProfile);
-            AddSocialNetworkCommand = new RelayCommand(ExecuteAddSocialNetwork);
+            AddDiscordCommand = new RelayCommand(ExecuteAddSocialNetwork);
+            AddTwitterCommand = new RelayCommand(ExecuteAddSocialNetwork);
+            AddInstagramCommand = new RelayCommand(ExecuteAddSocialNetwork);
+            AddTiktokCommand = new RelayCommand(ExecuteAddSocialNetwork);
+            AddTwitchCommand = new RelayCommand(ExecuteAddSocialNetwork);
+
         }
 
         private void ExecuteAddSocialNetwork(object parameter)
         {
             if (parameter is string networkName)
             {
-                // 1. Instanciamos el ViewModel del Dialog
-                // Le pasamos el nombre (ej: "Discord") y una función lambda que se ejecutará si le dan "Guardar"
-                var dialogVM = new AddSocialNetworkViewModel(networkName, (linkIngresado) =>
+                // 1. Buscar si ya tenemos un link guardado localmente para mostrárselo al usuario
+                var existingNetwork = _profileData.socialNetworks
+                    .FirstOrDefault(s => s.NetworkType.Equals(networkName, StringComparison.InvariantCultureIgnoreCase));
+
+                string currentLink = existingNetwork?.UserLink;
+
+                // 2. Instanciar el VM del diálogo pasando el link actual
+                var dialogVM = new AddSocialNetworkViewModel(networkName, currentLink, (linkIngresado) =>
                 {
-                    // AQUÍ RECIBES EL LINK CUANDO EL USUARIO LE DA GUARDAR
-                    // TODO: En el siguiente paso implementaremos la llamada al servidor para guardar esto en la BD.
-                    MessageBox.Show($"Guardando en BD...\nRed: {networkName}\nLink: {linkIngresado}");
+                    // Callback: Esto se ejecuta cuando el usuario da click en "Guardar" o "Editar" -> "Confirmar"
+                    SaveSocialNetworkToServer(networkName, linkIngresado);
                 });
 
-                // 2. Instanciamos la Vista del Dialog
                 var dialogView = new AddSocialNetworkView
                 {
                     DataContext = dialogVM,
-                    Owner = Application.Current.MainWindow // Para que sea modal sobre la ventana principal
+                    Owner = Application.Current.MainWindow
                 };
 
-                // 3. Mostramos la ventana como Modal (bloquea la de atrás hasta que se cierra)
                 dialogView.ShowDialog();
             }
+        }
+
+        private async void SaveSocialNetworkToServer(string networkName, string userLink)
+        {
+            var client = new UserProfileServiceClient();
+            bool isSuccess = false;
+
+            try
+            {
+                var socialDto = new SocialNetworkDto
+                {
+                    NetworkType = networkName,
+                    UserLink = userLink
+                };
+
+                // Llamada al nuevo método del servidor (¡Recuerda actualizar la referencia!)
+                OperationResultDto result = await client.AddOrUpdateSocialNetworkAsync(_profileData.Username, socialDto);
+
+                if (result.Success)
+                {
+                    MessageBox.Show(
+                        Lang.alertProfileUpdateSuccess, // "Actualización exitosa"
+                        Lang.alertSuccessTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+
+                    // Actualizar la lista localmente para que la UI se refresque (aparezca el botón editar la próxima vez)
+                    UpdateLocalSocialNetworkList(networkName, userLink);
+
+                    client.Close();
+                    isSuccess = true;
+                }
+                else
+                {
+                    MessageBox.Show(result.Message, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (FaultException<ServiceProfileFault> fex)
+            {
+                MessageBox.Show(fex.Detail.Message, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                if (!isSuccess && client.State != CommunicationState.Closed)
+                {
+                    client.Abort();
+                }
+            }
+        }
+
+        private void UpdateLocalSocialNetworkList(string networkName, string newLink)
+        {
+            // Convertimos el array a lista para manipularlo
+            var socialList = _profileData.socialNetworks.ToList();
+
+            var existingItem = socialList.FirstOrDefault(s => s.NetworkType == networkName);
+
+            if (existingItem != null)
+            {
+                // Si ya existe, actualizamos el link
+                existingItem.UserLink = newLink;
+            }
+            else
+            {
+                // Si no existe, agregamos uno nuevo
+                socialList.Add(new SocialNetworkDto { NetworkType = networkName, UserLink = newLink });
+            }
+
+            // Guardamos de nuevo como array en el DTO
+            _profileData.socialNetworks = socialList.ToArray();
         }
         private async void ExecuteSaveProfile(object parameter)
         {

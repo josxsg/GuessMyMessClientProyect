@@ -26,9 +26,10 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
 
         // El constructor sigue aceptando networkName para compatibilidad con ProfileViewModel
-        public AddSocialNetworkViewModel(string networkName, Action<string> onConfirm)
+        public AddSocialNetworkViewModel(string networkName, string currentLink, Action<string> onConfirm)
         {
             _onConfirm = onConfirm;
+            UserLink = currentLink ?? string.Empty;
             ConfirmCommand = new RelayCommand(ExecuteConfirm);
             CloseCommand = new RelayCommand(ExecuteClose);
 
