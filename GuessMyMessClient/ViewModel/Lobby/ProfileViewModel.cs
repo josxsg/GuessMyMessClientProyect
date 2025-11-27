@@ -73,6 +73,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
         public ICommand ChangeEmailCommand { get; }
         public ICommand ChangePasswordCommand { get; }
         public ICommand SaveProfileCommand { get; }
+        public ICommand AddSocialNetworkCommand { get; }
 
         public ProfileViewModel(UserProfileDto initialProfileData)
         {
@@ -80,8 +81,33 @@ namespace GuessMyMessClient.ViewModel.Lobby
             ChangeEmailCommand = new RelayCommand(ExecuteChangeEmail);
             ChangePasswordCommand = new RelayCommand(ExecuteChangePassword);
             SaveProfileCommand = new RelayCommand(ExecuteSaveProfile);
+            AddSocialNetworkCommand = new RelayCommand(ExecuteAddSocialNetwork);
         }
 
+        private void ExecuteAddSocialNetwork(object parameter)
+        {
+            if (parameter is string networkName)
+            {
+                // 1. Instanciamos el ViewModel del Dialog
+                // Le pasamos el nombre (ej: "Discord") y una función lambda que se ejecutará si le dan "Guardar"
+                var dialogVM = new AddSocialNetworkViewModel(networkName, (linkIngresado) =>
+                {
+                    // AQUÍ RECIBES EL LINK CUANDO EL USUARIO LE DA GUARDAR
+                    // TODO: En el siguiente paso implementaremos la llamada al servidor para guardar esto en la BD.
+                    MessageBox.Show($"Guardando en BD...\nRed: {networkName}\nLink: {linkIngresado}");
+                });
+
+                // 2. Instanciamos la Vista del Dialog
+                var dialogView = new AddSocialNetworkView
+                {
+                    DataContext = dialogVM,
+                    Owner = Application.Current.MainWindow // Para que sea modal sobre la ventana principal
+                };
+
+                // 3. Mostramos la ventana como Modal (bloquea la de atrás hasta que se cierra)
+                dialogView.ShowDialog();
+            }
+        }
         private async void ExecuteSaveProfile(object parameter)
         {
             if (string.IsNullOrWhiteSpace(FirstName) || string.IsNullOrWhiteSpace(LastName))

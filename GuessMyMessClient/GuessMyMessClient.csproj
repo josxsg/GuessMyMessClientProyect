@@ -126,6 +126,7 @@
     <Compile Include="ViewModel\HomePages\SignUpViewModel.cs" />
     <Compile Include="ViewModel\HomePages\WelcomeViewModel.cs" />
     <Compile Include="ViewModel\Lobby\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModel\Lobby\Dialogs\AddSocialNetworkViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs" />
@@ -176,6 +177,9 @@
     </Compile>
     <Compile Include="View\Lobby\ConfigurationView.xaml.cs">
       <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lobby\Dialogs\AddSocialNetworkView.xaml.cs">
+      <DependentUpon>AddSocialNetworkView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Lobby\Dialogs\ChangeEmailView.xaml.cs">
       <DependentUpon>ChangeEmailView.xaml</DependentUpon>
@@ -276,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Lobby\ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lobby\Dialogs\AddSocialNetworkView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -676,6 +684,19 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\discord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\tiktok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\twitch.png" />
+    <Resource Include="Resources\Images\twitterX.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Serilog.4.3.0\build\Serilog.targets" Condition="Exists('..\packages\Serilog.4.3.0\build\Serilog.targets')" />

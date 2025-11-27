@@ -1969,6 +1969,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Social Media.
+        /// </summary>
+        public static string profileLbSocialMedia {
+            get {
+                return ResourceManager.GetString("profileLbSocialMedia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Register.
         /// </summary>
         public static string signUpLbResgister {
@@ -2028,6 +2037,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string socialLbFriends {
             get {
                 return ResourceManager.GetString("socialLbFriends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Profile link:.
+        /// </summary>
+        public static string socialLbProfileLink {
+            get {
+                return ResourceManager.GetString("socialLbProfileLink", resourceCulture);
             }
         }
         

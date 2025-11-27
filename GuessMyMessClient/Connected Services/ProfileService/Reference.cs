@@ -519,6 +519,15 @@ namespace GuessMyMessClient.ProfileService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/UpdateProfile", ReplyAction="http://tempuri.org/IUserProfileService/UpdateProfileResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> UpdateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetwork", ReplyAction="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetworkResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.ProfileService.ServiceFaultDto), Action="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetworkServiceFaultDtoFau" +
+            "lt", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
+        GuessMyMessClient.ProfileService.OperationResultDto AddOrUpdateSocialNetwork(string username, GuessMyMessClient.ProfileService.SocialNetworkDto socialNetwork);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetwork", ReplyAction="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetworkResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> AddOrUpdateSocialNetworkAsync(string username, GuessMyMessClient.ProfileService.SocialNetworkDto socialNetwork);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/RequestChangeEmail", ReplyAction="http://tempuri.org/IUserProfileService/RequestChangeEmailResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.ProfileService.ServiceFaultDto), Action="http://tempuri.org/IUserProfileService/RequestChangeEmailServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
             "")]
@@ -601,6 +610,14 @@ namespace GuessMyMessClient.ProfileService {
         
         public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> UpdateProfileAsync(string username, GuessMyMessClient.ProfileService.UserProfileDto profileData) {
             return base.Channel.UpdateProfileAsync(username, profileData);
+        }
+        
+        public GuessMyMessClient.ProfileService.OperationResultDto AddOrUpdateSocialNetwork(string username, GuessMyMessClient.ProfileService.SocialNetworkDto socialNetwork) {
+            return base.Channel.AddOrUpdateSocialNetwork(username, socialNetwork);
+        }
+        
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.OperationResultDto> AddOrUpdateSocialNetworkAsync(string username, GuessMyMessClient.ProfileService.SocialNetworkDto socialNetwork) {
+            return base.Channel.AddOrUpdateSocialNetworkAsync(username, socialNetwork);
         }
         
         public GuessMyMessClient.ProfileService.OperationResultDto RequestChangeEmail(string username, string newEmail) {

@@ -837,4 +837,10 @@
   <data name="infoGuest" xml:space="preserve">
     <value>Guest</value>
   </data>
+  <data name="profileLbSocialMedia" xml:space="preserve">
+    <value>Social Media</value>
+  </data>
+  <data name="socialLbProfileLink" xml:space="preserve">
+    <value>Profile link:</value>
+  </data>
 </root>

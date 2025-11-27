@@ -36,6 +36,15 @@
   <wsdl:message name="IUserProfileService_UpdateProfile_ServiceFaultDtoFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q2:ServiceFaultDto" />
   </wsdl:message>
+  <wsdl:message name="IUserProfileService_AddOrUpdateSocialNetwork_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateSocialNetwork" />
+  </wsdl:message>
+  <wsdl:message name="IUserProfileService_AddOrUpdateSocialNetwork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateSocialNetworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserProfileService_AddOrUpdateSocialNetwork_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q3:ServiceFaultDto" />
+  </wsdl:message>
   <wsdl:message name="IUserProfileService_RequestChangeEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:RequestChangeEmail" />
   </wsdl:message>
@@ -43,7 +52,7 @@
     <wsdl:part name="parameters" element="tns:RequestChangeEmailResponse" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_RequestChangeEmail_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q3:ServiceFaultDto" />
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_ConfirmChangeEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:ConfirmChangeEmail" />
@@ -52,7 +61,7 @@
     <wsdl:part name="parameters" element="tns:ConfirmChangeEmailResponse" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_ConfirmChangeEmail_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q5:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_RequestChangePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:RequestChangePassword" />
@@ -61,7 +70,7 @@
     <wsdl:part name="parameters" element="tns:RequestChangePasswordResponse" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_RequestChangePassword_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q5:ServiceFaultDto" />
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q6:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_ConfirmChangePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:ConfirmChangePassword" />
@@ -70,7 +79,7 @@
     <wsdl:part name="parameters" element="tns:ConfirmChangePasswordResponse" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_ConfirmChangePassword_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q6:ServiceFaultDto" />
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q7:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_GetAvailableAvatars_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAvailableAvatars" />
@@ -79,7 +88,7 @@
     <wsdl:part name="parameters" element="tns:GetAvailableAvatarsResponse" />
   </wsdl:message>
   <wsdl:message name="IUserProfileService_GetAvailableAvatars_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q7:ServiceFaultDto" />
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q8:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:portType name="IUserProfileService">
     <wsdl:operation name="GetUserProfile">
@@ -91,6 +100,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfile" message="tns:IUserProfileService_UpdateProfile_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfileResponse" message="tns:IUserProfileService_UpdateProfile_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/UpdateProfileServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_UpdateProfile_ServiceFaultDtoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateSocialNetwork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetwork" message="tns:IUserProfileService_AddOrUpdateSocialNetwork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetworkResponse" message="tns:IUserProfileService_AddOrUpdateSocialNetwork_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetworkServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_AddOrUpdateSocialNetwork_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="RequestChangeEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/RequestChangeEmail" message="tns:IUserProfileService_RequestChangeEmail_InputMessage" />
@@ -136,6 +150,18 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateProfile">
       <soap12:operation soapAction="http://tempuri.org/IUserProfileService/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateSocialNetwork">
+      <soap12:operation soapAction="http://tempuri.org/IUserProfileService/AddOrUpdateSocialNetwork" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -1,0 +1,1 @@
+metadata=res://*/DataAccess.GuessMyMessDB.csdl|res://*/DataAccess.GuessMyMessDB.ssdl|res://*/DataAccess.GuessMyMessDB.msl;provider=System.Data.SqlClient;provider connection string="data source=.\SQLEXPRESS;initial catalog=GuessMyMessDB;User ID=GuessMyMessAppUser;Password=#JLSGROLUVA#werty;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework"
