@@ -1744,6 +1744,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invitation Code.
+        /// </summary>
+        public static string globalLbInvitationCode {
+            get {
+                return ResourceManager.GetString("globalLbInvitationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Lastname.
         /// </summary>
         public static string globalLbLastName {

@@ -214,7 +214,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 {
                     currentLobbyWindow.Close();
                 }
-            }
+            }       
             catch (Exception)
             {
                 MessageBox.Show(

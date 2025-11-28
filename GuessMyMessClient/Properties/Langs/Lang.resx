@@ -843,4 +843,7 @@
   <data name="socialLbProfileLink" xml:space="preserve">
     <value>Profile link:</value>
   </data>
+  <data name="globalLbInvitationCode" xml:space="preserve">
+    <value>Invitation Code</value>
+  </data>
 </root>

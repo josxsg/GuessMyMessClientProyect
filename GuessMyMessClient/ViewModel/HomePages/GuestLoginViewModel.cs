@@ -21,11 +21,17 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public string InvitationCode { get => _invitationCode; set { _invitationCode = value; OnPropertyChanged(); } }
 
         public ICommand LoginGuestCommand { get; }
+        public ICommand MaximizeWindowCommand { get; }
+        public ICommand MinimizeWindowCommand { get; }
+        public ICommand CloseWindowCommand { get; }
         public ICommand BackCommand { get; }
 
         public GuestLoginViewModel()
         {
             LoginGuestCommand = new RelayCommand(ExecuteLoginGuest);
+            CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
+            MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
+            MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
             BackCommand = new RelayCommand(ExecuteBack);
         }
 
@@ -89,6 +95,30 @@ namespace GuessMyMessClient.ViewModel.HomePages
             finally
             {
                 try { client.Close(); } catch { client.Abort(); }
+            }
+        }
+
+        private static void ExecuteCloseWindow(object parameter)
+        {
+            if (parameter is Window)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
+        private static void ExecuteMaximizeWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            }
+        }
+
+        private static void ExecuteMinimizeWindow(object parameter)
+        {
+            if (parameter is Window window)
+            {
+                window.WindowState = WindowState.Minimized;
             }
         }
 

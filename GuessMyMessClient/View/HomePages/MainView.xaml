@@ -19,7 +19,6 @@
         </Grid.Background>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
-
             <Button Content="—" Width="30" Height="30" Margin="5" Style="{StaticResource BlueButton}"
                     Command="{Binding MinimizeWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnMinimize}"/>
@@ -31,8 +30,21 @@
             <Button Content="X" Width="30" Height="30" Margin="5" Style="{StaticResource RedButton}"
                     Command="{Binding CloseWindowCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ToolTip="{x:Static language:Lang.globalBtnClose}"/>
-
         </StackPanel>
+
+        <Viewbox Stretch="Uniform" MaxWidth="700">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Resources/Images/title.png" 
+                       Width="600"
+                       Margin="0,0,0,20"/>
+
+                <Button Content="{x:Static language:Lang.welcomeBtnStart}"
+                        Style="{StaticResource MainButton2}"
+                        Command="{Binding StartGameCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" 
+                        Width="334" Height="45"/>
+            </StackPanel>
+        </Viewbox>
 
         <Viewbox Stretch="Uniform" MaxWidth="700">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -49,5 +61,38 @@
 
             </StackPanel>
         </Viewbox>
+
+        <ComboBox ItemsSource="{Binding Languages}"
+          SelectedItem="{Binding SelectedLanguage}"
+          Style="{StaticResource ComboBoxStyle}"
+          HorizontalAlignment="Left" 
+          VerticalAlignment="Bottom"
+          Margin="20"
+          ToolTip="{x:Static language:Lang.configLbLanguage}">
+
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="🌐" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+
+        </ComboBox>
     </Grid>
 </Window>
