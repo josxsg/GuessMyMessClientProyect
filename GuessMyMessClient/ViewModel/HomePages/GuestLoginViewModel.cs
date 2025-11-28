@@ -17,8 +17,30 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _email;
         private string _invitationCode;
 
-        public string Email { get => _email; set { _email = value; OnPropertyChanged(); } }
-        public string InvitationCode { get => _invitationCode; set { _invitationCode = value; OnPropertyChanged(); } }
+        public string Email 
+        {
+            get 
+            { 
+                return _email; 
+            }
+            set 
+            { 
+                _email = value; 
+                OnPropertyChanged(); 
+            } 
+        }
+        public string InvitationCode 
+        {
+            get 
+            { 
+                return _invitationCode; 
+            }
+            set 
+            { 
+                _invitationCode = value; 
+                OnPropertyChanged(); 
+            } 
+        }
 
         public ICommand LoginGuestCommand { get; }
         public ICommand MaximizeWindowCommand { get; }
@@ -50,7 +72,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
                 if (result.Success)
                 {
-                    // 1. Configurar Sesión
                     string sessionToken = result.Message;
                     string matchId = result.Data["MatchId"];
                     bool isPrivate = bool.Parse(result.Data["IsPrivate"]);
@@ -58,16 +79,12 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     SessionManager.Instance.StartSession(sessionToken);
                     SessionManager.Instance.IsGuest = true;
 
-                    // 2. Conectar al Lobby (Servidor)
-                    // Esto registra al jugador en la partida en el backend
                     GuessMyMessClient.ViewModel.Session.LobbyClientManager.Instance.Connect(sessionToken, matchId);
 
-                    // 3. Abrir la Ventana Correcta (Waiting Room)
                     Window waitingRoomWindow;
 
                     if (isPrivate)
                     {
-                        // --- CORRECCIÓN AQUÍ: Pasamos los argumentos requeridos ---
                         var vm = new WaitingRoomPrivateMatchViewModel(
                             GuessMyMessClient.ViewModel.Session.LobbyClientManager.Instance,
                             SessionManager.Instance);
@@ -75,7 +92,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     }
                     else
                     {
-                        // --- CORRECCIÓN AQUÍ: Pasamos los argumentos requeridos ---
                         var vm = new WaitingRoomPublicMatchViewModel(
                             GuessMyMessClient.ViewModel.Session.LobbyClientManager.Instance,
                             SessionManager.Instance);
@@ -84,7 +100,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
                     waitingRoomWindow.Show();
 
-                    // 4. Cerrar Ventana Actual
                     Application.Current.Windows.OfType<GuestLoginView>().FirstOrDefault()?.Close();
                 }
             }
@@ -124,8 +139,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void ExecuteBack(object obj)
         {
-            // Regresar a MainView
-            new MainView().Show();
+            new WelcomeView().Show();
             Application.Current.Windows.OfType<GuestLoginView>().FirstOrDefault()?.Close();
         }
     }
