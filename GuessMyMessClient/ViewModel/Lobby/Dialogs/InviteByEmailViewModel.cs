@@ -1,6 +1,7 @@
 ﻿using GuessMyMessClient.MatchmakingService;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support;
 using System;
 using System.ServiceModel;
 using System.Windows;
@@ -39,6 +40,16 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                     Lang.alertFieldsRequired, 
                     Lang.alertInputErrorTitle, 
                     MessageBoxButton.OK, 
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!InputValidator.IsValidEmail(TargetEmail))
+            {
+                MessageBox.Show(
+                    Lang.alertInvalidEmailFormat,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
                     MessageBoxImage.Warning);
                 return;
             }

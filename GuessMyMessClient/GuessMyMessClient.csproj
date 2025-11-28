@@ -157,6 +157,7 @@
     <Compile Include="ViewModel\Support\Converters\BoolToGreenRedConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\InkCanvasBinder.cs" />
+    <Compile Include="ViewModel\Support\InputValidator.cs" />
     <Compile Include="ViewModel\Support\Navigation\INavigationService.cs" />
     <Compile Include="ViewModel\Support\Navigation\WpfNavigationService.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />

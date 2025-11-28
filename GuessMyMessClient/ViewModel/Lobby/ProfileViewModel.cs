@@ -103,16 +103,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (parameter is string networkName)
             {
-                // 1. Buscar si ya tenemos un link guardado localmente para mostrárselo al usuario
                 var existingNetwork = _profileData.socialNetworks
                     .FirstOrDefault(s => s.NetworkType.Equals(networkName, StringComparison.InvariantCultureIgnoreCase));
 
                 string currentLink = existingNetwork?.UserLink;
 
-                // 2. Instanciar el VM del diálogo pasando el link actual
                 var dialogVM = new AddSocialNetworkViewModel(networkName, currentLink, (linkIngresado) =>
                 {
-                    // Callback: Esto se ejecuta cuando el usuario da click en "Guardar" o "Editar" -> "Confirmar"
                     SaveSocialNetworkToServer(networkName, linkIngresado);
                 });
 
@@ -139,18 +136,16 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     UserLink = userLink
                 };
 
-                // Llamada al nuevo método del servidor (¡Recuerda actualizar la referencia!)
                 OperationResultDto result = await client.AddOrUpdateSocialNetworkAsync(_profileData.Username, socialDto);
 
                 if (result.Success)
                 {
                     MessageBox.Show(
-                        Lang.alertProfileUpdateSuccess, // "Actualización exitosa"
+                        Lang.alertProfileUpdateSuccess, 
                         Lang.alertSuccessTitle,
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
 
-                    // Actualizar la lista localmente para que la UI se refresque (aparezca el botón editar la próxima vez)
                     UpdateLocalSocialNetworkList(networkName, userLink);
 
                     client.Close();
@@ -165,7 +160,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 MessageBox.Show(fex.Detail.Message, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -180,23 +175,19 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void UpdateLocalSocialNetworkList(string networkName, string newLink)
         {
-            // Convertimos el array a lista para manipularlo
             var socialList = _profileData.socialNetworks.ToList();
 
             var existingItem = socialList.FirstOrDefault(s => s.NetworkType == networkName);
 
             if (existingItem != null)
             {
-                // Si ya existe, actualizamos el link
                 existingItem.UserLink = newLink;
             }
             else
             {
-                // Si no existe, agregamos uno nuevo
                 socialList.Add(new SocialNetworkDto { NetworkType = networkName, UserLink = newLink });
             }
 
-            // Guardamos de nuevo como array en el DTO
             _profileData.socialNetworks = socialList.ToArray();
         }
         private async void ExecuteSaveProfile(object parameter)

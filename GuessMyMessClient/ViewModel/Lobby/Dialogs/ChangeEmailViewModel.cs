@@ -7,6 +7,7 @@ using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
 using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
+using GuessMyMessClient.ViewModel.Support;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -52,6 +53,16 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         {
             var client = new UserProfileServiceClient();
             bool isSuccess = false;
+
+            if (!InputValidator.IsValidEmail(NewEmail))
+            {
+                MessageBox.Show(
+                    Lang.alertInvalidEmailFormat,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
 
             try
             {

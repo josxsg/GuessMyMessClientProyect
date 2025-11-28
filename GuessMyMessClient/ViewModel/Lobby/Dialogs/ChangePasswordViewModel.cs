@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
+using GuessMyMessClient.ViewModel.Support;
 using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
@@ -24,60 +25,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             _username = username;
             ConfirmCommand = new RelayCommand(ExecuteConfirm);
             CloseCommand = new RelayCommand(ExecuteClose);
-        }
-
-        private static bool IsPasswordSecure(string password, out string errorLangKey)
-        {
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                errorLangKey = "alertPasswordEmpty";
-                return false;
-            }
-
-            if (password.Length < 8)
-            {
-                errorLangKey = "alertPasswordTooShort";
-                return false;
-            }
-
-            if (password.Length > 25)
-            {
-                errorLangKey = "alertPasswordTooLong";
-                return false;
-            }
-
-            if (!password.Any(char.IsUpper))
-            {
-                errorLangKey = "alertPasswordNeedsUpper";
-                return false;
-            }
-
-            if (!password.Any(char.IsLower))
-            {
-                errorLangKey = "alertPasswordNeedsLower";
-                return false;
-            }
-
-            if (!password.Any(char.IsDigit))
-            {
-                errorLangKey = "alertPasswordNeedsDigit";
-                return false;
-            }
-
-            if (password.All(char.IsLetterOrDigit))
-            {
-                errorLangKey = "alertPasswordNeedsSpecial";
-                return false;
-            }
-            if (!password.Contains(","))
-            {
-                errorLangKey = "alertPasswordNeedsComma";
-                return false;
-
-            }
-
-            errorLangKey = null;
-            return true;
         }
 
         private async void ExecuteConfirm(object parameter)
@@ -103,7 +50,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             string newPassword = newPasswordBox.Password;
             string confirmPassword = confirmPasswordBox.Password;
 
-            if (!IsPasswordSecure(newPassword, out string passwordErrorKey))
+            if (!InputValidator.IsPasswordSecure(newPassword, out string passwordErrorKey))
             {
                 string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
                 MessageBox.Show(

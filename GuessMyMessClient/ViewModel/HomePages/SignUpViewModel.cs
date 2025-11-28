@@ -16,6 +16,7 @@ using GuessMyMessClient.View.Lobby.Dialogs;
 using GuessMyMessClient.ViewModel.Lobby.Dialogs;
 using GuessMyMessClient.View.Lobby;
 using GuessMyMessClient.ViewModel.Lobby;
+using GuessMyMessClient.ViewModel.Support;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -265,7 +266,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 return;
             }
 
-            if (!IsValidEmail(Email))
+            if (!InputValidator.IsValidEmail(Email))
             {
                 MessageBox.Show(
                     Lang.alertInvalidEmailFormat,
@@ -275,7 +276,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 return;
             }
 
-            if (!IsPasswordSecure(Password, out string passwordErrorKey))
+            if (!InputValidator.IsPasswordSecure(Password, out string passwordErrorKey))
             {
                 string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
                 MessageBox.Show(
@@ -384,77 +385,6 @@ namespace GuessMyMessClient.ViewModel.HomePages
                    !string.IsNullOrWhiteSpace(Email) &&
                    !string.IsNullOrWhiteSpace(Password) &&
                    (IsMale || IsFemale || IsNonBinary);
-        }
-
-        private static bool IsValidEmail(string email)
-        {
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                return false;
-            }
-            try
-            {
-                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s\.]{2,}$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-                return regex.IsMatch(email);
-            }
-            catch (RegexMatchTimeoutException) 
-            { 
-                return false;
-            }
-        }
-
-        private static bool IsPasswordSecure(string password, out string errorLangKey)
-        {
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                errorLangKey = "alertPasswordEmpty"; 
-                return false;
-            }
-
-            if (password.Length < 8)
-            {
-                errorLangKey = "alertPasswordTooShort"; 
-                return false;
-            }
-
-            if (password.Length > 25)
-            {
-                errorLangKey = "alertPasswordTooLong"; 
-                return false;
-            }
-
-            if (!password.Any(char.IsUpper))
-            {
-                errorLangKey = "alertPasswordNeedsUpper"; 
-                return false;
-            }
-
-            if (!password.Any(char.IsLower))
-            {
-                errorLangKey = "alertPasswordNeedsLower"; 
-                return false;
-            }
-
-            if (!password.Any(char.IsDigit))
-            {
-                errorLangKey = "alertPasswordNeedsDigit"; 
-                return false;
-            }
-
-            if (password.All(char.IsLetterOrDigit))
-            {
-                errorLangKey = "alertPasswordNeedsSpecial"; 
-                return false;
-            }
-            if (!password.Contains(","))
-            {
-                errorLangKey = "alertPasswordNeedsComma";
-                return false;
-
-            }
-
-            errorLangKey = null;
-            return true;
         }
 
         public static BitmapImage ConvertByteToImage(byte[] imageBytes)
