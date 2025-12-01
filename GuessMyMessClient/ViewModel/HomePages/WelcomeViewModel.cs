@@ -2,7 +2,11 @@
 using System.Windows.Input;
 using System.Windows;
 using GuessMyMessClient.View.HomePages;
+using GuessMyMessClient.ViewModel;
 using GuessMyMessClient.View.Lobby;
+using System.Collections.Generic; // Para List
+using System.Linq;                // Para FirstOrDefault
+using System.Threading;
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -15,6 +19,24 @@ namespace GuessMyMessClient.ViewModel.HomePages
         public ICommand MaximizeWindowCommand { get; }
         public ICommand MinimizeWindowCommand { get; }
 
+        public List<LanguageItem> Languages { get; }
+        private LanguageItem _selectedLanguage;
+
+        public LanguageItem SelectedLanguage
+        {
+            get => _selectedLanguage;
+            set
+            {
+                if (SetProperty(ref _selectedLanguage, value))
+                {
+                    if (value != null)
+                    {
+                        ChangeLanguageAndRestart<WelcomeView>(value.Code);
+                    }
+                }
+            }
+        }
+
         public WelcomeViewModel()
         {
             SignUpCommand = new RelayCommand(SignUp);
@@ -23,6 +45,18 @@ namespace GuessMyMessClient.ViewModel.HomePages
             CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
+
+            Languages = new List<LanguageItem>
+            {
+                new LanguageItem { Name = "Español", Code = "es-MX" },
+                new LanguageItem { Name = "English", Code = "en-US" }
+            };
+
+            string currentCode = Thread.CurrentThread.CurrentUICulture.Name;
+            _selectedLanguage = Languages.FirstOrDefault(l => l.Code == currentCode)
+                                ?? Languages.FirstOrDefault(l => currentCode.StartsWith("es") && l.Code == "es-MX")
+                                ?? Languages.FirstOrDefault();
+        
         }
 
         private static void SignUp(object parameter)
