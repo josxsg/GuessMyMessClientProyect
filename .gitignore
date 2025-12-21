@@ -57,4 +57,3 @@ Desktop.ini
 *.coverage
 *.coveragexml
 *.CodeAnalysisLog.xml
-/GuessMyMessClient/View/HomePages/WelcomeView.xaml
