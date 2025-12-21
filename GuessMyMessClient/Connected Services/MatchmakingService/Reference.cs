@@ -538,6 +538,8 @@ namespace GuessMyMessClient.MatchmakingService {
         System.Threading.Tasks.Task InviteToMatchAsync(string inviterUsername, string invitedUsername, string matchId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmail", ReplyAction="http://tempuri.org/IMatchmakingService/InviteGuestByEmailResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.MatchmakingService.ServiceFaultDto), Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmailServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
         void InviteGuestByEmail(string inviterUsername, string targetEmail, string matchId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmail", ReplyAction="http://tempuri.org/IMatchmakingService/InviteGuestByEmailResponse")]

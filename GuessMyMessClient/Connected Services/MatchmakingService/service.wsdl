@@ -85,6 +85,9 @@
   <wsdl:message name="IMatchmakingService_InviteGuestByEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:InviteGuestByEmailResponse" />
   </wsdl:message>
+  <wsdl:message name="IMatchmakingService_InviteGuestByEmail_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
+  </wsdl:message>
   <wsdl:message name="IMatchmakingService_ReceiveMatchInvite_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ReceiveMatchInvite" />
   </wsdl:message>
@@ -131,6 +134,7 @@
     <wsdl:operation name="InviteGuestByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmail" message="tns:IMatchmakingService_InviteGuestByEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmailResponse" message="tns:IMatchmakingService_InviteGuestByEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMatchmakingService/InviteGuestByEmailServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IMatchmakingService_InviteGuestByEmail_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ReceiveMatchInvite">
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchmakingService/ReceiveMatchInvite" message="tns:IMatchmakingService_ReceiveMatchInvite_OutputCallbackMessage" />
@@ -220,6 +224,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ReceiveMatchInvite">
       <soap12:operation soapAction="http://tempuri.org/IMatchmakingService/ReceiveMatchInvite" style="document" />
