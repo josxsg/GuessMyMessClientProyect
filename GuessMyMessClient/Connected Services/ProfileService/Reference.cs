@@ -499,6 +499,84 @@ namespace GuessMyMessClient.ProfileService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PlayerScoreDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class PlayerScoreDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> RankField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ScoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Rank {
+            get {
+                return this.RankField;
+            }
+            set {
+                if ((this.RankField.Equals(value) != true)) {
+                    this.RankField = value;
+                    this.RaisePropertyChanged("Rank");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Score {
+            get {
+                return this.ScoreField;
+            }
+            set {
+                if ((this.ScoreField.Equals(value) != true)) {
+                    this.ScoreField = value;
+                    this.RaisePropertyChanged("Score");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProfileService.IUserProfileService")]
     public interface IUserProfileService {
@@ -567,6 +645,14 @@ namespace GuessMyMessClient.ProfileService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars", ReplyAction="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.AvatarDto[]> GetAvailableAvatarsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetGlobalRanking", ReplyAction="http://tempuri.org/IUserProfileService/GetGlobalRankingResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.ProfileService.ServiceFaultDto), Action="http://tempuri.org/IUserProfileService/GetGlobalRankingServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
+        GuessMyMessClient.ProfileService.PlayerScoreDto[] GetGlobalRanking();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserProfileService/GetGlobalRanking", ReplyAction="http://tempuri.org/IUserProfileService/GetGlobalRankingResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.PlayerScoreDto[]> GetGlobalRankingAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -658,6 +744,14 @@ namespace GuessMyMessClient.ProfileService {
         
         public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.AvatarDto[]> GetAvailableAvatarsAsync() {
             return base.Channel.GetAvailableAvatarsAsync();
+        }
+        
+        public GuessMyMessClient.ProfileService.PlayerScoreDto[] GetGlobalRanking() {
+            return base.Channel.GetGlobalRanking();
+        }
+        
+        public System.Threading.Tasks.Task<GuessMyMessClient.ProfileService.PlayerScoreDto[]> GetGlobalRankingAsync() {
+            return base.Channel.GetGlobalRankingAsync();
         }
     }
 }

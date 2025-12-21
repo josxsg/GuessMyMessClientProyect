@@ -85,6 +85,14 @@
                 </Button.Style>
                 <Image Source="/Resources/Images/editProfile.png" Width="32"/>
             </Button>
+            <Button x:Name="RankingButton" 
+                    Command="{Binding RankingCommand}"
+                    ToolTip="{x:Static language:Lang.rankingTitle}">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource RankingButton}"/>
+                </Button.Style>
+                <Image Source="/Resources/Images/ranking.png" Width="32"/>
+            </Button>
         </StackPanel>
 
         <Button x:Name="ChatButton" 
@@ -103,6 +111,7 @@
             </Button.Style>
             <Image Source="/Resources/Images/chat.png" Width="32"/>
         </Button>
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0">
 
             <Grid Width="260" Height="260">
@@ -135,6 +144,7 @@
              Height="55"
              Margin="0,20,0,0"/>
         </StackPanel>
+
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20">
             <Button Style="{StaticResource YellowButton}" Command="{Binding PlayCommand}">
                 <StackPanel Orientation="Horizontal">
@@ -191,6 +201,17 @@
                IsOpen="{Binding IsChatPopupOpen, Mode=TwoWay}">
 
             <local:DirectMessageView DataContext="{Binding DirectMessageViewModel}"/>
+
+        </Popup>
+
+        <Popup x:Name="RankingPopup"
+               PlacementTarget="{Binding ElementName=RankingButton}"
+               Placement="Right"
+               AllowsTransparency="True"
+               StaysOpen="False" 
+               IsOpen="{Binding IsRankingPopupOpen, Mode=TwoWay}">
+
+            <local:RankingView DataContext="{Binding RankingViewModel}"/>
 
         </Popup>
 

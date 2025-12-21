@@ -79,6 +79,12 @@
   <wsdl:message name="ISocialService_RemoveFriend_InputMessage">
     <wsdl:part name="parameters" element="tns:RemoveFriend" />
   </wsdl:message>
+  <wsdl:message name="ISocialService_RemoveFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_RemoveFriend_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
+  </wsdl:message>
   <wsdl:message name="ISocialService_InviteFriendToGameByEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:InviteFriendToGameByEmail" />
   </wsdl:message>
@@ -86,7 +92,7 @@
     <wsdl:part name="parameters" element="tns:InviteFriendToGameByEmailResponse" />
   </wsdl:message>
   <wsdl:message name="ISocialService_InviteFriendToGameByEmail_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q4:ServiceFaultDto" />
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q5:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_SendDirectMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendDirectMessage" />
@@ -98,7 +104,7 @@
     <wsdl:part name="parameters" element="tns:GetConversationsResponse" />
   </wsdl:message>
   <wsdl:message name="ISocialService_GetConversations_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q5:ServiceFaultDto" />
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q6:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_GetConversationHistory_InputMessage">
     <wsdl:part name="parameters" element="tns:GetConversationHistory" />
@@ -107,10 +113,19 @@
     <wsdl:part name="parameters" element="tns:GetConversationHistoryResponse" />
   </wsdl:message>
   <wsdl:message name="ISocialService_GetConversationHistory_ServiceFaultDtoFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q6:ServiceFaultDto" />
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q7:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_Disconnect_InputMessage">
     <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetFriendProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendProfile" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetFriendProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFriendProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetFriendProfile_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q8:ServiceFaultDto" />
   </wsdl:message>
   <wsdl:message name="ISocialService_NotifyFriendRequest_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotifyFriendRequest" />
@@ -123,6 +138,9 @@
   </wsdl:message>
   <wsdl:message name="ISocialService_NotifyMessageReceived_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotifyMessageReceived" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_NotifyFriendRemoved_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyFriendRemoved" />
   </wsdl:message>
   <wsdl:portType name="ISocialService">
     <wsdl:operation name="Connect">
@@ -151,6 +169,8 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveFriend">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/RemoveFriend" message="tns:ISocialService_RemoveFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/RemoveFriendResponse" message="tns:ISocialService_RemoveFriend_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/RemoveFriendServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_RemoveFriend_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="InviteFriendToGameByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail" message="tns:ISocialService_InviteFriendToGameByEmail_InputMessage" />
@@ -173,6 +193,11 @@
     <wsdl:operation name="Disconnect">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/Disconnect" message="tns:ISocialService_Disconnect_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetFriendProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetFriendProfile" message="tns:ISocialService_GetFriendProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/GetFriendProfileResponse" message="tns:ISocialService_GetFriendProfile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISocialService/GetFriendProfileServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:ISocialService_GetFriendProfile_ServiceFaultDtoFault_FaultMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotifyFriendRequest">
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyFriendRequest" message="tns:ISocialService_NotifyFriendRequest_OutputCallbackMessage" />
     </wsdl:operation>
@@ -184,6 +209,9 @@
     </wsdl:operation>
     <wsdl:operation name="NotifyMessageReceived">
       <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyMessageReceived" message="tns:ISocialService_NotifyMessageReceived_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyFriendRemoved">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/NotifyFriendRemoved" message="tns:ISocialService_NotifyFriendRemoved_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_ISocialService" type="tns:ISocialService">
@@ -249,6 +277,12 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="InviteFriendToGameByEmail">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmail" style="document" />
@@ -298,6 +332,18 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="GetFriendProfile">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/GetFriendProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="NotifyFriendRequest">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyFriendRequest" style="document" />
       <wsdl:output>
@@ -318,6 +364,12 @@
     </wsdl:operation>
     <wsdl:operation name="NotifyMessageReceived">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyMessageReceived" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyFriendRemoved">
+      <soap12:operation soapAction="http://tempuri.org/ISocialService/NotifyFriendRemoved" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

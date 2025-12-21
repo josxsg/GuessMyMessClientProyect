@@ -136,4 +136,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AvatarDto" nillable="true" type="tns:AvatarDto" />
+  <xs:complexType name="ArrayOfPlayerScoreDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerScoreDto" nillable="true" type="tns:PlayerScoreDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerScoreDto" nillable="true" type="tns:ArrayOfPlayerScoreDto" />
+  <xs:complexType name="PlayerScoreDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Score" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerScoreDto" nillable="true" type="tns:PlayerScoreDto" />
 </xs:schema>

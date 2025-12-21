@@ -639,6 +639,116 @@ namespace GuessMyMessClient.SocialService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FriendProfileDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class FriendProfileDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GenderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GuessMyMessClient.SocialService.SocialNetworkDto[] SocialNetworksField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GenderId {
+            get {
+                return this.GenderIdField;
+            }
+            set {
+                if ((this.GenderIdField.Equals(value) != true)) {
+                    this.GenderIdField = value;
+                    this.RaisePropertyChanged("GenderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GuessMyMessClient.SocialService.SocialNetworkDto[] SocialNetworks {
+            get {
+                return this.SocialNetworksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SocialNetworksField, value) != true)) {
+                    this.SocialNetworksField = value;
+                    this.RaisePropertyChanged("SocialNetworks");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SocialService.ISocialService", CallbackContract=typeof(GuessMyMessClient.SocialService.ISocialServiceCallback))]
     public interface ISocialService {
@@ -685,11 +795,13 @@ namespace GuessMyMessClient.SocialService {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RespondToFriendRequest")]
         System.Threading.Tasks.Task RespondToFriendRequestAsync(string targetUsername, string requesterUsername, bool accepted);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RemoveFriend")]
-        void RemoveFriend(string username, string friendToRemove);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/RemoveFriend", ReplyAction="http://tempuri.org/ISocialService/RemoveFriendResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/RemoveFriendServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
+        GuessMyMessClient.SocialService.OperationResultDto RemoveFriend(string username, string friendToRemove);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/RemoveFriend")]
-        System.Threading.Tasks.Task RemoveFriendAsync(string username, string friendToRemove);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/RemoveFriend", ReplyAction="http://tempuri.org/ISocialService/RemoveFriendResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> RemoveFriendAsync(string username, string friendToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmailServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
@@ -726,6 +838,14 @@ namespace GuessMyMessClient.SocialService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/Disconnect")]
         System.Threading.Tasks.Task DisconnectAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendProfile", ReplyAction="http://tempuri.org/ISocialService/GetFriendProfileResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/GetFriendProfileServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+            "")]
+        GuessMyMessClient.SocialService.FriendProfileDto GetFriendProfile(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetFriendProfile", ReplyAction="http://tempuri.org/ISocialService/GetFriendProfileResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendProfileDto> GetFriendProfileAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -742,6 +862,9 @@ namespace GuessMyMessClient.SocialService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyMessageReceived")]
         void NotifyMessageReceived(GuessMyMessClient.SocialService.DirectMessageDto message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/NotifyFriendRemoved")]
+        void NotifyFriendRemoved(string requesterUsername);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -820,11 +943,11 @@ namespace GuessMyMessClient.SocialService {
             return base.Channel.RespondToFriendRequestAsync(targetUsername, requesterUsername, accepted);
         }
         
-        public void RemoveFriend(string username, string friendToRemove) {
-            base.Channel.RemoveFriend(username, friendToRemove);
+        public GuessMyMessClient.SocialService.OperationResultDto RemoveFriend(string username, string friendToRemove) {
+            return base.Channel.RemoveFriend(username, friendToRemove);
         }
         
-        public System.Threading.Tasks.Task RemoveFriendAsync(string username, string friendToRemove) {
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> RemoveFriendAsync(string username, string friendToRemove) {
             return base.Channel.RemoveFriendAsync(username, friendToRemove);
         }
         
@@ -866,6 +989,14 @@ namespace GuessMyMessClient.SocialService {
         
         public System.Threading.Tasks.Task DisconnectAsync(string username) {
             return base.Channel.DisconnectAsync(username);
+        }
+        
+        public GuessMyMessClient.SocialService.FriendProfileDto GetFriendProfile(string username) {
+            return base.Channel.GetFriendProfile(username);
+        }
+        
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.FriendProfileDto> GetFriendProfileAsync(string username) {
+            return base.Channel.GetFriendProfileAsync(username);
         }
     }
 }

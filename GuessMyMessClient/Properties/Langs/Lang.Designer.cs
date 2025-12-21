@@ -835,6 +835,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to remove {0} from your friends list?.
+        /// </summary>
+        public static string alertRemoveFriend {
+            get {
+                return ResourceManager.GetString("alertRemoveFriend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please enter your username/email and password..
         /// </summary>
         public static string alertRequiredFields {
@@ -894,6 +903,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertVerificationSuccess {
             get {
                 return ResourceManager.GetString("alertVerificationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Warning.
+        /// </summary>
+        public static string alertWarningTitle {
+            get {
+                return ResourceManager.GetString("alertWarningTitle", resourceCulture);
             }
         }
         
@@ -1492,6 +1510,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Profile of.
+        /// </summary>
+        public static string friendProfileLbTitle {
+            get {
+                return ResourceManager.GetString("friendProfileLbTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Chat.
         /// </summary>
         public static string globalBtnChat {
@@ -1807,6 +1834,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Not Linked.
+        /// </summary>
+        public static string globalNoLinked {
+            get {
+                return ResourceManager.GetString("globalNoLinked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password.
         /// </summary>
         public static string globalPwdPassword {
@@ -1987,6 +2023,60 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Refresh.
+        /// </summary>
+        public static string rankingBtnRefresh {
+            get {
+                return ResourceManager.GetString("rankingBtnRefresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The global ranking could not be loaded..
+        /// </summary>
+        public static string rankingErrorLoading {
+            get {
+                return ResourceManager.GetString("rankingErrorLoading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a #.
+        /// </summary>
+        public static string rankingLbRank {
+            get {
+                return ResourceManager.GetString("rankingLbRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total Score.
+        /// </summary>
+        public static string rankingLbScore {
+            get {
+                return ResourceManager.GetString("rankingLbScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Player.
+        /// </summary>
+        public static string rankingLbUser {
+            get {
+                return ResourceManager.GetString("rankingLbUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Global Ranking.
+        /// </summary>
+        public static string rankingTitle {
+            get {
+                return ResourceManager.GetString("rankingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Register.
         /// </summary>
         public static string signUpLbResgister {
@@ -2014,6 +2104,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Remove Friend.
+        /// </summary>
+        public static string socialBtnRemoveFriend {
+            get {
+                return ResourceManager.GetString("socialBtnRemoveFriend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Search.
         /// </summary>
         public static string socialBtnSearch {
@@ -2028,6 +2127,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string socialBtnSendInvite {
             get {
                 return ResourceManager.GetString("socialBtnSendInvite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a View Profile.
+        /// </summary>
+        public static string socialBtnViewFriendProfile {
+            get {
+                return ResourceManager.GetString("socialBtnViewFriendProfile", resourceCulture);
             }
         }
         

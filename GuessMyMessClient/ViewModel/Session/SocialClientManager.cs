@@ -23,6 +23,7 @@ namespace GuessMyMessClient.ViewModel.Session
         public event Action<string, string> OnFriendStatusChanged;
         public event Action<DirectMessageDto> OnMessageReceived;
         public event Action OnConnectionLost;
+        public event Action<string> OnFriendRemoved;
 
         private SocialClientManager() { }
 
@@ -166,6 +167,11 @@ namespace GuessMyMessClient.ViewModel.Session
                 return;
             }
             OnMessageReceived?.Invoke(message);
+        }
+
+        public void NotifyFriendRemoved(string requesterUsername)
+        {
+            OnFriendRemoved?.Invoke(requesterUsername);
         }
     }
 }

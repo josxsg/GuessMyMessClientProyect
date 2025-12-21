@@ -846,4 +846,40 @@
   <data name="globalLbInvitationCode" xml:space="preserve">
     <value>Código de invitación</value>
   </data>
+  <data name="alertRemoveFriend" xml:space="preserve">
+    <value>¿Estás segura de que deseas eliminar {0} de tu lista de amigos?</value>
+  </data>
+  <data name="alertWarningTitle" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="globalNoLinked" xml:space="preserve">
+    <value>No Vinculada</value>
+  </data>
+  <data name="friendProfileLbTitle" xml:space="preserve">
+    <value>Perfil de</value>
+  </data>
+  <data name="rankingTitle" xml:space="preserve">
+    <value>Ranking Global</value>
+  </data>
+  <data name="rankingLbRank" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="rankingLbUser" xml:space="preserve">
+    <value>Jugador</value>
+  </data>
+  <data name="rankingLbScore" xml:space="preserve">
+    <value>Puntaje Total</value>
+  </data>
+  <data name="rankingErrorLoading" xml:space="preserve">
+    <value>No se pudo cargar el ranking global.</value>
+  </data>
+  <data name="socialBtnViewFriendProfile" xml:space="preserve">
+    <value>Ver Perfil</value>
+  </data>
+  <data name="socialBtnRemoveFriend" xml:space="preserve">
+    <value>Eliminar Amigo</value>
+  </data>
+  <data name="rankingBtnRefresh" xml:space="preserve">
+    <value>Refrescar</value>
+  </data>
 </root>

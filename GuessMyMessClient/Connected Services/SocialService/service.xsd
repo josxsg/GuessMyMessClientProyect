@@ -76,6 +76,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RemoveFriendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="RemoveFriendResult" nillable="true" type="q4:OperationResultDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InviteFriendToGameByEmail">
     <xs:complexType>
       <xs:sequence>
@@ -88,14 +95,14 @@
   <xs:element name="InviteFriendToGameByEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="InviteFriendToGameByEmailResult" nillable="true" type="q4:OperationResultDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="InviteFriendToGameByEmailResult" nillable="true" type="q5:OperationResultDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendDirectMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q5:DirectMessageDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q6:DirectMessageDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -109,7 +116,7 @@
   <xs:element name="GetConversationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationsResult" nillable="true" type="q6:ArrayOfFriendDto" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationsResult" nillable="true" type="q7:ArrayOfFriendDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -124,7 +131,7 @@
   <xs:element name="GetConversationHistoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationHistoryResult" nillable="true" type="q7:ArrayOfDirectMessageDto" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationHistoryResult" nillable="true" type="q8:ArrayOfDirectMessageDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -132,6 +139,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFriendProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFriendProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetFriendProfileResult" nillable="true" type="q9:FriendProfileDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -161,7 +182,14 @@
   <xs:element name="NotifyMessageReceived">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q8:DirectMessageDto" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q10:DirectMessageDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyFriendRemoved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="requesterUsername" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

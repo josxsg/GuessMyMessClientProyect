@@ -11,7 +11,6 @@
              d:DesignHeight="500" d:DesignWidth="350">
 
     <UserControl.Resources>
-
         <Style x:Key="CartoonTabItem" TargetType="TabItem">
             <Setter Property="Template">
                 <Setter.Value>
@@ -102,31 +101,29 @@
             </Setter>
         </Style>
 
-        <Style x:Key="InviteButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#FFFFC107"/>
+        <Style x:Key="SmallBlueButton" TargetType="Button">
+            <Setter Property="Background" Value="#3498DB"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Height" Value="45"/>
+            <Setter Property="Height" Value="32"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid RenderTransformOrigin="0.5,0.5">
-                            <Border x:Name="shadow" CornerRadius="12" Background="#FFA000" Margin="0,4,0,0"/>
-                            <Border x:Name="face" CornerRadius="12" Background="{TemplateBinding Background}" Margin="0,0,0,4">
-                                <Viewbox Stretch="Uniform" Margin="15,5">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Viewbox>
+                            <Border x:Name="shadow" CornerRadius="10" Background="#2980B9" Margin="0,3,0,0"/>
+                            <Border x:Name="face" CornerRadius="10" Background="{TemplateBinding Background}" Margin="0,0,0,3">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0"/>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="face" Property="Background" Value="#FFFFD54F"/>
+                                <Setter TargetName="face" Property="Background" Value="#5DADE2"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="face" Property="Margin" Value="0,4,0,0"/>
+                                <Setter TargetName="face" Property="Margin" Value="0,3,0,0"/>
                                 <Setter TargetName="shadow" Property="Visibility" Value="Collapsed"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -147,7 +144,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" VerticalAlignment="Top" Margin="0,0,0,10">
@@ -189,21 +185,47 @@
             </ListBox>
 
             <TabControl Grid.Row="2" BorderThickness="0" Background="Transparent" Margin="0,5,0,0">
+
                 <TabItem Header="{x:Static language:Lang.socialLbFriends}" Style="{StaticResource CartoonTabItem}">
                     <ListBox ItemsSource="{Binding Friends}" BorderThickness="0" Background="Transparent" Margin="0,10,0,0" HorizontalContentAlignment="Stretch">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border Background="#FAFAFA" BorderBrush="#EEEEEE" BorderThickness="1" CornerRadius="12" Padding="10" Margin="0,3">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Border Width="14" Height="14" CornerRadius="7" 
-                                                Background="{Binding IsOnline, Converter={StaticResource BoolToGreenRedConverter}}"
-                                                BorderBrush="White" BorderThickness="2">
-                                            <Border.Effect>
-                                                <DropShadowEffect ShadowDepth="0" Color="Gray" Opacity="0.3" BlurRadius="3"/>
-                                            </Border.Effect>
-                                        </Border>
-                                        <TextBlock Text="{Binding Username}" Margin="10,0,0,0" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="14" Foreground="#333"/>
-                                    </StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                                            <Border Width="14" Height="14" CornerRadius="7" 
+                                                    Background="{Binding IsOnline, Converter={StaticResource BoolToGreenRedConverter}}"
+                                                    BorderBrush="White" BorderThickness="2">
+                                                <Border.Effect>
+                                                    <DropShadowEffect ShadowDepth="0" Color="Gray" Opacity="0.3" BlurRadius="3"/>
+                                                </Border.Effect>
+                                            </Border>
+                                            <TextBlock Text="{Binding Username}" Margin="10,0,0,0" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="14" Foreground="#333"/>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button Style="{StaticResource SmallBlueButton}" 
+                                                    Width="35" Margin="0,0,5,0"
+                                                    ToolTip="{x:Static language:Lang.socialBtnViewFriendProfile}"
+                                                    Command="{Binding DataContext.ViewFriendProfileCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                                                    CommandParameter="{Binding}">
+                                                <Image Source="/Resources/Images/eye.png" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                            </Button>
+
+                                            <Button Style="{StaticResource SmallRedButton}" 
+                                                    Width="35"
+                                                    ToolTip="{x:Static language:Lang.socialBtnRemoveFriend}"
+                                                    Command="{Binding DataContext.RemoveFriendCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                                                    CommandParameter="{Binding}">
+                                                <Image Source="/Resources/Images/remove.png" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
                                 </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -232,14 +254,6 @@
                 </TabItem>
             </TabControl>
 
-            <Button Grid.Row="3" Style="{StaticResource InviteButtonStyle}" 
-                    Command="{Binding InviteByEmailCommand}" 
-                    VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,10,0,0">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Image Source="/Resources/Images/mail.png" Height="20" Margin="0,0,10,0" RenderOptions.BitmapScalingMode="HighQuality"/>
-                    <TextBlock Text="{x:Static language:Lang.socialBtnEmailInivite}" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
         </Grid>
     </Border>
 </UserControl>

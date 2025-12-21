@@ -10,6 +10,7 @@ using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
 using ServiceSocialFault = GuessMyMessClient.SocialService.ServiceFaultDto;
+using GuessMyMessClient.View.Lobby;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -53,8 +54,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
         }
 
         public ICommand SearchCommand { get; }
-        public ICommand InviteByEmailCommand { get; }
         public ICommand SendFriendRequestCommand { get; }
+        public ICommand RemoveFriendCommand { get; }
+        public ICommand ViewFriendProfileCommand { get; }
 
         public FriendsViewModel()
         {
@@ -63,8 +65,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
             SearchResults = new ObservableCollection<UserProfileDto>();
 
             SearchCommand = new RelayCommand(async parameter => await SearchUsersAsync(), parameter => CanExecuteNetworkActions());
-            InviteByEmailCommand = new RelayCommand(InviteByEmail, parameter => CanExecuteNetworkActions());
             SendFriendRequestCommand = new RelayCommand(SendFriendRequest, parameter => CanExecuteNetworkActions());
+            RemoveFriendCommand = new RelayCommand(async (p) => await RemoveFriendAsync(p), (p) => CanExecuteNetworkActions());
+            ViewFriendProfileCommand = new RelayCommand(ViewFriendProfile);
 
             SubscribeToEvents();
 
@@ -237,9 +240,58 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void InviteByEmail(object obj)
+        private async Task RemoveFriendAsync(object parameter)
         {
-            MessageBox.Show("Funcionalidad de invitación por correo no implementada.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (!(parameter is FriendViewModel friend) || !CanExecuteNetworkActions()) return;
+
+            var confirm = MessageBox.Show(
+                string.Format(Lang.alertRemoveFriend, friend.Username), 
+                Lang.alertWarningTitle,
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning);
+
+            if (confirm == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    string currentUsername = SessionManager.Instance.CurrentUsername;
+
+                    var result = await Client.RemoveFriendAsync(currentUsername, friend.Username);
+
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        if (result.Success)
+                        {
+                            Friends.Remove(friend);
+                            MessageBox.Show(result.Message, Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            ShowError(result.Message);
+                        }
+                    });
+                }
+                catch (FaultException<ServiceSocialFault> fex)
+                {
+                    ShowError(fex.Detail.Message);
+                }
+                catch (Exception)
+                {
+                    ShowError(Lang.alertUnknownErrorMessage);
+                }
+            }
+        }
+
+        private void ViewFriendProfile(object parameter)
+        {
+            if (parameter is FriendViewModel friend)
+            {
+                var profileVm = new FriendProfileViewModel(friend.Username);
+                var view = new FriendProfileView();
+                view.DataContext = profileVm;
+                view.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+                view.ShowDialog();
+            }
         }
 
         private void ShowError(string message)
@@ -258,6 +310,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             SocialClientManager.Instance.OnFriendRequest += HandleFriendRequest;
             SocialClientManager.Instance.OnFriendResponse += HandleFriendResponse;
             SocialClientManager.Instance.OnFriendStatusChanged += HandleFriendStatusChanged;
+            SocialClientManager.Instance.OnFriendRemoved += HandleFriendRemoved;
         }
 
         private void UnsubscribeFromEvents()
@@ -265,6 +318,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             SocialClientManager.Instance.OnFriendRequest -= HandleFriendRequest;
             SocialClientManager.Instance.OnFriendResponse -= HandleFriendResponse;
             SocialClientManager.Instance.OnFriendStatusChanged -= HandleFriendStatusChanged;
+            SocialClientManager.Instance.OnFriendRemoved -= HandleFriendRemoved;
         }
 
         private void HandleFriendRequest(string fromUsername)
@@ -313,6 +367,21 @@ namespace GuessMyMessClient.ViewModel.Lobby
             });
         }
 
+        private void HandleFriendRemoved(string usernameWhoRemovedMe)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var friendToRemove = Friends.FirstOrDefault(f => f.Username == usernameWhoRemovedMe);
+
+                if (friendToRemove != null)
+                {
+                    Friends.Remove(friendToRemove);
+
+                    MessageBox.Show($"{usernameWhoRemovedMe} te ha eliminado de sus amigos.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            });
+        }
+
         public void Dispose()
         {
             Dispose(true);
@@ -341,10 +410,34 @@ namespace GuessMyMessClient.ViewModel.Lobby
     public class FriendViewModel : ViewModelBase
     {
         private string _username;
-        public string Username { get => _username; set { _username = value; OnPropertyChanged(); } }
+
+        public string Username
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value; 
+                OnPropertyChanged();
+            }
+        }
 
         private bool _isOnline;
-        public bool IsOnline { get => _isOnline; set { _isOnline = value; OnPropertyChanged(); } }
+
+        public bool IsOnline
+        {
+            get
+            {
+                return _isOnline;
+            }
+            set
+            {
+                _isOnline = value; 
+                OnPropertyChanged();
+            }
+        }
     }
 
     public class FriendRequestViewModel : ViewModelBase

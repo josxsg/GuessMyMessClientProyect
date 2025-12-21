@@ -221,6 +221,26 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
+        private void HandleFriendRemoved(string usernameWhoRemovedMe)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var friendToRemove = Conversations.FirstOrDefault(f => f.Username == usernameWhoRemovedMe);
+
+                if (friendToRemove != null)
+                {
+                    Conversations.Remove(friendToRemove);
+
+                    if (SelectedConversation != null && SelectedConversation.Username == usernameWhoRemovedMe)
+                    {
+                        SelectedConversation = null; 
+                        MessageBox.Show($"{usernameWhoRemovedMe} ya no está en tu lista de amigos.",
+                            "Chat Cerrado", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+            });
+        }
+
         private void ShowError(string message)
         {
             Application.Current.Dispatcher.Invoke(() =>
@@ -237,12 +257,14 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             SocialClientManager.Instance.OnMessageReceived += HandleMessageReceived;
             SocialClientManager.Instance.OnFriendResponse += HandleFriendResponse;
+            SocialClientManager.Instance.OnFriendRemoved += HandleFriendRemoved;
         }
 
         private void UnsubscribeFromEvents()
         {
             SocialClientManager.Instance.OnMessageReceived -= HandleMessageReceived;
             SocialClientManager.Instance.OnFriendResponse -= HandleFriendResponse;
+            SocialClientManager.Instance.OnFriendRemoved -= HandleFriendRemoved;
         }
 
         private void HandleMessageReceived(DirectMessageDto message)

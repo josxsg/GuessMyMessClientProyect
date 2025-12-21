@@ -112,6 +112,15 @@
   <wsdl:message name="IUserProfileService_GetAvailableAvatars_ServiceFaultDtoFault_FaultMessage">
     <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q8:ServiceFaultDto" />
   </wsdl:message>
+  <wsdl:message name="IUserProfileService_GetGlobalRanking_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalRanking" />
+  </wsdl:message>
+  <wsdl:message name="IUserProfileService_GetGlobalRanking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserProfileService_GetGlobalRanking_ServiceFaultDtoFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" name="detail" element="q9:ServiceFaultDto" />
+  </wsdl:message>
   <wsdl:portType name="IUserProfileService">
     <wsdl:operation name="GetUserProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetUserProfile" message="tns:IUserProfileService_GetUserProfile_InputMessage" />
@@ -152,6 +161,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatars" message="tns:IUserProfileService_GetAvailableAvatars_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsResponse" message="tns:IUserProfileService_GetAvailableAvatars_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/GetAvailableAvatarsServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_GetAvailableAvatars_ServiceFaultDtoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalRanking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserProfileService/GetGlobalRanking" message="tns:IUserProfileService_GetGlobalRanking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserProfileService/GetGlobalRankingResponse" message="tns:IUserProfileService_GetGlobalRanking_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUserProfileService/GetGlobalRankingServiceFaultDtoFault" name="ServiceFaultDtoFault" message="tns:IUserProfileService_GetGlobalRanking_ServiceFaultDtoFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IUserProfileService" type="tns:IUserProfileService">
@@ -244,6 +258,18 @@
     </wsdl:operation>
     <wsdl:operation name="GetAvailableAvatars">
       <soap12:operation soapAction="http://tempuri.org/IUserProfileService/GetAvailableAvatars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultDtoFault">
+        <soap12:fault use="literal" name="ServiceFaultDtoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalRanking">
+      <soap12:operation soapAction="http://tempuri.org/IUserProfileService/GetGlobalRanking" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

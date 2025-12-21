@@ -35,6 +35,8 @@ namespace GuessMyMessClient.ViewModel.Lobby
         private ConfigurationViewModel _configurationViewModel;
         private bool _isChatPopupOpen;
         private DirectMessageViewModel _directMessageViewModel;
+        private bool _isRankingPopupOpen;
+        private RankingViewModel _rankingViewModel;
 
         public UserProfileDto UserProfileData
         {
@@ -212,12 +214,45 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
+        public bool IsRankingPopupOpen
+        {
+            get
+            {
+                return _isRankingPopupOpen;
+            }
+            set
+            {
+                if (_isRankingPopupOpen != value)
+                {
+                    _isRankingPopupOpen = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public RankingViewModel RankingViewModel
+        {
+            get
+            {
+                return _rankingViewModel;
+            }
+            set
+            {
+                if (_rankingViewModel != value)
+                {
+                    _rankingViewModel = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public ICommand SettingsCommand { get; }
         public ICommand FriendsCommand { get; }
         public ICommand ChatCommand { get; }
         public ICommand PlayCommand { get; }
         public ICommand CreateGameCommand { get; }
         public ICommand EditProfileCommand { get; }
+        public ICommand RankingCommand { get; }
         public ICommand SelectAvatarCommand { get; }
         public ICommand CloseWindowCommand { get; }
         public ICommand MaximizeWindowCommand { get; }
@@ -231,6 +266,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             PlayCommand = new RelayCommand(ExecutePlay);
             CreateGameCommand = new RelayCommand(ExecuteCreateGame);
             EditProfileCommand = new RelayCommand(ExecuteEditProfile);
+            RankingCommand = new RelayCommand(ExecuteRanking);
             SelectAvatarCommand = new RelayCommand(ExecuteSelectAvatar);
             CloseWindowCommand = new RelayCommand(ExecuteCloseWindow);
             MaximizeWindowCommand = new RelayCommand(ExecuteMaximizeWindow);
@@ -248,6 +284,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 FriendsViewModel = new FriendsViewModel();
                 DirectMessageViewModel = new DirectMessageViewModel();
                 ConfigurationViewModel = new ConfigurationViewModel();
+                RankingViewModel = new RankingViewModel();
             }
             catch (Exception)
             {
@@ -455,6 +492,17 @@ namespace GuessMyMessClient.ViewModel.Lobby
             IsProfilePopupOpen = !IsProfilePopupOpen;
         }
 
+        private void ExecuteRanking(object parameter)
+        {
+            if (RankingViewModel == null)
+            {
+                RankingViewModel = new RankingViewModel();
+            }
+
+            CloseAllPopupsExcept("Ranking");
+            IsRankingPopupOpen = !IsRankingPopupOpen;
+        }
+
         private void CloseAllPopupsExcept(string except)
         {
             if (except != "Configuration")
@@ -475,6 +523,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
             if (except != "Profile")
             {
                 IsProfilePopupOpen = false;
+            }
+
+            if (except != "Ranking")
+            {
+                IsRankingPopupOpen = false;
             }
         }
 

@@ -169,4 +169,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDirectMessageDto" nillable="true" type="tns:ArrayOfDirectMessageDto" />
+  <xs:complexType name="FriendProfileDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderId" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialNetworks" nillable="true" type="tns:ArrayOfSocialNetworkDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FriendProfileDto" nillable="true" type="tns:FriendProfileDto" />
 </xs:schema>

@@ -1642,4 +1642,22 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="RankingButton" TargetType="Button" BasedOn="{StaticResource SidebarButtonBase}">
+        <Setter Property="Background" Value="#9C27B0"/>
+        <Setter Property="BorderBrush" Value="#7B1FA2"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsRankingPopupOpen}" Value="True">
+                <Setter Property="Background" Value="#FFFDE7"/>
+                <Setter Property="BorderBrush" Value="#FFA000"/>
+            </DataTrigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#BA68C8"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#7B1FA2"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
