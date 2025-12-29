@@ -389,6 +389,45 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="WordRadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="Background" Value="#AB47BC"/>
+        <Setter Property="BorderBrush" Value="#7B1FA2"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="Width" Value="280"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="2"
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#BA68C8"/>
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FFD700"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="#FFA000"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="TextBox" TargetType="TextBox">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>

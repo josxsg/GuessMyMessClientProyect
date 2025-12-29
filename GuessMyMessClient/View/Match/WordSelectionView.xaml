@@ -55,25 +55,28 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0"
+                    <RadioButton Grid.Column="0"
+                            GroupName="WordsGroup"
                             Content="{Binding Word1}" 
                             Command="{Binding SelectWordCommand}"
                             CommandParameter="{Binding Word1}"
-                            Style="{StaticResource WordToSelect}" 
+                            Style="{StaticResource WordRadioButtonStyle}" 
                             HorizontalAlignment="Right" Margin="0,0,15,0"/>
 
-                    <Button Grid.Column="1"
+                    <RadioButton Grid.Column="1"
+                            GroupName="WordsGroup"
                             Content="{Binding Word2}" 
                             Command="{Binding SelectWordCommand}"
                             CommandParameter="{Binding Word2}"
-                            Style="{StaticResource WordToSelect}" 
+                            Style="{StaticResource WordRadioButtonStyle}" 
                             HorizontalAlignment="Left" Margin="15,0,0,0"/>
                 </Grid>
 
-                <Button Content="{Binding Word3}" 
+                <RadioButton GroupName="WordsGroup"
+                        Content="{Binding Word3}" 
                         Command="{Binding SelectWordCommand}"
                         CommandParameter="{Binding Word3}"
-                        Style="{StaticResource WordToSelect}" 
+                        Style="{StaticResource WordRadioButtonStyle}" 
                         HorizontalAlignment="Center"/>
 
             </StackPanel>

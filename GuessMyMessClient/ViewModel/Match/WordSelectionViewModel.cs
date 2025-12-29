@@ -19,6 +19,7 @@ namespace GuessMyMessClient.ViewModel.Match
     {
         private DispatcherTimer _countdownTimer;
         private bool _wordHasBeenSelected;
+        private string _selectedWordToNavigate;
 
         private string _word1;
         public string Word1
@@ -117,9 +118,10 @@ namespace GuessMyMessClient.ViewModel.Match
                 {
                     if (words != null && words.Length >= 3)
                     {
-                        Word1 = words[0].WordKey;
-                        Word2 = words[1].WordKey;
-                        Word3 = words[2].WordKey;
+                        Word1 = GetTranslatedWord(words[0].WordKey);
+                        Word2 = GetTranslatedWord(words[1].WordKey);
+                        Word3 = GetTranslatedWord(words[2].WordKey);
+
                         _countdownTimer.Start();
                     }
                     else
@@ -152,6 +154,15 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
+        private string GetTranslatedWord(string key)
+        {
+            if (string.IsNullOrEmpty(key)) return string.Empty;
+
+            string translated = Lang.ResourceManager.GetString(key);
+
+            return string.IsNullOrEmpty(translated) ? key : translated;
+        }
+
         private void OnTimerTick(object sender, EventArgs e)
         {
             CountdownTime--;
@@ -160,54 +171,63 @@ namespace GuessMyMessClient.ViewModel.Match
             {
                 _countdownTimer.Stop();
 
-                if (!string.IsNullOrEmpty(Word1))
+                // AHORA SÍ BLOQUEAMOS LA LÓGICA
+                _wordHasBeenSelected = true;
+
+                // 1. Verificar si el usuario seleccionó algo manualmente
+                if (!string.IsNullOrEmpty(_selectedWordToNavigate))
                 {
-                    HandleWordSelection(Word1);
+                    Cleanup();
+                    ServiceLocator.Navigation.NavigateToDrawingScreen(_selectedWordToNavigate);
                 }
+                // 2. Si no seleccionó nada, autoseleccionar la palabra 1
                 else
                 {
-                    MessageBox.Show(
-                        Lang.alertWordAutoSelectFailed, 
-                        Lang.alertErrorTitle, 
-                        MessageBoxButton.OK, 
-                        MessageBoxImage.Error);
-                    HandleConnectionLost();
+                    if (!string.IsNullOrEmpty(Word1))
+                    {
+                        // Intentamos enviar al servidor la selección automática
+                        try
+                        {
+                            GameClientManager.Instance.SelectWord(Word1);
+                        }
+                        catch { } // Ignorar error en autoselección final
+
+                        Cleanup();
+                        ServiceLocator.Navigation.NavigateToDrawingScreen(Word1);
+                    }
+                    else
+                    {
+                        // Caso extremo: no cargaron palabras y se acabó el tiempo
+                        MessageBox.Show(Lang.alertWordAutoSelectFailed, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                        HandleConnectionLost();
+                    }
                 }
             }
         }
-
         private void SelectWord(object parameter)
         {
-            _countdownTimer.Stop();
-            HandleWordSelection(parameter as string);
+            if (CountdownTime > 0)
+            {
+                HandleWordSelection(parameter as string);
+            }
         }
 
         private void HandleWordSelection(string selectedWord)
         {
-            if (_wordHasBeenSelected)
-            {
-                return;
-            }
-            _wordHasBeenSelected = true;
-            _countdownTimer?.Stop();
-
             if (string.IsNullOrEmpty(selectedWord))
             {
                 return;
             }
 
+            // Actualizamos la variable local. Visualmente el RadioButton ya se puso amarillo por el XAML.
+            _selectedWordToNavigate = selectedWord;
+
             try
             {
+                // OPCIONAL: ¿Quieres avisar al servidor cada vez que cambia de opinión?
+                // Si sí, deja esta línea. Si prefieres enviar solo al final, muévela a OnTimerTick.
+                // Generalmente está bien enviarla aquí para asegurar que el servidor tenga "algo" por si se desconecta.
                 GameClientManager.Instance.SelectWord(selectedWord);
-
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    Cleanup();
-
-                    ServiceLocator.Navigation.NavigateToDrawingScreen(selectedWord);
-
-                    
-                });
             }
             catch (Exception)
             {

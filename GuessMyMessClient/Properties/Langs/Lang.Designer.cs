@@ -1573,6 +1573,411 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Airplane.
+        /// </summary>
+        public static string GameWord_Airplane {
+            get {
+                return ResourceManager.GetString("GameWord_Airplane", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apple.
+        /// </summary>
+        public static string GameWord_Apple {
+            get {
+                return ResourceManager.GetString("GameWord_Apple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Astronaut.
+        /// </summary>
+        public static string GameWord_Astronaut {
+            get {
+                return ResourceManager.GetString("GameWord_Astronaut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Backpack.
+        /// </summary>
+        public static string GameWord_Backpack {
+            get {
+                return ResourceManager.GetString("GameWord_Backpack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ball.
+        /// </summary>
+        public static string GameWord_Ball {
+            get {
+                return ResourceManager.GetString("GameWord_Ball", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bicycle.
+        /// </summary>
+        public static string GameWord_Bicycle {
+            get {
+                return ResourceManager.GetString("GameWord_Bicycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Boat.
+        /// </summary>
+        public static string GameWord_Boat {
+            get {
+                return ResourceManager.GetString("GameWord_Boat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Book.
+        /// </summary>
+        public static string GameWord_Book {
+            get {
+                return ResourceManager.GetString("GameWord_Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bridge.
+        /// </summary>
+        public static string GameWord_Bridge {
+            get {
+                return ResourceManager.GetString("GameWord_Bridge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Car.
+        /// </summary>
+        public static string GameWord_Car {
+            get {
+                return ResourceManager.GetString("GameWord_Car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Castle.
+        /// </summary>
+        public static string GameWord_Castle {
+            get {
+                return ResourceManager.GetString("GameWord_Castle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cat.
+        /// </summary>
+        public static string GameWord_Cat {
+            get {
+                return ResourceManager.GetString("GameWord_Cat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Chair.
+        /// </summary>
+        public static string GameWord_Chair {
+            get {
+                return ResourceManager.GetString("GameWord_Chair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clock.
+        /// </summary>
+        public static string GameWord_Clock {
+            get {
+                return ResourceManager.GetString("GameWord_Clock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Computer.
+        /// </summary>
+        public static string GameWord_Computer {
+            get {
+                return ResourceManager.GetString("GameWord_Computer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cup.
+        /// </summary>
+        public static string GameWord_Cup {
+            get {
+                return ResourceManager.GetString("GameWord_Cup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dinosaur.
+        /// </summary>
+        public static string GameWord_Dinosaur {
+            get {
+                return ResourceManager.GetString("GameWord_Dinosaur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dog.
+        /// </summary>
+        public static string GameWord_Dog {
+            get {
+                return ResourceManager.GetString("GameWord_Dog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dragon.
+        /// </summary>
+        public static string GameWord_Dragon {
+            get {
+                return ResourceManager.GetString("GameWord_Dragon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Electricity.
+        /// </summary>
+        public static string GameWord_Electricity {
+            get {
+                return ResourceManager.GetString("GameWord_Electricity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fire.
+        /// </summary>
+        public static string GameWord_Fire {
+            get {
+                return ResourceManager.GetString("GameWord_Fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fish.
+        /// </summary>
+        public static string GameWord_Fish {
+            get {
+                return ResourceManager.GetString("GameWord_Fish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Flower.
+        /// </summary>
+        public static string GameWord_Flower {
+            get {
+                return ResourceManager.GetString("GameWord_Flower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ghost.
+        /// </summary>
+        public static string GameWord_Ghost {
+            get {
+                return ResourceManager.GetString("GameWord_Ghost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guitar.
+        /// </summary>
+        public static string GameWord_Guitar {
+            get {
+                return ResourceManager.GetString("GameWord_Guitar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Helicopter.
+        /// </summary>
+        public static string GameWord_Helicopter {
+            get {
+                return ResourceManager.GetString("GameWord_Helicopter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a House.
+        /// </summary>
+        public static string GameWord_House {
+            get {
+                return ResourceManager.GetString("GameWord_House", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Key.
+        /// </summary>
+        public static string GameWord_Key {
+            get {
+                return ResourceManager.GetString("GameWord_Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ladder.
+        /// </summary>
+        public static string GameWord_Ladder {
+            get {
+                return ResourceManager.GetString("GameWord_Ladder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Love.
+        /// </summary>
+        public static string GameWord_Love {
+            get {
+                return ResourceManager.GetString("GameWord_Love", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Magic.
+        /// </summary>
+        public static string GameWord_Magic {
+            get {
+                return ResourceManager.GetString("GameWord_Magic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Microscope.
+        /// </summary>
+        public static string GameWord_Microscope {
+            get {
+                return ResourceManager.GetString("GameWord_Microscope", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Moon.
+        /// </summary>
+        public static string GameWord_Moon {
+            get {
+                return ResourceManager.GetString("GameWord_Moon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Phone.
+        /// </summary>
+        public static string GameWord_Phone {
+            get {
+                return ResourceManager.GetString("GameWord_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pizza.
+        /// </summary>
+        public static string GameWord_Pizza {
+            get {
+                return ResourceManager.GetString("GameWord_Pizza", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PS5.
+        /// </summary>
+        public static string GameWord_PS5 {
+            get {
+                return ResourceManager.GetString("GameWord_PS5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rain.
+        /// </summary>
+        public static string GameWord_Rain {
+            get {
+                return ResourceManager.GetString("GameWord_Rain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Scientist.
+        /// </summary>
+        public static string GameWord_Scientist {
+            get {
+                return ResourceManager.GetString("GameWord_Scientist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Spider.
+        /// </summary>
+        public static string GameWord_Spider {
+            get {
+                return ResourceManager.GetString("GameWord_Spider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Star.
+        /// </summary>
+        public static string GameWord_Star {
+            get {
+                return ResourceManager.GetString("GameWord_Star", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Statue of Liberty.
+        /// </summary>
+        public static string GameWord_StatueOfLiberty {
+            get {
+                return ResourceManager.GetString("GameWord_StatueOfLiberty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Storm.
+        /// </summary>
+        public static string GameWord_Storm {
+            get {
+                return ResourceManager.GetString("GameWord_Storm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sun.
+        /// </summary>
+        public static string GameWord_Sun {
+            get {
+                return ResourceManager.GetString("GameWord_Sun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Time.
+        /// </summary>
+        public static string GameWord_Time {
+            get {
+                return ResourceManager.GetString("GameWord_Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tree.
+        /// </summary>
+        public static string GameWord_Tree {
+            get {
+                return ResourceManager.GetString("GameWord_Tree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Chat.
         /// </summary>
         public static string globalBtnChat {

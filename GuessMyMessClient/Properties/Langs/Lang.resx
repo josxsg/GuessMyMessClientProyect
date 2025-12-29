@@ -900,4 +900,139 @@
   <data name="alertLastNameInvalid" xml:space="preserve">
     <value>Invalid last name.</value>
   </data>
+  <data name="GameWord_Sun" xml:space="preserve">
+    <value>Sun</value>
+  </data>
+  <data name="GameWord_House" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="GameWord_Tree" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="GameWord_Ball" xml:space="preserve">
+    <value>Ball</value>
+  </data>
+  <data name="GameWord_Fish" xml:space="preserve">
+    <value>Fish</value>
+  </data>
+  <data name="GameWord_Flower" xml:space="preserve">
+    <value>Flower</value>
+  </data>
+  <data name="GameWord_Star" xml:space="preserve">
+    <value>Star</value>
+  </data>
+  <data name="GameWord_Moon" xml:space="preserve">
+    <value>Moon</value>
+  </data>
+  <data name="GameWord_Car" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="GameWord_Boat" xml:space="preserve">
+    <value>Boat</value>
+  </data>
+  <data name="GameWord_Apple" xml:space="preserve">
+    <value>Apple</value>
+  </data>
+  <data name="GameWord_Cup" xml:space="preserve">
+    <value>Cup</value>
+  </data>
+  <data name="GameWord_Chair" xml:space="preserve">
+    <value>Chair</value>
+  </data>
+  <data name="GameWord_Cat" xml:space="preserve">
+    <value>Cat</value>
+  </data>
+  <data name="GameWord_Dog" xml:space="preserve">
+    <value>Dog</value>
+  </data>
+  <data name="GameWord_Bicycle" xml:space="preserve">
+    <value>Bicycle</value>
+  </data>
+  <data name="GameWord_Computer" xml:space="preserve">
+    <value>Computer</value>
+  </data>
+  <data name="GameWord_Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="GameWord_Rain" xml:space="preserve">
+    <value>Rain</value>
+  </data>
+  <data name="GameWord_Bridge" xml:space="preserve">
+    <value>Bridge</value>
+  </data>
+  <data name="GameWord_Clock" xml:space="preserve">
+    <value>Clock</value>
+  </data>
+  <data name="GameWord_Guitar" xml:space="preserve">
+    <value>Guitar</value>
+  </data>
+  <data name="GameWord_Airplane" xml:space="preserve">
+    <value>Airplane</value>
+  </data>
+  <data name="GameWord_Book" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="GameWord_Ladder" xml:space="preserve">
+    <value>Ladder</value>
+  </data>
+  <data name="GameWord_Fire" xml:space="preserve">
+    <value>Fire</value>
+  </data>
+  <data name="GameWord_Ghost" xml:space="preserve">
+    <value>Ghost</value>
+  </data>
+  <data name="GameWord_Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="GameWord_Spider" xml:space="preserve">
+    <value>Spider</value>
+  </data>
+  <data name="GameWord_Pizza" xml:space="preserve">
+    <value>Pizza</value>
+  </data>
+  <data name="GameWord_Astronaut" xml:space="preserve">
+    <value>Astronaut</value>
+  </data>
+  <data name="GameWord_Castle" xml:space="preserve">
+    <value>Castle</value>
+  </data>
+  <data name="GameWord_Dragon" xml:space="preserve">
+    <value>Dragon</value>
+  </data>
+  <data name="GameWord_Dinosaur" xml:space="preserve">
+    <value>Dinosaur</value>
+  </data>
+  <data name="GameWord_Electricity" xml:space="preserve">
+    <value>Electricity</value>
+  </data>
+  <data name="GameWord_StatueOfLiberty" xml:space="preserve">
+    <value>Statue of Liberty</value>
+  </data>
+  <data name="GameWord_Helicopter" xml:space="preserve">
+    <value>Helicopter</value>
+  </data>
+  <data name="GameWord_Microscope" xml:space="preserve">
+    <value>Microscope</value>
+  </data>
+  <data name="GameWord_Scientist" xml:space="preserve">
+    <value>Scientist</value>
+  </data>
+  <data name="GameWord_Storm" xml:space="preserve">
+    <value>Storm</value>
+  </data>
+  <data name="GameWord_Love" xml:space="preserve">
+    <value>Love</value>
+  </data>
+  <data name="GameWord_Backpack" xml:space="preserve">
+    <value>Backpack</value>
+  </data>
+  <data name="GameWord_PS5" xml:space="preserve">
+    <value>PS5</value>
+  </data>
+  <data name="GameWord_Magic" xml:space="preserve">
+    <value>Magic</value>
+  </data>
+  <data name="GameWord_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
 </root>
