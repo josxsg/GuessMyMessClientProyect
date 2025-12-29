@@ -882,4 +882,22 @@
   <data name="rankingBtnRefresh" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="alertUsernameEmpty" xml:space="preserve">
+    <value>The username cannot be empty.</value>
+  </data>
+  <data name="alertUsernameTooShort" xml:space="preserve">
+    <value>The username must be at least 4 characters.</value>
+  </data>
+  <data name="alertUsernameInvalidChars" xml:space="preserve">
+    <value>The username cannot include symbols nor spaces</value>
+  </data>
+  <data name="alertNameInvalid" xml:space="preserve">
+    <value>Invalid name.</value>
+  </data>
+  <data name="alertUsernameGenericError" xml:space="preserve">
+    <value>The username does not meet the requirements.</value>
+  </data>
+  <data name="alertLastNameInvalid" xml:space="preserve">
+    <value>Invalid last name.</value>
+  </data>
 </root>

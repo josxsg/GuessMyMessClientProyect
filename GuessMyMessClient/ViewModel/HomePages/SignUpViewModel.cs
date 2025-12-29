@@ -266,10 +266,46 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 return;
             }
 
+            FirstName = FirstName?.Trim();
+            LastName = LastName?.Trim();
+            Username = Username?.Trim();
+            Email = Email?.Trim();
+
             if (!InputValidator.IsValidEmail(Email))
             {
                 MessageBox.Show(
                     Lang.alertInvalidEmailFormat,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!InputValidator.IsValidName(FirstName))
+            {
+                MessageBox.Show(
+                    Lang.alertNameInvalid,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!InputValidator.IsValidName(LastName))
+            {
+                MessageBox.Show(
+                    Lang.alertLastNameInvalid,
+                    Lang.alertInputErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!InputValidator.IsValidUsername(Username, out string usernameErrorKey))
+            {
+                string usernameErrorMessage = Lang.ResourceManager.GetString(usernameErrorKey) ?? Lang.alertUsernameGenericError;
+                MessageBox.Show(
+                    usernameErrorMessage,
                     Lang.alertInputErrorTitle,
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning);

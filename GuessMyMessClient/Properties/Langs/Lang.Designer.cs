@@ -556,6 +556,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invalid last name..
+        /// </summary>
+        public static string alertLastNameInvalid {
+            get {
+                return ResourceManager.GetString("alertLastNameInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Internal Error: The main lobby window could not be found to close..
         /// </summary>
         public static string alertLobbyWindowNotFoundError {
@@ -579,6 +588,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertMatchmakingError {
             get {
                 return ResourceManager.GetString("alertMatchmakingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid name..
+        /// </summary>
+        public static string alertNameInvalid {
+            get {
+                return ResourceManager.GetString("alertNameInvalid", resourceCulture);
             }
         }
         
@@ -885,6 +903,42 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertUnknownErrorMessage {
             get {
                 return ResourceManager.GetString("alertUnknownErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The username cannot be empty..
+        /// </summary>
+        public static string alertUsernameEmpty {
+            get {
+                return ResourceManager.GetString("alertUsernameEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The username does not meet the requirements..
+        /// </summary>
+        public static string alertUsernameGenericError {
+            get {
+                return ResourceManager.GetString("alertUsernameGenericError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The username cannot include symbols nor spaces.
+        /// </summary>
+        public static string alertUsernameInvalidChars {
+            get {
+                return ResourceManager.GetString("alertUsernameInvalidChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The username must be at least 4 characters..
+        /// </summary>
+        public static string alertUsernameTooShort {
+            get {
+                return ResourceManager.GetString("alertUsernameTooShort", resourceCulture);
             }
         }
         

@@ -93,7 +93,7 @@
                     <TextBlock Text="{x:Static language:Lang.loginLbUsernameOrEmail}" Style="{StaticResource FormLabelText}"/>
                 </Border>
                 <TextBox Text="{Binding UsernameOrEmail, UpdateSourceTrigger=PropertyChanged}" 
-                         Style="{StaticResource InputField}" 
+                         Style="{StaticResource InputField}" MaxLength="100"
                          Height="50" Margin="0,0,0,25"/>
 
                 <Border Style="{StaticResource FormLabelBorder}">

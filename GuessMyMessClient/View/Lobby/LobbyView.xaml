@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GuessMyMessClient.View.Lobby"
         mc:Ignorable="d"
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
+        xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
         d:DataContext="{d:DesignInstance Type=vm:LobbyViewModel, IsDesignTimeCreatable=True}"
         Title="Lobby" Height="600" Width="950"
@@ -142,6 +143,7 @@
              FontSize="24" 
              Width="340"
              Height="55"
+             helpers:TextBoxHelper.ShowCounter="False"
              Margin="0,20,0,0"/>
         </StackPanel>
 

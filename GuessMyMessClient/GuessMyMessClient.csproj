@@ -165,6 +165,7 @@
     <Compile Include="ViewModel\Support\Navigation\WpfNavigationService.cs" />
     <Compile Include="ViewModel\Support\PasswordBoxHelper.cs" />
     <Compile Include="ViewModel\Support\ServiceLocator.cs" />
+    <Compile Include="ViewModel\Support\TextBoxHelper.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs" />
     <Compile Include="View\HomePages\GuestLoginView.xaml.cs">
