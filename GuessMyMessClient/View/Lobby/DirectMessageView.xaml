@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GuessMyMessClient.View.Lobby"
+             xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
              mc:Ignorable="d" 
              xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
              d:DataContext="{d:DesignInstance Type=vm:DirectMessageViewModel, IsDesignTimeCreatable=True}"
@@ -68,7 +69,7 @@
                 <TextBox Grid.Column="0"
                          Height="45"
                          Margin="0,0,10,0" 
-                         Style="{StaticResource InputField}"
+                         Style="{StaticResource InputField}" MaxLength="150"
                          Text="{Binding MessageText, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Button Grid.Column="1"

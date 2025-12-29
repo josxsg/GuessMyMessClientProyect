@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby.Dialogs" 
+        xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:InviteByEmailViewModel, IsDesignTimeCreatable=True}"
         Style="{StaticResource DialogWindowStyle}"
@@ -21,7 +22,7 @@
 
                 <TextBox Style="{StaticResource SearchTextBoxStyle}" 
                          Tag="{x:Static language:Lang.globalTxtEmail}"
-                         Text="{Binding TargetEmail, UpdateSourceTrigger=PropertyChanged}" 
+                         Text="{Binding TargetEmail, UpdateSourceTrigger=PropertyChanged}" MaxLength="100"
                          Margin="0,20"/>
 
                 <Button Content="{x:Static language:Lang.socialBtnSendInvite}" 

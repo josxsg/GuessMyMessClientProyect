@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby.Dialogs" 
+                xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:VerifyByCodeViewModel, IsDesignTimeCreatable=True}"
         Style="{StaticResource DialogWindowStyle}"
@@ -37,7 +38,7 @@
                          FontSize="24" 
                          FontWeight="Bold" 
                          Foreground="Gray" 
-                         Height="60" 
+                         Height="60" MaxLength="6"
                          Width="250"/>
 
                 <Button Content="{x:Static language:Lang.globalBtnVerify}" 

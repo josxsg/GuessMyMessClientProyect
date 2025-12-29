@@ -6,6 +6,7 @@
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby.Dialogs" 
         mc:Ignorable="d"
+                xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
         d:DataContext="{d:DesignInstance Type=vm:VerifyChangesByCodeViewModel, IsDesignTimeCreatable=True}"
         Style="{StaticResource DialogWindowStyle}"
         WindowStartupLocation="CenterScreen" Height="280" Width="450">

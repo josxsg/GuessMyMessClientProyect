@@ -214,7 +214,7 @@
 
                     <TextBox Text="{Binding MatchCode, UpdateSourceTrigger=PropertyChanged}" 
                              Style="{StaticResource InputField}" 
-                             Height="60" Width="400" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,30,0,0"/>
+                             Height="60" Width="400" MaxLength="8" FontSize="32" FontWeight="Bold" TextAlignment="Center" Margin="0,30,0,0"/>
 
                     <Button Content="{x:Static language:Lang.globalBtnJoin}" 
                             Style="{StaticResource JoinButton}" 

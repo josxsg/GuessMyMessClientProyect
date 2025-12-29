@@ -69,7 +69,7 @@
             <TextBox Grid.Column="0"
                      Style="{StaticResource InputField}"
                      Text="{Binding UserGuess, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                     VerticalAlignment="Center"
+                     VerticalAlignment="Center" MaxLength="25"
                      Height="50" Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,20,0"/>
 
             <Button Grid.Column="1"

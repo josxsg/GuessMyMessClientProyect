@@ -699,7 +699,7 @@
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Foreground" Value="#FF424242"/>
         <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Padding" Value="15,0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Height" Value="50"/>
@@ -1190,10 +1190,12 @@
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Foreground" Value="#333"/>
         <Setter Property="FontFamily" Value="Arial Rounded MT Bold"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="10"/>
         <Setter Property="Padding" Value="10,0"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+        <Setter Property="helpers:TextBoxHelper.ShowCounter" Value="True"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -1233,8 +1235,33 @@
                                 </TextBlock>
 
                                 <ScrollViewer x:Name="PART_ContentHost" 
-                                          Margin="0"
+                                          Margin="0,0,45,0" 
                                           VerticalAlignment="Center"/>
+
+                                <TextBlock VerticalAlignment="Center"
+                                       HorizontalAlignment="Right"
+                                       Margin="0,0,10,0"
+                                       FontSize="10"
+                                       Foreground="#AAA"
+                                       IsHitTestVisible="False">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}/{1}">
+                                            <Binding Path="(helpers:TextBoxHelper.CurrentLength)" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                            <Binding Path="MaxLength" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=(helpers:TextBoxHelper.ShowCounter), RelativeSource={RelativeSource TemplatedParent}}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
                             </Grid>
                         </Border>
                     </Grid>
@@ -1255,7 +1282,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    
     <Style x:Key="BlueIconButton" TargetType="Button">
         <Setter Property="Background" Value="#FF42A5F5"/>
         <Setter Property="Cursor" Value="Hand"/>

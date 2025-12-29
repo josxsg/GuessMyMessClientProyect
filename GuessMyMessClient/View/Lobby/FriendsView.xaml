@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:GuessMyMessClient.View.Lobby"
+             xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
              mc:Ignorable="d"
              xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
              xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
@@ -152,7 +153,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" Style="{StaticResource SearchTextBoxStyle}"
-                         Tag="{x:Static language:Lang.socialTfSearchPlayers}"
+                         Tag="{x:Static language:Lang.socialTfSearchPlayers}" MaxLength="50"
                          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
                 <Button Grid.Column="1" Style="{StaticResource BlueIconButton}" 
                         Command="{Binding SearchCommand}" ToolTip="{x:Static language:Lang.socialBtnSearch}">

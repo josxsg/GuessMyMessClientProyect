@@ -147,7 +147,7 @@
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static language:Lang.globalLbName}" Style="{StaticResource ConfigLabel}"
                                        Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MatchName}" Style="{StaticResource InputField}" 
-                                     Height="45" Margin="0,0,0,15" Width="Auto" HorizontalAlignment="Stretch"
+                                     Height="45" Margin="0,0,0,15" Width="Auto" HorizontalAlignment="Stretch" MaxLength="50"
                                      Visibility="{Binding IsPublicMatch, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static language:Lang.createGameLbMaxPlayers}" Style="{StaticResource ConfigLabel}"/>

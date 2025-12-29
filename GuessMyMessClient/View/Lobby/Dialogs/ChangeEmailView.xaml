@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
         xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby.Dialogs" 
+        xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:ChangeEmailViewModel, IsDesignTimeCreatable=True}"
         Style="{StaticResource DialogWindowStyle}"
@@ -32,7 +33,7 @@
                            FontFamily="Arial Rounded MT Bold"/>
 
                 <TextBox Style="{StaticResource InputField}" 
-                         Text="{Binding NewEmail, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding NewEmail, UpdateSourceTrigger=PropertyChanged}" MaxLength="100"
                          Width="300"/>
 
                 <Button Content="{x:Static language:Lang.globalBtnConfirm}" 

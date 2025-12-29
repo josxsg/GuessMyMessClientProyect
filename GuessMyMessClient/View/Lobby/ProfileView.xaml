@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:GuessMyMessClient.View.Lobby"
+             xmlns:helpers="clr-namespace:GuessMyMessClient.ViewModel.Support"
              mc:Ignorable="d"
              xmlns:language="clr-namespace:GuessMyMessClient.Properties.Langs"
              xmlns:vm="clr-namespace:GuessMyMessClient.ViewModel.Lobby"
@@ -31,7 +32,7 @@
                 <TextBlock Text="{x:Static language:Lang.globalLbName}" Style="{StaticResource PopupSubtitleText}"/>
             </Border>
             <TextBox Text="{Binding FirstName}" 
-                     Style="{StaticResource InputField}"
+                     Style="{StaticResource InputField}" helpers:TextBoxHelper.ShowCounter="False"
                      IsReadOnly="False" 
                      Width="280" Height="40" Margin="0,0,0,5"/>
 
@@ -40,7 +41,7 @@
             </Border>
             <TextBox Text="{Binding LastName}" 
                      Style="{StaticResource InputField}"
-                     IsReadOnly="False" 
+                     IsReadOnly="False"  helpers:TextBoxHelper.ShowCounter="False"
                      Width="280" Height="40" Margin="0,0,0,5"/>
 
             <Border Style="{StaticResource PopupSubtitleBorder}">
@@ -48,7 +49,7 @@
             </Border>
             <TextBox Text="{Binding Email, Mode=OneWay}" 
                      Style="{StaticResource InputField}"
-                     IsReadOnly="True" 
+                     IsReadOnly="True"  helpers:TextBoxHelper.ShowCounter="False"
                      Width="280" Height="40" Margin="0,0,0,15"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,10">
