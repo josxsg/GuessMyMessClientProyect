@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using GuessMyMessClient.GameService;
+using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support;
+using GuessMyMessClient.ViewModel.Support.Navigation; 
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using GuessMyMessClient.GameService;
-using GuessMyMessClient.ViewModel.Support;
-using GuessMyMessClient.ViewModel.Session;
-using GuessMyMessClient.ViewModel.Support.Navigation; 
 
 namespace GuessMyMessClient.ViewModel.Match
 {
@@ -106,7 +106,14 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             GameClientManager.Instance.Disconnect();
 
-            Application.Current.Shutdown();
+            if (SessionManager.Instance.IsGuest)
+            {
+                ServiceLocator.Navigation.NavigateToWelcome();
+            }
+            else
+            {
+                ServiceLocator.Navigation.NavigateToLobby();
+            }
         }
     }
 }

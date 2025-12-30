@@ -26,5 +26,9 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
         void CloseCurrentGameWindow();
 
         void NavigateToWordSelection();
+
+        void NavigateToLobby();
+
+        void NavigateToWelcome();
     }
 }

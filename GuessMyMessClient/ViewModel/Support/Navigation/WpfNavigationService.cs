@@ -4,6 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using GuessMyMessClient.GameService;
+using GuessMyMessClient.View.HomePages;
+using GuessMyMessClient.View.Lobby;
 using GuessMyMessClient.View.Match;
 using GuessMyMessClient.ViewModel.Match;
 
@@ -112,6 +114,28 @@ namespace GuessMyMessClient.ViewModel.Support.Navigation
                 CloseCurrentGameWindow();
                 var vm = new EndOfMatchViewModel(finalScores?.ToList());
                 var view = new EndOfMatchView { DataContext = vm };
+                view.Show();
+                _currentMatchWindow = view;
+            });
+        }
+
+        public void NavigateToLobby()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CloseCurrentGameWindow();
+                var view = new LobbyView();
+                view.Show();
+                _currentMatchWindow = view;
+            });
+        }
+
+        public void NavigateToWelcome()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CloseCurrentGameWindow();
+                var view = new WelcomeView();
                 view.Show();
                 _currentMatchWindow = view;
             });
