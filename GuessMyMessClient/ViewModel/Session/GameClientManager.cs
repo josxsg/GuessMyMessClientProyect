@@ -22,14 +22,12 @@ namespace GuessMyMessClient.ViewModel.Session
         private GameServiceClient _client;
         private string _currentUsername;
         private string _currentMatchId;
-
+        private bool _isExiting = false;
         private const string EndpointName = "NetTcpBinding_IGameService";
-
         public string GetCurrentUsername()
         {
             return _currentUsername;
         }
-
         public bool IsConnected => _client != null && _client.State == CommunicationState.Opened;
 
         public event EventHandler<RoundStartEventArgs> RoundStart;
@@ -41,8 +39,22 @@ namespace GuessMyMessClient.ViewModel.Session
         public event EventHandler<AnswersPhaseStartEventArgs> AnswersPhaseStart;
         public event EventHandler<ShowNextDrawingEventArgs> ShowNextDrawing;
 
+        public void PrepareForExit()
+        {
+            _isExiting = true;
+            RoundStart = null;
+            DrawingPhaseStart = null;
+            GuessingPhaseStart = null;
+            GameEnd = null;
+            ConnectionLost = null;
+            InGameMessageReceived = null;
+            AnswersPhaseStart = null;
+            ShowNextDrawing = null;
+        }
+
         public void Connect(string username, string matchId)
         {
+            _isExiting = false;
             try
             {
                 if (IsConnected)
@@ -171,12 +183,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                HandleCommunicationError(true);
+                SessionManager.Instance.HandleServerDisconnect();
                 return null;
             }
         }
@@ -193,11 +200,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error); HandleCommunicationError(true);
+                SessionManager.Instance.HandleServerDisconnect();
             }
         }
 
@@ -213,12 +216,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                HandleCommunicationError(true);
+                SessionManager.Instance.HandleServerDisconnect();
             }
         }
 
@@ -234,12 +232,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                HandleCommunicationError(true);
+                SessionManager.Instance.HandleServerDisconnect();
             }
         }
 
@@ -255,41 +248,77 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error); HandleCommunicationError(true);
+                SessionManager.Instance.HandleServerDisconnect();
             }
         }
 
         public void OnRoundStart(int roundNumber, string[] wordOptions)
         {
+            if (_isExiting)
+            {
+                return;
+            }
+
             RoundStart?.Invoke(this, new RoundStartEventArgs { RoundNumber = roundNumber, WordOptions = wordOptions });
         }
 
         public void OnDrawingPhaseStart(int durationSeconds)
         {
+            if (_isExiting)
+            {
+                return;
+            }
+
             DrawingPhaseStart?.Invoke(this, new DrawingPhaseStartEventArgs { DurationSeconds = durationSeconds });
         }
 
         public void OnGuessingPhaseStart(DrawingDto drawing)
         {
+            if (_isExiting)
+            {
+                return;
+            }
+
             GuessingPhaseStart?.Invoke(this, new GuessingPhaseStartEventArgs { Drawing = drawing });
         }
 
         public void OnGameEnd(PlayerScoreDto[] finalScores)
         {
+            if (_isExiting)
+            {
+                return;
+            }
+
             GameEnd?.Invoke(this, new GameEndEventArgs { FinalScores = finalScores });
         }
 
         public void OnInGameMessageReceived(string sender, string message)
         {
-            InGameMessageReceived?.Invoke(this, new InGameMessageEventArgs { Sender = sender, Message = message });
+            if (_isExiting)
+            {
+                return;
+            }
+
+            Application.Current?.Dispatcher.Invoke(() =>
+            {
+                if (sender == "SYSTEM")
+                {
+                    HandleSystemMessage(message);
+                }
+                else
+                {
+                    InGameMessageReceived?.Invoke(this, new InGameMessageEventArgs { Sender = sender, Message = message });
+                }
+            });
         }
 
         public void OnAnswersPhaseStart(DrawingDto[] allDrawings, GuessDto[] allGuesses, PlayerScoreDto[] currentScores)
         {
+            if (_isExiting)
+            {
+                return;
+            }
+
             AnswersPhaseStart?.Invoke(this, new AnswersPhaseStartEventArgs
             {
                 AllDrawings = allDrawings,
@@ -300,43 +329,69 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void OnShowNextDrawing(DrawingDto nextDrawing)
         {
+            if (_isExiting)
+            {
+                return;
+            }
+
             ShowNextDrawing?.Invoke(this, new ShowNextDrawingEventArgs { NextDrawing = nextDrawing });
         }
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            HandleCommunicationError(true);
+            if (_isExiting)
+            {
+                return;
+            }
+
+            SessionManager.Instance.HandleServerDisconnect();
+        }
+
+        private void HandleSystemMessage(string message)
+        {
+            if (_isExiting)
+            {
+                return;
+            }
+
+            if (message.StartsWith("SYSTEM_LEAVE|"))
+            {
+                var parts = message.Split('|');
+                if (parts.Length > 1)
+                {
+                    string leaver = parts[1];
+                    string format = Lang.gamePlayerLeftMessage;
+                    string displayMsg = string.Format(format, leaver);
+
+                    InGameMessageReceived?.Invoke(this, new InGameMessageEventArgs
+                    {
+                        Sender = Lang.gameSystemTitle,
+                        Message = displayMsg
+                    });
+
+                    MessageBox.Show(
+                        displayMsg,
+                        Lang.gameSystemTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+            }
+            else if (message == "SYSTEM_NOT_ENOUGH_PLAYERS")
+            {
+                MessageBox.Show(
+                    Lang.gameEndedNotEnoughPlayers,
+                    Lang.gameSystemTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
         }
 
         private void Channel_Closed(object sender, EventArgs e)
         {
             if (_client != null)
             {
-                HandleCommunicationError(false);
+                CleanupConnection();
             }
-        }
-
-        private void HandleCommunicationError(bool showMessage)
-        {
-            if (_client == null)
-            {
-                return;
-            }
-
-            CleanupConnection();
-
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                if (showMessage)
-                {
-                    MessageBox.Show(
-                        Lang.alertConnectionErrorMessage,
-                        Lang.alertConnectionErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-                }
-                ConnectionLost?.Invoke();
-            });
         }
 
         public void StartGame(int totalRounds, List<string> players)
@@ -348,8 +403,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                HandleCommunicationError(true);
+                SessionManager.Instance.HandleServerDisconnect();
             }
         }
     }

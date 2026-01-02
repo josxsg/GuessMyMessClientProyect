@@ -386,10 +386,20 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
+        private void OnGameEnd_Handler(object sender, GameEndEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Cleanup();
+                ServiceLocator.Navigation.NavigateToEndOfMatch(e.FinalScores);
+            });
+        }
+
         private void SubscribeToGameEvents()
         {
             GameClientManager.Instance.GuessingPhaseStart += OnGuessingPhaseStart_FromServer;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost;
+            GameClientManager.Instance.GameEnd += OnGameEnd_Handler;
         }
 
         private void OnGuessingPhaseStart_FromServer(object sender, GuessingPhaseStartEventArgs e)
@@ -442,6 +452,7 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             GameClientManager.Instance.GuessingPhaseStart -= OnGuessingPhaseStart_FromServer;
             GameClientManager.Instance.ConnectionLost -= OnConnectionLost;
+            GameClientManager.Instance.GameEnd -= OnGameEnd_Handler;
         }
 
         private void CloseCurrentWindow()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Ink;
@@ -79,6 +80,7 @@ namespace GuessMyMessClient.ViewModel.Match
             GameClientManager.Instance.ShowNextDrawing += OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart += OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost_Handler;
+            GameClientManager.Instance.GameEnd += OnGameEnd_Handler;
         }
 
         private void LoadDrawingFromBytes(byte[] drawingData)
@@ -191,11 +193,21 @@ namespace GuessMyMessClient.ViewModel.Match
             });
         }
 
+        private void OnGameEnd_Handler(object sender, GameEndEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Cleanup();
+                ServiceLocator.Navigation.NavigateToEndOfMatch(e.FinalScores);
+            });
+        }
+
         public void Cleanup()
         {
             GameClientManager.Instance.ShowNextDrawing -= OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart -= OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost -= OnConnectionLost_Handler;
+            GameClientManager.Instance.GameEnd -= OnGameEnd_Handler;
         }
 
         private void ExecuteCloseWindow(object parameter)

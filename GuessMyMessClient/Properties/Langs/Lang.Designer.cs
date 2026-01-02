@@ -907,6 +907,15 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a This user already has an active session..
+        /// </summary>
+        public static string alertUserAlreadyLoggedIn {
+            get {
+                return ResourceManager.GetString("alertUserAlreadyLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The username cannot be empty..
         /// </summary>
         public static string alertUsernameEmpty {
@@ -1569,6 +1578,33 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string friendProfileLbTitle {
             get {
                 return ResourceManager.GetString("friendProfileLbTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The match has ended because there are not enough players left..
+        /// </summary>
+        public static string gameEndedNotEnoughPlayers {
+            get {
+                return ResourceManager.GetString("gameEndedNotEnoughPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} has left the match..
+        /// </summary>
+        public static string gamePlayerLeftMessage {
+            get {
+                return ResourceManager.GetString("gamePlayerLeftMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a System.
+        /// </summary>
+        public static string gameSystemTitle {
+            get {
+                return ResourceManager.GetString("gameSystemTitle", resourceCulture);
             }
         }
         
@@ -2532,6 +2568,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string rankingTitle {
             get {
                 return ResourceManager.GetString("rankingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Connection to server lost. Returning to welcome screen..
+        /// </summary>
+        public static string serverConnectionLostMessage {
+            get {
+                return ResourceManager.GetString("serverConnectionLostMessage", resourceCulture);
             }
         }
         

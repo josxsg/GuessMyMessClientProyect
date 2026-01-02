@@ -7,6 +7,8 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows;
+using GuessMyMessClient.ViewModel.Session;
+using System;
 
 namespace GuessMyMessClient
 {
@@ -50,7 +52,31 @@ namespace GuessMyMessClient
         {
             Log.Information("--- Cliente deteniéndose ---");
             Log.CloseAndFlush();
+            GameClientManager.Instance.PrepareForExit();
+            try
+            {
+                if (LobbyClientManager.Instance.IsConnected)
+                {
+                    LobbyClientManager.Instance.Disconnect();
+                }
+
+                if (GameClientManager.Instance.IsConnected)
+                {
+                    GameClientManager.Instance.Disconnect();
+                }
+
+                MatchmakingClientManager.Instance.Disconnect();
+
+                if (SocialClientManager.Instance.IsConnected)
+                {
+                    SocialClientManager.Instance.Cleanup();
+                }
+            }
+            catch
+            {
+            }
             base.OnExit(e);
+            Environment.Exit(0);
         }
     }
 }

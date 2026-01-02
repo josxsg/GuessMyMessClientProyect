@@ -93,12 +93,22 @@ namespace GuessMyMessClient.ViewModel.Match
             MinimizeWindowCommand = new RelayCommand(ExecuteMinimizeWindow);
 
             GameClientManager.Instance.ConnectionLost += HandleConnectionLost;
+            GameClientManager.Instance.GameEnd += OnGameEnd_Handler;
 
             _countdownTimer = new DispatcherTimer();
             _countdownTimer.Interval = TimeSpan.FromSeconds(1);
             _countdownTimer.Tick += OnTimerTick;
 
             Task.Run(() => LoadWordsAsync());
+        }
+
+        private void OnGameEnd_Handler(object sender, GameEndEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Cleanup();
+                ServiceLocator.Navigation.NavigateToEndOfMatch(e.FinalScores);
+            });
         }
 
         private bool CanSelectWord(object parameter)
@@ -262,6 +272,7 @@ namespace GuessMyMessClient.ViewModel.Match
                 _countdownTimer.Tick -= OnTimerTick;
             }
             GameClientManager.Instance.ConnectionLost -= HandleConnectionLost;
+            GameClientManager.Instance.GameEnd -= OnGameEnd_Handler;
         }
 
         private void ExecuteCloseWindow(object parameter)

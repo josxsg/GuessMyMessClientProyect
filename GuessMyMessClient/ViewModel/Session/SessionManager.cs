@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GuessMyMessClient.View.HomePages;
+using System.Windows;
+using GuessMyMessClient.Properties.Langs;
 
 namespace GuessMyMessClient.ViewModel.Session
 {
@@ -52,6 +55,46 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             CurrentUsername = null;
             IsGuest = false; 
+        }
+
+        public void HandleServerDisconnect()
+        {
+            if (string.IsNullOrEmpty(CurrentUsername))
+            {
+                return;
+            }
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CloseSession();
+                CleanupAllConnections();
+                string message = Lang.serverConnectionLostMessage;
+                string title = Lang.alertErrorTitle;
+                MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Warning);
+                NavigateToWelcomeView();
+            });
+        }
+
+        private void CleanupAllConnections()
+        {
+            SocialClientManager.Instance.Cleanup();
+            LobbyClientManager.Instance.Disconnect(); 
+            GameClientManager.Instance.Disconnect();
+            MatchmakingClientManager.Instance.Disconnect();
+        }
+
+        private void NavigateToWelcomeView()
+        {
+            WelcomeView welcomeView = new WelcomeView();
+            welcomeView.Show();
+
+            foreach (Window window in Application.Current.Windows.Cast<Window>().ToList())
+            {
+                if (window != welcomeView)
+                {
+                    window.Close();
+                }
+            }
         }
     }
 }

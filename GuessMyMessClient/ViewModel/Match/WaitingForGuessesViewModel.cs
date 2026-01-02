@@ -1,6 +1,7 @@
 ﻿using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.ViewModel.Support;
 using System;
+using System.Linq;
 using System.Windows;
 
 namespace GuessMyMessClient.ViewModel.Match
@@ -28,6 +29,7 @@ namespace GuessMyMessClient.ViewModel.Match
             GameClientManager.Instance.ShowNextDrawing += OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart += OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost += OnConnectionLost_Handler;
+            GameClientManager.Instance.GameEnd += OnGameEnd_Handler;
         }
 
         private void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
@@ -56,11 +58,21 @@ namespace GuessMyMessClient.ViewModel.Match
             ServiceLocator.Navigation.CloseCurrentGameWindow();
         }
 
+        private void OnGameEnd_Handler(object sender, GameEndEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Cleanup();
+                ServiceLocator.Navigation.NavigateToEndOfMatch(e.FinalScores);
+            });
+        }
+
         public void Cleanup()
         {
             GameClientManager.Instance.ShowNextDrawing -= OnShowNextDrawing_Handler;
             GameClientManager.Instance.AnswersPhaseStart -= OnAnswersPhaseStart_Handler;
             GameClientManager.Instance.ConnectionLost -= OnConnectionLost_Handler;
+            GameClientManager.Instance.GameEnd -= OnGameEnd_Handler;
         }
     }
 }

@@ -132,8 +132,7 @@ namespace GuessMyMessClient.ViewModel.Session
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            CleanupConnection();
-            OnConnectionLost?.Invoke();
+            SessionManager.Instance.HandleServerDisconnect();
         }
 
         private void Channel_Closed(object sender, EventArgs e)

@@ -45,7 +45,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 _client.Open();
 
                 _client.InnerChannel.Faulted += Channel_Faulted;
-                _client.InnerChannel.Closed += Channel_Closed;
 
                 _client.Connect(username);
                 _connectedUsername = username;
@@ -103,12 +102,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 try
                 {
                     _client.InnerChannel.Faulted -= Channel_Faulted;
-                    _client.InnerChannel.Closed -= Channel_Closed;
-                }
-                catch { }
-
-                try
-                {
                     if (_client.State != CommunicationState.Faulted)
                     {
                         _client.Close();
@@ -265,13 +258,7 @@ namespace GuessMyMessClient.ViewModel.Session
 
         private void Channel_Faulted(object sender, EventArgs e)
         {
-            CleanupConnection();
-            OnMatchmakingFailed?.Invoke("Connection lost (Channel Faulted).");
-        }
-
-        private void Channel_Closed(object sender, EventArgs e)
-        {
-            CleanupConnection();
+            SessionManager.Instance.HandleServerDisconnect();
         }
     }
 }

@@ -48,7 +48,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 _client.Open();
 
                 _client.InnerChannel.Faulted += Channel_Faulted;
-                _client.InnerChannel.Closed += Channel_Closed;
 
                 _client.ConnectToLobby(username, matchId);
             }
@@ -108,12 +107,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 try
                 {
                     _client.InnerChannel.Faulted -= Channel_Faulted;
-                    _client.InnerChannel.Closed -= Channel_Closed;
-                }
-                catch { }
-
-                try
-                {
                     if (_client.State != CommunicationState.Faulted)
                     {
                         _client.Close();
@@ -263,14 +256,6 @@ namespace GuessMyMessClient.ViewModel.Session
             HandleCommunicationError(true);
         }
 
-        private void Channel_Closed(object sender, EventArgs e)
-        {
-            if (_client != null)
-            {
-                HandleCommunicationError(true);
-            }
-        }
-
         private void HandleCommunicationError(bool unexpected = false)
         {
             Application.Current?.Dispatcher.Invoke(() =>
@@ -280,11 +265,7 @@ namespace GuessMyMessClient.ViewModel.Session
 
                 if (unexpected)
                 {
-                    MessageBox.Show(
-                        Lang.alertConnectionErrorMessage,
-                        Lang.alertConnectionErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    SessionManager.Instance.HandleServerDisconnect();
                 }
             });
         }

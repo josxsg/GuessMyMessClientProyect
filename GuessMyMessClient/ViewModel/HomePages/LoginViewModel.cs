@@ -91,6 +91,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     client.Close();
                     isSuccess = true;
                 }
+                else if (result.Message == "UserAlreadyLoggedIn")
+                {
+                    MessageBox.Show(
+                        Lang.alertUserAlreadyLoggedIn,
+                        Lang.alertWarningTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                }
                 else
                 {
                     MessageBox.Show(

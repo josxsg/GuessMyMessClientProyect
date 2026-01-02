@@ -1035,4 +1035,19 @@
   <data name="GameWord_Time" xml:space="preserve">
     <value>Time</value>
   </data>
+  <data name="serverConnectionLostMessage" xml:space="preserve">
+    <value>Connection to server lost. Returning to welcome screen.</value>
+  </data>
+  <data name="alertUserAlreadyLoggedIn" xml:space="preserve">
+    <value>This user already has an active session.</value>
+  </data>
+  <data name="gamePlayerLeftMessage" xml:space="preserve">
+    <value>{0} has left the match.</value>
+  </data>
+  <data name="gameEndedNotEnoughPlayers" xml:space="preserve">
+    <value>The match has ended because there are not enough players left.</value>
+  </data>
+  <data name="gameSystemTitle" xml:space="preserve">
+    <value>System</value>
+  </data>
 </root>
