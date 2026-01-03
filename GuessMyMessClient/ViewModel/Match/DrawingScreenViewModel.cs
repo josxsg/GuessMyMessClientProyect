@@ -322,7 +322,7 @@ namespace GuessMyMessClient.ViewModel.Match
             _currentShapeStroke = null;
         }
 
-        private StylusPointCollection CalculateSquarePoints(Point start, Point end)
+        private static StylusPointCollection CalculateSquarePoints(Point start, Point end)
         {
             var points = new List<Point>
             {
@@ -335,7 +335,7 @@ namespace GuessMyMessClient.ViewModel.Match
             return new StylusPointCollection(points);
         }
 
-        private StylusPointCollection CalculateTrianglePoints(Point start, Point end)
+        private static StylusPointCollection CalculateTrianglePoints(Point start, Point end)
         {
             double topX = (start.X + end.X) / 2;
             var points = new List<Point>
@@ -348,7 +348,7 @@ namespace GuessMyMessClient.ViewModel.Match
             return new StylusPointCollection(points);
         }
 
-        private StylusPointCollection CalculateCirclePoints(Point start, Point end)
+        private static StylusPointCollection CalculateCirclePoints(Point start, Point end)
         {
             StylusPointCollection points = new StylusPointCollection();
             double centerX = (start.X + end.X) / 2;

@@ -240,7 +240,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 if (avatars != null && avatars.Any())
                 {
                     var defaultAvatar = avatars.FirstOrDefault(a => a.IdAvatar == 1) ?? avatars[0];
-                    Application.Current.Dispatcher.Invoke(() =>
+                    await Application.Current.Dispatcher.InvokeAsync(() =>
                     {
                         SelectedAvatarId = defaultAvatar.IdAvatar;
                         SelectedAvatarImage = ConvertByteToImage(defaultAvatar.AvatarData);
@@ -256,76 +256,90 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private async void ExecuteSignUp(object parameter)
         {
-            if (!CanExecuteSignUp(parameter))
+            if (!IsInputValid(parameter))
             {
-                MessageBox.Show(
-                    Lang.alertRequiredFields,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
                 return;
             }
 
+            TrimInputFields();
+            var newUserProfile = CreateUserProfileDto();
+            var client = new AuthenticationServiceClient();
+            bool isSuccess = false;
+
+            try
+            {
+                var result = await client.RegisterAsync(newUserProfile, Password);
+                isSuccess = HandleRegistrationResult(result, client, parameter);
+            }
+            catch (Exception ex)
+            {
+                HandleRegistrationException(ex);
+            }
+            finally
+            {
+                FinalizeClientState(client, isSuccess);
+            }
+        }
+
+        private bool IsInputValid(object parameter)
+        {
+            if (!CanExecuteSignUp(parameter))
+            {
+                ShowWarning(Lang.alertRequiredFields);
+                return false;
+            }
+
+            if (!InputValidator.IsValidEmail(Email))
+            {
+                ShowWarning(Lang.alertInvalidEmailFormat);
+                return false;
+            }
+
+            if (!InputValidator.IsValidName(FirstName) || !InputValidator.IsValidName(LastName))
+            {
+                ShowWarning(FirstName == null || !InputValidator.IsValidName(FirstName) ? Lang.alertNameInvalid : Lang.alertLastNameInvalid);
+                return false;
+            }
+
+            if (!InputValidator.IsValidUsername(Username, out string userErr))
+            {
+                ShowWarning(Lang.ResourceManager.GetString(userErr) ?? Lang.alertUsernameGenericError);
+                return false;
+            }
+
+            if (!InputValidator.IsPasswordSecure(Password, out string passErr))
+            {
+                ShowWarning(Lang.ResourceManager.GetString(passErr) ?? Lang.alertPasswordGenericError);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void TrimInputFields()
+        {
             FirstName = FirstName?.Trim();
             LastName = LastName?.Trim();
             Username = Username?.Trim();
             Email = Email?.Trim();
+        }
 
-            if (!InputValidator.IsValidEmail(Email))
+        private AuthService.UserProfileDto CreateUserProfileDto()
+        {
+            int genderId;
+            if (IsMale)
             {
-                MessageBox.Show(
-                    Lang.alertInvalidEmailFormat,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                return;
+                genderId = 1;
             }
-
-            if (!InputValidator.IsValidName(FirstName))
+            else if (IsFemale)
             {
-                MessageBox.Show(
-                    Lang.alertNameInvalid,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                return;
+                genderId = 2;
             }
-
-            if (!InputValidator.IsValidName(LastName))
+            else
             {
-                MessageBox.Show(
-                    Lang.alertLastNameInvalid,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                return;
+                genderId = 3; // Otro / Prefiere no decir
             }
-
-            if (!InputValidator.IsValidUsername(Username, out string usernameErrorKey))
-            {
-                string usernameErrorMessage = Lang.ResourceManager.GetString(usernameErrorKey) ?? Lang.alertUsernameGenericError;
-                MessageBox.Show(
-                    usernameErrorMessage,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                return;
-            }
-
-            if (!InputValidator.IsPasswordSecure(Password, out string passwordErrorKey))
-            {
-                string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
-                MessageBox.Show(
-                    passwordErrorMessage,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-                return;
-            }
-
-            int genderId = IsMale ? 1 : (IsFemale ? 2 : 3);
-
-            var newUserProfile = new AuthService.UserProfileDto
+            return new AuthService.UserProfileDto
             {
                 Username = Username,
                 FirstName = FirstName,
@@ -334,85 +348,58 @@ namespace GuessMyMessClient.ViewModel.HomePages
                 GenderId = genderId,
                 AvatarId = SelectedAvatarId
             };
+        }
 
-            var client = new AuthenticationServiceClient();
-            bool isSuccess = false;
-
-            try
+        private bool HandleRegistrationResult(AuthService.OperationResultDto result, AuthenticationServiceClient client, object parameter)
+        {
+            if (result.Success)
             {
-                var result = await client.RegisterAsync(newUserProfile, Password);
-
-                if (result.Success)
-                {
-                    MessageBox.Show(
-                        $"{Lang.alertRegistrationSuccess}\n{result.Message}",
-                        Lang.alertSuccessTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
-
-                    OpenVerificationDialog(parameter);
-                    client.Close();
-                    isSuccess = true;
-                }
-                else
-                {
-                    MessageBox.Show
-                        (result.Message,
-                        Lang.alertRegistrationErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                }
+                MessageBox.Show($"{Lang.alertRegistrationSuccess}\n{result.Message}", Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                OpenVerificationDialog(parameter);
+                client.Close();
+                return true;
             }
-            catch (FaultException<GuessMyMessClient.AuthService.ServiceFaultDto> fex)
-            {
-                string titulo = Lang.alertRegistrationErrorTitle;
 
-                if (fex.Detail.ErrorType == GuessMyMessClient.AuthService.ServiceErrorType.DuplicateRecord ||
-                    fex.Detail.ErrorType == GuessMyMessClient.AuthService.ServiceErrorType.UserAlreadyExists ||
-                    fex.Detail.ErrorType == GuessMyMessClient.AuthService.ServiceErrorType.EmailAlreadyRegistered)
-                {
-                    titulo = Lang.alertInputErrorTitle;
-                }
+            MessageBox.Show(result.Message, Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            return false;
+        }
 
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    titulo,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (FaultException)
+        private void HandleRegistrationException(Exception ex)
+        {
+            if (ex is FaultException<GuessMyMessClient.AuthService.ServiceFaultDto> fex)
             {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                bool isInputError = fex.Detail.ErrorType == AuthService.ServiceErrorType.DuplicateRecord ||
+                                   fex.Detail.ErrorType == AuthService.ServiceErrorType.UserAlreadyExists ||
+                                   fex.Detail.ErrorType == AuthService.ServiceErrorType.EmailAlreadyRegistered;
+
+                MessageBox.Show(fex.Detail.Message, isInputError ? Lang.alertInputErrorTitle : Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
+            else if (ex is FaultException)
             {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertConnectionErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            catch
+            else if (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            finally
+            else
             {
-                if (!isSuccess && client.State != CommunicationState.Closed)
-                {
-                    client.Abort();
-                }
+                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
+        private void FinalizeClientState(AuthenticationServiceClient client, bool isSuccess)
+        {
+            if (!isSuccess && client.State != CommunicationState.Closed)
+            {
+                client.Abort();
+            }
+        }
+
+        private void ShowWarning(string message)
+        {
+            MessageBox.Show(message, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
         private bool CanExecuteSignUp(object parameter)
         {
             return !string.IsNullOrWhiteSpace(Username) &&

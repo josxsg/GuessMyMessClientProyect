@@ -264,7 +264,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
-        private StrokeCollection LoadStrokesFromBytes(byte[] data)
+        private static StrokeCollection LoadStrokesFromBytes(byte[] data)
         {
             if (data == null || data.Length == 0) return new StrokeCollection();
             try

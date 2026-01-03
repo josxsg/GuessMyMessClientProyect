@@ -89,7 +89,7 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             if (_client == null || _client.State != CommunicationState.Opened)
             {
-                throw new Exception(Lang.alertConnectionErrorTitle);
+                throw new InvalidOperationException(Lang.alertConnectionErrorTitle);
             }
 
             await _client.InviteGuestByEmailAsync(inviterUsername, targetEmail, matchId);
@@ -256,7 +256,7 @@ namespace GuessMyMessClient.ViewModel.Session
             });
         }
 
-        private void Channel_Faulted(object sender, EventArgs e)
+        private static void Channel_Faulted(object sender, EventArgs e)
         {
             SessionManager.Instance.HandleServerDisconnect();
         }

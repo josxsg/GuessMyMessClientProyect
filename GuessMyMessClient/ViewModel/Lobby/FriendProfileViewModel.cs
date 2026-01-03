@@ -12,7 +12,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 {
     public class FriendProfileViewModel : ViewModelBase
     {
-        private string _targetUsername;
+        private readonly string _targetUsername;
 
         private string _usernameTitle;
         public string UsernameTitle 
@@ -129,7 +129,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 var profile = await SocialClientManager.Instance.Client.GetFriendProfileAsync(_targetUsername);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     FirstName = profile.FirstName;
                     LastName = profile.LastName;
@@ -144,7 +144,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             catch (Exception)
             {
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     MessageBox.Show("No se pudo cargar el perfil.", Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 });

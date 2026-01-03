@@ -89,7 +89,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             }
         }
 
-        private void ExecuteClose(object parameter)
+        private static void ExecuteClose(object parameter)
         {
             if (parameter is Window window)
             {

@@ -323,7 +323,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 var allAvatars = await client.GetAvailableAvatarsAsync();
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     UserProfileData = profileData;
                     Username = profileData.Username;
@@ -531,7 +531,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ExecutePlay(object param)
+        private static void ExecutePlay(object param)
         {
             MatchesViewModel matchesViewModel = new MatchesViewModel();
             MatchesView matchesView = new MatchesView();
@@ -540,7 +540,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             CloseCurrentLobbyWindow();
         }
 
-        private void ExecuteCreateGame(object param)
+        private static void ExecuteCreateGame(object param)
         {
             MatchSettingsViewModel matchSettingsViewModel = new MatchSettingsViewModel();
             MatchSettingsView matchSettingsView = new MatchSettingsView();
@@ -578,7 +578,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ShowError(string message)
+        private static void ShowError(string message)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -590,7 +590,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             });
         }
 
-        private void ShowFeatureUnavailable()
+        private static void ShowFeatureUnavailable()
         {
             MessageBox.Show(
                 Lang.alertFeatureUnavailableError,

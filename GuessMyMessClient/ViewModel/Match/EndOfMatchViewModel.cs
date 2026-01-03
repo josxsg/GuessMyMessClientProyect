@@ -102,7 +102,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
-        private void ExecuteExit(object parameter)
+        private static void ExecuteExit(object parameter)
         {
             GameClientManager.Instance.Disconnect();
 

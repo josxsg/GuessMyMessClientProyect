@@ -137,7 +137,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteBack(object obj)
+        private static void ExecuteBack(object obj)
         {
             new WelcomeView().Show();
             Application.Current.Windows.OfType<GuestLoginView>().FirstOrDefault()?.Close();

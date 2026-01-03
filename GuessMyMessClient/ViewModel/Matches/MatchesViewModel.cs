@@ -313,7 +313,7 @@ namespace GuessMyMessClient.ViewModel.Matches
             });
         }
 
-        private void ShowError(string message)
+        private static void ShowError(string message)
         {
             Application.Current?.Dispatcher?.Invoke(() =>
             {
@@ -362,7 +362,7 @@ namespace GuessMyMessClient.ViewModel.Matches
             DifficultyName = TranslateDifficulty(dto.DifficultyName);
         }
 
-        private string TranslateDifficulty(string dbDifficultyName)
+        private static string TranslateDifficulty(string dbDifficultyName)
         {
             if (string.IsNullOrEmpty(dbDifficultyName)) return "Unknown";
 

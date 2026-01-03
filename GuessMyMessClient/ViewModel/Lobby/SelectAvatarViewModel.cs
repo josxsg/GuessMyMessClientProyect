@@ -109,7 +109,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     }
                 }
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     foreach (var avatar in tempAvatars)
                     {
@@ -148,7 +148,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ShowError(string message)
+        private static void ShowError(string message)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {

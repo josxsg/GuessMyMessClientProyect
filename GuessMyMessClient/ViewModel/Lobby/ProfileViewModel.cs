@@ -123,7 +123,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private async void SaveSocialNetworkToServer(string networkName, string userLink)
+        private async Task SaveSocialNetworkToServer(string networkName, string userLink)
         {
             var client = new UserProfileServiceClient();
             bool isSuccess = false;

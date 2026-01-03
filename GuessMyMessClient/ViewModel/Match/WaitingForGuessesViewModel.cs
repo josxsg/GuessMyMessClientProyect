@@ -32,7 +32,7 @@ namespace GuessMyMessClient.ViewModel.Match
             GameClientManager.Instance.GameEnd += OnGameEnd_Handler;
         }
 
-        private void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
+        private static void OnShowNextDrawing_Handler(object sender, ShowNextDrawingEventArgs e)
         {
             string myUsername = GameClientManager.Instance.GetCurrentUsername();
 

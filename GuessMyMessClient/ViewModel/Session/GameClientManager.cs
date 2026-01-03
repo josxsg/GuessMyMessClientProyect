@@ -1,5 +1,6 @@
 ﻿using GuessMyMessClient.GameService;
 using GuessMyMessClient.Properties.Langs;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
@@ -132,7 +133,14 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client.InnerChannel.Faulted -= Channel_Faulted;
                     _client.InnerChannel.Closed -= Channel_Closed;
                 }
-                catch { }
+                catch (Exception)
+                {
+                    MessageBox.Show(
+                    Lang.alertUnknownErrorMessage,
+                    Lang.alertErrorTitle,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                }
 
                 try
                 {

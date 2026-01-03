@@ -23,7 +23,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             set
             {
-                _currentUsername = value; 
+                _currentUsername = value;
                 OnPropertyChanged();
             }
         }
@@ -37,7 +37,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             set
             {
-                _isGuest = value; 
+                _isGuest = value;
                 OnPropertyChanged();
             }
         }
@@ -54,7 +54,7 @@ namespace GuessMyMessClient.ViewModel.Session
         public void CloseSession()
         {
             CurrentUsername = null;
-            IsGuest = false; 
+            IsGuest = false;
         }
 
         public void HandleServerDisconnect()
@@ -75,25 +75,27 @@ namespace GuessMyMessClient.ViewModel.Session
             });
         }
 
-        private void CleanupAllConnections()
+        private static void CleanupAllConnections()
         {
             SocialClientManager.Instance.Cleanup();
-            LobbyClientManager.Instance.Disconnect(); 
+            LobbyClientManager.Instance.Disconnect();
             GameClientManager.Instance.Disconnect();
             MatchmakingClientManager.Instance.Disconnect();
         }
 
-        private void NavigateToWelcomeView()
+        private static void NavigateToWelcomeView()
         {
             WelcomeView welcomeView = new WelcomeView();
             welcomeView.Show();
 
-            foreach (Window window in Application.Current.Windows.Cast<Window>().ToList())
+            var windowsToClose = Application.Current.Windows
+                .Cast<Window>()
+                .Where(window => window != welcomeView)
+                .ToList();
+
+            foreach (Window window in windowsToClose)
             {
-                if (window != welcomeView)
-                {
-                    window.Close();
-                }
+                window.Close();
             }
         }
     }

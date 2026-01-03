@@ -12,228 +12,39 @@
       },
       "results": [
         {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/SelectAvatarViewModel.cs",
-                "region": {
-                  "startLine": 83,
-                  "startColumn": 17,
-                  "endLine": 83,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
-                "region": {
-                  "startLine": 55,
-                  "startColumn": 25,
-                  "endLine": 55,
-                  "endColumn": 56
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
-                "region": {
-                  "startLine": 77,
-                  "startColumn": 17,
-                  "endLine": 77,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Matches/MatchesViewModel.cs",
-                "region": {
-                  "startLine": 79,
-                  "startColumn": 13,
-                  "endLine": 79,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Matches/MatchesViewModel.cs",
-                "region": {
-                  "startLine": 104,
-                  "startColumn": 17,
-                  "endLine": 104,
-                  "endColumn": 85
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Matches/MatchesViewModel.cs",
-                "region": {
-                  "startLine": 111,
-                  "startColumn": 17,
-                  "endLine": 111,
-                  "endColumn": 75
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
-                "region": {
-                  "startLine": 182,
-                  "startColumn": 13,
-                  "endLine": 182,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
-                "region": {
-                  "startLine": 222,
-                  "startColumn": 13,
-                  "endLine": 222,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS4014",
-          "level": "warning",
-          "message": "Como esta llamada no es 'awaited', la ejecución del método actual continuará antes de que se complete la llamada. Puede aplicar el operador 'await' al resultado de la llamada.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
-                "region": {
-                  "startLine": 68,
-                  "startColumn": 17,
-                  "endLine": 68,
-                  "endColumn": 46
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1135",
-          "level": "warning",
-          "message": "Complete the task associated to this 'TODO' comment.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
-                "region": {
-                  "startLine": 306,
-                  "startColumn": 15,
-                  "endLine": 306,
-                  "endColumn": 19
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S125",
           "level": "warning",
           "message": "Remove this commented out code.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Support/Navigation/WpfNavigationService.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/View/Match/WordSelectionView.xaml.cs",
                 "region": {
-                  "startLine": 93,
-                  "startColumn": 17,
-                  "endLine": 93,
-                  "endColumn": 64
+                  "startLine": 26,
+                  "startColumn": 13,
+                  "endLine": 26,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_targetUsername' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendProfileViewModel.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 24,
+                  "endLine": 15,
+                  "endColumn": 39
                 }
               }
             }
@@ -288,73 +99,10 @@
               "resultFile": {
                 "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
                 "region": {
-                  "startLine": 15,
+                  "startLine": 20,
                   "startColumn": 33,
-                  "endLine": 15,
+                  "endLine": 20,
                   "endColumn": 48
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_timer' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/AnswersScreenViewModel.cs",
-                "region": {
-                  "startLine": 50,
-                  "startColumn": 33,
-                  "endLine": 50,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3604",
-          "level": "warning",
-          "message": "Remove the member initializer, all constructors set an initial value for the member.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/AnswersScreenViewModel.cs",
-                "region": {
-                  "startLine": 51,
-                  "startColumn": 35,
-                  "endLine": 51,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3604",
-          "level": "warning",
-          "message": "Remove the member initializer, all constructors set an initial value for the member.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/AnswersScreenViewModel.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 33,
-                  "endLine": 52,
-                  "endColumn": 37
                 }
               }
             }
@@ -385,18 +133,39 @@
           }
         },
         {
-          "ruleId": "S2325",
+          "ruleId": "S1699",
           "level": "warning",
-          "message": "Make 'App_DispatcherUnhandledException' a static method.",
+          "message": "Remove this call from a constructor to the overridable 'InitializeCommands' method.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/App.xaml.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomViewModelBase.cs",
                 "region": {
-                  "startLine": 36,
-                  "startColumn": 22,
-                  "endLine": 36,
-                  "endColumn": 54
+                  "startLine": 146,
+                  "startColumn": 13,
+                  "endLine": 146,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1699",
+          "level": "warning",
+          "message": "Remove this call from a constructor to the overridable 'SubscribeToLobbyEvents' method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomViewModelBase.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 13,
+                  "endLine": 147,
+                  "endColumn": 35
                 }
               }
             }
@@ -427,38 +196,17 @@
           }
         },
         {
-          "ruleId": "S1699",
+          "ruleId": "S2325",
           "level": "warning",
-          "message": "Remove this call from a constructor to the overridable 'GetHashCode' method.",
+          "message": "Make 'ShowError' a static method.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomViewModelBase.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/SelectAvatarViewModel.cs",
                 "region": {
-                  "startLine": 90,
-                  "startColumn": 77,
-                  "endLine": 90,
-                  "endColumn": 88
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1699",
-          "level": "warning",
-          "message": "Remove this call from a constructor to the overridable 'InitializeCommands' method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomViewModelBase.cs",
-                "region": {
-                  "startLine": 93,
-                  "startColumn": 13,
-                  "endLine": 93,
+                  "startLine": 151,
+                  "startColumn": 22,
+                  "endLine": 151,
                   "endColumn": 31
                 }
               }
@@ -469,18 +217,160 @@
           }
         },
         {
-          "ruleId": "S1699",
+          "ruleId": "S2325",
           "level": "warning",
-          "message": "Remove this call from a constructor to the overridable 'SubscribeToLobbyEvents' method.",
+          "message": "Make 'StartGame' a static method.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomViewModelBase.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
                 "region": {
-                  "startLine": 94,
-                  "startColumn": 13,
-                  "endLine": 94,
-                  "endColumn": 35
+                  "startLine": 123,
+                  "startColumn": 22,
+                  "endLine": 123,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCloseWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 134,
+                  "startColumn": 22,
+                  "endLine": 134,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4830",
+          "level": "warning",
+          "message": "Enable server certificate validation on this SSL/TLS connection",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/App.xaml.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 33,
+                  "endLine": 36,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/App.xaml.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 115,
+                  "endLine": 37,
+                  "endColumn": 119
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "This function trusts all certificates."
+            }
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 142,
+                  "startColumn": 22,
+                  "endLine": 142,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'App_DispatcherUnhandledException' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/App.xaml.cs",
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 22,
+                  "endLine": 42,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteMinimizeWindow' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/MainViewModel.cs",
+                "region": {
+                  "startLine": 150,
+                  "startColumn": 22,
+                  "endLine": 150,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteBack' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/GuestLoginViewModel.cs",
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 22,
+                  "endLine": 140,
+                  "endColumn": 33
                 }
               }
             }
@@ -498,9 +388,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
                 "region": {
-                  "startLine": 85,
+                  "startLine": 84,
                   "startColumn": 22,
-                  "endLine": 85,
+                  "endLine": 84,
                   "endColumn": 46
                 }
               }
@@ -511,18 +401,18 @@
           }
         },
         {
-          "ruleId": "S3168",
+          "ruleId": "S2486",
           "level": "warning",
-          "message": "Return 'Task' instead.",
+          "message": "Handle the exception or explain in a comment why it can be ignored.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/App.xaml.cs",
                 "region": {
-                  "startLine": 77,
-                  "startColumn": 23,
+                  "startLine": 75,
+                  "startColumn": 13,
                   "endLine": 77,
-                  "endColumn": 27
+                  "endColumn": 14
                 }
               }
             }
@@ -532,18 +422,18 @@
           }
         },
         {
-          "ruleId": "S1186",
+          "ruleId": "S108",
           "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "message": "Either remove or fill this block of code.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/EndOfMatchViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/App.xaml.cs",
                 "region": {
-                  "startLine": 44,
-                  "startColumn": 22,
-                  "endLine": 44,
-                  "endColumn": 28
+                  "startLine": 76,
+                  "startColumn": 13,
+                  "endLine": 77,
+                  "endColumn": 14
                 }
               }
             }
@@ -553,81 +443,18 @@
           }
         },
         {
-          "ruleId": "S2325",
+          "ruleId": "S6966",
           "level": "warning",
-          "message": "Make 'CanExit' a static method.",
+          "message": "Await InvokeAsync instead.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/EndOfMatchViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
                 "region": {
-                  "startLine": 48,
-                  "startColumn": 22,
-                  "endLine": 48,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'OnShowNextDrawing_Handler' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WaitingForGuessesViewModel.cs",
-                "region": {
-                  "startLine": 26,
-                  "startColumn": 22,
-                  "endLine": 26,
-                  "endColumn": 47
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'OnShowNextDrawing_Handler' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/GuessTheWordViewModel.cs",
-                "region": {
-                  "startLine": 111,
-                  "startColumn": 22,
-                  "endLine": 111,
-                  "endColumn": 47
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'LoadStrokesFromBytes' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/AnswersScreenViewModel.cs",
-                "region": {
-                  "startLine": 130,
-                  "startColumn": 34,
-                  "endLine": 130,
-                  "endColumn": 54
+                  "startLine": 243,
+                  "startColumn": 21,
+                  "endLine": 247,
+                  "endColumn": 23
                 }
               }
             }
@@ -645,9 +472,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
                 "region": {
-                  "startLine": 76,
+                  "startLine": 80,
                   "startColumn": 22,
-                  "endLine": 76,
+                  "endLine": 80,
                   "endColumn": 46
                 }
               }
@@ -658,192 +485,256 @@
           }
         },
         {
-          "ruleId": "S2325",
+          "ruleId": "S3776",
           "level": "warning",
-          "message": "Make 'ExecuteMaximizeWindow' a static method.",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
                 "region": {
-                  "startLine": 188,
-                  "startColumn": 22,
-                  "endLine": 188,
-                  "endColumn": 43
+                  "startLine": 257,
+                  "startColumn": 28,
+                  "endLine": 257,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 13,
+                  "endLine": 259,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 274,
+                  "startColumn": 13,
+                  "endLine": 274,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 284,
+                  "startColumn": 13,
+                  "endLine": 284,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 294,
+                  "startColumn": 13,
+                  "endLine": 294,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 304,
+                  "startColumn": 13,
+                  "endLine": 304,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 315,
+                  "startColumn": 13,
+                  "endLine": 315,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 326,
+                  "startColumn": 35,
+                  "endLine": 326,
+                  "endColumn": 36
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 326,
+                  "startColumn": 51,
+                  "endLine": 326,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 345,
+                  "startColumn": 17,
+                  "endLine": 345,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 357,
+                  "startColumn": 17,
+                  "endLine": 357,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 366,
+                  "startColumn": 13,
+                  "endLine": 366,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 370,
+                  "startColumn": 17,
+                  "endLine": 370,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 370,
+                  "startColumn": 108,
+                  "endLine": 370,
+                  "endColumn": 110
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 383,
+                  "startColumn": 13,
+                  "endLine": 383,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 391,
+                  "startColumn": 13,
+                  "endLine": 391,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 391,
+                  "startColumn": 72,
+                  "endLine": 391,
+                  "endColumn": 74
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 399,
+                  "startColumn": 13,
+                  "endLine": 399,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 409,
+                  "startColumn": 17,
+                  "endLine": 409,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 409,
+                  "startColumn": 32,
+                  "endLine": 409,
+                  "endColumn": 34
                 }
               }
             }
           ],
           "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'ExecuteMinimizeWindow' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
-                "region": {
-                  "startLine": 198,
-                  "startColumn": 22,
-                  "endLine": 198,
-                  "endColumn": 43
-                }
-              }
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+1",
+              "11": "+2 (incl 1 for nesting)",
+              "12": "+1",
+              "13": "+1",
+              "14": "+1",
+              "15": "+1",
+              "16": "+1",
+              "17": "+1",
+              "18": "+1",
+              "2": "+1",
+              "3": "+1",
+              "4": "+1",
+              "5": "+1",
+              "6": "+1",
+              "7": "+2 (incl 1 for nesting)",
+              "8": "+1",
+              "9": "+1"
             }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'ExecutePlay' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
-                "region": {
-                  "startLine": 287,
-                  "startColumn": 22,
-                  "endLine": 287,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'ExecuteCreateGame' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
-                "region": {
-                  "startLine": 296,
-                  "startColumn": 22,
-                  "endLine": 296,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'CalculateSquarePoints' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
-                "region": {
-                  "startLine": 266,
-                  "startColumn": 39,
-                  "endLine": 266,
-                  "endColumn": 60
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'scoresList'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Support/Navigation/WpfNavigationService.cs",
-                "region": {
-                  "startLine": 91,
-                  "startColumn": 21,
-                  "endLine": 91,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'CalculateTrianglePoints' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
-                "region": {
-                  "startLine": 279,
-                  "startColumn": 39,
-                  "endLine": 279,
-                  "endColumn": 62
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'OnGuessingPhaseStart_FromServer' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
-                "region": {
-                  "startLine": 329,
-                  "startColumn": 22,
-                  "endLine": 329,
-                  "endColumn": 53
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2325",
-          "level": "warning",
-          "message": "Make 'CalculateCirclePoints' a static method.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
-                "region": {
-                  "startLine": 292,
-                  "startColumn": 39,
-                  "endLine": 292,
-                  "endColumn": 60
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
           }
         },
         {
@@ -874,11 +765,492 @@
           "locations": [
             {
               "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/SelectAvatarViewModel.cs",
+                "region": {
+                  "startLine": 112,
+                  "startColumn": 17,
+                  "endLine": 121,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3358",
+          "level": "warning",
+          "message": "Extract this nested ternary operation into an independent statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/HomePages/SignUpViewModel.cs",
+                "region": {
+                  "startLine": 326,
+                  "startColumn": 42,
+                  "endLine": 326,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteClose' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/Dialogs/InviteByEmailViewModel.cs",
+                "region": {
+                  "startLine": 92,
+                  "startColumn": 22,
+                  "endLine": 92,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
                 "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
                 "region": {
-                  "startLine": 152,
+                  "startLine": 85,
+                  "startColumn": 28,
+                  "endLine": 85,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 13,
+                  "endLine": 89,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 48,
+                  "endLine": 89,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 21,
+                  "endLine": 102,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 25,
+                  "endLine": 104,
+                  "endColumn": 32
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 21,
+                  "endLine": 111,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 25,
+                  "endLine": 113,
+                  "endColumn": 32
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 13,
+                  "endLine": 120,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 13,
+                  "endLine": 124,
+                  "endColumn": 18
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 72,
+                  "endLine": 124,
+                  "endColumn": 74
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 128,
+                  "startColumn": 13,
+                  "endLine": 128,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "2": "+2 (incl 1 for nesting)",
+              "3": "+3 (incl 2 for nesting)",
+              "4": "+2 (incl 1 for nesting)",
+              "5": "+3 (incl 2 for nesting)",
+              "6": "+1",
+              "7": "+1",
+              "8": "+1",
+              "9": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 143,
                   "startColumn": 17,
-                  "endLine": 152,
+                  "endLine": 157,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'TranslateDifficulty' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/WaitingRoom/WaitingRoomViewModelBase.cs",
+                "region": {
+                  "startLine": 207,
+                  "startColumn": 24,
+                  "endLine": 207,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'TranslateDifficulty' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Matches/MatchesViewModel.cs",
+                "region": {
+                  "startLine": 365,
+                  "startColumn": 24,
+                  "endLine": 365,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendProfileViewModel.cs",
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 17,
+                  "endLine": 143,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendProfileViewModel.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 17,
+                  "endLine": 150,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/RankingViewModel.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 17,
+                  "endLine": 53,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/RankingViewModel.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 17,
+                  "endLine": 60,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Support/InputValidator.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 25,
+                  "endLine": 63,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 17,
+                  "endLine": 118,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Support/InputValidator.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 25,
+                  "endLine": 87,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Channel_Faulted' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/SocialClientManager.cs",
+                "region": {
+                  "startLine": 133,
+                  "startColumn": 22,
+                  "endLine": 133,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteExit' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/EndOfMatchViewModel.cs",
+                "region": {
+                  "startLine": 105,
+                  "startColumn": 22,
+                  "endLine": 105,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ShowError' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "region": {
+                  "startLine": 244,
+                  "startColumn": 22,
+                  "endLine": 244,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 17,
+                  "endLine": 138,
                   "endColumn": 83
                 }
               }
@@ -895,12 +1267,406 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/DirectMessageViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
                 "region": {
-                  "startLine": 162,
+                  "startLine": 151,
                   "startColumn": 17,
-                  "endLine": 186,
+                  "endLine": 161,
                   "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'OnShowNextDrawing_Handler' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WaitingForGuessesViewModel.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 22,
+                  "endLine": 35,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 129,
+                  "startColumn": 17,
+                  "endLine": 147,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 17,
+                  "endLine": 156,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await InvokeAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 160,
+                  "startColumn": 17,
+                  "endLine": 165,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'GetTranslatedWord' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 24,
+                  "endLine": 169,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2486",
+          "level": "warning",
+          "message": "Handle the exception or explain in a comment why it can be ignored.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 205,
+                  "startColumn": 25,
+                  "endLine": 205,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3168",
+          "level": "warning",
+          "message": "Return 'Task' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/ProfileViewModel.cs",
+                "region": {
+                  "startLine": 126,
+                  "startColumn": 23,
+                  "endLine": 126,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/MatchmakingClientManager.cs",
+                "region": {
+                  "startLine": 92,
+                  "startColumn": 23,
+                  "endLine": 92,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/WordSelectionViewModel.cs",
+                "region": {
+                  "startLine": 205,
+                  "startColumn": 31,
+                  "endLine": 205,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'CleanupAllConnections' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/SessionManager.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 22,
+                  "endLine": 78,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2486",
+          "level": "warning",
+          "message": "Handle the exception or explain in a comment why it can be ignored.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/GameClientManager.cs",
+                "region": {
+                  "startLine": 135,
+                  "startColumn": 17,
+                  "endLine": 135,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/GameClientManager.cs",
+                "region": {
+                  "startLine": 135,
+                  "startColumn": 23,
+                  "endLine": 135,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'LoadStrokesFromBytes' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/AnswersScreenViewModel.cs",
+                "region": {
+                  "startLine": 267,
+                  "startColumn": 34,
+                  "endLine": 267,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3267",
+          "level": "warning",
+          "message": "Loops should be simplified using the \"Where\" LINQ method",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/SessionManager.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 39,
+                  "endLine": 91,
+                  "endColumn": 90
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/SessionManager.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 21,
+                  "endLine": 93,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'NavigateToWelcomeView' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/SessionManager.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 22,
+                  "endLine": 86,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ViewFriendProfile' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 285,
+                  "startColumn": 22,
+                  "endLine": 285,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ShowError' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "region": {
+                  "startLine": 297,
+                  "startColumn": 22,
+                  "endLine": 297,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ShowError' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Matches/MatchesViewModel.cs",
+                "region": {
+                  "startLine": 316,
+                  "startColumn": 22,
+                  "endLine": 316,
+                  "endColumn": 31
                 }
               }
             }
@@ -918,10 +1684,10 @@
               "resultFile": {
                 "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
                 "region": {
-                  "startLine": 94,
-                  "startColumn": 17,
-                  "endLine": 104,
-                  "endColumn": 19
+                  "startLine": 261,
+                  "startColumn": 21,
+                  "endLine": 272,
+                  "endColumn": 23
                 }
               }
             }
@@ -937,11 +1703,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
                 "region": {
-                  "startLine": 165,
+                  "startLine": 326,
                   "startColumn": 17,
-                  "endLine": 175,
+                  "endLine": 340,
                   "endColumn": 19
                 }
               }
@@ -952,18 +1718,165 @@
           }
         },
         {
-          "ruleId": "S6966",
+          "ruleId": "S2325",
           "level": "warning",
-          "message": "Await InvokeAsync instead.",
+          "message": "Make 'CalculateSquarePoints' a static method.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/FriendsViewModel.cs",
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
                 "region": {
-                  "startLine": 107,
-                  "startColumn": 17,
-                  "endLine": 117,
-                  "endColumn": 19
+                  "startLine": 325,
+                  "startColumn": 39,
+                  "endLine": 325,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Channel_Faulted' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Session/MatchmakingClientManager.cs",
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 22,
+                  "endLine": 259,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'CalculateTrianglePoints' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
+                "region": {
+                  "startLine": 338,
+                  "startColumn": 39,
+                  "endLine": 338,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecutePlay' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 534,
+                  "startColumn": 22,
+                  "endLine": 534,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ExecuteCreateGame' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 543,
+                  "startColumn": 22,
+                  "endLine": 543,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ShowFeatureUnavailable' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 593,
+                  "startColumn": 22,
+                  "endLine": 593,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ShowError' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Lobby/LobbyViewModel.cs",
+                "region": {
+                  "startLine": 581,
+                  "startColumn": 22,
+                  "endLine": 581,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'CalculateCirclePoints' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Gabriela/Desktop/Rodrigo/5%C2%B0Semestre/Tecnolog%C3%ADasParaLaConstruccion/GuessMyMessClientProyect/GuessMyMessClient/ViewModel/Match/DrawingScreenViewModel.cs",
+                "region": {
+                  "startLine": 351,
+                  "startColumn": 39,
+                  "endLine": 351,
+                  "endColumn": 60
                 }
               }
             }
@@ -974,34 +1887,35 @@
         }
       ],
       "rules": {
-        "CS4014": {
-          "id": "CS4014",
-          "shortDescription": "Dado que no se esperaba esta llamada, la ejecución del método actual continuará antes de que se complete la llamada",
-          "fullDescription": "El método actual llama a un método asincrónico que devuelve una tarea o un Task<TResult>, y no aplica el operador Await al resultado. La llamada al método asincrónico inicia una tarea asincrónica. Sin embargo, debido a que no se aplica ningún operador Await, el programa continúa sin esperar a que finalice la tarea. En la mayoría de los casos, este comportamiento no es el esperado. Generalmente, otros aspectos del método de llamada dependen de los resultados de la llamada. O bien, se espera como mínimo que el método al que se llama se complete antes de volver al método que contiene la llamada.\u000d\u000a\u000d\u000aUn problema de igual importancia es el que se genera con las excepciones que se producen en el método asincrónico al que se llama. Las excepciones que se producen en un método que devuelve una tarea o un Task<TResult> se almacenan en la tarea devuelta. Si no espera por la tarea o no realiza una comprobación explícita de excepciones, la excepción se pierde. Si espera por la tarea, su excepción se vuelve a producir.\u000d\u000a\u000d\u000aComo procedimiento recomendado, siempre debe esperar por la llamada.\u000d\u000a\u000d\u000aConsidere la posibilidad de suprimir la advertencia solo si tiene la seguridad de que no desea esperar a que la llamada asincrónica se complete y que el método al que se llama no producirá excepciones. En ese caso, puede suprimir la advertencia asignando el resultado de la tarea de la llamada a una variable.",
+        "S108": {
+          "id": "S108",
+          "shortDescription": "Nested blocks of code should not be left empty",
+          "fullDescription": "An empty code block is confusing. It will require some effort from maintainers to determine if it is intentional or indicates the implementation is incomplete.",
           "defaultLevel": "warning",
-          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS4014)",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-108",
           "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry"
-            ]
-          }
-        },
-        "S1135": {
-          "id": "S1135",
-          "shortDescription": "Track uses of \"TODO\" tags",
-          "fullDescription": "Developers often use TODO tags to mark areas in the code where additional work or improvements are needed but are not implemented immediately. However, these TODO tags sometimes get overlooked or forgotten, leading to incomplete or unfinished code. This rule aims to identify and address unattended TODO tags to ensure a clean and maintainable codebase. This description explores why this is a problem and how it can be fixed to improve the overall code quality.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1135",
-          "properties": {
-            "category": "Info Code Smell",
+            "category": "Major Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",
               "MainSourceScope",
               "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S112": {
+          "id": "S112",
+          "shortDescription": "General or reserved exceptions should never be thrown",
+          "fullDescription": "This rule raises an issue when a general or reserved exception is thrown.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-112",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
               "SonarWay"
             ]
           }
@@ -1031,23 +1945,6 @@
           "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
           "properties": {
             "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S1481": {
-          "id": "S1481",
-          "shortDescription": "Unused local variables should be removed",
-          "fullDescription": "An unused local variable is a variable that has been declared but is not used anywhere in the block of code where it is defined. It is dead code, contributing to unnecessary complexity and leading to confusion when reading the code. Therefore, it should be removed from your code to maintain clarity and efficiency.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
-          "properties": {
-            "category": "Minor Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",
@@ -1090,6 +1987,22 @@
             ]
           }
         },
+        "S2486": {
+          "id": "S2486",
+          "shortDescription": "Generic exceptions should not be ignored",
+          "fullDescription": "When exceptions occur, it is usually a bad idea to simply ignore them. Instead, it is better to handle them properly, or at least to log them.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2486",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
         "S2933": {
           "id": "S2933",
           "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
@@ -1124,15 +2037,48 @@
             ]
           }
         },
-        "S3604": {
-          "id": "S3604",
-          "shortDescription": "Member initializer values should not be redundant",
-          "fullDescription": "Fields, properties and events can be initialized either inline or in the constructor. Initializing them inline and in the constructor at the same time is redundant; the inline initialization will be overridden.",
+        "S3267": {
+          "id": "S3267",
+          "shortDescription": "Loops should be simplified with \"LINQ\" expressions",
+          "fullDescription": "Using explicit loops for filtering, selecting, or aggregating elements can make code more verbose and harder to read. LINQ expressions provide a more concise and expressive way to perform these operations, improving code clarity and maintainability.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3604",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3267",
           "properties": {
             "category": "Minor Code Smell",
             "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3358": {
+          "id": "S3358",
+          "shortDescription": "Ternary operators should not be nested",
+          "fullDescription": "Nested ternaries are hard to read and can make the order of operations complex to understand.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3358",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3776": {
+          "id": "S3776",
+          "shortDescription": "Cognitive Complexity of methods should not be too high",
+          "fullDescription": "This rule raises an issue when the code cognitive complexity of a function is above a certain threshold.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": false,
             "tags": [
               "C#",
               "MainSourceScope",
@@ -1154,6 +2100,38 @@
               "C#",
               "MainSourceScope",
               "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S4830": {
+          "id": "S4830",
+          "shortDescription": "Server certificates should be verified during SSL/TLS connections",
+          "fullDescription": "This vulnerability makes it possible that an encrypted communication is intercepted.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4830",
+          "properties": {
+            "category": "Critical Vulnerability",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6444": {
+          "id": "S6444",
+          "shortDescription": "Not specifying a timeout for regular expressions is security-sensitive",
+          "fullDescription": "Not specifying a timeout for regular expressions can lead to a Denial-of-Service attack. Pass a timeout when using System.Text.RegularExpressions to process untrusted input because a malicious user might craft a value for which the evaluation lasts excessively long.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6444",
+          "properties": {
+            "category": "Major Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
               "SonarWay"
             ]
           }

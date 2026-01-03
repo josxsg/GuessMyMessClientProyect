@@ -81,7 +81,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private bool CanExecuteNetworkActions()
+        private static bool CanExecuteNetworkActions()
         {
             return Client != null && Client.State == CommunicationState.Opened;
         }
@@ -97,7 +97,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 var users = await Client.GetFriendsListAsync(SessionManager.Instance.CurrentUsername);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     Conversations.Clear();
                     if (users != null)
@@ -140,7 +140,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 var history = await Client.GetConversationHistoryAsync(currentUsername, otherUsername);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     ChatHistory.Clear();
                     if (history != null)
@@ -241,7 +241,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             });
         }
 
-        private void ShowError(string message)
+        private static void ShowError(string message)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {

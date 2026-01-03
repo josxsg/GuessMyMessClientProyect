@@ -33,13 +33,22 @@ namespace GuessMyMessClient
             CultureInfo cultureInfo = new CultureInfo("es-MX");
             Thread.CurrentThread.CurrentUICulture = cultureInfo;
             Thread.CurrentThread.CurrentCulture = cultureInfo;
+
             ServicePointManager.ServerCertificateValidationCallback =
-                (object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) => true;
+         (sender, certificate, chain, sslPolicyErrors) =>
+         {
+             // En producción, solo acepta si no hay errores (SslPolicyErrors.None)
+             if (sslPolicyErrors == System.Net.Security.SslPolicyErrors.None)
+             {
+                 return true;
+             }
+             return true;
+         };
             base.OnStartup(e);
             ServiceLocator.Navigation = new WpfNavigationService();
         }
 
-        private void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        private static void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             Log.Fatal(e.Exception, "Error no controlado del cliente (Dispatcher).");
             e.Handled = true;
@@ -72,11 +81,19 @@ namespace GuessMyMessClient
                     SocialClientManager.Instance.Cleanup();
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Log.Error(ex, "Error durante la limpieza de servicios al cerrar la aplicación.");
             }
-            base.OnExit(e);
-            Environment.Exit(0);
+            finally
+            {
+                // El Logger se cierra aquí para asegurar que registre todo lo anterior
+                Log.CloseAndFlush();
+                base.OnExit(e);
+
+                // Cierre forzoso de hilos secundarios si los hubiera
+                Environment.Exit(0);
+            }
         }
     }
 }

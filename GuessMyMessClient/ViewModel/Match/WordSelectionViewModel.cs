@@ -1,23 +1,23 @@
-﻿using System;
+﻿using GuessMyMessClient.GameService;
+using GuessMyMessClient.Properties.Langs;
+using GuessMyMessClient.View.Match;
+using GuessMyMessClient.ViewModel.Session;
+using GuessMyMessClient.ViewModel.Support;
+using Serilog;
+using System;
 using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using GuessMyMessClient.GameService;
-using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.View.Match;
-using GuessMyMessClient.ViewModel.Session;
-using GuessMyMessClient.ViewModel.Support;
-
 using ServiceGameFault = GuessMyMessClient.GameService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Match
 {
     internal class WordSelectionViewModel : ViewModelBase
     {
-        private DispatcherTimer _countdownTimer;
+        private readonly DispatcherTimer _countdownTimer;
         private bool _wordHasBeenSelected;
         private string _selectedWordToNavigate;
 
@@ -126,7 +126,7 @@ namespace GuessMyMessClient.ViewModel.Match
 
                 WordDto[] words = await GameClientManager.Instance.GetRandomWordsAsync(currentUsername);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     if (words != null && words.Length >= 3)
                     {
@@ -148,7 +148,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             catch (FaultException<ServiceGameFault> fex)
             {
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                     MessageBox.Show(
                         fex.Detail.Message,
                         Lang.alertErrorTitle,
@@ -157,7 +157,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
             catch (Exception)
             {
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                     MessageBox.Show(
                     Lang.alertWordLoadError,
                     Lang.alertConnectionErrorTitle, 
@@ -166,7 +166,7 @@ namespace GuessMyMessClient.ViewModel.Match
             }
         }
 
-        private string GetTranslatedWord(string key)
+        private static string GetTranslatedWord(string key)
         {
             if (string.IsNullOrEmpty(key)) return string.Empty;
 
@@ -202,7 +202,14 @@ namespace GuessMyMessClient.ViewModel.Match
                         {
                             GameClientManager.Instance.SelectWord(Word1);
                         }
-                        catch { } // Ignorar error en autoselección final
+                        catch (Exception)
+                        {
+                            MessageBox.Show(
+                            Lang.alertUnknownErrorMessage,
+                            Lang.alertErrorTitle,
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+                        } // Ignorar error en autoselección final
 
                         Cleanup();
                         ServiceLocator.Navigation.NavigateToDrawingScreen(Word1);

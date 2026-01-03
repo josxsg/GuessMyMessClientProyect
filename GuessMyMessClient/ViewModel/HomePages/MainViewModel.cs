@@ -120,7 +120,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void StartGame(object parameter)
+        private static void StartGame(object parameter)
         {
             var welcomeView = new WelcomeView();
             welcomeView.Show();
@@ -131,7 +131,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteCloseWindow(object parameter)
+        private static void ExecuteCloseWindow(object parameter)
         {
             if (parameter is Window)
             {
@@ -139,7 +139,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteMaximizeWindow(object parameter)
+        private static void ExecuteMaximizeWindow(object parameter)
         {
             if (parameter is Window window)
             {
@@ -147,7 +147,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
         }
 
-        private void ExecuteMinimizeWindow(object parameter)
+        private static void ExecuteMinimizeWindow(object parameter)
         {
             if (parameter is Window window)
             {

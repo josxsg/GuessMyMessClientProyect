@@ -130,7 +130,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
         }
 
-        private void Channel_Faulted(object sender, EventArgs e)
+        private static void Channel_Faulted(object sender, EventArgs e)
         {
             SessionManager.Instance.HandleServerDisconnect();
         }

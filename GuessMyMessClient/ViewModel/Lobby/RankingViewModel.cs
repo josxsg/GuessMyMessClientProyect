@@ -34,7 +34,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 string currentUser = SessionManager.Instance.CurrentUsername;
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     RankingList.Clear();
                     if (result != null)
@@ -54,7 +54,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             catch (Exception)
             {
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     MessageBox.Show(Lang.rankingErrorLoading, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 });

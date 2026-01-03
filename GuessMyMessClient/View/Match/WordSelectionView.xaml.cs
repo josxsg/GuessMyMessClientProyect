@@ -23,7 +23,6 @@ namespace GuessMyMessClient.View.Match
         public WordSelectionView()
         {
             InitializeComponent();
-            //this.DataContext = new WordSelectionViewModel();
         }
     }
 }

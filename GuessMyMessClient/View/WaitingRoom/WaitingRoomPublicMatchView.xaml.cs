@@ -35,10 +35,5 @@ namespace GuessMyMessClient.View.WaitingRoom
             }
             this.Closed -= WaitingRoom_Closed;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

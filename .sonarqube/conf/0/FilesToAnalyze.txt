@@ -1,17 +1,22 @@
 ﻿C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Model\AvatarModel.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Model\RankingModel.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\GuestLoginViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\LoginViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\SignUpViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\WelcomeViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ConfigurationViewModel.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\AddSocialNetworkViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangeEmailViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\ChangePasswordViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\InviteByEmailViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyByCodeViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\Dialogs\VerifyChangesByCodeViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\DirectMessageViewModel.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendProfileViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\FriendsViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\LobbyViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\ProfileViewModel.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\RankingViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Lobby\SelectAvatarViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\HomePages\MainViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Matches\MatchesViewModel.cs
@@ -33,22 +38,27 @@ C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\Gue
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\BoolToGreenRedConverter.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Converters\CountToVisibilityConverter.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\InkCanvasBinder.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\InputValidator.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Navigation\INavigationService.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\Navigation\WpfNavigationService.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\PasswordBoxHelper.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\ServiceLocator.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\Support\TextBoxHelper.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\ViewModelBase.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomViewModelBase.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\GuestLoginView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\LoginView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\SignUpView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\WelcomeView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ConfigurationView.xaml.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\AddSocialNetworkView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangeEmailView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\ChangePasswordView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\InviteByEmailView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyByCodeView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\Dialogs\VerifyChangesByCodeView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\DirectMessageView.xaml.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendProfileView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\FriendsView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\LobbyView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\ProfileView.xaml.cs
@@ -56,6 +66,7 @@ C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\Gue
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPrivateMatchViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchHostViewModel.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\ViewModel\WaitingRoom\WaitingRoomPublicMatchViewModel.cs
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\RankingView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\Lobby\SelectAvatarView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\View\HomePages\MainView.xaml.cs
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\App.xaml.cs
@@ -75,6 +86,7 @@ C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\Gue
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.es.resx
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\Langs\Lang.resx
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Properties\Resources.resx
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\Arrays.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\GuessMyMessClient.AuthService.OperationResultDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\GuessMyMessServer.Contracts.DataContracts.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\AuthService\service.wsdl
@@ -98,15 +110,19 @@ C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\Gue
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\service.wsdl
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\service.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\MatchmakingService\service1.xsd
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\Arrays.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.AvatarDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.OperationResultDto.datasource
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.PlayerScoreDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessClient.ProfileService.UserProfileDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\GuessMyMessServer.Contracts.DataContracts.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\service.wsdl
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\service.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\ProfileService\service1.xsd
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\Arrays.xsd
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.DirectMessageDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendDto.datasource
+C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendProfileDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.FriendRequestInfoDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.OperationResultDto.datasource
 C:\Users\Gabriela\Desktop\Rodrigo\5°Semestre\TecnologíasParaLaConstruccion\GuessMyMessClientProyect\GuessMyMessClient\Connected Services\SocialService\GuessMyMessClient.SocialService.UserProfileDto.datasource

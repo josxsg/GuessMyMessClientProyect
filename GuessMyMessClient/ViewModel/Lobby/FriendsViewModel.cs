@@ -77,7 +77,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private bool CanExecuteNetworkActions()
+        private static bool CanExecuteNetworkActions()
         {
             return Client != null && Client.State == CommunicationState.Opened;
         }
@@ -96,46 +96,68 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 var friends = await Client.GetFriendsListAsync(username);
                 var requests = await Client.GetFriendRequestsAsync(username);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                // CORRECCIÓN: Usamos await InvokeAsync y delegamos la lógica en métodos simples
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
-                    Friends.Clear();
-                    if (friends != null)
-                    {
-                        foreach (var f in friends)
-                        {
-                            Friends.Add(new FriendViewModel { Username = f.Username, IsOnline = f.IsOnline });
-                        }
-                    }
-
-                    FriendRequests.Clear();
-                    if (requests != null)
-                    {
-                        foreach (var r in requests)
-                        {
-                            FriendRequests.Add(new FriendRequestViewModel(this) { RequesterUsername = r.RequesterUsername });
-                        }
-                    }
+                    UpdateFriendsList(friends);
+                    UpdateFriendRequestsList(requests);
                 });
             }
-            catch (FaultException<ServiceSocialFault> fex)
+            catch (Exception ex)
+            {
+                HandleSocialException(ex);
+            }
+        }
+
+        private void UpdateFriendsList(FriendDto[] friends)
+        {
+            Friends.Clear();
+            if (friends == null) return;
+
+            foreach (var f in friends)
+            {
+                Friends.Add(new FriendViewModel
+                {
+                    Username = f.Username,
+                    IsOnline = f.IsOnline
+                });
+            }
+        }
+
+        private void UpdateFriendRequestsList(FriendRequestInfoDto[] requests)
+        {
+            FriendRequests.Clear();
+            if (requests == null) return;
+
+            foreach (var r in requests)
+            {
+                FriendRequests.Add(new FriendRequestViewModel(this)
+                {
+                    RequesterUsername = r.RequesterUsername
+                });
+            }
+        }
+
+        private void HandleSocialException(Exception ex)
+        {
+            if (ex is FaultException<ServiceSocialFault> fex)
             {
                 ShowError(fex.Detail.Message);
             }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
+            else if (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
             {
                 ShowError(Lang.alertConnectionErrorMessage);
             }
-            catch
+            else
             {
                 ShowError(Lang.alertFriendLoadError);
             }
         }
-
         private async Task SearchUsersAsync()
         {
             if (string.IsNullOrWhiteSpace(SearchText))
             {
-                Application.Current.Dispatcher.Invoke(() => SearchResults.Clear());
+                await Application.Current.Dispatcher.InvokeAsync(() => SearchResults.Clear());
                 return;
             }
 
@@ -148,7 +170,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 var users = await Client.SearchUsersAsync(SearchText, SessionManager.Instance.CurrentUsername);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     SearchResults.Clear();
                     if (users != null)
@@ -185,7 +207,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 Client.SendFriendRequest(SessionManager.Instance.CurrentUsername, userProfile.Username);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                 Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     SearchResults.Remove(userProfile);
                     MessageBox.Show(
@@ -216,7 +238,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 Client.RespondToFriendRequest(SessionManager.Instance.CurrentUsername, requesterUsername, accepted);
 
-                Application.Current.Dispatcher.Invoke(() =>
+                 Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     var requestVM = FriendRequests.FirstOrDefault(r => r.RequesterUsername == requesterUsername);
                     if (requestVM != null)
@@ -258,7 +280,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                     var result = await Client.RemoveFriendAsync(currentUsername, friend.Username);
 
-                    Application.Current.Dispatcher.Invoke(() =>
+                    await Application.Current.Dispatcher.InvokeAsync(() =>
                     {
                         if (result.Success)
                         {
@@ -282,7 +304,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ViewFriendProfile(object parameter)
+        private static void ViewFriendProfile(object parameter)
         {
             if (parameter is FriendViewModel friend)
             {
@@ -294,9 +316,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private void ShowError(string message)
+        private static void ShowError(string message)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+             Application.Current.Dispatcher.InvokeAsync(() =>
             {
                 MessageBox.Show(message,
                     Lang.alertErrorTitle,
@@ -323,7 +345,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void HandleFriendRequest(string fromUsername)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+             Application.Current.Dispatcher.InvokeAsync(() =>
             {
                 MessageBox.Show(
                     string.Format(Lang.alertFriendNewRequestFrom, fromUsername),
