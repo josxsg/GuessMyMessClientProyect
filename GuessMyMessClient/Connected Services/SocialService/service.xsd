@@ -106,6 +106,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SendDirectMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="SendDirectMessageResult" nillable="true" type="q7:DirectMessageDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetConversations">
     <xs:complexType>
       <xs:sequence>
@@ -116,7 +123,7 @@
   <xs:element name="GetConversationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationsResult" nillable="true" type="q7:ArrayOfFriendDto" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationsResult" nillable="true" type="q8:ArrayOfFriendDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -131,7 +138,7 @@
   <xs:element name="GetConversationHistoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationHistoryResult" nillable="true" type="q8:ArrayOfDirectMessageDto" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetConversationHistoryResult" nillable="true" type="q9:ArrayOfDirectMessageDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -152,7 +159,7 @@
   <xs:element name="GetFriendProfileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetFriendProfileResult" nillable="true" type="q9:FriendProfileDto" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="GetFriendProfileResult" nillable="true" type="q10:FriendProfileDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -182,7 +189,7 @@
   <xs:element name="NotifyMessageReceived">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q10:DirectMessageDto" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" minOccurs="0" name="message" nillable="true" type="q11:DirectMessageDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -97,6 +97,9 @@
   <wsdl:message name="ISocialService_SendDirectMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendDirectMessage" />
   </wsdl:message>
+  <wsdl:message name="ISocialService_SendDirectMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDirectMessageResponse" />
+  </wsdl:message>
   <wsdl:message name="ISocialService_GetConversations_InputMessage">
     <wsdl:part name="parameters" element="tns:GetConversations" />
   </wsdl:message>
@@ -179,6 +182,7 @@
     </wsdl:operation>
     <wsdl:operation name="SendDirectMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/SendDirectMessage" message="tns:ISocialService_SendDirectMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISocialService/SendDirectMessageResponse" message="tns:ISocialService_SendDirectMessage_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetConversations">
       <wsdl:input wsaw:Action="http://tempuri.org/ISocialService/GetConversations" message="tns:ISocialService_GetConversations_InputMessage" />
@@ -301,6 +305,9 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetConversations">
       <soap12:operation soapAction="http://tempuri.org/ISocialService/GetConversations" style="document" />

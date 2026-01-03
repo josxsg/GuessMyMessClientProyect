@@ -181,7 +181,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                    CanExecuteNetworkActions();
         }
 
-        private void PerformSendMessage(object obj)
+        private async void PerformSendMessage(object obj)
         {
             if (!CanPerformSendMessage())
             {
@@ -198,13 +198,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
             try
             {
-                Client.SendDirectMessage(messageDto);
+                var processedMessage = await Client.SendDirectMessageAsync(messageDto);
 
                 var localMsg = new DirectMessageDto
                 {
                     SenderUsername = Lang.alertChatSenderYou,
                     RecipientUsername = _currentChatPartnerUsername,
-                    Content = MessageText,
+                    Content = processedMessage.Content,
                     Timestamp = DateTime.Now
                 };
 

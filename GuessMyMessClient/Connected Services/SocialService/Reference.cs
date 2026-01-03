@@ -811,11 +811,11 @@ namespace GuessMyMessClient.SocialService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/InviteFriendToGameByEmail", ReplyAction="http://tempuri.org/ISocialService/InviteFriendToGameByEmailResponse")]
         System.Threading.Tasks.Task<GuessMyMessClient.SocialService.OperationResultDto> InviteFriendToGameByEmailAsync(string fromUsername, string friendEmail, string matchCode);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendDirectMessage")]
-        void SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/SendDirectMessage", ReplyAction="http://tempuri.org/ISocialService/SendDirectMessageResponse")]
+        GuessMyMessClient.SocialService.DirectMessageDto SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISocialService/SendDirectMessage")]
-        System.Threading.Tasks.Task SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/SendDirectMessage", ReplyAction="http://tempuri.org/ISocialService/SendDirectMessageResponse")]
+        System.Threading.Tasks.Task<GuessMyMessClient.SocialService.DirectMessageDto> SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISocialService/GetConversations", ReplyAction="http://tempuri.org/ISocialService/GetConversationsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.SocialService.ServiceFaultDto), Action="http://tempuri.org/ISocialService/GetConversationsServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
@@ -959,11 +959,11 @@ namespace GuessMyMessClient.SocialService {
             return base.Channel.InviteFriendToGameByEmailAsync(fromUsername, friendEmail, matchCode);
         }
         
-        public void SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message) {
-            base.Channel.SendDirectMessage(message);
+        public GuessMyMessClient.SocialService.DirectMessageDto SendDirectMessage(GuessMyMessClient.SocialService.DirectMessageDto message) {
+            return base.Channel.SendDirectMessage(message);
         }
         
-        public System.Threading.Tasks.Task SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message) {
+        public System.Threading.Tasks.Task<GuessMyMessClient.SocialService.DirectMessageDto> SendDirectMessageAsync(GuessMyMessClient.SocialService.DirectMessageDto message) {
             return base.Channel.SendDirectMessageAsync(message);
         }
         
