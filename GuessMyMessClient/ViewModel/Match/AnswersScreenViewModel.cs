@@ -323,10 +323,11 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
+                // Ya no verificamos "WARNING" aquí, porque GameClientManager ya lo filtró.
+                // Solo agregamos el mensaje al chat.
                 ChatMessages.Add(new ChatMessageViewModel { Sender = e.Sender, Message = e.Message });
             });
         }
-
         public void CleanUp()
         {
             if (_displayTimer != null)
