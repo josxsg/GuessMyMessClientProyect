@@ -524,10 +524,10 @@ namespace GuessMyMessClient.GameService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/GetRandomWords", ReplyAction="http://tempuri.org/IGameService/GetRandomWordsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(GuessMyMessClient.GameService.ServiceFaultDto), Action="http://tempuri.org/IGameService/GetRandomWordsServiceFaultDtoFault", Name="ServiceFaultDto", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
             "")]
-        GuessMyMessClient.GameService.WordDto[] GetRandomWords();
+        GuessMyMessClient.GameService.WordDto[] GetRandomWords(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/GetRandomWords", ReplyAction="http://tempuri.org/IGameService/GetRandomWordsResponse")]
-        System.Threading.Tasks.Task<GuessMyMessClient.GameService.WordDto[]> GetRandomWordsAsync();
+        System.Threading.Tasks.Task<GuessMyMessClient.GameService.WordDto[]> GetRandomWordsAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameService/SubmitDrawing")]
         void SubmitDrawing(string username, string matchId, byte[] drawingData);
@@ -631,12 +631,12 @@ namespace GuessMyMessClient.GameService {
             return base.Channel.SelectWordAsync(username, matchId, selectedWord);
         }
         
-        public GuessMyMessClient.GameService.WordDto[] GetRandomWords() {
-            return base.Channel.GetRandomWords();
+        public GuessMyMessClient.GameService.WordDto[] GetRandomWords(string username) {
+            return base.Channel.GetRandomWords(username);
         }
         
-        public System.Threading.Tasks.Task<GuessMyMessClient.GameService.WordDto[]> GetRandomWordsAsync() {
-            return base.Channel.GetRandomWordsAsync();
+        public System.Threading.Tasks.Task<GuessMyMessClient.GameService.WordDto[]> GetRandomWordsAsync(string username) {
+            return base.Channel.GetRandomWordsAsync(username);
         }
         
         public void SubmitDrawing(string username, string matchId, byte[] drawingData) {

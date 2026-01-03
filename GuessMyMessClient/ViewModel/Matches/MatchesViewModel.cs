@@ -359,7 +359,26 @@ namespace GuessMyMessClient.ViewModel.Matches
             HostUsername = dto.HostUsername;
             CurrentPlayers = dto.CurrentPlayers;
             MaxPlayers = dto.MaxPlayers;
-            DifficultyName = dto.DifficultyName;
+            DifficultyName = TranslateDifficulty(dto.DifficultyName);
+        }
+
+        private string TranslateDifficulty(string dbDifficultyName)
+        {
+            if (string.IsNullOrEmpty(dbDifficultyName)) return "Unknown";
+
+            // Comparamos con los valores que tienes en tu Base de Datos (Easy, Medium, Hard)
+            // y retornamos la variable del Lang correspondiente.
+            switch (dbDifficultyName.Trim())
+            {
+                case "Easy":
+                    return Lang.createGameCbEasy; // "Fácil"
+                case "Intermediate":
+                    return Lang.createGameCbIntermediate; // "Medio"
+                case "Hard":
+                    return Lang.createGameCbHard; // "Difícil"
+                default:
+                    return dbDifficultyName; // Si llega algo raro, mostramos lo que llegó
+            }
         }
     }
 }

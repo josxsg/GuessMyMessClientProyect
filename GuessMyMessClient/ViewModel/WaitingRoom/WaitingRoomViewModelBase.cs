@@ -172,7 +172,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
             {
                 MatchName = state.MatchName;
                 HostUsername = state.HostUsername;
-                Difficulty = state.Difficulty;
+                Difficulty = TranslateDifficulty(state.Difficulty);
                 PlayerCountDisplay = $"{state.CurrentPlayers}/{state.MaxPlayers}";
                 MatchCode = state.MatchCode;
                 MatchCodeVisibility = string.IsNullOrEmpty(state.MatchCode) ? Visibility.Collapsed : Visibility.Visible;
@@ -202,6 +202,24 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
                     }
                 }
             });
+        }
+
+        private string TranslateDifficulty(string dbDifficultyName)
+        {
+            if (string.IsNullOrEmpty(dbDifficultyName)) return "Unknown";
+
+            // Normalizamos el string y comparamos con los valores de la BD
+            switch (dbDifficultyName.Trim())
+            {
+                case "Easy":
+                    return Lang.createGameCbEasy; // Carga "Fácil" del archivo de recursos
+                case "Intermediate":
+                    return Lang.createGameCbIntermediate; // Carga "Medio"
+                case "Hard":
+                    return Lang.createGameCbHard; // Carga "Difícil"
+                default:
+                    return dbDifficultyName; // Si no coincide, muestra el original
+            }
         }
 
         protected virtual void OnLobbyMessageReceived(ChatMessageDto message)

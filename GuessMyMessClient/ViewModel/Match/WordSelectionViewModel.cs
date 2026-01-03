@@ -122,7 +122,9 @@ namespace GuessMyMessClient.ViewModel.Match
         {
             try
             {
-                WordDto[] words = await GameClientManager.Instance.GetRandomWordsAsync();
+                string currentUsername = SessionManager.Instance.CurrentUsername;
+
+                WordDto[] words = await GameClientManager.Instance.GetRandomWordsAsync(currentUsername);
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {

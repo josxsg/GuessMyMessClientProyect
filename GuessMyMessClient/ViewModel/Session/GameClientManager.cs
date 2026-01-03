@@ -161,7 +161,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
         }
 
-        public async Task<WordDto[]> GetRandomWordsAsync()
+        public async Task<WordDto[]> GetRandomWordsAsync(string username)
         {
             if (!IsConnected)
             {
@@ -170,7 +170,7 @@ namespace GuessMyMessClient.ViewModel.Session
 
             try
             {
-                return await _client.GetRandomWordsAsync();
+                return await _client.GetRandomWordsAsync(username);
             }
             catch (FaultException<ServiceGameFault> fex)
             {
