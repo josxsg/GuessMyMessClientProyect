@@ -1,15 +1,12 @@
 ﻿using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.View.Lobby.Dialogs;
 using System;
-using System.Linq;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.ViewModel;
 using GuessMyMessClient.ViewModel.Support;
-using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 {
@@ -39,11 +36,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
             if (newPasswordBox == null || confirmPasswordBox == null)
             {
-                MessageBox.Show(
-                    Lang.alertPasswordControlsNotFound, 
-                    Lang.alertErrorTitle, 
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                ShowAlert(Lang.alertPasswordControlsNotFound, Lang.alertErrorTitle, MessageBoxImage.Error);
                 return;
             }
 
@@ -53,21 +46,13 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             if (!InputValidator.IsPasswordSecure(newPassword, out string passwordErrorKey))
             {
                 string passwordErrorMessage = Lang.ResourceManager.GetString(passwordErrorKey) ?? Lang.alertPasswordGenericError;
-                MessageBox.Show(
-                    passwordErrorMessage,
-                    Lang.alertPasswordNotSecureTitle, 
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert(passwordErrorMessage, Lang.alertPasswordNotSecureTitle, MessageBoxImage.Warning);
                 return;
             }
 
             if (newPassword != confirmPassword)
             {
-                MessageBox.Show(
-                    Lang.alertPasswordsDoNotMatch,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertPasswordsDoNotMatch, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -80,11 +65,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
                 if (result.Success)
                 {
-                    MessageBox.Show(
-                        result.Message,
-                        Lang.alertCodeSentTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
+                    ShowAlert(result.Message, Lang.alertCodeSentTitle, MessageBoxImage.Information);
 
                     var verifyVM = new VerifyChangesByCodeViewModel(
                         VerifyChangesByCodeViewModel.VerificationMode.Password,
@@ -102,44 +83,12 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 }
                 else
                 {
-                    MessageBox.Show(
-                        result.Message, 
-                        Lang.alertErrorTitle, 
-                        MessageBoxButton.OK, 
-                        MessageBoxImage.Warning);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                 }
             }
-            catch (FaultException<ServiceProfileFault> fex)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message, 
-                    Lang.alertErrorTitle, 
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage, 
-                    Lang.alertConnectionErrorTitle, 
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle, 
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
             finally
             {

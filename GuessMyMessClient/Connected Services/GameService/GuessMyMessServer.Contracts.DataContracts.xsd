@@ -24,6 +24,7 @@
   <xs:element name="ServiceFaultDto" nillable="true" type="tns:ServiceFaultDto" />
   <xs:simpleType name="ServiceErrorType">
     <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
       <xs:enumeration value="Unknown" />
       <xs:enumeration value="DatabaseError" />
       <xs:enumeration value="OperationFailed" />
@@ -53,6 +54,20 @@
         <xs:annotation>
           <xs:appinfo>
             <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvalidEmailFormat">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvalidPasswordFormat">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
           </xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
@@ -95,6 +110,20 @@
         <xs:annotation>
           <xs:appinfo>
             <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MaxLobbiesCreated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UserNotConnected">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
           </xs:appinfo>
         </xs:annotation>
       </xs:enumeration>

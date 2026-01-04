@@ -1,12 +1,13 @@
 ﻿using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.SocialService;
-using GuessMyMessClient.ViewModel;
 using GuessMyMessClient.ViewModel.Session;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
+using ServiceSocialFault = GuessMyMessClient.SocialService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -15,7 +16,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
         private readonly string _targetUsername;
 
         private string _usernameTitle;
-        public string UsernameTitle 
+        public string UsernameTitle
         {
             get
             {
@@ -23,7 +24,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _usernameTitle = value; 
+                _usernameTitle = value;
                 OnPropertyChanged();
             }
         }
@@ -142,12 +143,13 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     PrepareSocialNetworksDisplay(profile.SocialNetworks);
                 });
             }
-            catch (Exception)
+            catch (FaultException<ServiceSocialFault> fex)
             {
-                await Application.Current.Dispatcher.InvokeAsync(() =>
-                {
-                    MessageBox.Show("No se pudo cargar el perfil.", Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-                });
+                ShowServiceError((AuthService.ServiceErrorType)fex.Detail.ErrorType);
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
             }
         }
 
@@ -158,7 +160,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             var supportedNetworks = new[]
             {
                 new { DbName = "Discord", Icon = "/Resources/Images/discord.png" },
-                new { DbName = "X", Icon = "/Resources/Images/twitterX.png" }, 
+                new { DbName = "X", Icon = "/Resources/Images/twitterX.png" },
                 new { DbName = "Instagram", Icon = "/Resources/Images/instagram.png" },
                 new { DbName = "TikTok", Icon = "/Resources/Images/tiktok.png" },
                 new { DbName = "Twitch", Icon = "/Resources/Images/twitch.png" }

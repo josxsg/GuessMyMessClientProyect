@@ -10,7 +10,7 @@ using GuessMyMessClient.ViewModel;
 using System.ServiceModel;
 using System.Globalization;
 using System.Threading;
-using GuessMyMessClient.Properties.Langs; 
+using GuessMyMessClient.Properties.Langs;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -38,7 +38,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _configTitle = value; 
+                _configTitle = value;
                 OnPropertyChanged(nameof(ConfigTitle));
             }
         }
@@ -50,7 +50,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _soundTitle = value; 
+                _soundTitle = value;
                 OnPropertyChanged(nameof(SoundTitle));
             }
         }
@@ -62,7 +62,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _soundEffectsLabel = value; 
+                _soundEffectsLabel = value;
                 OnPropertyChanged(nameof(SoundEffectsLabel));
             }
         }
@@ -74,7 +74,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _musicLabel = value; 
+                _musicLabel = value;
                 OnPropertyChanged(nameof(MusicLabel));
             }
         }
@@ -86,7 +86,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _volumeLabel = value; 
+                _volumeLabel = value;
                 OnPropertyChanged(nameof(VolumeLabel));
             }
         }
@@ -98,7 +98,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _languageTitle = value; 
+                _languageTitle = value;
                 OnPropertyChanged(nameof(LanguageTitle));
             }
         }
@@ -110,7 +110,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _spanishButtonText = value; 
+                _spanishButtonText = value;
                 OnPropertyChanged(nameof(SpanishButtonText));
             }
         }
@@ -122,7 +122,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _englishButtonText = value; 
+                _englishButtonText = value;
                 OnPropertyChanged(nameof(EnglishButtonText));
             }
         }
@@ -166,7 +166,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 if (value && !_isSpanish)
                 {
                     _isSpanish = true;
-                    _isEnglish = false; 
+                    _isEnglish = false;
 
                     ChangeLanguage("es-MX");
                     OnPropertyChanged(nameof(IsSpanish));
@@ -186,7 +186,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 if (value && !_isEnglish)
                 {
                     _isEnglish = true;
-                    _isSpanish = false; 
+                    _isSpanish = false;
 
                     ChangeLanguage("en-US");
                     OnPropertyChanged(nameof(IsEnglish));
@@ -195,7 +195,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
         }
 
-        private static void ChangeLanguage(string cultureName)
+        private void ChangeLanguage(string cultureName)
         {
             try
             {
@@ -214,14 +214,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 {
                     currentLobbyWindow.Close();
                 }
-            }       
+            }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertChangeLanguageError,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                ShowAlert(Lang.alertChangeLanguageError, Lang.alertErrorTitle, MessageBoxImage.Error);
             }
         }
 
@@ -238,7 +234,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             LogoutButtonText = Lang.configtBtnLogOut;
         }
 
-        private static void ExecuteLogout(object parameter)
+        private void ExecuteLogout(object parameter)
         {
             bool sessionClosedLocally = false;
             try
@@ -256,11 +252,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                         }
                         catch (CommunicationException)
                         {
-                            MessageBox.Show(
-                                Lang.alertUnknownErrorMessage,
-                                Lang.alertErrorTitle,
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Error);
+                            ShowAlert(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxImage.Error);
                         }
                     }
                 }
@@ -271,11 +263,8 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                ShowAlert(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxImage.Error);
+
                 if (!sessionClosedLocally)
                 {
                     SessionManager.Instance.CloseSession();

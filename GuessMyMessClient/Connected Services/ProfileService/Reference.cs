@@ -301,16 +301,19 @@ namespace GuessMyMessClient.ProfileService {
     public enum ServiceErrorType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unknown = 0,
+        None = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DatabaseError = 1,
+        Unknown = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OperationFailed = 2,
+        DatabaseError = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConnectionTimeout = 3,
+        OperationFailed = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConnectionTimeout = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         InvalidCredentials = 10,
@@ -323,6 +326,12 @@ namespace GuessMyMessClient.ProfileService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AccountNotVerified = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidEmailFormat = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidPasswordFormat = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         LobbyFull = 20,
@@ -341,6 +350,12 @@ namespace GuessMyMessClient.ProfileService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DuplicateRecord = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MaxLobbiesCreated = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserNotConnected = 27,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -355,6 +370,9 @@ namespace GuessMyMessClient.ProfileService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.Dictionary<string, string> DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GuessMyMessClient.ProfileService.ServiceErrorType ErrorCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
@@ -381,6 +399,19 @@ namespace GuessMyMessClient.ProfileService {
                 if ((object.ReferenceEquals(this.DataField, value) != true)) {
                     this.DataField = value;
                     this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GuessMyMessClient.ProfileService.ServiceErrorType ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
                 }
             }
         }

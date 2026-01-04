@@ -27,6 +27,9 @@ namespace GuessMyMessClient.AuthService {
         private System.Collections.Generic.Dictionary<string, string> DataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GuessMyMessClient.AuthService.ServiceErrorType ErrorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -51,6 +54,19 @@ namespace GuessMyMessClient.AuthService {
                 if ((object.ReferenceEquals(this.DataField, value) != true)) {
                     this.DataField = value;
                     this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GuessMyMessClient.AuthService.ServiceErrorType ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
                 }
             }
         }
@@ -89,6 +105,69 @@ namespace GuessMyMessClient.AuthService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceErrorType", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
+        "")]
+    public enum ServiceErrorType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unknown = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DatabaseError = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OperationFailed = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConnectionTimeout = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidCredentials = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserAlreadyExists = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmailAlreadyRegistered = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountNotVerified = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidEmailFormat = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidPasswordFormat = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LobbyFull = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MatchNotFound = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GameInProgress = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlayerBanned = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotFound = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DuplicateRecord = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MaxLobbiesCreated = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserNotConnected = 27,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -167,54 +246,6 @@ namespace GuessMyMessClient.AuthService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceErrorType", Namespace="http://schemas.datacontract.org/2004/07/GuessMyMessServer.Contracts.DataContracts" +
-        "")]
-    public enum ServiceErrorType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unknown = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DatabaseError = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OperationFailed = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConnectionTimeout = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InvalidCredentials = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UserAlreadyExists = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EmailAlreadyRegistered = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountNotVerified = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LobbyFull = 20,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MatchNotFound = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GameInProgress = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlayerBanned = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NotFound = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DuplicateRecord = 25,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

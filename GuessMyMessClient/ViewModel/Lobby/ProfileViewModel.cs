@@ -9,7 +9,6 @@ using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -108,9 +107,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 string currentLink = existingNetwork?.UserLink;
 
-                var dialogVM = new AddSocialNetworkViewModel(networkName, currentLink, (linkIngresado) =>
+                var dialogVM = new AddSocialNetworkViewModel(networkName, currentLink, (enteredLink) =>
                 {
-                    SaveSocialNetworkToServer(networkName, linkIngresado);
+                    SaveSocialNetworkToServer(networkName, enteredLink);
                 });
 
                 var dialogView = new AddSocialNetworkView
@@ -140,11 +139,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 if (result.Success)
                 {
-                    MessageBox.Show(
-                        Lang.alertProfileUpdateSuccess, 
-                        Lang.alertSuccessTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
+                    ShowAlert(Lang.alertProfileUpdateSuccess, Lang.alertSuccessTitle, MessageBoxImage.Information);
 
                     UpdateLocalSocialNetworkList(networkName, userLink);
 
@@ -153,16 +148,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
                 else
                 {
-                    MessageBox.Show(result.Message, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                 }
             }
-            catch (FaultException<ServiceProfileFault> fex)
+            catch (Exception ex)
             {
-                MessageBox.Show(fex.Detail.Message, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertProfileUpdateErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                HandleException(ex);
             }
             finally
             {
@@ -194,11 +185,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (string.IsNullOrWhiteSpace(FirstName) || string.IsNullOrWhiteSpace(LastName))
             {
-                MessageBox.Show(
-                    Lang.alertProfileMandatoryFields,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertProfileMandatoryFields, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -211,55 +198,18 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                 if (result.Success)
                 {
-                    MessageBox.Show(
-                        Lang.alertProfileUpdateSuccess,
-                        Lang.alertSuccessTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
-
+                    ShowAlert(Lang.alertProfileUpdateSuccess, Lang.alertSuccessTitle, MessageBoxImage.Information);
                     client.Close();
                     isSuccess = true;
                 }
                 else
                 {
-                    MessageBox.Show(
-                        result.Message,
-                        Lang.alertProfileUpdateErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                 }
             }
-            catch (FaultException<ServiceProfileFault> fex)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertProfileUpdateErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertProfileUpdateErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertProfileUpdateErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch
-            {
-                MessageBox.Show(
-                    Lang.alertProfileUpdateUnknownError,
-                    Lang.alertProfileUpdateErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
             finally
             {
@@ -286,11 +236,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private async void ExecuteChangePassword(object parameter)
         {
-            MessageBox.Show(
-                Lang.alertPasswordChangeCodeInfo,
-                Lang.alertPasswordChangeTitle,
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            ShowAlert(Lang.alertPasswordChangeCodeInfo, Lang.alertPasswordChangeTitle, MessageBoxImage.Information);
 
             var client = new UserProfileServiceClient();
             bool isSuccess = false;
@@ -314,44 +260,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 }
                 else
                 {
-                    MessageBox.Show(
-                        result.Message,
-                        Lang.alertPasswordRequestErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                 }
             }
-            catch (FaultException<ServiceProfileFault> fex)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertPasswordRequestErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertPasswordRequestErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertPasswordRequestErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch
-            {
-                MessageBox.Show(
-                    Lang.alertPasswordRequestUnknownError,
-                    Lang.alertPasswordRequestErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
             finally
             {

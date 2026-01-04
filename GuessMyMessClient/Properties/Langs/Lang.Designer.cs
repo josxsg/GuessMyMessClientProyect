@@ -322,11 +322,38 @@ namespace GuessMyMessClient.Properties.Langs {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The email address is already registered..
+        /// </summary>
+        public static string alertEmailAlreadyExists {
+            get {
+                return ResourceManager.GetString("alertEmailAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a User email cannot be empty for verification..
         /// </summary>
         public static string alertEmailEmpty {
             get {
                 return ResourceManager.GetString("alertEmailEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter the link/username..
+        /// </summary>
+        public static string alertEmptyLink {
+            get {
+                return ResourceManager.GetString("alertEmptyLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Empty fields..
+        /// </summary>
+        public static string alertEmptyTitle {
+            get {
+                return ResourceManager.GetString("alertEmptyTitle", resourceCulture);
             }
         }
         
@@ -534,6 +561,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertInvalidEmailTitle {
             get {
                 return ResourceManager.GetString("alertInvalidEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Username/Email or Password Incorrect.
+        /// </summary>
+        public static string alertInvalidUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("alertInvalidUsernameOrPassword", resourceCulture);
             }
         }
         
@@ -903,6 +939,15 @@ namespace GuessMyMessClient.Properties.Langs {
         public static string alertUnknownErrorMessage {
             get {
                 return ResourceManager.GetString("alertUnknownErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The username is already in use..
+        /// </summary>
+        public static string alertUserAlreadyExists {
+            get {
+                return ResourceManager.GetString("alertUserAlreadyExists", resourceCulture);
             }
         }
         

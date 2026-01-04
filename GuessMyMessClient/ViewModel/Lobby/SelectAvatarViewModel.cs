@@ -11,9 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using GuessMyMessClient.Model;
 using GuessMyMessClient.ProfileService;
-using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.ViewModel;
-using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
 {
@@ -123,21 +120,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 client.Close();
                 isSuccess = true;
             }
-            catch (FaultException<ServiceProfileFault> fex)
+            catch (Exception ex)
             {
-                ShowError(fex.Detail.Message);
-            }
-            catch (FaultException)
-            {
-                ShowError(Lang.alertAvatarLoadServerError);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                ShowError(Lang.alertConnectionErrorMessage);
-            }
-            catch
-            {
-                ShowError(Lang.alertAvatarLoadUnknownError);
+                HandleException(ex);
             }
             finally
             {
@@ -146,18 +131,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     client.Abort();
                 }
             }
-        }
-
-        private static void ShowError(string message)
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                MessageBox.Show(
-                    message,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            });
         }
 
         private void ExecuteSelectAvatarItem(object parameter)

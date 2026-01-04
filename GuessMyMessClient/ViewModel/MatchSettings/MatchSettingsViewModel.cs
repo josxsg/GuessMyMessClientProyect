@@ -9,7 +9,6 @@ using GuessMyMessClient.ViewModel.WaitingRoom;
 using GuessMyMessClient.Properties.Langs;
 using System.ServiceModel;
 using System;
-
 using ServiceMatchFault = GuessMyMessClient.MatchmakingService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.MatchSettings
@@ -123,11 +122,7 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
         {
             if (string.IsNullOrWhiteSpace(MatchName))
             {
-                MessageBox.Show(
-                    Lang.alertCreateGameErrorName,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertCreateGameErrorName, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -188,36 +183,16 @@ namespace GuessMyMessClient.ViewModel.MatchSettings
                 }
                 else
                 {
-                    MessageBox.Show(
-                        result.Message ?? Lang.alertCreateGameErrorGeneric,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                 }
             }
             catch (FaultException<ServiceMatchFault> fex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowServiceError((AuthService.ServiceErrorType)fex.Detail.ErrorType);
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertConnectionErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertCreateGameErrorGeneric,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
         }
 

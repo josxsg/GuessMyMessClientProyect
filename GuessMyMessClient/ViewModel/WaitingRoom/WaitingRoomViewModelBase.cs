@@ -208,17 +208,12 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         {
             if (string.IsNullOrEmpty(dbDifficultyName)) return "Unknown";
 
-            // Normalizamos el string y comparamos con los valores de la BD
             switch (dbDifficultyName.Trim())
             {
-                case "Easy":
-                    return Lang.createGameCbEasy; // Carga "Fácil" del archivo de recursos
-                case "Intermediate":
-                    return Lang.createGameCbIntermediate; // Carga "Medio"
-                case "Hard":
-                    return Lang.createGameCbHard; // Carga "Difícil"
-                default:
-                    return dbDifficultyName; // Si no coincide, muestra el original
+                case "Easy": return Lang.createGameCbEasy;
+                case "Intermediate": return Lang.createGameCbIntermediate;
+                case "Hard": return Lang.createGameCbHard;
+                default: return dbDifficultyName;
             }
         }
 
@@ -232,7 +227,6 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
                     message.MessageContent.StartsWith(Lang.infoGuestName))
                 {
                     string assignedName = message.MessageContent.Substring(Lang.infoGuestName.Length).Trim();
-
                     _sessionManager.CurrentUsername = assignedName;
                     OnPropertyChanged(nameof(IsHost));
                 }
@@ -242,8 +236,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
                 ChatMessages.Add(new ChatMessageDisplay { FormattedMessage = formatted });
 
-                const int MaxMessages = 100;
-                if (ChatMessages.Count > MaxMessages)
+                if (ChatMessages.Count > 100)
                 {
                     ChatMessages.RemoveAt(0);
                 }
@@ -259,11 +252,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                MessageBox.Show(
-                    $"{Lang.waitingRoomMsgKicked}: {reason}", 
-                    Lang.alertInfoTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert($"{Lang.waitingRoomMsgKicked}: {reason}", Lang.alertInfoTitle, MessageBoxImage.Warning);
                 NavigateBackToLobbyView();
                 CleanUp();
             });
@@ -287,7 +276,9 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
                 Window myWindow = Application.Current.Windows
                     .OfType<Window>()
                     .FirstOrDefault(w => w.DataContext == this);
+
                 ServiceLocator.Navigation.NavigateToWordSelection();
+
                 if (myWindow != null)
                 {
                     myWindow.Close();
@@ -316,11 +307,7 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show(
-                            Lang.alertGameStartError, 
-                            Lang.alertErrorTitle, 
-                            MessageBoxButton.OK, 
-                            MessageBoxImage.Error);
+                        ShowAlert(Lang.alertGameStartError, Lang.alertErrorTitle, MessageBoxImage.Error);
                     }
                 }
             });
@@ -356,7 +343,14 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
         {
             if (!string.IsNullOrEmpty(messageKey))
             {
-                _lobbyManager.SendChatMessage(messageKey);
+                try
+                {
+                    _lobbyManager.SendChatMessage(messageKey);
+                }
+                catch (Exception ex)
+                {
+                    HandleException(ex);
+                }
             }
         }
 
@@ -372,7 +366,14 @@ namespace GuessMyMessClient.ViewModel.WaitingRoom
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    _lobbyManager.RequestKickPlayer(usernameToKick);
+                    try
+                    {
+                        _lobbyManager.RequestKickPlayer(usernameToKick);
+                    }
+                    catch (Exception ex)
+                    {
+                        HandleException(ex);
+                    }
                 }
             }
         }

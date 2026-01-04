@@ -159,6 +159,7 @@
     <Compile Include="ViewModel\Support\Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\BoolToGreenRedConverter.cs" />
     <Compile Include="ViewModel\Support\Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\Support\ErrorManager.cs" />
     <Compile Include="ViewModel\Support\InkCanvasBinder.cs" />
     <Compile Include="ViewModel\Support\InputValidator.cs" />
     <Compile Include="ViewModel\Support\Navigation\INavigationService.cs" />

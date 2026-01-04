@@ -1,14 +1,13 @@
 ﻿using GuessMyMessClient.AuthService;
 using GuessMyMessClient.ViewModel.Session;
-using GuessMyMessClient.View.Lobby;
 using System.Windows;
 using System.Windows.Input;
 using GuessMyMessClient.View.HomePages;
-using GuessMyMessClient.ViewModel.Lobby;
 using System.Linq;
 using System;
 using GuessMyMessClient.View.WaitingRoom;
 using GuessMyMessClient.ViewModel.WaitingRoom;
+using GuessMyMessClient.Properties.Langs; 
 
 namespace GuessMyMessClient.ViewModel.HomePages
 {
@@ -17,29 +16,29 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _email;
         private string _invitationCode;
 
-        public string Email 
+        public string Email
         {
-            get 
-            { 
-                return _email; 
+            get
+            {
+                return _email;
             }
-            set 
-            { 
-                _email = value; 
-                OnPropertyChanged(); 
-            } 
+            set
+            {
+                _email = value;
+                OnPropertyChanged();
+            }
         }
-        public string InvitationCode 
+        public string InvitationCode
         {
-            get 
-            { 
-                return _invitationCode; 
+            get
+            {
+                return _invitationCode;
             }
-            set 
-            { 
-                _invitationCode = value; 
-                OnPropertyChanged(); 
-            } 
+            set
+            {
+                _invitationCode = value;
+                OnPropertyChanged();
+            }
         }
 
         public ICommand LoginGuestCommand { get; }
@@ -61,7 +60,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(InvitationCode))
             {
-                MessageBox.Show("Todos los campos son obligatorios.");
+                ShowAlert(Lang.alertRequiredFields, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -79,21 +78,21 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     SessionManager.Instance.StartSession(sessionToken);
                     SessionManager.Instance.IsGuest = true;
 
-                    GuessMyMessClient.ViewModel.Session.LobbyClientManager.Instance.Connect(sessionToken, matchId);
+                    LobbyClientManager.Instance.Connect(sessionToken, matchId);
 
                     Window waitingRoomWindow;
 
                     if (isPrivate)
                     {
                         var vm = new WaitingRoomPrivateMatchViewModel(
-                            GuessMyMessClient.ViewModel.Session.LobbyClientManager.Instance,
+                            LobbyClientManager.Instance,
                             SessionManager.Instance);
                         waitingRoomWindow = new WaitingRoomPrivateMatchView { DataContext = vm };
                     }
                     else
                     {
                         var vm = new WaitingRoomPublicMatchViewModel(
-                            GuessMyMessClient.ViewModel.Session.LobbyClientManager.Instance,
+                            LobbyClientManager.Instance,
                             SessionManager.Instance);
                         waitingRoomWindow = new WaitingRoomPublicMatchView { DataContext = vm };
                     }
@@ -102,10 +101,14 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
                     Application.Current.Windows.OfType<GuestLoginView>().FirstOrDefault()?.Close();
                 }
+                else
+                {
+                    ShowServiceError(result.ErrorCode);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al ingresar: " + ex.Message);
+                HandleException(ex);
             }
             finally
             {

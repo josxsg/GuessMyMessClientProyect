@@ -302,6 +302,7 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void OnInGameMessageReceived(string sender, string message)
         {
+            const int MaxStrikes = 3;
             if (_isExiting)
             {
                 return;
@@ -309,24 +310,18 @@ namespace GuessMyMessClient.ViewModel.Session
 
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                // --- NUEVA LÓGICA DE ADVERTENCIA ---
-                // Si es un mensaje del sistema que empieza con WARNING, es una alerta de conducta
                 if (sender == "SYSTEM" && message.StartsWith("WARNING|"))
                 {
-                    // Parseamos el mensaje: WARNING|1 (donde 1 es el número de advertencia actual)
                     string[] parts = message.Split('|');
                     if (parts.Length > 1 && int.TryParse(parts[1], out int strikeCount))
                     {
-                        int remaining = 3 - strikeCount; // Suponiendo regla de 3 strikes
+                        int remaining = MaxStrikes - strikeCount; 
 
-                        // Usamos textos directos o del archivo de recursos Lang
-                        // Si no tienes las claves en Lang, pon el string directo aquí
                         string title = Lang.alertWarningTitle ?? "Advertencia de Conducta";
                         string body = string.Format(
                             "¡Se ha detectado lenguaje inapropiado!\n\nEsta es tu advertencia {0} de 3.\nTe quedan {1} oportunidades antes de ser expulsado de la partida.",
                             strikeCount, remaining);
 
-                        // Mostramos la alerta modal (bloqueante)
                         MessageBox.Show(
                             body,
                             title,
@@ -334,11 +329,8 @@ namespace GuessMyMessClient.ViewModel.Session
                             MessageBoxImage.Warning);
                     }
 
-                    // IMPORTANTE: Hacemos return aquí para que el evento NO se dispare hacia los ViewModels
-                    // Así evitamos que el texto "WARNING|1" aparezca en el chat visual
                     return;
                 }
-                // -----------------------------------
 
                 if (sender == "SYSTEM")
                 {
