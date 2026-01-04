@@ -1050,4 +1050,19 @@
   <data name="gameSystemTitle" xml:space="preserve">
     <value>Sistema</value>
   </data>
+  <data name="alertUserAlreadyExists" xml:space="preserve">
+    <value>El nombre de usuario ya está registrado.</value>
+  </data>
+  <data name="alertEmailAlreadyExists" xml:space="preserve">
+    <value>El correo electrónico ya está registrado.</value>
+  </data>
+  <data name="alertInvalidUsernameOrPassword" xml:space="preserve">
+    <value>Usuario/Correo Electrónico o Contraseña incorrectos</value>
+  </data>
+  <data name="alertEmptyTitle" xml:space="preserve">
+    <value>Campos vacios.</value>
+  </data>
+  <data name="alertEmptyLink" xml:space="preserve">
+    <value>Ingresa el link/usuario.</value>
+  </data>
 </root>

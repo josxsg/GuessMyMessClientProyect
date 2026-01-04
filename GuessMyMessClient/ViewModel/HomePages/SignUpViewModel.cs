@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -33,7 +32,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (_username != value)
                 {
-                    _username = value; 
+                    _username = value;
                     OnPropertyChanged();
                 }
             }
@@ -50,7 +49,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (_firstName != value)
                 {
-                    _firstName = value; 
+                    _firstName = value;
                     OnPropertyChanged();
                 }
             }
@@ -67,7 +66,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (_lastName != value)
                 {
-                    _lastName = value; 
+                    _lastName = value;
                     OnPropertyChanged();
                 }
             }
@@ -76,12 +75,15 @@ namespace GuessMyMessClient.ViewModel.HomePages
         private string _email;
         public string Email
         {
-            get => _email;
+            get
+            {
+                return _email;
+            } 
             set
             {
                 if (_email != value)
                 {
-                    _email = value; 
+                    _email = value;
                     OnPropertyChanged();
                 }
             }
@@ -98,7 +100,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (_password != value)
                 {
-                    _password = value; 
+                    _password = value;
                     OnPropertyChanged();
                 }
             }
@@ -115,8 +117,8 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (value && _isMale != value)
                 {
-                    _isMale = value; 
-                    OnPropertyChanged(); 
+                    _isMale = value;
+                    OnPropertyChanged();
                     ResetGender(1);
                 }
             }
@@ -133,8 +135,8 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (value && _isFemale != value)
                 {
-                    _isFemale = value; 
-                    OnPropertyChanged(); 
+                    _isFemale = value;
+                    OnPropertyChanged();
                     ResetGender(2);
                 }
             }
@@ -151,8 +153,8 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (value && _isNonBinary != value)
                 {
-                    _isNonBinary = value; 
-                    OnPropertyChanged(); 
+                    _isNonBinary = value;
+                    OnPropertyChanged();
                     ResetGender(3);
                 }
             }
@@ -169,7 +171,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             {
                 if (_selectedAvatarId != value)
                 {
-                    _selectedAvatarId = value; 
+                    _selectedAvatarId = value;
                     OnPropertyChanged();
                 }
             }
@@ -214,19 +216,19 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (_isMale != (selectedGenderId == 1))
             {
-                _isMale = (selectedGenderId == 1); 
+                _isMale = (selectedGenderId == 1);
                 OnPropertyChanged(nameof(IsMale));
             }
 
             if (_isFemale != (selectedGenderId == 2))
             {
-                _isFemale = (selectedGenderId == 2); 
+                _isFemale = (selectedGenderId == 2);
                 OnPropertyChanged(nameof(IsFemale));
             }
 
             if (_isNonBinary != (selectedGenderId == 3))
             {
-                _isNonBinary = (selectedGenderId == 3); 
+                _isNonBinary = (selectedGenderId == 3);
                 OnPropertyChanged(nameof(IsNonBinary));
             }
         }
@@ -354,38 +356,19 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (result.Success)
             {
-                MessageBox.Show($"{Lang.alertRegistrationSuccess}\n{result.Message}", Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                ShowAlert($"{Lang.alertRegistrationSuccess}\n{result.Message}", Lang.alertSuccessTitle, MessageBoxImage.Information);
                 OpenVerificationDialog(parameter);
                 client.Close();
                 return true;
             }
 
-            MessageBox.Show(result.Message, Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            ShowServiceError(result.ErrorCode);
             return false;
         }
 
         private void HandleRegistrationException(Exception ex)
         {
-            if (ex is FaultException<GuessMyMessClient.AuthService.ServiceFaultDto> fex)
-            {
-                bool isInputError = fex.Detail.ErrorType == AuthService.ServiceErrorType.DuplicateRecord ||
-                                   fex.Detail.ErrorType == AuthService.ServiceErrorType.UserAlreadyExists ||
-                                   fex.Detail.ErrorType == AuthService.ServiceErrorType.EmailAlreadyRegistered;
-
-                MessageBox.Show(fex.Detail.Message, isInputError ? Lang.alertInputErrorTitle : Lang.alertRegistrationErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            else if (ex is FaultException)
-            {
-                MessageBox.Show(Lang.alertServerErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                MessageBox.Show(Lang.alertConnectionErrorMessage, Lang.alertConnectionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
-                MessageBox.Show(Lang.alertUnknownErrorMessage, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            HandleException(ex);
         }
 
         private void FinalizeClientState(AuthenticationServiceClient client, bool isSuccess)
@@ -398,8 +381,9 @@ namespace GuessMyMessClient.ViewModel.HomePages
 
         private void ShowWarning(string message)
         {
-            MessageBox.Show(message, Lang.alertInputErrorTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+            ShowAlert(message, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
         }
+
         private bool CanExecuteSignUp(object parameter)
         {
             return !string.IsNullOrWhiteSpace(Username) &&
@@ -430,7 +414,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             image.Freeze();
             return image;
         }
-        
+
         private void OpenSelectAvatarDialog(object parameter)
         {
             var selectAvatarView = new SelectAvatarView();

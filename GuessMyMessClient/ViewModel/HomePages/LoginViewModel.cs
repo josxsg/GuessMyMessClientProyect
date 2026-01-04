@@ -21,7 +21,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
             }
             set
             {
-                _usernameOrEmail = value; 
+                _usernameOrEmail = value;
                 OnPropertyChanged();
             }
         }
@@ -66,11 +66,7 @@ namespace GuessMyMessClient.ViewModel.HomePages
         {
             if (!CanExecuteLogin(parameter))
             {
-                MessageBox.Show(
-                    Lang.alertRequiredFields,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertRequiredFields, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -91,55 +87,21 @@ namespace GuessMyMessClient.ViewModel.HomePages
                     client.Close();
                     isSuccess = true;
                 }
-                else if (result.Message == "UserAlreadyLoggedIn")
-                {
-                    MessageBox.Show(
-                        Lang.alertUserAlreadyLoggedIn,
-                        Lang.alertWarningTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-
-                }
                 else
                 {
-                    MessageBox.Show(
-                        result.Message,
-                        Lang.alertLoginErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
+                    if (result.ErrorCode == ServiceErrorType.OperationFailed && result.Message == "UserAlreadyLoggedIn")
+                    {
+                        ShowAlert(Lang.alertUserAlreadyLoggedIn, Lang.alertWarningTitle, MessageBoxImage.Warning);
+                    }
+                    else
+                    {
+                        ShowServiceError(result.ErrorCode);
+                    }
                 }
             }
-            catch (FaultException<ServiceFaultDto> fex)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertLoginErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertConnectionErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
             finally
             {

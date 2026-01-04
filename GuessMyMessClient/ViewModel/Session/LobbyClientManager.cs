@@ -53,11 +53,14 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertConnectionErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    MessageBox.Show(
+                        Lang.alertConnectionErrorMessage,
+                        Lang.alertConnectionErrorTitle,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                });
 
                 CleanupConnection();
                 ConnectionLost?.Invoke();
@@ -78,21 +81,9 @@ namespace GuessMyMessClient.ViewModel.Session
                     _client.LeaveLobby(_currentUsername, CurrentMatchId);
                 }
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                // Ignorar errores al desconectar
             }
             finally
             {
@@ -118,12 +109,7 @@ namespace GuessMyMessClient.ViewModel.Session
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(
-                        Lang.alertUnknownErrorMessage,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                     _client.Abort();
+                    _client.Abort();
                 }
                 finally
                 {
@@ -136,65 +122,20 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void SendChatMessage(string messageKey)
         {
-            if (!IsConnected)
-            {
-                return;
-            }
-            try
-            {
-                _client.SendLobbyMessage(_currentUsername, CurrentMatchId, messageKey);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                HandleCommunicationError();
-            }
+            if (!IsConnected) throw new InvalidOperationException(Lang.alertConnectionErrorTitle);
+            _client.SendLobbyMessage(_currentUsername, CurrentMatchId, messageKey);
         }
 
         public void RequestStartGame()
         {
-            if (!IsConnected)
-            {
-                return;
-            }
-            try
-            {
-                _client.StartGame(_currentUsername, CurrentMatchId);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error); 
-                HandleCommunicationError();
-            }
+            if (!IsConnected) throw new InvalidOperationException(Lang.alertConnectionErrorTitle);
+            _client.StartGame(_currentUsername, CurrentMatchId);
         }
 
         public void RequestKickPlayer(string playerToKick)
         {
-            if (!IsConnected)
-            {
-                return;
-            }
-            try
-            {
-                _client.KickPlayer(_currentUsername, playerToKick, CurrentMatchId);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                HandleCommunicationError();
-            }
+            if (!IsConnected) throw new InvalidOperationException(Lang.alertConnectionErrorTitle);
+            _client.KickPlayer(_currentUsername, playerToKick, CurrentMatchId);
         }
 
         public void SetCurrentLobbySettings(LobbySettingsDto settings)
@@ -245,10 +186,6 @@ namespace GuessMyMessClient.ViewModel.Session
 
         public void UpdateKickVote(string targetUsername, int currentVotes, int votesNeeded)
         {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                Console.WriteLine($"Vote update: {targetUsername} {currentVotes}/{votesNeeded}");
-            });
         }
 
         private void Channel_Faulted(object sender, EventArgs e)

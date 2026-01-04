@@ -5,8 +5,6 @@ using System.ServiceModel;
 using System.Windows;
 using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.ViewModel;
-using ServiceProfileFault = GuessMyMessClient.ProfileService.ServiceFaultDto;
 using GuessMyMessClient.ViewModel.Support;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
@@ -56,11 +54,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
             if (!InputValidator.IsValidEmail(NewEmail))
             {
-                MessageBox.Show(
-                    Lang.alertInvalidEmailFormat,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertInvalidEmailFormat, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -70,11 +64,7 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
                 if (result.Success)
                 {
-                    MessageBox.Show(
-                        result.Message,
-                        Lang.alertCodeSentTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
+                    ShowAlert(result.Message, Lang.alertCodeSentTitle, MessageBoxImage.Information);
 
                     var verifyVM = new VerifyChangesByCodeViewModel(
                         VerifyChangesByCodeViewModel.VerificationMode.Email,
@@ -93,44 +83,12 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
                 }
                 else
                 {
-                    MessageBox.Show(
-                        result.Message,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                 }
             }
-            catch (FaultException<ServiceProfileFault> fex)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show(
-                    Lang.alertServerErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                MessageBox.Show(
-                    Lang.alertConnectionErrorMessage,
-                    Lang.alertConnectionErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
             finally
             {

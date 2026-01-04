@@ -11,8 +11,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.ViewModel;
-using GuessMyMessClient.LobbyService;
 using ServiceMatchFault = GuessMyMessClient.MatchmakingService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Matches
@@ -117,21 +115,9 @@ namespace GuessMyMessClient.ViewModel.Matches
                 var matchesDto = await MatchmakingClientManager.Instance.GetPublicMatchesAsync();
                 OnPublicMatchesListUpdated(matchesDto);
             }
-            catch (FaultException<ServiceMatchFault> fex)
+            catch (Exception ex)
             {
-                ShowError(fex.Detail.Message);
-            }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
-            {
-                ShowError(Lang.alertConnectionErrorMessage);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
         }
 
@@ -160,7 +146,7 @@ namespace GuessMyMessClient.ViewModel.Matches
             }
             else
             {
-                ShowError(Lang.alertCannotJoinMatch);
+                ShowAlert(Lang.alertCannotJoinMatch, Lang.alertErrorTitle, MessageBoxImage.Warning);
                 IsJoining = false;
             }
         }
@@ -169,7 +155,7 @@ namespace GuessMyMessClient.ViewModel.Matches
         {
             if (string.IsNullOrWhiteSpace(MatchCode))
             {
-                ShowError(Lang.alertPrivateMatchesErrorNoCode);
+                ShowAlert(Lang.alertPrivateMatchesErrorNoCode, Lang.alertErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -192,23 +178,18 @@ namespace GuessMyMessClient.ViewModel.Matches
                 }
                 else
                 {
-                    ShowError(result.Message ?? Lang.alertJoinMatchError);
+                    ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                     IsJoining = false;
                 }
             }
             catch (FaultException<ServiceMatchFault> fex)
             {
-                ShowError(fex.Detail.Message);
+                ShowServiceError((AuthService.ServiceErrorType)fex.Detail.ErrorType);
                 IsJoining = false;
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            catch (Exception ex)
             {
-                ShowError(Lang.alertConnectionErrorMessage);
-                IsJoining = false;
-            }
-            catch (Exception)
-            {
-                ShowError(Lang.alertJoinMatchError);
+                HandleException(ex);
                 IsJoining = false;
             }
         }
@@ -294,7 +275,14 @@ namespace GuessMyMessClient.ViewModel.Matches
                 }
                 else
                 {
-                    ShowError(result.Message);
+                    if (result.ErrorCode != ServiceErrorType.None)
+                    {
+                        ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
+                    }
+                    else
+                    {
+                        ShowAlert(result.Message, Lang.alertErrorTitle, MessageBoxImage.Error);
+                    }
                     IsJoining = false;
                 }
 
@@ -308,20 +296,8 @@ namespace GuessMyMessClient.ViewModel.Matches
         {
             Application.Current?.Dispatcher?.Invoke(() =>
             {
-                ShowError($"{Lang.alertMatchmakingError}: {reason}");
+                ShowAlert($"{Lang.alertMatchmakingError}: {reason}", Lang.alertErrorTitle, MessageBoxImage.Error);
                 IsJoining = false;
-            });
-        }
-
-        private static void ShowError(string message)
-        {
-            Application.Current?.Dispatcher?.Invoke(() =>
-            {
-                MessageBox.Show(
-                    message, 
-                    Lang.alertErrorTitle, 
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Error);
             });
         }
 
@@ -366,18 +342,16 @@ namespace GuessMyMessClient.ViewModel.Matches
         {
             if (string.IsNullOrEmpty(dbDifficultyName)) return "Unknown";
 
-            // Comparamos con los valores que tienes en tu Base de Datos (Easy, Medium, Hard)
-            // y retornamos la variable del Lang correspondiente.
             switch (dbDifficultyName.Trim())
             {
                 case "Easy":
-                    return Lang.createGameCbEasy; // "Fácil"
+                    return Lang.createGameCbEasy;
                 case "Intermediate":
-                    return Lang.createGameCbIntermediate; // "Medio"
+                    return Lang.createGameCbIntermediate;
                 case "Hard":
-                    return Lang.createGameCbHard; // "Difícil"
+                    return Lang.createGameCbHard;
                 default:
-                    return dbDifficultyName; // Si llega algo raro, mostramos lo que llegó
+                    return dbDifficultyName;
             }
         }
     }

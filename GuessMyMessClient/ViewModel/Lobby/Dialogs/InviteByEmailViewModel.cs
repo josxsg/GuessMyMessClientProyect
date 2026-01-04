@@ -16,8 +16,15 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         public string TargetEmail
         {
-            get => _targetEmail;
-            set { _targetEmail = value; OnPropertyChanged(); }
+            get
+            {
+                return _targetEmail;
+            }
+            set
+            {
+                _targetEmail = value; 
+                OnPropertyChanged();
+            }
         }
 
         public ICommand SendInviteCommand { get; }
@@ -36,21 +43,13 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         {
             if (string.IsNullOrWhiteSpace(TargetEmail))
             {
-                MessageBox.Show(
-                    Lang.alertFieldsRequired, 
-                    Lang.alertInputErrorTitle, 
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertFieldsRequired, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
             if (!InputValidator.IsValidEmail(TargetEmail))
             {
-                MessageBox.Show(
-                    Lang.alertInvalidEmailFormat,
-                    Lang.alertInputErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                ShowAlert(Lang.alertInvalidEmailFormat, Lang.alertInputErrorTitle, MessageBoxImage.Warning);
                 return;
             }
 
@@ -60,32 +59,20 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
             {
                 await MatchmakingClientManager.Instance.InviteGuestByEmailAsync(myUsername, TargetEmail, _matchId);
 
-                MessageBox.Show(
-                    Lang.alertInviteSentSuccess,
-                    Lang.alertSuccessTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                ShowAlert(Lang.alertInviteSentSuccess, Lang.alertSuccessTitle, MessageBoxImage.Information);
 
                 if (parameter is Window window)
                 {
                     window.Close();
                 }
             }
-            catch (FaultException<ServiceFaultDto> fex)
+            catch (FaultException<GuessMyMessClient.MatchmakingService.ServiceFaultDto> fex)
             {
-                MessageBox.Show(
-                    fex.Detail.Message,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Warning);
+                ShowServiceError((GuessMyMessClient.AuthService.ServiceErrorType)fex.Detail.ErrorType);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage, 
-                    Lang.alertErrorTitle, 
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Error);
+                HandleException(ex);
             }
         }
 

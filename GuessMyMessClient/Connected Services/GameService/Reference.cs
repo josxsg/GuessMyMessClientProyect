@@ -159,16 +159,19 @@ namespace GuessMyMessClient.GameService {
     public enum ServiceErrorType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unknown = 0,
+        None = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DatabaseError = 1,
+        Unknown = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OperationFailed = 2,
+        DatabaseError = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConnectionTimeout = 3,
+        OperationFailed = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConnectionTimeout = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         InvalidCredentials = 10,
@@ -181,6 +184,12 @@ namespace GuessMyMessClient.GameService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AccountNotVerified = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidEmailFormat = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvalidPasswordFormat = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         LobbyFull = 20,
@@ -199,6 +208,12 @@ namespace GuessMyMessClient.GameService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DuplicateRecord = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MaxLobbiesCreated = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserNotConnected = 27,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel;
 
 namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
@@ -10,7 +11,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         private string _userLink;
         private readonly Action<string> _onConfirm;
 
-        // Propiedad enlazada al TextBox
         public string UserLink
         {
             get => _userLink;
@@ -24,8 +24,6 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
         public ICommand ConfirmCommand { get; }
         public ICommand CloseCommand { get; }
 
-
-        // El constructor sigue aceptando networkName para compatibilidad con ProfileViewModel
         public AddSocialNetworkViewModel(string networkName, string currentLink, Action<string> onConfirm)
         {
             _onConfirm = onConfirm;
@@ -37,17 +35,14 @@ namespace GuessMyMessClient.ViewModel.Lobby.Dialogs
 
         private void ExecuteConfirm(object parameter)
         {
-            // Validación simple
             if (string.IsNullOrWhiteSpace(UserLink))
             {
-                MessageBox.Show("Por favor ingresa un enlace válido.", "Campo vacío", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Lang.alertEmptyLink, Lang.alertEmptyTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Invoca la acción de guardado en el ProfileViewModel
             _onConfirm?.Invoke(UserLink);
 
-            // Cierra la ventana (el parámetro viene del XAML: AncestorType=Window)
             if (parameter is Window window)
             {
                 window.Close();

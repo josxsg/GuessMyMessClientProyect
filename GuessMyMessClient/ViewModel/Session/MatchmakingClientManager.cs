@@ -6,8 +6,8 @@ using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
-
 using ServiceMatchFault = GuessMyMessClient.MatchmakingService.ServiceFaultDto;
+using GuessMyMessClient.ViewModel.Support;
 
 namespace GuessMyMessClient.ViewModel.Session
 {
@@ -56,7 +56,7 @@ namespace GuessMyMessClient.ViewModel.Session
                     Lang.alertUnknownErrorMessage,
                     Lang.alertErrorTitle,
                     MessageBoxButton.OK,
-                    MessageBoxImage.Error); 
+                    MessageBoxImage.Error);
                 CleanupConnection();
                 return false;
             }
@@ -68,18 +68,8 @@ namespace GuessMyMessClient.ViewModel.Session
             {
                 if (_client.State == CommunicationState.Opened && !string.IsNullOrEmpty(_connectedUsername))
                 {
-                    try
-                    {
-                        _client.Disconnect(_connectedUsername);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(
-                            Lang.alertUnknownErrorMessage,
-                            Lang.alertErrorTitle,
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error);
-                    }
+                 
+                    _client.Disconnect(_connectedUsername);
                 }
                 CleanupConnection();
             }
@@ -113,11 +103,6 @@ namespace GuessMyMessClient.ViewModel.Session
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(
-                        Lang.alertUnknownErrorMessage,
-                        Lang.alertErrorTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error);
                     _client.Abort();
                 }
                 finally
@@ -141,7 +126,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (FaultException<ServiceMatchFault> fex)
             {
-                return new OperationResultDto { Success = false, Message = fex.Detail.Message };
+                return new OperationResultDto { Success = false, ErrorCode = fex.Detail.ErrorType, Message = fex.Detail.Message };
             }
             catch (Exception)
             {
@@ -163,11 +148,6 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
                 return new List<MatchInfoDto>();
             }
         }
@@ -186,11 +166,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (Exception)
             {
-                MessageBox.Show(
-                    Lang.alertUnknownErrorMessage,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                OnMatchmakingFailed?.Invoke(Lang.alertUnknownErrorMessage);
             }
         }
 
@@ -207,7 +183,7 @@ namespace GuessMyMessClient.ViewModel.Session
             }
             catch (FaultException<ServiceMatchFault> fex)
             {
-                return new OperationResultDto { Success = false, Message = fex.Detail.Message };
+                return new OperationResultDto { Success = false, ErrorCode = fex.Detail.ErrorType, Message = fex.Detail.Message };
             }
             catch (Exception)
             {
@@ -235,7 +211,22 @@ namespace GuessMyMessClient.ViewModel.Session
         {
             Application.Current?.Dispatcher.Invoke(() =>
             {
-                OnMatchJoinedSuccessfully?.Invoke(matchId, result);
+                if (result.Success)
+                {
+                    OnMatchJoinedSuccessfully?.Invoke(matchId, result);
+                }
+                else
+                {
+                    if (result.ErrorCode != ServiceErrorType.None)
+                    {
+                        var (title, message) = ErrorManager.GetErrorMessage((GuessMyMessClient.AuthService.ServiceErrorType)result.ErrorCode);
+                        OnMatchmakingFailed?.Invoke(message);
+                    }
+                    else
+                    {
+                        OnMatchmakingFailed?.Invoke(result.Message);
+                    }
+                }
             });
         }
 

@@ -8,7 +8,6 @@ using System.ServiceModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using GuessMyMessClient.ViewModel;
 using ServiceSocialFault = GuessMyMessClient.SocialService.ServiceFaultDto;
 
 namespace GuessMyMessClient.ViewModel.Lobby
@@ -111,11 +110,11 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             catch (FaultException<ServiceSocialFault> fex)
             {
-                ShowError(fex.Detail.Message);
+                ShowServiceError((GuessMyMessClient.AuthService.ServiceErrorType)fex.Detail.ErrorType);
             }
-            catch (Exception ex) when (ex is TimeoutException || ex is CommunicationException)
+            catch (Exception ex)
             {
-                ShowError(Lang.alertConnectionErrorMessage);
+                HandleException(ex);
             }
         }
 
@@ -158,12 +157,12 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             catch (FaultException<ServiceSocialFault> fex)
             {
-                ShowError(fex.Detail.Message);
+                ShowServiceError((AuthService.ServiceErrorType)fex.Detail.ErrorType);
                 ClearChatHistory();
             }
-            catch (Exception ex) when (ex is TimeoutException || ex is CommunicationException)
+            catch (Exception ex)
             {
-                ShowError(Lang.alertConnectionErrorMessage);
+                HandleException(ex);
                 ClearChatHistory();
             }
         }
@@ -211,13 +210,16 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 ChatHistory.Add(localMsg);
                 MessageText = string.Empty;
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            catch (Exception ex)
             {
-                ShowError(Lang.alertChatMessageSendError);
-            }
-            catch
-            {
-                ShowError(Lang.alertUnknownErrorMessage);
+                if (ex is CommunicationException || ex is TimeoutException)
+                {
+                    ShowAlert(Lang.alertChatMessageSendError, Lang.alertErrorTitle, MessageBoxImage.Error);
+                }
+                else
+                {
+                    HandleException(ex);
+                }
             }
         }
 
@@ -233,23 +235,10 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
                     if (SelectedConversation != null && SelectedConversation.Username == usernameWhoRemovedMe)
                     {
-                        SelectedConversation = null; 
-                        MessageBox.Show($"{usernameWhoRemovedMe} ya no está en tu lista de amigos.",
-                            "Chat Cerrado", MessageBoxButton.OK, MessageBoxImage.Information);
+                        SelectedConversation = null;
+                        ShowAlert($"{usernameWhoRemovedMe} ya no está en tu lista de amigos.", "Chat Cerrado", MessageBoxImage.Information);
                     }
                 }
-            });
-        }
-
-        private static void ShowError(string message)
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                MessageBox.Show(
-                    message,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Error);
             });
         }
 

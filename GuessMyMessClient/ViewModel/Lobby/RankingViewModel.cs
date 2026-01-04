@@ -1,5 +1,5 @@
 ﻿using GuessMyMessClient.Model;
-using GuessMyMessClient.ProfileService; 
+using GuessMyMessClient.ProfileService;
 using GuessMyMessClient.Properties.Langs;
 using GuessMyMessClient.ViewModel.Session;
 using System;
@@ -56,7 +56,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
-                    MessageBox.Show(Lang.rankingErrorLoading, Lang.alertErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowAlert(Lang.rankingErrorLoading, Lang.alertErrorTitle, MessageBoxImage.Error);
                 });
             }
         }

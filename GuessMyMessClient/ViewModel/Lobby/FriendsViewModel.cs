@@ -8,7 +8,6 @@ using System.Windows.Input;
 using GuessMyMessClient.SocialService;
 using GuessMyMessClient.ViewModel.Session;
 using GuessMyMessClient.Properties.Langs;
-using GuessMyMessClient.ViewModel;
 using ServiceSocialFault = GuessMyMessClient.SocialService.ServiceFaultDto;
 using GuessMyMessClient.View.Lobby;
 
@@ -96,7 +95,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 var friends = await Client.GetFriendsListAsync(username);
                 var requests = await Client.GetFriendRequestsAsync(username);
 
-                // CORRECCIÓN: Usamos await InvokeAsync y delegamos la lógica en métodos simples
                 await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     UpdateFriendsList(friends);
@@ -142,17 +140,14 @@ namespace GuessMyMessClient.ViewModel.Lobby
         {
             if (ex is FaultException<ServiceSocialFault> fex)
             {
-                ShowError(fex.Detail.Message);
-            }
-            else if (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                ShowError(Lang.alertConnectionErrorMessage);
+                ShowServiceError((AuthService.ServiceErrorType)fex.Detail.ErrorType);
             }
             else
             {
-                ShowError(Lang.alertFriendLoadError);
+                HandleException(ex);
             }
         }
+
         private async Task SearchUsersAsync()
         {
             if (string.IsNullOrWhiteSpace(SearchText))
@@ -182,17 +177,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     }
                 });
             }
-            catch (FaultException<ServiceSocialFault> fex)
+            catch (Exception ex)
             {
-                ShowError(fex.Detail.Message);
-            }
-            catch (Exception ex) when (ex is EndpointNotFoundException || ex is TimeoutException || ex is CommunicationException)
-            {
-                ShowError(Lang.alertConnectionErrorMessage);
-            }
-            catch
-            {
-                ShowError(Lang.alertFriendSearchError);
+                HandleSocialException(ex);
             }
         }
 
@@ -207,23 +194,15 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 Client.SendFriendRequest(SessionManager.Instance.CurrentUsername, userProfile.Username);
 
-                 Application.Current.Dispatcher.InvokeAsync(() =>
+                Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     SearchResults.Remove(userProfile);
-                    MessageBox.Show(
-                        string.Format(Lang.alertFriendRequestSent, userProfile.Username),
-                        Lang.alertSuccessTitle,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
+                    ShowAlert(string.Format(Lang.alertFriendRequestSent, userProfile.Username), Lang.alertSuccessTitle, MessageBoxImage.Information);
                 });
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            catch (Exception ex)
             {
-                ShowError(Lang.alertFriendRequestSendError);
-            }
-            catch
-            {
-                ShowError(Lang.alertUnknownErrorMessage);
+                HandleException(ex);
             }
         }
 
@@ -238,7 +217,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             {
                 Client.RespondToFriendRequest(SessionManager.Instance.CurrentUsername, requesterUsername, accepted);
 
-                 Application.Current.Dispatcher.InvokeAsync(() =>
+                Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     var requestVM = FriendRequests.FirstOrDefault(r => r.RequesterUsername == requesterUsername);
                     if (requestVM != null)
@@ -252,13 +231,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     }
                 });
             }
-            catch (Exception ex) when (ex is CommunicationException || ex is TimeoutException)
+            catch (Exception ex)
             {
-                ShowError(Lang.alertFriendResponseError);
-            }
-            catch
-            {
-                ShowError(Lang.alertUnknownErrorMessage);
+                HandleException(ex);
             }
         }
 
@@ -267,7 +242,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             if (!(parameter is FriendViewModel friend) || !CanExecuteNetworkActions()) return;
 
             var confirm = MessageBox.Show(
-                string.Format(Lang.alertRemoveFriend, friend.Username), 
+                string.Format(Lang.alertRemoveFriend, friend.Username),
                 Lang.alertWarningTitle,
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Warning);
@@ -285,21 +260,17 @@ namespace GuessMyMessClient.ViewModel.Lobby
                         if (result.Success)
                         {
                             Friends.Remove(friend);
-                            MessageBox.Show(result.Message, Lang.alertSuccessTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                            ShowAlert(result.Message, Lang.alertSuccessTitle, MessageBoxImage.Information);
                         }
                         else
                         {
-                            ShowError(result.Message);
+                            ShowServiceError((AuthService.ServiceErrorType)result.ErrorCode);
                         }
                     });
                 }
-                catch (FaultException<ServiceSocialFault> fex)
+                catch (Exception ex)
                 {
-                    ShowError(fex.Detail.Message);
-                }
-                catch (Exception)
-                {
-                    ShowError(Lang.alertUnknownErrorMessage);
+                    HandleSocialException(ex);
                 }
             }
         }
@@ -314,17 +285,6 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 view.Owner = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
                 view.ShowDialog();
             }
-        }
-
-        private static void ShowError(string message)
-        {
-             Application.Current.Dispatcher.InvokeAsync(() =>
-            {
-                MessageBox.Show(message,
-                    Lang.alertErrorTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            });
         }
 
         private void SubscribeToEvents()
@@ -345,13 +305,9 @@ namespace GuessMyMessClient.ViewModel.Lobby
 
         private void HandleFriendRequest(string fromUsername)
         {
-             Application.Current.Dispatcher.InvokeAsync(() =>
+            Application.Current.Dispatcher.InvokeAsync(() =>
             {
-                MessageBox.Show(
-                    string.Format(Lang.alertFriendNewRequestFrom, fromUsername),
-                    Lang.alertFriendNewRequestTitle,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                ShowAlert(string.Format(Lang.alertFriendNewRequestFrom, fromUsername), Lang.alertFriendNewRequestTitle, MessageBoxImage.Information);
 
                 if (!FriendRequests.Any(r => r.RequesterUsername == fromUsername))
                 {
@@ -368,7 +324,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                     ? string.Format(Lang.alertFriendRequestAccepted, respondingUsername)
                     : string.Format(Lang.alertFriendRequestDeclined, respondingUsername);
 
-                MessageBox.Show(message, Lang.alertFriendRequestResponseTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                ShowAlert(message, Lang.alertFriendRequestResponseTitle, MessageBoxImage.Information);
 
                 if (accepted && !Friends.Any(f => f.Username == respondingUsername))
                 {
@@ -398,8 +354,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
                 if (friendToRemove != null)
                 {
                     Friends.Remove(friendToRemove);
-
-                    MessageBox.Show($"{usernameWhoRemovedMe} te ha eliminado de sus amigos.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ShowAlert($"{usernameWhoRemovedMe} te ha eliminado de sus amigos.", "Aviso", MessageBoxImage.Information);
                 }
             });
         }
@@ -441,7 +396,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _username = value; 
+                _username = value;
                 OnPropertyChanged();
             }
         }
@@ -456,7 +411,7 @@ namespace GuessMyMessClient.ViewModel.Lobby
             }
             set
             {
-                _isOnline = value; 
+                _isOnline = value;
                 OnPropertyChanged();
             }
         }
